@@ -1,0 +1,44 @@
+version: '3.9'
+
+volumes:
+  sr-pg-data:
+  sr-my-data:
+
+services:
+  db-pg:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      TZ: America/Chicago
+    ports:
+      - '5432:5432'
+    volumes:
+      - sr-pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U app -d app']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  db-my:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app
+      MYSQL_ROOT_PASSWORD: root
+      TZ: America/Chicago
+    ports:
+      - '3306:3306'
+    command: ['--default-authentication-plugin=mysql_native_password']
+    volumes:
+      - sr-my-data:/var/lib/mysql
+    healthcheck:
+      test: ['CMD-SHELL', 'mysqladmin ping -h 127.0.0.1 -uapp -papp --silent']
+      interval: 5s
+      timeout: 5s
+      retries: 20

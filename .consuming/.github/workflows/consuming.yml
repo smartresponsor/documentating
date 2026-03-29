@@ -1,0 +1,85 @@
+name: consuming
+
+on:
+  workflow_dispatch:
+    inputs:
+      onlyId:
+        description: "Sync only one pack id (example: canonization)"
+        required: false
+        default: ""
+      tag:
+        description: "Release tag to consume (required for now)"
+        required: false
+        default: ""
+  schedule:
+    - cron: "17 * * * *"
+  repository_dispatch:
+    types:
+      - consuming-release
+
+permissions:
+  contents: write
+
+concurrency:
+  group: consuming
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Normalize GitHub App private key
+        id: key
+        shell: pwsh
+        env:
+          PEM: ${{ secrets.AUTOMATER_APP_PRIVATE_KEY }}
+          B64: ${{ secrets.AUTOMATER_APP_PRIVATE_KEY_B64 }}
+        run: |
+          $key = $env:PEM
+          if ([string]::IsNullOrWhiteSpace($key) -and -not [string]::IsNullOrWhiteSpace($env:B64)) {
+            $key = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($env:B64))
+          }
+          if ([string]::IsNullOrWhiteSpace($key)) {
+            throw "AUTOMATER_APP_PRIVATE_KEY is empty (and AUTOMATER_APP_PRIVATE_KEY_B64 is empty)."
+          }
+          if ($key.StartsWith('"') -and $key.EndsWith('"')) { $key = $key.Trim('"') }
+          $key = $key -replace "`r",""
+          $key = $key -replace "\\n","`n"
+          if ($key -notmatch "BEGIN (RSA )?PRIVATE KEY") {
+            throw "Private key does not look like PEM."
+          }
+
+          "private-key<<EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          $key | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          "EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+
+      - name: Create GitHub App token (Automater)
+        id: app
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.AUTOMATER_APP_ID }}
+          private-key: ${{ steps.key.outputs.private-key }}
+
+      - name: Checkout (with App token)
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app.outputs.token }}
+          fetch-depth: 0
+
+      - name: Git safe.directory
+        shell: bash
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Run consuming engine
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ steps.app.outputs.token }}
+          CONSUMING_SOURCE_TOKEN: ${{ secrets.AUTOMATE_SOURCE_TOKEN }}
+          CONSUMING_ONLY_ID: ${{ github.event.client_payload.onlyId || inputs.onlyId || '' }}
+          CONSUMING_TAG: ${{ github.event.client_payload.tag || inputs.tag || '' }}
+        run: |
+          if (-not (Test-Path "./.consuming/consuming-engine.ps1")) {
+            throw "Missing: ./.consuming/consuming-engine.ps1"
+          }
+          & "./.consuming/consuming-engine.ps1"

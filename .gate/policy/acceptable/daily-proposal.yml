@@ -1,0 +1,53 @@
+{
+  "proposal": [
+    {
+      "op": "path.ensure_dir",
+      "level": "info",
+      "path": ".report",
+      "note": "ensure report folder"
+    },
+    {
+      "op": "file.ensure_exists",
+      "level": "error",
+      "path": ".gitattributes",
+      "note": "required gitattributes"
+    },
+    {
+      "op": "file.append_lines",
+      "level": "error",
+      "path": ".gitattributes",
+      "lines": [
+        "* text=auto eol=lf"
+      ],
+      "note": "enforce lf normalization"
+    },
+    {
+      "op": "file.write_text",
+      "level": "error",
+      "path": "README.md",
+      "guard": "missing_only",
+      "text": "# Repo\n",
+      "note": "seed readme if missing"
+    },
+    {
+      "op": "file.write_text",
+      "level": "error",
+      "path": "MANIFEST.json",
+      "guard": "missing_only",
+      "text": "{\n\"name\": \"\",\n\"version\": \"0.0.0\",\n\"note\": \"Gate proposal: manifest created\"\n}\n",
+      "note": "seed manifest if missing"
+    },
+    {
+      "op": "chmod.add_x",
+      "level": "error",
+      "path": ".gate/gate.sh",
+      "note": "ensure executable"
+    },
+    {
+      "op": "chmod.add_x",
+      "level": "error",
+      "path": ".gate/contract/fix.sh",
+      "note": "ensure executable"
+    }
+  ]
+}

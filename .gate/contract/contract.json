@@ -1,0 +1,40 @@
+{
+  "root_contract": {
+    "allow_dot_folders_only": true,
+    "required_root_files": [
+      ".gitignore",
+      "MANIFEST.json",
+      "README.md"
+    ],
+    "allowed_root_files_exact": [
+      ".gitignore",
+      "MANIFEST.json",
+      "README.md"
+    ]
+  },
+  "gitignore_template": {
+    "must_include_all": [
+      ".idea/",
+      "*.iml",
+      "/vendor/",
+      "/var/",
+      ".phpunit.result.cache",
+      ".DS_Store",
+      "Thumbs.db",
+      "node_modules/",
+      "/.env.local",
+      "/.env.*.local"
+    ]
+  },
+  "allowed_root_dot_folders": [
+    ".canonization",
+    ".commanding",
+    ".consuming",
+    ".deploy",
+    ".gate",
+    ".github",
+    ".intelligence",
+    ".release",
+    ".smoke"
+  ]
+}

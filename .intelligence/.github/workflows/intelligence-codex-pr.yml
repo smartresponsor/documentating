@@ -1,0 +1,98 @@
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+name: intelligence-codex-pr
+
+on:
+  workflow_call:
+    inputs:
+      task:
+        type: string
+        required: true
+        default: "pr"
+      kind:
+        type: string
+        required: false
+        default: "fix"
+      message:
+        type: string
+        required: true
+        default: "update"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  codex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve domain
+        id: domain
+        shell: bash
+        run: |
+          set -euo pipefail
+          dom=""
+          if [ -f ".Intelligence/intelligence.json" ]; then
+            dom="$(python -c 'import json;print((json.load(open(".Intelligence/intelligence.json")) or {}).get("domain",""))' 2>/dev/null || true)"
+          fi
+          if [ -z "$dom" ]; then
+            dom="$(basename "$GITHUB_REPOSITORY")"
+          fi
+          echo "domain=$dom" >> "$GITHUB_OUTPUT"
+
+      - name: Run Intelligence Engine
+        shell: bash
+        run: |
+          set -euo pipefail
+          pwsh -NoProfile -File .Intelligence/intelligence-engine.ps1 -Task "${{ inputs.task }}" -Domain "${{ steps.domain.outputs.domain }}" -Repo "${{ github.workspace }}"
+
+      - name: Prepare PR branch (task=pr)
+        if: ${{ inputs.task == 'pr' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          ts="$(date -u +%Y%m%dT%H%M%SZ)"
+          kind="${{ inputs.kind }}"
+          kind="$(echo "$kind" | tr '[:upper:]' '[:lower:]' | tr -cd 'a-z0-9-' )"
+          [ -z "$kind" ] && kind="fix"
+          br="ai/${kind}-${ts}"
+          echo "KIND=$kind" >> "$GITHUB_ENV"
+          echo "BR=$br" >> "$GITHUB_ENV"
+          git checkout -b "$br"
+
+      - name: Commit changes (task=pr)
+        if: ${{ inputs.task == 'pr' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git status --porcelain
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes detected."
+            exit 0
+          fi
+          git add -A
+          git config user.name "intelligence-bot"
+          git config user.email "17111337+taa0662621456@users.noreply.github.com"
+          git commit -m "${KIND:-fix}: ${{ inputs.message }}"
+          git push -u origin "${BR}"
+
+      - name: Create PR (task=pr)
+        if: ${{ inputs.task == 'pr' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$(git log -1 --pretty=%B 2>/dev/null || true)" ]; then
+            echo "No commit created; skipping PR."
+            exit 0
+          fi
+          kind="${KIND:-fix}"
+          title="${kind}: ${{ inputs.message }}"
+          run_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          body="Automated Codex PR.\n\nRun: $run_url\nDomain: ${{ steps.domain.outputs.domain }}\nTask: ${{ inputs.task }}\n"
+          gh pr create --base master --head "${BR}" --title "$title" --body "$body"

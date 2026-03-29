@@ -1,0 +1,51 @@
+# Canon / Owner Policy (ACCEPT)
+# Machine-readable rule list: owner-specific constraints and workflows.
+version: 1
+scope: owner
+accepted:
+  - id: archive-flat-root
+    title: ZIP archives must be flat-root
+    intent: ZIP must contain project files/folders at the ZIP root (no wrapper folder).
+    why: Consumers apply packs by copying root entries; wrapper folders force special unpack logic.
+    enforce:
+      - tool: owner-canon/overlay/checker/archive-flat-root-check.ps1
+        mode: gate
+
+  - id: archive-name-contract
+    title: Archive filenames follow the canon grammar
+    intent: Use single-hyphen filenames; use '_' only for increments; allow numbered prefixes for commit streams.
+    why: Archive name acts as a commit message and audit key.
+    enforce:
+      - tool: industrial-canon/checker/archive-name-lint.js
+        mode: gate
+
+  - id: repo-self-consume
+    title: Canon repo consumes its own canon
+    intent: This repository must run the same linters/gates it distributes.
+    why: Keeps the Canon repo as a living reference implementation.
+    enforce:
+      - tool: tool/ps1/run-gate.ps1
+        mode: gate
+
+  - id: overlay-distribution
+    title: Owner overlay is distributed into tools/canon/owner
+    intent: Consumer repos install owner overlay tools under tools/canon/owner.
+    why: Keeps a stable and predictable integration point.
+    enforce:
+      - tool: tool/ps1/run-canon-overlay-apply.ps1
+        mode: build
+
+  - id: signed-manifest
+    title: Packs publish manifest + hashes
+    intent: Every pack should include MANIFEST.md and SHA256SUMS.txt.
+    why: Supports reproducible consumption and auditing.
+    enforce:
+      - tool: tool/ps1/run-canon-pack.ps1
+        mode: build
+
+  - id: secret-out-of-repo
+    title: Secrets are not stored inside the Canon repository
+    intent: Private keys, tokens and credentials must live outside git.
+    why: Prevents accidental leakage; supports rotation.
+    enforce:
+      - mode: manual

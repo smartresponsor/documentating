@@ -1,0 +1,144 @@
+name: gate
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: owner-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run owner gate (Linux)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          chmod +x ./.gate/gate.sh
+          ./.gate/gate.sh .
+
+      - name: Gate fix proposal (print, Linux)
+        if: always() && runner.os != 'Windows'
+        shell: bash
+        run: |
+          chmod +x ./.gate/contract/fix.sh || true
+          ./.gate/contract/fix.sh . .report/gate-fix-proposal.ndjson print || true
+
+      - name: Run owner gate (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          ./.gate/gate.ps1 -Path .
+
+      - name: Gate fix proposal (print, Windows)
+        if: always() && runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          pwsh -File .\.gate\contract\fix.ps1 -RepoRoot . -PrintOnly
+
+      - name: Upload gate report (artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gate-report-${{ matrix.os }}
+          path: |
+            .report/**
+          if-no-files-found: ignore
+
+  codex-dispatch:
+    name: codex-dispatch
+    runs-on: ubuntu-latest
+    needs: gate
+    if: failure() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false)
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download gate report artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: .report-artifact
+
+      - name: Create issue for Codex
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            function findFile(dir, fileName) {
+              if (!fs.existsSync(dir)) return null;
+              const items = fs.readdirSync(dir, { withFileTypes: true });
+              for (const it of items) {
+                const full = path.join(dir, it.name);
+                if (it.isDirectory()) {
+                  const found = findFile(full, fileName);
+                  if (found) return found;
+                } else if (it.isFile() && it.name === fileName) {
+                  return full;
+                }
+              }
+              return null;
+            }
+
+            const baseDir = '.report-artifact';
+            const proposalPath = findFile(baseDir, 'gate-fix-proposal.ndjson');
+
+            if (!proposalPath) {
+              console.log('No proposal file found in artifacts.');
+              return;
+            }
+
+            const proposal = fs.readFileSync(proposalPath, 'utf8').trim();
+
+            // de-dupe: if an open issue already exists for this SHA, do nothing
+            const q = `repo:${context.repo.owner}/${context.repo.repo} is:issue is:open label:gate-fail "${context.sha}"`;
+            const search = await github.rest.search.issuesAndPullRequests({ q, per_page: 5 });
+            if (search.data.items && search.data.items.length > 0) {
+              console.log('Existing open gate-fail issue for this SHA found. Skip.');
+              return;
+            }
+
+            const title = `gate: fix required (${context.repo.owner}/${context.repo.repo})`;
+            const body = [
+              'Gate failed.',
+              '',
+              `Proposal file: ${proposalPath}`,
+              '',
+              'Proposal NDJSON:',
+              '```',
+              proposal || '(empty)',
+              '```',
+              '',
+              `Ref: ${context.sha}`,
+            ].join('\n');
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['codex', 'gate-fail'],
+            });

@@ -1,0 +1,23 @@
+{
+  "defaults": {
+    "source": {
+      "owner": "smartresponsor",
+      "repoPrefix": ".",
+      "assetZipTpl": "{id}-{slug}-{tag}.zip",
+      "assetSha": "SHA256SUMS"
+    },
+    "apply": {
+      "targetRoot": "."
+    }
+  },
+  "packId": [
+    "automating",
+    "commanding",
+    "canonization",
+    "consumer",
+    "gate",
+    "intelligence",
+    "release",
+    "smoke"
+  ]
+}

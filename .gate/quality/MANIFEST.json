@@ -1,0 +1,14 @@
+{
+  "quality": {
+    "php": {
+      "phpstan": {
+        "config": ".gate/quality/php/phpstan.neon",
+        "runner_ps1": ".gate/quality/ps1/phpstan-run.ps1"
+      },
+      "rector": {
+        "config": ".gate/quality/php/rector.php",
+        "runner_ps1": ".gate/quality/ps1/rector-run.ps1"
+      }
+    }
+  }
+}

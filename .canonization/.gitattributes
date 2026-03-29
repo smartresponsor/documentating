@@ -1,0 +1,37 @@
+# Text normalization
+* text=auto eol=lf
+
+# Explicit text types
+*.php      text eol=lf
+*.md       text eol=lf
+*.yml      text eol=lf
+*.yaml     text eol=lf
+*.json     text eol=lf
+*.xml      text eol=lf
+*.env      text eol=lf
+*.dist     text eol=lf
+*.sh       text eol=lf
+*.ps1      text eol=lf
+*.bat      text eol=crlf
+*.cmd      text eol=crlf
+
+# Binaries
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.webp     binary
+*.ico      binary
+*.pdf      binary
+*.zip      binary
+*.7z       binary
+*.woff     binary
+*.woff2    binary
+*.ttf      binary
+*.eot      binary
+*.mp4      binary
+*.mov      binary
+
+# Git patches should be LF-stable
+*.diff     text eol=lf
+*.patch    text eol=lf

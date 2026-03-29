@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      APP_ENV: prod
+      PG_DSN: pgsql:host=db-pg;port=5432;dbname=app
+      PG_USER: app
+      PG_PASS: app
+      MYSQL_DSN: mysql:host=db-my;port=3306;dbname=app
+      MYSQL_USER: app
+      MYSQL_PASS: app
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db-pg
+      - db-my
+
+  db-pg:
+    extends:
+      file: compose-db.yml
+      service: db-pg
+
+  db-my:
+    extends:
+      file: compose-db.yml
+      service: db-my

@@ -1,0 +1,63 @@
+# Smart Responsor Documentation Portal — Component Registry
+# Product files live in /content (MD only). Runtime files live under dot-folders.
+# This manifest is runtime input for the .sync collector.
+
+components:
+  - Accessing
+  - Addressing
+  - Analytics
+  - Anchoring
+  - Applicating
+  - Automating
+  - Billing
+  - Boundarying
+  - Canonization
+  - Cataloging
+  - Codexing
+  - Commanding
+  - Commercializing
+  - Complying
+  - Consuming
+  - Containerizing
+  - Cowboy
+  - Discovering
+  - Documentating
+  - Evaluating
+  - External
+  - Facting
+  - Federation
+  - Finance
+  - Financing
+  - fingeprint
+  - Gating
+  - Governance
+  - Incidend
+  - Indexing
+  - Intelligence
+  - Interfacing
+  - Locating
+  - Messaging
+  - Mobiling
+  - Objecting
+  - Observabiliting
+  - Odyssey
+  - Operation
+  - ops
+  - Orchestration
+  - Ordering
+  - Paying
+  - Projecting
+  - Retailing
+  - Rolling
+  - Runtiming
+  - Sandbox
+  - Search
+  - Shipping
+  - Tagging
+  - Taxating
+  - Vendoring
+
+slug_rule: "default slug = lowercase(component key); apply slug_overrides by default_slug"
+slug_overrides:
+  addressing: address
+  cataloging: catalog

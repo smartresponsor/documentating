@@ -1,0 +1,25 @@
+{
+  "name": "canonization-owner-gate-pack-v1",
+  "generatedAt": "2026-01-26T01:55:24.668892Z",
+  "flatRoot": true,
+  "paths": [
+    ".github/workflows/gate.yml",
+    "README.md",
+    "gate.ps1",
+    "gate.sh",
+    "linting/js/archive-domains.json",
+    "linting/js/archive-name-check.js",
+    "linting/js/archive-namer.js",
+    "linting/js/doc-name-check.js",
+    "linting/js/layer-mirror-check.js",
+    "linting/js/no-plural-check.js",
+    "linting/ps1/copyright-header-check.ps1",
+    "linting/ps1/doc-name-check.ps1",
+    "linting/ps1/layer-mirror-check.ps1",
+    "linting/sh/copyright-header-check.sh",
+    "linting/sh/doc-name-check.sh",
+    "linting/sh/layer-mirror-check.sh",
+    "policy/acceptable/canon-owner-policy-acceptable-v1.yaml",
+    "policy/dismissed/canon-owner-policy-dismissed-v1.yaml"
+  ]
+}

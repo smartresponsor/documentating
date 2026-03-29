@@ -1,0 +1,13 @@
+{
+  "proposal": [
+    {
+      "op": "agent.required",
+      "level": "error",
+      "scope": [
+        "."
+      ],
+      "note": "root-contract violations need reasoning",
+      "prompt": "Root-contract violation detected (canonization repo).\nAllow only dot-folders in root (ignore .git); root files allowed: .gitignore, MANIFEST.json, README.md (optional .gitattributes).\nDo NOT delete/move blindly.\nOutput: PR-ready patch + updated MANIFEST if needed."
+    }
+  ]
+}

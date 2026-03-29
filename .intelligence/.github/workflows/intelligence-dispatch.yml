@@ -1,0 +1,29 @@
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+name: intelligence-dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "Task: plan|codex|pr"
+        required: true
+        default: "pr"
+        type: string
+      kind:
+        description: "Commit/PR kind: fix|hotfix|feat|chore|docs|refactor"
+        required: false
+        default: "fix"
+        type: string
+      message:
+        description: "Short message for PR title / commit message"
+        required: true
+        default: "update"
+        type: string
+
+jobs:
+  dispatch:
+    uses: ./.github/workflows/intelligence-codex-pr.yml
+    with:
+      task: ${{ inputs.task }}
+      kind: ${{ inputs.kind }}
+      message: ${{ inputs.message }}

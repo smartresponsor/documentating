@@ -1,0 +1,17 @@
+{
+  "template": {
+    "path": ".gitignore",
+    "required": [
+      ".idea/",
+      "*.iml",
+      "/vendor/",
+      "/var/",
+      ".phpunit.result.cache",
+      ".DS_Store",
+      "Thumbs.db",
+      "node_modules/",
+      "/.env.local",
+      "/.env.*.local"
+    ]
+  }
+}
