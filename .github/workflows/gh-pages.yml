@@ -8,13 +8,14 @@ on:
 permissions:
   contents: write
 
+# Important: keep the original run alive even if we push a follow-up commit to master
 concurrency:
   group: "docs-gh-pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
-    # skip the workflow run triggered by the bot-commit that normalizes filenames
+    # Skip the workflow run triggered by the bot-commit that normalizes filenames
     if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip docs]') }}
     runs-on: ubuntu-latest
 
@@ -44,10 +45,7 @@ jobs:
           TZ_NAME: America/Chicago
           GITHUB_BEFORE: ${{ github.event.before }}
           GITHUB_SHA: ${{ github.sha }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-
           python - <<'PY'
           import os, re, subprocess
           from datetime import datetime
@@ -61,7 +59,6 @@ jobs:
               return subprocess.check_output(cmd, text=True).strip()
 
           def diff_name_status():
-              # github.event.before can be 0000... for the first commit
               if before and not re.fullmatch(r"0{40}", before):
                   out = run(["git", "diff", "--name-status", before, sha])
               else:
@@ -73,7 +70,6 @@ jobs:
                       continue
                   parts = line.split("\t")
                   status = parts[0]
-                  # rename: R100 old new
                   if status.startswith("R") and len(parts) >= 3:
                       rows.append(("A", parts[2]))
                   elif len(parts) >= 2:
@@ -87,14 +83,13 @@ jobs:
               s = re.sub(r"-{2,}", "-", s).strip("-")
               return s or "post"
 
-          # commit time (committer) -> date in TZ
           epoch = int(run(["git", "show", "-s", "--format=%ct", sha]))
           today = datetime.fromtimestamp(epoch, ZoneInfo(TZ)).date().isoformat()
 
           changed = False
 
           for status, path in diff_name_status():
-              if status not in ("A", "M"):
+              if status not in ("A",):
                   continue
               if not path.startswith("docs/article/"):
                   continue
@@ -110,7 +105,6 @@ jobs:
               new_base = f"{today}--{slug}.md"
               new_path = os.path.join(os.path.dirname(path), new_base).replace("\\", "/")
 
-              # avoid collisions
               if os.path.exists(new_path):
                   i = 2
                   while True:
@@ -121,10 +115,8 @@ jobs:
                       i += 1
 
               subprocess.check_call(["git", "mv", path, new_path])
-              print(f"Renamed: {path} -> {new_path}")
               changed = True
 
-          # ensure CNAME exists in MkDocs source
           cname = "docs/CNAME"
           if not os.path.exists(cname):
               with open(cname, "w", encoding="ascii") as f:
@@ -132,15 +124,23 @@ jobs:
               subprocess.check_call(["git", "add", cname])
               changed = True
 
-          # push normalization back to master
           if changed:
               subprocess.check_call(["git", "add", "-A"])
               dirty = subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()
               if dirty:
                   subprocess.check_call(["git", "commit", "-m", "chore(docs): normalize article filenames [skip docs]"])
-                  subprocess.check_call(["git", "push", "origin", "HEAD:master"])
           PY
 
       - name: Deploy to gh-pages (MkDocs)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           python -m mkdocs gh-deploy -f ./.site/mkdocs.yml --force --clean --no-history
+
+      - name: Push normalization commit back to master (if any)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push origin HEAD:master || true
