@@ -4,7 +4,7 @@
 
 ## Include (index these)
 
-- content/**/*.md
+- docs/**/*.md
 - README.md
 - MANIFEST.md
 - asset/** (images/diagrams)

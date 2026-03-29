@@ -2,7 +2,7 @@
 
 ## Product (static content)
 
-- content/ — Markdown content (public documentation and articles)
+- docs/ — Markdown content (public documentation and articles)
 - asset/ — images/diagrams (static attachments)
 
 ## Runtime (build/sync/deploy)

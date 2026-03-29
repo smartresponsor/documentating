@@ -1,5 +1,5 @@
 # Smart Responsor Documentation Portal — Component Registry
-# Product files live in /content (MD only). Runtime files live under dot-folders.
+# Product files live in /docs (MD only). Runtime files live under dot-folders.
 # This manifest is runtime input for the .sync collector.
 
 components:

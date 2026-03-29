@@ -1,9 +1,9 @@
 site_name: Smart Responsor Documentation
-site_url: https://<YOUR_GITHUB_PAGES_URL>/
-repo_url: https://github.com/<ORG>/<REPO>
-repo_name: <ORG>/<REPO>
+site_url: https://docs.smartresponsor.com/
+repo_url: https://github.com/smartresponsor/documentating
+repo_name: smartresponsor/documentating
 
-docs_dir: ../content
+docs_dir: ../docs
 site_dir: ../.site_build
 
 theme:
