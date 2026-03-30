@@ -1,0 +1,12 @@
+{
+  "name": "documentating-antora-site",
+  "private": true,
+  "scripts": {
+    "build:content": "python3 tools/build_antora_site.py",
+    "build": "npm run build:content && antora antora-playbook.yml --fetch"
+  },
+  "dependencies": {
+    "antora": "3.1.12",
+    "@antora/lunr-extension": "^1.0.0-alpha.10"
+  }
+}
