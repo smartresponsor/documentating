@@ -1,0 +1,2 @@
+Trigger commit for fix-v5-and-footer-on-push.
+This file exists only to force the self-fix workflow.
