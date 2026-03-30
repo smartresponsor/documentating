@@ -1,0 +1,6 @@
+= Components
+:description: Public entry points for Smart Responsor ecosystem components.
+
+This section is the public component map of the Smart Responsor ecosystem.
+
+Detailed component pages are generated during CI from `.sync/manifest/component-list.yml`.
