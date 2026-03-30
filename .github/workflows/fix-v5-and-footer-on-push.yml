@@ -1,4 +1,36 @@
-name: gh-pages
+name: fix-v5-and-footer-on-push
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "documentating-fix-v5-footer"
+  cancel-in-progress: false
+
+jobs:
+  fix:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip self-fix]') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Rewrite canonical publish workflow and footer
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path('.')
+          gh_pages = root / '.github' / 'workflows' / 'gh-pages.yml'
+          gh_pages.write_text('''name: gh-pages
 
 on:
   push:
@@ -44,7 +76,7 @@ jobs:
 
       - name: Build clean Antora source tree
         run: |
-          python3 tools/build_antora_site_v4.py
+          python3 tools/build_antora_site_v5.py
 
       - name: Build owner-facing site with Antora
         run: |
@@ -102,3 +134,32 @@ jobs:
           )
 
           git worktree remove "$workdir" --force || true
+''', encoding='utf-8')
+
+          footer = root / 'supplemental-ui' / 'partials' / 'footer.hbs'
+          footer.parent.mkdir(parents=True, exist_ok=True)
+          footer.write_text('''<footer class="footer">
+  <p>Marketing America Corp · High Hope · Oleksandr Tishchenko</p>
+  <p>
+    <a href="{{relativize '/contact/'}}">Contact</a> ·
+    <a href="{{relativize '/privacy/'}}">Privacy</a> ·
+    <a href="{{relativize '/terms/'}}">Terms</a>
+  </p>
+</footer>
+''', encoding='utf-8')
+          PY
+
+      - name: Commit and push self-fix
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/workflows/gh-pages.yml supplemental-ui/partials/footer.hbs
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "docs(site): switch to v5 and owner footer [skip self-fix]"
+            git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            git push origin HEAD:master
+          else
+            echo "No self-fix changes required."
+          fi
