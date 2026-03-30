@@ -1,0 +1,5 @@
+name: ROOT
+title: Smart Responsor
+version: ~
+nav:
+  - modules/ROOT/nav.adoc
