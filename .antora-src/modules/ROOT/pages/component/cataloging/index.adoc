@@ -1,0 +1,44 @@
+= Cataloging
+:description: Public entry page for the Cataloging component.
+:page-slug: cataloging
+
+Cataloging is a Symfony-oriented catalog, category, and taxonomy governance component within the Smartresponsor ecosystem.
+
+It should be understood not as a simple category tree helper, but as a governed catalog and classification layer for category operations, product navigation, structured catalog surfaces, and long-horizon taxonomy discipline.
+
+== What It Is
+
+Cataloging exists to provide a structured internal catalog capability that can support category modeling, catalog navigation, taxonomy handling, route-aware runtime access, and governed evolution of classification surfaces.
+
+In ecosystem terms, it belongs to the class of components that strengthen catalog structure, product discoverability, and operational category governance.
+
+== Current Reading
+
+In its current state, Cataloging already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear catalog-and-category product identity,
+* strong QA and runtime verification culture,
+* structured smoke and inspection contour,
+* and a governance-oriented engineering posture around taxonomy and catalog runtime.
+
+== Why It Matters
+
+Catalog systems become fragmented when category structure, routing, discoverability, product navigation, and operational catalog governance are treated as separate ad hoc concerns.
+
+Cataloging matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple category CRUD layer or storefront menu helper.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/cataloging/report/index.adoc[Cataloging Report]
+
+== Position in the Ecosystem
+
+Cataloging currently stands as one of the stronger structure-and-taxonomy oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class catalog and taxonomy-governance maturity through structure, verification, and long-term maintainability.
