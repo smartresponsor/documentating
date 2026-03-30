@@ -1,0 +1,87 @@
+name: publish-v8-footer-after-v7
+
+on:
+  workflow_run:
+    workflows: ["publish-v7-after-v6"]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "docs-gh-pages-v8-footer"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml
+          npm install
+
+      - name: Build v7 site
+        run: |
+          python3 tools/build_antora_site_v7.py
+          npx antora antora-playbook.yml --fetch
+          if [ -f docs/CNAME ]; then cp docs/CNAME .site_build/CNAME; fi
+          if [ -d docs/assets ]; then mkdir -p .site_build/assets && cp -R docs/assets/. .site_build/assets/; fi
+          if [ -d assets ]; then mkdir -p .site_build/assets && cp -R assets/. .site_build/assets/; fi
+          touch .site_build/.nojekyll
+
+      - name: Patch footer in generated HTML
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          footer_old = '<footer class="footer">\n  <p>Marketing America Corp · High Hope · Alexander Tishchenko</p>\n</footer>'
+          footer_new = '<footer class="footer">\n  <p>Marketing America Corp · High Hope · Oleksandr Tishchenko</p>\n  <p><a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>\n</footer>'
+          for path in Path('.site_build').rglob('*.html'):
+              text = path.read_text(encoding='utf-8')
+              if footer_old in text:
+                  text = text.replace(footer_old, footer_new)
+                  path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Publish patched v8 site to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          workdir="$(mktemp -d)"
+          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages:gh-pages
+            git worktree add --force "$workdir" gh-pages
+          else
+            git worktree add --detach "$workdir"
+            (cd "$workdir" && git checkout --orphan gh-pages)
+          fi
+          find "$workdir" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -R .site_build/. "$workdir"/
+          (cd "$workdir" && git add -A && if [ -n "$(git status --porcelain)" ]; then git commit -m "docs: publish v8 footer-patched site" && git push origin HEAD:gh-pages --force; else echo "No v8 site changes to publish."; fi)
+          git worktree remove "$workdir" --force || true
