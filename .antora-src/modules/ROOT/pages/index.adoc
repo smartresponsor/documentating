@@ -1,0 +1,10 @@
+= Smart Responsor Documentation
+:description: Public portal for Smart Responsor articles, manifests, and component entry points.
+
+This is the public documentation entry point for *Smart Responsor*.
+
+* xref:article/index.adoc[Articles]
+* xref:component/index.adoc[Components]
+* xref:manifest/index.adoc[Manifests]
+
+This seed tree is regenerated during CI from the current repository state.
