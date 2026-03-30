@@ -1,0 +1,161 @@
+= Taxating Report
+:description: Current owner-oriented maturity report for the Taxating component.
+:page-slug: taxating-report
+
+This page is the current owner-oriented maturity report for *Taxating*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Taxating is not shaped as a simple tax calculator or a thin tax-rate lookup layer.
+
+It reads as a Symfony-oriented taxation calculation and compliance engine: a system intended to manage deterministic tax determination, rules, exemptions, evidence, audit trail, and operational tax readiness for B2B integration.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience feature. Its current shape suggests an internal tax decisioning and auditability platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Taxating appears to occupy the role of a tax determination and tax explainability component.
+
+Its ecosystem role can be understood across several functions:
+
+* as a tax calculation and rules surface,
+* as an exemption-aware decision layer,
+* as an evidence and audit-trail surface,
+* as an operational tax runtime,
+* and as a reusable tax-governance capability for transactional systems.
+
+This makes Taxating strategically more important than a typical tax-rate helper. It points toward a reusable internal tax capability that other components can depend on.
+
+== Current Maturity
+
+Taxating already presents several strong signals of maturity:
+
+* a clear tax-engine product identity,
+* explicit Symfony 8 and PHP 8.4 targeting,
+* API and operational package breadth,
+* deep QA, smoke, and pipeline scripting,
+* an explicit focus on deterministic tax determination and auditability,
+* and a bounded scope that clearly separates tax decisioning from filing, accounting ownership, and document lifecycle concerns.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.8 / 10
+| The component is already clearly framed as a taxation calculation and compliance engine for B2B integration.
+
+| Architecture and domain shape
+| 8.4 / 10
+| The repository shape and boundary statements already point toward a coherent tax-decisioning and auditability surface.
+
+| Runtime and application surface
+| 8.5 / 10
+| API Platform, Redis, Prometheus, console, routing, messenger, security, and operational package breadth already establish a serious tax application layer.
+
+| QA maturity
+| 8.6 / 10
+| The quality contour is strong across linting, style, static analysis, tests, smoke flows, and local pipeline entrypoints.
+
+| Governance and auditability posture
+| 8.9 / 10
+| Deterministic decisioning, evidence, audit trail, and scope discipline form one of the component’s strongest public signals.
+
+| Market-facing alignment
+| 8.4 / 10
+| The component already aligns well with enterprise tax engine and tax-determination classes, though it still reads more as a governed platform layer than a finished public tax product shell.
+
+| Overall readiness to RC
+| 8.6 / 10
+| Taxating is already a strong pre-RC component with clear enterprise-class internal tax-engine signals.
+|===
+
+== Leader Line
+
+Taxating should not be measured against simple tax percentage calculators or narrow invoicing plugins.
+
+Its natural comparison line is closer to the enterprise-class tax engine, tax determination, and indirect-tax automation category, including the kind of capability bands represented by:
+
+* transaction-level tax determination,
+* sales tax, VAT, and GST calculation,
+* exemption-aware rule handling,
+* audit-ready evidence and explainability,
+* and governed operational handling of tax decisions.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger tax-engine leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another tax field helper.
+It is closer to:
+
+* enterprise tax engine class,
+* enterprise tax-determination class,
+* enterprise auditability-and-compliance class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Tax-engine product clarity
+
+Taxating already carries a strong center of gravity around tax determination itself.
+
+That matters because many tax implementations become fragmented when rates, rules, exemptions, auditability, observability, and runtime concerns are spread across disconnected technical surfaces.
+
+That fragmentation is not the dominant signal here. The component instead signals a coherent tax-decisioning approach.
+
+=== Boundary discipline
+
+The README-level scope definition is one of the component’s strongest public signals.
+
+Taxating explicitly claims tax determination, evidence, audit trail, and operational surface, while separating filing, accounting ownership, billing document lifecycle, and e-invoicing/CTC workflows into other layers.
+
+That is a strong sign of maturity and ecosystem discipline.
+
+=== Operational posture
+
+The package surface already reflects the right tax-runtime posture.
+
+API Platform, Redis, Prometheus, messenger, routing, runtime packages, smoke categories, and pipeline scripts together signal that the component is being shaped as a real operational tax service rather than as a passive domain shell.
+
+=== Explainability and audit readiness
+
+The explicit emphasis on deterministic tax determination, why a tax decision happened, and audit trail capability is one of the component’s clearest differentiators.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise tax-engine parity expansion
+
+The component is already structurally aligned with leader-class tax-engine concerns. The next maturity band is about strengthening parity with broader enterprise expectations around jurisdictional breadth, tax content depth, and compliance-grade operational coverage.
+
+=== Runtime surface strengthening
+
+Taxating already has strong internal and operational signals. The next maturity layer is about making the outward-facing tax runtime and product shell feel as strong and complete as the internal decisioning contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight tax integrations. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Taxating is already well past the interesting draft stage.
+
+It currently reads as a serious, Symfony-native taxation calculation and compliance engine with strong decisioning clarity, a coherent operational runtime, and a clear direction around deterministic tax logic, auditability, and governed integration boundaries.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: tax decisioning discipline, evidence posture, scope clarity, and a shape that clearly points toward durable internal tax-engine use.
+
+At this stage, Taxating can already be presented as a high-quality pre-RC component moving within an enterprise-class tax engine and auditability trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
