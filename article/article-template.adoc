@@ -1,0 +1,22 @@
+= Article Title
+:page-slug: article-slug
+:page-published: 2026-03-29
+:page-author: Oleksandr
+:description: One-sentence description for index pages and previews.
+:page-tags: ai, strategy, architecture
+
+== Thesis
+
+State the main claim clearly and early.
+
+== Context
+
+Explain the market, technical, or organizational context.
+
+== Argument
+
+Break the article into strong sections.
+
+== Conclusion
+
+Close with a crisp operational or strategic conclusion.
