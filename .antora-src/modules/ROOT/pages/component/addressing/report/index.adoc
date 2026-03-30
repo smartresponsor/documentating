@@ -1,0 +1,164 @@
+= Addressing Report
+:description: Current owner-oriented maturity report for the Addressing component.
+:page-slug: addressing-report
+
+This page is the current owner-oriented maturity report for *Addressing*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Addressing is not shaped as a narrow address-form helper or a thin wrapper around third-party validation APIs.
+
+It reads as a Symfony-oriented address operations and governance component: a system intended to manage address flows, normalization logic, projection surfaces, and long-horizon operational discipline around address data.
+
+The component already shows signs of being treated as a real subsystem rather than as a utility package. Its current shape suggests an internal addressing platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Addressing appears to occupy the role of a foundational data and runtime component.
+
+Its ecosystem role can be understood across several functions:
+
+* as an address operations layer for application runtime,
+* as a governance-oriented component for canonical address handling,
+* as a projection-ready surface for indexing and retrieval,
+* and as a future bridge between internal address logic and external provider-class services.
+
+This makes Addressing strategically more important than a typical UI-level address feature. It points toward a reusable internal address capability that other components can depend on.
+
+== Current Maturity
+
+Addressing already presents several strong signals of maturity:
+
+* a clear product identity at package level,
+* explicit Symfony 8 and PHP 8.4 targeting,
+* deep QA and security scripting,
+* multiple test bands,
+* declared architectural layering,
+* projection and event shape,
+* and runtime/demo/smoke surfaces that suggest operational seriousness.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.1 / 10
+| The component is already clearly framed as an address operations and governance component rather than a generic helper.
+
+| Architecture and layering
+| 8.9 / 10
+| One of the strongest layers. The deptrac structure already signals deliberate architectural discipline.
+
+| Core address model
+| 8.4 / 10
+| Event and projection shape indicate a component designed for structured address data handling, not only field-level validation.
+
+| Runtime and application surface
+| 8.0 / 10
+| Runtime entrypoints, demo reset, smoke contours, and app-facing scripts indicate serious operational intent.
+
+| QA maturity
+| 9.1 / 10
+| The testing and quality contour is unusually strong for a component at this stage.
+
+| Security posture
+| 8.7 / 10
+| Security is not bolted on as an afterthought; it is already represented as a distinct execution surface.
+
+| DX and owner governance
+| 9.0 / 10
+| Inspection, reporting, smoke, trust-surface, and owner-oriented scripts form a very strong governance layer.
+
+| Market-facing alignment
+| 7.9 / 10
+| The component already points toward enterprise-class address capability, though it still reads more as a platform layer than a finished public product surface.
+
+| Overall readiness to RC
+| 8.5 / 10
+| Addressing is already a strong pre-RC component with several leader-grade internal qualities.
+|===
+
+== Leader Line
+
+Addressing should not be measured against lightweight address widgets or simple checkout autocomplete tools.
+
+Its natural comparison line is closer to the enterprise-class address intelligence and address governance category, including the kind of capability bands represented by:
+
+* address verification,
+* address normalization and standardization,
+* projection and indexed retrieval,
+* provider-aware enrichment,
+* and operational governance of address quality.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by the larger enterprise addressing leaders, while expressing that class through a Symfony-native internal platform component.
+
+In that sense, the leader line is not another address form plugin. It is closer to:
+
+* enterprise address validation class,
+* enterprise address standardization class,
+* enterprise address intelligence class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Architectural discipline
+
+Addressing already carries an unusually explicit layered structure. This is important because addressing systems tend to become messy when parsing, validation, runtime handling, provider logic, and application UX all collapse into one surface.
+
+That collapse is not the dominant signal here. The component instead signals architectural intent and separation of responsibilities.
+
+=== QA and verification culture
+
+The quality contour is one of the component’s strongest public assets.
+
+Multiple test suites, static analysis, rector, smell checks, deptrac, smoke flows, trust-surface checks, and inspection entrypoints show that Addressing is being shaped with verification culture rather than with works-on-my-machine culture.
+
+=== Projection-ready internal model
+
+The presence of application events and a projection index suggests a deeper design ambition.
+
+Addressing is not only receiving input and returning formatted output. It is already showing signs of supporting indexed and projected address state, which is a much stronger platform signal.
+
+=== Operational seriousness
+
+The local runtime scripts, demo reset path, server flows, smoke categories, and reporting scripts all point in the same direction: Addressing is meant to be exercised, inspected, and reasoned about as a live subsystem.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise parity expansion
+
+The component is already structurally aligned with leader-class addressing concerns. The next maturity band is about strengthening parity with broader enterprise expectations around enrichment, validation confidence, and address-intelligence depth.
+
+=== Runtime surface strengthening
+
+Addressing already has strong internal signals. The next maturity layer is about making the runtime and outward-facing operating surface feel as strong and complete as the internal engineering contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many public-facing address subsystems. The next band is about translating that maturity into a clearer product posture that can be understood by external readers without needing to read the repository like an engineer.
+
+== Public Verdict
+
+Addressing is already well past the interesting draft stage.
+
+It currently reads as a serious, Symfony-native addressing platform component with strong architectural discipline, a rich quality contour, and a clear internal governance direction.
+
+Its strongest present signal is not polish theatre. Its strongest signal is substance: layering, verification, inspection, and a projection-capable model that suggests long-term viability.
+
+At this stage, Addressing can already be presented as a high-quality pre-RC component moving within an enterprise-class addressing trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
