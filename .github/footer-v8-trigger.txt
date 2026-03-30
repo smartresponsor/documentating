@@ -1,0 +1,2 @@
+Trigger commit for final footer patch chain.
+This file exists only to force the next gh-pages -> v6 -> v7 -> v8 cycle.
