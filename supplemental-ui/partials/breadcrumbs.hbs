@@ -1,0 +1,10 @@
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    {{#if site.homeUrl}}
+    <li><a href="{{relativize site.homeUrl}}">Home</a></li>
+    {{/if}}
+    {{#unless page.home}}
+    <li><span>{{page.title}}</span></li>
+    {{/unless}}
+  </ul>
+</nav>
