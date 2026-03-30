@@ -1,0 +1,44 @@
+= Vendoring
+:description: Public entry page for the Vendoring component.
+:page-slug: vendoring
+
+Vendoring is a Symfony-oriented vendor operations, transaction, statement, and payout component within the Smartresponsor ecosystem.
+
+It should be understood not as a simple vendor directory or supplier CRUD layer, but as a governed vendor-facing operational component for transaction runtime slices, statements, payouts, persistence contracts, and release-candidate quality discipline.
+
+== What It Is
+
+Vendoring exists to provide a structured internal vendor capability that can support vendor transactions, payout-related operations, statement delivery, persistence integrity, and governed operational handling of vendor-facing flows.
+
+In ecosystem terms, it belongs to the class of components that strengthen supplier operations, vendor transaction discipline, and operational trust around vendor runtime.
+
+== Current Reading
+
+In its current state, Vendoring already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear vendor-operations product identity,
+* unusually strong release-candidate quality contour,
+* transaction-aware and payout-aware internal modeling,
+* and a governance-oriented engineering posture around vendor runtime.
+
+== Why It Matters
+
+Vendor systems become fragmented when supplier records, transactions, statements, payouts, contracts, and runtime governance are treated as separate ad hoc concerns.
+
+Vendoring matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple supplier list or payment helper.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/vendoring/report/index.adoc[Vendoring Report]
+
+== Position in the Ecosystem
+
+Vendoring currently stands as one of the stronger vendor-operations and transaction-governance oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class vendor operations and supplier-runtime maturity through structure, verification, and long-term maintainability.
