@@ -1,0 +1,165 @@
+= Vendoring Report
+:description: Current owner-oriented maturity report for the Vendoring component.
+:page-slug: vendoring-report
+
+This page is the current owner-oriented maturity report for *Vendoring*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Vendoring is not shaped as a simple supplier directory or a lightweight vendor CRUD layer.
+
+It reads as a Symfony-oriented vendor operations component: a system intended to manage vendor transaction runtime slices, statements, payouts, persistence contracts, and vendor-facing operational flows with release-candidate quality discipline.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience feature. Its current shape suggests an internal vendor operations and transaction-governance platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Vendoring appears to occupy the role of a vendor operations and supplier-runtime component.
+
+Its ecosystem role can be understood across several functions:
+
+* as a vendor transaction surface,
+* as a statement and payout operations layer,
+* as a persistence and runtime-governance surface,
+* as a release-candidate evidence and quality discipline surface,
+* and as a reusable vendor-facing capability for broader transactional systems.
+
+This makes Vendoring strategically more important than a typical supplier registry. It points toward a reusable internal vendor capability that other components can depend on.
+
+== Current Maturity
+
+Vendoring already presents several strong signals of maturity:
+
+* a clear vendor-operations product identity,
+* explicit Symfony 8 and PHP 8.4 targeting,
+* unusually deep release-candidate quality and canon scripting,
+* multiple test bands,
+* vendor transaction, statement, and payout surfaces,
+* and a headless/backend-first posture with release-facing evidence artifacts.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.5 / 10
+| The component is already clearly framed around vendor-facing operational flows rather than a generic supplier data helper.
+
+| Architecture and domain shape
+| 8.6 / 10
+| Vendor transactions, statements, payouts, persistence contracts, and backend runtime posture already form a coherent operating surface.
+
+| Runtime and application surface
+| 8.4 / 10
+| Symfony runtime, forms, routing, mailer, CSRF, OpenAPI, and operator-facing minimal surfaces already establish a real vendor application layer.
+
+| QA maturity
+| 9.2 / 10
+| The quality contour is exceptionally strong, including release-candidate lanes, contract tests, smoke surfaces, persistence tests, docs evidence, and canon reports.
+
+| Governance and operational readiness
+| 9.1 / 10
+| Canon checks, config drift reports, mirror enforcement, RC evidence generation, and runtime smoke surfaces form one of the strongest governance postures among the components.
+
+| Vendor transaction and payout posture
+| 8.5 / 10
+| Vendor transaction runtime slices, statement flows, payout surfaces, and transaction persistence signals are already concrete and substantial.
+
+| Market-facing alignment
+| 8.2 / 10
+| The component already aligns well with enterprise vendor-management and supplier-operations classes, though it still reads more as a governed platform layer than a finished public procurement shell.
+
+| Overall readiness to RC
+| 8.8 / 10
+| Vendoring is already a very strong pre-RC component with unusually mature internal quality and operational signals.
+|===
+
+== Leader Line
+
+Vendoring should not be measured against basic supplier lists or simple payment helper modules.
+
+Its natural comparison line is closer to the enterprise-class supplier management, vendor operations, and supplier-runtime category, including the kind of capability bands represented by:
+
+* supplier information and vendor operations management,
+* statement and payout workflows,
+* transaction discipline and persistence integrity,
+* supplier runtime oversight and quality governance,
+* and governed operational handling of vendor-facing processes.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger supplier-management and vendor-operations leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another supplier directory.
+It is closer to:
+
+* enterprise vendor operations class,
+* enterprise supplier-management class,
+* enterprise transaction-and-payout governance class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Release-candidate discipline
+
+Vendoring already carries one of the strongest release-candidate quality contours in the current component set.
+
+That matters because many vendor-management surfaces become fragile when runtime, contract checks, persistence, documentation evidence, and canon discipline are not treated as one release surface.
+
+That fragmentation is not the dominant signal here. The component instead signals a coherent RC-oriented discipline.
+
+=== Vendor transaction seriousness
+
+The presence of vendor transaction runtime slices, transaction persistence tests, idempotency and identity checks, payout tests, and statement surfaces is one of the component’s strongest public signals.
+
+These are not decorative test names. Together they show that Vendoring already thinks in terms of governed transactional operations rather than only vendor master data.
+
+=== Headless/backend-first clarity
+
+The repository explicitly states that it is currently strongest as a headless/backend component.
+
+That is a strength, not a weakness in this context, because it shows that the component is being hardened around operational substance first, while the operator surface remains intentionally minimal and testable.
+
+=== Documentation and evidence posture
+
+Generated RC evidence, OpenAPI, phpDocumentor, release-facing manifests, and documentation surfaces are already part of the release-candidate baseline.
+
+This is a strong sign of ecosystem seriousness and owner-oriented maintainability.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise supplier-runtime parity expansion
+
+The component is already structurally aligned with leader-class supplier and vendor-runtime concerns. The next maturity band is about strengthening parity with broader enterprise expectations around supplier lifecycle breadth, operational visibility, and controlled external interaction surfaces.
+
+=== Operator-surface strengthening
+
+Vendoring already has very strong backend and governance signals. The next maturity layer is about making the minimal operator-facing surface as disciplined and testable as the backend runtime and quality contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight supplier modules. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Vendoring is already well past the interesting draft stage.
+
+It currently reads as a serious, Symfony-native vendor operations component with unusually strong RC quality discipline, a coherent vendor-transaction runtime, and a clear direction around statements, payouts, persistence, and governed release evidence.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: quality discipline, runtime seriousness, transactional integrity, and a shape that clearly points toward durable internal vendor and supplier-runtime use.
+
+At this stage, Vendoring can already be presented as a high-quality pre-RC component moving within an enterprise-class vendor operations and supplier-management trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
