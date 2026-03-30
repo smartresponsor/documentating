@@ -1,0 +1,2 @@
+Trigger commit for antora-gh-pages-owner after Oleksandr playbook switch.
+This file exists only to force owner-facing publication with the updated owner playbook.
