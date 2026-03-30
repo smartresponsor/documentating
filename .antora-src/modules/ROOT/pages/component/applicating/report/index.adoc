@@ -1,0 +1,167 @@
+= Applicating Report
+:description: Current owner-oriented maturity report for the Applicating component.
+:page-slug: applicating-report
+
+This page is the current owner-oriented maturity report for *Applicating*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Applicating is not shaped as a simple application listing layer or a lightweight marketplace shell.
+
+It reads as a Symfony-native application workspace and governance component: a system intended to manage application registration, publication state, release flow, manifest logic, permissions, access policy, and tenant-oriented assignment.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience feature. Its current shape suggests an internal application catalog and operational control surface designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Applicating appears to occupy the role of an application catalog and lifecycle component.
+
+Its ecosystem role can be understood across several functions:
+
+* as an application registry and listing surface,
+* as a release-aware operating layer,
+* as a manifest and governance surface,
+* as an access and publication policy surface,
+* and as a tenant-aware assignment layer.
+
+This makes Applicating strategically more important than a typical marketplace screen or admin catalog. It points toward a reusable internal workspace capability that other components can depend on.
+
+== Current Maturity
+
+Applicating already presents several strong signals of maturity:
+
+* a clear application-centric product identity,
+* explicit Symfony 7.4 and PHP 8.4 targeting,
+* deep QA and smoke scripting,
+* multiple test bands,
+* release and manifest surfaces,
+* and a governed model around publication, permissions, sandboxing, and tenant assignment.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.4 / 10
+| The component is already clearly gathered around Application as a governed workspace entity rather than a generic marketplace concept.
+
+| Architecture and domain shape
+| 8.3 / 10
+| The model already expresses listing, publication, access, release, manifest, and tenant assignment as one coherent application surface.
+
+| Runtime and application surface
+| 8.0 / 10
+| Symfony runtime, routing, security, messenger, and smoke/runtime scripts already establish a real application layer.
+
+| QA maturity
+| 8.7 / 10
+| The quality contour is already strong and structured across style, static analysis, smell checks, test suites, and local pipelines.
+
+| Governance and policy readiness
+| 8.5 / 10
+| Manifest, capabilities, permissions, runtime hooks, governance state, sandbox profile, and publication state form a clear governance posture.
+
+| Release management surface
+| 8.6 / 10
+| Release versioning, channel, checksum, download URL, release notes, and publication lifecycle are already concretely modeled.
+
+| Tenant and rollout surface
+| 8.1 / 10
+| Tenant assignment is already present, indicating a distribution and rollout perspective rather than only a catalog view.
+
+| Market-facing alignment
+| 8.0 / 10
+| The component already aligns well with enterprise application catalog and internal developer workspace classes, though it still reads more as a governed platform layer than a finished public product shell.
+
+| Overall readiness to RC
+| 8.4 / 10
+| Applicating is already a strong pre-RC component with clear enterprise-class internal signals.
+|===
+
+== Leader Line
+
+Applicating should not be measured against basic app store tropes or simple listing dashboards.
+
+Its natural comparison line is closer to the enterprise-class application catalog, internal developer portal, and governed workspace category, including the kind of capability bands represented by:
+
+* software catalog and application registry,
+* release-aware application lifecycle management,
+* manifest-aware capability and permission description,
+* workspace-oriented assignment and access governance,
+* and self-service or controlled internal distribution surfaces.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger internal developer platform and software catalog leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another marketplace.
+It is closer to:
+
+* enterprise application catalog class,
+* enterprise application governance class,
+* enterprise release-and-manifest workspace class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Application-centric model clarity
+
+Applicating already carries a strong center of gravity around the Application entity itself.
+
+That matters because many application-management systems become vague when listing, release, access, permissions, and manifest concerns are spread across disconnected administrative surfaces.
+
+That fragmentation is not the dominant signal here. The component instead signals a coherent application-centered model.
+
+=== Release and manifest maturity
+
+The presence of ApplicationRelease and ApplicationManifest is one of the component’s strongest public signals.
+
+These are not decorative entities. Together they show that Applicating already thinks in terms of versioning, channels, checksums, release notes, capability declaration, permission declaration, runtime hooks, governance state, and sandbox profiles.
+
+=== QA and operational seriousness
+
+The quality contour is already strong.
+
+Applicating is not relying on ad hoc confidence. It already carries linting, namespace and config-prefix checks, phpstan, phpmd, phpunit, smoke flows, and local pipeline entrypoints.
+
+=== Workspace and tenant direction
+
+Tenant assignment indicates that the component is not only thinking about catalog visibility. It is already pointing toward controlled enablement and distribution across application environments.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise catalog parity expansion
+
+The component is already structurally aligned with leader-class internal application catalog concerns. The next maturity band is about strengthening parity with broader enterprise expectations around discoverability, operational visibility, and governed self-service.
+
+=== Runtime surface strengthening
+
+Applicating already has strong internal and modeled signals. The next maturity layer is about making the outward-facing runtime and product shell feel as strong and complete as the internal application model.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight catalog systems. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the codebase like an engineer.
+
+== Public Verdict
+
+Applicating is already well past the interesting draft stage.
+
+It currently reads as a serious, Symfony-native application workspace and governance component with strong application-centered modeling, a rich QA contour, and a clear operational direction around releases, manifests, permissions, and tenant assignment.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: lifecycle modeling, governance surfaces, release discipline, and a system shape that clearly points toward durable internal application platform use.
+
+At this stage, Applicating can already be presented as a high-quality pre-RC component moving within an enterprise-class application catalog and governance trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
