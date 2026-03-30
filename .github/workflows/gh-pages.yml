@@ -1,146 +1,104 @@
-name: docs-gh-pages
+name: gh-pages
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
-# Important: keep the original run alive even if we push a follow-up commit to master
 concurrency:
   group: "docs-gh-pages"
   cancel-in-progress: false
 
 jobs:
   deploy:
-    # Skip the workflow run triggered by the bot-commit that normalizes filenames
     if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip docs]') }}
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout master
         uses: actions/checkout@v4
         with:
+          ref: master
           fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install deps
+      - name: Install build dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
           python -m pip install --upgrade pip
-          python -m pip install mkdocs mkdocs-material mkdocs-static-i18n
+          python -m pip install pyyaml
+          npm install
 
-      - name: Configure git (for pushing back to master)
+      - name: Build clean Antora source tree
         run: |
-          git config user.name  "github-actions[bot]"
+          python3 tools/build_antora_site_v4.py
+
+      - name: Build owner-facing site with Antora
+        run: |
+          npx antora antora-playbook.yml --fetch
+
+      - name: Copy public site extras
+        run: |
+          if [ -f docs/CNAME ]; then
+            cp docs/CNAME .site_build/CNAME
+          fi
+          if [ -d docs/assets ]; then
+            mkdir -p .site_build/assets
+            cp -R docs/assets/. .site_build/assets/
+          fi
+          if [ -d assets ]; then
+            mkdir -p .site_build/assets
+            cp -R assets/. .site_build/assets/
+          fi
+          touch .site_build/.nojekyll
+
+      - name: Publish owner-facing site to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Normalize new article filenames (prefix commit date)
-        env:
-          TZ_NAME: America/Chicago
-          GITHUB_BEFORE: ${{ github.event.before }}
-          GITHUB_SHA: ${{ github.sha }}
-        run: |
-          python - <<'PY'
-          import os, re, subprocess
-          from datetime import datetime
-          from zoneinfo import ZoneInfo
-
-          TZ = os.environ.get("TZ_NAME", "America/Chicago")
-          before = os.environ.get("GITHUB_BEFORE", "")
-          sha = os.environ.get("GITHUB_SHA", "")
-
-          def run(cmd):
-              return subprocess.check_output(cmd, text=True).strip()
-
-          def diff_name_status():
-              if before and not re.fullmatch(r"0{40}", before):
-                  out = run(["git", "diff", "--name-status", before, sha])
-              else:
-                  out = run(["git", "show", "--name-status", "--pretty=format:", sha])
-
-              rows = []
-              for line in out.splitlines():
-                  if not line.strip():
-                      continue
-                  parts = line.split("\t")
-                  status = parts[0]
-                  if status.startswith("R") and len(parts) >= 3:
-                      rows.append(("A", parts[2]))
-                  elif len(parts) >= 2:
-                      rows.append((status, parts[1]))
-              return rows
-
-          def slugify(name: str) -> str:
-              s = name.lower()
-              s = re.sub(r"[\s_]+", "-", s)
-              s = re.sub(r"[^a-z0-9\-]+", "-", s)
-              s = re.sub(r"-{2,}", "-", s).strip("-")
-              return s or "post"
-
-          epoch = int(run(["git", "show", "-s", "--format=%ct", sha]))
-          today = datetime.fromtimestamp(epoch, ZoneInfo(TZ)).date().isoformat()
-
-          changed = False
-
-          for status, path in diff_name_status():
-              if status not in ("A",):
-                  continue
-              if not path.startswith("docs/article/"):
-                  continue
-              if not path.endswith(".md"):
-                  continue
-
-              base = os.path.basename(path)
-              if re.match(r"^\d{4}-\d{2}-\d{2}--", base):
-                  continue
-
-              stem = os.path.splitext(base)[0]
-              slug = slugify(stem)
-              new_base = f"{today}--{slug}.md"
-              new_path = os.path.join(os.path.dirname(path), new_base).replace("\\", "/")
-
-              if os.path.exists(new_path):
-                  i = 2
-                  while True:
-                      cand = os.path.join(os.path.dirname(path), f"{today}--{slug}-{i}.md").replace("\\", "/")
-                      if not os.path.exists(cand):
-                          new_path = cand
-                          break
-                      i += 1
-
-              subprocess.check_call(["git", "mv", path, new_path])
-              changed = True
-
-          cname = "docs/CNAME"
-          if not os.path.exists(cname):
-              with open(cname, "w", encoding="ascii") as f:
-                  f.write("docs.smartresponsor.com\n")
-              subprocess.check_call(["git", "add", cname])
-              changed = True
-
-          if changed:
-              subprocess.check_call(["git", "add", "-A"])
-              dirty = subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()
-              if dirty:
-                  subprocess.check_call(["git", "commit", "-m", "chore(docs): normalize article filenames [skip docs]"])
-          PY
-
-      - name: Deploy to gh-pages (MkDocs)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          python -m mkdocs gh-deploy -f ./.site/mkdocs.yml --force --clean --no-history
 
-      - name: Push normalization commit back to master (if any)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git push origin HEAD:master || true
+          workdir="$(mktemp -d)"
+
+          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages:gh-pages
+            git worktree add --force "$workdir" gh-pages
+          else
+            git worktree add --detach "$workdir"
+            (
+              cd "$workdir"
+              git checkout --orphan gh-pages
+            )
+          fi
+
+          find "$workdir" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -R .site_build/. "$workdir"/
+
+          (
+            cd "$workdir"
+            git add -A
+            if [ -n "$(git status --porcelain)" ]; then
+              git commit -m "docs: publish owner-facing site"
+              git push origin HEAD:gh-pages --force
+            else
+              echo "No site changes to publish."
+            fi
+          )
+
+          git worktree remove "$workdir" --force || true
