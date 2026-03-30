@@ -1,0 +1,32 @@
+site:
+  title: Alexander Tishchenko
+  url: https://docs.smartresponsor.com
+  start_page: ROOT::index.adoc
+
+content:
+  sources:
+    - url: .
+      branches: HEAD
+      start_path: .antora-src
+
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files: ./supplemental-ui
+
+antora:
+  extensions:
+    - require: '@antora/lunr-extension'
+      index_latest_only: true
+      snippet_length: 160
+      languages: [en, ru]
+
+urls:
+  html_extension_style: indexify
+
+runtime:
+  fetch: true
+
+output:
+  dir: .site_build
