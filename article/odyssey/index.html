@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Odyssey: кто мы и какую нишу занимаем :: Smart Responsor Documentation</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/odyssey/">
+    <meta name="generator" content="Antora 3.1.12">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.smartresponsor.com">Smart Responsor Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../">Smart Responsor</a></li>
+    <li><a href="./">Odyssey: кто мы и какую нишу занимаем</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/smartresponsor/documentating/edit/master/.antora-src/modules/ROOT/pages/article/odyssey.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Odyssey: кто мы и какую нишу занимаем</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source markdown: `docs/article/odyssey-who-is-announcement.md`</em>
+== Краткое заявление</p>
+</div>
+<div class="paragraph">
+<p><strong>Odyssey — execution control plane для AI‑агентов и AI‑процессов.</strong><br>
+Мы вызываем любой compute (модель, пайплайн, инструмент, внешний сервис), <strong>применяем политику (policy)</strong>, <strong>маршрутизируем выполнение (routing)</strong> и возвращаем <strong>подписанную квитанцию результата (receipt)</strong> с доказательствами и воспроизводимой историей действий (<strong>audit trail + replay hooks</strong>).</p>
+</div>
+<div class="paragraph">
+<p><strong>Принцип: <em>invoke compute, deliver proof</em>.</strong><br>
+Не “ещё один чат”, не “ещё один LLM-шлюз”, не “ещё один рынок GPU”. Odyssey — слой ответственности и доказуемости, который делает AI-выполнение пригодным для enterprise-эксплуатации.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_контекст_рынка_где_мы_стоим"><a class="anchor" href="#_контекст_рынка_где_мы_стоим"></a>Контекст рынка: где мы стоим</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Рынок вокруг AI-исполнения расколот на три сильных сегмента:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>LLM gateway / routing</strong> — прокси к множеству моделей, бюджеты, fallbacks, унификация API.</p>
+</li>
+<li>
+<p><strong>LLM observability / tracing / eval</strong> — логирование, трассировка, метрики качества, отчёты, эксперименты.</p>
+</li>
+<li>
+<p><strong>AI governance / risk</strong> — инвентаризация AI-систем, контроль рисков, комплаенс-процессы, аудит.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Odyssey занимает место <strong>между ними</strong> и закрывает то, что часто остаётся “ничьим”:<br>
+<strong>runtime-контроль выполнения + доказуемый артефакт результата, который можно предъявить, проверить и повторить.</strong></p>
+</div>
+<div class="paragraph">
+<p>Это отдельная категория: <strong>AgentOps Control Plane / AI Execution Control Plane</strong>.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_проблема_почему_enterprise_не_может_просто_внедрить_агента"><a class="anchor" href="#_проблема_почему_enterprise_не_может_просто_внедрить_агента"></a>Проблема: почему enterprise не может “просто внедрить агента”</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Enterprise-внедрение упирается не в способность модели “ответить”, а в способность организации:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>доказать</strong>, что было сделано;</p>
+</li>
+<li>
+<p><strong>объяснить</strong>, почему решение принято именно так;</p>
+</li>
+<li>
+<p><strong>воспроизвести</strong> выполнение (replay) при инциденте, споре, аудите;</p>
+</li>
+<li>
+<p><strong>ограничить</strong> действия политиками и ролями;</p>
+</li>
+<li>
+<p><strong>измерять</strong> стоимость/латентность/ошибки на уровне процесса, а не отдельных промптов;</p>
+</li>
+<li>
+<p><strong>держать ответственность</strong>: кто разрешил действие, какой контроль сработал, где лежат артефакты.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Сейчас многие системы дают лог, трейс, метрики. Но лог ≠ доказательство.<br>
+Нужен <strong>системный артефакт</strong>, который является “валютой ответственности”.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_решение_receipt_first_execution"><a class="anchor" href="#_решение_receipt_first_execution"></a>Решение: receipt-first execution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Odyssey стандартизирует выполнение через один пайплайн:</p>
+</div>
+<div class="paragraph">
+<p><strong>Request → Policy → Routing → Execution → Receipt → Evidence Store → Export/Replay</strong></p>
+</div>
+<div class="paragraph">
+<p>[[1-receipt-квитанция&#8212;&#8203;system-of-record]]
+=== 1) Receipt (квитанция) — “system of record”</p>
+</div>
+<div class="paragraph">
+<p>Receipt — это структурированный документ (JSON/NDJSON), который фиксирует:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>вход</strong>: input hash, constraints (бюджет/латентность/режимы данных), параметры задачи;</p>
+</li>
+<li>
+<p><strong>решение политики</strong>: allow/deny + объяснение (explain), версия политики;</p>
+</li>
+<li>
+<p><strong>маршрут</strong>: какой исполнитель выбран (providerId), какие кандидаты рассматривались, почему;</p>
+</li>
+<li>
+<p><strong>выход</strong>: outcome (статус, результат, ошибки, метрики), ссылки на артефакты;</p>
+</li>
+<li>
+<p><strong>корреляция</strong>: trace/task/batch идентификаторы;</p>
+</li>
+<li>
+<p><strong>подпись</strong>: tamper-evidence — защита от незаметной подмены истории.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Receipt проектируется так, чтобы быть:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>машиночитаемым (для аналитики/поиска),</p>
+</li>
+<li>
+<p>пригодным для экспорта (NDJSON/PDF-пакеты),</p>
+</li>
+<li>
+<p>воспроизводимым (replay hooks и ссылки на артефакты),</p>
+</li>
+<li>
+<p>юридически/операционно “несущим смысл” (кто, что, почему, на каких условиях).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>[[2-policy&#8212;&#8203;управление-риском-до-выполнения]]
+=== 2) Policy — управление риском до выполнения</p>
+</div>
+<div class="paragraph">
+<p>Policy-слой решает: что разрешено, что запрещено, на каких условиях.<br>
+Это не “после-фактум отчёт”, а <strong>перед-выполнением контроль</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Практически policy отвечает на вопросы:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>допускаем ли тип действия (например, внешние интеграции, удаление данных, отправку писем);</p>
+</li>
+<li>
+<p>можно ли обрабатывать PII;</p>
+</li>
+<li>
+<p>какой класс моделей/провайдеров разрешён;</p>
+</li>
+<li>
+<p>нужен ли human-approval;</p>
+</li>
+<li>
+<p>какие лимиты бюджета/латентности применимы.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>[[3-routing&#8212;&#8203;нейтральность-к-compute-бэкендам]]
+=== 3) Routing — нейтральность к compute-бэкендам</p>
+</div>
+<div class="paragraph">
+<p>Routing выбирает исполнителя под constraints и политику:<br>
+титан-API, self-hosted модель, python-пайплайн, внутренний сервис, внешний подрядчик, децентрализованный compute.</p>
+</div>
+<div class="paragraph">
+<p>Ключевой эффект: <strong>вы переключаете compute, но не меняете контракт результата</strong>.<br>
+Это снижает lock-in и позволяет оптимизировать стоимость/латентность/риски.</p>
+</div>
+<div class="paragraph">
+<p>[[4-execution&#8212;&#8203;единый-контракт-исполнения]]
+=== 4) Execution — единый контракт исполнения</p>
+</div>
+<div class="paragraph">
+<p>Исполнение оформляется через единый интерфейс (Executor).<br>
+Executor возвращает Outcome, а Odyssey превращает его в Receipt и сохраняет в Evidence Store.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_чем_odyssey_отличается_от_лёгких_конкурентов"><a class="anchor" href="#_чем_odyssey_отличается_от_лёгких_конкурентов"></a>Чем Odyssey отличается от “лёгких” конкурентов</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>На “лёгком входе” чаще всего появляются два продукта:</p>
+</div>
+<div class="sect2">
+<h3 id="a-шлюз--бюджеты--fallbacks"><a class="anchor" href="#a-шлюз--бюджеты--fallbacks"></a>A) “Шлюз + бюджеты + fallbacks”</h3>
+<div class="paragraph">
+<p>Это полезно, но в основном решает задачу <strong>подключения</strong> к моделям.<br>
+Odyssey рассматривает gateway-часть как <strong>подмодуль</strong>, а не как ядро.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="b-трейсинг--eval--красивые-дашборды"><a class="anchor" href="#b-трейсинг--eval--красивые-дашборды"></a>B) “Трейсинг + eval + красивые дашборды”</h3>
+<div class="paragraph">
+<p>Это полезно, но в основном решает задачу <strong>наблюдения</strong>.<br>
+Odyssey делает наблюдение обязательным следствием <strong>доказуемого исполнения</strong>, а не отдельной дисциплиной.</p>
+</div>
+<div class="paragraph">
+<p><strong>Odyssey строит эксплуатационный ров:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>receipts как “system of record” (а не набор логов),</p>
+</li>
+<li>
+<p>подписи и tamper-evidence по умолчанию,</p>
+</li>
+<li>
+<p>воспроизводимость (replay) и экспорт доказательств,</p>
+</li>
+<li>
+<p>интеграция в workflow-гейты (CI/CD, бизнес-процессы),</p>
+</li>
+<li>
+<p>SLO и эксплуатационные контуры (status/metrics/queue).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Эти вещи трудно “скопировать по подсказке” без реальной эксплуатации.</p>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_для_кого_odyssey_первые_целевые_контуры"><a class="anchor" href="#_для_кого_odyssey_первые_целевые_контуры"></a>Для кого Odyssey (первые целевые контуры)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Odyssey нужен там, где AI-решение становится <strong>действием</strong>, а не “советом”.</p>
+</div>
+<div class="sect2">
+<h3 id="_типовые_сценарии"><a class="anchor" href="#_типовые_сценарии"></a>Типовые сценарии</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Финансы и операции</strong>: возвраты/споры/чарджбеки, triage, риск-решения с обязательной трассируемостью.</p>
+</li>
+<li>
+<p><strong>Enterprise support</strong>: агент делает шаги в тикет-системе, CRM, документации — нужен audit trail.</p>
+</li>
+<li>
+<p><strong>Коммерция и маркетинг</strong>: автоматизация контента и кампаний с политиками и контролем источников/данных.</p>
+</li>
+<li>
+<p><strong>Инжиниринг</strong>: агентные пайплайны в репозиториях, CI-гейты, “без квитанции — нельзя”.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_роли_покупателей_и_пользователей"><a class="anchor" href="#_роли_покупателей_и_пользователей"></a>Роли покупателей и пользователей</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>CTO/Head of Engineering: эксплуатация, SLO, интеграции, стоимость.</p>
+</li>
+<li>
+<p>Security/GRC: политики, аудит, tamper-evidence.</p>
+</li>
+<li>
+<p>Product/Operations: воспроизводимые решения и отчётность.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_архитектура_и_стек"><a class="anchor" href="#_архитектура_и_стек"></a>Архитектура и стек</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Odyssey наследует архитектурный канон Smart Responsor как основу дисциплины: воспроизводимость, доказательства, строгие границы ответственности.<br>
+При этом compute-слой допускает стековые ответвления (Python-модули), но <strong>контракт результата и учёт остаются едиными</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_базовый_стек"><a class="anchor" href="#_базовый_стек"></a>Базовый стек</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Control plane (API, policy, routing, storage):</strong> Symfony 8 / PHP 8.4</p>
+</li>
+<li>
+<p><strong>Console (админ-плоскость, просмотр receipts, экспорт):</strong> React + TypeScript</p>
+</li>
+<li>
+<p><strong>Compute plane (тяжёлые вычисления):</strong> Python modules/runners (процесс/сервис), далее контейнеризация/оркестрация</p>
+</li>
+<li>
+<p><strong>Evidence Store:</strong> dev — filesystem; prod — объектное хранилище/DB (эволюционно, без смены контракта)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_почему_так"><a class="anchor" href="#_почему_так"></a>Почему так</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>PHP/Symfony отлично подходит для enterprise-контроля, интеграций, политики, RBAC, событий и API.</p>
+</li>
+<li>
+<p>Python естественен для моделей и вычислительных пайплайнов.</p>
+</li>
+<li>
+<p>Разделение control plane / compute plane снижает риски и упрощает эксплуатацию.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_что_уже_есть_как_техническое_доказательство_прогресса"><a class="anchor" href="#_что_уже_есть_как_техническое_доказательство_прогресса"></a>Что уже есть (как техническое доказательство прогресса)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>На текущей стадии реализованы базовые кирпичи:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>контракт receipt и примеры;</p>
+</li>
+<li>
+<p>policy engine (allow/deny + explain);</p>
+</li>
+<li>
+<p>routing (выбор исполнителя по constraints/capabilities);</p>
+</li>
+<li>
+<p>evidence store (сохранение и выдача receipts);</p>
+</li>
+<li>
+<p>подпись receipts (HMAC) как первый уровень tamper-evidence;</p>
+</li>
+<li>
+<p>async выполнение через очередь/worker;</p>
+</li>
+<li>
+<p>observability endpoints (<code>/status</code>, <code>/metrics</code>);</p>
+</li>
+<li>
+<p>python runner skeleton (контрактный вызов compute-модуля).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Это не “презентация”, а работающий каркас, который можно наращивать до enterprise-уровня.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_позиционирование_коротко_и_без_двусмысленности"><a class="anchor" href="#_позиционирование_коротко_и_без_двусмысленности"></a>Позиционирование: коротко и без двусмысленности</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Мы не конкурируем с титанами в качестве моделей.</strong></p>
+</li>
+<li>
+<p><strong>Мы не конкурируем с децентрализаторами в продаже GPU.</strong></p>
+</li>
+<li>
+<p><strong>Мы делаем слой, который делает любой compute управляемым и доказуемым.</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Odyssey = accountability layer для AI-исполнения.</strong><br>
+Там, где другим хватает “логов и дашборда”, мы выдаём <strong>квитанции и доказательства</strong>.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_следующий_шаг"><a class="anchor" href="#_следующий_шаг"></a>Следующий шаг</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Если вы внедряете AI-агентов в прод, вы неизбежно упираетесь в контроль: “кто разрешил”, “что сделано”, “почему так”, “как повторить”.<br>
+Odyssey создан именно для этой границы между AI-возможностями и enterprise-ответственностью.</p>
+</div>
+<div class="paragraph">
+<p><strong>Если вам нужен enterprise-уровень доказуемости выполнения — Odyssey является базовой плоскостью, на которую можно опереться.</strong></p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="160" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>
