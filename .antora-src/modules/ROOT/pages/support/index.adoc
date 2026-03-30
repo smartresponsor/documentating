@@ -1,0 +1,27 @@
+= Support Smart Responsor Documentation
+:description: Owner-oriented sponsorship page for the Smart Responsor documentation portal.
+
+This documentation portal is maintained directly by Oleksandr Tishchenko.
+
+Owner sponsorship helps support:
+
+* ongoing documentation maintenance,
+* architecture and canon updates,
+* implementation notes and examples,
+* long-term continuity of the public documentation layer.
+
+Owner:
+*Oleksandr Tishchenko*
+
+Company:
+*Marketing America Corp*
+
+Organization:
+*High Hopes*
+
+Contact:
+mailto:dev@smartresponsor.com[dev@smartresponsor.com]
+
+If this documentation is useful to you, you can support it here:
+
+https://github.com/sponsors/taa0662621456[Sponsor on GitHub]
