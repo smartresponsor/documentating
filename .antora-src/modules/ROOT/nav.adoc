@@ -1,0 +1,4 @@
+* xref:index.adoc[Home]
+* xref:article/index.adoc[Articles]
+* xref:component/index.adoc[Components]
+* xref:manifest/index.adoc[Manifests]
