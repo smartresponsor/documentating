@@ -1,0 +1,223 @@
+name: finalize-antora-cutover
+
+on:
+  workflow_run:
+    workflows: ["antora-gh-pages-v2"]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "documentating-cutover"
+  cancel-in-progress: false
+
+jobs:
+  finalize:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Rewrite repository to Antora-first state
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import shutil
+          
+          root = Path('.')
+          
+          def write(path: str, content: str) -> None:
+              p = root / path
+              p.parent.mkdir(parents=True, exist_ok=True)
+              p.write_text(content.rstrip() + '\n', encoding='utf-8')
+          
+          readme = '''# documentating
+          
+Public documentation portal for Smart Responsor.
+          
+- Canonical article source: `docs/article/*.adoc`
+- Site engine: Antora
+- Site playbook: `antora-playbook.yml`
+- Antora build helper: `tools/build_antora_site.py`
+- GitHub Pages deployment: `.github/workflows/gh-pages.yml`
+- Component registry: `.sync/manifest/component-list.yml`
+'''
+          write('README.md', readme)
+          
+          helper_src = root / 'tools' / 'build_antora_site_v2.py'
+          if helper_src.exists():
+              write('tools/build_antora_site.py', helper_src.read_text(encoding='utf-8'))
+          
+          final_workflow = '''name: gh-pages
+          
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch: {}
+          
+permissions:
+  contents: write
+          
+concurrency:
+  group: "docs-gh-pages"
+  cancel-in-progress: false
+          
+jobs:
+  deploy:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip docs]') }}
+    runs-on: ubuntu-latest
+          
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+          
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml
+          npm install
+          
+      - name: Build Antora source tree from A-doc-first sources
+        run: |
+          python3 tools/build_antora_site.py
+          
+      - name: Build site with Antora
+        run: |
+          npx antora antora-playbook.yml --fetch
+          
+      - name: Copy public site extras
+        run: |
+          if [ -f docs/CNAME ]; then
+            cp docs/CNAME .site_build/CNAME
+          fi
+          if [ -d docs/assets ]; then
+            mkdir -p .site_build/assets
+            cp -R docs/assets/. .site_build/assets/
+          fi
+          if [ -d assets ]; then
+            mkdir -p .site_build/assets
+            cp -R assets/. .site_build/assets/
+          fi
+          touch .site_build/.nojekyll
+          
+      - name: Publish Antora site to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          
+          workdir="$(mktemp -d)"
+          
+          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages:gh-pages
+            git worktree add --force "$workdir" gh-pages
+          else
+            git worktree add --detach "$workdir"
+            (
+              cd "$workdir"
+              git checkout --orphan gh-pages
+            )
+          fi
+          
+          find "$workdir" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -R .site_build/. "$workdir"/
+          
+          (
+            cd "$workdir"
+            git add -A
+            if [ -n "$(git status --porcelain)" ]; then
+              git commit -m "docs: publish Antora site"
+              git push origin HEAD:gh-pages --force
+            else
+              echo "No site changes to publish."
+            fi
+          )
+          
+          git worktree remove "$workdir" --force || true
+'''
+          write('.github/workflows/gh-pages.yml', final_workflow)
+          
+          remove_paths = [
+              '.github/workflows/antora-gh-pages.yml',
+              '.github/workflows/antora-gh-pages-v2.yml',
+              'tools/build_antora_site_v2.py',
+              'ANTORA_TRANSITION.md',
+              '.site/mkdocs.yml',
+              'docs/article/index.md',
+          ]
+          
+          for rel in remove_paths:
+              p = root / rel
+              if p.exists():
+                  if p.is_dir():
+                      shutil.rmtree(p)
+                  else:
+                      p.unlink()
+          
+          for rel in ['.site']:
+              p = root / rel
+              if p.exists() and p.is_dir() and not any(p.iterdir()):
+                  p.rmdir()
+          
+          date_prefix_re = re.compile(r'^\d{4}-\d{2}-\d{2}--?')
+          
+          def target_adoc(path: Path) -> Path:
+              slug = date_prefix_re.sub('', path.stem)
+              return root / 'docs' / 'article' / f'{slug}.adoc'
+          
+          for folder in [root / 'docs' / 'article', root / 'docs' / 'articles']:
+              if not folder.exists():
+                  continue
+              for md in list(folder.glob('*.md')):
+                  adoc = target_adoc(md)
+                  if adoc.exists():
+                      md.unlink()
+          
+          legacy_articles = root / 'docs' / 'articles'
+          if legacy_articles.exists() and legacy_articles.is_dir() and not any(legacy_articles.iterdir()):
+              legacy_articles.rmdir()
+          PY
+
+      - name: Commit and push cleanup
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add -A
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "docs: finalize Antora cutover [skip docs]"
+            git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            git push origin HEAD:master
+          else
+            echo "Repository already in Antora-first state."
+          fi
