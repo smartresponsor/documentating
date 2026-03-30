@@ -1,0 +1,4 @@
+= Manifests
+:description: Canonical public manifest space for Smart Responsor.
+
+This section is reserved for manifest-style public documents, canon notes, and owner-level statements.
