@@ -1,0 +1,44 @@
+= Messaging
+:description: Public entry page for the Messaging component.
+:page-slug: messaging
+
+Messaging is a Symfony-oriented message runtime, conversation, and realtime delivery component within the Smartresponsor ecosystem.
+
+It should be understood not as a simple chat widget or notification helper, but as a governed messaging platform layer for message handling, realtime delivery, event publication, presence-adjacent runtime, and operational boot discipline.
+
+== What It Is
+
+Messaging exists to provide a structured internal message capability that can support message application runtime, API and GraphQL exposure, realtime event delivery, Redis-backed operational coordination, and governed boot/runtime verification.
+
+In ecosystem terms, it belongs to the class of components that strengthen conversation surfaces, realtime communication, and operational message discipline.
+
+== Current Reading
+
+In its current state, Messaging already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear message-centric product identity,
+* strong realtime-oriented runtime posture,
+* API-aware and event-aware package surface,
+* and a governance-oriented engineering posture around boot and runtime continuity.
+
+== Why It Matters
+
+Messaging systems become fragile when storage, API surface, realtime delivery, runtime bootstrap, and operational observability are treated as separate ad hoc concerns.
+
+Messaging matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a narrow chat helper or a simple transport wrapper.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/messaging/report/index.adoc[Messaging Report]
+
+== Position in the Ecosystem
+
+Messaging currently stands as one of the stronger realtime-and-runtime oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class conversation and realtime messaging maturity through structure, verification, and long-term operational maintainability.
