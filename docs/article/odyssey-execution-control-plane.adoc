@@ -1,0 +1,170 @@
+= Odyssey: The Execution Control Plane for AI
+:page-slug: odyssey-execution-control-plane
+:page-published: 2026-03-29
+:page-author: Oleksandr
+:description: Why Odyssey should be understood as an execution control plane for AI agents and AI processes, built around policy, routing, receipts, and evidence.
+:page-tags: odyssey, ai, execution, control-plane, enterprise, receipts
+:lang: en
+
+== The Short Statement
+
+*Odyssey is an execution control plane for AI agents and AI processes.*
+It invokes compute, applies policy, routes execution, and returns a signed result receipt with evidence and a reproducible trail of actions.
+
+The principle is simple: *invoke compute, deliver proof.*
+Odyssey is not another chat interface, not another LLM gateway, and not another marketplace for compute. It is the accountability layer that makes AI execution fit for enterprise use.
+
+== Where Odyssey Sits in the Market
+
+The market around AI execution is splitting into three visible segments:
+
+. LLM gateway and routing
+. LLM observability, tracing, and evaluation
+. AI governance and risk
+
+Odyssey sits *between these layers* and addresses what is often left unowned:
+
+*runtime execution control plus a proof-carrying result artifact that can be checked, exported, and replayed.*
+
+That is a distinct category in its own right: *AI Execution Control Plane*.
+
+== The Enterprise Problem
+
+The enterprise problem is not whether a model can answer a question. The enterprise problem is whether an organization can:
+
+* prove what was done,
+* explain why a decision was taken,
+* replay execution during an incident or audit,
+* constrain actions through policy and role boundaries,
+* measure cost, latency, and errors at the process level,
+* hold accountability over who allowed the action and where the evidence is stored.
+
+Many systems produce logs, traces, and metrics. Those are useful, but a log is not proof.
+What is missing is a *system artifact* that acts as the currency of accountability.
+
+== The Odyssey Model: Receipt-First Execution
+
+Odyssey standardizes execution through one pipeline:
+
+*Request → Policy → Routing → Execution → Receipt → Evidence Store → Export/Replay*
+
+=== 1. Receipt as the System of Record
+
+A receipt is a structured artifact that records:
+
+* input: hashes, constraints, and task parameters,
+* policy decision: allow or deny, explanation, and policy version,
+* routing outcome: which executor was selected and why,
+* execution result: outcome, errors, metrics, and links to artifacts,
+* correlation identifiers,
+* signature and tamper evidence.
+
+A receipt is designed to be:
+
+* machine-readable,
+* exportable,
+* replay-friendly,
+* meaningful in both governance and operational contexts.
+
+=== 2. Policy Before Execution
+
+The policy layer determines what is allowed, what is forbidden, and under what conditions.
+It is not a retrospective reporting layer. It is a *pre-execution control system*.
+
+In practice, policy answers questions such as:
+
+* is this action type permitted,
+* can the workflow handle sensitive data,
+* which model or provider classes are allowed,
+* is human approval required,
+* which latency and budget ceilings apply.
+
+=== 3. Routing Without Compute Lock-In
+
+Routing selects an executor under policy and constraints.
+
+The key effect is simple:
+
+*compute can change without breaking the result contract.*
+
+That reduces lock-in and improves flexibility on cost, latency, and risk.
+
+=== 4. Execution Under One Contract
+
+Execution is formalized through a single Executor interface.
+The executor returns an Outcome, and Odyssey turns it into a Receipt and stores it in the Evidence Store.
+
+== How Odyssey Differs from Lighter Products
+
+At the lightweight edge of the market, two familiar product shapes usually appear first.
+
+=== Gateway, Budgeting, and Fallbacks
+
+Useful, but mostly a connectivity solution.
+Odyssey treats gateway behavior as a submodule, not as its center.
+
+=== Tracing, Evaluation, and Dashboards
+
+Useful, but mostly an observability solution.
+Odyssey makes observation the consequence of *provable execution*, not a separate discipline.
+
+Its operational moat comes from:
+
+* receipts as the system of record,
+* signatures and tamper evidence by default,
+* replay and export of evidence,
+* integration into workflow gates,
+* SLO-aware execution contours.
+
+== Who Odyssey Is For
+
+Odyssey matters wherever an AI decision becomes an *action*, not just a suggestion.
+
+Typical scenarios include:
+
+* operations workflows with mandatory traceability,
+* enterprise support systems,
+* commerce and marketing automation under policy control,
+* engineering pipelines where agentic actions must remain reviewable.
+
+== Architecture and Stack
+
+Odyssey inherits the Smart Responsor architectural canon as a discipline of reproducibility, evidence, and clear responsibility boundaries.
+The compute layer may branch into other stacks, but *the result contract and evidence model remain unified*.
+
+=== Core Stack
+
+* Control plane: Symfony 8 / PHP 8.4
+* Console: React + TypeScript
+* Compute plane: Python modules and runners
+* Evidence Store: filesystem in development, object storage or database in production
+
+== What Already Exists
+
+At this stage, the foundation already includes:
+
+* receipt contracts and examples,
+* a policy engine,
+* routing,
+* an evidence store,
+* signed receipts,
+* async execution through queues and workers,
+* observability endpoints,
+* a Python runner skeleton.
+
+This is not a presentation-only concept. It is a working backbone that can be expanded toward enterprise-grade operation.
+
+== Positioning in One Sentence
+
+*Odyssey is the accountability layer for AI execution.*
+
+It does not compete with frontier model providers on model quality.
+It does not compete with infrastructure players on raw compute supply.
+It provides the layer that makes compute controllable, governable, and provable.
+
+== The Strategic Conclusion
+
+As soon as AI agents move into production, every serious team hits the same control boundary: who allowed this, what happened, why this path, and how can it be replayed?
+Odyssey is built for that boundary between AI capability and enterprise accountability.
+
+*If you need enterprise-grade provability of execution, Odyssey is the control plane to build on.*

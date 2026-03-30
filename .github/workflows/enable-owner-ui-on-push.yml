@@ -1,0 +1,80 @@
+name: enable-owner-ui-on-push
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "documentating-owner-ui"
+  cancel-in-progress: false
+
+jobs:
+  switch:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip owner-ui]') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Rewrite Antora playbook for owner UI
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          playbook = Path('antora-playbook.yml')
+          playbook.write_text('''site:
+  title: Alexander Tishchenko
+  url: https://docs.smartresponsor.com
+  start_page: ROOT::index.adoc
+
+content:
+  sources:
+    - url: .
+      branches: HEAD
+      start_path: .antora-src
+
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files: ./supplemental-ui
+
+antora:
+  extensions:
+    - require: '@antora/lunr-extension'
+      index_latest_only: true
+      snippet_length: 160
+      languages: [en, ru]
+
+urls:
+  html_extension_style: indexify
+
+runtime:
+  fetch: true
+
+output:
+  dir: .site_build
+''', encoding='utf-8')
+          PY
+
+      - name: Commit and push playbook switch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add antora-playbook.yml
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "docs(ui): enable owner supplemental UI [skip owner-ui]"
+            git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            git push origin HEAD:master
+          else
+            echo "Owner UI already enabled."
+          fi

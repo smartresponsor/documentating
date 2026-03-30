@@ -1,0 +1,246 @@
+name: normalize-antora-repo-on-push
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "documentating-normalize"
+  cancel-in-progress: false
+
+jobs:
+  normalize:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip docs]') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml
+          npm install
+
+      - name: Normalize repository to clean Antora-first state
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          
+          root = Path('.')
+          
+          def write(path: str, content: str) -> None:
+              p = root / path
+              p.parent.mkdir(parents=True, exist_ok=True)
+              p.write_text(content.rstrip() + '\n', encoding='utf-8')
+          
+          readme = '''# documentating
+
+Public documentation portal for Smart Responsor.
+
+- Canonical article source: `docs/article/*.adoc`
+- Site engine: Antora
+- Site playbook: `antora-playbook.yml`
+- Canonical build helper: `tools/build_antora_site.py`
+- Generated site source tracked in repo: `.antora-src/`
+- GitHub Pages deployment: `.github/workflows/gh-pages.yml`
+- Component registry: `.sync/manifest/component-list.yml`
+'''
+          write('README.md', readme)
+          
+          helper_v4 = root / 'tools' / 'build_antora_site_v4.py'
+          if helper_v4.exists():
+              write('tools/build_antora_site.py', helper_v4.read_text(encoding='utf-8'))
+          
+          gh_pages = '''name: gh-pages
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "docs-gh-pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip docs]') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml
+          npm install
+
+      - name: Build clean Antora source tree
+        run: |
+          python3 tools/build_antora_site.py
+
+      - name: Build site with Antora
+        run: |
+          npx antora antora-playbook.yml --fetch
+
+      - name: Copy public site extras
+        run: |
+          if [ -f docs/CNAME ]; then
+            cp docs/CNAME .site_build/CNAME
+          fi
+          if [ -d docs/assets ]; then
+            mkdir -p .site_build/assets
+            cp -R docs/assets/. .site_build/assets/
+          fi
+          if [ -d assets ]; then
+            mkdir -p .site_build/assets
+            cp -R assets/. .site_build/assets/
+          fi
+          touch .site_build/.nojekyll
+
+      - name: Publish clean site to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          workdir="$(mktemp -d)"
+
+          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages:gh-pages
+            git worktree add --force "$workdir" gh-pages
+          else
+            git worktree add --detach "$workdir"
+            (
+              cd "$workdir"
+              git checkout --orphan gh-pages
+            )
+          fi
+
+          find "$workdir" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -R .site_build/. "$workdir"/
+
+          (
+            cd "$workdir"
+            git add -A
+            if [ -n "$(git status --porcelain)" ]; then
+              git commit -m "docs: publish clean Antora site"
+              git push origin HEAD:gh-pages --force
+            else
+              echo "No site changes to publish."
+            fi
+          )
+
+          git worktree remove "$workdir" --force || true
+'''
+          write('.github/workflows/gh-pages.yml', gh_pages)
+          
+          remove_files = [
+              '.github/workflows/antora-gh-pages-v2.yml',
+              '.github/workflows/antora-gh-pages-v4.yml',
+              '.github/workflows/antora-gh-pages-v5.yml',
+              '.github/workflows/finalize-antora-cutover.yml',
+              '.github/workflows/stabilize-antora-on-push.yml',
+              '.github/workflows/antora-gh-pages.yml',
+              '.github/publish-trigger-v5.txt',
+              'ANTORA_TRANSITION.md',
+              '.site/mkdocs.yml',
+              'docs/article/2026-03-29-ai-is-not-just-chatgpt-five-layer-stack.adoc',
+              'docs/article/2026-03-29-ai-ne-zamenyaet-myshlenie-obnazhaet-kachestvo.adoc',
+              'docs/article/odyssey-who-is-announcement.adoc',
+              'docs/article/2026-03-29--tesr.md',
+              'docs/article/2026-03-29--2026-03-29-technological-inequality-2-0-cognitive-divide.md',
+              'docs/article/odyssey-who-is-announcement.md',
+              'docs/article/2026-03-29--why-the-next-e-commerce-will-not-be-a-store-with-ai.md',
+              'docs/articles/2026-03-29-the-first-great-war-between-platforms-and-protocols.md',
+              'docs/article/index.md',
+          ]
+          
+          for rel in remove_files:
+              p = root / rel
+              if p.exists():
+                  p.unlink()
+          
+          articles_dir = root / 'docs' / 'articles'
+          if articles_dir.exists():
+              for child in list(articles_dir.iterdir()):
+                  if child.is_file() and child.suffix.lower() == '.md':
+                      child.unlink()
+              if not any(articles_dir.iterdir()):
+                  articles_dir.rmdir()
+          
+          site_dir = root / '.site'
+          if site_dir.exists() and site_dir.is_dir():
+              leftovers = list(site_dir.iterdir())
+              for child in leftovers:
+                  if child.is_file():
+                      child.unlink()
+                  elif child.is_dir() and not any(child.iterdir()):
+                      child.rmdir()
+              if not any(site_dir.iterdir()):
+                  site_dir.rmdir()
+          PY
+
+      - name: Regenerate tracked Antora source tree
+        run: |
+          python3 tools/build_antora_site.py
+
+      - name: Commit and push normalized repo state
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "docs: normalize Antora-first repo state [skip docs]"
+            git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            git push origin HEAD:master
+          else
+            echo "Repository already normalized."
+          fi

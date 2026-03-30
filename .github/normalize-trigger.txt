@@ -1,0 +1,2 @@
+Trigger commit for normalize-antora-repo-on-push.
+This file may be removed by the normalizer.
