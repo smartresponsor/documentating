@@ -1,0 +1,6 @@
+= Articles
+:description: Public articles and position papers from Smart Responsor.
+
+This section is the public article stream for Smart Responsor.
+
+The page is regenerated during CI from `docs/article/` and legacy `docs/articles/` Markdown sources.
