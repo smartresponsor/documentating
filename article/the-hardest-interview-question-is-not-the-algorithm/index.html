@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>The Hardest Interview Question Is Not the Algorithm :: Oleksandr Tishchenko</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/the-hardest-interview-question-is-not-the-algorithm/">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.smartresponsor.com">Oleksandr Tishchenko</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu"></div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../">Home</a></li>
+    <li><span>The Hardest Interview Question Is Not the Algorithm</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">The Hardest Interview Question Is Not the Algorithm</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/the-hardest-interview-question-is-not-the-algorithm.adoc`</em>
+One interview problem recently made the rounds online as “the hardest phone screen question.” The setup looks deceptively simple: all numbers from 1 to N, except one, are shuffled, concatenated into a single string with no separators, and the candidate has to determine which number is missing.</p>
+</div>
+<div class="paragraph">
+<p>This kind of problem predictably triggers two reactions. One camp treats it as a clever algorithmic challenge. The other sees it as a brutal and unrealistic filter. Both reactions miss the more interesting point.</p>
+</div>
+<div class="paragraph">
+<p>The real difficulty of the task is not only computational. It is architectural, communicative, and behavioral. A problem like this is often less about whether a candidate can brute-force a solution in thirty minutes and more about whether they know how to behave like an engineer when the problem statement itself is imperfect.</p>
+</div>
+<div class="paragraph">
+<p>That distinction matters.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_weak_signal_for_coding_a_strong_signal_for_engineering"><a class="anchor" href="#_a_weak_signal_for_coding_a_strong_signal_for_engineering"></a>A weak signal for coding, a strong signal for engineering</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If the goal were only to test data structures and algorithms, there are cleaner ways to do it. An interviewer can ask for a known pattern, measure asymptotic reasoning, and compare implementations. This problem is different because its ambiguity is part of the payload.</p>
+</div>
+<div class="paragraph">
+<p>A strong candidate does not immediately start coding as if the specification were complete. They first examine the model:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Is N given, or must it be inferred?</p>
+</li>
+<li>
+<p>Is the answer guaranteed to be unique?</p>
+</li>
+<li>
+<p>Are leading zeros possible?</p>
+</li>
+<li>
+<p>Can the string be parsed in multiple valid ways?</p>
+</li>
+<li>
+<p>What are the input size limits?</p>
+</li>
+<li>
+<p>Is the priority correctness, performance, or reasoning under uncertainty?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>That is not avoidance. That is engineering.</p>
+</div>
+<div class="paragraph">
+<p>In real software work, the hard part is often not implementation. The hard part is turning a vague prompt into a valid problem definition. A senior engineer is valuable not only because they can write code, but because they can reduce ambiguity, expose hidden assumptions, frame trade-offs, and move a team from a fuzzy request to a workable model.</p>
+</div>
+<div class="paragraph">
+<p>This is why such tasks divide people. Candidates who are optimized for puzzle-solving tend to evaluate them as puzzles. Engineers who have spent years dealing with missing requirements, contradictory stakeholders, and partial information usually recognize something else: the interviewer may be testing whether the candidate knows how to create clarity before they create code.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_ambiguity_is_not_a_side_effect"><a class="anchor" href="#_why_ambiguity_is_not_a_side_effect"></a>Why ambiguity is not a side effect</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In serious engineering environments, ambiguity is not an exception. It is the default state of many important problems.</p>
+</div>
+<div class="paragraph">
+<p>Requirements arrive in natural language. Business intent is often underspecified. Stakeholders disagree. Constraints surface late. Technical debt distorts apparently simple choices. Edge cases matter only after the first design is proposed. The engineer who treats all of this as noise is usually expensive. The engineer who can structure it is usually valuable.</p>
+</div>
+<div class="paragraph">
+<p>Software engineering research has been saying this for years. Ambiguity in natural-language requirements is a persistent problem, not a rare accident. That alone should make interviewers and candidates more honest about what strong engineering actually looks like. If real requirements are ambiguous, then the ability to detect ambiguity, classify it, and ask the right follow-up questions is not a soft extra. It is part of the core job.</p>
+</div>
+<div class="paragraph">
+<p>That also explains why many experienced interviewers pay close attention to what happens before code appears. Do you challenge assumptions? Do you articulate risks? Do you state alternative interpretations? Do you propose a constrained version of the problem and explain why you chose it? These behaviors are often more predictive than whether the candidate reached the neatest implementation under artificial time pressure.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_hidden_test_problem_framing"><a class="anchor" href="#_the_hidden_test_problem_framing"></a>The hidden test: problem framing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is a reason mature teams care about problem framing. A badly framed problem can waste weeks of implementation effort while still producing software that is technically correct and strategically wrong.</p>
+</div>
+<div class="paragraph">
+<p>The candidate who says, “Let me first define the assumptions under which this problem has a unique answer,” is not stalling. That candidate is demonstrating one of the highest leverage engineering skills available: the ability to frame the problem correctly before optimizing the solution.</p>
+</div>
+<div class="paragraph">
+<p>This is also why the task is more revealing than it looks. It exposes whether the candidate:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>treats ambiguity as something to ignore or something to resolve;</p>
+</li>
+<li>
+<p>can separate facts from assumptions;</p>
+</li>
+<li>
+<p>knows how to ask clarifying questions without losing momentum;</p>
+</li>
+<li>
+<p>can present multiple solution paths with explicit trade-offs;</p>
+</li>
+<li>
+<p>remains structured under time pressure.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Those are not decorative traits. In product engineering, platform work, infrastructure, consulting, and leadership tracks, they compound. A developer who writes competent code but repeatedly solves the wrong problem is far less useful than an engineer who brings the whole discussion into focus.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_current_hiring_signals_suggest"><a class="anchor" href="#_what_current_hiring_signals_suggest"></a>What current hiring signals suggest</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The market itself gives the game away. Many current senior and staff-level roles do not describe excellence as raw implementation speed. They describe it as the ability to work through ambiguity, influence stakeholders, define the real problem, and communicate decisions clearly.</p>
+</div>
+<div class="paragraph">
+<p>Google’s staff-level engineering roles explicitly describe advanced engineers as people who own outcomes, solve ambiguous problems, and influence stakeholders. Amazon describes software engineers as designing and coding the right solutions starting from broadly defined problems. Stripe is even more direct in some of its engineering roles: it looks for people who are comfortable with ambiguity, would rather talk to a user than read a spec, and can bring clarity across stakeholders on the goal, the problem, and the desired outcome.</p>
+</div>
+<div class="paragraph">
+<p>That wording matters because it reflects what high-value engineering work actually requires. When organizations operate at scale, the bottleneck is rarely typing speed. The bottleneck is whether someone can resolve uncertainty fast enough to keep the system, the team, and the roadmap moving in the right direction.</p>
+</div>
+<div class="paragraph">
+<p>In other words, the online debate about whether this interview problem is “fair” may be looking in the wrong direction. The more useful question is: what behavior does the task reveal?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_professional_reading_of_the_task"><a class="anchor" href="#_the_professional_reading_of_the_task"></a>The professional reading of the task</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The most professional reading of this problem is neither outrage nor bravado.</p>
+</div>
+<div class="paragraph">
+<p>It is to recognize that there are two layers:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>there is an algorithmic layer, which may indeed be nontrivial under time pressure;</p>
+</li>
+<li>
+<p>and there is an engineering layer, where the candidate is expected to surface ambiguity, structure the search space, and collaborate toward a valid interpretation.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>That second layer is where many interviews become genuinely difficult. Not because the company wants to humiliate the candidate, but because real projects reward people who can work in that mode.</p>
+</div>
+<div class="paragraph">
+<p>The strongest candidates usually understand this intuitively. They do not assume they must solve the task in silence as if engineering were a solitary sport. They use the conversation. They clarify the contract. They propose assumptions explicitly. They iterate. They make uncertainty visible and then progressively remove it.</p>
+</div>
+<div class="paragraph">
+<p>That is much closer to real development than most interview discourse admits.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So yes, the problem is difficult. But its difficulty is not only in the algorithm.</p>
+</div>
+<div class="paragraph">
+<p>Its real power is that it reveals whether the candidate understands a deeper truth about engineering: code is often the final step, not the first one. Before implementation comes interpretation. Before optimization comes framing. Before elegance comes clarity.</p>
+</div>
+<div class="paragraph">
+<p>The strongest engineers are not defined only by how fast they can produce code. They are defined by how quickly they can turn an unclear prompt into a correct engineering problem.</p>
+</div>
+<div class="paragraph">
+<p>That is why problems like this remain controversial. They look like logic puzzles, but they are often probes for maturity.</p>
+</div>
+<div class="paragraph">
+<p>And that is also why experienced people tend to read them differently.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_further_reading"><a class="anchor" href="#_further_reading"></a>Further reading</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Google Careers, “Staff Software Engineer, Diagnostic Infrastructure” — <a href="https://www.google.com/about/careers/applications/jobs/results/137173877707940550-staff-software-engineer/" class="bare">https://www.google.com/about/careers/applications/jobs/results/137173877707940550-staff-software-engineer/</a></p>
+</li>
+<li>
+<p>Amazon Jobs, “Software Dev Engineer I, University Talent Acquisition” — <a href="https://www.amazon.jobs/en/jobs/3099245/software-dev-engineer-i-amazon-university-talent-acquisition" class="bare">https://www.amazon.jobs/en/jobs/3099245/software-dev-engineer-i-amazon-university-talent-acquisition</a></p>
+</li>
+<li>
+<p>Stripe Jobs, “Backend Engineer, Forward Deployed Engineering” — <a href="https://stripe.com/jobs/listing/backend-engineer-forward-deployed-engineering/7249744" class="bare">https://stripe.com/jobs/listing/backend-engineer-forward-deployed-engineering/7249744</a></p>
+</li>
+<li>
+<p>Stripe Jobs, “Technical Program Manager, Payments Experiences” — <a href="https://stripe.com/jobs/listing/technical-program-manager-payments-experiences/6932491" class="bare">https://stripe.com/jobs/listing/technical-program-manager-payments-experiences/6932491</a></p>
+</li>
+<li>
+<p>Harvard Business Review, “To Solve a Tough Problem, Reframe It” — <a href="https://hbr.org/2024/01/to-solve-a-tough-problem-reframe-it" class="bare">https://hbr.org/2024/01/to-solve-a-tough-problem-reframe-it</a></p>
+</li>
+<li>
+<p>ACM / ICSE, “Automated handling of anaphoric ambiguity in requirements” — <a href="https://dl.acm.org/doi/10.1145/3510003.3510157" class="bare">https://dl.acm.org/doi/10.1145/3510003.3510157</a></p>
+</li>
+<li>
+<p>GitHub Blog, “The new identity of a developer: What changes and what doesn’t in the AI era” — <a href="https://github.blog/news-insights/octoverse/the-new-identity-of-a-developer-what-changes-and-what-doesnt-in-the-ai-era/" class="bare">https://github.blog/news-insights/octoverse/the-new-identity-of-a-developer-what-changes-and-what-doesnt-in-the-ai-era/</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Marketing America Corp · High Hope · Alexander Tishchenko</p>
+</footer>
+  </body>
+</html>

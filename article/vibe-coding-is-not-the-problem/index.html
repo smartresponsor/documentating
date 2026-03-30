@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vibe Coding Is Not the Problem :: Oleksandr Tishchenko</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/vibe-coding-is-not-the-problem/">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.smartresponsor.com">Oleksandr Tishchenko</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu"></div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../">Home</a></li>
+    <li><span>Vibe Coding Is Not the Problem</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Vibe Coding Is Not the Problem</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/2026-03-29&#8212;&#8203;vibe-coding-is-not-the-problem.adoc`</em>
+The current debate around AI-generated software is still too binary.</p>
+</div>
+<div class="paragraph">
+<p>One side says AI should only be used for tiny, isolated tasks: a helper for boilerplate, a faster autocomplete, a utility for refactoring, nothing more.</p>
+</div>
+<div class="paragraph">
+<p>The other side says the opposite: that modern coding models and agents have already made traditional software engineering optional; that a product can now be assembled by prompt accumulation, and that the remaining gap is merely better prompting.</p>
+</div>
+<div class="paragraph">
+<p>Both positions are too shallow.</p>
+</div>
+<div class="paragraph">
+<p>The real problem is not whether AI can write code. It can. The real problem is whether that code is produced inside a disciplined engineering system or inside a fog of shifting prompts, mixed abstractions, blurry product assumptions, and undefined business logic.</p>
+</div>
+<div class="paragraph">
+<p>AI does not remove chaos. It accelerates it. But it can also accelerate order.</p>
+</div>
+<div class="paragraph">
+<p>That is why the useful boundary is not <em>AI coding versus no AI coding</em>. The real boundary is this: <em>AI-assisted engineering inside a canonized system</em> versus <em>AI generation without canon, boundaries, and delivery discipline</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_false_binary_around_vibe_coding"><a class="anchor" href="#_the_false_binary_around_vibe_coding"></a>The false binary around vibe coding</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Much of the criticism of vibe coding comes from real pain. Teams have seen AI-generated projects collapse into duplicated logic, overlapping service layers, unused endpoints, dead abstractions, contradictory patterns, and rising change costs. In that sense, the critics are not imagining the failure mode; they are describing it accurately.</p>
+</div>
+<div class="paragraph">
+<p>But many of them draw the wrong conclusion.</p>
+</div>
+<div class="paragraph">
+<p>They see entropy generated by uncontrolled AI use and conclude that AI is suitable only for microscopic help. That conclusion is too narrow because it confuses two different things:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AI working inside a prepared engineering system.</p>
+</li>
+<li>
+<p>AI being asked to create the engineering system while also writing the code.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Those are not the same activity.</p>
+</div>
+<div class="paragraph">
+<p>The first can work remarkably well. The second usually produces statistically plausible fragments rather than a coherent product.</p>
+</div>
+<div class="paragraph">
+<p>Martin Fowler captured this distinction well when he contrasted the original notion of vibe coding—coding while paying no attention to the code at all—with a more disciplined, professional mode of agentic engineering, where software engineers use coding agents to amplify existing expertise rather than replace it. See <a href="https://martinfowler.com/recent-changes.html">Martin Fowler, “Recent Changes”</a> and <a href="https://martinfowler.com/articles/exploring-gen-ai.html">Exploring Generative AI</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_the_market_is_actually_saying_now"><a class="anchor" href="#_what_the_market_is_actually_saying_now"></a>What the market is actually saying now</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The most useful recent publications are no longer asking the naive question, “Can AI write code?” That is settled. The sharper question is now: <em>Under what conditions does AI-generated code remain reliable, maintainable, and economically sane over time?</em></p>
+</div>
+<div class="paragraph">
+<p>The most consistent answer across serious sources is not “prompt harder.” It is: prepare the environment better.</p>
+</div>
+<div class="paragraph">
+<p>DORA’s 2025 report describes AI’s primary role in software delivery as an amplifier. It magnifies both the strengths and the weaknesses of the organization using it. The report emphasizes that the best returns come not from the tool alone, but from improving the surrounding system: platforms, workflows, testing, review loops, and operational foundations. See <a href="https://dora.dev/dora-report-2025/">DORA, State of AI-assisted Software Development 2025</a> and <a href="https://dora.dev/insights/balancing-ai-tensions/">Balancing AI tensions</a>.</p>
+</div>
+<div class="paragraph">
+<p>GitHub’s own guidance around Copilot moved in the same direction throughout 2025. Its recommendations for custom instructions explicitly emphasize project overview, tech stack, coding guidelines, project structure, and relevant resources. The message is simple: the tool performs better when the repository provides explicit context instead of expecting the model to infer it from probability. See <a href="https://github.blog/ai-and-ml/github-copilot/5-tips-for-writing-better-custom-instructions-for-copilot/">GitHub, “5 tips for writing better custom instructions for Copilot”</a>.</p>
+</div>
+<div class="paragraph">
+<p>That line became even clearer in GitHub’s article on <code>agents.md</code>, based on analysis of more than 2,500 repositories. The lesson was not that the model magically understands the codebase. The lesson was that better outcomes come from clearly declaring role, workflow, stack, commands, constraints, and expected output. See <a href="https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/">GitHub, “How to write a great agents.md”</a>.</p>
+</div>
+<div class="paragraph">
+<p>Thoughtworks’ 2025 publications reinforced the same shift. Instead of treating AI coding as a pure prompting exercise, they increasingly framed it as context engineering, curated shared instructions, and disciplined human stewardship over code quality. See <a href="https://www.thoughtworks.com/en-us/insights/blog/machine-learning-and-ai/vibe-coding-context-engineering-2025-software-development">Thoughtworks, “From vibe coding to context engineering”</a>, <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/ai-assistance-misunderstood-revolution-software-engineering">Thoughtworks, “AI assistance is a misunderstood revolution in software engineering”</a>, and <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/in-the-age-of-AI-coding-code-quality-still-matters">Thoughtworks, “In the age of AI coding, code quality still matters”</a>.</p>
+</div>
+<div class="paragraph">
+<p>The market signal is becoming hard to ignore: the center of gravity is moving away from ad hoc prompting and toward explicit engineering scaffolding.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_productivity_is_real_but_it_is_not_universal"><a class="anchor" href="#_productivity_is_real_but_it_is_not_universal"></a>Productivity is real, but it is not universal</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is another place where low-quality discussion has distorted the topic.</p>
+</div>
+<div class="paragraph">
+<p>It is true that AI can produce measurable productivity gains in some settings. Microsoft Research’s well-known study on GitHub Copilot found that developers in the treatment group completed a controlled programming task 55.8% faster than the control group. See <a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-ai-on-developer-productivity-evidence-from-github-copilot/">Microsoft Research, “The Impact of AI on Developer Productivity”</a>.</p>
+</div>
+<div class="paragraph">
+<p>That result matters, but it does not settle the question for all environments.</p>
+</div>
+<div class="paragraph">
+<p>METR’s 2025 study of experienced open-source developers working on issues in their own repositories found something more complicated: the use of frontier AI tools, in that setup, was associated with developers taking 19% longer on average, despite their own expectations that AI would make them faster. See <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR, “Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity”</a>. In a later 2026 update, METR reported that subsequent data showed more mixed results, including subsets where the slowdown estimate weakened or reversed, but the broader lesson remained: the effect of AI is highly dependent on task shape, environment, and operator discipline. See <a href="https://metr.org/blog/2026-02-24-uplift-update/">METR, “We are Changing our Developer Productivity Experiment”</a>.</p>
+</div>
+<div class="paragraph">
+<p>This is exactly why serious teams should stop speaking about AI coding as if it had one universal outcome. Different contexts produce different results. Bounded tasks in a controlled environment can benefit significantly. Deeply contextual work in mature systems can behave very differently.</p>
+</div>
+<div class="paragraph">
+<p>The right takeaway is not “AI always speeds engineers up” and not “AI always slows them down.”</p>
+</div>
+<div class="paragraph">
+<p>The right takeaway is that AI amplifies what already exists:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>clear architecture or blurred architecture,</p>
+</li>
+<li>
+<p>disciplined delivery or chaotic delivery,</p>
+</li>
+<li>
+<p>healthy review loops or weak review loops,</p>
+</li>
+<li>
+<p>explicit rules or silent assumptions.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_experienced_engineers_become_more_valuable_not_less"><a class="anchor" href="#_why_experienced_engineers_become_more_valuable_not_less"></a>Why experienced engineers become more valuable, not less</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The most expensive misunderstanding in the current hype cycle is the idea that technical experience is becoming optional.</p>
+</div>
+<div class="paragraph">
+<p>In reality, AI shifts the value of engineering upward.</p>
+</div>
+<div class="paragraph">
+<p>The experienced developer is no longer valuable only because they can handcraft a class or manually write a controller faster. They are valuable because they can determine the operating envelope in which generated code is allowed to exist safely.</p>
+</div>
+<div class="paragraph">
+<p>Someone still has to decide:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>which stack is canonical,</p>
+</li>
+<li>
+<p>which framework conventions are mandatory,</p>
+</li>
+<li>
+<p>which patterns are allowed,</p>
+</li>
+<li>
+<p>which patterns are prohibited,</p>
+</li>
+<li>
+<p>where business logic belongs,</p>
+</li>
+<li>
+<p>which layer owns orchestration,</p>
+</li>
+<li>
+<p>what counts as infrastructure,</p>
+</li>
+<li>
+<p>how validation works,</p>
+</li>
+<li>
+<p>how deliveries are sliced,</p>
+</li>
+<li>
+<p>how outputs are reviewed,</p>
+</li>
+<li>
+<p>how drift is detected,</p>
+</li>
+<li>
+<p>and how the system remains coherent after fifty iterations instead of five.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Without that operator, AI has no reason to maintain a single engineering line. It will suggest statistically plausible fragments drawn from different schools of thought.</p>
+</div>
+<div class="paragraph">
+<p>In one area, it may generate code that feels conventionally MVC.</p>
+</div>
+<div class="paragraph">
+<p>In another, it may drift toward a hexagonal vocabulary because it has seen enough examples of that approach in similar technical discussions.</p>
+</div>
+<div class="paragraph">
+<p>In a third place, it may overproduce abstract object-oriented structures because abstraction is statistically common in training data.</p>
+</div>
+<div class="paragraph">
+<p>Elsewhere, it may reach for a direct, procedural, or functional shortcut that conflicts with the surrounding design.</p>
+</div>
+<div class="paragraph">
+<p>Every fragment may look locally plausible. But local plausibility is not the same thing as system coherence.</p>
+</div>
+<div class="paragraph">
+<p>This is why technical experience is not being erased. It is being re-leveraged. The critical skill is increasingly not just writing lines of code, but constraining what kinds of code are allowed to appear in the system at all.</p>
+</div>
+<div class="paragraph">
+<p>Thoughtworks makes this point directly: in the age of AI coding, code quality still matters, and strong human stewardship remains central. See <a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/in-the-age-of-AI-coding-code-quality-still-matters">Thoughtworks, “In the age of AI coding, code quality still matters”</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_difference_between_valid_looking_code_and_a_valid_engineering_system"><a class="anchor" href="#_the_difference_between_valid_looking_code_and_a_valid_engineering_system"></a>The difference between valid-looking code and a valid engineering system</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the mistake that sits underneath a great deal of current AI hype.</p>
+</div>
+<div class="paragraph">
+<p>A model can produce code that compiles.</p>
+</div>
+<div class="paragraph">
+<p>It can produce code that runs.</p>
+</div>
+<div class="paragraph">
+<p>It can produce code that demos beautifully.</p>
+</div>
+<div class="paragraph">
+<p>None of those things prove that the product is a sound engineering system.</p>
+</div>
+<div class="paragraph">
+<p>A sound engineering system must survive change. It must remain understandable after multiple delivery waves. It must accommodate evolving business rules, new integrations, new team members, refactoring, incidents, scaling pressures, and partial rewrites.</p>
+</div>
+<div class="paragraph">
+<p>That requires more than code generation. It requires sustained coherence.</p>
+</div>
+<div class="paragraph">
+<p>The future cost of change matters at least as much as the initial speed of implementation.</p>
+</div>
+<div class="paragraph">
+<p>This is one reason DORA’s work is so useful in this conversation. It repeatedly emphasizes that AI performance cannot be evaluated in isolation from the surrounding software delivery system. When AI increases throughput without sufficiently strong testing, review, and platform support, instability can rise alongside productivity. See <a href="https://dora.dev/dora-report-2025/">DORA, State of AI-assisted Software Development 2025</a>.</p>
+</div>
+<div class="paragraph">
+<p>The economic implication is straightforward: ugly code can sometimes remain cheap enough to tolerate if its logic is still predictable. Incoherent code becomes expensive much faster because diagnosis, onboarding, change analysis, and regression control all degrade simultaneously.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_canon_first_generation_second"><a class="anchor" href="#_canon_first_generation_second"></a>Canon first, generation second</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is why the order of operations matters so much.</p>
+</div>
+<div class="paragraph">
+<p>In mature AI-assisted engineering, generation is not the first step. It is a later step.</p>
+</div>
+<div class="paragraph">
+<p>First comes canonization.</p>
+</div>
+<div class="paragraph">
+<p>At minimum, that includes four dimensions.</p>
+</div>
+<div class="sect2">
+<h3 id="_stack_canon"><a class="anchor" href="#_stack_canon"></a>Stack canon</h3>
+<div class="paragraph">
+<p>The repository must make the stack explicit. Not just the language, but the ecosystem decisions that matter for consistency.</p>
+</div>
+<div class="paragraph">
+<p>What framework is canonical? What testing model is canonical? What is the accepted dependency pattern? What is the serialization strategy? Where do configuration boundaries sit? What is the quality gate story?</p>
+</div>
+<div class="paragraph">
+<p>Without these answers, the model samples solutions from adjacent but incompatible worlds.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_architectural_canon"><a class="anchor" href="#_architectural_canon"></a>Architectural canon</h3>
+<div class="paragraph">
+<p>The project must define allowed structure.</p>
+</div>
+<div class="paragraph">
+<p>Where does business logic live? What is orchestration and what is not? Which dependencies are forbidden? What counts as a layer violation? What directory trees are canonical? Which naming conventions are binding?</p>
+</div>
+<div class="paragraph">
+<p>Without architectural canon, the model will keep proposing locally plausible structures that collectively erode the shape of the system.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_business_logic_canon"><a class="anchor" href="#_business_logic_canon"></a>Business-logic canon</h3>
+<div class="paragraph">
+<p>This is the most underestimated part.</p>
+</div>
+<div class="paragraph">
+<p>AI can generate syntactically sound code for completely wrong business behavior. If roles, permissions, statuses, transitions, commission rules, exception paths, and source-of-truth semantics are not formalized, the resulting code can look polished while encoding false product behavior.</p>
+</div>
+<div class="paragraph">
+<p>That is often a more expensive failure than ugly code.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delivery_canon"><a class="anchor" href="#_delivery_canon"></a>Delivery canon</h3>
+<div class="paragraph">
+<p>The team must define how work is broken down and how output is accepted.</p>
+</div>
+<div class="paragraph">
+<p>This includes the size of task buckets, the expected artifacts, the validation path, the review path, and the rollback path.</p>
+</div>
+<div class="paragraph">
+<p>Without delivery discipline, AI coding becomes narrative improvisation: a sequence of plausible expansions that feel productive until the project becomes too expensive to understand.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_small_buckets_beat_heroic_prompts"><a class="anchor" href="#_small_buckets_beat_heroic_prompts"></a>Small buckets beat heroic prompts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the easiest ways to degrade AI-generated output is to ask for too much at once.</p>
+</div>
+<div class="paragraph">
+<p>The fantasy version of vibe coding imagines that a whole product can be coherently assembled through increasingly ambitious prompts. But products are not built from enthusiasm alone. They are built from bounded changes that can be reasoned about, validated, and integrated.</p>
+</div>
+<div class="paragraph">
+<p>That is why small buckets matter.</p>
+</div>
+<div class="paragraph">
+<p>Good buckets include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>one bug fix,</p>
+</li>
+<li>
+<p>one refactoring wave,</p>
+</li>
+<li>
+<p>one validator or mapper,</p>
+</li>
+<li>
+<p>one endpoint,</p>
+</li>
+<li>
+<p>one vertical use case,</p>
+</li>
+<li>
+<p>one infrastructure concern,</p>
+</li>
+<li>
+<p>one review pass,</p>
+</li>
+<li>
+<p>one cleanup pass,</p>
+</li>
+<li>
+<p>one delivery package.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These buckets are not small because smallness is inherently virtuous. They are small because bounded work keeps validation tractable and keeps architectural drift visible.</p>
+</div>
+<div class="paragraph">
+<p>The larger and more mixed the prompt, the more likely the model is to blur priorities, merge incompatible assumptions, and hide defects behind surface fluency.</p>
+</div>
+<div class="paragraph">
+<p>In practice, many failures blamed on “AI quality” are really failures of decomposition.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ai_coding_is_increasingly_a_management_problem"><a class="anchor" href="#_ai_coding_is_increasingly_a_management_problem"></a>AI coding is increasingly a management problem</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As coding agents become more capable, the operator’s role starts to look less like “person who prompts” and more like “person who manages a bounded engineering process.”</p>
+</div>
+<div class="paragraph">
+<p>Addy Osmani has argued this point clearly: as AI coding scales, it stops being merely a prompting problem and becomes a management problem. The relevant skills become clarity, delegation, sequencing, review loops, and operational control. See <a href="https://addyosmani.com/blog/coding-agents-manager/">Addy Osmani, “Your AI coding agents need a manager”</a> and <a href="https://addyosmani.com/blog/ai-coding-workflow/">My LLM coding workflow going into 2026</a>.</p>
+</div>
+<div class="paragraph">
+<p>GitHub’s own documentation reinforces the same reality. Pull requests created by Copilot coding agent are meant to be reviewed, and custom instructions affect review behavior in concrete ways. The tool is not documenting a world where professional review disappears; it is documenting a world where review becomes even more central. See <a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/use-copilot-agents/coding-agent">GitHub Docs, “Copilot coding agent”</a> and <a href="https://docs.github.com/copilot/using-github-copilot/code-review/using-copilot-code-review">GitHub Docs, “Using Copilot code review”</a>.</p>
+</div>
+<div class="paragraph">
+<p>This is not a minor operational detail. It reveals what serious vendors themselves believe: the future of AI coding is not autonomous engineering without accountability. It is assisted engineering with stronger scaffolding.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_production_grade_ai_assisted_engineering_actually_looks_like"><a class="anchor" href="#_what_production_grade_ai_assisted_engineering_actually_looks_like"></a>What production-grade AI-assisted engineering actually looks like</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The healthiest version of AI coding today does not try to replace engineering. It tries to compress the implementation path <em>inside</em> engineering.</p>
+</div>
+<div class="paragraph">
+<p>A production-grade flow looks more like this:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Human defines the product rule or system concern.</p>
+</li>
+<li>
+<p>Human fixes the stack and architectural boundaries.</p>
+</li>
+<li>
+<p>Human decomposes the work into a bounded delivery unit.</p>
+</li>
+<li>
+<p>Repository-level instructions, examples, and constraints are made explicit.</p>
+</li>
+<li>
+<p>AI generates within the allowed envelope.</p>
+</li>
+<li>
+<p>Automated checks run.</p>
+</li>
+<li>
+<p>Human reviews for business correctness, architectural fit, and long-term maintainability.</p>
+</li>
+<li>
+<p>The change is either accepted, corrected, or rejected.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Notice what does not happen here: the model is not treated as the source of system design truth.</p>
+</div>
+<div class="paragraph">
+<p>That role still belongs to human engineering judgment.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_uncomfortable_economic_truth"><a class="anchor" href="#_the_uncomfortable_economic_truth"></a>The uncomfortable economic truth</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A great many AI-generated software problems are not primarily aesthetic problems. They are economic problems.</p>
+</div>
+<div class="paragraph">
+<p>A team can survive ugly code longer than it can survive incoherent code. The reason is simple: ugly code may still remain predictable. Incoherent code destroys predictability.</p>
+</div>
+<div class="paragraph">
+<p>Once predictability is gone, the cost of every future change rises:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>diagnosis takes longer,</p>
+</li>
+<li>
+<p>onboarding slows down,</p>
+</li>
+<li>
+<p>regressions multiply,</p>
+</li>
+<li>
+<p>duplicated logic hides defects,</p>
+</li>
+<li>
+<p>business-rule changes become risky,</p>
+</li>
+<li>
+<p>and architectural debt compounds nonlinearly.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is why a flashy early demo is such a weak signal.</p>
+</div>
+<div class="paragraph">
+<p>The real test of a product is not whether the model can generate a compelling first wave of functionality. The real test is whether the system remains understandable and economically changeable after repeated iterations.</p>
+</div>
+<div class="paragraph">
+<p>That is where canon, bounded delivery, and experienced oversight stop being “nice to have” and become the foundation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vibe coding is not inherently the enemy.</p>
+</div>
+<div class="paragraph">
+<p>The enemy is uncontrolled generation without canon, without boundaries, without clear business rules, without delivery discipline, and without an operator who understands the technical consequences of the choices being made.</p>
+</div>
+<div class="paragraph">
+<p>AI can absolutely accelerate software development. It can improve throughput, compress boilerplate, speed up prototyping, and assist with refactoring, exploration, and implementation.</p>
+</div>
+<div class="paragraph">
+<p>But none of that eliminates the need for architectural judgment.</p>
+</div>
+<div class="paragraph">
+<p>If anything, the current generation of tools increases the value of engineering discipline. The bottleneck is no longer the ability to produce lines of code. The bottleneck is the ability to ensure that those lines belong to one coherent system.</p>
+</div>
+<div class="paragraph">
+<p>The teams that will benefit most from AI will not be the ones that generate the most code the fastest.</p>
+</div>
+<div class="paragraph">
+<p>They will be the teams that define the best operating environment for AI to generate the <em>right</em> code, in the <em>right</em> shape, inside the <em>right</em> system.</p>
+</div>
+<div class="paragraph">
+<p>That is not the death of engineering.</p>
+</div>
+<div class="paragraph">
+<p>It is the return of engineering to its real job.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dora.dev/dora-report-2025/">DORA — State of AI-assisted Software Development 2025</a></p>
+</li>
+<li>
+<p><a href="https://dora.dev/insights/balancing-ai-tensions/">DORA — Balancing AI tensions</a></p>
+</li>
+<li>
+<p><a href="https://dora.dev/capabilities/platform-engineering/">DORA — Platform engineering capability</a></p>
+</li>
+<li>
+<p><a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-ai-on-developer-productivity-evidence-from-github-copilot/">Microsoft Research — The Impact of AI on Developer Productivity</a></p>
+</li>
+<li>
+<p><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR — Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity</a></p>
+</li>
+<li>
+<p><a href="https://metr.org/blog/2026-02-24-uplift-update/">METR — We are Changing our Developer Productivity Experiment</a></p>
+</li>
+<li>
+<p><a href="https://martinfowler.com/articles/exploring-gen-ai.html">Martin Fowler — Exploring Generative AI</a></p>
+</li>
+<li>
+<p><a href="https://martinfowler.com/recent-changes.html">Martin Fowler — Recent Changes</a></p>
+</li>
+<li>
+<p><a href="https://github.blog/ai-and-ml/github-copilot/5-tips-for-writing-better-custom-instructions-for-copilot/">GitHub — 5 tips for writing better custom instructions for Copilot</a></p>
+</li>
+<li>
+<p><a href="https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/">GitHub — How to write a great agents.md</a></p>
+</li>
+<li>
+<p><a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/use-copilot-agents/coding-agent">GitHub Docs — Copilot coding agent</a></p>
+</li>
+<li>
+<p><a href="https://docs.github.com/copilot/using-github-copilot/code-review/using-copilot-code-review">GitHub Docs — Using Copilot code review</a></p>
+</li>
+<li>
+<p><a href="https://www.thoughtworks.com/en-us/insights/blog/machine-learning-and-ai/vibe-coding-context-engineering-2025-software-development">Thoughtworks — From vibe coding to context engineering</a></p>
+</li>
+<li>
+<p><a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/ai-assistance-misunderstood-revolution-software-engineering">Thoughtworks — AI assistance is a misunderstood revolution in software engineering</a></p>
+</li>
+<li>
+<p><a href="https://www.thoughtworks.com/en-us/insights/blog/generative-ai/in-the-age-of-AI-coding-code-quality-still-matters">Thoughtworks — In the age of AI coding, code quality still matters</a></p>
+</li>
+<li>
+<p><a href="https://addyosmani.com/blog/coding-agents-manager/">Addy Osmani — Your AI coding agents need a manager</a></p>
+</li>
+<li>
+<p><a href="https://addyosmani.com/blog/ai-coding-workflow/">Addy Osmani — My LLM coding workflow going into 2026</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Marketing America Corp · High Hope · Alexander Tishchenko</p>
+</footer>
+  </body>
+</html>
