@@ -1,0 +1,44 @@
+= Addressing
+:description: Public entry page for the Addressing component.
+:page-slug: addressing
+
+Addressing is a Symfony-oriented address operations and governance component within the Smartresponsor ecosystem.
+
+It should be understood not as a narrow address-form helper, but as a foundational layer for address handling, normalization, projection, and long-horizon operational discipline.
+
+== What It Is
+
+Addressing exists to provide a structured internal address capability that can support application runtime, canonical address handling, and projection-ready address data surfaces.
+
+In ecosystem terms, it belongs to the class of components that strengthen reliability, consistency, and governance around address-related workflows.
+
+== Current Reading
+
+In its current state, Addressing already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear architectural discipline,
+* strong QA and verification culture,
+* projection-aware internal modeling,
+* and a governance-oriented engineering posture.
+
+== Why It Matters
+
+Address data tends to become fragmented when validation, normalization, search, runtime handling, and provider logic are treated as unrelated concerns.
+
+Addressing is important because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple UI-level address feature.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/addressing/report/index.adoc[Addressing Report]
+
+== Position in the Ecosystem
+
+Addressing currently stands as one of the stronger foundational data-and-governance oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class addressing maturity through structure, verification, and long-term maintainability.
