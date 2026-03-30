@@ -1,0 +1,165 @@
+= Rolling Report
+:description: Current owner-oriented maturity report for the Rolling component.
+:page-slug: rolling-report
+
+This page is the current owner-oriented maturity report for *Rolling*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Rolling is not shaped as a business-domain application or a simple local bootstrap script bundle.
+
+It reads as a Symfony-oriented local development and QA harness: a system intended to manage runtime checks, developer-facing integration exercises, SDK proving, role-oriented verification, Panther validation, and governed local workspace continuity.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience utility. Its current shape suggests an internal proving ground and development workspace layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Rolling appears to occupy the role of a local development workspace and verification component.
+
+Its ecosystem role can be understood across several functions:
+
+* as a runtime boot and local server surface,
+* as an integration and Panther validation layer,
+* as a role-oriented and SDK-oriented proving environment,
+* as a fixture and QA dry-run surface,
+* and as a reusable internal quality-confidence capability for broader platform work.
+
+This makes Rolling strategically more important than a typical sandbox repository. It points toward a reusable internal workspace capability that other components and engineering flows can depend on.
+
+== Current Maturity
+
+Rolling already presents several strong signals of maturity:
+
+* a clear harness-and-workspace product identity,
+* explicit PHP 8.4 and Symfony 7.3 targeting,
+* integration, role, SDK, and Panther test-band structure,
+* local runtime server and fixture dry-run scripts,
+* a clean MicroKernel workspace shape,
+* and a governed QA posture around linting, container checks, phpstan, tests, and developer-facing runtime routines.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity as a workspace and proving environment.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.2 / 10
+| The component is already clearly framed as a local development and QA harness for the Rolling Symfony workspace.
+
+| Architecture and workspace shape
+| 8.1 / 10
+| The repository shape already reflects a coherent proving-ground and harness surface rather than a loose script collection.
+
+| Runtime and application surface
+| 8.3 / 10
+| Symfony MicroKernel, local server boot, fixture dry-run, and runtime-oriented scripts already establish a real workspace runtime layer.
+
+| QA maturity
+| 8.5 / 10
+| Linting, container lint, phpstan, PHPUnit, Panther smoke, and dedicated QA scripts give the component a strong verification contour.
+
+| SDK and integration posture
+| 8.4 / 10
+| The explicit Integration, Role, and SDK test suites are a strong sign that Rolling is designed as a proving environment rather than only a bootstrap shell.
+
+| Governance and developer enablement
+| 8.6 / 10
+| The component already contributes developer confidence through repeatable local checks, dry-run flows, and harness-oriented scripts.
+
+| Market-facing alignment
+| 7.9 / 10
+| The component aligns well with developer-workspace, software-catalog proving, and local dev/test harness classes, though it is naturally more internal than public-product oriented.
+
+| Overall readiness to RC
+| 8.3 / 10
+| Rolling is already a strong pre-RC workspace component with clear internal platform and QA-harness signals.
+|===
+
+== Leader Line
+
+Rolling should not be measured against business-domain applications or generic developer onboarding notes.
+
+Its natural comparison line is closer to the enterprise-class developer workspace, software-catalog proving, and local dev/test harness category, including the kind of capability bands represented by:
+
+* centralized developer-workspace structure,
+* repeatable local development and test environments,
+* software-catalog and component-oriented proving flows,
+* integration and SDK verification surfaces,
+* and governed local runtime confidence for engineering teams.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger developer-platform and local dev/test leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another demo repo.
+It is closer to:
+
+* enterprise developer-workspace class,
+* enterprise local dev/test harness class,
+* enterprise proving-ground and integration-confidence class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Workspace intent clarity
+
+Rolling already carries a strong center of gravity around development confidence and local proving.
+
+That matters because many internal workspaces become fragile when runtime checks, SDK validation, integration exercises, and local harness behavior are spread across disconnected technical surfaces.
+
+That fragmentation is not the dominant signal here. The component instead signals a coherent harness-centered approach.
+
+=== Integration and SDK proving posture
+
+The explicit Integration, Role, and SDK test-suite structure is one of the component’s strongest public signals.
+
+These are not decorative test labels. Together they show that Rolling already thinks in terms of platform proving and validation, not only in terms of booting a local Symfony shell.
+
+=== Runtime and QA discipline
+
+The package surface already reflects the right harness-runtime posture.
+
+Local server start, fixture dry-run, lint, container lint, phpstan, PHPUnit, Panther, and QA aggregate scripts together signal that the component is being shaped as a real workspace confidence layer rather than as an incidental tool directory.
+
+=== Developer enablement value
+
+Rolling is valuable because it reduces friction and uncertainty around local runtime behavior.
+
+That is a strong internal platform signal: the component strengthens engineering throughput not by adding domain logic, but by improving confidence, reproducibility, and proving discipline.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise workspace parity expansion
+
+The component is already structurally aligned with leader-class developer-workspace and proving-ground concerns. The next maturity band is about strengthening parity with broader enterprise expectations around environment consistency, richer diagnostics, and broader reusable developer workflows.
+
+=== Runtime surface strengthening
+
+Rolling already has strong internal and operational signals. The next maturity layer is about making the outward-facing developer workspace and proving shell feel as strong and complete as the internal verification contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight local harnesses. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Rolling is already well past the interesting draft stage.
+
+It currently reads as a serious, Symfony-native local development and QA harness with strong proving-ground discipline, a coherent runtime contour, and a clear direction around integration confidence, SDK verification, and governed workspace continuity.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: runtime confidence, harness discipline, integration posture, and a shape that clearly points toward durable internal developer-workspace use.
+
+At this stage, Rolling can already be presented as a high-quality pre-RC component moving within an enterprise-class developer-workspace and local dev/test harness trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
