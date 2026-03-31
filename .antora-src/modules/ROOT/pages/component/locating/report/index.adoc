@@ -1,0 +1,163 @@
+= Locating Report
+:description: Current owner-oriented maturity report for the Locating component.
+:page-slug: locating-report
+
+This page is the current owner-oriented maturity report for *Locating*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Locating is not shaped as a simple geocode lookup wrapper or a lightweight map helper.
+
+It reads as a Symfony-oriented locator engine: a system intended to manage address normalization, validation, geocoding, provider routing, caching, resilience decorators, tenant-aware controls, observability hooks, and machine-facing locator operations.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience feature. Its current shape suggests an internal locator and address-quality platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Locating appears to occupy the role of a locator, validation, and geocoding component.
+
+Its ecosystem role can be understood across several functions:
+
+* as an address normalization and validation surface,
+* as a provider-routing and orchestration layer,
+* as a geocoding and reverse-location capability,
+* as a tenant-aware control and policy surface,
+* and as an observable runtime for location operations.
+
+This makes Locating strategically more important than a typical geocoding helper. It points toward a reusable internal location capability that other components can depend on.
+
+== Current Maturity
+
+Locating already presents several strong signals of maturity:
+
+* a clear locator-engine product identity,
+* explicit scope around normalization, validation, and geocoding,
+* provider routing, caching, resilience decorators, tenant-aware controls, and observability hooks,
+* HTTP endpoints for locator operations and status or metrics,
+* a broad test matrix across unit, integration, contract, and smoke lanes,
+* and CI lanes for validation, analysis, and smoke gates.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.7 / 10
+| The component is already clearly framed as a locator engine for normalization, validation, and geocoding rather than a generic utility.
+
+| Architecture and domain shape
+| 8.5 / 10
+| Provider routing, caching, resilience, tenant-aware controls, and controller/status surfaces already form a coherent locator-engine shape.
+
+| Runtime and application surface
+| 8.4 / 10
+| HTTP endpoints, server scripts, Docker flows, and machine-facing locator operations already establish a real runtime layer.
+
+| QA maturity
+| 8.8 / 10
+| The quality contour is strong across linting, phpstan, unit, integration, contract, smoke, Panther, and e2e surfaces.
+
+| Governance and operational readiness
+| 8.7 / 10
+| Tenant-aware controls, observability hooks, CI validation, and hardening plans form a strong governance posture.
+
+| Geocoding and validation posture
+| 8.9 / 10
+| The explicit combination of normalization, validation, geocoding, provider routing, caching, and resilience is one of the component’s clearest strengths.
+
+| Market-facing alignment
+| 8.5 / 10
+| The component already aligns well with enterprise locator, address-validation, and geocoding-engine classes, though it still reads more as a governed platform layer than a finished public location product shell.
+
+| Overall readiness to RC
+| 8.6 / 10
+| Locating is already a strong pre-RC component with clear enterprise-class internal location-engine signals.
+|===
+
+== Leader Line
+
+Locating should not be measured against simple map pins, single-provider geocode wrappers, or lightweight address helper packages.
+
+Its natural comparison line is closer to the enterprise-class address validation, geocoding, and location-intelligence category, including the kind of capability bands represented by:
+
+* address normalization and validation,
+* provider-aware geocoding and reverse geocoding,
+* routing and orchestration across location providers,
+* caching, resilience, and operational safeguards,
+* and governed handling of location correctness and observability.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger location and address-quality leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another geocode helper.
+It is closer to:
+
+* enterprise locator-engine class,
+* enterprise address-validation class,
+* enterprise geocoding-and-location-quality class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Locator-engine clarity
+
+Locating already carries a strong center of gravity around location correctness rather than vague “maps” language.
+
+That matters because many location systems become fragmented when validation, geocoding, caching, fallback, and runtime policy are spread across disconnected technical surfaces.
+
+That fragmentation is not the dominant signal here. The component instead signals a coherent locator-first approach.
+
+=== Provider and resilience posture
+
+The presence of provider routing, caching, and resilience decorators is one of the component’s strongest public signals.
+
+These are not decorative claims. Together they show that Locating already thinks in terms of controlled provider orchestration and runtime durability rather than only in terms of raw coordinate lookup.
+
+=== Test-matrix maturity
+
+The breadth of the visible test matrix is another strong signal.
+
+Unit, integration, contract, smoke, Panther, and e2e coverage show that the component is being hardened not just as a code library, but as an operational locator runtime.
+
+=== Tenant-aware and observable design
+
+The README-level emphasis on tenant-aware controls and observability hooks shows that the component is being shaped for multi-context operational use, not only for single-tenant local utility behavior.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise location-engine parity expansion
+
+The component is already structurally aligned with leader-class address-validation and geocoding concerns. The next maturity band is about strengthening parity with broader enterprise expectations around provider breadth, coverage depth, confidence handling, and richer operational visibility.
+
+=== Runtime surface strengthening
+
+Locating already has strong internal and operational signals. The next maturity layer is about making the outward-facing locator runtime and product shell feel as strong and complete as the internal validation and geocoding contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight location helpers. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Locating is already well past the interesting draft stage.
+
+It currently reads as a serious, Symfony-native locator engine with strong address-quality discipline, a coherent provider-orchestration posture, and a clear direction around normalization, validation, geocoding, resilience, and tenant-aware runtime control.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: location correctness, provider-routing maturity, runtime durability, and a shape that clearly points toward durable internal address and geocoding use.
+
+At this stage, Locating can already be presented as a high-quality pre-RC component moving within an enterprise-class locator, address-validation, and geocoding trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
