@@ -1,0 +1,76 @@
+schema: documentating-removal-candidates/v1
+as_of: 2026-03-31
+repository: smartresponsor/documentating
+
+classes:
+  keep:
+    description: Active or canonical enough that removal would be unsafe now.
+  transitional_keep:
+    description: Still useful during stabilization, but not expected to remain long-term.
+  review_soon:
+    description: Likely legacy or partially superseded; needs focused decision soon.
+  remove_later:
+    description: Intended for deletion after the publication chain is proven stable.
+
+items:
+  - path: .github/workflows/antora-gh-pages-owner.yml
+    class: keep
+    reason: >-
+      Still appears to be the live legacy publication layer and should not be removed
+      until the pre-RC atlas layer is confirmed as the actual gh-pages writer.
+
+  - path: tools/build_antora_site_v4.py
+    class: keep
+    reason: >-
+      Legacy but live builder path used by the owner-facing workflow.
+
+  - path: tools/generate_pre_rc_quality_atlas.py
+    class: keep
+    reason: >-
+      Best semantic fit for the agreed current scope: pre-RC component quality life.
+
+  - path: .github/workflows/publish-v19-pre-rc-quality-atlas-inline-after-v17.yml
+    class: keep
+    reason: >-
+      Current best candidate for the final pre-RC atlas publication layer.
+
+  - path: .github/workflows/publish-v17-quality-atlas-after-v16.yml
+    class: transitional_keep
+    reason: >-
+      Intermediate atlas generation still present in the chain; likely removable after
+      v19 is confirmed as the stable final writer.
+
+  - path: tools/build_antora_site_v17.py
+    class: transitional_keep
+    reason: >-
+      Transitional atlas-aware builder layer. Useful during stabilization but not yet
+      clearly the final long-term builder canon.
+
+  - path: .github/workflows/publish-v18-pre-rc-quality-atlas-after-v17.yml
+    class: review_soon
+    reason: >-
+      Intermediate workflow generation that looks semantically superseded by the inline
+      v19 pre-RC path.
+
+  - path: tools/build_antora_site.py
+    class: review_soon
+    reason: >-
+      Older Markdown-oriented builder that appears semantically behind the current
+      AsciiDoc-first direction.
+
+  - path: tools/generate_quality_atlas.py
+    class: review_soon
+    reason: >-
+      Earlier atlas generator whose naming no longer carries the agreed pre-RC scope.
+
+  - path: docs/v19-pre-rc-quality-atlas-trigger.txt
+    class: remove_later
+    reason: >-
+      Temporary trigger artifact created only to push the new publication chain.
+
+notes:
+  article_cleanup_next_wave:
+    description: >-
+      Legacy markdown article files should be reviewed in a dedicated wave after the
+      publication path is stable. They should not be mass-deleted without a canonical
+      authored-format decision per slug/title cluster.
