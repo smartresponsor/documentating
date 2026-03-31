@@ -1,0 +1,169 @@
+= Shipping Report
+:description: Current owner-oriented maturity report for the Shipping component.
+:page-slug: shipping-report
+
+This page is the current owner-oriented maturity report for *Shipping*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Shipping is not shaped as a simple shipping quote widget or a narrow carrier adapter.
+
+It reads as a Symfony-oriented shipping operations and fulfillment-runtime component: a system intended to manage shipment lifecycle flows, shipping capability endpoints, carrier registries, shipping policies, canonical and compatibility route transitions, outbox publish and consume flows, request correlation, and evidence-friendly demo/runtime surfaces.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience utility. Its current shape suggests an internal shipping and logistics platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Shipping appears to occupy the role of a shipment lifecycle, carrier capability, and logistics operations component.
+
+Its ecosystem role can be understood across several functions:
+
+* as a shipment lifecycle execution surface,
+* as a multi-carrier quote, rate, and status layer,
+* as a carrier registry and shipping policy surface,
+* as an outbox-driven integration and sync layer,
+* as a demo-evidence and runtime-proof surface,
+* and as a reusable internal shipping capability for broader applications.
+
+This makes Shipping strategically more important than a typical quote calculator or shipping form. It points toward a reusable internal shipping capability that other components can depend on.
+
+== Current Maturity
+
+Shipping already presents several strong signals of maturity:
+
+* a clear shipping-and-shipment product identity,
+* explicit shipment lifecycle and shipping capability separation,
+* OpenAPI-described lifecycle, capability, carriers, and policies surfaces,
+* canonical route discipline with managed legacy aliases during transition,
+* tagged carrier quote providers wired into a shipping engine,
+* request-id correlation across the active JSON API surface,
+* outbox publish, consume, and cleanup commands,
+* demo surface with state manifest and reset evidence routes,
+* unit, architecture, e2e, and Playwright lanes,
+* and strong RC-hardening sequences around smokes, reports, canon checks, and runtime proof.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 9.0 / 10
+| The component is already clearly framed around shipment lifecycle and shipping capability rather than a generic logistics helper.
+
+| Architecture and domain shape
+| 8.8 / 10
+| Canonical shipment/shipping split, carrier providers, policy surfaces, and outbox integration already form a governed shipping-runtime architecture.
+
+| Runtime and application surface
+| 8.9 / 10
+| OpenAPI surfaces, CLI operations, health and data-sync commands, demo routes, fixtures, and runtime-proof reports establish a very real application surface.
+
+| QA maturity
+| 8.9 / 10
+| PHPUnit fast/all/e2e, Playwright smoke, phpstan, lint, cs, canon checks, runtime smokes, and inspection reports create a very strong verification contour.
+
+| Governance and operational readiness
+| 9.1 / 10
+| Route inventory, runtime proof, demo-surface and demo-state evidence, canonical alias discipline, and local pipeline tiers form one of the strongest operational-governance profiles among the components.
+
+| Shipping and fulfillment posture
+| 9.0 / 10
+| Shipment lifecycle, multi-carrier quote/rate/status, carriers registry, policies, sync, outbox, and tracking correlation put Shipping firmly in a serious logistics-runtime class.
+
+| Market-facing alignment
+| 8.9 / 10
+| The component already aligns well with enterprise shipping API, fulfillment runtime, and carrier-governance classes, though it still reads more as a governed platform layer than a finished public shipping suite.
+
+| Overall readiness to RC
+| 9.0 / 10
+| Shipping is already a very strong pre-RC component with clear enterprise-class internal shipping and fulfillment-runtime signals.
+|===
+
+== Leader Line
+
+Shipping should not be measured against simple shipping-rate widgets or lightweight checkout-only shipping helpers.
+
+Its natural comparison line is closer to the enterprise-class multi-carrier shipping API, fulfillment execution, shipment lifecycle, and tracking-visibility category, including the kind of capability bands represented by:
+
+* carrier rate shopping,
+* shipment creation and lifecycle handling,
+* tracking and status visibility,
+* address and request-correlation discipline,
+* carrier registry and policy management,
+* and governed operational handling of logistics workflows.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger shipping and fulfillment leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another shipping-rate helper.
+It is closer to:
+
+* enterprise multi-carrier shipping class,
+* enterprise shipment-lifecycle execution class,
+* enterprise logistics-and-fulfillment operations class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Canonical dual-surface discipline
+
+Shipping already carries a strong center of gravity around the distinction between shipment lifecycle and shipping capability.
+
+That matters because logistics systems become confusing when lifecycle operations, carrier intelligence, policies, and compatibility aliases are all allowed to collapse into one flat API story.
+
+That collapse is not the dominant signal here. The component instead signals a governed and transitional-runtime-aware architecture.
+
+=== Operational surface depth
+
+The breadth of the runtime surface is one of the component’s strongest public signals.
+
+OpenAPI artifacts, health and sync CLI, outbox commands, demo pages, manifest/reset state controls, and runtime-proof reports together show that Shipping is being shaped as a real operational product surface, not just as a set of controller endpoints.
+
+=== Evidence and demo posture
+
+The demo-state and demo-surface evidence flow is another strong differentiator.
+
+That suggests the component is being hardened not only for backend execution, but for repeatable walkthroughs, reviewability, and RC-oriented proof.
+
+=== Multi-carrier and policy seriousness
+
+Carrier quote providers, registry APIs, policy APIs, request correlation, and shared envelope handling together signal a serious logistics-runtime mindset rather than a single-carrier or single-endpoint integration.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise fulfillment parity expansion
+
+The component is already structurally aligned with leader-class shipping and fulfillment concerns. The next maturity band is about strengthening parity with broader enterprise expectations around deeper carrier breadth, richer shipping intelligence, more outward-facing operations tooling, and broader external integration posture.
+
+=== Runtime surface strengthening
+
+Shipping already has strong internal and operational signals. The next maturity layer is about making the outward-facing shipping runtime and product shell feel as strong and complete as the internal proof, demo, and routing contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight shipping libraries. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Shipping is already well past the interesting draft stage.
+
+It currently reads as a serious shipping operations and fulfillment-runtime component with strong canonical API discipline, a coherent logistics surface, and a clear direction around shipment lifecycle, carrier capability, policy handling, outbox integration, and operational evidence.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: lifecycle clarity, multi-surface operational seriousness, route and proof discipline, and a shape that clearly points toward durable internal shipping and fulfillment use.
+
+At this stage, Shipping can already be presented as a high-quality pre-RC component moving within an enterprise-class shipping and logistics trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
