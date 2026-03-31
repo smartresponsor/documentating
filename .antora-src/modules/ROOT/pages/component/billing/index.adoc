@@ -1,0 +1,44 @@
+= Billing
+:description: Public entry page for the Billing component.
+:page-slug: billing
+
+Billing is a Symfony-oriented billing operations, charge, refund, invoicing, and recurring-revenue component within the Smartresponsor ecosystem.
+
+It should be understood not as a simple invoice helper, but as a governed billing layer for charge and refund flows, recurring-billing posture, runtime verification, revenue-facing operations, and long-horizon operational discipline.
+
+== What It Is
+
+Billing exists to provide a structured internal billing capability that can support billing runtime, charge and refund scenarios, recurring and lifecycle-oriented monetization flows, doctrine-backed persistence, and governed operational verification.
+
+In ecosystem terms, it belongs to the class of components that strengthen monetization correctness, billing continuity, and operational revenue discipline.
+
+== Current Reading
+
+In its current state, Billing already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear billing-and-revenue product identity,
+* explicit charge-refund scenario orientation,
+* strong QA, security, and inspection posture,
+* and a governance-oriented engineering contour around billing runtime and operational correctness.
+
+== Why It Matters
+
+Billing systems become fragile when charge logic, refund handling, invoicing, lifecycle billing, runtime verification, and security controls are treated as separate ad hoc concerns.
+
+Billing matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple invoice generator or payment helper.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/billing/report/index.adoc[Billing Report]
+
+== Position in the Ecosystem
+
+Billing currently stands as one of the stronger monetization-and-runtime governance oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class recurring billing and revenue-operations maturity through structure, verification, and long-term maintainability.
