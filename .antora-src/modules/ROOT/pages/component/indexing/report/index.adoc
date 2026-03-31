@@ -1,0 +1,165 @@
+= Indexing Report
+:description: Current owner-oriented maturity report for the Indexing component.
+:page-slug: indexing-report
+
+This page is the current owner-oriented maturity report for *Indexing*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Indexing is not shaped as a simple database search helper or a narrow query utility.
+
+It reads as a Symfony-oriented indexing and search-runtime component: a system intended to manage index lifecycle control, transport-driven execution, query building, alias handling, configuration management, health visibility, and machine-facing search operations.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience layer. Its current shape suggests an internal indexing and retrieval platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Indexing appears to occupy the role of an indexing and search-runtime component.
+
+Its ecosystem role can be understood across several functions:
+
+* as an index lifecycle surface,
+* as a query-building and search-execution layer,
+* as an alias and configuration management surface,
+* as a health and operational visibility layer,
+* and as a reusable internal search capability for broader systems.
+
+This makes Indexing strategically more important than a typical search helper. It points toward a reusable internal indexing capability that other components can depend on.
+
+== Current Maturity
+
+Indexing already presents several strong signals of maturity:
+
+* a clear indexing-centric product identity,
+* explicit Symfony 7.4 and PHP 8.4 targeting,
+* action-based index lifecycle operations,
+* query and transport separation,
+* dedicated health, alias, configuration, and query-layer signals,
+* and unit, HTTP, Panther, and e2e test lanes.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.5 / 10
+| The component is already clearly framed around indexing and search runtime rather than a generic search helper.
+
+| Architecture and domain shape
+| 8.3 / 10
+| Index lifecycle, alias handling, configuration, health, query building, and transport-driven execution already form a coherent indexing-runtime shape.
+
+| Runtime and application surface
+| 8.2 / 10
+| Symfony runtime, server start/stop scripts, HTTP test lane, Panther lane, and action-based index operations establish a real runtime layer.
+
+| QA maturity
+| 8.2 / 10
+| Linting, PHPStan, PHPUnit, Panther, and e2e surfaces give the component a solid verification contour.
+
+| Governance and operational readiness
+| 8.1 / 10
+| Health-check, alias, configuration, and server-operation signals indicate a meaningful operational posture.
+
+| Search and indexing posture
+| 8.7 / 10
+| Index create/delete/search actions, query-building, and operational indexing control are among the component’s clearest strengths.
+
+| Market-facing alignment
+| 8.4 / 10
+| The component already aligns well with enterprise indexing and search-runtime classes, though it still reads more as a governed platform layer than a finished public search product shell.
+
+| Overall readiness to RC
+| 8.4 / 10
+| Indexing is already a strong pre-RC component with clear enterprise-class internal search and indexing signals.
+|===
+
+== Leader Line
+
+Indexing should not be measured against simple SQL search helpers or lightweight full-text wrappers.
+
+Its natural comparison line is closer to the enterprise-class indexing, search, and retrieval-runtime category, including the kind of capability bands represented by:
+
+* index lifecycle management,
+* query construction and execution,
+* alias and configuration handling,
+* health-aware operational search runtime,
+* and governed handling of retrieval infrastructure.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger search and indexing leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another search helper.
+It is closer to:
+
+* enterprise indexing-runtime class,
+* enterprise search-infrastructure class,
+* enterprise retrieval-and-query-control class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Index-runtime clarity
+
+Indexing already carries a strong center of gravity around index lifecycle and search execution rather than vague “search” language.
+
+That matters because many search systems become fragmented when lifecycle operations, alias management, query construction, and transport execution are spread across disconnected technical surfaces.
+
+That fragmentation is not the dominant signal here. The component instead signals a coherent indexing-first approach.
+
+=== Action-based operational shape
+
+The visible `IndexManager` surface is one of the component’s strongest public signals.
+
+Index creation, deletion, liveliness checks, and search actions show that Indexing already thinks in terms of managed search operations rather than only in terms of query strings.
+
+=== Query and transport separation
+
+The separation between query-building and transport execution is another strong signal.
+
+It suggests the component is being shaped not just as a library of search helpers, but as a controlled runtime surface for indexing infrastructure.
+
+=== Multi-lane runtime verification
+
+The coexistence of unit, HTTP, Panther, and e2e lanes indicates that the component is being hardened for more than isolated logic testing.
+
+It already thinks in terms of operational runtime confidence.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise retrieval parity expansion
+
+The component is already structurally aligned with leader-class indexing and search-runtime concerns. The next maturity band is about strengthening parity with broader enterprise expectations around relevance controls, scaling posture, richer search semantics, and broader runtime diagnostics.
+
+=== Runtime surface strengthening
+
+Indexing already has strong internal and operational signals. The next maturity layer is about making the outward-facing indexing runtime and product shell feel as strong and complete as the internal lifecycle and query contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight search helpers. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Indexing is already well past the interesting draft stage.
+
+It currently reads as a serious, Symfony-native indexing and search-runtime component with strong lifecycle clarity, a coherent query-and-transport contour, and a clear direction around index control, health visibility, and managed retrieval operations.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: index discipline, operational search control, query/runtime separation, and a shape that clearly points toward durable internal search and retrieval use.
+
+At this stage, Indexing can already be presented as a high-quality pre-RC component moving within an enterprise-class indexing and search-runtime trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
