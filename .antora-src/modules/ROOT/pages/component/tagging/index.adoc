@@ -1,0 +1,44 @@
+= Tagging
+:description: Public entry page for the Tagging component.
+:page-slug: tagging
+
+Tagging is a Smartresponsor canonical tagging component library within the Smartresponsor ecosystem.
+
+It should be understood not as a simple tags CRUD helper, but as a governed tagging runtime for canonical tag creation, assignment, search, suggest, status exposure, surface discovery, and stable API handling across object types.
+
+== What It Is
+
+Tagging exists to provide a structured internal tagging capability that can support tag CRUD, attach and detach flows, assignment by entity, search and suggest, stable HTTP contracts, runtime surface discovery, and governed canonical delivery.
+
+In ecosystem terms, it belongs to the class of components that strengthen classification, tagging consistency, and operational tagging discipline.
+
+== Current Reading
+
+In its current state, Tagging already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear canonical tagging product identity,
+* strong runtime-contract and publish-gate posture,
+* governed host-minimal source-of-truth discipline,
+* and a governance-oriented engineering posture around canonical runtime and release hygiene.
+
+== Why It Matters
+
+Tagging systems become fragile when CRUD, assignment, search, suggest, runtime contracts, demo assets, and delivery support are treated as separate ad hoc concerns.
+
+Tagging matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple tags table or a thin tagging helper.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/tagging/report/index.adoc[Tagging Report]
+
+== Position in the Ecosystem
+
+Tagging currently stands as one of the stronger classification-and-runtime contract oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class tagging and taxonomy-runtime maturity through structure, verification, and long-term maintainability.
