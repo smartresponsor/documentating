@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Locating :: Oleksandr Tishchenko</title>
     <link rel="canonical" href="https://docs.smartresponsor.com/component/locating/">
+    <meta name="description" content="Public entry page for the Locating component.">
     <meta name="generator" content="Antora 3.1.12">
 <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/owner-overrides.css">
@@ -36,12 +37,18 @@
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
     <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
-    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+    <h3 class="title"><a href="../../">Oleksandr Tishchenko</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../about/">About</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../owner/">Owner</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../../article/">Articles</a>
@@ -52,6 +59,18 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../../manifest/">Manifests</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../support/">Support</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../contact/">Contact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../privacy/">Privacy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../terms/">Terms</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -59,12 +78,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Smart Responsor</span>
+    <span class="title">Oleksandr Tishchenko</span>
     <span class="version"></span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <div class="title"><a href="../../">Smart Responsor</a></div>
+      <div class="title"><a href="../../">Oleksandr Tishchenko</a></div>
     </li>
   </ul>
 </div>
@@ -88,25 +107,101 @@
 </aside>
 <article class="doc">
 <h1 class="page">Locating</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>This is the public entry page for the <strong>Locating</strong> component.</p>
+<p>Locating is a Symfony-oriented locator, normalization, validation, and geocoding component within the Smartresponsor ecosystem.</p>
 </div>
 <div class="paragraph">
-<p>Detailed component documentation may later be sourced from the component repository and aggregated into the portal.</p>
+<p>It should be understood not as a simple map helper or geocode lookup wrapper, but as a governed locator engine for address normalization, validation, provider routing, geocoding, caching, resilience, tenant-aware controls, and observability.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_it_is"><a class="anchor" href="#_what_it_is"></a>What It Is</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Locating exists to provide a structured internal location capability that can support address processing, validation, geocoding, provider orchestration, runtime resilience, and machine-facing locator operations.</p>
+</div>
+<div class="paragraph">
+<p>In ecosystem terms, it belongs to the class of components that strengthen location correctness, address quality, and operational location intelligence.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_current_reading"><a class="anchor" href="#_current_reading"></a>Current Reading</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In its current state, Locating already reads as a serious pre-RC component.</p>
+</div>
+<div class="paragraph">
+<p>Its strongest visible qualities are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Canonical slug: <code>locating</code></p>
+<p>clear locator-engine product identity,</p>
+</li>
+<li>
+<p>strong provider-aware and resilience-aware runtime posture,</p>
+</li>
+<li>
+<p>broad test coverage across unit, integration, contract, and smoke lanes,</p>
+</li>
+<li>
+<p>and a governance-oriented engineering posture around tenant-aware controls and observability.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_it_matters"><a class="anchor" href="#_why_it_matters"></a>Why It Matters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Location systems become fragmented when normalization, validation, geocoding, provider selection, caching, resilience, and operational observability are treated as separate ad hoc concerns.</p>
+</div>
+<div class="paragraph">
+<p>Locating matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.</p>
+</div>
+<div class="paragraph">
+<p>That makes it strategically more valuable than a narrow geocode helper or a thin third-party location adapter.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_current_report"><a class="anchor" href="#_current_report"></a>Current Report</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="report/" class="xref page">Locating Report</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_position_in_the_ecosystem"><a class="anchor" href="#_position_in_the_ecosystem"></a>Position in the Ecosystem</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Locating currently stands as one of the stronger address-quality and geocoding oriented components in the Smartresponsor ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>It is best read as a component moving toward enterprise-class locator and geocoding-engine maturity through structure, verification, and long-term maintainability.</p>
+</div>
+</div>
 </div>
 </article>
   </div>
 </main>
 </div>
 <footer class="footer">
-  <p>Marketing America Corp · High Hope · Alexander Tishchenko</p>
+  <p>Marketing America Corp · High Hope · Oleksandr Tishchenko</p>
+  <p><a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>
 </footer>
   </body>
 </html>
