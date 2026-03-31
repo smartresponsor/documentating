@@ -1,0 +1,168 @@
+= Projecting Report
+:description: Current owner-oriented maturity report for the Projecting component.
+:page-slug: projecting-report
+
+This page is the current owner-oriented maturity report for *Projecting*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Projecting is not shaped as a simple project CRUD helper or a thin task-record surface.
+
+It reads as a Symfony-oriented project lifecycle and project-operations component: a system intended to manage authenticated API-facing project behavior, asynchronous execution, cache-aware runtime handling, rate-governed operations, and observability-aware delivery around project work.
+
+The currently visible slice is thinner than some of the more mature ecosystem repositories, but even that thinner slice already shows signs of being treated as a governed subsystem rather than as a convenience utility. Its current shape suggests an internal project-management and project-runtime platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Projecting appears to occupy the role of a project lifecycle, portfolio visibility, and project-operations component.
+
+Its ecosystem role can be understood across several functions:
+
+* as an authenticated project-facing API surface,
+* as a project execution and runtime-control layer,
+* as an async and cache-aware operations surface,
+* as an observability-aware project runtime,
+* and as a reusable internal project capability for broader applications.
+
+This makes Projecting strategically more important than a typical task board or spreadsheet replacement. It points toward a reusable internal project capability that other components can depend on.
+
+== Current Maturity
+
+Projecting already presents several useful signals of maturity:
+
+* a clear project-domain product identity,
+* explicit Symfony 7.1, API Platform 3.3, Doctrine ORM 3.2, Messenger, Cache, Rate Limiter, JWT auth, and OpenTelemetry targeting,
+* an application posture that already thinks in terms of runtime and observability rather than static records,
+* a test surface covering the project repository,
+* and operational scripts for local runtime, async consume, and failed-message retry.
+
+At the same time, the currently visible public slice is thinner than for components like Shipping, Paying, or Billing. The README is extremely short, and the directly exposed public evidence around domain behavior is lighter. So the current reading is strong in architectural intent and platform posture, but somewhat thinner in public business-surface evidence.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.0 / 10
+| The component is already clearly framed around project-domain runtime rather than a generic helper layer.
+
+| Architecture and domain shape
+| 8.2 / 10
+| API Platform, Doctrine, Messenger, Cache, Rate Limiter, auth, and observability dependencies already form a coherent project-runtime architecture.
+
+| Runtime and application surface
+| 8.1 / 10
+| Authenticated API posture, local runtime start, async consume, and retry scripts establish a real runtime surface.
+
+| QA maturity
+| 7.6 / 10
+| PHPUnit is present, but the visible QA contour is currently lighter than in the more hardened ecosystem repositories.
+
+| Governance and operational readiness
+| 8.2 / 10
+| The stack clearly thinks in terms of runtime operations and observability, though the public proof surface is still comparatively thin.
+
+| Project and portfolio posture
+| 8.0 / 10
+| The repo reads as project-domain runtime rather than task-only utility, but the public slice still leaves room for richer project-surface evidence.
+
+| Observability and async posture
+| 8.5 / 10
+| OpenTelemetry, OTLP export, Messenger, Cache, and retry-oriented scripts are among the clearest strengths in the visible slice.
+
+| Market-facing alignment
+| 7.9 / 10
+| The component already aligns with enterprise project-management and project-runtime classes, though it still reads more as a platform seed than a finished public work-management suite.
+
+| Overall readiness to RC
+| 8.1 / 10
+| Projecting is a promising pre-RC component with strong platform intent and thinner current public evidence.
+|===
+
+== Leader Line
+
+Projecting should not be measured against simple project lists or lightweight kanban-only tools.
+
+Its natural comparison line is closer to the enterprise-class project management, portfolio visibility, work execution, and roadmap-aware operations category, including the kind of capability bands represented by:
+
+* centralized project visibility,
+* project and initiative tracking,
+* aligned execution and status visibility,
+* async and operational control surfaces,
+* and governed handling of project runtime and observability.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger project-management and portfolio-visibility leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another task tracker.
+It is closer to:
+
+* enterprise project-management class,
+* enterprise portfolio-visibility and roadmap class,
+* enterprise work-execution and progress-reporting class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Platform-grade stack intent
+
+Projecting already carries a strong center of gravity around runtime-grade project infrastructure.
+
+That matters because many project systems begin and end as UI-heavy task surfaces with little thought for API depth, async processing, runtime controls, or observability.
+
+That limitation is not the dominant signal here. The component instead signals platform intent.
+
+=== Observability awareness
+
+OpenTelemetry and OTLP exporter presence are among the component’s clearest public signals.
+
+This suggests the repository is not thinking only about storing project data; it is also thinking about measuring and operating the runtime around project flows.
+
+=== Async and runtime-control posture
+
+Messenger, cache, rate limiter, local start, consume, and retry-failed flows are another strong signal.
+
+This points toward a component that already expects real operational behavior rather than only synchronous CRUD traffic.
+
+=== Honest maturity reading
+
+The visible slice is thinner than for the more mature components, and that is important to say directly.
+
+Projecting already looks directionally strong, but its current public evidence does not yet show as much domain richness, runtime proof, or QA breadth as the strongest repositories in the ecosystem.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise project-runtime parity expansion
+
+The component is already structurally aligned with leader-class project-management and execution concerns. The next maturity band is about strengthening parity with broader enterprise expectations around richer project lifecycle surfaces, portfolio hierarchy, reporting depth, and outward-facing workflow clarity.
+
+=== Runtime surface strengthening
+
+Projecting already has strong internal and architectural signals. The next maturity layer is about making the outward-facing project runtime and product shell feel as strong and complete as the internal stack and observability contour.
+
+=== Productized public posture
+
+Internally, the component already looks more serious than a lightweight task tracker. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Projecting is already past the stage of being merely an empty idea shell.
+
+It currently reads as a serious project-domain and project-operations component with strong architectural intent, a coherent runtime stack, and a clear direction around authenticated APIs, async execution, and observability-aware delivery.
+
+Its strongest present signal is not UI theater. Its strongest signal is platform intent: runtime seriousness, observability awareness, and a shape that clearly points toward durable internal project and portfolio operations use.
+
+At this stage, Projecting can already be presented as a promising pre-RC component moving within an enterprise-class project-management and portfolio-visibility trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from promising pre-RC maturity toward a more explicit release-candidate posture as the public evidence surface becomes richer.
