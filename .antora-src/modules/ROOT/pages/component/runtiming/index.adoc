@@ -1,0 +1,44 @@
+= Runtiming
+:description: Public entry page for the Runtiming component.
+:page-slug: runtiming
+
+Runtiming is a Symfony-oriented runtime hardening, worker lifecycle, and telemetry component within the Smartresponsor ecosystem.
+
+It should be understood not as a generic Symfony helper bundle, but as a governed runtime supercharger for deterministic worker wrappers, recycle and reset safety, telemetry snapshots, status and metrics exposure, and release-candidate runtime gates.
+
+== What It Is
+
+Runtiming exists to provide a structured internal runtime capability that can support long-running worker safety, lifecycle integration, telemetry export, endpoint status visibility, metrics exposure, and governed runtime readiness for Symfony applications.
+
+In ecosystem terms, it belongs to the class of components that strengthen operational runtime stability, observability, and worker safety.
+
+== Current Reading
+
+In its current state, Runtiming already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear runtime-supercharger product identity,
+* strong worker-oriented and telemetry-oriented runtime posture,
+* reset-safety and recycle-decision discipline,
+* and a governance-oriented engineering posture around CI runtime gates and operational evidence.
+
+== Why It Matters
+
+Long-running worker systems become fragile when lifecycle handling, reset safety, recycle policies, telemetry, metrics, and runtime status exposure are treated as separate ad hoc concerns.
+
+Runtiming matters because it treats those concerns as part of one governed component surface rather than as scattered runtime utility logic.
+
+That makes it strategically more valuable than a narrow worker helper or a simple metrics endpoint add-on.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/runtiming/report/index.adoc[Runtiming Report]
+
+== Position in the Ecosystem
+
+Runtiming currently stands as one of the stronger runtime-and-observability oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class runtime hardening and worker-lifecycle maturity through structure, telemetry discipline, and long-term operational maintainability.
