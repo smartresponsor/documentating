@@ -1,0 +1,59 @@
+schema: documentating-publication-canon/v1
+as_of: 2026-03-31
+repository: smartresponsor/documentating
+
+scope:
+  statement: >-
+    This manifest defines the intended publication canon for the current pre-RC
+    portal life of the repository. It does not claim that all older layers have
+    already been removed. It defines the target truth path for cleanup and later
+    simplification.
+
+content_canon:
+  authored_portal_format: adoc
+  article_policy:
+    canonical_format: adoc
+    legacy_markdown_status: review-and-migrate-or-archive
+  component_report_policy:
+    canonical_format: adoc
+    source_of_truth: .antora-src/modules/ROOT/pages/component/*/report/index.adoc
+
+quality_atlas:
+  menu_label: Quality Atlas
+  current_scope_title: Pre-RC Quality Atlas
+  current_scope: pre-rc
+  explorer_title: Pre-RC Quality Atlas Explorer
+  home_summary_title: Pre-RC Quality Atlas
+  source_of_truth:
+    - .antora-src/modules/ROOT/pages/component/*/report/index.adoc
+  preferred_generator: tools/generate_pre_rc_quality_atlas.py
+  deprecated_generator_candidates:
+    - tools/generate_quality_atlas.py
+
+publication_path:
+  intended_final_publish_layer: .github/workflows/publish-v19-pre-rc-quality-atlas-inline-after-v17.yml
+  current_live_legacy_layer: .github/workflows/antora-gh-pages-owner.yml
+  transitional_layers:
+    - .github/workflows/publish-v17-quality-atlas-after-v16.yml
+    - .github/workflows/publish-v18-pre-rc-quality-atlas-after-v17.yml
+
+builder_path:
+  intended_base_builder_logic: tools/build_antora_site_v13.py
+  legacy_active_builder: tools/build_antora_site_v4.py
+  review_builder_candidates:
+    - tools/build_antora_site.py
+    - tools/build_antora_site_v17.py
+
+temporary_artifacts:
+  remove_later:
+    - docs/v19-pre-rc-quality-atlas-trigger.txt
+
+cleanup_policy:
+  delete_only_after:
+    - final pre-rc atlas publish layer is manually validated on gh-pages
+    - home page contains pre-rc atlas summary
+    - menu contains Quality Atlas
+    - quality-atlas/index.html is present on gh-pages
+  do_not_delete_yet:
+    - .github/workflows/antora-gh-pages-owner.yml
+    - tools/build_antora_site_v4.py
