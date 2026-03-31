@@ -1,0 +1,44 @@
+= Ordering
+:description: Public entry page for the Ordering component.
+:page-slug: ordering
+
+Ordering is a Symfony-oriented order lifecycle, fulfillment interplay, and order-operations component within the Smartresponsor ecosystem.
+
+It should be understood not as a simple checkout helper, but as a governed order layer for order state transitions, payment and refund coupling, shipment interplay, operational security on ingress and webhooks, and long-horizon order-runtime discipline.
+
+== What It Is
+
+Ordering exists to provide a structured internal order capability that can support order lifecycle transitions, payments, refunds, shipment interaction, order-facing APIs and UI, authenticated runtime access, and governed operational controls around ingress and audit posture.
+
+In ecosystem terms, it belongs to the class of components that strengthen order correctness, fulfillment continuity, and operational commerce discipline.
+
+== Current Reading
+
+In its current state, Ordering already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear order-lifecycle product identity,
+* strong payment-shipment-refund transition model,
+* API, workflow, auth, and runtime-control posture,
+* and a governance-oriented engineering contour around canon, QA, rate limiting, and security ingress.
+
+== Why It Matters
+
+Order systems become fragile when lifecycle state, payments, refunds, shipment coordination, order routing, authenticated APIs, webhook trust, and audit posture are treated as separate ad hoc concerns.
+
+Ordering matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple order form or checkout record layer.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/ordering/report/index.adoc[Ordering Report]
+
+== Position in the Ecosystem
+
+Ordering currently stands as one of the stronger commerce-lifecycle oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class order management and order-lifecycle runtime maturity through structure, verification, and long-term maintainability.
