@@ -1,0 +1,173 @@
+= Paying Report
+:description: Current owner-oriented maturity report for the Paying component.
+:page-slug: paying-report
+
+This page is the current owner-oriented maturity report for *Paying*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Paying is not shaped as a simple gateway SDK wrapper or a narrow checkout callback handler.
+
+It reads as a Symfony-oriented payment lifecycle and payment-operations component: a system intended to manage create, start, finalize, refund, and read flows, canonical API/UI/CLI surfaces, webhook ingest and verification, idempotent operational handling, outbox publishing, health and metrics exposure, provider routing, and evidence-friendly runtime proofing.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience utility. Its current shape suggests an internal payment and payment-operations platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Paying appears to occupy the role of a payment lifecycle, webhook, and payment-operations component.
+
+Its ecosystem role can be understood across several functions:
+
+* as a payment create/start/finalize/refund/read surface,
+* as a provider-routing and provider-asymmetry management layer,
+* as a webhook ingest and verification surface,
+* as an idempotent and outbox-aware runtime,
+* as an operator-console and API documentation surface,
+* and as a reusable internal payment capability for broader applications.
+
+This makes Paying strategically more important than a typical payment provider adapter. It points toward a reusable internal payment capability that other components can depend on.
+
+== Current Maturity
+
+Paying already presents several strong signals of maturity:
+
+* a clear payment-lifecycle product identity,
+* explicit canonical API, UI, and CLI surfaces,
+* payment lifecycle orchestration for create/start/finalize/refund/read flows,
+* webhook ingest, idempotency, outbox publishing, and health/metrics endpoints,
+* real provider support and verification truth documented in the README,
+* payment entity lifecycle methods for processing, completed, failed, and refunded states,
+* unit, functional, e2e, Panther, and Playwright coverage posture,
+* install/runtime preflight, fixture dry-run, container/doctrine/runtime smokes,
+* route inventory and runtime proof reports,
+* and a strong security shell around composer audit, importmap audit, gitleaks, semgrep, and security tests.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.9 / 10
+| The component is already clearly framed around payment lifecycle and payment operations rather than a generic gateway helper.
+
+| Architecture and domain shape
+| 8.7 / 10
+| Workflow, Messenger, rate limiting, provider routing, canonical surfaces, and dual data/infra storage already form a governed payment-runtime architecture.
+
+| Runtime and application surface
+| 8.9 / 10
+| Canonical API/UI/CLI, operator console, OpenAPI lint, health, metrics, and demo/e2e surfaces establish a very real application runtime.
+
+| QA maturity
+| 9.0 / 10
+| Unit, functional, e2e, Panther, Playwright, fixture bootstrap, doctrine/container/runtime smokes, and proof-pack tooling create a very strong verification contour.
+
+| Governance and operational readiness
+| 9.1 / 10
+| Runtime preflight, local pipeline tiers, route inventory, runtime proof, and proof-pack scripting form one of the strongest operational-governance surfaces among the components.
+
+| Security posture
+| 9.2 / 10
+| Composer audit, importmap audit, gitleaks, semgrep, webhook verification, idempotency, and security tests make this one of the strongest security contours in the ecosystem.
+
+| Payment operations posture
+| 9.0 / 10
+| Lifecycle orchestration, refunds, provider routing, webhooks, idempotency, outbox, status, and metrics together place Paying firmly in a serious payment-operations class.
+
+| Market-facing alignment
+| 8.8 / 10
+| The component already aligns well with enterprise payment operations and payment-lifecycle platform classes, though it still reads more as a governed platform layer than a finished public payment suite.
+
+| Overall readiness to RC
+| 9.0 / 10
+| Paying is already a very strong pre-RC component with clear enterprise-class internal payment and payment-operations signals.
+|===
+
+== Leader Line
+
+Paying should not be measured against simple provider SDK bindings or lightweight payment-form backends.
+
+Its natural comparison line is closer to the enterprise-class payment lifecycle, webhook-driven payment operations, refund management, and provider-platform category, including the kind of capability bands represented by:
+
+* payment create/confirm/finalize flows,
+* refunds and payment-state management,
+* webhook ingest and verification,
+* idempotent and observable payment operations,
+* operator-facing payment consoles,
+* and governed handling of provider-specific lifecycle realities.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger payments-platform leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another gateway adapter.
+It is closer to:
+
+* enterprise payment-operations class,
+* enterprise payment lifecycle and refunds class,
+* enterprise webhook-driven payment-runtime class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Honest provider-truth posture
+
+Paying already carries a strong center of gravity around explicit provider truth.
+
+That matters because many payment components become misleading when they imply symmetric provider support across every flow while the real operational support matrix is narrower.
+
+That confusion is not the dominant signal here. The component instead signals an unusually honest runtime posture about which providers are active in which surfaces.
+
+=== Webhook and idempotency seriousness
+
+Webhook ingest, provider verification, and idempotency are among the component’s strongest public signals.
+
+These are not decorative integration concerns. Together they show that Paying already thinks in terms of safe payment operations under asynchronous and retry-heavy conditions rather than only in terms of initiating charges.
+
+=== Operational proof depth
+
+The install preflight, runtime preflight, smokes, route inventory, runtime proof, and proof-pack tooling are another strong differentiator.
+
+This suggests the component is being hardened not only as source code, but as an operationally reviewable runtime.
+
+=== Multi-surface runtime practicality
+
+The coexistence of canonical API, operator UI, CLI, Panther, and Playwright makes the component practically exercisable, not only architecturally well-described.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise payments parity expansion
+
+The component is already structurally aligned with leader-class payment-lifecycle and payment-operations concerns. The next maturity band is about strengthening parity with broader enterprise expectations around provider breadth, reconciliation depth, outward-facing product polish, and richer downstream financial integrations.
+
+=== Runtime surface strengthening
+
+Paying already has strong internal and operational signals. The next maturity layer is about making the outward-facing payment runtime and product shell feel as strong and complete as the internal proof, webhook, and security contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight payment adapters. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Paying is already well past the interesting draft stage.
+
+It currently reads as a serious payment lifecycle and payment-operations component with strong webhook and idempotency discipline, a coherent multi-surface runtime, and a clear direction around refunds, provider routing, observability, and secure operational payment handling.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: lifecycle clarity, webhook seriousness, runtime proofing, and a shape that clearly points toward durable internal payment and revenue-event operations use.
+
+At this stage, Paying can already be presented as a high-quality pre-RC component moving within an enterprise-class payment-operations and payment-lifecycle trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
