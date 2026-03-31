@@ -1,0 +1,169 @@
+= Billing Report
+:description: Current owner-oriented maturity report for the Billing component.
+:page-slug: billing-report
+
+This page is the current owner-oriented maturity report for *Billing*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Billing is not shaped as a simple invoice helper or a narrow payment callback adapter.
+
+It reads as a Symfony-oriented billing operations and revenue-runtime component: a system intended to manage charge and refund flows, recurring-billing posture, verification-heavy runtime behavior, doctrine-backed persistence, and secure operational billing discipline.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience utility. Its current shape suggests an internal billing and monetization platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Billing appears to occupy the role of a billing operations, invoicing, and recurring-revenue component.
+
+Its ecosystem role can be understood across several functions:
+
+* as a charge and refund execution surface,
+* as a recurring-billing and invoice-runtime layer,
+* as a monetization correctness and fixtures-validation surface,
+* as a QA, security, and inspection-heavy operational component,
+* and as a reusable internal billing capability for broader applications.
+
+This makes Billing strategically more important than a typical invoice generator. It points toward a reusable internal billing capability that other components can depend on.
+
+== Current Maturity
+
+Billing already presents several strong signals of maturity:
+
+* a clear billing-and-revenue product identity,
+* explicit Symfony 8 and PHP 8.2+ targeting,
+* doctrine-backed application posture,
+* charge-refund scenario orientation in the repository’s current phase marker,
+* unit, Panther, and Playwright e2e lanes,
+* fixtures dry-run validation,
+* deep QA tooling with phpstan, rector, deptrac, and cs checks,
+* and a strong security and inspection shell.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.8 / 10
+| The component is already clearly framed around billing operations, charge-refund behavior, and recurring monetization rather than a generic helper surface.
+
+| Architecture and domain shape
+| 8.6 / 10
+| Controller, Http, Service, Repository, Entity, and Infrastructure layering under deptrac already forms a governed billing-runtime architecture.
+
+| Runtime and application surface
+| 8.5 / 10
+| Symfony runtime, docker-compose flows, fixtures dry-run, and explicit server scripts establish a real application surface for billing behavior.
+
+| QA maturity
+| 9.0 / 10
+| PHPUnit, Panther, Playwright, phpstan, rector, deptrac, cs checks, and local full pipeline make this one of the strongest verification contours among the components.
+
+| Governance and operational readiness
+| 9.1 / 10
+| Inspection shell, baseline/compare flows, and operational scripting form an unusually strong owner-governance and operational-readiness signal.
+
+| Security posture
+| 9.0 / 10
+| Composer audit, importmap audit, gitleaks, semgrep, and Symfony security tests show a serious security contour, not an afterthought.
+
+| Billing and revenue posture
+| 8.7 / 10
+| The explicit charge-refund scenario marker, fixtures discipline, and recurring-runtime orientation put Billing firmly in a serious monetization class.
+
+| Market-facing alignment
+| 8.7 / 10
+| The component already aligns well with recurring billing, subscription lifecycle, and quote-to-cash adjacent classes, though it still reads more as a governed platform layer than a finished public billing suite.
+
+| Overall readiness to RC
+| 8.8 / 10
+| Billing is already a very strong pre-RC component with clear enterprise-class internal billing and revenue-runtime signals.
+|===
+
+== Leader Line
+
+Billing should not be measured against simple invoice templates or lightweight payment-form helpers.
+
+Its natural comparison line is closer to the enterprise-class recurring billing, usage-based billing, invoicing, and subscription-lifecycle category, including the kind of capability bands represented by:
+
+* recurring billing,
+* usage-based and hybrid billing,
+* charge and refund lifecycle handling,
+* invoice automation and billing logic,
+* and governed operational handling of revenue-facing workflows.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger billing and monetization leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another invoice helper.
+It is closer to:
+
+* enterprise recurring billing class,
+* enterprise subscription-lifecycle billing class,
+* enterprise invoicing-and-monetization operations class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Verification-first billing discipline
+
+Billing already carries a strong center of gravity around verification and guarded execution.
+
+That matters because billing systems become dangerous when charge flows, refunds, fixtures, and invoicing logic are allowed to drift without strong gates.
+
+That drift is not the dominant signal here. The component instead signals a billing-first verification culture.
+
+=== Security seriousness
+
+The security contour is one of the component’s strongest public signals.
+
+Composer audit, importmap audit, gitleaks, semgrep, and Symfony security testing together show that Billing is being hardened with an operational security mindset rather than as a local-only engineering experiment.
+
+=== Runtime practicality
+
+The coexistence of local server scripts, docker compose flows, fixtures dry-run, Panther, and Playwright points to a component that is meant to be exercised as a real runtime, not only read as architecture.
+
+=== Inspection and owner-governance posture
+
+The inspection shell is another distinguishing signal.
+
+Bootstrap, run, latest, chat, baseline, and compare flows show that Billing is being developed with strong owner-facing auditability and iterative governance.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise monetization parity expansion
+
+The component is already structurally aligned with leader-class recurring billing and monetization concerns. The next maturity band is about strengthening parity with broader enterprise expectations around subscription lifecycle breadth, pricing-model flexibility, and richer outward-facing billing surfaces.
+
+=== Runtime surface strengthening
+
+Billing already has strong internal and operational signals. The next maturity layer is about making the outward-facing billing runtime and product shell feel as strong and complete as the internal QA and inspection contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight billing packages. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Billing is already well past the interesting draft stage.
+
+It currently reads as a serious billing operations and revenue-runtime component with strong verification discipline, a coherent architecture contour, and a clear direction around charge-refund scenarios, billing runtime, and secure operational governance.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: QA depth, security seriousness, inspection discipline, and a shape that clearly points toward durable internal billing and recurring-revenue use.
+
+At this stage, Billing can already be presented as a high-quality pre-RC component moving within an enterprise-class recurring billing and monetization trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
