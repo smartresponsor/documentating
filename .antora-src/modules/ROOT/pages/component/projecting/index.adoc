@@ -1,0 +1,44 @@
+= Projecting
+:description: Public entry page for the Projecting component.
+:page-slug: projecting
+
+Projecting is a Symfony-oriented project lifecycle, portfolio visibility, and project-operations component within the Smartresponsor ecosystem.
+
+It should be understood not as a simple project CRUD helper, but as a governed project layer for project-domain runtime, authenticated APIs, messaging, rate-governed operations, and observability-aware execution.
+
+== What It Is
+
+Projecting exists to provide a structured internal project capability that can support project-domain runtime, API-facing project operations, authenticated access, asynchronous execution, caching, rate limiting, and observability-aware delivery.
+
+In ecosystem terms, it belongs to the class of components that strengthen project correctness, operational visibility, and execution discipline across initiatives.
+
+== Current Reading
+
+In its current state, Projecting reads as a promising pre-RC component with a thinner visible slice than some of the more mature ecosystem repositories.
+
+Its strongest visible qualities are:
+
+* clear project-domain product identity,
+* API and runtime-oriented application posture,
+* observability-aware and async-aware stack selection,
+* and a governance-oriented engineering contour around authenticated project operations.
+
+== Why It Matters
+
+Project systems become fragile when portfolio visibility, execution state, authenticated project APIs, async processing, observability, and operational controls are treated as separate ad hoc concerns.
+
+Projecting matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple task board or a thin project-record layer.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/projecting/report/index.adoc[Projecting Report]
+
+== Position in the Ecosystem
+
+Projecting currently stands as an emerging project-and-portfolio operations component in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class project management and project-runtime maturity through structure, observability, and long-term maintainability.
