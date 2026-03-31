@@ -1,0 +1,44 @@
+= Analysing
+:description: Public entry page for the Analysing component.
+:page-slug: analysing
+
+Analysing is a Symfony-oriented analytics and analysis-process component within the Smartresponsor ecosystem.
+
+It should be understood not as a simple reporting helper, but as a governed analytics layer for analysis runtime, scan-driven structural control, data-aware processing posture, and long-horizon analytical discipline.
+
+== What It Is
+
+Analysing exists to provide a structured internal analytics capability that can support analytics-oriented runtime, Doctrine-backed processing, scan-layer mapping, namespace and domain-hygiene control, and governed execution of analysis-related application logic.
+
+In ecosystem terms, it belongs to the class of components that strengthen analytical correctness, structural discipline, and operational insight generation.
+
+== Current Reading
+
+In its current state, Analysing reads as a promising pre-RC component with a thinner visible slice than the more mature ecosystem repositories.
+
+Its strongest visible qualities are:
+
+* clear analytics-process product identity,
+* strong canon and namespace hygiene posture,
+* Doctrine-backed application/runtime intent,
+* and a governance-oriented engineering contour around structural guards and analytical process discipline.
+
+== Why It Matters
+
+Analytics systems become fragile when processing logic, structural rules, namespace hygiene, domain boundaries, and scan/report behavior are treated as separate ad hoc concerns.
+
+Analysing matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple reporting script or a thin analysis helper layer.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/analysing/report/index.adoc[Analysing Report]
+
+== Position in the Ecosystem
+
+Analysing currently stands as an emerging analytics-and-analysis runtime component in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class analytics and insight-runtime maturity through structure, guard discipline, and long-term maintainability.
