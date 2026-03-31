@@ -1,0 +1,167 @@
+= Runtiming Report
+:description: Current owner-oriented maturity report for the Runtiming component.
+:page-slug: runtiming-report
+
+This page is the current owner-oriented maturity report for *Runtiming*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Runtiming is not shaped as a simple Symfony helper bundle or a generic metrics add-on.
+
+It reads as a runtime supercharger bundle: a system intended to manage deterministic worker wrappers, recycle decisions, reset safety, telemetry snapshots, Prometheus-facing metrics, `/status` and `/metrics` exposure, lifecycle integration, and runtime release-candidate gates for long-running Symfony workers.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience utility. Its current shape suggests an internal runtime hardening and observability platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Runtiming appears to occupy the role of a runtime hardening, worker lifecycle, and observability component.
+
+Its ecosystem role can be understood across several functions:
+
+* as a worker lifecycle and recycle-decision surface,
+* as a reset-safety and runtime-contract layer,
+* as a telemetry and metrics export surface,
+* as a status endpoint and endpoint-guard layer,
+* and as a reusable operational runtime capability for broader applications.
+
+This makes Runtiming strategically more important than a typical healthcheck helper. It points toward a reusable internal runtime capability that other components can depend on.
+
+== Current Maturity
+
+Runtiming already presents several strong signals of maturity:
+
+* a clear runtime-supercharger product identity,
+* explicit scope around long-running worker safety,
+* deterministic recycle and reset handling,
+* telemetry snapshots and Prometheus export,
+* `/status` and `/metrics` runtime surfaces,
+* RoadRunner and FrankenPHP worker-mode alignment,
+* extensive runtime documentation, production runbook, and incident/debug materials,
+* and CI gate posture for runtime verification.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.9 / 10
+| The component is already clearly framed as a runtime supercharger for deterministic worker wrappers, telemetry, reset safety, and RC gates.
+
+| Architecture and domain shape
+| 8.6 / 10
+| Worker lifecycle, recycle decisions, reset registry contracts, endpoint guards, and telemetry sinks already form a coherent runtime-hardening shape.
+
+| Runtime and application surface
+| 8.8 / 10
+| Status/metrics endpoints, worker lifecycle integration, RoadRunner and FrankenPHP alignment, and runtime gate scripts establish a serious operational runtime layer.
+
+| QA maturity
+| 8.1 / 10
+| PHPUnit and PHPStan are present, and the CI/runtime gate posture is strong, though the visible test-lane surface is more concentrated than in some larger components.
+
+| Governance and operational readiness
+| 9.0 / 10
+| Runbooks, incident/debug playbooks, SLO/SLA-linked docs, CI evidence, guard matrices, and runtime policy materials form one of the strongest operational-governance surfaces in the ecosystem.
+
+| Telemetry and observability posture
+| 9.1 / 10
+| Telemetry snapshots, Prometheus export, metrics endpoint docs, and observability-oriented architecture map are among the component’s clearest strengths.
+
+| Market-facing alignment
+| 8.6 / 10
+| The component already aligns well with enterprise runtime-hardening, worker-lifecycle, and observability classes, though it still reads more as a governed platform layer than a finished public runtime product shell.
+
+| Overall readiness to RC
+| 8.8 / 10
+| Runtiming is already a very strong pre-RC component with clear enterprise-class internal runtime and observability signals.
+|===
+
+== Leader Line
+
+Runtiming should not be measured against simple uptime probes or ad hoc worker scripts.
+
+Its natural comparison line is closer to the enterprise-class worker-runtime, application-server lifecycle, telemetry, and observability category, including the kind of capability bands represented by:
+
+* long-running PHP worker management,
+* runtime lifecycle and recycle handling,
+* reset safety for worker-mode applications,
+* Prometheus-style metrics and telemetry export,
+* and governed operational handling of runtime status and metrics surfaces.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger worker-runtime and observability leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another metrics endpoint.
+It is closer to:
+
+* enterprise worker-runtime class,
+* enterprise runtime-hardening class,
+* enterprise telemetry-and-observability class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Worker-mode clarity
+
+Runtiming already carries a strong center of gravity around long-running worker behavior.
+
+That matters because worker-mode systems become fragile when lifecycle control, reset handling, memory or drift mitigation, and operational gates are spread across disconnected technical surfaces.
+
+That fragmentation is not the dominant signal here. The component instead signals a coherent worker-runtime approach.
+
+=== Reset and recycle discipline
+
+The emphasis on recycle decisions, reset registry contracts, and reset architecture is one of the component’s strongest public signals.
+
+These are not decorative runtime concerns. Together they show that Runtiming already thinks in terms of safe, repeatable, controlled worker behavior rather than only in terms of keeping a process alive.
+
+=== Telemetry and metrics maturity
+
+Telemetry snapshots, Prometheus export, and status/metrics endpoint materials form another strong signal.
+
+This suggests the component is being shaped not only for runtime execution, but for operational visibility and measurable production behavior.
+
+=== Operational documentation seriousness
+
+The breadth of the docs index is itself a maturity marker.
+
+Architecture specs, lifecycle notes, reset contracts, telemetry docs, endpoint-security docs, runbooks, incident/debug playbooks, and CI evidence materials show that the component is being hardened as an operational product surface, not just as a code package.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise worker-runtime parity expansion
+
+The component is already structurally aligned with leader-class worker-runtime and observability concerns. The next maturity band is about strengthening parity with broader enterprise expectations around deeper runtime policy controls, richer telemetry integration, and broader server-mode compatibility.
+
+=== Runtime surface strengthening
+
+Runtiming already has strong internal and operational signals. The next maturity layer is about making the outward-facing runtime and operator shell feel as strong and complete as the internal lifecycle and telemetry contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight worker utilities. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Runtiming is already well past the interesting draft stage.
+
+It currently reads as a serious runtime hardening and worker-lifecycle component with strong operational discipline, a coherent observability contour, and a clear direction around deterministic lifecycle handling, reset safety, metrics, and runtime status surfaces.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: worker-runtime discipline, telemetry maturity, operational visibility, and a shape that clearly points toward durable internal runtime and observability use.
+
+At this stage, Runtiming can already be presented as a high-quality pre-RC component moving within an enterprise-class runtime hardening and observability trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
