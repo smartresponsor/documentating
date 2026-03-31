@@ -1,0 +1,55 @@
+= Ollama 0.19, MLX, and Apple Silicon: Why Local AI on Mac Just Got More Serious
+:doctype: article
+:toc:
+:toclevels: 3
+:sectanchors:
+:sectnums:
+:source-highlighter: rouge
+
+[abstract]
+--
+In March 2026, Ollama released version 0.19 and officially moved its Apple Silicon backend to MLX in preview mode. For a documentation repository, the important point is not the noise around the release, but the precise picture: what is actually confirmed by primary sources, why MLX matters architecturally on Mac, where the speedup is real in practice, and why long agentic workflows benefit more than short demo prompts.
+--
+
+== What actually happened
+
+Fact number one: in v0.19, Ollama officially announced that on Apple Silicon it now runs on top of MLX, Apple's machine learning framework, to better leverage the unified memory architecture. This follows from both the announcement and the GitHub release notes: link:https://ollama.com/blog/mlx[Ollama blog] and link:https://github.com/ollama/ollama/releases/tag/v0.19.0[release v0.19.0].
+
+Fact number two: Ollama published a concrete benchmark on Qwen3.5-35B-A3B. Prefill increased from 1154 to 1810 tok/s, and decode from 58 to 112 tok/s; it also states that `int4` can reach 1851 tok/s prefill and 134 tok/s decode. So the phrase “roughly twice as fast” is fair for the published test, but not as a universal promise across all models and all Macs. Source: link:https://ollama.com/blog/mlx[official Ollama benchmark].
+
+Fact number three: the release improved not only raw throughput, but also the cache path. The release notes mention an improved KV cache hit rate, periodic snapshots during prompt processing, and a fix for a memory leak in KV cache snapshots for the MLX runner. That matters especially for long and branching sessions, not just single-shot inference. Source: link:https://github.com/ollama/ollama/releases/tag/v0.19.0[GitHub release notes].
+
+== Why MLX matters here
+
+The MLX documentation is very explicit about the architectural basis: Apple silicon has a unified memory architecture; CPU and GPU have direct access to the same memory pool; MLX is designed to take advantage of that. In MLX, data does not need to be constantly moved between separate memory pools just to be processed by CPU and GPU; the device is chosen at execution time while memory remains shared. Source: link:https://ml-explore.github.io/mlx/build/html/usage/unified_memory.html[MLX documentation — Unified Memory].
+
+That matters for LLM inference because performance depends not only on pure computation, but also on moving weights, maintaining KV cache, handling long prefixes, and reusing already computed states. So Ollama's shift to MLX is not a cosmetic library swap. It is a change in how the software path aligns with Apple Silicon. The primary sources do not prove that every Mac automatically becomes “twice as fast at everything” after this change. They support a narrower and more accurate claim: Ollama has started using a native path designed specifically for Apple's unified memory model, and in the published scenario that produced a large gain.
+
+== Why the impact is stronger in agentic workflows
+
+In the announcement, Ollama says that the cache is now reused across conversations, snapshots are saved in intelligent locations in the prompt, and shared prefixes survive longer even when older branches are dropped. In practice, that means three things.
+
+First, a long system prompt, tool definitions, and repeated context are less likely to be recomputed from scratch. Second, useful prefixes survive longer when a conversation branches. Third, coding assistants and tool-using agents begin to behave less like a series of cold starts. That is why Ollama explicitly mentions personal assistants, coding agents, Claude Code, Codex, and OpenClaw in the announcement: link:https://ollama.com/blog/mlx[official announcement].
+
+== Where M5 fits into the story
+
+Ollama says that on M5, M5 Pro, and M5 Max it uses the new GPU Neural Accelerators to improve both time to first token and generation speed. Apple supports that framing: in its M5 materials it lists Neural Accelerators in GPU cores and unified memory bandwidth up to 153 GB/s; for M5 Pro and M5 Max Apple separately cites up to 307 GB/s and up to 614 GB/s. Sources: link:https://www.apple.com/newsroom/2025/10/apple-unleashes-m5-the-next-big-leap-in-ai-performance-for-apple-silicon/[Apple Newsroom — M5] and link:https://www.apple.com/newsroom/2026/03/apple-debuts-m5-pro-and-m5-max-to-supercharge-the-most-demanding-pro-workflows/[Apple Newsroom — M5 Pro / M5 Max].
+
+But the strongest part of this story is precision. Apple Machine Learning Research explains separately that TTFT for LLMs is often compute-bound and especially benefits from Neural Accelerators, while subsequent token generation depends more heavily on memory bandwidth and other limits. That is why the phrase “M5 is three times faster” should not be repeated as a general claim without specifying the metric. The first token can improve dramatically; steady-state decode may improve more modestly. Source: link:https://machinelearning.apple.com/research/exploring-llms-mlx-m5[Apple Machine Learning Research].
+
+== The conclusion without hype
+
+The official sources do not prove that Apple Silicon is now unconditionally better than every other local AI hardware option across all price and infrastructure classes. What they do show is something narrower and more important: with Ollama 0.19, Apple Silicon has become much more compelling as a platform for local inference in workflows where privacy, efficiency, silence, large shared memory, and long agentic sessions matter.
+
+That conclusion has a solid architectural basis: unified memory as a platform property, MLX as a native framework built for that model, GPU Neural Accelerators in the M5 family, and real Ollama optimizations in cache behavior and prompt processing. At the same time, Ollama also notes that the current preview is focused on the new Qwen3.5-35B-A3B and recommends Macs with more than 32 GB of unified memory. So this is not “everything magically got faster.” It is a strong but clearly bounded technological shift. Source: link:https://ollama.com/blog/mlx[Ollama blog].
+
+The documentation-grade formulation therefore should be this: *not “Apple Silicon has beaten everything,” but “Ollama 0.19 and the move to MLX have made Apple Silicon a much more convincing platform for local AI, especially in long, agentic, and privacy-sensitive workflows.”*
+
+== Official sources
+
+. link:https://ollama.com/blog/mlx[Ollama Blog — Ollama is now powered by MLX on Apple Silicon in preview, 2026-03-30]
+. link:https://github.com/ollama/ollama/releases/tag/v0.19.0[Ollama GitHub Release — v0.19.0]
+. link:https://ml-explore.github.io/mlx/build/html/usage/unified_memory.html[MLX Documentation — Unified Memory]
+. link:https://machinelearning.apple.com/research/exploring-llms-mlx-m5[Apple Machine Learning Research — Exploring LLMs with MLX and the Neural Accelerators in the M5 GPU]
+. link:https://www.apple.com/newsroom/2025/10/apple-unleashes-m5-the-next-big-leap-in-ai-performance-for-apple-silicon/[Apple Newsroom — M5]
+. link:https://www.apple.com/newsroom/2026/03/apple-debuts-m5-pro-and-m5-max-to-supercharge-the-most-demanding-pro-workflows/[Apple Newsroom — M5 Pro and M5 Max]
