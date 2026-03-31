@@ -1,0 +1,170 @@
+= Ordering Report
+:description: Current owner-oriented maturity report for the Ordering component.
+:page-slug: ordering-report
+
+This page is the current owner-oriented maturity report for *Ordering*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Ordering is not shaped as a simple checkout helper or a narrow order-record CRUD surface.
+
+It reads as a Symfony-oriented order lifecycle and commerce-operations component: a system intended to manage order state transitions, payment application, shipment attachment, refund execution, authenticated API and UI runtime, workflow-aware application behavior, and a hardened ingress layer for JWKS, webhook signatures, rate limits, secret rotation, and audit-oriented controls.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience utility. Its current shape suggests an internal order-management and order-security platform layer designed for durability, structured evolution, and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Ordering appears to occupy the role of an order lifecycle, fulfillment interplay, and commerce-operations component.
+
+Its ecosystem role can be understood across several functions:
+
+* as an order state and totals surface,
+* as a payment, shipment, and refund coordination layer,
+* as an authenticated order-facing API and UI surface,
+* as a workflow, messenger, and rate-limited runtime,
+* as a hardened ingress and webhook-trust layer,
+* and as a reusable internal order capability for broader applications.
+
+This makes Ordering strategically more important than a typical order table or admin form. It points toward a reusable internal order capability that other components can depend on.
+
+== Current Maturity
+
+Ordering already presents several strong signals of maturity:
+
+* a clear order-lifecycle product identity,
+* explicit Symfony 8, Doctrine ORM 3.3, API Platform 4, Messenger, Workflow, JWT auth, Sentry, and Rate Limiter targeting,
+* owner canon scan and enforcement,
+* a real local pipeline with schema validation, linting, static analysis, smell detection, and Panther,
+* a concrete order aggregate that coordinates payment, shipment, refund, and status transitions,
+* a test surface that explicitly exercises payment-shipment-refund flow,
+* and a visible ingress-hardening track around JWKS, webhook signing, secret rotation, CSP, and audit projection.
+
+In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.6 / 10
+| The component is already clearly framed around order lifecycle and commerce operations rather than a generic checkout helper.
+
+| Architecture and domain shape
+| 8.5 / 10
+| API Platform, Doctrine ORM, Workflow, Messenger, auth, rate limiting, and canon enforcement already form a governed order-runtime architecture.
+
+| Runtime and application surface
+| 8.6 / 10
+| API/UI runtime, JWT auth, schema validation, Panther, and local full pipeline establish a serious application surface.
+
+| QA maturity
+| 8.7 / 10
+| PHPUnit fast/full, Panther, phpstan, phpmd, cs checks, and owner canon enforcement create a strong verification contour.
+
+| Governance and operational readiness
+| 8.8 / 10
+| Owner canon scan, Sentry, schema validation, and pipeline discipline form a strong operational-governance signal.
+
+| Order lifecycle posture
+| 8.9 / 10
+| The order aggregate already coordinates paid, shipped, and refunded transitions in a way that clearly reads as lifecycle logic rather than passive data storage.
+
+| Security and ingress posture
+| 8.9 / 10
+| JWKS, webhook signing, secret rotation, CSP, rate-limit guard, and audit projection together form a notably serious ingress-hardening contour.
+
+| Market-facing alignment
+| 8.5 / 10
+| The component already aligns well with enterprise order-management and order-security classes, though it still reads more as a governed platform layer than a finished public OMS suite.
+
+| Overall readiness to RC
+| 8.7 / 10
+| Ordering is already a very strong pre-RC component with clear enterprise-class internal order-runtime and ingress-hardening signals.
+|===
+
+== Leader Line
+
+Ordering should not be measured against simple order tables or lightweight checkout-only plugins.
+
+Its natural comparison line is closer to the enterprise-class order management, order routing, order editing, and fulfillment-aware lifecycle category, including the kind of capability bands represented by:
+
+* centralized order data,
+* order state and lifecycle handling,
+* order routing and fulfillment interplay,
+* order edits, refunds, and post-purchase adjustments,
+* authenticated and rate-governed order operations,
+* and operational trust around ingress, signatures, and auditability.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger order-management leaders, while expressing that class through a Symfony-native internal component with an unusually explicit ingress-hardening layer.
+
+In that sense, the leader line is not another checkout helper.
+It is closer to:
+
+* enterprise order-management class,
+* enterprise order-lifecycle and routing class,
+* enterprise post-purchase and fulfillment-aware operations class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Lifecycle-centered domain model
+
+Ordering already carries a strong center of gravity around order-state behavior.
+
+That matters because many order systems degrade into passive records where payment, shipment, and refund logic lives outside the order aggregate.
+
+That fragmentation is not the dominant signal here. The component instead signals a genuine order-lifecycle model.
+
+=== Security-hardening seriousness
+
+The ingress-hardening layer is one of the component’s strongest public signals.
+
+JWKS issuance, webhook signing and verification, secret rotation, CSP, rate-limit control, and audit projection together show that Ordering is being shaped not only as an order runtime, but as a trusted order-ingress surface.
+
+=== Platform-grade runtime posture
+
+API Platform, JWT auth, Messenger, Workflow, Sentry, and Rate Limiter create a runtime that already reads like a real application surface rather than a local-only domain sketch.
+
+=== Canon and owner-governance discipline
+
+Owner canon scan and enforcement are another distinguishing signal.
+
+This suggests the component is being developed under explicit structural governance rather than loose repository drift.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise OMS parity expansion
+
+The component is already structurally aligned with leader-class order-management concerns. The next maturity band is about strengthening parity with broader enterprise expectations around routing breadth, richer order editing flows, customer-service operations, and outward-facing order orchestration depth.
+
+=== Runtime surface strengthening
+
+Ordering already has strong internal and operational signals. The next maturity layer is about making the outward-facing order runtime and product shell feel as strong and complete as the internal lifecycle and ingress-hardening contour.
+
+=== Productized public posture
+
+Internally, the component already looks more mature than many lightweight order packages. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Ordering is already well past the interesting draft stage.
+
+It currently reads as a serious order lifecycle and commerce-operations component with strong domain behavior, a coherent application-runtime contour, and a clear direction around payment-shipment-refund transitions, authenticated order operations, and ingress trust controls.
+
+Its strongest present signal is not UI theater. Its strongest signal is substance: lifecycle discipline, canon governance, runtime seriousness, and a shape that clearly points toward durable internal order and post-purchase operations use.
+
+At this stage, Ordering can already be presented as a high-quality pre-RC component moving within an enterprise-class order-management and lifecycle trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.
