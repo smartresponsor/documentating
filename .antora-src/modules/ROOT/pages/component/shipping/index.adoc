@@ -1,0 +1,44 @@
+= Shipping
+:description: Public entry page for the Shipping component.
+:page-slug: shipping
+
+Shipping is a Symfony-oriented shipment lifecycle, carrier capability, and shipping-operations component within the Smartresponsor ecosystem.
+
+It should be understood not as a simple rate calculator, but as a governed shipping layer for shipment lifecycle operations, multi-carrier quote and rate handling, carrier registry and policy surfaces, outbox-driven integration, and operational shipping discipline.
+
+== What It Is
+
+Shipping exists to provide a structured internal shipping capability that can support shipment lifecycle flows, carrier quote providers, rate and status endpoints, carrier and policy governance, outbox publishing and consumption, health checks, data sync, and human-facing demo review surfaces.
+
+In ecosystem terms, it belongs to the class of components that strengthen fulfillment correctness, shipping continuity, and operational logistics discipline.
+
+== Current Reading
+
+In its current state, Shipping already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear shipment-and-shipping product identity,
+* strong canonical API and CLI transition discipline,
+* multi-surface runtime with capability, registry, policy, and lifecycle layers,
+* and a governance-oriented engineering contour around demo evidence, route inventory, runtime proof, and RC hardening.
+
+== Why It Matters
+
+Shipping systems become fragile when shipment lifecycle handling, rates, carrier capability logic, carrier registries, policy enforcement, webhook transport, tracking correlation, and fulfillment review surfaces are treated as separate ad hoc concerns.
+
+Shipping matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple quote endpoint or label helper.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/shipping/report/index.adoc[Shipping Report]
+
+== Position in the Ecosystem
+
+Shipping currently stands as one of the stronger fulfillment-and-logistics oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class shipping execution and carrier-governance maturity through structure, verification, and long-term maintainability.
