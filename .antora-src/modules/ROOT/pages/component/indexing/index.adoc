@@ -1,0 +1,44 @@
+= Indexing
+:description: Public entry page for the Indexing component.
+:page-slug: indexing
+
+Indexing is a Symfony-oriented search indexing, query, and index-management component within the Smartresponsor ecosystem.
+
+It should be understood not as a simple database search helper, but as a governed indexing runtime for index lifecycle control, query construction, search execution, alias handling, configuration management, and operational health visibility.
+
+== What It Is
+
+Indexing exists to provide a structured internal indexing capability that can support index creation and deletion, query building, match-all and search flows, alias and configuration management, transport-driven execution, and machine-facing indexing operations.
+
+In ecosystem terms, it belongs to the class of components that strengthen search readiness, retrieval performance, and operational index discipline.
+
+== Current Reading
+
+In its current state, Indexing already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear indexing-centric product identity,
+* action-oriented runtime surface for index lifecycle control,
+* query-aware and transport-aware internal modeling,
+* and a governance-oriented engineering posture around health, configuration, and runtime operations.
+
+== Why It Matters
+
+Search systems become fragile when index lifecycle, alias control, query construction, execution transport, and operational health are treated as separate ad hoc concerns.
+
+Indexing matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple search helper or a thin adapter around a single search backend.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/indexing/report/index.adoc[Indexing Report]
+
+== Position in the Ecosystem
+
+Indexing currently stands as one of the stronger search-and-retrieval infrastructure oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class indexing and search-runtime maturity through structure, verification, and long-term maintainability.
