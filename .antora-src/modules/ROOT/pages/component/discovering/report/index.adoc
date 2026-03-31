@@ -1,0 +1,163 @@
+= Discovering Report
+:description: Current owner-oriented maturity report for the Discovering component.
+:page-slug: discovering-report
+
+This page is the current owner-oriented maturity report for *Discovering*.
+
+It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.
+
+== Component Portrait
+
+Discovering is not shaped as a generic search engine or a thin search-adapter shell.
+
+It reads as a Symfony-oriented application resource discovery component: a system intended to expose, index, scope, and retrieve relevant application resources through seeded source providers, source-record-to-document mapping, typed query/result models, operator diagnostics, human-facing discovery UI, and machine-facing discovery APIs.
+
+The component already shows signs of being treated as a governed subsystem rather than as a convenience feature. Its current shape suggests an internal discovery and retrieval platform layer designed for structured evolution and integration into a wider ecosystem.
+
+== Ecosystem Role
+
+Within the broader Smartresponsor direction, Discovering appears to occupy the role of an application resource discovery and retrieval component.
+
+Its ecosystem role can be understood across several functions:
+
+* as a source-provider and indexing surface,
+* as a typed query and result layer,
+* as a human-facing discovery UI,
+* as a machine-facing JSON discovery endpoint,
+* and as an operator-visible diagnostics surface.
+
+This makes Discovering strategically more important than a typical search box. It points toward a reusable internal discovery capability that other components can depend on.
+
+== Current Maturity
+
+Discovering already presents several strong signals of maturity for its current stage:
+
+* a clear discovery-centric product identity,
+* an explicit mission around resource exposure, indexing, scoping, and retrieval,
+* a seeded discovery-provider and indexer posture,
+* typed query and result modeling,
+* both human-facing and machine-facing surfaces,
+* and operator-oriented diagnostics.
+
+In its current public reading, the component still sits earlier in its lifecycle than some of the more hardened ecosystem components, but it already behaves like a structured component with a coherent discovery thesis rather than a vague experimental search repo.
+
+== RC Scorecard
+
+[cols="2,1,4",options="header"]
+|===
+| Layer | Score to RC | Reading
+
+| Product identity
+| 8.0 / 10
+| The component is already clearly framed as application resource discovery rather than generic search.
+
+| Architecture and domain shape
+| 7.8 / 10
+| Source providers, record-to-document mapping, typed query/results, and separate human/machine surfaces already point toward a coherent discovery model.
+
+| Runtime and application surface
+| 7.7 / 10
+| Human-facing UI, JSON API, and operator overview routes already establish a meaningful application runtime surface.
+
+| QA maturity
+| 6.9 / 10
+| The visible repository surface is still lighter here than in the more hardened components, suggesting an earlier maturation band.
+
+| Governance and operational readiness
+| 7.4 / 10
+| Operator diagnostics and scoped discovery posture are strong early signals, though the public contour remains lighter than the most mature ecosystem components.
+
+| Retrieval and indexing posture
+| 8.1 / 10
+| The mission around exposing, indexing, scoping, and retrieving relevant resources is already explicit and well-focused.
+
+| Market-facing alignment
+| 8.0 / 10
+| The component already aligns well with enterprise search, AI retrieval, and discovery-platform classes, though it still reads as an internal platform seed rather than a hardened product shell.
+
+| Overall readiness to RC
+| 7.7 / 10
+| Discovering is already a promising structured pre-RC component with a clear discovery and retrieval direction.
+|===
+
+== Leader Line
+
+Discovering should not be measured against simple site-search widgets or undifferentiated full-text search add-ons.
+
+Its natural comparison line is closer to the enterprise-class search, retrieval, and discovery category, including the kind of capability bands represented by:
+
+* unified resource indexing,
+* relevant retrieval and scoped search,
+* typed discovery models,
+* human and machine discovery surfaces,
+* and governed operational handling of findability.
+
+This means the component is better understood as targeting the same strategic class of problem addressed by stronger discovery and retrieval leaders, while expressing that class through a Symfony-native internal component.
+
+In that sense, the leader line is not another search box.
+It is closer to:
+
+* enterprise discovery class,
+* enterprise retrieval class,
+* enterprise search-and-findability class,
+* reinterpreted as an internal ecosystem component.
+
+== Strength Profile
+
+Several strengths are already visible and worth naming directly.
+
+=== Discovery thesis clarity
+
+Discovering already carries a strong center of gravity around resource discovery rather than vague “search” language.
+
+That matters because many search-oriented components become shallow when indexing, scoping, relevance, UI exposure, and machine-facing retrieval are not treated as one coherent concern.
+
+That fragmentation is not the dominant signal here. The component instead signals a coherent discovery-first approach.
+
+=== Resource-model orientation
+
+The presence of source providers, source-record-to-document mapping, and typed query/result models is one of the component’s strongest public signals.
+
+These are not decorative claims. Together they show that Discovering already thinks in terms of retrieval structure and resource discipline rather than only query execution.
+
+=== Dual-surface thinking
+
+The explicit presence of a human-facing UI and a machine-facing JSON discovery endpoint is a strong sign of architectural seriousness.
+
+It suggests the component is being shaped for both operator/end-user interaction and programmatic integration.
+
+=== Operator diagnostics
+
+The inclusion of an operator overview route shows that the component is already considering visibility and operational stewardship, not only retrieval output.
+
+== RC Trajectory
+
+The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.
+
+=== Enterprise retrieval parity expansion
+
+The component is already structurally aligned with leader-class search and retrieval concerns. The next maturity band is about strengthening parity with broader enterprise expectations around indexing depth, relevance, richer resource diversity, and operational visibility.
+
+=== Runtime surface strengthening
+
+Discovering already has strong conceptual and structural signals. The next maturity layer is about making the outward-facing runtime and product shell feel as strong and complete as the internal discovery model.
+
+=== Productized public posture
+
+Internally, the component already looks more disciplined than many lightweight search layers. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.
+
+== Public Verdict
+
+Discovering is already past the stage of being merely an idea shell.
+
+It currently reads as a serious, Symfony-native discovery and retrieval component with a clear resource-discovery mission, a coherent indexing and query model, and a credible direction around findability, scoped retrieval, and dual-surface exposure.
+
+Its strongest present signal is not UI theater. Its strongest signal is thesis clarity: discovery discipline, retrieval structure, indexing intent, and a shape that clearly points toward durable internal search-and-findability use.
+
+At this stage, Discovering can already be presented as a promising pre-RC component moving within an enterprise-class discovery and retrieval trajectory.
+
+== Owner Note
+
+This report is intentionally written as a living component portrait.
+
+It should evolve as the component moves from structured discovery seed toward a more explicit release-candidate posture.
