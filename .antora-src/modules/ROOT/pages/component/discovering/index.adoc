@@ -1,0 +1,44 @@
+= Discovering
+:description: Public entry page for the Discovering component.
+:page-slug: discovering
+
+Discovering is a Symfony-oriented application resource discovery component within the Smartresponsor ecosystem.
+
+It should be understood not as a generic search engine, but as a governed discovery layer for exposing, indexing, scoping, and retrieving relevant application resources through a coherent discovery model.
+
+== What It Is
+
+Discovering exists to provide a structured internal discovery capability that can support source providers, source-record-to-document mapping, typed query and result models, resource indexing, operator diagnostics, human-facing search UI, and machine-facing discovery APIs.
+
+In ecosystem terms, it belongs to the class of components that strengthen resource findability, application-level retrieval, and operational discovery discipline.
+
+== Current Reading
+
+In its current state, Discovering already reads as a promising early-to-mid maturity component with a clear business seed.
+
+Its strongest visible qualities are:
+
+* clear discovery-centric product identity,
+* explicit resource discovery mission,
+* source-provider and indexing orientation,
+* and a governance-oriented engineering posture around scoping and retrieval.
+
+== Why It Matters
+
+Discovery systems become noisy and unreliable when source integration, indexing, scoping, retrieval, and operator diagnostics are treated as separate ad hoc concerns.
+
+Discovering matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple search box or a thin search-adapter layer.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/discovering/report/index.adoc[Discovering Report]
+
+== Position in the Ecosystem
+
+Discovering currently stands as a discovery-and-retrieval oriented component in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class application resource discovery and retrieval maturity through structure, indexing discipline, and long-term maintainability.
