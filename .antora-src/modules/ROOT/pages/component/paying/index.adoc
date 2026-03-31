@@ -1,0 +1,44 @@
+= Paying
+:description: Public entry page for the Paying component.
+:page-slug: paying
+
+Paying is a Symfony-oriented payment lifecycle, webhook, and payment-operations component within the Smartresponsor ecosystem.
+
+It should be understood not as a simple gateway adapter, but as a governed payment layer for create, start, finalize, refund, and read flows, webhook ingest and verification, idempotent payment operations, operator-console runtime, and long-horizon payment discipline.
+
+== What It Is
+
+Paying exists to provide a structured internal payment capability that can support payment lifecycle orchestration, canonical API/UI/CLI surfaces, webhook ingest, idempotency, outbox publishing, health and metrics exposure, provider routing, and governed operational verification.
+
+In ecosystem terms, it belongs to the class of components that strengthen payment correctness, operational trust, and revenue-event continuity.
+
+== Current Reading
+
+In its current state, Paying already reads as a serious pre-RC component.
+
+Its strongest visible qualities are:
+
+* clear payment-lifecycle product identity,
+* strong webhook, idempotency, and provider-routing posture,
+* multi-surface runtime with API, UI, and CLI layers,
+* and a governance-oriented engineering contour around proofs, smokes, reports, and security checks.
+
+== Why It Matters
+
+Payment systems become fragile when lifecycle state, refunds, provider integration, webhook trust, idempotency, outbox delivery, health visibility, and operator review surfaces are treated as separate ad hoc concerns.
+
+Paying matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.
+
+That makes it strategically more valuable than a simple payment-form backend or a thin provider SDK wrapper.
+
+== Current Report
+
+For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
+
+* xref:component/paying/report/index.adoc[Paying Report]
+
+== Position in the Ecosystem
+
+Paying currently stands as one of the stronger payment-and-runtime governance oriented components in the Smartresponsor ecosystem.
+
+It is best read as a component moving toward enterprise-class payment operations and payment-lifecycle maturity through structure, verification, and long-term maintainability.
