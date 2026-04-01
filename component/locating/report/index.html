@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Locating Report :: Oleksandr Tishchenko</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/component/locating/report/">
+    <meta name="description" content="Current owner-oriented maturity report for the Locating component.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/owner-overrides.css">
+  </head>
+  <body class="article">
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.smartresponsor.com">Oleksandr Tishchenko</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu"></div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../../">Oleksandr Tishchenko</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../about/">About</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../owner/">Owner</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../article/">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../support/">Support</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../contact/">Contact</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../privacy/">Privacy</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../terms/">Terms</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Oleksandr Tishchenko</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../../">Oleksandr Tishchenko</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../">Home</a></li>
+    <li><span>Locating Report</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Locating Report</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page is the current owner-oriented maturity report for <strong>Locating</strong>.</p>
+</div>
+<div class="paragraph">
+<p>It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_component_portrait"><a class="anchor" href="#_component_portrait"></a>Component Portrait</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Locating is not shaped as a simple geocode lookup wrapper or a lightweight map helper.</p>
+</div>
+<div class="paragraph">
+<p>It reads as a Symfony-oriented locator engine: a system intended to manage address normalization, validation, geocoding, provider routing, caching, resilience decorators, tenant-aware controls, observability hooks, and machine-facing locator operations.</p>
+</div>
+<div class="paragraph">
+<p>The component already shows signs of being treated as a governed subsystem rather than as a convenience feature. Its current shape suggests an internal locator and address-quality platform layer designed for durability, structured evolution, and integration into a wider ecosystem.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ecosystem_role"><a class="anchor" href="#_ecosystem_role"></a>Ecosystem Role</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Within the broader Smartresponsor direction, Locating appears to occupy the role of a locator, validation, and geocoding component.</p>
+</div>
+<div class="paragraph">
+<p>Its ecosystem role can be understood across several functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>as an address normalization and validation surface,</p>
+</li>
+<li>
+<p>as a provider-routing and orchestration layer,</p>
+</li>
+<li>
+<p>as a geocoding and reverse-location capability,</p>
+</li>
+<li>
+<p>as a tenant-aware control and policy surface,</p>
+</li>
+<li>
+<p>and as an observable runtime for location operations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This makes Locating strategically more important than a typical geocoding helper. It points toward a reusable internal location capability that other components can depend on.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_current_maturity"><a class="anchor" href="#_current_maturity"></a>Current Maturity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Locating already presents several strong signals of maturity:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a clear locator-engine product identity,</p>
+</li>
+<li>
+<p>explicit scope around normalization, validation, and geocoding,</p>
+</li>
+<li>
+<p>provider routing, caching, resilience decorators, tenant-aware controls, and observability hooks,</p>
+</li>
+<li>
+<p>HTTP endpoints for locator operations and status or metrics,</p>
+</li>
+<li>
+<p>a broad test matrix across unit, integration, contract, and smoke lanes,</p>
+</li>
+<li>
+<p>and CI lanes for validation, analysis, and smoke gates.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rc_scorecard"><a class="anchor" href="#_rc_scorecard"></a>RC Scorecard</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Layer</th>
+<th class="tableblock halign-left valign-top">Score to RC</th>
+<th class="tableblock halign-left valign-top">Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product identity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.7 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The component is already clearly framed as a locator engine for normalization, validation, and geocoding rather than a generic utility.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Architecture and domain shape</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.5 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provider routing, caching, resilience, tenant-aware controls, and controller/status surfaces already form a coherent locator-engine shape.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Runtime and application surface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.4 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP endpoints, server scripts, Docker flows, and machine-facing locator operations already establish a real runtime layer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QA maturity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.8 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The quality contour is strong across linting, phpstan, unit, integration, contract, smoke, Panther, and e2e surfaces.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Governance and operational readiness</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.7 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tenant-aware controls, observability hooks, CI validation, and hardening plans form a strong governance posture.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geocoding and validation posture</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.9 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The explicit combination of normalization, validation, geocoding, provider routing, caching, and resilience is one of the component’s clearest strengths.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Market-facing alignment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.5 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The component already aligns well with enterprise locator, address-validation, and geocoding-engine classes, though it still reads more as a governed platform layer than a finished public location product shell.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Overall readiness to RC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.6 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Locating is already a strong pre-RC component with clear enterprise-class internal location-engine signals.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_leader_line"><a class="anchor" href="#_leader_line"></a>Leader Line</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Locating should not be measured against simple map pins, single-provider geocode wrappers, or lightweight address helper packages.</p>
+</div>
+<div class="paragraph">
+<p>Its natural comparison line is closer to the enterprise-class address validation, geocoding, and location-intelligence category, including the kind of capability bands represented by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>address normalization and validation,</p>
+</li>
+<li>
+<p>provider-aware geocoding and reverse geocoding,</p>
+</li>
+<li>
+<p>routing and orchestration across location providers,</p>
+</li>
+<li>
+<p>caching, resilience, and operational safeguards,</p>
+</li>
+<li>
+<p>and governed handling of location correctness and observability.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This means the component is better understood as targeting the same strategic class of problem addressed by stronger location and address-quality leaders, while expressing that class through a Symfony-native internal component.</p>
+</div>
+<div class="paragraph">
+<p>In that sense, the leader line is not another geocode helper.
+It is closer to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>enterprise locator-engine class,</p>
+</li>
+<li>
+<p>enterprise address-validation class,</p>
+</li>
+<li>
+<p>enterprise geocoding-and-location-quality class,</p>
+</li>
+<li>
+<p>reinterpreted as an internal ecosystem component.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_strength_profile"><a class="anchor" href="#_strength_profile"></a>Strength Profile</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Several strengths are already visible and worth naming directly.</p>
+</div>
+<div class="sect2">
+<h3 id="_locator_engine_clarity"><a class="anchor" href="#_locator_engine_clarity"></a>Locator-engine clarity</h3>
+<div class="paragraph">
+<p>Locating already carries a strong center of gravity around location correctness rather than vague “maps” language.</p>
+</div>
+<div class="paragraph">
+<p>That matters because many location systems become fragmented when validation, geocoding, caching, fallback, and runtime policy are spread across disconnected technical surfaces.</p>
+</div>
+<div class="paragraph">
+<p>That fragmentation is not the dominant signal here. The component instead signals a coherent locator-first approach.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_provider_and_resilience_posture"><a class="anchor" href="#_provider_and_resilience_posture"></a>Provider and resilience posture</h3>
+<div class="paragraph">
+<p>The presence of provider routing, caching, and resilience decorators is one of the component’s strongest public signals.</p>
+</div>
+<div class="paragraph">
+<p>These are not decorative claims. Together they show that Locating already thinks in terms of controlled provider orchestration and runtime durability rather than only in terms of raw coordinate lookup.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_test_matrix_maturity"><a class="anchor" href="#_test_matrix_maturity"></a>Test-matrix maturity</h3>
+<div class="paragraph">
+<p>The breadth of the visible test matrix is another strong signal.</p>
+</div>
+<div class="paragraph">
+<p>Unit, integration, contract, smoke, Panther, and e2e coverage show that the component is being hardened not just as a code library, but as an operational locator runtime.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tenant_aware_and_observable_design"><a class="anchor" href="#_tenant_aware_and_observable_design"></a>Tenant-aware and observable design</h3>
+<div class="paragraph">
+<p>The README-level emphasis on tenant-aware controls and observability hooks shows that the component is being shaped for multi-context operational use, not only for single-tenant local utility behavior.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rc_trajectory"><a class="anchor" href="#_rc_trajectory"></a>RC Trajectory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.</p>
+</div>
+<div class="sect2">
+<h3 id="_enterprise_location_engine_parity_expansion"><a class="anchor" href="#_enterprise_location_engine_parity_expansion"></a>Enterprise location-engine parity expansion</h3>
+<div class="paragraph">
+<p>The component is already structurally aligned with leader-class address-validation and geocoding concerns. The next maturity band is about strengthening parity with broader enterprise expectations around provider breadth, coverage depth, confidence handling, and richer operational visibility.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_runtime_surface_strengthening"><a class="anchor" href="#_runtime_surface_strengthening"></a>Runtime surface strengthening</h3>
+<div class="paragraph">
+<p>Locating already has strong internal and operational signals. The next maturity layer is about making the outward-facing locator runtime and product shell feel as strong and complete as the internal validation and geocoding contour.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_productized_public_posture"><a class="anchor" href="#_productized_public_posture"></a>Productized public posture</h3>
+<div class="paragraph">
+<p>Internally, the component already looks more mature than many lightweight location helpers. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_public_verdict"><a class="anchor" href="#_public_verdict"></a>Public Verdict</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Locating is already well past the interesting draft stage.</p>
+</div>
+<div class="paragraph">
+<p>It currently reads as a serious, Symfony-native locator engine with strong address-quality discipline, a coherent provider-orchestration posture, and a clear direction around normalization, validation, geocoding, resilience, and tenant-aware runtime control.</p>
+</div>
+<div class="paragraph">
+<p>Its strongest present signal is not UI theater. Its strongest signal is substance: location correctness, provider-routing maturity, runtime durability, and a shape that clearly points toward durable internal address and geocoding use.</p>
+</div>
+<div class="paragraph">
+<p>At this stage, Locating can already be presented as a high-quality pre-RC component moving within an enterprise-class locator, address-validation, and geocoding trajectory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_owner_note"><a class="anchor" href="#_owner_note"></a>Owner Note</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This report is intentionally written as a living component portrait.</p>
+</div>
+<div class="paragraph">
+<p>It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Marketing America Corp · High Hope · Oleksandr Tishchenko</p>
+  <p><a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>
+</footer>
+  </body>
+</html>
