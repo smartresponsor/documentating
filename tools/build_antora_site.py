@@ -28,6 +28,7 @@ MANIFEST_FILE = ROOT / '.sync' / 'manifest' / 'component-list.yml'
 ARTICLE_DIRS = [DOCS_DIR / 'article']
 DATE_PREFIX_RE = re.compile(r'^\d{4}-\d{2}-\d{2}--?')
 ATTR_RE = re.compile(r'^:([^:]+):\s*(.*)$')
+ASSET_IMAGE_RE = re.compile(r'image::/assets/([^\[]+)\[')
 SKIP_RELS = {
     'docs/article/2026-03-29-ai-is-not-just-chatgpt-five-layer-stack.adoc',
     'docs/article/2026-03-29-ai-ne-zamenyaet-myshlenie-obnazhaet-kachestvo.adoc',
@@ -94,6 +95,10 @@ def md_to_adoc(text: str) -> str:
     ).stdout.strip()
 
 
+def normalize_asset_image_paths(text: str) -> str:
+    return ASSET_IMAGE_RE.sub(r'image::\1[', text)
+
+
 def derive_slug(explicit: str, title: str, path: Path) -> str:
     if explicit.strip():
         return explicit.strip()
@@ -125,7 +130,7 @@ def parse_adoc(raw: str, path: Path) -> Article:
         if i < len(lines) and not lines[i].strip():
             i += 1
             break
-    body = '\n'.join(lines[i:]).lstrip()
+    body = normalize_asset_image_paths('\n'.join(lines[i:]).lstrip())
     title = title or attrs.get('title', '') or path.stem
     slug = derive_slug(attrs.get('page-slug', '') or attrs.get('slug', ''), title, path)
     date = attrs.get('page-published') or attrs.get('date') or ''
@@ -178,7 +183,18 @@ def parse_md(raw: str, path: Path) -> Article:
     if tags:
         head.append(f":page-tags: {', '.join(tags)}")
     head.extend(['', f"_Source markdown: `{path.relative_to(ROOT).as_posix()}`_", ''])
-    return Article(title, slug, date, desc, author, tags, path.relative_to(ROOT).as_posix(), '\n'.join(head) + md_to_adoc(body) + '\n', 'md', 1)
+    return Article(
+        title,
+        slug,
+        date,
+        desc,
+        author,
+        tags,
+        path.relative_to(ROOT).as_posix(),
+        '\n'.join(head) + normalize_asset_image_paths(md_to_adoc(body)) + '\n',
+        'md',
+        1,
+    )
 
 
 def skip(path: Path) -> bool:
@@ -448,11 +464,98 @@ For direct contact, collaboration, or owner-level communication, see xref:contac
     )
 
 
+def write_owner_support_pages() -> None:
+    write(
+        PAGES_DIR / 'about' / 'index.adoc',
+        '''= About
+:description: About this public documentation portal and how to use it.
+
+This portal publishes owner-oriented documentation, essays, and ecosystem context for *Smartresponsor*.
+
+It is designed as a public knowledge layer with practical navigation:
+
+* xref:article/index.adoc[Articles] for long-form essays and technical thinking.
+* xref:component/index.adoc[Components] for ecosystem structure.
+* xref:manifest/index.adoc[Manifests] for canon and principles.
+
+For authorship context, see xref:owner/index.adoc[Owner].
+''',
+    )
+    write(
+        PAGES_DIR / 'owner' / 'index.adoc',
+        '''= Owner
+:description: Owner and authorship context for this portal.
+
+Owner and primary author:
+
+*Oleksandr Tishchenko*
+
+Company:
+
+*Marketing America Corp*
+
+Organization:
+
+*High Hopes*
+
+Project direction:
+
+*Smartresponsor*
+
+For collaboration, see xref:contact/index.adoc[Contact].
+''',
+    )
+    write(
+        PAGES_DIR / 'support' / 'index.adoc',
+        '''= Support
+:description: Support options for documentation continuity and maintenance.
+
+This portal is maintained in owner-oriented mode and updated continuously.
+
+Support helps sustain:
+
+* documentation maintenance,
+* editorial updates,
+* long-term public availability,
+* architectural canon continuity.
+
+For direct communication before support, use xref:contact/index.adoc[Contact].
+''',
+    )
+    write(
+        PAGES_DIR / 'contact' / 'index.adoc',
+        '''= Contact
+:description: Contact page for owner-level communication and collaboration.
+
+For owner-level communication, partnership, or collaboration requests:
+
+* Owner: *Oleksandr Tishchenko*
+* Company: *Marketing America Corp*
+* Organization: *High Hopes*
+* Project direction: *Smartresponsor*
+
+Use the repository communication channels and official organization contacts for outreach.
+''',
+    )
+
+
+def write_owner_assets() -> None:
+    source_dir = DOCS_DIR / 'assets' / 'images'
+    target_dir = OUT_DIR / 'modules' / 'ROOT' / 'assets' / 'images'
+    if source_dir.exists():
+        ensure(target_dir)
+        for path in source_dir.iterdir():
+            if path.is_file():
+                shutil.copy2(path, target_dir / path.name)
+
+
 def main() -> None:
     slug_overrides = load_slug_overrides()
     preserved_component_pages = expand_with_slug_overrides(capture_component_pages(), slug_overrides)
     generate_base_site()
     write_owner_home_page()
+    write_owner_support_pages()
+    write_owner_assets()
     restore_component_pages(preserved_component_pages)
     subprocess.run(['python3', str(ROOT / 'tools' / 'generate_pre_rc_quality_atlas.py')], check=True)
 
