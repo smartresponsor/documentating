@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Shipping Report :: Oleksandr Tishchenko</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/component/shipping/report/">
+    <meta name="description" content="Current owner-oriented maturity report for the Shipping component.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="stylesheet" href="../../../_/css/owner-overrides.css">
+  </head>
+  <body class="article">
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.smartresponsor.com">Oleksandr Tishchenko</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu"></div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../article/">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../manifest/">Manifests</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../">Home</a></li>
+    <li><span>Shipping Report</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Shipping Report</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page is the current owner-oriented maturity report for <strong>Shipping</strong>.</p>
+</div>
+<div class="paragraph">
+<p>It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_component_portrait"><a class="anchor" href="#_component_portrait"></a>Component Portrait</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Shipping is not shaped as a simple shipping quote widget or a narrow carrier adapter.</p>
+</div>
+<div class="paragraph">
+<p>It reads as a Symfony-oriented shipping operations and fulfillment-runtime component: a system intended to manage shipment lifecycle flows, shipping capability endpoints, carrier registries, shipping policies, canonical and compatibility route transitions, outbox publish and consume flows, request correlation, and evidence-friendly demo/runtime surfaces.</p>
+</div>
+<div class="paragraph">
+<p>The component already shows signs of being treated as a governed subsystem rather than as a convenience utility. Its current shape suggests an internal shipping and logistics platform layer designed for durability, structured evolution, and integration into a wider ecosystem.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ecosystem_role"><a class="anchor" href="#_ecosystem_role"></a>Ecosystem Role</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Within the broader Smartresponsor direction, Shipping appears to occupy the role of a shipment lifecycle, carrier capability, and logistics operations component.</p>
+</div>
+<div class="paragraph">
+<p>Its ecosystem role can be understood across several functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>as a shipment lifecycle execution surface,</p>
+</li>
+<li>
+<p>as a multi-carrier quote, rate, and status layer,</p>
+</li>
+<li>
+<p>as a carrier registry and shipping policy surface,</p>
+</li>
+<li>
+<p>as an outbox-driven integration and sync layer,</p>
+</li>
+<li>
+<p>as a demo-evidence and runtime-proof surface,</p>
+</li>
+<li>
+<p>and as a reusable internal shipping capability for broader applications.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This makes Shipping strategically more important than a typical quote calculator or shipping form. It points toward a reusable internal shipping capability that other components can depend on.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_current_maturity"><a class="anchor" href="#_current_maturity"></a>Current Maturity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Shipping already presents several strong signals of maturity:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a clear shipping-and-shipment product identity,</p>
+</li>
+<li>
+<p>explicit shipment lifecycle and shipping capability separation,</p>
+</li>
+<li>
+<p>OpenAPI-described lifecycle, capability, carriers, and policies surfaces,</p>
+</li>
+<li>
+<p>canonical route discipline with managed legacy aliases during transition,</p>
+</li>
+<li>
+<p>tagged carrier quote providers wired into a shipping engine,</p>
+</li>
+<li>
+<p>request-id correlation across the active JSON API surface,</p>
+</li>
+<li>
+<p>outbox publish, consume, and cleanup commands,</p>
+</li>
+<li>
+<p>demo surface with state manifest and reset evidence routes,</p>
+</li>
+<li>
+<p>unit, architecture, e2e, and Playwright lanes,</p>
+</li>
+<li>
+<p>and strong RC-hardening sequences around smokes, reports, canon checks, and runtime proof.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rc_scorecard"><a class="anchor" href="#_rc_scorecard"></a>RC Scorecard</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Layer</th>
+<th class="tableblock halign-left valign-top">Score to RC</th>
+<th class="tableblock halign-left valign-top">Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product identity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.0 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The component is already clearly framed around shipment lifecycle and shipping capability rather than a generic logistics helper.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Architecture and domain shape</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.8 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Canonical shipment/shipping split, carrier providers, policy surfaces, and outbox integration already form a governed shipping-runtime architecture.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Runtime and application surface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.9 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenAPI surfaces, CLI operations, health and data-sync commands, demo routes, fixtures, and runtime-proof reports establish a very real application surface.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QA maturity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.9 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PHPUnit fast/all/e2e, Playwright smoke, phpstan, lint, cs, canon checks, runtime smokes, and inspection reports create a very strong verification contour.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Governance and operational readiness</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.1 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Route inventory, runtime proof, demo-surface and demo-state evidence, canonical alias discipline, and local pipeline tiers form one of the strongest operational-governance profiles among the components.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping and fulfillment posture</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.0 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipment lifecycle, multi-carrier quote/rate/status, carriers registry, policies, sync, outbox, and tracking correlation put Shipping firmly in a serious logistics-runtime class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Market-facing alignment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.9 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The component already aligns well with enterprise shipping API, fulfillment runtime, and carrier-governance classes, though it still reads more as a governed platform layer than a finished public shipping suite.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Overall readiness to RC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.0 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping is already a very strong pre-RC component with clear enterprise-class internal shipping and fulfillment-runtime signals.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_leader_line"><a class="anchor" href="#_leader_line"></a>Leader Line</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Shipping should not be measured against simple shipping-rate widgets or lightweight checkout-only shipping helpers.</p>
+</div>
+<div class="paragraph">
+<p>Its natural comparison line is closer to the enterprise-class multi-carrier shipping API, fulfillment execution, shipment lifecycle, and tracking-visibility category, including the kind of capability bands represented by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>carrier rate shopping,</p>
+</li>
+<li>
+<p>shipment creation and lifecycle handling,</p>
+</li>
+<li>
+<p>tracking and status visibility,</p>
+</li>
+<li>
+<p>address and request-correlation discipline,</p>
+</li>
+<li>
+<p>carrier registry and policy management,</p>
+</li>
+<li>
+<p>and governed operational handling of logistics workflows.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This means the component is better understood as targeting the same strategic class of problem addressed by stronger shipping and fulfillment leaders, while expressing that class through a Symfony-native internal component.</p>
+</div>
+<div class="paragraph">
+<p>In that sense, the leader line is not another shipping-rate helper.
+It is closer to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>enterprise multi-carrier shipping class,</p>
+</li>
+<li>
+<p>enterprise shipment-lifecycle execution class,</p>
+</li>
+<li>
+<p>enterprise logistics-and-fulfillment operations class,</p>
+</li>
+<li>
+<p>reinterpreted as an internal ecosystem component.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_strength_profile"><a class="anchor" href="#_strength_profile"></a>Strength Profile</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Several strengths are already visible and worth naming directly.</p>
+</div>
+<div class="sect2">
+<h3 id="_canonical_dual_surface_discipline"><a class="anchor" href="#_canonical_dual_surface_discipline"></a>Canonical dual-surface discipline</h3>
+<div class="paragraph">
+<p>Shipping already carries a strong center of gravity around the distinction between shipment lifecycle and shipping capability.</p>
+</div>
+<div class="paragraph">
+<p>That matters because logistics systems become confusing when lifecycle operations, carrier intelligence, policies, and compatibility aliases are all allowed to collapse into one flat API story.</p>
+</div>
+<div class="paragraph">
+<p>That collapse is not the dominant signal here. The component instead signals a governed and transitional-runtime-aware architecture.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_operational_surface_depth"><a class="anchor" href="#_operational_surface_depth"></a>Operational surface depth</h3>
+<div class="paragraph">
+<p>The breadth of the runtime surface is one of the component’s strongest public signals.</p>
+</div>
+<div class="paragraph">
+<p>OpenAPI artifacts, health and sync CLI, outbox commands, demo pages, manifest/reset state controls, and runtime-proof reports together show that Shipping is being shaped as a real operational product surface, not just as a set of controller endpoints.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_evidence_and_demo_posture"><a class="anchor" href="#_evidence_and_demo_posture"></a>Evidence and demo posture</h3>
+<div class="paragraph">
+<p>The demo-state and demo-surface evidence flow is another strong differentiator.</p>
+</div>
+<div class="paragraph">
+<p>That suggests the component is being hardened not only for backend execution, but for repeatable walkthroughs, reviewability, and RC-oriented proof.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_multi_carrier_and_policy_seriousness"><a class="anchor" href="#_multi_carrier_and_policy_seriousness"></a>Multi-carrier and policy seriousness</h3>
+<div class="paragraph">
+<p>Carrier quote providers, registry APIs, policy APIs, request correlation, and shared envelope handling together signal a serious logistics-runtime mindset rather than a single-carrier or single-endpoint integration.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rc_trajectory"><a class="anchor" href="#_rc_trajectory"></a>RC Trajectory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The remaining path to a strong RC should be read not as a problem list, but as a maturity trajectory.</p>
+</div>
+<div class="sect2">
+<h3 id="_enterprise_fulfillment_parity_expansion"><a class="anchor" href="#_enterprise_fulfillment_parity_expansion"></a>Enterprise fulfillment parity expansion</h3>
+<div class="paragraph">
+<p>The component is already structurally aligned with leader-class shipping and fulfillment concerns. The next maturity band is about strengthening parity with broader enterprise expectations around deeper carrier breadth, richer shipping intelligence, more outward-facing operations tooling, and broader external integration posture.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_runtime_surface_strengthening"><a class="anchor" href="#_runtime_surface_strengthening"></a>Runtime surface strengthening</h3>
+<div class="paragraph">
+<p>Shipping already has strong internal and operational signals. The next maturity layer is about making the outward-facing shipping runtime and product shell feel as strong and complete as the internal proof, demo, and routing contour.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_productized_public_posture"><a class="anchor" href="#_productized_public_posture"></a>Productized public posture</h3>
+<div class="paragraph">
+<p>Internally, the component already looks more mature than many lightweight shipping libraries. The next band is about translating that maturity into a clearer public-facing product posture that can be understood without reading the repository like an engineer.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_public_verdict"><a class="anchor" href="#_public_verdict"></a>Public Verdict</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Shipping is already well past the interesting draft stage.</p>
+</div>
+<div class="paragraph">
+<p>It currently reads as a serious shipping operations and fulfillment-runtime component with strong canonical API discipline, a coherent logistics surface, and a clear direction around shipment lifecycle, carrier capability, policy handling, outbox integration, and operational evidence.</p>
+</div>
+<div class="paragraph">
+<p>Its strongest present signal is not UI theater. Its strongest signal is substance: lifecycle clarity, multi-surface operational seriousness, route and proof discipline, and a shape that clearly points toward durable internal shipping and fulfillment use.</p>
+</div>
+<div class="paragraph">
+<p>At this stage, Shipping can already be presented as a high-quality pre-RC component moving within an enterprise-class shipping and logistics trajectory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_owner_note"><a class="anchor" href="#_owner_note"></a>Owner Note</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This report is intentionally written as a living component portrait.</p>
+</div>
+<div class="paragraph">
+<p>It should evolve as the component moves from strong pre-RC maturity toward a more explicit release-candidate posture.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Marketing America Corp · High Hopes · Oleksandr Tishchenko</p>
+</footer>
+  </body>
+</html>
