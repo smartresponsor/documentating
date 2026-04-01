@@ -1,0 +1,13 @@
+= Support
+:description: Support options for documentation continuity and maintenance.
+
+This portal is maintained in owner-oriented mode and updated continuously.
+
+Support helps sustain:
+
+* documentation maintenance,
+* editorial updates,
+* long-term public availability,
+* architectural canon continuity.
+
+For direct communication before support, use xref:contact/index.adoc[Contact].

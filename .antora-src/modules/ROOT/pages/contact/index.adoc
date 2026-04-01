@@ -1,0 +1,11 @@
+= Contact
+:description: Contact page for owner-level communication and collaboration.
+
+For owner-level communication, partnership, or collaboration requests:
+
+* Owner: *Oleksandr Tishchenko*
+* Company: *Marketing America Corp*
+* Organization: *High Hopes*
+* Project direction: *Smartresponsor*
+
+Use the repository communication channels and official organization contacts for outreach.
