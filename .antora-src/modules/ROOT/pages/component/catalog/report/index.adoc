@@ -1,6 +1,6 @@
 = Cataloging Report
 :description: Current owner-oriented maturity report for the Cataloging component.
-:page-slug: catalog-report
+:page-slug: cataloging-report
 
 This page is the current owner-oriented maturity report for *Cataloging*.
 

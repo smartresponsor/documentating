@@ -1,6 +1,6 @@
 = Addressing Report
 :description: Current owner-oriented maturity report for the Addressing component.
-:page-slug: address-report
+:page-slug: addressing-report
 
 This page is the current owner-oriented maturity report for *Addressing*.
 

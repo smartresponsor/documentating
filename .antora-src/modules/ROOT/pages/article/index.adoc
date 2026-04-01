@@ -3,4 +3,25 @@
 
 This section is the public article stream for Smart Responsor.
 
-The page is regenerated during CI from `docs/article/` and legacy `docs/articles/` Markdown sources.
+[NOTE]
+====
+AsciiDoc is the canonical article source format. Legacy duplicates and noisy source artifacts are filtered out during publication.
+====
+
+== Latest
+
+* xref:article/why-the-next-e-commerce-will-not-be-a-store-with-ai.adoc[Why the Next E-Commerce Will Not Be a Store with AI] — 2026-03-29 — ADOC — Why the next wave of commerce will not be built as an AI layer on top of a store, but as an agent-ready, protocol-ready, governed commerce system.
+* xref:article/when-power-disguises-itself-as-passion.adoc[When Power Disguises Itself as Passion] — 2026-03-29 — ADOC — A long-form essay on workplace hierarchy, dependency, distorted perception, and why power can masquerade as intimacy.
+* xref:article/the-first-great-war-between-platforms-and-protocols.adoc[The First Great War Between Platforms and Protocols] — 2026-03-29 — ADOC — A long-form article on the structural conflict between closed platforms and open agent-mediated commerce protocols.
+* xref:article/technological-inequality-2-0-cognitive-divide.adoc[Technological Inequality 2.0: Are We Building a World Where the Cognitive Divide Becomes Almost Biological?] — 2026-03-29 — ADOC — A long-form article on AI as a multiplier of cognitive inequality, digital neo-feudalism, and the emerging divide between agency and algorithmic management.
+* xref:article/odyssey-execution-control-plane.adoc[Odyssey: The Execution Control Plane for AI] — 2026-03-29 — ADOC — Why Odyssey should be understood as an execution control plane for AI agents and AI processes, built around policy, routing, receipts, and evidence.
+* xref:article/do-not-scale-the-imitation-of-a-human.adoc[Do Not Scale the Imitation of a Human] — 2026-03-29 — ADOC — Why the future of AI automation belongs to orchestration, deterministic execution, and reproducible protocol, not to scaling browser-level imitation of a person.
+* xref:article/ai-is-not-just-chatgpt-five-layer-stack.adoc[AI Is Not Just ChatGPT: Why the Conversation About Models Is Too Narrow] — 2026-03-29 — ADOC — A balanced explanation of AI as an industrial stack, from energy and chips to models, infrastructure, and applications.
+* xref:article/ai-does-not-replace-thinking-it-reveals-its-quality.adoc[AI Does Not Replace Thinking. It Reveals Its Quality.] — 2026-03-29 — ADOC — Why the main bottleneck in working with AI is not the model itself, but the quality of goals, decomposition, verification, and systems thinking.
+* xref:article/vibe-coding-is-not-the-problem.adoc[Vibe Coding Is Not the Problem] — ADOC
+* xref:article/the-hardest-interview-question-is-not-the-algorithm.adoc[The Hardest Interview Question Is Not the Algorithm] — ADOC
+* xref:article/llm-research-operator-knuth-claude-cycles.adoc[From “Shock! Shock!” to a Repeatable Research Workflow] — ADOC
+* xref:article/from-ai-coding-to-semi-automated-science.adoc[From AI Coding to Semi-Automated Science] — ADOC
+* xref:article/ai-will-not-automatically-improve-your-company.adoc[AI Will Not Automatically Improve Your Company] — ADOC
+* xref:article/ai-raised-the-pace-of-knowledge-work-who-will-slow-the-brain-down.adoc[AI Raised the Pace of Knowledge Work. Who Will Slow the Brain Down?] — ADOC
+* xref:article/a-proper-memory-stack-for-ai-assisted-engineering.adoc[A Proper Memory Stack for AI-Assisted Engineering] — ADOC

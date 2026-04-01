@@ -1,187 +1,79 @@
-= Documentating Cleanup Audit — 2026-03-31
-:description: Repository cleanup audit for the Smartresponsor documentating repository.
+= Documentating Cleanup Audit
+:revdate: 2026-04-01
 
-This note records the current cleanup situation for the `documentating` repository.
+== Current state
 
-It is intentionally written as an audit and wave plan, not as a destructive cleanup patch.
+The repository now uses one normal publication contract:
 
-== Scope
+* publish owner: `.github/workflows/gh-pages.yml`
+* builder entry: `tools/build_antora_site.py`
+* playbook: `antora-playbook.yml`
+* asset source: `assets/`
 
-The repository is currently in a transition state rather than a single stable publication canon.
+== Completed evacuation
 
-Three tensions are visible at once:
+The following legacy surface has been removed instead of being kept as transitional replay shells:
 
-* legacy Markdown-first publication behavior,
-* newer AsciiDoc-first publication behavior,
-* and multiple generations of publish/build layers accumulated during active portal evolution.
+* versioned and owner-oriented workflows under `.github/workflows/`
+* owner playbooks `antora-playbook-owner.yml` and `antora-playbook-owner-v2.yml`
+* removed legacy wrapper builders `build_antora_site_v2.py`, `v5.py`, `v6.py`, `v7.py`, `v9.py`, `v13.py`, `v14.py`, `v15.py`, `v17.py`
 
-Because of that, cleanup should be performed as a controlled refactoring of repository truth layers rather than as broad deletion.
+== Canonical builder line
 
-== Confirmed Active and Transitional Layers
+The normal-path builder surface has now been collapsed to one file:
 
-=== Legacy but still active owner-facing publish path
+* `tools/build_antora_site.py`
 
-The workflow `.github/workflows/antora-gh-pages-owner.yml` still publishes from push on `master` and builds the site through `tools/build_antora_site_v4.py`.
+That file now directly owns:
 
-That means it is not archival decoration. It is still part of the active publication surface and cannot be removed blindly.
+* base Antora generation,
+* owner-facing home page write,
+* component page preservation/restore,
+* slug override expansion,
+* pre-RC Quality Atlas generation.
 
-=== Builder canon conflict
+There is no remaining active multi-file builder composition in the canonical path.
 
-Two different build philosophies are visible.
 
-The older `tools/build_antora_site.py` still describes Markdown as the editing surface during migration.
+== Legacy atlas generator removal
 
-The newer `tools/build_antora_site_v4.py` already describes AsciiDoc as the canonical article source format and explicitly filters duplicates and noisy artifacts.
+The repository now keeps one atlas generator in the normal path:
 
-This means the repository does not yet expose one single canonical authored content policy.
+* `tools/generate_pre_rc_quality_atlas.py`
 
-=== Atlas workflow layering
+The older generator `tools/generate_quality_atlas.py` has been removed as legacy residue because the repository contract now targets the pre-RC atlas scope directly.
 
-The Quality Atlas / pre-RC atlas line introduced several generations in quick succession:
+== Generated Index Residue Removal
 
-* `publish-v17-quality-atlas-after-v16`
-* `publish-v18-pre-rc-quality-atlas-after-v17`
-* `publish-v19-pre-rc-quality-atlas-inline-after-v17`
+The canonical builder already generated the public portal index surfaces directly into `.antora-src`, and the following repository markdown index residues were skipped by the builder:
 
-This is understandable during rapid evolution, but it is already a strong signal that the publication chain should later be collapsed into one final stable path.
+* `docs/index.md`
+* `docs/article/index.md`
+* `docs/component/index.md`
 
-=== Temporary trigger artifacts
+These legacy markdown index files have now been removed to align the repository with the one-contract Antora-first path.
 
-The file `docs/v19-pre-rc-quality-atlas-trigger.txt` is a temporary publication trigger artifact.
 
-This kind of file is acceptable during setup, but it should not remain a permanent resident once the final publish chain is stable.
+== Skipped-source residue evacuation
 
-== Classification
+The canonical builder previously carried a small set of repository files in `SKIP_RELS` only to avoid indexing or generating them.
 
-[cols="2,1,4",options="header"]
-|===
-| Item class | Current status | Reading
+Those skipped-source residues have now been removed:
 
-| `tools/build_antora_site_v4.py`
-| keep for now
-| Active legacy-but-live builder path because the owner workflow still uses it.
+* `docs/article/2026-03-29--tesr.md`
+* `docs/article/2026-03-29--2026-03-29-technological-inequality-2-0-cognitive-divide.md`
+* `docs/article/odyssey-who-is-announcement.md`
+* `docs/article/2026-03-29--why-the-next-e-commerce-will-not-be-a-store-with-ai.md`
+* `docs/articles/2026-03-29-the-first-great-war-between-platforms-and-protocols.md`
 
-| `tools/build_antora_site.py`
-| review soon
-| Older Markdown-oriented builder that appears semantically superseded by the AsciiDoc-first direction.
+The legacy `docs/articles/` source surface has also been removed so that the canonical article source surface is now only `docs/article/`.
 
-| `tools/build_antora_site_v17.py`
-| transitional keep
-| Newer atlas-aware builder layer; useful during stabilization, but likely not the final long-term single builder canon.
+== Packaging And Runtime Residue Removal
 
-| `tools/generate_quality_atlas.py`
-| review soon
-| Useful, but partially superseded by the pre-RC semantic layer.
+The root `DELETE_FILES.txt` artifact has been removed as packaging residue, and `tools/__pycache__/` has been removed again as Python runtime noise rather than repository source.
 
-| `tools/generate_pre_rc_quality_atlas.py`
-| keep
-| Better aligned with the agreed semantic framing of current atlas life as pre-RC.
+== UI identity and script parity
 
-| `publish-v17-quality-atlas-after-v16`
-| transitional keep
-| Intermediate workflow generation; candidate for later removal when final chain is proven stable.
-
-| `publish-v18-pre-rc-quality-atlas-after-v17`
-| strong removal candidate later
-| Intermediate workflow layer created before the inline v19 finalization path.
-
-| `publish-v19-pre-rc-quality-atlas-inline-after-v17`
-| keep
-| Current best candidate for the final pre-RC atlas publication layer.
-
-| `docs/v19-pre-rc-quality-atlas-trigger.txt`
-| remove later
-| Temporary trigger artifact; not a long-term repository truth file.
-
-| legacy `.md` articles without canonical `.adoc` migration outcome
-| review item-by-item
-| Need a controlled inventory to decide keep/migrate/archive/remove.
-
-| `.adoc` component reports and newer `.adoc` articles
-| keep
-| Strongest current candidates for canonical authored publication content.
-|===
-
-== Cleanup Principles
-
-=== Principle 1 — one authored content canon
-
-The repository should converge toward one canonical authored publication format.
-
-The strongest direction currently appears to be:
-
-* authored article and portal content in AsciiDoc,
-* generated portal tree derived from that canon,
-* legacy Markdown either migrated, archived, or explicitly excluded.
-
-=== Principle 2 — one final publish chain
-
-After the pre-RC atlas chain is confirmed stable, the repository should converge toward one final publish workflow rather than multiple serial generations.
-
-=== Principle 3 — no permanent trigger residue
-
-Temporary trigger files may exist during setup, but they should not remain part of the permanent repository topology once the publication path is stable.
-
-=== Principle 4 — cleanup should preserve meaning
-
-The first cleanup waves should not rewrite article meaning or narrative substance.
-
-The immediate task is topology cleanup:
-
-* builder truth,
-* workflow truth,
-* authored source truth,
-* generated vs temporary separation.
-
-== Recommended Cleanup Waves
-
-=== Wave A — stabilize the pre-RC atlas publish chain
-
-Do not delete older workflow layers until the live pre-RC atlas publication path is confirmed stable.
-
-=== Wave B — choose final builder canon
-
-Decide which builder becomes the single canonical base for publication.
-
-Likely candidates:
-
-* evolve from `build_antora_site_v4.py`,
-* or collapse the v17/v19 logic into one clearly named final builder.
-
-=== Wave C — collapse workflow generations
-
-Once stable, reduce the atlas-related workflow stack to a single final path and remove intermediate generations that no longer contribute meaningfully.
-
-The strongest likely removal candidate from the currently visible stack is `publish-v18-pre-rc-quality-atlas-after-v17`.
-
-=== Wave D — remove temporary trigger artifacts
-
-Delete `docs/v19-pre-rc-quality-atlas-trigger.txt` after the publish chain is proven stable.
-
-=== Wave E — article source cleanup
-
-Perform a dedicated article inventory:
-
-* canonical `.adoc`
-* migrate-from-`.md`
-* archive-only
-* remove
-
-This should be done carefully and file-by-file, especially where duplicate title/slug history exists.
-
-== Immediate Recommendation
-
-The next practical step should not be broad deletion.
-
-The next practical step should be a targeted cleanup wave that does the following:
-
-* selects the final pre-RC atlas publication path,
-* marks intermediate atlas workflow generations for removal,
-* removes temporary trigger residue,
-* and launches a dedicated Markdown-to-AsciiDoc article inventory.
-
-== Owner Note
-
-This audit is intentionally conservative.
-
-It prefers stable truth-layer cleanup over premature deletion while the publication chain is still settling.
+- footer identity line normalized to `Marketing America Corp · High Hopes · Oleksandr Tishchenko`
+- duplicate `site.js` load removed from `supplemental-ui/partials/footer-scripts.hbs`
+- canonical `site.js` load remains only in `supplemental-ui/partials/header-scripts.hbs` with `defer`

@@ -1,0 +1,5 @@
+# Python runtime residue
+__pycache__/
+*.py[cod]
+# Explicit tools cache guard
+tools/__pycache__/

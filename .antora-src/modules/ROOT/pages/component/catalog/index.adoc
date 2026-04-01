@@ -1,6 +1,6 @@
 = Cataloging
 :description: Public entry page for the Cataloging component.
-:page-slug: catalog
+:page-slug: cataloging
 
 Cataloging is a Symfony-oriented catalog, category, and taxonomy governance component within the Smartresponsor ecosystem.
 
@@ -35,7 +35,7 @@ That makes it strategically more valuable than a simple category CRUD layer or s
 
 For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
 
-* xref:component/catalog/report/index.adoc[Cataloging Report]
+* xref:component/cataloging/report/index.adoc[Cataloging Report]
 
 == Position in the Ecosystem
 

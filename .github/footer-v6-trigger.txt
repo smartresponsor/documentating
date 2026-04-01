@@ -1,2 +1,0 @@
-Trigger commit for footer self-fix and post-publish v6 workflow.
-This file exists only to force the next publish cycle.

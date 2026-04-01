@@ -1,2 +1,0 @@
-Trigger commit for support integration publish chain.
-This file exists only to force the next gh-pages -> v6 -> v7 cycle.

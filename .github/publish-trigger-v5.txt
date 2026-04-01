@@ -1,3 +1,0 @@
-Triggered direct master push for antora-gh-pages-v5.
-Timestamp basis: 2026-03-30.
-This file exists only to force a clean publication wave.

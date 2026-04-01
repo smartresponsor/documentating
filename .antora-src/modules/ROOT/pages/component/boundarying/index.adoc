@@ -1,0 +1,7 @@
+= Boundarying
+
+This is the public entry page for the *Boundarying* component.
+
+Detailed component documentation may later be sourced from the component repository and aggregated into the portal.
+
+* Canonical slug: `boundarying`

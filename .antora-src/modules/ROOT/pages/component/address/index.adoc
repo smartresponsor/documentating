@@ -1,6 +1,6 @@
 = Addressing
 :description: Public entry page for the Addressing component.
-:page-slug: address
+:page-slug: addressing
 
 Addressing is a Symfony-oriented address operations and governance component within the Smartresponsor ecosystem.
 
@@ -35,7 +35,7 @@ That makes it strategically more valuable than a simple UI-level address feature
 
 For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:
 
-* xref:component/address/report/index.adoc[Addressing Report]
+* xref:component/addressing/report/index.adoc[Addressing Report]
 
 == Position in the Ecosystem
 

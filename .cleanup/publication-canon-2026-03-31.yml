@@ -1,59 +1,76 @@
-schema: documentating-publication-canon/v1
-as_of: 2026-03-31
+schema: documentating-publication-canon/v2
+as_of: 2026-04-01
 repository: smartresponsor/documentating
 
-scope:
-  statement: >-
-    This manifest defines the intended publication canon for the current pre-RC
-    portal life of the repository. It does not claim that all older layers have
-    already been removed. It defines the target truth path for cleanup and later
-    simplification.
+publication_contract:
+  canonical_publish_owner: .github/workflows/gh-pages.yml
+  canonical_builder_entry: tools/build_antora_site.py
+  canonical_playbook: antora-playbook.yml
+  canonical_asset_source: assets/
 
 content_canon:
   authored_portal_format: adoc
   article_policy:
     canonical_format: adoc
     legacy_markdown_status: review-and-migrate-or-archive
-  component_report_policy:
-    canonical_format: adoc
-    source_of_truth: .antora-src/modules/ROOT/pages/component/*/report/index.adoc
 
 quality_atlas:
   menu_label: Quality Atlas
   current_scope_title: Pre-RC Quality Atlas
   current_scope: pre-rc
-  explorer_title: Pre-RC Quality Atlas Explorer
-  home_summary_title: Pre-RC Quality Atlas
-  source_of_truth:
-    - .antora-src/modules/ROOT/pages/component/*/report/index.adoc
   preferred_generator: tools/generate_pre_rc_quality_atlas.py
-  deprecated_generator_candidates:
-    - tools/generate_quality_atlas.py
-
-publication_path:
-  intended_final_publish_layer: .github/workflows/publish-v19-pre-rc-quality-atlas-inline-after-v17.yml
-  current_live_legacy_layer: .github/workflows/antora-gh-pages-owner.yml
-  transitional_layers:
-    - .github/workflows/publish-v17-quality-atlas-after-v16.yml
-    - .github/workflows/publish-v18-pre-rc-quality-atlas-after-v17.yml
+  removed_legacy_generators:
 
 builder_path:
-  intended_base_builder_logic: tools/build_antora_site_v13.py
-  legacy_active_builder: tools/build_antora_site_v4.py
-  review_builder_candidates:
-    - tools/build_antora_site.py
-    - tools/build_antora_site_v17.py
+  stable_builder_entry: tools/build_antora_site.py
+  intended_base_builder_logic: tools/build_antora_site.py
+  current_base_generation_layer: tools/build_antora_site.py
+  runtime_residue_ignored:
+    - __pycache__/
+    - "*.py[cod]"
 
-temporary_artifacts:
-  remove_later:
-    - docs/v19-pre-rc-quality-atlas-trigger.txt
+legacy_policy:
+  replay_compatibility: removed
+  removed_legacy_owner_playbooks: true
+  removed_versioned_workflow_stack: true
+  removed_wrapper_builders:
+    - tools/build_antora_site_v2.py
+    - tools/build_antora_site_v5.py
+    - tools/build_antora_site_v6.py
+    - tools/build_antora_site_v7.py
+    - tools/build_antora_site_v9.py
+    - tools/build_antora_site_v14.py
+    - tools/build_antora_site_v15.py
+    - tools/build_antora_site_v17.py
+  removed_docs_assets_fallback: true
+  removed_final_transitional_builder_layer: true
 
 cleanup_policy:
-  delete_only_after:
-    - final pre-rc atlas publish layer is manually validated on gh-pages
-    - home page contains pre-rc atlas summary
-    - menu contains Quality Atlas
-    - quality-atlas/index.html is present on gh-pages
   do_not_delete_yet:
-    - .github/workflows/antora-gh-pages-owner.yml
-    - tools/build_antora_site_v4.py
+    - tools/build_antora_site.py
+
+generated_index_contract:
+  canonical_generated_indexes:
+    - .antora-src/modules/ROOT/pages/index.adoc
+    - .antora-src/modules/ROOT/pages/article/index.adoc
+    - .antora-src/modules/ROOT/pages/component/index.adoc
+  removed_legacy_markdown_indexes:
+
+source_surface:
+  canonical_article_dirs:
+    - docs/article
+  removed_skipped_source_residue:
+    - docs/article/2026-03-29--tesr.md
+    - docs/article/2026-03-29--2026-03-29-technological-inequality-2-0-cognitive-divide.md
+    - docs/article/odyssey-who-is-announcement.md
+    - docs/article/2026-03-29--why-the-next-e-commerce-will-not-be-a-store-with-ai.md
+  removed_legacy_article_dir:
+    - docs/articles
+
+packaging_runtime_residue_removed:
+  delete_files_manifest: true
+  python_bytecode_cache: true
+ui_identity_contract:
+  footer_brand_line: "Marketing America Corp · High Hopes · Oleksandr Tishchenko"
+  canonical_site_script_loader: "supplemental-ui/partials/header-scripts.hbs"
+  footer_duplicate_site_script_removed: true

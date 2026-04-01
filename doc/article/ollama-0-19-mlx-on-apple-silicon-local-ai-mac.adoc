@@ -1,4 +1,0 @@
-= Ollama 0.19, MLX, and Apple Silicon
-:doctype: article
-
-English article placeholder.

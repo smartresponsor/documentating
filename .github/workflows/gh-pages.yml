@@ -42,11 +42,11 @@ jobs:
           python -m pip install pyyaml
           npm install
 
-      - name: Build clean Antora source tree
+      - name: Build canonical Antora source tree via stable facade
         run: |
-          python3 tools/build_antora_site_v4.py
+          python3 tools/build_antora_site.py
 
-      - name: Build owner-facing site with Antora
+      - name: Build site with Antora
         run: |
           npx antora antora-playbook.yml --fetch
 
@@ -54,10 +54,6 @@ jobs:
         run: |
           if [ -f docs/CNAME ]; then
             cp docs/CNAME .site_build/CNAME
-          fi
-          if [ -d docs/assets ]; then
-            mkdir -p .site_build/assets
-            cp -R docs/assets/. .site_build/assets/
           fi
           if [ -d assets ]; then
             mkdir -p .site_build/assets
@@ -94,7 +90,7 @@ jobs:
             cd "$workdir"
             git add -A
             if [ -n "$(git status --porcelain)" ]; then
-              git commit -m "docs: publish owner-facing site"
+              git commit -m "docs: publish canonical Antora site"
               git push origin HEAD:gh-pages --force
             else
               echo "No site changes to publish."

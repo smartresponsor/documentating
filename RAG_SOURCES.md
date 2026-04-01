@@ -5,18 +5,30 @@
 ## Include (index these)
 
 - docs/**/*.md
+- docs/**/*.adoc
+- doc/**/*.md
+- doc/**/*.adoc
 - README.md
 - MANIFEST.md
-- asset/** (images/diagrams)
+- ANTORA_TRANSITION.md
+- report/**/*.adoc
+- assets/**
 
 ## Exclude (do NOT index by default)
 
-- .site/**
+- .antora-src/**
 - .sync/**
-- .patch/**
-- deploy/**
-- tool/**
+- .deploy/**
 - .github/**
-- .smartresponsor/**
+- .canonization/**
+- .commanding/**
+- .consuming/**
+- .gate/**
+- .ide/**
+- .intelligence/**
+- .release/**
+- .smoke/**
 - .site_build/**
 - .rag/**
+- __pycache__/**
+- tools/**

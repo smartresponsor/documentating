@@ -1,2 +1,0 @@
-Trigger commit for canonicalize-publish-on-push.
-This file exists only to force replacement of the legacy MkDocs publish path.
