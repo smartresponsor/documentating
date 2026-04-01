@@ -1,0 +1,12 @@
+= About
+:description: About this public documentation portal and how to use it.
+
+This portal publishes owner-oriented documentation, essays, and ecosystem context for *Smartresponsor*.
+
+It is designed as a public knowledge layer with practical navigation:
+
+* xref:article/index.adoc[Articles] for long-form essays and technical thinking.
+* xref:component/index.adoc[Components] for ecosystem structure.
+* xref:manifest/index.adoc[Manifests] for canon and principles.
+
+For authorship context, see xref:owner/index.adoc[Owner].

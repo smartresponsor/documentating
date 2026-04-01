@@ -1,0 +1,20 @@
+= Owner
+:description: Owner and authorship context for this portal.
+
+Owner and primary author:
+
+*Oleksandr Tishchenko*
+
+Company:
+
+*Marketing America Corp*
+
+Organization:
+
+*High Hopes*
+
+Project direction:
+
+*Smartresponsor*
+
+For collaboration, see xref:contact/index.adoc[Contact].
