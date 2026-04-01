@@ -1,0 +1,146 @@
+name: publish-v19-pre-rc-quality-atlas-inline-after-v17
+
+on:
+  workflow_run:
+    workflows: ["publish-v17-quality-atlas-after-v16"]
+    types: [completed]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "docs-gh-pages-v19-pre-rc-quality-atlas-inline"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml
+          npm install
+
+      - name: Build owner-facing site with inline pre-RC atlas layer
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          from pathlib import Path
+          import yaml
+
+          root = Path('.').resolve()
+          out_dir = root / '.antora-src'
+          pages_dir = out_dir / 'modules' / 'ROOT' / 'pages'
+          component_dir = pages_dir / 'component'
+          manifest_file = root / '.sync' / 'manifest' / 'component-list.yml'
+
+          def load_slug_overrides() -> dict[str, str]:
+              if not manifest_file.exists():
+                  return {}
+              payload = yaml.safe_load(manifest_file.read_text(encoding='utf-8')) or {}
+              raw = payload.get('slug_overrides') or {}
+              return {str(k): str(v) for k, v in raw.items()}
+
+          def capture_component_pages() -> dict[str, bytes]:
+              preserved: dict[str, bytes] = {}
+              if not component_dir.exists():
+                  return preserved
+              for path in component_dir.rglob('*'):
+                  if not path.is_file():
+                      continue
+                  rel = path.relative_to(component_dir).as_posix()
+                  if rel == 'index.adoc':
+                      continue
+                  preserved[rel] = path.read_bytes()
+              return preserved
+
+          def expand_with_slug_overrides(preserved: dict[str, bytes], overrides: dict[str, str]) -> dict[str, bytes]:
+              expanded = dict(preserved)
+              for source_slug, target_slug in overrides.items():
+                  source_prefix = f'{source_slug}/'
+                  target_prefix = f'{target_slug}/'
+                  for rel, payload in list(preserved.items()):
+                      if rel.startswith(source_prefix):
+                          expanded[target_prefix + rel[len(source_prefix):]] = payload
+              return expanded
+
+          def restore_component_pages(preserved: dict[str, bytes]) -> None:
+              for rel, payload in preserved.items():
+                  target = component_dir / rel
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(payload)
+
+          slug_overrides = load_slug_overrides()
+          preserved = capture_component_pages()
+          preserved = expand_with_slug_overrides(preserved, slug_overrides)
+
+          subprocess.run(['python3', 'tools/build_antora_site_v13.py'], check=True)
+          restore_component_pages(preserved)
+          subprocess.run(['python3', 'tools/generate_pre_rc_quality_atlas.py'], check=True)
+          PY
+          npx antora antora-playbook.yml --fetch
+          if [ -f docs/CNAME ]; then cp docs/CNAME .site_build/CNAME; fi
+          if [ -d docs/assets ]; then mkdir -p .site_build/assets && cp -R docs/assets/. .site_build/assets/; fi
+          if [ -d assets ]; then mkdir -p .site_build/assets && cp -R assets/. .site_build/assets/; fi
+          touch .site_build/.nojekyll
+
+      - name: Patch footer and contact page in generated HTML
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          footer_old1 = '<footer class="footer">\n  <p>Marketing America Corp · High Hope · Alexander Tishchenko</p>\n</footer>'
+          footer_old2 = '<footer class="footer">\n  <p>Marketing America Corp · High Hope · Oleksandr Tishchenko</p>\n</footer>'
+          footer_new = '<footer class="footer">\n  <p>Marketing America Corp · High Hope · Oleksandr Tishchenko</p>\n  <p><a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></p>\n</footer>'
+          contact_old = '<article class="doc">\n<h1 class="page">Contact</h1>\n<div class="paragraph">\n<p>This documentation site is currently owner-oriented and maintained by <strong>Oleksandr Tishchenko</strong>.</p>\n</div>\n<div class="paragraph">\n<p>A dedicated owner-controlled contact block can be placed here.</p>\n</div>\n</article>'
+          contact_new = '<article class="doc">\n<h1 class="page">Contact</h1>\n<div class="paragraph">\n<p>This portal is currently maintained in an owner-oriented mode.</p>\n</div>\n<div class="sect1">\n<h2 id="_contact"><a class="anchor" href="#_contact"></a>Contact</h2>\n<div class="sectionbody">\n<div class="ulist">\n<ul>\n<li><p>Marketing America Corp</p></li>\n<li><p>High Hopes</p></li>\n<li><p>Oleksandr Tishchenko</p></li>\n<li><p><a href="mailto:dev@smartresponsor.com">dev@smartresponsor.com</a></p></li>\n</ul>\n</div>\n</div>\n</div>\n</article>'
+          for path in Path('.site_build').rglob('*.html'):
+              text = path.read_text(encoding='utf-8')
+              text = text.replace(footer_old1, footer_new)
+              text = text.replace(footer_old2, footer_new)
+              if path.as_posix().endswith('/contact/index.html'):
+                  text = text.replace(contact_old, contact_new)
+              path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Publish pre-RC Quality Atlas site to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          workdir="$(mktemp -d)"
+          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages:gh-pages
+            git worktree add --force "$workdir" gh-pages
+          else
+            git worktree add --detach "$workdir"
+            (cd "$workdir" && git checkout --orphan gh-pages)
+          fi
+          find "$workdir" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -R .site_build/. "$workdir"/
+          (cd "$workdir" && git add -A && if [ -n "$(git status --porcelain)" ]; then git commit -m "docs: publish v19 pre-rc quality atlas site" && git push origin HEAD:gh-pages --force; else echo "No v19 site changes to publish."; fi)
+          git worktree remove "$workdir" --force || true
