@@ -8,7 +8,7 @@
 _Source asciidoc: `docs/article/when-power-disguises-itself-as-passion.adoc`_
 == Rethinking the Classic Boss and Assistant Story Through Power, Psychology, and Biology
 
-image::/assets/when-power-disguises-itself-as-passion-hero.svg[Illustrative office scene symbolizing hierarchy, dependency, and workplace power asymmetry]
+image::when-power-disguises-itself-as-passion-hero.svg[Illustrative office scene symbolizing hierarchy, dependency, and workplace power asymmetry]
 
 _Illustration used as a visual metaphor for hierarchy, dependency, and workplace power asymmetry in office relationships._
 
