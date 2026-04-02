@@ -1,0 +1,64 @@
+= Quality Atlas Integration Contract
+:description: Integration contract for wiring the Quality Atlas baseline section into the Antora build pipeline.
+
+This note records the intended wiring between the baseline section generator and the pre-RC atlas generator.
+
+It exists so that the architectural ownership split is explicit and reviewable.
+
+== Target Ownership
+
+The build should treat the Quality Atlas as an umbrella section.
+
+=== Baseline section generator owns
+
+* `quality-atlas/index.adoc`
+* `quality-atlas/overview.adoc`
+* `quality-atlas/quality-baseline.adoc`
+* `quality-atlas/principles.adoc`
+* `quality-atlas/architectural-dimensions.adoc`
+* `quality-atlas/readiness-model.adoc`
+* `quality-atlas/evaluation.adoc`
+* `quality-atlas/glossary.adoc`
+
+=== Pre-RC atlas generator owns
+
+* `quality-atlas/summary.adoc`
+* `quality-atlas/explorer.adoc`
+* `quality-atlas/dataset.json`
+* `assets/images/quality-atlas/*.svg`
+
+== Builder Order
+
+The canonical build order should be:
+
+. generate base Antora content tree
+. write owner-oriented pages and assets
+. restore preserved component report pages
+. run `generate_quality_baseline_section.py`
+. run `generate_pre_rc_quality_atlas.py`
+
+== Critical Rule
+
+The pre-RC atlas generator should not overwrite `quality-atlas/index.adoc`.
+
+That landing page is now the umbrella entry point for the broader quality surface rather than a single comparative dashboard page.
+
+== Expected Navigation Shape
+
+The generated navigation should expose:
+
+* Quality Atlas
+** Overview
+** Quality Baseline
+** Principles
+** Architectural Dimensions
+** Readiness Model
+** Evaluation
+** Glossary
+** Explorer
+
+== Purpose
+
+This contract prevents ownership drift between the normative layer and the comparative layer.
+
+Without this split, the section can regress into a self-overwriting atlas-only surface.
