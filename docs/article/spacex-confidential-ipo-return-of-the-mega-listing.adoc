@@ -57,5 +57,5 @@ _Closing image: Wall Street and the New York Stock Exchange. Source file page: W
 == Notes for reuse
 
 * This article is written in standard AsciiDoc and can be placed directly into a documentation repository.
-* Embedded images use Wikimedia Commons file-path URLs and should be reviewed for your repository’s image-hosting policy.
+* Embedded images use direct Wikimedia upload URLs and should be reviewed for your repository’s image-hosting policy.
 * For long-term durability, you may prefer to download those images into your repository and replace the external URLs with local asset paths.
