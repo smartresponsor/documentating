@@ -1,0 +1,48 @@
+= Quality Atlas (Pre-RC Summary)
+:description: Owner-oriented summary of component quality before first release (RC stage).
+
+This page summarizes the current *pre-RC quality state* of Smartresponsor components.
+
+It is not a production SLA dashboard. It is a *development-stage quality atlas* reflecting how components evolve before first release.
+
+== Key signals
+
+* Components included: 16
+* Average Overall RC: 8.49
+* Highest Overall RC: Shipping / Paying (9.0)
+* Lowest Overall RC: Discovering (7.7)
+
+== Top 3 components by Overall RC
+
+* Shipping — 9.0
+* Paying — 9.0
+* Billing / Runtiming — 8.8
+
+== Strongest ecosystem dimensions (average)
+
+* Ops / Governance / Security — 8.66
+* QA Maturity — 8.44
+* Product Identity — 8.49
+
+== Weakest signals
+
+* Runtime variance across components
+* Discovering component maturity gap
+
+== Interpretation
+
+This atlas reflects:
+
+* structure before scale
+* readiness before release
+* quality before marketing
+
+It should be read as a *shape of the system*, not as a final production score.
+
+== Next layer
+
+See full dashboard (interactive or HTML artifact) for:
+
+* radar profiles
+* per-component breakdown
+* heatmap comparison
