@@ -1,0 +1,86 @@
+= Architectural Dimensions
+:description: Grouped system design dimensions used across the Quality Atlas.
+
+The Quality Atlas does not present system design as a flat list of concepts.
+Instead, concepts are grouped into coherent dimensions that reflect how systems are actually reasoned about.
+
+== Performance and Capacity
+
+* Scalability
+* Latency
+* Throughput
+* Capacity planning
+
+== Availability and Reliability
+
+* Availability
+* Reliability
+* High availability
+* Fault tolerance
+
+== API and Communication
+
+* REST
+* GraphQL
+* gRPC
+* Sync vs Async
+* Idempotency
+
+== Data Architecture
+
+* SQL vs NoSQL
+* Indexing
+* Denormalization
+* ACID vs BASE
+
+== Distributed Systems
+
+* CAP Theorem
+* Consistency models
+* Replication
+* Partitioning
+* Sharding
+
+== Infrastructure and Delivery
+
+* Load balancing
+* Autoscaling
+* Blue-green deployment
+* Canary release
+* Feature flags
+
+== Resilience Patterns
+
+* Circuit breaker
+* Bulkhead
+* Backpressure
+* Retry and timeout strategies
+
+== Observability
+
+* Logging
+* Metrics
+* Tracing
+* Monitoring and alerting
+
+== Security and Access
+
+* Authentication
+* Authorization
+* RBAC
+* Encryption
+
+== Architectural Patterns
+
+* Microservices
+* Monolith
+* Event-driven systems
+* CQRS
+* Event sourcing
+
+== Core Primitives
+
+* B-trees
+* LSM trees
+* Bloom filters
+* Merkle trees
