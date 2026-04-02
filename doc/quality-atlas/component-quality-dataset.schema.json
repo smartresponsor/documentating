@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smartresponsor.com/schemas/component-quality-dataset.schema.json",
+  "title": "Component Quality Dataset",
+  "description": "Pre-RC / before v1 quality dataset for Smartresponsor components.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "component",
+      "product",
+      "architecture",
+      "runtime",
+      "qa",
+      "ops",
+      "market",
+      "overall"
+    ],
+    "properties": {
+      "component": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Canonical component name."
+      },
+      "product": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Product Identity maturity."
+      },
+      "architecture": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Architecture maturity."
+      },
+      "runtime": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Runtime maturity."
+      },
+      "qa": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "QA maturity."
+      },
+      "ops": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Ops / Governance / Security maturity."
+      },
+      "market": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Market readiness / market clarity."
+      },
+      "overall": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Overall RC readiness."
+      }
+    }
+  }
+}
