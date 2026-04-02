@@ -1,0 +1,41 @@
+= Evaluation
+:description: How systems are assessed and interpreted within the Quality Atlas.
+
+The evaluation layer explains how to read system maturity across components.
+
+It connects the baseline vocabulary with concrete component reports and comparative atlas views.
+
+== Purpose
+
+Evaluation is not intended to produce a single universal score.
+
+It exists to support structured reading:
+
+* understanding strengths and weaknesses,
+* comparing systems on shared axes,
+* and identifying where improvement is most meaningful.
+
+== Inputs
+
+Evaluation typically relies on:
+
+* component reports,
+* scorecards,
+* observable behavior,
+* and supporting evidence.
+
+== Comparative Layer
+
+The Quality Atlas provides a cross-component view.
+
+It should be read as a normalized snapshot rather than a final verdict.
+
+== Narrative Layer
+
+Component reports remain the authoritative narrative layer.
+
+They explain context, trade-offs, and reasoning behind scores.
+
+== Outcome
+
+Evaluation produces a more structured understanding of system maturity without reducing systems to a single dimension.
