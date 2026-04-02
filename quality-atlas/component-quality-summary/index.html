@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Ordering :: Oleksandr Tishchenko</title>
-    <link rel="canonical" href="https://docs.smartresponsor.com/component/ordering/">
-    <meta name="description" content="Public entry page for the Ordering component.">
+    <title>Quality Atlas (Pre-RC Summary) :: Oleksandr Tishchenko</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/quality-atlas/component-quality-summary/">
+    <meta name="description" content="Owner-oriented summary of component quality before first release (RC stage).">
     <meta name="generator" content="Antora 3.1.12">
 <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/owner-overrides.css">
@@ -48,13 +48,13 @@
     <a class="nav-link" href="../../article/">Articles</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../">Components</a>
+    <a class="nav-link" href="../../component/">Components</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../../manifest/">Manifests</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../../quality-atlas/component-quality-summary/">Quality Atlas</a>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="./">Quality Atlas</a>
   </li>
 </ul>
   </li>
@@ -82,7 +82,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../">Home</a></li>
-    <li><span>Ordering</span></li>
+    <li><span>Quality Atlas (Pre-RC Summary)</span></li>
   </ul>
 </nav>
 </div>
@@ -91,92 +91,131 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Ordering</h1>
+<h1 class="page">Quality Atlas (Pre-RC Summary)</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ordering is a Symfony-oriented order lifecycle, fulfillment interplay, and order-operations component within the Smartresponsor ecosystem.</p>
+<p>This page summarizes the current <strong>pre-RC quality state</strong> of Smartresponsor components.</p>
 </div>
 <div class="paragraph">
-<p>It should be understood not as a simple checkout helper, but as a governed order layer for order state transitions, payment and refund coupling, shipment interplay, operational security on ingress and webhooks, and long-horizon order-runtime discipline.</p>
+<p>It is not a production SLA dashboard. It is a <strong>development-stage quality atlas</strong> reflecting how components evolve before first release.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_what_it_is"><a class="anchor" href="#_what_it_is"></a>What It Is</h2>
+<h2 id="_key_signals"><a class="anchor" href="#_key_signals"></a>Key signals</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Ordering exists to provide a structured internal order capability that can support order lifecycle transitions, payments, refunds, shipment interaction, order-facing APIs and UI, authenticated runtime access, and governed operational controls around ingress and audit posture.</p>
-</div>
-<div class="paragraph">
-<p>In ecosystem terms, it belongs to the class of components that strengthen order correctness, fulfillment continuity, and operational commerce discipline.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_current_reading"><a class="anchor" href="#_current_reading"></a>Current Reading</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In its current state, Ordering already reads as a serious pre-RC component.</p>
-</div>
-<div class="paragraph">
-<p>Its strongest visible qualities are:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>clear order-lifecycle product identity,</p>
+<p>Components included: 16</p>
 </li>
 <li>
-<p>strong payment-shipment-refund transition model,</p>
+<p>Average Overall RC: 8.49</p>
 </li>
 <li>
-<p>API, workflow, auth, and runtime-control posture,</p>
+<p>Highest Overall RC: Shipping / Paying (9.0)</p>
 </li>
 <li>
-<p>and a governance-oriented engineering contour around canon, QA, rate limiting, and security ingress.</p>
+<p>Lowest Overall RC: Discovering (7.7)</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_why_it_matters"><a class="anchor" href="#_why_it_matters"></a>Why It Matters</h2>
+<h2 id="_top_3_components_by_overall_rc"><a class="anchor" href="#_top_3_components_by_overall_rc"></a>Top 3 components by Overall RC</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Order systems become fragile when lifecycle state, payments, refunds, shipment coordination, order routing, authenticated APIs, webhook trust, and audit posture are treated as separate ad hoc concerns.</p>
-</div>
-<div class="paragraph">
-<p>Ordering matters because it treats those concerns as part of one governed component surface rather than as scattered utility logic.</p>
-</div>
-<div class="paragraph">
-<p>That makes it strategically more valuable than a simple order form or checkout record layer.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_current_report"><a class="anchor" href="#_current_report"></a>Current Report</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>For the current maturity portrait, RC scorecard, and leader-line positioning, see the narrative report:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="report/" class="xref page">Ordering Report</a></p>
+<p>Shipping — 9.0</p>
+</li>
+<li>
+<p>Paying — 9.0</p>
+</li>
+<li>
+<p>Billing / Runtiming — 8.8</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_position_in_the_ecosystem"><a class="anchor" href="#_position_in_the_ecosystem"></a>Position in the Ecosystem</h2>
+<h2 id="_strongest_ecosystem_dimensions_average"><a class="anchor" href="#_strongest_ecosystem_dimensions_average"></a>Strongest ecosystem dimensions (average)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Ops / Governance / Security — 8.66</p>
+</li>
+<li>
+<p>QA Maturity — 8.44</p>
+</li>
+<li>
+<p>Product Identity — 8.49</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_weakest_signals"><a class="anchor" href="#_weakest_signals"></a>Weakest signals</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Runtime variance across components</p>
+</li>
+<li>
+<p>Discovering component maturity gap</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interpretation"><a class="anchor" href="#_interpretation"></a>Interpretation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ordering currently stands as one of the stronger commerce-lifecycle oriented components in the Smartresponsor ecosystem.</p>
+<p>This atlas reflects:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>structure before scale</p>
+</li>
+<li>
+<p>readiness before release</p>
+</li>
+<li>
+<p>quality before marketing</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>It is best read as a component moving toward enterprise-class order management and order-lifecycle runtime maturity through structure, verification, and long-term maintainability.</p>
+<p>It should be read as a <strong>shape of the system</strong>, not as a final production score.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_layer"><a class="anchor" href="#_next_layer"></a>Next layer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See full dashboard (interactive or HTML artifact) for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>radar profiles</p>
+</li>
+<li>
+<p>per-component breakdown</p>
+</li>
+<li>
+<p>heatmap comparison</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
