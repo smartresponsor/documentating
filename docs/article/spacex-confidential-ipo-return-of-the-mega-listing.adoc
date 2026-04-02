@@ -6,7 +6,7 @@
 :page-tags: spacex, ipo, capital-markets, ai, infrastructure, wall-street, strategy
 :lang: en
 
-image::https://upload.wikimedia.org/wikipedia/commons/8/8f/Falcon_9_launch.jpg[SpaceX launch,align=center,width=900]
+image::https://commons.wikimedia.org/wiki/Special:FilePath/Falcon_9_launch.jpg[SpaceX launch,align=center,width=900]
 
 [.text-center]
 _Cover image: Falcon 9 launch. Source file page: Wikimedia Commons, “Falcon 9 launch.jpg.”_
@@ -39,7 +39,7 @@ That is why this potential listing matters so much now. The market does not need
 
 In that sense, the real significance of a SpaceX IPO is not that a famous private company may finally come public. The larger significance is that public markets may once again be prepared to finance the physical systems behind the next technology cycle. That would mark a major shift. For years, the premium narrative in technology investing centered on asset-light software and scalable digital platforms. SpaceX points in another direction: toward capital-heavy, execution-heavy, strategically critical systems. If the market embraces that proposition at record scale, the message will be unmistakable. The age of the mega-listing will not simply be back. It will have evolved.
 
-image::https://upload.wikimedia.org/wikipedia/commons/e/ec/Wall_Street_-_New_York_Stock_Exchange.jpg[Wall Street and the New York Stock Exchange,align=center,width=900]
+image::https://commons.wikimedia.org/wiki/Special:FilePath/Wall_Street_-_New_York_Stock_Exchange.jpg[Wall Street and the New York Stock Exchange,align=center,width=900]
 
 [.text-center]
 _Closing image: Wall Street and the New York Stock Exchange. Source file page: Wikimedia Commons, “Wall Street - New York Stock Exchange.jpg.”_
