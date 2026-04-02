@@ -44,7 +44,7 @@ jobs:
 
       - name: Build canonical Antora source tree via stable facade
         run: |
-          python3 tools/build_antora_site.py
+          python3 tools/build_antora_site_canonical_with_quality_atlas.py
 
       - name: Build site with Antora
         run: |

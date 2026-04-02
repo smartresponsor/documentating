@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5874f5cd-b820-4b57-9ce2-636e8f9cda3c" name="Changes" comment="" />
+    <list default="true" id="5874f5cd-b820-4b57-9ce2-636e8f9cda3c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +71,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/PhpstormProjects/www/Documentating",
+    "last_opened_file_path": "C:/Users/Admin/Downloads/documentating-live-repo-asset-fix.patch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1775082829935</updated>
-      <workItem from="1775082831078" duration="624000" />
+      <workItem from="1775082831078" duration="1334000" />
     </task>
     <servers />
   </component>
