@@ -1,0 +1,19 @@
+== Quality Atlas
+
+This block summarizes the *pre-RC / before v1* quality state of Smartresponsor components.
+
+It is not a production SLA dashboard. It is a *development-stage maturity surface* showing how components evolve before their first release candidate.
+
+=== Top 3 by Overall RC
+
+* Shipping — 9.0
+* Paying — 9.0
+* Billing / Runtiming — 8.8
+
+=== Strongest current dimensions
+
+* Ops / Governance / Security
+* QA Maturity
+* Product Identity
+
+xref:quality-atlas/component-quality-summary.adoc[Open Quality Atlas]
