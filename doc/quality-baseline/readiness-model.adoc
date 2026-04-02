@@ -1,0 +1,42 @@
+= Readiness Model
+:description: Maturity scale used to interpret system quality.
+
+The readiness model defines how strongly a capability is implemented.
+It complements the baseline by adding a notion of depth and maturity.
+
+== Levels
+
+[cols="1,3"]
+|===
+|Level |Meaning
+
+|Missing
+|Capability is absent or not considered.
+
+|Weak
+|Present in an ad-hoc or unstable form.
+
+|Partial
+|Implemented but incomplete or uneven.
+
+|Solid
+|Consistently implemented and production-usable.
+
+|Strong
+|Well-optimized, proven, and stable under real conditions.
+|===
+
+== Interpretation
+
+The model should not be used as a simplistic score.
+
+A system may intentionally remain at a lower level in some dimensions if those dimensions are not critical for its context.
+
+== Evidence
+
+Higher levels typically correlate with:
+
+* clearer runtime behavior,
+* stronger observability,
+* repeatable outcomes,
+* and reduced hidden coupling.
