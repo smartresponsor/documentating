@@ -1,0 +1,14 @@
+= Quality Atlas Summary
+
+The Quality Atlas provides a compact portfolio-level view of component readiness and quality distribution.
+
+== What this section contains
+
+* Overview of the scoring model
+* Visual portfolio snapshot
+* Link to the explorer/dashboard
+* Compact fallback summary for no-JS/static readers
+
+== Quick navigation
+
+* xref:quality-atlas/explorer.adoc[Open atlas explorer]
