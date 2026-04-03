@@ -1,0 +1,11 @@
+= Quality Atlas Explorer
+
+The explorer page is the interactive entry point for the portfolio quality atlas.
+
+== Purpose
+
+This page links to or embeds the generated atlas dashboard and related artifacts.
+
+== Navigation
+
+* xref:quality-atlas/index.adoc[Back to Quality Atlas overview]
