@@ -219,25 +219,9 @@ Strongest shared axis: *{best[1]}* ({float(avg[best[0]]):.2f}) +
 image::quality-atlas/ecosystem-average.svg[width=240]
 |===
 
-* xref:quality-atlas/index.adoc[Open Pre-RC Quality Atlas]
+* xref:quality-atlas/index.adoc[Open Quality Atlas]
 * xref:quality-atlas/explorer.adoc[Open Pre-RC Quality Atlas Explorer]
 '''
-
-
-def build_atlas_html(data: list[dict[str, float | str]]) -> str:
-    avg = average_profile(data)
-    top5 = data[:5]
-    rows = []
-    for item in data:
-        cells = ''.join(f'<td>{float(item[key]):.1f}</td>' for key, _ in AXES)
-        rows.append(f'<tr><th>{item["component"]}</th>{cells}</tr>')
-    cards = []
-    for item in data:
-        cards.append(f'''<div class="qa-card"><div class="qa-head"><div class="qa-title">{item['component']}</div><div class="qa-score">{float(item['overall']):.1f}</div></div>{radar_svg(item, str(item['component']), 220)}<div class="qa-note">Strongest: {strongest_axis(item)}<br>Weakest: {weakest_axis(item)}</div></div>''')
-    leaders = []
-    for item in top5:
-        leaders.append(f'''<div class="mini-card"><div class="mini-title">{item['component']}</div><div class="mini-score">{float(item['overall']):.1f}</div><div class="mini-sub">QA {float(item['qa']):.1f} · Ops {float(item['ops']):.1f}</div></div>''')
-    return f'''<div class="qa-atlas"><style>.qa-atlas{{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111;}}.qa-panel{{background:#fff;border:1px solid #ddd;border-radius:20px;padding:22px;margin:0 0 18px 0;}}.qa-lead{{color:#666;line-height:1.55;max-width:920px;}}.qa-grid{{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;}}.qa-mini-grid{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}}.mini-card{{border:1px solid #ddd;border-radius:14px;padding:14px;background:#fff;}}.mini-title{{font-weight:700;margin-bottom:4px;}}.mini-score{{font-size:24px;font-weight:800;margin-bottom:4px;}}.mini-sub{{color:#666;font-size:12px;}}.qa-kpis{{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px;}}.qa-kpi{{border:1px solid #ddd;border-radius:14px;padding:14px;}}.qa-kpi .label{{color:#666;font-size:12px;}}.qa-kpi .value{{font-size:28px;font-weight:800;}}.qa-cards{{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}}.qa-card{{border:1px solid #ddd;border-radius:16px;padding:10px;background:#fff;}}.qa-head{{display:flex;justify-content:space-between;align-items:baseline;padding:4px 6px 8px 6px;}}.qa-title{{font-weight:700;font-size:14px;}}.qa-score{{font-size:16px;font-weight:800;}}.qa-note{{color:#666;font-size:12px;padding:6px;line-height:1.45;}}.qa-table-wrap{{overflow:auto;}}.qa-atlas table{{width:100%;border-collapse:collapse;font-size:14px;}}.qa-atlas th,.qa-atlas td{{border-bottom:1px solid #ddd;padding:10px;text-align:center;white-space:nowrap;}}.qa-atlas th:first-child,.qa-atlas td:first-child{{text-align:left;}}@media (max-width:1100px){{.qa-grid{{grid-template-columns:1fr;}}.qa-cards{{grid-template-columns:repeat(2,minmax(0,1fr));}}.qa-mini-grid{{grid-template-columns:1fr;}}.qa-kpis{{grid-template-columns:repeat(2,minmax(0,1fr));}}}}</style><div class="qa-panel"><h2>Pre-RC Quality Atlas</h2><p class="qa-lead">This atlas is auto-generated from component reports on every push. It describes the ecosystem before release-candidate maturity and before versioned portfolio dashboards. The layer is normalized across Product, Architecture, Runtime, QA, Ops/Governance/Security, Market Alignment, and Overall RC.</p><div class="qa-kpis"><div class="qa-kpi"><div class="label">Components</div><div class="value">{len(data)}</div></div><div class="qa-kpi"><div class="label">Average Overall RC</div><div class="value">{float(avg['overall']):.2f}</div></div><div class="qa-kpi"><div class="label">Leader</div><div class="value">{top5[0]['component']}</div></div><div class="qa-kpi"><div class="label">Explorer</div><div class="value"><a href="explorer/">Open</a></div></div></div></div><div class="qa-grid"><div class="qa-panel"><h3>Pre-RC ecosystem average profile</h3>{radar_svg(avg, 'Pre-RC average profile', 320)}</div><div class="qa-panel"><h3>Leaders in the pre-RC band</h3><div class="qa-mini-grid">{''.join(leaders)}</div></div></div><div class="qa-panel"><h3>Unified pre-RC heat table</h3><div class="qa-table-wrap"><table><thead><tr><th>Component</th>{''.join(f'<th>{label}</th>' for _, label in AXES)}</tr></thead><tbody>{''.join(rows)}</tbody></table></div></div><div class="qa-panel"><h3>Component 360° cards</h3><div class="qa-cards">{''.join(cards)}</div></div></div>'''
 
 
 def build_explorer_html(data: list[dict[str, float | str]]) -> str:
@@ -247,25 +231,12 @@ def build_explorer_html(data: list[dict[str, float | str]]) -> str:
 def write_pages(data: list[dict[str, float | str]]) -> None:
     summary = build_summary_adoc(data)
     write(PAGES_DIR / 'quality-atlas' / 'summary.adoc', summary)
-    write(PAGES_DIR / 'quality-atlas' / 'index.adoc', f'''= Pre-RC Quality Atlas
-:description: Comparative pre-release-candidate component quality atlas for the Smartresponsor ecosystem.
-
-This page describes ecosystem maturity *before release-candidate status and before versioned portfolio dashboards*.
-
-The menu label remains *Quality Atlas* as the umbrella entry point, but the current content is explicitly scoped to the pre-RC development life of the components.
-
-* xref:quality-atlas/explorer.adoc[Open Pre-RC Quality Atlas Explorer]
-
-++++
-{build_atlas_html(data)}
-++++
-''')
     write(PAGES_DIR / 'quality-atlas' / 'explorer.adoc', f'''= Pre-RC Quality Atlas Explorer
 :description: Interactive pre-release-candidate explorer for the Smartresponsor component quality atlas.
 
 This is the more interactive companion to the current pre-RC atlas layer.
 
-* xref:quality-atlas/index.adoc[Back to Pre-RC Quality Atlas]
+* xref:quality-atlas/index.adoc[Back to Quality Atlas]
 
 ++++
 {build_explorer_html(data)}

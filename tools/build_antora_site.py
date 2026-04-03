@@ -6,8 +6,8 @@ from __future__ import annotations
 This builder owns the full canonical generation line directly.
 It generates the base Antora content tree, applies the canonical
 owner-facing home page, preserves component report/detail pages across
-regeneration, expands slug overrides, and then generates the pre-RC
-Quality Atlas.
+regeneration, expands slug overrides, and then generates the Quality Atlas
+baseline section and the pre-RC Quality Atlas comparative layer.
 """
 
 import re
@@ -557,6 +557,7 @@ def main() -> None:
     write_owner_support_pages()
     write_owner_assets()
     restore_component_pages(preserved_component_pages)
+    subprocess.run(['python3', str(ROOT / 'tools' / 'generate_quality_baseline_section.py')], check=True)
     subprocess.run(['python3', str(ROOT / 'tools' / 'generate_pre_rc_quality_atlas.py')], check=True)
 
 
