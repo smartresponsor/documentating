@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Principles :: Oleksandr Tishchenko</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/quality-atlas/principles/">
+    <meta name="description" content="Principles used to interpret quality across the Smartresponsor ecosystem.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.smartresponsor.com">Oleksandr Tishchenko</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu"></div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../article/">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="./">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#quality-atlas/explorer.adoc">Explorer</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../component-quality-summary/">Quality Atlas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../">Home</a></li>
+    <li><span>Principles</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Principles</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The quality layer should not be read as a rigid catalog of technologies.
+It should be read through a small set of principles that keep the baseline practical, comparable, and honest.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_explicit_trade_offs"><a class="anchor" href="#_explicit_trade_offs"></a>Explicit Trade-offs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Architectural decisions should be read as trade-offs rather than as universal virtues.</p>
+</div>
+<div class="paragraph">
+<p>A system may emphasize latency over flexibility, simplicity over maximal abstraction, or consistency over availability in specific contexts.
+What matters is that the trade-off is explicit rather than accidental.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_context_aware_design"><a class="anchor" href="#_context_aware_design"></a>Context-Aware Design</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Not every system requires the same depth across all dimensions.</p>
+</div>
+<div class="paragraph">
+<p>A small internal utility and a public-facing multi-tenant platform should not be judged as if they have identical operating conditions.
+The same vocabulary may still apply, but its expected depth changes with context.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_production_oriented_thinking"><a class="anchor" href="#_production_oriented_thinking"></a>Production-Oriented Thinking</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A system should not be judged only by feature presence.</p>
+</div>
+<div class="paragraph">
+<p>Operational clarity, failure behavior, evidence of runtime discipline, and maintainability matter as much as functional scope.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_evolvability"><a class="anchor" href="#_evolvability"></a>Evolvability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The quality layer should support growth and controlled change.</p>
+</div>
+<div class="paragraph">
+<p>A system with a smaller present surface but a clear path for strengthening may be healthier than a wider system with hidden instability.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_measurable_quality_gates"><a class="anchor" href="#_measurable_quality_gates"></a>Measurable Quality Gates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quality should be grounded in observable signals wherever possible.</p>
+</div>
+<div class="paragraph">
+<p>Narrative judgment is useful, but evidence, scorecards, and repeatable reading models make the documentation layer more durable and more useful for governance.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Marketing America Corp · High Hopes · Oleksandr Tishchenko</p>
+</footer>
+  </body>
+</html>
