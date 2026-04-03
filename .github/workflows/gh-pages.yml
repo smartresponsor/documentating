@@ -42,9 +42,9 @@ jobs:
           python -m pip install pyyaml
           npm install
 
-      - name: Build canonical Antora source tree via stable facade
+      - name: Build canonical Antora source tree
         run: |
-          python3 tools/build_antora_site_canonical_with_quality_atlas.py
+          python3 tools/build_antora_site.py
 
       - name: Build site with Antora
         run: |
