@@ -34,13 +34,6 @@
   align-items: center;
 }
 
-.toolbar .home-link {
-  width: auto;
-  min-width: auto;
-  padding-inline: 0.5rem;
-  text-indent: 0;
-  font-size: 0.95rem;
-}
 
 .owner-footer-nav {
   display: flex;
@@ -61,4 +54,12 @@
   .owner-top-nav__links {
     padding: 0.5rem 1rem 1rem;
   }
+}
+
+.toolbar .breadcrumbs {
+  min-width: 0;
+}
+
+.toolbar .breadcrumbs ul {
+  flex-wrap: wrap;
 }
