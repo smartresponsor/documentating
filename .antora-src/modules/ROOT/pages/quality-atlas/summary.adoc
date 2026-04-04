@@ -1,14 +1,24 @@
-= Quality Atlas Summary
+This pre-RC quality layer is auto-generated from component reports on every push to the documentation repository.
 
-The Quality Atlas provides a compact portfolio-level view of component readiness and quality distribution.
+It describes the ecosystem *before release-candidate maturity and before versioned portfolio dashboards*. Once components move into stable versioned life, they should be observed in a different portfolio layer.
 
-== What this section contains
+[cols="1,1",frame=none,grid=none]
+|===
+a|*Paying* +
+Overall RC: *9.0* +
+image::quality-atlas/paying.svg[width=240]
+a|*Shipping* +
+Overall RC: *9.0* +
+image::quality-atlas/shipping.svg[width=240]
 
-* Overview of the scoring model
-* Visual portfolio snapshot
-* Link to the explorer/dashboard
-* Compact fallback summary for no-JS/static readers
+a|*Billing* +
+Overall RC: *8.8* +
+image::quality-atlas/billing.svg[width=240]
+a|*Pre-RC ecosystem average* +
+Average Overall RC: *8.52* +
+Strongest shared axis: *Ops/Gov/Sec* (8.71) +
+image::quality-atlas/ecosystem-average.svg[width=240]
+|===
 
-== Quick navigation
-
-* xref:quality-atlas/explorer.adoc[Open atlas explorer]
+* xref:quality-atlas/index.adoc[Open Quality Atlas]
+* xref:quality-atlas/explorer.adoc[Open Pre-RC Quality Atlas Explorer]

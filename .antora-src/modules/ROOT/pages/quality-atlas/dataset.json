@@ -1,0 +1,192 @@
+[
+  {
+    "component": "Paying",
+    "product": 8.9,
+    "architecture": 8.7,
+    "runtime": 8.9,
+    "qa": 9.0,
+    "market": 8.8,
+    "overall": 9.0,
+    "ops": 9.1
+  },
+  {
+    "component": "Shipping",
+    "product": 9.0,
+    "architecture": 8.8,
+    "runtime": 8.9,
+    "qa": 8.9,
+    "market": 8.9,
+    "overall": 9.0,
+    "ops": 9.1
+  },
+  {
+    "component": "Billing",
+    "product": 8.8,
+    "architecture": 8.6,
+    "runtime": 8.5,
+    "qa": 9.0,
+    "market": 8.7,
+    "overall": 8.8,
+    "ops": 9.1
+  },
+  {
+    "component": "Runtiming",
+    "product": 8.9,
+    "architecture": 8.6,
+    "runtime": 8.8,
+    "qa": 8.1,
+    "market": 8.6,
+    "overall": 8.8,
+    "ops": 9.0
+  },
+  {
+    "component": "Vendoring",
+    "product": 8.5,
+    "architecture": 8.6,
+    "runtime": 8.4,
+    "qa": 9.2,
+    "market": 8.2,
+    "overall": 8.8,
+    "ops": 9.1
+  },
+  {
+    "component": "Ordering",
+    "product": 8.6,
+    "architecture": 8.5,
+    "runtime": 8.6,
+    "qa": 8.7,
+    "market": 8.5,
+    "overall": 8.7,
+    "ops": 8.9
+  },
+  {
+    "component": "Locating",
+    "product": 8.7,
+    "architecture": 8.5,
+    "runtime": 8.4,
+    "qa": 8.8,
+    "market": 8.5,
+    "overall": 8.6,
+    "ops": 8.7
+  },
+  {
+    "component": "Messaging",
+    "product": 8.6,
+    "architecture": 8.3,
+    "runtime": 8.9,
+    "qa": 8.3,
+    "market": 8.4,
+    "overall": 8.6,
+    "ops": 9.0
+  },
+  {
+    "component": "Tagging",
+    "product": 8.6,
+    "architecture": 8.4,
+    "runtime": 8.5,
+    "qa": 8.8,
+    "market": 8.4,
+    "overall": 8.6,
+    "ops": 9.0
+  },
+  {
+    "component": "Taxating",
+    "product": 8.8,
+    "architecture": 8.4,
+    "runtime": 8.5,
+    "qa": 8.6,
+    "market": 8.4,
+    "overall": 8.6,
+    "ops": 8.9
+  },
+  {
+    "component": "Accessing",
+    "product": 8.8,
+    "architecture": 8.5,
+    "runtime": 8.4,
+    "qa": 8.1,
+    "market": 8.3,
+    "overall": 8.5,
+    "ops": 8.9
+  },
+  {
+    "component": "Addressing",
+    "product": 8.1,
+    "architecture": 8.9,
+    "runtime": 8.0,
+    "qa": 9.1,
+    "market": 7.9,
+    "overall": 8.5,
+    "ops": 8.8
+  },
+  {
+    "component": "Applicating",
+    "product": 8.4,
+    "architecture": 8.3,
+    "runtime": 8.0,
+    "qa": 8.7,
+    "market": 8.0,
+    "overall": 8.4,
+    "ops": 8.5
+  },
+  {
+    "component": "Cataloging",
+    "product": 8.4,
+    "architecture": 8.2,
+    "runtime": 8.3,
+    "qa": 8.8,
+    "market": 8.2,
+    "overall": 8.4,
+    "ops": 8.7
+  },
+  {
+    "component": "Indexing",
+    "product": 8.5,
+    "architecture": 8.3,
+    "runtime": 8.2,
+    "qa": 8.2,
+    "market": 8.4,
+    "overall": 8.4,
+    "ops": 8.1
+  },
+  {
+    "component": "Rolling",
+    "product": 8.2,
+    "architecture": 8.1,
+    "runtime": 8.3,
+    "qa": 8.5,
+    "market": 7.9,
+    "overall": 8.3,
+    "ops": 8.6
+  },
+  {
+    "component": "Projecting",
+    "product": 8.0,
+    "architecture": 8.2,
+    "runtime": 8.1,
+    "qa": 7.6,
+    "market": 7.9,
+    "overall": 8.1,
+    "ops": 8.2
+  },
+  {
+    "component": "Analysing",
+    "product": 7.9,
+    "architecture": 8.1,
+    "runtime": 7.8,
+    "qa": 7.9,
+    "market": 7.8,
+    "overall": 8.0,
+    "ops": 8.4
+  },
+  {
+    "component": "Discovering",
+    "product": 8.0,
+    "architecture": 7.8,
+    "runtime": 7.7,
+    "qa": 6.9,
+    "market": 8.0,
+    "overall": 7.7,
+    "ops": 7.4
+  }
+]

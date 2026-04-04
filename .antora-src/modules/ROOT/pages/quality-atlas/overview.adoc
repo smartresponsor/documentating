@@ -1,0 +1,58 @@
+= Overview
+:description: Overview of the Quality Atlas baseline, readiness, evaluation, and comparative surfaces.
+
+The *Quality Atlas* should be understood as an umbrella quality surface for the Smartresponsor ecosystem.
+
+It is not only a comparative dashboard and not only a manifesto-style declaration.
+It combines several distinct but related layers:
+
+* a normative engineering baseline,
+* a readiness model,
+* an evaluation and evidence-reading layer,
+* and a comparative pre-RC atlas.
+
+== Why This Section Exists
+
+A documentation portal should not present quality only as scattered claims embedded inside component pages.
+
+A more mature portal also needs a visible place where quality is explained as a shared system language:
+
+* how architectural decisions are framed,
+* how maturity is interpreted,
+* how components are evaluated,
+* and how portfolio-level comparison should be read.
+
+== What This Section Contains
+
+This section is intended to group the following surfaces together:
+
+* *Quality Baseline* — the shared engineering specification vocabulary.
+* *Principles* — the rules of interpretation behind the baseline.
+* *Architectural Dimensions* — the grouped capability map.
+* *Readiness Model* — the maturity scale used for reading systems.
+* *Evaluation* — how reports, evidence, and scorecards should be interpreted.
+* *Glossary* — compact definitions for recurrent system terms.
+* *Explorer* — the interactive comparative layer for pre-RC component reading.
+
+== How To Read It
+
+The baseline pages should be read as the normative layer.
+They explain what kinds of qualities matter and how they should be discussed.
+
+The comparative atlas and explorer should be read as the analytical layer.
+They show how individual components currently appear against a shared pre-RC surface.
+
+Component reports remain the per-component narrative layer.
+They explain the maturity portrait of a single component in detail.
+
+== Intended Audience
+
+This section is useful for several audiences at once:
+
+* engineering readers who need a stable vocabulary,
+* owner and governance readers who need consistency,
+* and investor or diligence readers who need evidence that quality is approached systematically rather than informally.
+
+== Outcome
+
+The intended outcome is a documentation surface where quality is easier to navigate, easier to compare, and less dependent on implicit assumptions.

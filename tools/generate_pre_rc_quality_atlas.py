@@ -63,7 +63,18 @@ def extract_score_rows(text: str) -> list[tuple[str, float]]:
     if table_start is None or table_end is None:
         return []
     rows = [line.strip() for line in lines[table_start + 1:table_end] if line.strip().startswith('|')]
-    if len(rows) >= 3 and rows[0] == '| Layer' and rows[1] == '| Score to RC' and rows[2] == '| Reading':
+    header_rows = [
+        '| Layer | Score to RC | Reading',
+        '| Layer| Score to RC| Reading',
+    ]
+    if rows and rows[0] in header_rows:
+        rows = []
+        for line in lines[table_start + 2:table_end]:
+            stripped = line.strip()
+            if stripped.startswith('|'):
+                rows.extend([part.strip() for part in stripped.split('|') if part.strip()])
+        rows = [f'| {cell}' for cell in rows]
+    elif len(rows) >= 3 and rows[0] == '| Layer' and rows[1] == '| Score to RC' and rows[2] == '| Reading':
         rows = rows[3:]
     out: list[tuple[str, float]] = []
     i = 0

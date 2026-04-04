@@ -1,0 +1,25 @@
+= Quality Atlas
+:description: Engineering quality baseline, readiness model, evaluation layer, and pre-RC comparative atlas for the Smartresponsor ecosystem.
+
+This section is the umbrella quality surface for the Smartresponsor ecosystem.
+
+It combines:
+
+* a normative engineering baseline,
+* a readiness and evaluation layer,
+* and a comparative pre-RC atlas surface.
+
+== Start Here
+
+* xref:quality-atlas/overview.adoc[Overview]
+* xref:quality-atlas/quality-baseline.adoc[Quality Baseline]
+* xref:quality-atlas/principles.adoc[Principles]
+* xref:quality-atlas/architectural-dimensions.adoc[Architectural Dimensions]
+* xref:quality-atlas/readiness-model.adoc[Readiness Model]
+* xref:quality-atlas/evaluation.adoc[Evaluation]
+* xref:quality-atlas/glossary.adoc[Glossary]
+* xref:quality-atlas/explorer.adoc[Explorer]
+
+== Pre-RC Atlas Snapshot
+
+include::summary.adoc[]

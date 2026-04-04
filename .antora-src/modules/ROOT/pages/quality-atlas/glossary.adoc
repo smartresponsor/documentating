@@ -1,0 +1,40 @@
+= Glossary
+:description: Compact reference for recurring system design terms.
+
+This glossary provides short definitions for frequently used terms in the Quality Atlas.
+
+== ACID
+
+Atomicity, Consistency, Isolation, Durability — guarantees for transactional systems.
+
+== CAP Theorem
+
+Describes trade-offs between consistency, availability, and partition tolerance.
+
+== CQRS
+
+Separates command handling from query handling.
+
+== Event Sourcing
+
+Stores system state as a sequence of events.
+
+== Idempotency
+
+Ensures that repeated operations produce the same result.
+
+== Observability
+
+Ability to understand system behavior through logs, metrics, and traces.
+
+== Load Balancing
+
+Distributes traffic across multiple instances.
+
+== Circuit Breaker
+
+Prevents repeated failures from cascading.
+
+== Sharding
+
+Splitting data across multiple storage units.
