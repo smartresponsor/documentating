@@ -1,9 +1,10 @@
-<nav class="breadcrumbs" aria-label="breadcrumbs">
+<nav class="breadcrumbs" aria-label="breadcrumbs" data-owner-breadcrumbs data-page-url="{{page.url}}" data-site-root-path="{{or siteRootPath "."}}">
   <ul>
     {{#if site.homeUrl}}
     <li><a href="{{relativize site.homeUrl}}">Home</a></li>
     {{/if}}
     {{#unless page.home}}
+    <li data-owner-breadcrumb-section hidden><a data-owner-breadcrumb-section-link href="#"></a></li>
     <li><span>{{page.title}}</span></li>
     {{/unless}}
   </ul>
