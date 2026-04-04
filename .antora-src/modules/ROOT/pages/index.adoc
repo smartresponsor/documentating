@@ -34,6 +34,7 @@ The position reflected on this portal can be summarized in several core beliefs:
 
 * xref:article/index.adoc[Articles] — essays, strategic notes, technical positioning, and public reflections.
 * xref:component/index.adoc[Components] — entry points for ecosystem components and directions.
+* xref:quality-atlas/index.adoc[Quality Atlas] — engineering baseline, readiness model, evaluation layer, and comparative pre-RC atlas.
 * xref:manifest/index.adoc[Manifests] — canon, principles, and owner-level statements.
 * xref:about/index.adoc[About] — what this portal is and how it should be read.
 * xref:owner/index.adoc[Owner] — authorship and public context.
@@ -60,6 +61,37 @@ That is why this portal should be read not only as a blog, but as a public map o
 * Execution control, evidence, and accountability in agent-oriented systems.
 * Protocol-first commerce and machine-readable system design.
 * Public documentation as part of long-term technical continuity, not as afterthought.
+
+
+== Pre-RC Quality Atlas
+
+The current quality layer describes the ecosystem before release-candidate maturity and before versioned portfolio dashboards.
+
+This pre-RC quality layer is auto-generated from component reports on every push to the documentation repository.
+
+It describes the ecosystem *before release-candidate maturity and before versioned portfolio dashboards*. Once components move into stable versioned life, they should be observed in a different portfolio layer.
+
+[cols="1,1",frame=none,grid=none]
+|===
+a|*Paying* +
+Overall RC: *9.0* +
+image::quality-atlas/paying.svg[width=240]
+a|*Shipping* +
+Overall RC: *9.0* +
+image::quality-atlas/shipping.svg[width=240]
+
+a|*Billing* +
+Overall RC: *8.8* +
+image::quality-atlas/billing.svg[width=240]
+a|*Pre-RC ecosystem average* +
+Average Overall RC: *8.52* +
+Strongest shared axis: *Ops/Gov/Sec* (8.71) +
+image::quality-atlas/ecosystem-average.svg[width=240]
+|===
+
+* xref:quality-atlas/index.adoc[Open Quality Atlas]
+* xref:quality-atlas/explorer.adoc[Open Pre-RC Quality Atlas Explorer]
+
 
 == Selected Reads
 
