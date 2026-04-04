@@ -17,3 +17,48 @@
 .breadcrumbs ul li:first-child a {
   text-transform: none;
 }
+.owner-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.owner-top-nav__links {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.owner-top-nav__links .navbar-item {
+  display: inline-flex !important;
+  align-items: center;
+}
+
+.toolbar .home-link {
+  width: auto;
+  min-width: auto;
+  padding-inline: 0.5rem;
+  text-indent: 0;
+  font-size: 0.95rem;
+}
+
+.owner-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.owner-footer-nav a {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1023px) {
+  .owner-top-nav {
+    justify-content: flex-start;
+  }
+
+  .owner-top-nav__links {
+    padding: 0.5rem 1rem 1rem;
+  }
+}
