@@ -1,0 +1,466 @@
+{
+  "id": "resp_09858124ab43ce870069d2f15a8a308193ae1e82b94c736fc1",
+  "object": "response",
+  "created_at": 1775432026,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1775432065,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "model": "gpt-5-2025-08-07",
+  "output": [
+    {
+      "id": "rs_09858124ab43ce870069d2f15b95688193aee2551df6685318",
+      "type": "reasoning",
+      "summary": []
+    },
+    {
+      "id": "msg_09858124ab43ce870069d2f1757a1481939176e59455fa5f9a",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"component\":\"accessing\",\"summary\":\"Accessing remains presented as a governed account-access/security component with clear pre-RC maturity in the owner-facing report; in this documentation repository we only have narrative evidence, so prior scores are retained pending code-backed validation.\",\"strengths\":[\"Report page clearly defines scope: registration, verification, MFA, recovery, sessions, and lock discipline.\",\"Quality Atlas scheduled workflow exists to refresh assessments.\",\"Docs publishing pipeline to gh-pages is configured and active.\"],\"risks\":[\"No Accessing source code present here; evidence is narrative-only within the report page.\",\"Scores originate from pre-RC atlas content and may drift without code-backed scans.\",\"Potential divergence between documentation and implementation is not verifiable in this repo.\"],\"next_actions\":[\"Run the scheduled assessment against the smartresponsor/accessing code repository or ingest its facts.\",\"Cross-link concrete evidence (tests, build workflows, package manifests) from the code repo into this report page.\",\"Keep the report synchronized with validated evidence on the next scheduled run.\"],\"notes\":[\"This repository hosts the Antora-based owner-facing site; Accessing evidence here is the report content, not source code.\",\"Quality Atlas automation is present and can refresh when upstream code evidence is connected.\"],\"confidence\":\"medium\",\"evidence_paths\":[\".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc\",\".github/workflows/quality-atlas-assessment.yml\",\".github/workflows/gh-pages.yml\",\".sync/quality-atlas/components/accessing/current.yaml\",\"antora-playbook.yml\"],\"suggested_score_overrides\":{\"product\":null,\"architecture\":null,\"runtime\":null,\"qa\":null,\"ops\":null,\"market\":null,\"overall\":null},\"metric_updates\":{\"product\":{\"summary\":\"Component identity and market-facing shape are materially present as described in the owner-facing report page; scores retained pending code-backed validation.\",\"risks\":[\"Evidence is limited to narrative documentation in this repo; no direct product signals from the codebase.\"],\"improvements\":[\"Refresh this metric from a scheduled repository assessment run that ingests the Accessing code repository facts.\"],\"evidence\":[\".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc\"]},\"architecture\":{\"summary\":\"Symfony-oriented architecture shape is materially present per the report narrative, but not independently verified here.\",\"risks\":[\"No source layout or architectural code artifacts for Accessing are available in this repo.\"],\"improvements\":[\"Augment the report with links to concrete architectural evidence (packages, modules, boundaries) from the code repository.\"],\"evidence\":[\".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc\"]},\"runtime\":{\"summary\":\"Runtime and application surface are presented in the report (security packages, flows) but remain unverified by code in this repository.\",\"risks\":[\"Runtime claims (security integrations, rate limiting, mailer/notifier) are not evidenced by source here.\"],\"improvements\":[\"Ingest runtime/package manifests and CI outputs from the Accessing code repository into the assessment run.\"],\"evidence\":[\".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc\"]},\"qa\":{\"summary\":\"Testing and QA posture are described as materially present but remain pre-RC; this repository lacks test artifacts for Accessing itself.\",\"risks\":[\"No unit/integration test configs or results for Accessing are present in this docs repo.\"],\"improvements\":[\"Link to or ingest test configs/results from the Accessing code repository during scheduled assessments.\"],\"evidence\":[\".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc\"]},\"ops\":{\"summary\":\"Operational, governance, and security posture read as strong in the report; this repo evidences documentation and assessment automation, not service operations.\",\"risks\":[\"Operational readiness of the Accessing service cannot be validated from this documentation repo alone.\"],\"improvements\":[\"Add references to operational runbooks and deployment workflows from the Accessing code/infra repos into the report.\"],\"evidence\":[\".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc\",\".github/workflows/quality-atlas-assessment.yml\",\".github/workflows/gh-pages.yml\"]},\"market\":{\"summary\":\"Business- and portfolio-facing alignment is articulated in the report and remains plausible but unvalidated by external adoption signals in this repo.\",\"risks\":[\"No adoption/usage data or external references are present here to corroborate market alignment.\"],\"improvements\":[\"Augment the report with pointers to usage/adoption metrics or portfolio integration references when available.\"],\"evidence\":[\".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc\"]},\"overall\":{\"summary\":\"Overall RC direction is visible in the report page; scores are retained in this pass pending ingestion of code-backed evidence.\",\"risks\":[\"Assessment remains documentation-driven; implementation drift cannot be detected from this repo.\"],\"improvements\":[\"Execute a code-backed scheduled run against smartresponsor/accessing and refresh this overall metric.\"],\"evidence\":[\".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc\",\".sync/quality-atlas/components/accessing/current.yaml\"]}}}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "quality_atlas_assessment_verdict",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "summary",
+          "strengths",
+          "risks",
+          "next_actions",
+          "notes",
+          "confidence",
+          "evidence_paths",
+          "suggested_score_overrides",
+          "metric_updates"
+        ],
+        "properties": {
+          "component": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "strengths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "next_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "evidence_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "suggested_score_overrides": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "architecture": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "runtime": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "qa": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "ops": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "market": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "overall": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              }
+            }
+          },
+          "metric_updates": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "architecture": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "runtime": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "qa": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "ops": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "market": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "overall": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 16198,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 3140,
+    "output_tokens_details": {
+      "reasoning_tokens": 2048
+    },
+    "total_tokens": 19338
+  },
+  "user": null,
+  "metadata": {}
+}
