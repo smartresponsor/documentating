@@ -18,13 +18,13 @@ groups:
   runtime_performance:
     score: 0.0
   reliability_resilience:
-    score: 5.47
+    score: 5.3
   security_governance:
-    score: 7.9
+    score: 7.6
   delivery_operations:
-    score: 7.9
+    score: 7.6
   quality_testing:
-    score: 8.5
+    score: 8.3
 profile_axes:
   engineering:
     product: 0.0
@@ -32,51 +32,50 @@ profile_axes:
     data: 0.0
     api: 0.0
     runtime: 0.0
-    reliability: 3.95
-    security: 7.9
-    delivery: 7.9
-    quality: 8.5
-    overall: 8.3
+    reliability: 3.8
+    security: 7.6
+    delivery: 7.6
+    quality: 8.3
+    overall: 8.2
   owner:
     identity: 0.0
     consistency: 0.0
-    delivery: 7.9
-    quality: 8.5
-    governance: 7.9
+    delivery: 7.6
+    quality: 8.3
+    governance: 7.6
     fit: 0.0
-    debt: 6.75
-    overall: 8.3
+    debt: 6.85
+    overall: 8.2
   investor:
     product: 0.0
     architecture: 0.0
-    delivery: 7.9
-    reliability: 4.25
-    governance: 7.9
+    delivery: 7.6
+    reliability: 4.15
+    governance: 7.6
     clarity: 0.0
-    overall: 8.3
+    overall: 8.2
   operations:
     runtime: 0.0
-    reliability: 4.25
-    observability: 7.9
-    security: 7.9
-    traffic: 3.95
-    delivery: 7.9
-    recovery: 8.2
-    overall: 8.3
+    reliability: 4.15
+    observability: 7.6
+    security: 7.6
+    traffic: 3.8
+    delivery: 7.6
+    recovery: 7.95
+    overall: 8.2
 metrics:
   product:
     relevant: true
     maturity: strong
     score: 0.0
-    summary: Product identity and scope are explicit via README and PRODUCT_MANIFEST,
-      describing registration, verification, MFA, recovery, sessions, and security
-      events.
+    summary: Product identity and scope are explicitly documented and aligned with
+      an account-access service (registration, verification, MFA, recovery, sessions,
+      security events).
     risks:
-    - Docs are not integrated into the Antora report path for portfolio visibility
-    - Proprietary license may limit external adoption paths
+    - Antora report path is missing, reducing discoverability of product documentation.
     improvements:
-    - Publish/align the Antora component page with existing repo manifests
-    - Extend README with high-level user journeys and entry points
+    - Publish the component report at the configured Antora path and cross-link from
+      README.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -87,25 +86,26 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
     - path: README.md
       note: Metric-level assessment evidence.
     - path: PRODUCT_MANIFEST.md
       note: Metric-level assessment evidence.
-    - path: composer.json
+    - path: FULL_MANIFEST.md
       note: Metric-level assessment evidence.
   architecture:
     relevant: true
     maturity: solid
     score: 0.0
-    summary: Symfony 8 + Doctrine ORM 3 with a layered structure (Entities/Repositories/Services)
-      and domain/architecture manifests; database migrations are present.
+    summary: Symfony 8 architecture with clear domain separation (entities, repositories,
+      services, value objects) and intent captured in manifests.
     risks:
-    - Architecture/documentation drift risk without CI enforcement
-    - No explicit service boundaries or deployment topology evidenced in-repo
+    - Architectural governance and boundaries are described but not yet enforced via
+      CI or automated checks.
     improvements:
-    - Add static analysis and architectural checks to CI to prevent drift
-    - Keep BOUNDING_MANIFEST and ARCHITECTURE_MANIFEST referenced from the Antora
-      page
+    - Encode key architecture rules in static analysis/phpmd rulesets and enforce
+      in CI.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -120,26 +120,28 @@ metrics:
       note: Metric-level assessment evidence.
     - path: BOUNDING_MANIFEST.md
       note: Metric-level assessment evidence.
-    - path: src
-      note: Metric-level assessment evidence.
     - path: config/services.yaml
       note: Metric-level assessment evidence.
-    - path: migrations
+    - path: src/Entity
+      note: Metric-level assessment evidence.
+    - path: src/Repository
+      note: Metric-level assessment evidence.
+    - path: src/Service
+      note: Metric-level assessment evidence.
+    - path: src/ValueObject
       note: Metric-level assessment evidence.
   runtime:
     relevant: true
     maturity: solid
     score: 0.0
-    summary: 'Runtime shape is material: Symfony front controller and Kernel, env
-      management via .env files, Monolog and rate limiting configured, and 2FA integration
-      present.'
+    summary: Runtime shape is standard Symfony (public front controller, configuration
+      bootstrap, routes, env files) with logging and rate limiting available.
     risks:
-    - Production readiness constraints if hosting does not meet PHP ^8.4 requirement
-    - Reliance on .env files suggests the need to harden environment configuration
-      for production
+    - Operational runtime characteristics (healthchecks, readiness probes, instrumentation)
+      are not visible in the repo.
     improvements:
-    - Validate production environment compatibility with PHP ^8.4 in automated checks
-    - Document production environment variables and secret sources in repo docs
+    - Add health/readiness endpoints and basic runtime instrumentation to support
+      operations.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -152,13 +154,11 @@ metrics:
     evidence:
     - path: public/index.php
       note: Metric-level assessment evidence.
-    - path: src/Kernel.php
+    - path: config/bootstrap.php
+      note: Metric-level assessment evidence.
+    - path: config/routes.yaml
       note: Metric-level assessment evidence.
     - path: config/bundles.php
-      note: Metric-level assessment evidence.
-    - path: config/services.yaml
-      note: Metric-level assessment evidence.
-    - path: composer.json
       note: Metric-level assessment evidence.
     - path: .env
       note: Metric-level assessment evidence.
@@ -167,16 +167,15 @@ metrics:
   qa:
     relevant: true
     maturity: solid
-    score: 8.5
-    summary: Broad QA posture with unit/integration/functional tests, Panther and
-      Playwright E2E, plus PHPStan, PHPMD, and CS fixer wired via composer scripts.
+    score: 8.3
+    summary: Broad test coverage surface (Unit, Integration, Functional, browser/E2E)
+      with static analysis and style tools available via composer scripts.
     risks:
-    - No CI workflow to enforce the local pipeline or run E2E in headless mode
-    - Test coverage and thresholds are not documented in-repo
+    - CI gating for tests and static analysis is absent; phpunit/phpstan only have
+      dist configs, risking drift across environments.
     improvements:
-    - Add a GitHub Actions workflow running composer pipeline and Playwright with
-      artifacts
-    - Publish minimal coverage reporting and thresholds in CI
+    - Create phpunit.xml with coverage thresholds; add phpstan.neon with level/baseline;
+      run both in CI with fail-on-violation.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -197,11 +196,11 @@ metrics:
       note: Metric-level assessment evidence.
     - path: tests/Playwright
       note: Metric-level assessment evidence.
+    - path: composer.json
+      note: Metric-level assessment evidence.
     - path: phpunit.xml.dist
       note: Metric-level assessment evidence.
     - path: phpstan.neon.dist
-      note: Metric-level assessment evidence.
-    - path: composer.json
       note: Metric-level assessment evidence.
     - path: package.json
       note: Metric-level assessment evidence.
@@ -210,16 +209,14 @@ metrics:
   ops:
     relevant: true
     maturity: strong
-    score: 7.9
-    summary: Security and basic logging are strong (2FA/TOTP, CSRF, password hashing,
-      rate limiting, Monolog), but delivery automation and observability depth are
-      not evidenced.
+    score: 7.6
+    summary: Basic operational readiness exists locally (logging via Monolog, composer
+      pipeline script), but delivery automation and observability depth are missing.
     risks:
-    - No GitHub Actions workflows for CI/CD in the repo
-    - Metrics/tracing/alerting setup not evidenced
+    - No GitHub Actions workflows found; no visible metrics/tracing/alerting setup.
     improvements:
-    - Introduce CI/CD workflow to run tests and checks on push/PR
-    - Add metrics/tracing instrumentation and document operational procedures
+    - Add CI workflows running the full composer pipeline and Playwright tests; add
+      metrics/tracing and basic alerting.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -234,23 +231,19 @@ metrics:
       note: Metric-level assessment evidence.
     - path: config/bundles.php
       note: Metric-level assessment evidence.
-    - path: src/Security
-      note: Metric-level assessment evidence.
-    - path: README.md
+    - path: config/MANIFEST.md
       note: Metric-level assessment evidence.
   market:
     relevant: true
     maturity: solid
     score: 0.0
-    summary: Positioning is clear for an account access service within the ecosystem;
-      manifests and README communicate scope and core entity (Account).
+    summary: Business-facing positioning is clear for an account-access component;
+      repository manifests and README communicate scope and core entity.
     risks:
-    - Proprietary license narrows external ecosystem engagement
-    - Absence of Antora-linked docs may reduce portfolio visibility
+    - Proprietary license may limit community adoption and contributions.
     improvements:
-    - Expose key value propositions and integration points on the Antora component
-      page
-    - Reference security features (MFA, recovery flows) prominently in docs
+    - Clarify intended distribution and integration model in README (targets, SLAs,
+      versioning policy).
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -261,24 +254,23 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
     - path: README.md
       note: Metric-level assessment evidence.
     - path: PRODUCT_MANIFEST.md
       note: Metric-level assessment evidence.
-    - path: composer.json
-      note: Metric-level assessment evidence.
   overall:
     relevant: true
     maturity: solid
-    score: 8.3
-    summary: Strong foundation with security and testing depth; primary RC blockers
-      are lack of CI/CD automation and Antora-linked documentation.
+    score: 8.2
+    summary: Pre-RC posture with strong product/architecture and testing surface;
+      primary blocker is the absence of CI/CD and missing Antora report path.
     risks:
-    - Delivery automation gap could slow feedback and regressions detection
-    - Operational observability not evidenced
+    - Lack of CI/CD reduces release confidence; report path absence blocks portfolio
+      visibility.
     improvements:
-    - Add end-to-end CI pipeline and publish Antora docs to raise RC readiness
-    - Augment observability (metrics/tracing) and document runbooks
+    - Introduce minimal CI/CD and publish the Antora report to elevate to RC readiness.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -289,17 +281,13 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: composer.json
-      note: Metric-level assessment evidence.
     - path: README.md
       note: Metric-level assessment evidence.
-    - path: phpunit.xml.dist
+    - path: composer.json
       note: Metric-level assessment evidence.
-    - path: phpstan.neon.dist
+    - path: ARCHITECTURE_MANIFEST.md
       note: Metric-level assessment evidence.
-    - path: package.json
-      note: Metric-level assessment evidence.
-    - path: playwright.config.ts
+    - path: PRODUCT_MANIFEST.md
       note: Metric-level assessment evidence.
 development_driving:
   overall_status: warn
@@ -377,24 +365,29 @@ development_driving:
       - Class exposes 19 public methods; review interface segregation and SRP.
       - Class exposes 16 public methods; review interface segregation and SRP.
 strengths:
-- Clear product scope and manifests in repo
-- Solid Symfony 8 + Doctrine 3 architecture with domain-oriented structure
-- Comprehensive tests (unit, integration/functional, Panther, Playwright) and static
-  analysis tools
-- Strong security posture (2FA/TOTP, CSRF, password hashing, rate limiting)
-- Operational logging via Monolog
+- Clear product identity and scope documented (manifests, README).
+- Symfony 8 stack with security, 2FA, verification, and reset-password bundles.
+- Well-structured domain folders (Entity, Repository, Service, ValueObject, Interfaces).
+- Comprehensive test layout (Unit, Integration, Functional, Panther, Playwright).
+- Static analysis and code style tooling wired via composer scripts.
+- Recent migration history suggesting active development.
 risks:
-- No CI/CD workflows present in the repo
-- Repository docs not wired into Antora report path
-- Observability depth (metrics/tracing/alerts) not evidenced
-- PHP ^8.4 requirement tightens deployment targets without automated checks
+- No GitHub Actions workflows detected; CI/CD automation is missing.
+- Antora report path from registry is absent in the repo, blocking report rendering.
+- Dist-only configs for phpunit/phpstan may lead to inconsistent local setups/enforcement.
+- Limited observability beyond logging bundles; no metrics/tracing in evidence.
+- Proprietary license may constrain external adoption.
 recommended_next_actions:
-- Add GitHub Actions workflow to run lint, CS tools, PHPStan, PHPUnit, Panther, and
-  Playwright on push/PR
-- Publish/attach Antora module content for the component report path
-- Document/run the local pipeline in CI (composer scripts and Playwright) with artifacts
-- Add basic metrics/tracing instrumentation and document operational runbooks
-- Validate production environment against PHP ^8.4 requirement in automated checks
+- Add a minimal GitHub Actions workflow running composer install and scripts pipeline:local:full.
+- Promote phpunit.xml.dist to phpunit.xml with coverage thresholds and run in CI.
+- Promote phpstan.neon.dist to phpstan.neon with defined level/baseline and gate in
+  CI.
+- Add Playwright E2E job to CI (npm ci; playwright install; npm run test:e2e).
+- Create the Antora report at .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+  to unblock publishing.
+- Introduce basic metrics/tracing instrumentation and dashboards, beyond logging.
+- Document and pin operational runbook details in config/MANIFEST.md or README (envs,
+  secrets, migrations).
 evidence:
 - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
   note: Current component report page if present.
@@ -404,6 +397,8 @@ evidence:
   note: Deterministic development-driving probe layer.
 - path: README.md
   note: Assessment evidence path.
+- path: composer.json
+  note: Assessment evidence path.
 - path: PRODUCT_MANIFEST.md
   note: Assessment evidence path.
 - path: ARCHITECTURE_MANIFEST.md
@@ -412,23 +407,15 @@ evidence:
   note: Assessment evidence path.
 - path: FULL_MANIFEST.md
   note: Assessment evidence path.
-- path: composer.json
-  note: Assessment evidence path.
-- path: phpunit.xml.dist
-  note: Assessment evidence path.
-- path: phpstan.neon.dist
-  note: Assessment evidence path.
-- path: package.json
-  note: Assessment evidence path.
-- path: playwright.config.ts
-  note: Assessment evidence path.
-- path: public/index.php
-  note: Assessment evidence path.
-- path: src/Kernel.php
-  note: Assessment evidence path.
 - path: config/bundles.php
   note: Assessment evidence path.
 - path: config/services.yaml
+  note: Assessment evidence path.
+- path: public/index.php
+  note: Assessment evidence path.
+- path: phpstan.neon.dist
+  note: Assessment evidence path.
+- path: phpunit.xml.dist
   note: Assessment evidence path.
 - path: tests/Unit
   note: Assessment evidence path.
@@ -440,14 +427,18 @@ evidence:
   note: Assessment evidence path.
 - path: tests/Playwright
   note: Assessment evidence path.
-- path: src/Security
+- path: package.json
   note: Assessment evidence path.
-- path: migrations
+- path: playwright.config.ts
+  note: Assessment evidence path.
+- path: migrations/MANIFEST.md
   note: Assessment evidence path.
 assessment_notes:
-- Symfony 8 account-access application with clear scope, strong security features,
-  and comprehensive tests; main gaps are CI/CD automation and Antora-linked docs.
-- Assessment grounded in repository tree and manifests at commit bb0013d.
-- Security features and testing breadth are evidenced by dependencies and test directories;
-  delivery automation is not present in-repo.
+- Strong Symfony 8 account-access service with clear manifests and broad tests; main
+  gap is delivery/ops automation and the missing Antora report path.
+- Assessment grounded in repository scan at master bb0013dfbd4df3f201d4cae167f5de4bdf58967f
+  on 2026-04-05.
+- Composer requires PHP ^8.4 and Symfony 8; security and rate-limiting bundles are
+  present.
+- Multiple *MANIFEST.md documents provide intentional architecture/product context.
 assessment_confidence: medium

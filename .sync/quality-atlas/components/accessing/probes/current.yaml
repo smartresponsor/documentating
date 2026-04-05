@@ -4,7 +4,7 @@ snapshot:
   date: '2026-04-05'
   label: assessment-2026-04-05
   origin: quality-atlas deterministic probes
-  generated_at: '2026-04-05T20:41:36.346764+00:00'
+  generated_at: '2026-04-05T21:17:33.029896+00:00'
 repo_target:
   github_repository: smartresponsor/accessing
   local_path: ''
