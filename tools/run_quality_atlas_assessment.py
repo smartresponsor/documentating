@@ -262,7 +262,7 @@ def build_response_json_schema() -> dict[str, Any]:
     }
 
 
-def call_openai(prompt: str, model: str) -> dict[str, Any]:
+def call_openai(prompt: str, model: str) -> tuple[dict[str, Any], dict[str, Any]]:
     api_key = os.environ.get('OPENAI_API_KEY')
     if not api_key:
         raise RuntimeError('OPENAI_API_KEY is not set')
@@ -289,11 +289,11 @@ def call_openai(prompt: str, model: str) -> dict[str, Any]:
             if item.get('type') == 'refusal':
                 raise RuntimeError(f"Model refusal: {item.get('refusal') or item.get('text') or 'No reason provided.'}")
             if item.get('type') == 'output_text' and item.get('text'):
-                return json.loads(item['text'])
+                return json.loads(item['text']), {'request_payload': payload, 'response_payload': data}
 
     output_text = data.get('output_text')
     if isinstance(output_text, str) and output_text.strip():
-        return json.loads(output_text)
+        return json.loads(output_text), {'request_payload': payload, 'response_payload': data}
     raise RuntimeError('Responses API did not return structured output text.')
 
 
@@ -510,7 +510,7 @@ def write_snapshot_files(component_id: str, snapshot: dict[str, Any]) -> tuple[P
     return current_path, history_path
 
 
-def update_latest_summary(run_dir: Path, mode: str, components: list[dict[str, Any]], failures: list[dict[str, Any]]) -> None:
+def update_latest_summary(run_dir: Path, mode: str, components: list[dict[str, Any]], failures: list[dict[str, Any]], selected_components: list[str]) -> None:
     payload = {
         'generated_at': datetime.now(timezone.utc).isoformat(),
         'run_dir': str(run_dir),
@@ -518,6 +518,7 @@ def update_latest_summary(run_dir: Path, mode: str, components: list[dict[str, A
         'components': components,
         'failures': failures,
         'status': 'failed' if failures else 'ok',
+        'selected_components': selected_components,
     }
     LATEST_SUMMARY_FILE.parent.mkdir(parents=True, exist_ok=True)
     LATEST_SUMMARY_FILE.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding='utf-8')
@@ -531,6 +532,7 @@ def main() -> None:
     parser.add_argument('--mode', choices=['dry-run', 'responses'], default='dry-run')
     parser.add_argument('--repo-root', default=str(ROOT))
     parser.add_argument('--label', default=f"assessment-{date.today().isoformat()}")
+    parser.add_argument('--component', action='append', dest='components', default=[], help='Limit assessment to one or more component_id values.')
     args = parser.parse_args()
 
     registry = load_yaml(Path(args.registry))
@@ -546,8 +548,11 @@ def main() -> None:
     assessments: list[dict[str, Any]] = []
     latest_components: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
+    selected_components = set(args.components or [])
     for component in registry['repositories']:
         if not component.get('enabled'):
+            continue
+        if selected_components and component['component_id'] not in selected_components:
             continue
         local_path = component.get('local_path') or '.'
         target_repo = (repo_root / local_path).resolve()
@@ -557,9 +562,11 @@ def main() -> None:
             current = bootstrap_snapshot(component)
         prompt = build_prompt(component, cards, metric_catalog, view_profiles, scoring_model, response_schema, facts, current)
 
+        raw_ai_io: dict[str, Any] | None = None
         try:
+            (run_dir / f"{component['component_id']}.prompt.txt").write_text(prompt, encoding='utf-8')
             if args.mode == 'responses':
-                verdict = call_openai(prompt, args.model)
+                verdict, raw_ai_io = call_openai(prompt, args.model)
             else:
                 verdict = dry_run_verdict(component, prompt, facts, current)
             normalized = normalize_verdict(component['component_id'], verdict)
@@ -573,6 +580,13 @@ def main() -> None:
                 'verdict': normalized,
                 'snapshot_paths': {'current': str(current_path), 'history': str(history_path)},
             }
+            if raw_ai_io is not None:
+                item['ai_io'] = {
+                    'request_file': f"{component['component_id']}.request.json",
+                    'response_file': f"{component['component_id']}.response.json",
+                }
+                (run_dir / f"{component['component_id']}.request.json").write_text(json.dumps(raw_ai_io['request_payload'], indent=2, ensure_ascii=False), encoding='utf-8')
+                (run_dir / f"{component['component_id']}.response.json").write_text(json.dumps(raw_ai_io['response_payload'], indent=2, ensure_ascii=False), encoding='utf-8')
             assessments.append(item)
             latest_components.append({
                 'component': component['component_id'],
@@ -603,10 +617,11 @@ def main() -> None:
         'failures': len(failures),
         'label': args.label,
         'status': 'failed' if failures else 'ok',
+        'selected_components': sorted(selected_components),
     }
     (run_dir / 'index.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')
-    update_latest_summary(run_dir, args.mode, latest_components, failures)
-    print(json.dumps({'run_dir': str(run_dir), 'count': len(assessments), 'failures': len(failures), 'mode': args.mode, 'label': args.label}, indent=2))
+    update_latest_summary(run_dir, args.mode, latest_components, failures, sorted(selected_components))
+    print(json.dumps({'run_dir': str(run_dir), 'count': len(assessments), 'failures': len(failures), 'mode': args.mode, 'label': args.label, 'selected_components': sorted(selected_components)}, indent=2))
     if args.mode == 'responses' and failures:
         raise SystemExit(1)
 

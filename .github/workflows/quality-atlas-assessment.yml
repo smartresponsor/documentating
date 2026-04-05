@@ -1,7 +1,21 @@
 name: quality-atlas-assessment
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      component:
+        description: 'Optional component_id to assess (for example: documentating)'
+        required: false
+        type: string
+      mode:
+        description: 'Optional run mode override'
+        required: false
+        type: choice
+        options:
+          - auto
+          - dry-run
+          - responses
+        default: auto
   schedule:
     - cron: '27 9 */2 * *'
 
@@ -42,13 +56,24 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           QUALITY_ATLAS_OPENAI_MODEL: ${{ vars.QUALITY_ATLAS_OPENAI_MODEL || 'gpt-5' }}
+          INPUT_COMPONENT: ${{ github.event.inputs.component || '' }}
+          INPUT_MODE: ${{ github.event.inputs.mode || 'auto' }}
         run: |
           mode="dry-run"
-          if [ -n "${OPENAI_API_KEY}" ]; then
+          if [ "${INPUT_MODE}" = "responses" ]; then
+            mode="responses"
+          elif [ "${INPUT_MODE}" = "dry-run" ]; then
+            mode="dry-run"
+          elif [ -n "${OPENAI_API_KEY}" ]; then
             mode="responses"
           fi
           echo "mode=${mode}" >> "$GITHUB_OUTPUT"
-          python3 tools/run_quality_atlas_assessment.py --mode "$mode"
+          component_args=""
+          if [ -n "${INPUT_COMPONENT}" ]; then
+            component_args="--component ${INPUT_COMPONENT}"
+            echo "component=${INPUT_COMPONENT}" >> "$GITHUB_OUTPUT"
+          fi
+          python3 tools/run_quality_atlas_assessment.py --mode "$mode" ${component_args}
 
       - name: Upload assessment run artifacts
         if: always()
