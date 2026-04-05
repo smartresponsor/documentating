@@ -7,7 +7,7 @@ import re
 from datetime import date
 from pathlib import Path
 
-import yaml
+from quality_atlas_probe_lib import seed_probe_snapshot, summarize_probe_snapshot, write_probe_files, write_yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 DATASET_FILE = ROOT / '.antora-src' / 'modules' / 'ROOT' / 'pages' / 'quality-atlas' / 'dataset.json'
@@ -74,12 +74,7 @@ def metric_block(axis: str, score: float) -> dict[str, object]:
     }
 
 
-def write_yaml(path: Path, data: dict[str, object]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(yaml.safe_dump(data, sort_keys=False, allow_unicode=True), encoding='utf-8')
-
-
-def build_snapshot(item: dict[str, object], snapshot_date: str, label: str) -> dict[str, object]:
+def build_snapshot(item: dict[str, object], snapshot_date: str, label: str) -> tuple[dict[str, object], dict[str, object]]:
     title = str(item['component'])
     slug = slugify(title)
     scores = {k: float(item[k]) for k in ['product', 'architecture', 'runtime', 'qa', 'ops', 'market', 'overall']}
@@ -126,7 +121,16 @@ def build_snapshot(item: dict[str, object], snapshot_date: str, label: str) -> d
             'overall': scores['overall'],
         },
     }
-    return {
+    component = {
+        'component_id': slug,
+        'component_title': title,
+        'default_branch': 'master',
+        'github_repository': '',
+        'report_path': f'.antora-src/modules/ROOT/pages/component/{slug}/report/index.adoc',
+    }
+    probe_snapshot = seed_probe_snapshot(component, snapshot_date, label)
+    development_driving = summarize_probe_snapshot(probe_snapshot)
+    snapshot = {
         'component': slug,
         'title': title,
         'snapshot': {
@@ -136,9 +140,10 @@ def build_snapshot(item: dict[str, object], snapshot_date: str, label: str) -> d
             'origin': 'quality-atlas seed',
         },
         'report_status': 'draft',
-        'groups': {group: {'score': round(scores[axis], 2), 'source_axis': axis} for axis, groups in AXIS_TO_GROUPS.items() for group in groups if group not in []},
+        'groups': {group: {'score': round(scores[axis], 2), 'source_axis': axis} for axis, groups in AXIS_TO_GROUPS.items() for group in groups},
         'profile_axes': profile_axes,
         'metrics': {axis: metric_block(axis, score) for axis, score in scores.items()},
+        'development_driving': development_driving,
         'strengths': [
             f"Highest current axis: {max(scores, key=scores.get)} {max(scores.values()):.1f}/10",
             'Component is already represented in the current pre-RC Atlas.',
@@ -154,8 +159,10 @@ def build_snapshot(item: dict[str, object], snapshot_date: str, label: str) -> d
         'evidence': [
             {'path': f'.antora-src/modules/ROOT/pages/component/{slug}/report/index.adoc', 'note': 'Current component report page if present.'},
             {'path': '.antora-src/modules/ROOT/pages/quality-atlas/dataset.json', 'note': 'Seeded atlas dataset source.'},
+            {'path': f'.sync/quality-atlas/components/{slug}/probes/current.yaml', 'note': 'Deterministic development-driving probe layer.'},
         ],
     }
+    return snapshot, probe_snapshot
 
 
 def main() -> None:
@@ -165,13 +172,14 @@ def main() -> None:
     args = parser.parse_args()
 
     for item in load_dataset():
-        snapshot = build_snapshot(item, args.date, args.label)
+        snapshot, probe_snapshot = build_snapshot(item, args.date, args.label)
         component_dir = SNAPSHOT_ROOT / snapshot['component']
         history_path = component_dir / 'history' / f"{args.date}-{args.label}.yaml"
         current_path = component_dir / 'current.yaml'
         if not history_path.exists():
             write_yaml(history_path, snapshot)
         write_yaml(current_path, snapshot)
+        write_probe_files(snapshot['component'], probe_snapshot)
 
 
 if __name__ == '__main__':

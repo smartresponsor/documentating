@@ -14,6 +14,20 @@ cards:
   - facts bundle
   - repo summary
   - tool results
+- id: development_driving_probes
+  title: Development-driving probes
+  purpose: Collect deterministic owner/internal probes that feed the internal cockpit,
+    RC blockers, SOLID refactoring pressure, and canon drift detection.
+  required_inputs:
+  - repository tree
+  - probe family contract
+  - component registry entry
+  - current snapshot if any
+  required_outputs:
+  - probe snapshot
+  - family summaries
+  - top blockers
+  - probe evidence
 - id: engineering_assessment
   title: Engineering Assessment
   purpose: Score the canonical engineering profile and capture narrative risks/improvements.

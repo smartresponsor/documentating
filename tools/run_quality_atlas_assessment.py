@@ -15,6 +15,8 @@ from typing import Any
 
 import yaml
 
+from quality_atlas_probe_lib import collect_repo_probes, seed_probe_snapshot, summarize_probe_snapshot, write_probe_files
+
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_FILE = ROOT / '.sync' / 'quality-atlas' / 'repositories' / 'ecosystem-repositories.yaml'
 CARDS_FILE = ROOT / '.sync' / 'quality-atlas' / 'cards' / 'assessment-cards.yaml'
@@ -22,6 +24,7 @@ METRIC_CATALOG_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'metric-ca
 VIEW_PROFILES_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'view-profiles.yaml'
 SCORING_MODEL_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'scoring-model.yaml'
 ASSESSMENT_SCHEMA_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'assessment-response-schema.yaml'
+PROBE_FAMILIES_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'probe-families.yaml'
 OUTBOX_DIR = ROOT / '.sync' / 'quality-atlas' / 'generated' / 'assessment-runs'
 LATEST_SUMMARY_FILE = ROOT / '.sync' / 'quality-atlas' / 'generated' / 'latest-assessment-summary.json'
 SNAPSHOT_ROOT = ROOT / '.sync' / 'quality-atlas' / 'components'
@@ -161,7 +164,7 @@ def repo_facts(repo_dir: Path, component: dict[str, Any]) -> dict[str, Any]:
     return facts
 
 
-def build_prompt(component: dict[str, Any], cards: dict[str, Any], metric_catalog: dict[str, Any], view_profiles: dict[str, Any], scoring_model: dict[str, Any], response_schema: dict[str, Any], facts: dict[str, Any], current_snapshot: dict[str, Any] | None) -> str:
+def build_prompt(component: dict[str, Any], cards: dict[str, Any], metric_catalog: dict[str, Any], view_profiles: dict[str, Any], scoring_model: dict[str, Any], probe_families: dict[str, Any], response_schema: dict[str, Any], facts: dict[str, Any], current_snapshot: dict[str, Any] | None, probe_snapshot: dict[str, Any]) -> str:
     current_metric_context = {}
     if current_snapshot:
         for metric in BASE_METRICS:
@@ -308,6 +311,7 @@ def call_openai(prompt: str, model: str) -> tuple[dict[str, Any], dict[str, Any]
 def bootstrap_snapshot(component: dict[str, Any]) -> dict[str, Any]:
     title = component['component_title']
     scores = {metric: 8.0 for metric in BASE_METRICS}
+    probe_seed = seed_probe_snapshot(component, date.today().isoformat(), 'bootstrap-seed')
     snapshot = {
         'component': component['component_id'],
         'title': title,
@@ -321,6 +325,7 @@ def bootstrap_snapshot(component: dict[str, Any]) -> dict[str, Any]:
         'groups': recalc_groups(scores),
         'profile_axes': recalc_profile_axes(scores),
         'metrics': {},
+        'development_driving': summarize_probe_snapshot(probe_seed),
         'strengths': ['Bootstrap snapshot created so the component can join the regular assessment cycle.'],
         'risks': ['Bootstrap snapshot uses neutral placeholder scores until the first live assessment refresh.'],
         'recommended_next_actions': ['Run the assessment workflow to replace bootstrap values with repository-backed verdicts.'],
@@ -418,7 +423,7 @@ def recalc_profile_axes(scores: dict[str, float]) -> dict[str, dict[str, float]]
     return {profile_id: builder(scores) for profile_id, builder in PROFILE_AXIS_BUILDERS.items()}
 
 
-def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], verdict: dict[str, Any], run_label: str, origin: str) -> dict[str, Any]:
+def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], verdict: dict[str, Any], probe_snapshot: dict[str, Any], run_label: str, origin: str) -> dict[str, Any]:
     if current is None:
         raise RuntimeError(f"Current snapshot for {component['component_id']} is missing. Seed snapshots before running the assessment.")
     snapshot = json.loads(json.dumps(current))
@@ -433,12 +438,17 @@ def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], ve
     }
     snapshot['report_status'] = 'current'
     snapshot['groups'] = recalc_groups(scores)
+    snapshot['development_driving'] = summarize_probe_snapshot(probe_snapshot)
     snapshot['profile_axes'] = recalc_profile_axes(scores)
     snapshot['strengths'] = verdict['strengths'] or snapshot.get('strengths', [])
     snapshot['risks'] = verdict['risks'] or snapshot.get('risks', [])
     snapshot['recommended_next_actions'] = verdict['next_actions'] or snapshot.get('recommended_next_actions', [])
     existing_evidence = list(snapshot.get('evidence', []))
     evidence_paths = {item.get('path') for item in existing_evidence if isinstance(item, dict)}
+    probe_path = f".sync/quality-atlas/components/{component['component_id']}/probes/current.yaml"
+    if probe_path not in evidence_paths:
+        existing_evidence.append({'path': probe_path, 'note': 'Deterministic development-driving probe layer.'})
+        evidence_paths.add(probe_path)
     if component.get('report_path') and component['report_path'] not in evidence_paths:
         existing_evidence.append({'path': component['report_path'], 'note': 'Component report path from repository registry.'})
         evidence_paths.add(component['report_path'])
@@ -469,7 +479,7 @@ def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], ve
     return snapshot
 
 
-def dry_run_verdict(component: dict[str, Any], prompt: str, facts: dict[str, Any], current: dict[str, Any] | None) -> dict[str, Any]:
+def dry_run_verdict(component: dict[str, Any], prompt: str, facts: dict[str, Any], probe_snapshot: dict[str, Any], current: dict[str, Any] | None) -> dict[str, Any]:
     title = component['component_title']
     repo_exists = facts.get('exists') is True
     base_overall = safe_float((current or {}).get('metrics', {}).get('overall', {}).get('score'), 8.0)
@@ -483,6 +493,7 @@ def dry_run_verdict(component: dict[str, Any], prompt: str, facts: dict[str, Any
         'risks': [
             'Dry-run mode does not perform a live AI verdict.',
             'Repository scan depth is limited to deterministic probes until OPENAI_API_KEY is provided.',
+            f"Deterministic probes currently report {probe_snapshot.get('summary', {}).get('overall_status', 'warn')} status.",
         ],
         'next_actions': [
             'Enable responses mode with OPENAI_API_KEY for live verdict generation.',
@@ -549,6 +560,7 @@ def main() -> None:
     view_profiles = load_yaml(VIEW_PROFILES_FILE)
     scoring_model = load_yaml(SCORING_MODEL_FILE)
     response_schema = load_yaml(ASSESSMENT_SCHEMA_FILE)
+    probe_families = load_yaml(PROBE_FAMILIES_FILE)
     repo_root = Path(args.repo_root).resolve()
     run_dir = OUTBOX_DIR / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     run_dir.mkdir(parents=True, exist_ok=True)
@@ -565,10 +577,13 @@ def main() -> None:
         local_path = component.get('local_path') or '.'
         target_repo = (repo_root / local_path).resolve()
         facts = repo_facts(target_repo, component)
+        probe_snapshot = collect_repo_probes(target_repo, component)
+        probe_snapshot['snapshot']['label'] = args.label
+        probe_snapshot['snapshot']['date'] = date.today().isoformat()
         current = load_current_snapshot(component['component_id'])
         if current is None:
             current = bootstrap_snapshot(component)
-        prompt = build_prompt(component, cards, metric_catalog, view_profiles, scoring_model, response_schema, facts, current)
+        prompt = build_prompt(component, cards, metric_catalog, view_profiles, scoring_model, probe_families, response_schema, facts, current, probe_snapshot)
 
         raw_ai_io: dict[str, Any] | None = None
         try:
@@ -576,17 +591,19 @@ def main() -> None:
             if args.mode == 'responses':
                 verdict, raw_ai_io = call_openai(prompt, args.model)
             else:
-                verdict = dry_run_verdict(component, prompt, facts, current)
+                verdict = dry_run_verdict(component, prompt, facts, probe_snapshot, current)
             normalized = normalize_verdict(component['component_id'], verdict)
             validate_verdict(component['component_id'], normalized)
-            snapshot = merge_snapshot(current, component, normalized, args.label, f'quality-atlas {args.mode} assessment')
+            snapshot = merge_snapshot(current, component, normalized, probe_snapshot, args.label, f'quality-atlas {args.mode} assessment')
             current_path, history_path = write_snapshot_files(component['component_id'], snapshot)
+            probe_current_path, probe_history_path = write_probe_files(component['component_id'], probe_snapshot)
             item = {
                 'status': 'ok',
                 'registry_entry': component,
                 'facts': facts,
                 'verdict': normalized,
                 'snapshot_paths': {'current': str(current_path), 'history': str(history_path)},
+                'probe_paths': {'current': str(probe_current_path), 'history': str(probe_history_path)},
             }
             if raw_ai_io is not None:
                 item['ai_io'] = {

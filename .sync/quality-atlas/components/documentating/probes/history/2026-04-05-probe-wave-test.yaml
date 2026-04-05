@@ -1,0 +1,208 @@
+component: documentating
+title: Documentating
+snapshot:
+  date: '2026-04-05'
+  label: probe-wave-test
+  origin: quality-atlas deterministic probes
+  generated_at: '2026-04-05T16:33:07.267159+00:00'
+repo_target:
+  github_repository: local/documentating
+  local_path: .
+  default_branch: master
+families:
+  canon_structure:
+    title: Canon & Structure
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence: []
+  architecture_boundaries:
+    title: Architecture & Boundaries
+    status: warn
+    score: 7.0
+    summary: 0 fail, 3 warn, 0 info findings detected.
+    blockers:
+    - No obvious boundary descriptor files were detected.
+    - 'Missing expected repository segment: src/.'
+    - 'Missing expected repository segment: tests/.'
+    findings:
+    - severity: warn
+      id: boundary_descriptors_missing
+      detail: No obvious boundary descriptor files were detected.
+    - severity: warn
+      id: missing_vertical_segment
+      detail: 'Missing expected repository segment: src/.'
+    - severity: warn
+      id: missing_vertical_segment
+      detail: 'Missing expected repository segment: tests/.'
+    evidence: []
+  runtime_surface:
+    title: Runtime & Application Surface
+    status: warn
+    score: 9.0
+    summary: 0 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - No Docker or compose files were detected.
+    findings:
+    - severity: warn
+      id: docker_surface_missing
+      detail: No Docker or compose files were detected.
+    evidence:
+    - .antora-src/modules/ROOT/nav.adoc
+    - .antora-src/modules/ROOT/pages/index.adoc
+    - .deploy/MANIFEST.md
+  qa_behavior:
+    title: QA & Behavioral Assurance
+    status: fail
+    score: 6.5
+    summary: 1 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - tests/ directory is missing.
+    - No fixtures directories were detected.
+    findings:
+    - severity: fail
+      id: tests_missing
+      detail: tests/ directory is missing.
+    - severity: warn
+      id: fixtures_missing
+      detail: No fixtures directories were detected.
+    evidence:
+    - .antora-src/modules/ROOT/pages/component/rolling/report/index.adoc
+    - .antora-src/modules/ROOT/pages/component/shipping/report/index.adoc
+    - .antora-src/modules/ROOT/pages/component/tagging/report/index.adoc
+  documentation_suite:
+    title: Documentation & GitHub Suite
+    status: warn
+    score: 9.0
+    summary: 0 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - 'Missing expected documentation asset: CHANGELOG.md.'
+    findings:
+    - severity: warn
+      id: missing_doc_asset
+      detail: 'Missing expected documentation asset: CHANGELOG.md.'
+    evidence:
+    - .antora-src/modules/ROOT/pages/component/paying/report/index.adoc
+    - .antora-src/modules/ROOT/pages/component/shipping/report/index.adoc
+    - .antora-src/modules/ROOT/pages/component/vendoring/report/index.adoc
+    - .github/workflows
+    - .sync/quality-atlas/contract/probe-families.yaml
+    - README.md
+  delivery_observability:
+    title: Delivery & Observability
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - .antora-src/modules/ROOT/pages/article/technological-inequality-2-0-cognitive-divide.adoc
+    - .antora-src/modules/ROOT/pages/article/when-power-disguises-itself-as-passion.adoc
+    - .antora-src/modules/ROOT/pages/component/runtiming/report/index.adoc
+    - .antora-src/modules/ROOT/pages/component/taxating/report/index.adoc
+    - .deploy/MANIFEST.md
+    - .deploy/docker/MANIFEST.md
+    - .github/workflows/gh-pages.yml
+    - .github/workflows/quality-atlas-assessment.yml
+    - .ide/sr_default_inspector.xml
+    - .sync/quality-atlas/contract/probe-families.yaml
+    - MANIFEST.md
+  solid_refactoring:
+    title: SOLID & Refactoring Pressure
+    status: pass
+    score: 9.0
+    summary: 0 fail, 0 warn, 4 info findings detected.
+    blockers: []
+    findings:
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: .antora-src/modules/ROOT/pages/article/vibe-coding-is-not-the-problem.adoc
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: .antora-src/modules/ROOT/pages/article/from-ai-coding-to-semi-automated-science.adoc
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: docs/article/2026-03-29--vibe-coding-is-not-the-problem.adoc
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: docs/article/from-ai-coding-to-semi-automated-science.adoc
+    evidence:
+    - .antora-src/modules/ROOT/pages/article/from-ai-coding-to-semi-automated-science.adoc
+    - .antora-src/modules/ROOT/pages/article/vibe-coding-is-not-the-problem.adoc
+    - docs/article/2026-03-29--vibe-coding-is-not-the-problem.adoc
+    - docs/article/from-ai-coding-to-semi-automated-science.adoc
+summary:
+  overall_status: fail
+  average_score: 8.64
+  status_counts:
+    pass: 3
+    warn: 3
+    fail: 1
+    not_applicable: 0
+  top_blockers:
+  - Architecture & Boundaries — No obvious boundary descriptor files were detected.
+  - 'Architecture & Boundaries — Missing expected repository segment: src/.'
+  - Runtime & Application Surface — No Docker or compose files were detected.
+  - QA & Behavioral Assurance — tests/ directory is missing.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 7.0
+      summary: 0 fail, 3 warn, 0 info findings detected.
+      blockers:
+      - No obvious boundary descriptor files were detected.
+      - 'Missing expected repository segment: src/.'
+      - 'Missing expected repository segment: tests/.'
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - No Docker or compose files were detected.
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: fail
+      score: 6.5
+      summary: 1 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - tests/ directory is missing.
+      - No fixtures directories were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - 'Missing expected documentation asset: CHANGELOG.md.'
+    delivery_observability:
+      title: Delivery & Observability
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: pass
+      score: 9.0
+      summary: 0 fail, 0 warn, 4 info findings detected.
+      blockers: []

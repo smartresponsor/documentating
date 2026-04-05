@@ -1,0 +1,24 @@
+version: '1.0'
+description: Canonical development-driving probe families that sit beneath the strategic component snapshot.
+families:
+  - id: canon_structure
+    title: Canon & Structure
+    description: Detect owner-canon drift, forbidden naming, wrong tree shapes, legacy leftovers, namespace drift, and SQL dialect tree mixing.
+  - id: architecture_boundaries
+    title: Architecture & Boundaries
+    description: Detect entity leakage, weak boundary descriptors, and incomplete feature-vertical structure.
+  - id: runtime_surface
+    title: Runtime & Application Surface
+    description: Detect runtime, Docker, deploy, health, and surface wiring presence.
+  - id: qa_behavior
+    title: QA & Behavioral Assurance
+    description: Detect unit/integration/E2E test surfaces, fixtures, and browser automation coverage.
+  - id: documentation_suite
+    title: Documentation & GitHub Suite
+    description: Detect README, changelog, docblock coverage, Nelmio/OpenAPI, and GitHub-facing documentation posture.
+  - id: delivery_observability
+    title: Delivery & Observability
+    description: Detect workflows, deploy artifacts, Prometheus/Grafana, release wiring, and delivery readiness.
+  - id: solid_refactoring
+    title: SOLID & Refactoring Pressure
+    description: Detect likely SOLID violations, large classes, constructor injection pressure, and copy-paste provenance markers that justify refactoring review.

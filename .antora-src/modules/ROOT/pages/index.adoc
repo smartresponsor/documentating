@@ -65,6 +65,8 @@ That is why this portal should be read not only as a blog, but as a public map o
 
 == Pre-RC Quality Atlas
 
+* xref:quality-atlas/internal.adoc[Internal] — development-driving probe cockpit for canon drift, SOLID pressure, and RC blocker review.
+
 * xref:quality-atlas/portfolio.adoc[Portfolio] — profile-aware portfolio view, history-backed snapshots, and owner-facing radar overlays.
 
 The current quality layer describes the ecosystem before release-candidate maturity and before versioned portfolio dashboards.
