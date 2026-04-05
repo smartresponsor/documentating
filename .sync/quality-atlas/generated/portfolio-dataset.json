@@ -1936,7 +1936,7 @@
       "title": "Documentating",
       "snapshot": {
         "date": "2026-04-05",
-        "label": "manual-check",
+        "label": "contract-tightening",
         "ref": "master",
         "origin": "quality-atlas dry-run assessment"
       },
@@ -2803,6 +2803,13 @@
       }
     ],
     "documentating": [
+      {
+        "date": "2026-04-05",
+        "label": "contract-tightening",
+        "ref": "master",
+        "origin": "quality-atlas dry-run assessment",
+        "overall": 8.0
+      },
       {
         "date": "2026-04-05",
         "label": "manual-check",

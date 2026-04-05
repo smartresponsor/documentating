@@ -1,0 +1,95 @@
+{
+  "registry_entry": {
+    "component_id": "documentating",
+    "component_title": "Documentating",
+    "github_repository": "local/documentating",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/documentating/report/index.adoc",
+    "local_path": ".",
+    "notes": "Bootstrap-enabled in the atlas repository itself so the assessment workflow has a live local target. the scheduled assessment runner."
+  },
+  "facts": {
+    "repo_root": "/mnt/data/documentating_repo/documentating_repo",
+    "timestamp_utc": "2026-04-05T01:45:27.620198+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "7ec9ae492976c6bf1ebb596d448a106701a0df60"
+    },
+    "has_composer_json": false,
+    "has_package_json": true,
+    "has_phpstan_neon": false,
+    "has_phpstan_neon_dist": false,
+    "has_phpunit_xml": false,
+    "has_phpunit_xml_dist": false,
+    "has__github_workflows": true,
+    "has__antora-src_modules_ROOT_nav_adoc": true,
+    "has__antora-src_modules_ROOT_pages_index_adoc": true,
+    "git_status": {
+      "exit_code": 0,
+      "output": "M tools/run_quality_atlas_assessment.py\n?? .sync/quality-atlas/contract/assessment-response-schema.yaml"
+    },
+    "git_recent_commits": {
+      "exit_code": 0,
+      "output": "7ec9ae4 docs(quality-atlas): persist assessment snapshots and bootstrap live targets\n411a5c1 docs(quality-atlas): add historical contracts and portfolio track\n32ef863 docs(ui): restore stable breadcrumbs behavior\nf29f436 docs(ui): make breadcrumbs section-aware\n5c64f62 docs(ui): surface owner navigation links"
+    },
+    "top_level_tree": {
+      "exit_code": 0,
+      "output": "./.antora-src\n./.antora-src/antora.yml\n./.antora-src/modules\n./.canonization\n./.canonization/.editorconfig\n./.canonization/.gitattributes\n./.canonization/.gitignore\n./.canonization/Federation\n./.canonization/Governance\n./.canonization/Orchestration\n./.cleanup\n./.cleanup/publication-canon-2026-03-31.yml\n./.cleanup/removal-candidates-2026-03-31.yml\n./.commanding\n./.commanding/.gitattributes\n./.commanding/.gitignore\n./.commanding/README.md\n./.commanding/backup\n./.commanding/command.sh\n./.commanding/commanding.cmd\n./.commanding/commanding.sh\n./.commanding/database\n./.commanding/dependencies\n./.commanding/deploy\n./.commanding/docker\n./.commanding/git\n./.commanding/git_diff.sh\n./.commanding/git_status.sh\n./.commanding/git_sync.sh\n./.commanding/health.sh\n./.commanding/helm\n./.commanding/history.sh\n./.commanding/local_ci.sh\n./.commanding/logs\n./.commanding/misc\n./.commanding/patch_zipper.sh\n./.commanding/reorganize-tests.ps1\n./.commanding/run.sh\n./.commanding/sh\n./.commanding/systemd\n./.commanding/test\n./.commanding/zipper.sh\n./.consuming\n./.consuming/.github\n./.consuming/.gitignore\n./.consuming/consuming.json\n./.consuming/consuming.ps1\n./.deploy\n./.deploy/MANIFEST.md\n./.deploy/_template\n./.deploy/cloudflare\n./.deploy/docker\n./.deploy/helm\n./.deploy/systemd\n./.gate\n./.gate/.github\n./.gate/.gitignore\n./.gate/MANIFEST.json\n./.gate/README.md\n./.gate/contract\n./.gate/gate.ps1\n./.gate/gate.sh\n./.gate/linting\n./.gate/policy\n./.gate/quality\n./.gate/run.ps1\n./.gate/run.sh\n./.git\n./.git/COMMIT_EDITMSG\n./.git/FETCH_HEAD\n./.git/HEAD\n./.git/ORIG_HEAD\n./.git/config\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/packed-refs\n./.git/refs\n./.gitattributes\n./.github\n./.github/FUNDING.yml\n./.github/workflows\n./.gitignore\n./.ide\n./.ide/sr_default_inspector.xml\n./.idea\n./.idea/workspace.xml\n./.intelligence\n./.intelligence/.github\n./.intelligence/.gitignore\n./.intelligence/intelligence-engine.ps1\n./.intelligence/intelligence-install.ps1\n./.intelligence/intelligence-run.ps1\n./.intelligence/intelligence.json\n./.release\n./.release/publish\n./.release/sign\n./.release/tag\n./.smoke\n./.smoke/compose\n./.smoke/k6\n./.smoke/probe\n./.sync\n./.sync/manifest\n./.sync/quality-atlas\n./ANTORA_TRANSITION.md\n./BUILDING.md\n./MANIFEST.md\n./RAG_SOURCES.md\n./README.md\n./antora-playbook.yml\n./assets\n./assets/when-power-disguises-itself-as-passion-hero.svg\n./doc\n./doc/article\n./doc/quality-atlas\n./doc/quality-baseline"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.4.16 (cli) (built: Dec 18 2025 21:19:25) (NTS)\nCopyright (c) The PHP Group\nBuilt by Debian\nZend Engine v4.4.16, Copyright (c) Zend Technologies\n    with Zend OPcache v8.4.16, Copyright (c), by Zend Technologies"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.13.5"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "988"
+    },
+    "key_file_excerpts": {
+      "package.json": "{\n  \"name\": \"documentating-antora-site\",\n  \"private\": true,\n  \"scripts\": {\n    \"build:content\": \"python3 tools/build_antora_site.py\",\n    \"build\": \"npm run build:content && node tools/run_antora.mjs\"\n  },\n  \"dependencies\": {\n    \"antora\": \"3.1.12\",\n    \"@antora/lunr-extension\": \"^1.0.0-alpha.10\"\n  }\n}\n",
+      ".github/workflows/gh-pages.yml": "name: gh-pages\n\non:\n  push:\n    branches: [\"master\"]\n  workflow_dispatch: {}\n\npermissions:\n  contents: write\n\nconcurrency:\n  group: \"docs-gh-pages\"\n  cancel-in-progress: false\n\njobs:\n  deploy:\n    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip docs]') }}\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout master\n        uses: actions/checkout@v4\n        with:\n          ref: master\n          fetch-depth: 0\n\n      - name: Setup Node\n        uses: actions/setup-node@v4\n        with:\n          node-version: \"20\"\n\n      - name: Setup Python\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Install build dependencies\n        run: |\n          sudo apt-get update\n          sudo apt-get install -y pandoc\n          python -m pip install --upgrade pip\n          python -m pip install pyyaml\n          npm install\n\n      - name: Build canonical Antora source tree\n        run: |\n          python3 tools/build_antora_site.py\n\n      - name: Build site with Antora\n        run: |\n          npx antora antora-playbook.yml --fetch\n\n      - name: Copy public site extras\n        run: |\n          if [ -f docs/CNAME ]; then\n            cp docs/CNAME .site_build/CNAME\n          fi\n          if [ -d assets ]; then\n            mkdir -p .site_build/assets\n            cp -R assets/. .site_build/assets/\n          fi\n          touch .site_build/.nojekyll\n\n      - name: Publish owner-facing site to gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n        run: |\n          set -euo pipefail\n          git config user.name \"github-actions[bot]\"\n          git config user.email \"github-actions[bot]@users.noreply.github.com\"\n          git remote set-url origin \"https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git\"\n\n          workdir=\"$(mktemp -d)\"\n\n          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then\n            git fetch origin gh-pages:gh-pages\n            git worktree add --force \"$workdir\" gh-pages\n          else\n            git worktree add --detach \"$workdir\"\n            (\n              cd \"$workdir\"\n              git checkout --orphan gh-pages\n            )\n          fi\n\n          find \"$workdir\" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +\n          cp -R .site_build/. \"$workdir\"/\n\n          (\n            cd \"$workdir\"\n            git add -A\n            if [ -n \"$(git status --porcelain)\" ]; then\n              git commit -m \"docs: publish canonical Antora site\"\n              git push origin HEAD:gh-pages --force\n            else\n              echo \"No site changes to publish.\"\n            fi\n          )\n\n          git worktree remove \"$workdir\" --force || true\n",
+      ".github/workflows/quality-atlas-assessment.yml": "name: quality-atlas-assessment\n\non:\n  workflow_dispatch: {}\n  schedule:\n    - cron: '27 9 */2 * *'\n\npermissions:\n  contents: write\n\nconcurrency:\n  group: quality-atlas-assessment\n  cancel-in-progress: false\n\njobs:\n  assess:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout master\n        uses: actions/checkout@v4\n        with:\n          ref: master\n          fetch-depth: 0\n\n      - name: Setup Python\n        uses: actions/setup-python@v5\n        with:\n          python-version: '3.12'\n\n      - name: Install dependencies\n        run: |\n          python -m pip install --upgrade pip\n          python -m pip install pyyaml\n\n      - name: Seed current component snapshots\n        run: |\n          python3 tools/seed_quality_atlas_snapshots.py\n\n      - name: Run scheduled assessment dry-run or AI-backed pass\n        env:\n          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}\n          QUALITY_ATLAS_OPENAI_MODEL: ${{ vars.QUALITY_ATLAS_OPENAI_MODEL || 'gpt-5' }}\n        run: |\n          mode=\"dry-run\"\n          if [ -n \"${OPENAI_API_KEY}\" ]; then\n            mode=\"responses\"\n          fi\n          python3 tools/run_quality_atlas_assessment.py --mode \"$mode\"\n\n      - name: Regenerate portfolio pages\n        run: |\n          python3 tools/generate_quality_atlas_portfolio.py\n\n      - name: Commit assessment artifacts\n        run: |\n          git config user.name \"github-actions[bot]\"\n          git config user.email \"github-actions[bot]@users.noreply.github.com\"\n          git add .sync/quality-atlas .antora-src/modules/ROOT/pages/quality-atlas .antora-src/modules/ROOT/nav.adoc .antora-src/modules/ROOT/pages/index.adoc\n          if [ -n \"$(git status --porcelain)\" ]; then\n            git commit -m \"docs(quality-atlas): refresh snapshots and portfolio\"\n            git push origin HEAD:master\n          else\n            echo \"No quality atlas changes to commit.\"\n          fi\n"
+    }
+  },
+  "verdict": {
+    "component": "documentating",
+    "summary": "Documentating remains on a seeded snapshot because the assessment runner is in dry-run mode.",
+    "strengths": [
+      "Canonical snapshot/history contracts are present.",
+      "This component is wired into the atlas assessment registry."
+    ],
+    "risks": [
+      "Dry-run mode does not perform a live AI verdict.",
+      "Repository scan depth is limited to deterministic probes until OPENAI_API_KEY is provided."
+    ],
+    "next_actions": [
+      "Enable responses mode with OPENAI_API_KEY for live verdict generation.",
+      "Expand repository registry coverage and local_path mappings for additional components."
+    ],
+    "notes": [
+      "Prompt length: 44912 characters.",
+      "Base overall score retained at 8.00."
+    ],
+    "suggested_score_overrides": {
+      "overall": 8.0
+    },
+    "metric_updates": {},
+    "confidence": "dry-run",
+    "evidence_paths": [
+      ".antora-src/modules/ROOT/pages/component/documentating/report/index.adoc"
+    ]
+  },
+  "snapshot_paths": {
+    "current": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/components/documentating/current.yaml",
+    "history": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/components/documentating/history/2026-04-05-contract-tightening.yaml"
+  }
+}

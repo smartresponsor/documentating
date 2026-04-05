@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-05T01:25:56.883482+00:00",
-  "run_dir": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/generated/assessment-runs/20260405T012556Z",
+  "generated_at": "2026-04-05T01:45:28.247315+00:00",
+  "run_dir": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/generated/assessment-runs/20260405T014527Z",
   "mode": "dry-run",
   "components": [
     {
       "component": "documentating",
       "title": "Documentating",
       "overall": 8.0,
-      "history_file": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/components/documentating/history/2026-04-05-manual-check.yaml",
+      "history_file": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/components/documentating/history/2026-04-05-contract-tightening.yaml",
       "summary": "Documentating remains on a seeded snapshot because the assessment runner is in dry-run mode."
     }
   ]

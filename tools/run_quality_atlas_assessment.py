@@ -6,6 +6,7 @@ import json
 import os
 import subprocess
 import sys
+import textwrap
 import urllib.request
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -18,6 +19,8 @@ REGISTRY_FILE = ROOT / '.sync' / 'quality-atlas' / 'repositories' / 'ecosystem-r
 CARDS_FILE = ROOT / '.sync' / 'quality-atlas' / 'cards' / 'assessment-cards.yaml'
 METRIC_CATALOG_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'metric-catalog.yaml'
 VIEW_PROFILES_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'view-profiles.yaml'
+SCORING_MODEL_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'scoring-model.yaml'
+ASSESSMENT_SCHEMA_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'assessment-response-schema.yaml'
 OUTBOX_DIR = ROOT / '.sync' / 'quality-atlas' / 'generated' / 'assessment-runs'
 LATEST_SUMMARY_FILE = ROOT / '.sync' / 'quality-atlas' / 'generated' / 'latest-assessment-summary.json'
 SNAPSHOT_ROOT = ROOT / '.sync' / 'quality-atlas' / 'components'
@@ -93,7 +96,7 @@ def run(cmd: list[str], cwd: Path) -> tuple[int, str]:
     return proc.returncode, (proc.stdout + '\n' + proc.stderr).strip()
 
 
-def repo_facts(repo_dir: Path) -> dict[str, Any]:
+def repo_facts(repo_dir: Path, component: dict[str, Any]) -> dict[str, Any]:
     facts: dict[str, Any] = {'repo_root': str(repo_dir), 'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'exists': repo_dir.exists()}
     if not repo_dir.exists():
         facts['missing_reason'] = 'Configured local_path does not exist in the current runner workspace.'
@@ -104,21 +107,38 @@ def repo_facts(repo_dir: Path) -> dict[str, Any]:
             facts[key] = {'exit_code': rc, 'output': out[:4000]}
         except Exception as exc:  # pragma: no cover
             facts[key] = {'exit_code': 1, 'output': str(exc)}
-    for file_name in ['composer.json', 'package.json', 'phpstan.neon', 'phpstan.neon.dist', 'phpunit.xml', 'phpunit.xml.dist', '.github/workflows']:
+    tracked_files = ['composer.json', 'package.json', 'phpstan.neon', 'phpstan.neon.dist', 'phpunit.xml', 'phpunit.xml.dist', '.github/workflows', '.antora-src/modules/ROOT/nav.adoc', '.antora-src/modules/ROOT/pages/index.adoc']
+    for file_name in tracked_files:
         facts[f'has_{file_name.replace(".", "_").replace("/", "_")}'] = (repo_dir / file_name).exists()
     commands = [
         ('git_status', ['git', 'status', '--short']),
+        ('git_recent_commits', ['git', 'log', '--oneline', '-5']),
+        ('top_level_tree', ['bash', '-lc', 'find . -maxdepth 2 -mindepth 1 | sort | head -120']),
         ('php_version', ['php', '-v']),
         ('python_version', ['python3', '--version']),
         ('repo_file_count', ['bash', '-lc', 'find . -type f | wc -l']),
     ]
     for label, cmd in commands:
         rc, out = run(cmd, repo_dir)
-        facts[label] = {'exit_code': rc, 'output': out[:4000]}
+        facts[label] = {'exit_code': rc, 'output': out[:6000]}
+    report_path_value = component.get('report_path')
+    if report_path_value:
+        report_path = (repo_dir / report_path_value).resolve()
+        if report_path.exists():
+            report_text = report_path.read_text(encoding='utf-8', errors='ignore')
+            facts['report_excerpt'] = textwrap.shorten(report_text.replace('\n', ' '), width=5000, placeholder=' …')
+            facts['report_excerpt_source'] = report_path_value
+    key_files = {}
+    for rel in ['composer.json', 'package.json', '.github/workflows/gh-pages.yml', '.github/workflows/quality-atlas-assessment.yml']:
+        fp = repo_dir / rel
+        if fp.exists() and fp.is_file():
+            key_files[rel] = fp.read_text(encoding='utf-8', errors='ignore')[:4000]
+    if key_files:
+        facts['key_file_excerpts'] = key_files
     return facts
 
 
-def build_prompt(component: dict[str, Any], cards: dict[str, Any], metric_catalog: dict[str, Any], view_profiles: dict[str, Any], facts: dict[str, Any], current_snapshot: dict[str, Any] | None) -> str:
+def build_prompt(component: dict[str, Any], cards: dict[str, Any], metric_catalog: dict[str, Any], view_profiles: dict[str, Any], scoring_model: dict[str, Any], response_schema: dict[str, Any], facts: dict[str, Any], current_snapshot: dict[str, Any] | None) -> str:
     response_contract = {
         'component': component['component_id'],
         'summary': 'Short owner-facing summary.',
@@ -147,7 +167,7 @@ def build_prompt(component: dict[str, Any], cards: dict[str, Any], metric_catalo
         f'Current snapshot:\n{json.dumps(current_snapshot or {}, ensure_ascii=False, indent=2)}\n\n'
         f'Deterministic repository facts:\n{json.dumps(facts, ensure_ascii=False, indent=2)}\n\n'
         f'Return strict JSON following this shape:\n{json.dumps(response_contract, ensure_ascii=False, indent=2)}\n'
-        'Rules: risks/next_actions/strengths must be concise arrays of strings. metric_updates keys may only be one of product, architecture, runtime, qa, ops, market, overall. suggested_score_overrides may only include those keys. Do not return markdown.'
+        'Rules: risks/next_actions/strengths must be concise arrays of strings. metric_updates keys may only be one of product, architecture, runtime, qa, ops, market, overall. suggested_score_overrides may only include those keys. Every metric update must stay grounded in provided facts or current snapshot. If evidence is insufficient, preserve the previous narrative instead of inventing. Do not return markdown.'
     )
 
 
@@ -243,6 +263,8 @@ def normalize_verdict(component_id: str, verdict: dict[str, Any]) -> dict[str, A
         'notes': [str(item).strip() for item in verdict.get('notes') or [] if str(item).strip()],
         'suggested_score_overrides': {},
         'metric_updates': {},
+        'confidence': str(verdict.get('confidence') or '').strip(),
+        'evidence_paths': [str(item).strip() for item in verdict.get('evidence_paths') or [] if str(item).strip()],
     }
     for key, value in (verdict.get('suggested_score_overrides') or {}).items():
         if key in BASE_METRICS:
@@ -254,6 +276,7 @@ def normalize_verdict(component_id: str, verdict: dict[str, Any]) -> dict[str, A
             'summary': str(value.get('summary') or '').strip(),
             'risks': [str(item).strip() for item in value.get('risks') or [] if str(item).strip()],
             'improvements': [str(item).strip() for item in value.get('improvements') or [] if str(item).strip()],
+            'evidence': [str(item).strip() for item in value.get('evidence') or [] if str(item).strip()],
         }
     return normalized
 
@@ -289,12 +312,18 @@ def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], ve
     evidence_paths = {item.get('path') for item in existing_evidence if isinstance(item, dict)}
     if component.get('report_path') and component['report_path'] not in evidence_paths:
         existing_evidence.append({'path': component['report_path'], 'note': 'Component report path from repository registry.'})
+    for path in verdict.get('evidence_paths', []):
+        if path not in evidence_paths:
+            existing_evidence.append({'path': path, 'note': 'Assessment evidence path.'})
+            evidence_paths.add(path)
     snapshot['evidence'] = existing_evidence
     note_lines = verdict['notes'][:]
     if verdict['summary']:
         note_lines.insert(0, verdict['summary'])
     if note_lines:
         snapshot['assessment_notes'] = note_lines
+    if verdict.get('confidence'):
+        snapshot['assessment_confidence'] = verdict['confidence']
     for metric, score in scores.items():
         block = snapshot['metrics'][metric]
         block['score'] = score
@@ -305,6 +334,8 @@ def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], ve
             block['risks'] = update['risks']
         if update.get('improvements'):
             block['improvements'] = update['improvements']
+        if update.get('evidence'):
+            block['evidence'] = [{'path': item, 'note': 'Metric-level assessment evidence.'} for item in update['evidence']]
     return snapshot
 
 
@@ -331,6 +362,8 @@ def dry_run_verdict(component: dict[str, Any], prompt: str, facts: dict[str, Any
             f'Prompt length: {len(prompt)} characters.',
             f'Base overall score retained at {base_overall:.2f}.',
         ],
+        'confidence': 'dry-run',
+        'evidence_paths': [path for path in [component.get('report_path')] if path],
         'suggested_score_overrides': {'overall': base_overall},
         'metric_updates': {},
     }
@@ -372,6 +405,8 @@ def main() -> None:
     cards = load_yaml(Path(args.cards))
     metric_catalog = load_yaml(METRIC_CATALOG_FILE)
     view_profiles = load_yaml(VIEW_PROFILES_FILE)
+    scoring_model = load_yaml(SCORING_MODEL_FILE)
+    response_schema = load_yaml(ASSESSMENT_SCHEMA_FILE)
     repo_root = Path(args.repo_root).resolve()
     run_dir = OUTBOX_DIR / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     run_dir.mkdir(parents=True, exist_ok=True)
@@ -383,11 +418,11 @@ def main() -> None:
             continue
         local_path = component.get('local_path') or '.'
         target_repo = (repo_root / local_path).resolve()
-        facts = repo_facts(target_repo)
+        facts = repo_facts(target_repo, component)
         current = load_current_snapshot(component['component_id'])
         if current is None:
             current = bootstrap_snapshot(component)
-        prompt = build_prompt(component, cards, metric_catalog, view_profiles, facts, current)
+        prompt = build_prompt(component, cards, metric_catalog, view_profiles, scoring_model, response_schema, facts, current)
         if args.mode == 'responses':
             verdict = call_openai(prompt, args.model)
         else:

@@ -1,0 +1,50 @@
+version: "1.0"
+description: Strict response contract for AI-backed Quality Atlas assessment runs.
+response:
+  component:
+    type: string
+    required: true
+  summary:
+    type: string
+    required: true
+  strengths:
+    type: string_array
+    required: true
+  risks:
+    type: string_array
+    required: true
+  next_actions:
+    type: string_array
+    required: true
+  notes:
+    type: string_array
+    required: false
+  confidence:
+    type: enum
+    allowed: [high, medium, low, dry-run]
+    required: false
+  evidence_paths:
+    type: string_array
+    required: false
+  suggested_score_overrides:
+    type: object
+    allowed_keys: [product, architecture, runtime, qa, ops, market, overall]
+    values: float_0_to_10
+    required: false
+  metric_updates:
+    type: object
+    allowed_keys: [product, architecture, runtime, qa, ops, market, overall]
+    required: false
+    value_shape:
+      summary:
+        type: string
+        required: false
+      risks:
+        type: string_array
+        required: false
+      improvements:
+        type: string_array
+        required: false
+      evidence:
+        type: string_array
+        required: false
