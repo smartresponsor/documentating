@@ -2,10 +2,13 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
+import shutil
 import subprocess
 import sys
+import tempfile
 import textwrap
 import urllib.error
 import urllib.request
@@ -121,6 +124,33 @@ def metric_catalog_summary(metric_catalog: Any) -> list[dict[str, Any]]:
         })
     return summary
 
+
+
+
+def is_local_component_target(component: dict[str, Any]) -> bool:
+    local_path = component.get('local_path')
+    github_repository = str(component.get('github_repository') or '')
+    return bool(local_path) or github_repository.startswith('local/')
+
+
+def clone_target_repository(component: dict[str, Any], token: str | None) -> tuple[Path, Path] | None:
+    github_repository = str(component.get('github_repository') or '').strip()
+    if not github_repository or github_repository.startswith('local/'):
+        return None
+    temp_root = Path(tempfile.mkdtemp(prefix=f"quality-atlas-{component['component_id']}-"))
+    clone_dir = temp_root / component['component_id']
+    remote_url = f"https://github.com/{github_repository}.git"
+    command = ['git']
+    if token:
+        basic = base64.b64encode(f'x-access-token:{token}'.encode('utf-8')).decode('ascii')
+        command.extend(['-c', f'http.extraHeader=AUTHORIZATION: basic {basic}'])
+    command.extend(['clone', '--depth', '1', '--branch', component.get('default_branch', 'master'), remote_url, str(clone_dir)])
+    result = subprocess.run(command, capture_output=True, text=True)
+    if result.returncode != 0:
+        shutil.rmtree(temp_root, ignore_errors=True)
+        hint = ' Provide QUALITY_ATLAS_REPO_TOKEN with read access to the target repository.' if not token else ''
+        raise RuntimeError(f"Unable to clone component repository {github_repository}: {(result.stderr or result.stdout).strip()}{hint}")
+    return temp_root, clone_dir
 
 def repo_facts(repo_dir: Path, component: dict[str, Any]) -> dict[str, Any]:
     facts: dict[str, Any] = {'repo_root': str(repo_dir), 'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'exists': repo_dir.exists()}
@@ -562,6 +592,7 @@ def main() -> None:
     response_schema = load_yaml(ASSESSMENT_SCHEMA_FILE)
     probe_families = load_yaml(PROBE_FAMILIES_FILE)
     repo_root = Path(args.repo_root).resolve()
+    repo_access_token = os.environ.get('QUALITY_ATLAS_REPO_TOKEN', '').strip() or None
     run_dir = OUTBOX_DIR / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     run_dir.mkdir(parents=True, exist_ok=True)
 
@@ -574,10 +605,34 @@ def main() -> None:
             continue
         if selected_components and component['component_id'] not in selected_components:
             continue
-        local_path = component.get('local_path') or '.'
-        target_repo = (repo_root / local_path).resolve()
-        facts = repo_facts(target_repo, component)
-        probe_snapshot = collect_repo_probes(target_repo, component)
+        target_repo_root_for_cleanup: Path | None = None
+        try:
+            if is_local_component_target(component):
+                local_path = component.get('local_path') or '.'
+                target_repo = (repo_root / local_path).resolve()
+            else:
+                cloned = clone_target_repository(component, repo_access_token)
+                if cloned is None:
+                    raise RuntimeError(f"No repository target configured for {component['component_id']}.")
+                target_repo_root_for_cleanup, target_repo = cloned
+            facts = repo_facts(target_repo, component)
+            probe_snapshot = collect_repo_probes(target_repo, component)
+        except Exception as exc:
+            failure = {
+                'status': 'error',
+                'component': component['component_id'],
+                'title': component['component_title'],
+                'mode': args.mode,
+                'error_type': exc.__class__.__name__,
+                'error': str(exc),
+                'registry_entry': component,
+                'facts': {'repo_root': str(component.get('local_path') or component.get('github_repository') or ''), 'exists': False},
+            }
+            failures.append(failure)
+            (run_dir / f"{component['component_id']}.error.json").write_text(json.dumps(failure, indent=2, ensure_ascii=False), encoding='utf-8')
+            if target_repo_root_for_cleanup is not None:
+                shutil.rmtree(target_repo_root_for_cleanup, ignore_errors=True)
+            continue
         probe_snapshot['snapshot']['label'] = args.label
         probe_snapshot['snapshot']['date'] = date.today().isoformat()
         current = load_current_snapshot(component['component_id'])
@@ -634,6 +689,9 @@ def main() -> None:
             }
             failures.append(failure)
             (run_dir / f"{component['component_id']}.error.json").write_text(json.dumps(failure, indent=2, ensure_ascii=False), encoding='utf-8')
+        finally:
+            if target_repo_root_for_cleanup is not None:
+                shutil.rmtree(target_repo_root_for_cleanup, ignore_errors=True)
 
     summary = {
         'date': date.today().isoformat(),
