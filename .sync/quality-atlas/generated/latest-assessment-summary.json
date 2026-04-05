@@ -1,14 +1,19 @@
 {
-  "generated_at": "2026-04-05T01:45:28.247315+00:00",
-  "run_dir": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/generated/assessment-runs/20260405T014527Z",
-  "mode": "dry-run",
+  "generated_at": "2026-04-05T17:21:07.203515+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260405T172028Z",
+  "mode": "responses",
   "components": [
     {
-      "component": "documentating",
-      "title": "Documentating",
-      "overall": 8.0,
-      "history_file": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/components/documentating/history/2026-04-05-contract-tightening.yaml",
-      "summary": "Documentating remains on a seeded snapshot because the assessment runner is in dry-run mode."
+      "component": "accessing",
+      "title": "Accessing",
+      "overall": 0.0,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/history/2026-04-05-assessment-2026-04-05.yaml",
+      "summary": "Owner-facing report for Accessing presents a strong, enterprise-leaning access/security component narrative with RC-level contours, but current evidence in this repository is documentation and automation only; code-level verification remains pending."
     }
+  ],
+  "failures": [],
+  "status": "ok",
+  "selected_components": [
+    "accessing"
   ]
 }
