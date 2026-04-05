@@ -2,9 +2,9 @@ component: documentating
 title: Documentating
 snapshot:
   date: '2026-04-05'
-  label: probe-wave-test
+  label: contract-tightening
   origin: quality-atlas deterministic probes
-  generated_at: '2026-04-05T16:33:07.267159+00:00'
+  generated_at: '2026-04-05T16:35:34.921795+00:00'
 repo_target:
   github_repository: local/documentating
   local_path: .

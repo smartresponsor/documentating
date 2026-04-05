@@ -2,7 +2,7 @@ component: documentating
 title: Documentating
 snapshot:
   date: '2026-04-05'
-  label: probe-wave-sanity
+  label: contract-tightening
   ref: master
   origin: quality-atlas dry-run assessment
 report_status: current
@@ -81,9 +81,7 @@ metrics:
     tradeoffs:
     - Neutral bootstrap values unblock portfolio participation without pretending
       to be a real audit.
-    evidence:
-    - path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
-      note: Metric-level assessment evidence.
+    evidence: []
   architecture:
     relevant: true
     maturity: solid
@@ -101,9 +99,7 @@ metrics:
     tradeoffs:
     - Neutral bootstrap values unblock portfolio participation without pretending
       to be a real audit.
-    evidence:
-    - path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
-      note: Metric-level assessment evidence.
+    evidence: []
   runtime:
     relevant: true
     maturity: solid
@@ -121,9 +117,7 @@ metrics:
     tradeoffs:
     - Neutral bootstrap values unblock portfolio participation without pretending
       to be a real audit.
-    evidence:
-    - path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
-      note: Metric-level assessment evidence.
+    evidence: []
   qa:
     relevant: true
     maturity: solid
@@ -141,9 +135,7 @@ metrics:
     tradeoffs:
     - Neutral bootstrap values unblock portfolio participation without pretending
       to be a real audit.
-    evidence:
-    - path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
-      note: Metric-level assessment evidence.
+    evidence: []
   ops:
     relevant: true
     maturity: solid
@@ -161,9 +153,7 @@ metrics:
     tradeoffs:
     - Neutral bootstrap values unblock portfolio participation without pretending
       to be a real audit.
-    evidence:
-    - path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
-      note: Metric-level assessment evidence.
+    evidence: []
   market:
     relevant: true
     maturity: solid
@@ -181,9 +171,7 @@ metrics:
     tradeoffs:
     - Neutral bootstrap values unblock portfolio participation without pretending
       to be a real audit.
-    evidence:
-    - path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
-      note: Metric-level assessment evidence.
+    evidence: []
   overall:
     relevant: true
     maturity: solid
@@ -201,9 +189,7 @@ metrics:
     tradeoffs:
     - Neutral bootstrap values unblock portfolio participation without pretending
       to be a real audit.
-    evidence:
-    - path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
-      note: Metric-level assessment evidence.
+    evidence: []
 strengths:
 - Canonical snapshot/history contracts are present.
 - This component is wired into the atlas assessment registry.
@@ -211,7 +197,6 @@ risks:
 - Dry-run mode does not perform a live AI verdict.
 - Repository scan depth is limited to deterministic probes until OPENAI_API_KEY is
   provided.
-- Deterministic probes currently report fail status.
 recommended_next_actions:
 - Enable responses mode with OPENAI_API_KEY for live verdict generation.
 - Expand repository registry coverage and local_path mappings for additional components.
@@ -223,7 +208,7 @@ evidence:
 assessment_notes:
 - Documentating remains on a seeded snapshot because the assessment runner is in dry-run
   mode.
-- 'Prompt length: 57253 characters.'
+- 'Prompt length: 44912 characters.'
 - Base overall score retained at 8.00.
 assessment_confidence: dry-run
 development_driving:
