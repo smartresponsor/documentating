@@ -1,0 +1,210 @@
+component: documentating
+title: Documentating
+snapshot:
+  date: '2026-04-05'
+  label: manual-check
+  ref: master
+  origin: quality-atlas dry-run assessment
+report_status: current
+groups:
+  product_market:
+    score: 8.0
+  domain_architecture:
+    score: 8.0
+  data_persistence:
+    score: 8.0
+  api_contracts:
+    score: 8.0
+  runtime_performance:
+    score: 8.0
+  reliability_resilience:
+    score: 8.0
+  security_governance:
+    score: 8.0
+  delivery_operations:
+    score: 8.0
+  quality_testing:
+    score: 8.0
+profile_axes:
+  engineering:
+    product: 8.0
+    architecture: 8.0
+    data: 8.0
+    api: 8.0
+    runtime: 8.0
+    reliability: 8.0
+    security: 8.0
+    delivery: 8.0
+    quality: 8.0
+    overall: 8.0
+  owner:
+    identity: 8.0
+    consistency: 8.0
+    delivery: 8.0
+    quality: 8.0
+    governance: 8.0
+    fit: 8.0
+    debt: 3.0
+    overall: 8.0
+  investor:
+    product: 8.0
+    architecture: 8.0
+    delivery: 8.0
+    reliability: 8.0
+    governance: 8.0
+    clarity: 8.0
+    overall: 8.0
+  operations:
+    runtime: 8.0
+    reliability: 8.0
+    observability: 8.0
+    security: 8.0
+    traffic: 8.0
+    delivery: 8.0
+    recovery: 8.0
+    overall: 8.0
+metrics:
+  product:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Bootstrap snapshot metric pending first live assessment.
+    risks:
+    - Bootstrap metric should be replaced by an assessment verdict.
+    improvements:
+    - Run assessment workflow and refresh narrative evidence.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence: []
+  architecture:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Bootstrap snapshot metric pending first live assessment.
+    risks:
+    - Bootstrap metric should be replaced by an assessment verdict.
+    improvements:
+    - Run assessment workflow and refresh narrative evidence.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence: []
+  runtime:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Bootstrap snapshot metric pending first live assessment.
+    risks:
+    - Bootstrap metric should be replaced by an assessment verdict.
+    improvements:
+    - Run assessment workflow and refresh narrative evidence.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence: []
+  qa:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Bootstrap snapshot metric pending first live assessment.
+    risks:
+    - Bootstrap metric should be replaced by an assessment verdict.
+    improvements:
+    - Run assessment workflow and refresh narrative evidence.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence: []
+  ops:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Bootstrap snapshot metric pending first live assessment.
+    risks:
+    - Bootstrap metric should be replaced by an assessment verdict.
+    improvements:
+    - Run assessment workflow and refresh narrative evidence.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence: []
+  market:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Bootstrap snapshot metric pending first live assessment.
+    risks:
+    - Bootstrap metric should be replaced by an assessment verdict.
+    improvements:
+    - Run assessment workflow and refresh narrative evidence.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence: []
+  overall:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Bootstrap snapshot metric pending first live assessment.
+    risks:
+    - Bootstrap metric should be replaced by an assessment verdict.
+    improvements:
+    - Run assessment workflow and refresh narrative evidence.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence: []
+strengths:
+- Canonical snapshot/history contracts are present.
+- This component is wired into the atlas assessment registry.
+risks:
+- Dry-run mode does not perform a live AI verdict.
+- Repository scan depth is limited to deterministic probes until OPENAI_API_KEY is
+  provided.
+recommended_next_actions:
+- Enable responses mode with OPENAI_API_KEY for live verdict generation.
+- Expand repository registry coverage and local_path mappings for additional components.
+evidence:
+- path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
+  note: Configured component report path.
+assessment_notes:
+- Documentating remains on a seeded snapshot because the assessment runner is in dry-run
+  mode.
+- 'Prompt length: 35878 characters.'
+- Base overall score retained at 8.00.

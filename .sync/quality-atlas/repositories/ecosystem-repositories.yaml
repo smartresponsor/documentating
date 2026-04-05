@@ -149,11 +149,12 @@ repositories:
     the scheduled assessment runner.
 - component_id: documentating
   component_title: Documentating
-  github_repository: ''
+  github_repository: local/documentating
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
-  notes: Set enabled=true and github_repository once this component is connected to
+  local_path: .
+  notes: Bootstrap-enabled in the atlas repository itself so the assessment workflow has a live local target.
     the scheduled assessment runner.
 - component_id: evaluating
   component_title: Evaluating

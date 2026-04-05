@@ -9,17 +9,83 @@ import sys
 import urllib.request
 from datetime import date, datetime, timezone
 from pathlib import Path
+from typing import Any
 
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_FILE = ROOT / '.sync' / 'quality-atlas' / 'repositories' / 'ecosystem-repositories.yaml'
 CARDS_FILE = ROOT / '.sync' / 'quality-atlas' / 'cards' / 'assessment-cards.yaml'
+METRIC_CATALOG_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'metric-catalog.yaml'
+VIEW_PROFILES_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'view-profiles.yaml'
 OUTBOX_DIR = ROOT / '.sync' / 'quality-atlas' / 'generated' / 'assessment-runs'
+LATEST_SUMMARY_FILE = ROOT / '.sync' / 'quality-atlas' / 'generated' / 'latest-assessment-summary.json'
+SNAPSHOT_ROOT = ROOT / '.sync' / 'quality-atlas' / 'components'
+
+BASE_METRICS = ['product', 'architecture', 'runtime', 'qa', 'ops', 'market', 'overall']
+PROFILE_AXIS_BUILDERS = {
+    'engineering': lambda scores: {
+        'product': scores['product'],
+        'architecture': scores['architecture'],
+        'data': round((scores['architecture'] + scores['runtime']) / 2, 2),
+        'api': round((scores['architecture'] + scores['market']) / 2, 2),
+        'runtime': scores['runtime'],
+        'reliability': round((scores['runtime'] + scores['ops']) / 2, 2),
+        'security': scores['ops'],
+        'delivery': scores['ops'],
+        'quality': scores['qa'],
+        'overall': scores['overall'],
+    },
+    'owner': lambda scores: {
+        'identity': scores['product'],
+        'consistency': scores['architecture'],
+        'delivery': scores['ops'],
+        'quality': scores['qa'],
+        'governance': scores['ops'],
+        'fit': round((scores['market'] + scores['product']) / 2, 2),
+        'debt': round(10.0 - max(0.0, (scores['architecture'] + scores['qa']) / 2 - 1.0), 2),
+        'overall': scores['overall'],
+    },
+    'investor': lambda scores: {
+        'product': scores['product'],
+        'architecture': scores['architecture'],
+        'delivery': scores['ops'],
+        'reliability': round((scores['runtime'] + scores['qa']) / 2, 2),
+        'governance': scores['ops'],
+        'clarity': round((scores['product'] + scores['market']) / 2, 2),
+        'overall': scores['overall'],
+    },
+    'operations': lambda scores: {
+        'runtime': scores['runtime'],
+        'reliability': round((scores['runtime'] + scores['qa']) / 2, 2),
+        'observability': scores['ops'],
+        'security': scores['ops'],
+        'traffic': round((scores['runtime'] + scores['ops']) / 2, 2),
+        'delivery': scores['ops'],
+        'recovery': round((scores['qa'] + scores['ops']) / 2, 2),
+        'overall': scores['overall'],
+    },
+}
+GROUP_SCORE_MAP = {
+    'product_market': lambda scores: round((scores['product'] + scores['market']) / 2, 2),
+    'domain_architecture': lambda scores: scores['architecture'],
+    'data_persistence': lambda scores: round((scores['architecture'] + scores['runtime']) / 2, 2),
+    'api_contracts': lambda scores: round((scores['architecture'] + scores['market']) / 2, 2),
+    'runtime_performance': lambda scores: scores['runtime'],
+    'reliability_resilience': lambda scores: round((scores['runtime'] + scores['qa'] + scores['ops']) / 3, 2),
+    'security_governance': lambda scores: scores['ops'],
+    'delivery_operations': lambda scores: scores['ops'],
+    'quality_testing': lambda scores: scores['qa'],
+}
 
 
-def load_yaml(path: Path):
+def load_yaml(path: Path) -> Any:
     return yaml.safe_load(path.read_text(encoding='utf-8'))
+
+
+def write_yaml(path: Path, data: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(yaml.safe_dump(data, sort_keys=False, allow_unicode=True), encoding='utf-8')
 
 
 def run(cmd: list[str], cwd: Path) -> tuple[int, str]:
@@ -27,29 +93,65 @@ def run(cmd: list[str], cwd: Path) -> tuple[int, str]:
     return proc.returncode, (proc.stdout + '\n' + proc.stderr).strip()
 
 
-def repo_facts(repo_dir: Path) -> dict[str, object]:
-    facts = {'repo_root': str(repo_dir), 'timestamp_utc': datetime.now(timezone.utc).isoformat()}
+def repo_facts(repo_dir: Path) -> dict[str, Any]:
+    facts: dict[str, Any] = {'repo_root': str(repo_dir), 'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'exists': repo_dir.exists()}
+    if not repo_dir.exists():
+        facts['missing_reason'] = 'Configured local_path does not exist in the current runner workspace.'
+        return facts
     for command, key in [(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], 'git_branch'), (['git', 'rev-parse', 'HEAD'], 'git_commit')]:
         try:
             rc, out = run(command, repo_dir)
-            if rc == 0:
-                facts[key] = out.splitlines()[-1].strip()
-        except Exception:
-            pass
-    for file_name in ['composer.json', 'package.json', 'phpstan.neon', 'phpunit.xml', 'phpunit.xml.dist']:
-        facts[f'has_{file_name.replace(".", "_")}'] = (repo_dir / file_name).exists()
-    for label, cmd in [('git_status', ['git', 'status', '--short']), ('php_version', ['php', '-v'])]:
+            facts[key] = {'exit_code': rc, 'output': out[:4000]}
+        except Exception as exc:  # pragma: no cover
+            facts[key] = {'exit_code': 1, 'output': str(exc)}
+    for file_name in ['composer.json', 'package.json', 'phpstan.neon', 'phpstan.neon.dist', 'phpunit.xml', 'phpunit.xml.dist', '.github/workflows']:
+        facts[f'has_{file_name.replace(".", "_").replace("/", "_")}'] = (repo_dir / file_name).exists()
+    commands = [
+        ('git_status', ['git', 'status', '--short']),
+        ('php_version', ['php', '-v']),
+        ('python_version', ['python3', '--version']),
+        ('repo_file_count', ['bash', '-lc', 'find . -type f | wc -l']),
+    ]
+    for label, cmd in commands:
         rc, out = run(cmd, repo_dir)
         facts[label] = {'exit_code': rc, 'output': out[:4000]}
     return facts
 
 
-def build_prompt(component: dict[str, object], cards: dict[str, object], facts: dict[str, object]) -> str:
-    enabled_cards = cards['cards']
-    return f"""You are updating a Smartresponsor Quality Atlas snapshot.\n\nComponent registry entry:\n{json.dumps(component, ensure_ascii=False, indent=2)}\n\nAssessment cards:\n{json.dumps(enabled_cards, ensure_ascii=False, indent=2)}\n\nDeterministic repository facts:\n{json.dumps(facts, ensure_ascii=False, indent=2)}\n\nReturn strict JSON with keys: component, summary, risks, next_actions, notes, suggested_score_overrides. suggested_score_overrides may be empty but must be an object. Do not return markdown."""
+def build_prompt(component: dict[str, Any], cards: dict[str, Any], metric_catalog: dict[str, Any], view_profiles: dict[str, Any], facts: dict[str, Any], current_snapshot: dict[str, Any] | None) -> str:
+    response_contract = {
+        'component': component['component_id'],
+        'summary': 'Short owner-facing summary.',
+        'strengths': ['list of strengths'],
+        'risks': ['list of risks'],
+        'next_actions': ['list of concrete next actions'],
+        'notes': ['optional notes'],
+        'suggested_score_overrides': {'product': 8.4, 'overall': 8.2},
+        'metric_updates': {
+            'product': {
+                'summary': 'Updated one-sentence assessment for the metric.',
+                'risks': ['metric-specific risk'],
+                'improvements': ['metric-specific improvement'],
+            }
+        },
+    }
+    return (
+        'You are updating a Smartresponsor Quality Atlas snapshot. '\
+        'Use only the provided repository facts and current snapshot. '\
+        'Do not invent tests, tools, or repo structure that are not evidenced. '\
+        'Keep scores within 0.0..10.0 and only override base metrics when the facts justify it.\n\n'
+        f'Component registry entry:\n{json.dumps(component, ensure_ascii=False, indent=2)}\n\n'
+        f'Assessment cards:\n{json.dumps(cards["cards"], ensure_ascii=False, indent=2)}\n\n'
+        f'Metric catalog:\n{json.dumps(metric_catalog, ensure_ascii=False, indent=2)[:18000]}\n\n'
+        f'View profiles:\n{json.dumps(view_profiles, ensure_ascii=False, indent=2)}\n\n'
+        f'Current snapshot:\n{json.dumps(current_snapshot or {}, ensure_ascii=False, indent=2)}\n\n'
+        f'Deterministic repository facts:\n{json.dumps(facts, ensure_ascii=False, indent=2)}\n\n'
+        f'Return strict JSON following this shape:\n{json.dumps(response_contract, ensure_ascii=False, indent=2)}\n'
+        'Rules: risks/next_actions/strengths must be concise arrays of strings. metric_updates keys may only be one of product, architecture, runtime, qa, ops, market, overall. suggested_score_overrides may only include those keys. Do not return markdown.'
+    )
 
 
-def call_openai(prompt: str, model: str) -> dict[str, object]:
+def call_openai(prompt: str, model: str) -> dict[str, Any]:
     api_key = os.environ.get('OPENAI_API_KEY')
     if not api_key:
         raise RuntimeError('OPENAI_API_KEY is not set')
@@ -64,7 +166,7 @@ def call_openai(prompt: str, model: str) -> dict[str, object]:
         headers={'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json'},
         method='POST',
     )
-    with urllib.request.urlopen(req, timeout=120) as response:
+    with urllib.request.urlopen(req, timeout=180) as response:
         data = json.loads(response.read().decode('utf-8'))
     text = ''.join(
         item.get('text', '')
@@ -75,6 +177,187 @@ def call_openai(prompt: str, model: str) -> dict[str, object]:
     return json.loads(text)
 
 
+
+
+def bootstrap_snapshot(component: dict[str, Any]) -> dict[str, Any]:
+    title = component['component_title']
+    scores = {metric: 8.0 for metric in BASE_METRICS}
+    snapshot = {
+        'component': component['component_id'],
+        'title': title,
+        'snapshot': {
+            'date': date.today().isoformat(),
+            'label': 'bootstrap-seed',
+            'ref': component.get('default_branch', 'master'),
+            'origin': 'quality-atlas bootstrap seed',
+        },
+        'report_status': 'draft',
+        'groups': recalc_groups(scores),
+        'profile_axes': recalc_profile_axes(scores),
+        'metrics': {},
+        'strengths': ['Bootstrap snapshot created so the component can join the regular assessment cycle.'],
+        'risks': ['Bootstrap snapshot uses neutral placeholder scores until the first live assessment refresh.'],
+        'recommended_next_actions': ['Run the assessment workflow to replace bootstrap values with repository-backed verdicts.'],
+        'evidence': [],
+    }
+    for metric, score in scores.items():
+        snapshot['metrics'][metric] = {
+            'relevant': True,
+            'maturity': 'solid',
+            'score': score,
+            'summary': 'Bootstrap snapshot metric pending first live assessment.',
+            'risks': ['Bootstrap metric should be replaced by an assessment verdict.'],
+            'improvements': ['Run assessment workflow and refresh narrative evidence.'],
+            'implemented': [],
+            'partial': ['Bootstrap placeholder only.'],
+            'absent': [],
+            'intentionally_not_needed': [],
+            'tradeoffs': ['Neutral bootstrap values unblock portfolio participation without pretending to be a real audit.'],
+            'evidence': [],
+        }
+    if component.get('report_path'):
+        snapshot['evidence'].append({'path': component['report_path'], 'note': 'Configured component report path.'})
+    return snapshot
+
+def load_current_snapshot(component_id: str) -> dict[str, Any] | None:
+    current_path = SNAPSHOT_ROOT / component_id / 'current.yaml'
+    if not current_path.exists():
+        return None
+    return load_yaml(current_path)
+
+
+def safe_float(value: Any, default: float) -> float:
+    try:
+        return round(float(value), 2)
+    except (TypeError, ValueError):
+        return round(default, 2)
+
+
+def normalize_verdict(component_id: str, verdict: dict[str, Any]) -> dict[str, Any]:
+    normalized = {
+        'component': component_id,
+        'summary': str(verdict.get('summary') or '').strip(),
+        'strengths': [str(item).strip() for item in verdict.get('strengths') or [] if str(item).strip()],
+        'risks': [str(item).strip() for item in verdict.get('risks') or [] if str(item).strip()],
+        'next_actions': [str(item).strip() for item in verdict.get('next_actions') or [] if str(item).strip()],
+        'notes': [str(item).strip() for item in verdict.get('notes') or [] if str(item).strip()],
+        'suggested_score_overrides': {},
+        'metric_updates': {},
+    }
+    for key, value in (verdict.get('suggested_score_overrides') or {}).items():
+        if key in BASE_METRICS:
+            normalized['suggested_score_overrides'][key] = safe_float(value, 0.0)
+    for key, value in (verdict.get('metric_updates') or {}).items():
+        if key not in BASE_METRICS or not isinstance(value, dict):
+            continue
+        normalized['metric_updates'][key] = {
+            'summary': str(value.get('summary') or '').strip(),
+            'risks': [str(item).strip() for item in value.get('risks') or [] if str(item).strip()],
+            'improvements': [str(item).strip() for item in value.get('improvements') or [] if str(item).strip()],
+        }
+    return normalized
+
+
+def recalc_groups(scores: dict[str, float]) -> dict[str, dict[str, Any]]:
+    return {group: {'score': builder(scores)} for group, builder in GROUP_SCORE_MAP.items()}
+
+
+def recalc_profile_axes(scores: dict[str, float]) -> dict[str, dict[str, float]]:
+    return {profile_id: builder(scores) for profile_id, builder in PROFILE_AXIS_BUILDERS.items()}
+
+
+def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], verdict: dict[str, Any], run_label: str, origin: str) -> dict[str, Any]:
+    if current is None:
+        raise RuntimeError(f"Current snapshot for {component['component_id']} is missing. Seed snapshots before running the assessment.")
+    snapshot = json.loads(json.dumps(current))
+    scores = {metric: safe_float(snapshot['metrics'][metric]['score'], 0.0) for metric in BASE_METRICS}
+    for key, value in verdict['suggested_score_overrides'].items():
+        scores[key] = max(0.0, min(10.0, safe_float(value, scores[key])))
+    snapshot['snapshot'] = {
+        'date': date.today().isoformat(),
+        'label': run_label,
+        'ref': component.get('default_branch', 'master'),
+        'origin': origin,
+    }
+    snapshot['report_status'] = 'current'
+    snapshot['groups'] = recalc_groups(scores)
+    snapshot['profile_axes'] = recalc_profile_axes(scores)
+    snapshot['strengths'] = verdict['strengths'] or snapshot.get('strengths', [])
+    snapshot['risks'] = verdict['risks'] or snapshot.get('risks', [])
+    snapshot['recommended_next_actions'] = verdict['next_actions'] or snapshot.get('recommended_next_actions', [])
+    existing_evidence = list(snapshot.get('evidence', []))
+    evidence_paths = {item.get('path') for item in existing_evidence if isinstance(item, dict)}
+    if component.get('report_path') and component['report_path'] not in evidence_paths:
+        existing_evidence.append({'path': component['report_path'], 'note': 'Component report path from repository registry.'})
+    snapshot['evidence'] = existing_evidence
+    note_lines = verdict['notes'][:]
+    if verdict['summary']:
+        note_lines.insert(0, verdict['summary'])
+    if note_lines:
+        snapshot['assessment_notes'] = note_lines
+    for metric, score in scores.items():
+        block = snapshot['metrics'][metric]
+        block['score'] = score
+        update = verdict['metric_updates'].get(metric, {})
+        if update.get('summary'):
+            block['summary'] = update['summary']
+        if update.get('risks'):
+            block['risks'] = update['risks']
+        if update.get('improvements'):
+            block['improvements'] = update['improvements']
+    return snapshot
+
+
+def dry_run_verdict(component: dict[str, Any], prompt: str, facts: dict[str, Any], current: dict[str, Any] | None) -> dict[str, Any]:
+    title = component['component_title']
+    repo_exists = facts.get('exists') is True
+    base_overall = safe_float((current or {}).get('metrics', {}).get('overall', {}).get('score'), 8.0)
+    return {
+        'component': component['component_id'],
+        'summary': f'{title} remains on a seeded snapshot because the assessment runner is in dry-run mode.',
+        'strengths': [
+            'Canonical snapshot/history contracts are present.',
+            'This component is wired into the atlas assessment registry.' if repo_exists else 'Registry entry exists but local repository path is not yet available to the runner.',
+        ],
+        'risks': [
+            'Dry-run mode does not perform a live AI verdict.',
+            'Repository scan depth is limited to deterministic probes until OPENAI_API_KEY is provided.',
+        ],
+        'next_actions': [
+            'Enable responses mode with OPENAI_API_KEY for live verdict generation.',
+            'Expand repository registry coverage and local_path mappings for additional components.',
+        ],
+        'notes': [
+            f'Prompt length: {len(prompt)} characters.',
+            f'Base overall score retained at {base_overall:.2f}.',
+        ],
+        'suggested_score_overrides': {'overall': base_overall},
+        'metric_updates': {},
+    }
+
+
+def write_snapshot_files(component_id: str, snapshot: dict[str, Any]) -> tuple[Path, Path]:
+    component_dir = SNAPSHOT_ROOT / component_id
+    label = snapshot['snapshot']['label']
+    snap_date = snapshot['snapshot']['date']
+    history_path = component_dir / 'history' / f'{snap_date}-{label}.yaml'
+    current_path = component_dir / 'current.yaml'
+    write_yaml(history_path, snapshot)
+    write_yaml(current_path, snapshot)
+    return current_path, history_path
+
+
+def update_latest_summary(run_dir: Path, mode: str, components: list[dict[str, Any]]) -> None:
+    payload = {
+        'generated_at': datetime.now(timezone.utc).isoformat(),
+        'run_dir': str(run_dir),
+        'mode': mode,
+        'components': components,
+    }
+    LATEST_SUMMARY_FILE.parent.mkdir(parents=True, exist_ok=True)
+    LATEST_SUMMARY_FILE.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding='utf-8')
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('--registry', default=str(REGISTRY_FILE))
@@ -82,40 +365,57 @@ def main() -> None:
     parser.add_argument('--model', default=os.environ.get('QUALITY_ATLAS_OPENAI_MODEL', 'gpt-5'))
     parser.add_argument('--mode', choices=['dry-run', 'responses'], default='dry-run')
     parser.add_argument('--repo-root', default=str(ROOT))
+    parser.add_argument('--label', default=f"assessment-{date.today().isoformat()}")
     args = parser.parse_args()
 
     registry = load_yaml(Path(args.registry))
     cards = load_yaml(Path(args.cards))
+    metric_catalog = load_yaml(METRIC_CATALOG_FILE)
+    view_profiles = load_yaml(VIEW_PROFILES_FILE)
     repo_root = Path(args.repo_root).resolve()
     run_dir = OUTBOX_DIR / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     run_dir.mkdir(parents=True, exist_ok=True)
 
-    assessments = []
+    assessments: list[dict[str, Any]] = []
+    latest_components: list[dict[str, Any]] = []
     for component in registry['repositories']:
         if not component.get('enabled'):
             continue
         local_path = component.get('local_path') or '.'
         target_repo = (repo_root / local_path).resolve()
         facts = repo_facts(target_repo)
-        prompt = build_prompt(component, cards, facts)
+        current = load_current_snapshot(component['component_id'])
+        if current is None:
+            current = bootstrap_snapshot(component)
+        prompt = build_prompt(component, cards, metric_catalog, view_profiles, facts, current)
         if args.mode == 'responses':
             verdict = call_openai(prompt, args.model)
         else:
-            verdict = {
-                'component': component['component_id'],
-                'summary': 'Dry-run placeholder. Connect OPENAI_API_KEY and enable repositories to receive live assessments.',
-                'risks': ['Dry-run mode does not score the repository.'],
-                'next_actions': ['Enable repository entries and rerun in responses mode.'],
-                'notes': [f"Prompt length: {len(prompt)} characters."],
-                'suggested_score_overrides': {},
-            }
-        item = {'registry_entry': component, 'facts': facts, 'verdict': verdict}
-        assessments.append(item)
-        slug = component['component_id']
-        (run_dir / f'{slug}.json').write_text(json.dumps(item, indent=2, ensure_ascii=False), encoding='utf-8')
+            verdict = dry_run_verdict(component, prompt, facts, current)
+        normalized = normalize_verdict(component['component_id'], verdict)
+        snapshot = merge_snapshot(current, component, normalized, args.label, f'quality-atlas {args.mode} assessment')
+        current_path, history_path = write_snapshot_files(component['component_id'], snapshot)
 
-    (run_dir / 'index.json').write_text(json.dumps({'date': date.today().isoformat(), 'mode': args.mode, 'count': len(assessments)}, indent=2), encoding='utf-8')
-    print(json.dumps({'run_dir': str(run_dir), 'count': len(assessments), 'mode': args.mode}, indent=2))
+        item = {
+            'registry_entry': component,
+            'facts': facts,
+            'verdict': normalized,
+            'snapshot_paths': {'current': str(current_path), 'history': str(history_path)},
+        }
+        assessments.append(item)
+        latest_components.append({
+            'component': component['component_id'],
+            'title': component['component_title'],
+            'overall': snapshot['metrics']['overall']['score'],
+            'history_file': str(history_path),
+            'summary': normalized['summary'],
+        })
+        (run_dir / f"{component['component_id']}.json").write_text(json.dumps(item, indent=2, ensure_ascii=False), encoding='utf-8')
+
+    summary = {'date': date.today().isoformat(), 'mode': args.mode, 'count': len(assessments), 'label': args.label}
+    (run_dir / 'index.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')
+    update_latest_summary(run_dir, args.mode, latest_components)
+    print(json.dumps({'run_dir': str(run_dir), 'count': len(assessments), 'mode': args.mode, 'label': args.label}, indent=2))
 
 
 if __name__ == '__main__':

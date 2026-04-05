@@ -1,0 +1,76 @@
+{
+  "registry_entry": {
+    "component_id": "documentating",
+    "component_title": "Documentating",
+    "github_repository": "local/documentating",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/documentating/report/index.adoc",
+    "local_path": ".",
+    "notes": "Bootstrap-enabled in the atlas repository itself so the assessment workflow has a live local target. the scheduled assessment runner."
+  },
+  "facts": {
+    "repo_root": "/mnt/data/documentating_repo/documentating_repo",
+    "timestamp_utc": "2026-04-05T01:25:56.409696+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "411a5c19747a1417d264caef7f279880951d4701"
+    },
+    "has_composer_json": false,
+    "has_package_json": true,
+    "has_phpstan_neon": false,
+    "has_phpstan_neon_dist": false,
+    "has_phpunit_xml": false,
+    "has_phpunit_xml_dist": false,
+    "has__github_workflows": true,
+    "git_status": {
+      "exit_code": 0,
+      "output": "M .sync/quality-atlas/repositories/ecosystem-repositories.yaml\n M tools/run_quality_atlas_assessment.py"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.4.16 (cli) (built: Dec 18 2025 21:19:25) (NTS)\nCopyright (c) The PHP Group\nBuilt by Debian\nZend Engine v4.4.16, Copyright (c) Zend Technologies\n    with Zend OPcache v8.4.16, Copyright (c), by Zend Technologies"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.13.5"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "956"
+    }
+  },
+  "verdict": {
+    "component": "documentating",
+    "summary": "Documentating remains on a seeded snapshot because the assessment runner is in dry-run mode.",
+    "strengths": [
+      "Canonical snapshot/history contracts are present.",
+      "This component is wired into the atlas assessment registry."
+    ],
+    "risks": [
+      "Dry-run mode does not perform a live AI verdict.",
+      "Repository scan depth is limited to deterministic probes until OPENAI_API_KEY is provided."
+    ],
+    "next_actions": [
+      "Enable responses mode with OPENAI_API_KEY for live verdict generation.",
+      "Expand repository registry coverage and local_path mappings for additional components."
+    ],
+    "notes": [
+      "Prompt length: 35878 characters.",
+      "Base overall score retained at 8.00."
+    ],
+    "suggested_score_overrides": {
+      "overall": 8.0
+    },
+    "metric_updates": {}
+  },
+  "snapshot_paths": {
+    "current": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/components/documentating/current.yaml",
+    "history": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/components/documentating/history/2026-04-05-manual-check.yaml"
+  }
+}
