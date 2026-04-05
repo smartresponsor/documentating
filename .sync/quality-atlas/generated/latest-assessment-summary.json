@@ -1,14 +1,19 @@
 {
-  "generated_at": "2026-04-05T01:45:28.247315+00:00",
-  "run_dir": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/generated/assessment-runs/20260405T014527Z",
-  "mode": "dry-run",
+  "generated_at": "2026-04-05T07:08:42.499098+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260405T070750Z",
+  "mode": "responses",
   "components": [
     {
       "component": "documentating",
       "title": "Documentating",
-      "overall": 8.0,
-      "history_file": "/mnt/data/documentating_repo/documentating_repo/.sync/quality-atlas/components/documentating/history/2026-04-05-contract-tightening.yaml",
-      "summary": "Documentating remains on a seeded snapshot because the assessment runner is in dry-run mode."
+      "overall": 7.5,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/documentating/history/2026-04-05-assessment-2026-04-05.yaml",
+      "summary": "Antora-driven documentation site with automated GitHub Pages publishing and scheduled Quality Atlas assessment; strong delivery scaffolding but limited automated content QA and minimal runtime/observability typical of static sites."
     }
+  ],
+  "failures": [],
+  "status": "ok",
+  "selected_components": [
+    "documentating"
   ]
 }

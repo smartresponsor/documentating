@@ -8,50 +8,50 @@
         {
           "id": "product",
           "title": "Product & Market",
-          "average": 8.48,
-          "min": 7.9,
+          "average": 8.47,
+          "min": 7.8,
           "max": 9.0
         },
         {
           "id": "architecture",
           "title": "Architecture Stability",
-          "average": 8.39,
-          "min": 7.8,
+          "average": 8.36,
+          "min": 7.4,
           "max": 8.9
         },
         {
           "id": "delivery",
           "title": "Delivery Readiness",
-          "average": 8.68,
+          "average": 8.66,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.41,
-          "min": 7.3,
+          "average": 8.36,
+          "min": 6.95,
           "max": 8.95
         },
         {
           "id": "governance",
           "title": "Security & Governance",
-          "average": 8.68,
+          "average": 8.66,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "clarity",
           "title": "Operational Clarity",
-          "average": 8.39,
-          "min": 7.85,
+          "average": 8.37,
+          "min": 7.55,
           "max": 8.95
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.49,
-          "min": 7.7,
+          "average": 8.46,
+          "min": 7.5,
           "max": 9.0
         }
       ],
@@ -158,15 +158,15 @@
           "component": "documentating",
           "title": "Documentating",
           "axes": {
-            "product": 8.0,
-            "architecture": 8.0,
-            "delivery": 8.0,
-            "reliability": 8.0,
-            "governance": 8.0,
-            "clarity": 8.0,
-            "overall": 8.0
+            "product": 7.8,
+            "architecture": 7.4,
+            "delivery": 7.7,
+            "reliability": 6.95,
+            "governance": 7.7,
+            "clarity": 7.55,
+            "overall": 7.5
           },
-          "overall": 8.0
+          "overall": 7.51
         },
         {
           "component": "indexing",
@@ -338,7 +338,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 8.5
+      "ecosystem_average": 8.48
     },
     {
       "id": "engineering",
@@ -348,71 +348,71 @@
         {
           "id": "product",
           "title": "Product",
-          "average": 8.48,
-          "min": 7.9,
+          "average": 8.47,
+          "min": 7.8,
           "max": 9.0
         },
         {
           "id": "architecture",
           "title": "Architecture",
-          "average": 8.39,
-          "min": 7.8,
+          "average": 8.36,
+          "min": 7.4,
           "max": 8.9
         },
         {
           "id": "data",
           "title": "Data",
-          "average": 8.38,
-          "min": 7.75,
+          "average": 8.34,
+          "min": 7.25,
           "max": 8.85
         },
         {
           "id": "api",
           "title": "API & Contracts",
-          "average": 8.34,
-          "min": 7.9,
+          "average": 8.31,
+          "min": 7.35,
           "max": 8.85
         },
         {
           "id": "runtime",
           "title": "Runtime",
-          "average": 8.36,
-          "min": 7.7,
+          "average": 8.32,
+          "min": 7.1,
           "max": 8.9
         },
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.52,
-          "min": 7.55,
+          "average": 8.49,
+          "min": 7.4,
           "max": 9.0
         },
         {
           "id": "security",
           "title": "Security",
-          "average": 8.68,
+          "average": 8.66,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "delivery",
           "title": "Delivery",
-          "average": 8.68,
+          "average": 8.66,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "quality",
           "title": "Quality",
-          "average": 8.46,
-          "min": 6.9,
+          "average": 8.4,
+          "min": 6.8,
           "max": 9.2
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.49,
-          "min": 7.7,
+          "average": 8.46,
+          "min": 7.5,
           "max": 9.0
         }
       ],
@@ -540,18 +540,18 @@
           "component": "documentating",
           "title": "Documentating",
           "axes": {
-            "product": 8.0,
-            "architecture": 8.0,
-            "data": 8.0,
-            "api": 8.0,
-            "runtime": 8.0,
-            "reliability": 8.0,
-            "security": 8.0,
-            "delivery": 8.0,
-            "quality": 8.0,
-            "overall": 8.0
+            "product": 7.8,
+            "architecture": 7.4,
+            "data": 7.25,
+            "api": 7.35,
+            "runtime": 7.1,
+            "reliability": 7.4,
+            "security": 7.7,
+            "delivery": 7.7,
+            "quality": 6.8,
+            "overall": 7.5
           },
-          "overall": 8.0
+          "overall": 7.4
         },
         {
           "component": "indexing",
@@ -759,7 +759,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 8.48
+      "ecosystem_average": 8.45
     },
     {
       "id": "operations",
@@ -769,57 +769,57 @@
         {
           "id": "runtime",
           "title": "Runtime Ops",
-          "average": 8.36,
-          "min": 7.7,
+          "average": 8.32,
+          "min": 7.1,
           "max": 8.9
         },
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.41,
-          "min": 7.3,
+          "average": 8.36,
+          "min": 6.95,
           "max": 8.95
         },
         {
           "id": "observability",
           "title": "Observability",
-          "average": 8.68,
+          "average": 8.66,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "security",
           "title": "Security",
-          "average": 8.68,
+          "average": 8.66,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "traffic",
           "title": "Traffic Strategy",
-          "average": 8.52,
-          "min": 7.55,
+          "average": 8.49,
+          "min": 7.4,
           "max": 9.0
         },
         {
           "id": "delivery",
           "title": "Delivery Automation",
-          "average": 8.68,
+          "average": 8.66,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "recovery",
           "title": "Recovery",
-          "average": 8.57,
+          "average": 8.53,
           "min": 7.15,
           "max": 9.15
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.49,
-          "min": 7.7,
+          "average": 8.46,
+          "min": 7.5,
           "max": 9.0
         }
       ],
@@ -933,16 +933,16 @@
           "component": "documentating",
           "title": "Documentating",
           "axes": {
-            "runtime": 8.0,
-            "reliability": 8.0,
-            "observability": 8.0,
-            "security": 8.0,
-            "traffic": 8.0,
-            "delivery": 8.0,
-            "recovery": 8.0,
-            "overall": 8.0
+            "runtime": 7.1,
+            "reliability": 6.95,
+            "observability": 7.7,
+            "security": 7.7,
+            "traffic": 7.4,
+            "delivery": 7.7,
+            "recovery": 7.25,
+            "overall": 7.5
           },
-          "overall": 8.0
+          "overall": 7.41
         },
         {
           "component": "indexing",
@@ -1126,7 +1126,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 8.55
+      "ecosystem_average": 8.52
     },
     {
       "id": "owner",
@@ -1136,57 +1136,57 @@
         {
           "id": "identity",
           "title": "Product Identity",
-          "average": 8.48,
-          "min": 7.9,
+          "average": 8.47,
+          "min": 7.8,
           "max": 9.0
         },
         {
           "id": "consistency",
           "title": "Architecture Consistency",
-          "average": 8.39,
-          "min": 7.8,
+          "average": 8.36,
+          "min": 7.4,
           "max": 8.9
         },
         {
           "id": "delivery",
           "title": "Delivery Maturity",
-          "average": 8.68,
+          "average": 8.66,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "quality",
           "title": "Quality Depth",
-          "average": 8.46,
-          "min": 6.9,
+          "average": 8.4,
+          "min": 6.8,
           "max": 9.2
         },
         {
           "id": "governance",
           "title": "Governance",
-          "average": 8.68,
+          "average": 8.66,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "fit",
           "title": "Ecosystem Fit",
-          "average": 8.39,
-          "min": 7.85,
+          "average": 8.37,
+          "min": 7.55,
           "max": 8.95
         },
         {
           "id": "debt",
           "title": "Technical Debt",
-          "average": 2.58,
+          "average": 2.62,
           "min": 2.0,
-          "max": 3.65
+          "max": 3.9
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.49,
-          "min": 7.7,
+          "average": 8.46,
+          "min": 7.5,
           "max": 9.0
         }
       ],
@@ -1300,16 +1300,16 @@
           "component": "documentating",
           "title": "Documentating",
           "axes": {
-            "identity": 8.0,
-            "consistency": 8.0,
-            "delivery": 8.0,
-            "quality": 8.0,
-            "governance": 8.0,
-            "fit": 8.0,
-            "debt": 3.0,
-            "overall": 8.0
+            "identity": 7.8,
+            "consistency": 7.4,
+            "delivery": 7.7,
+            "quality": 6.8,
+            "governance": 7.7,
+            "fit": 7.55,
+            "debt": 3.9,
+            "overall": 7.5
           },
-          "overall": 7.38
+          "overall": 7.04
         },
         {
           "component": "indexing",
@@ -1493,7 +1493,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 7.77
+      "ecosystem_average": 7.75
     }
   ],
   "components": [
@@ -1936,61 +1936,67 @@
       "title": "Documentating",
       "snapshot": {
         "date": "2026-04-05",
-        "label": "contract-tightening",
+        "label": "assessment-2026-04-05",
         "ref": "master",
-        "origin": "quality-atlas dry-run assessment"
+        "origin": "quality-atlas responses assessment"
       },
       "profile_axes": {
         "engineering": {
-          "product": 8.0,
-          "architecture": 8.0,
-          "data": 8.0,
-          "api": 8.0,
-          "runtime": 8.0,
-          "reliability": 8.0,
-          "security": 8.0,
-          "delivery": 8.0,
-          "quality": 8.0,
-          "overall": 8.0
+          "product": 7.8,
+          "architecture": 7.4,
+          "data": 7.25,
+          "api": 7.35,
+          "runtime": 7.1,
+          "reliability": 7.4,
+          "security": 7.7,
+          "delivery": 7.7,
+          "quality": 6.8,
+          "overall": 7.5
         },
         "owner": {
-          "identity": 8.0,
-          "consistency": 8.0,
-          "delivery": 8.0,
-          "quality": 8.0,
-          "governance": 8.0,
-          "fit": 8.0,
-          "debt": 3.0,
-          "overall": 8.0
+          "identity": 7.8,
+          "consistency": 7.4,
+          "delivery": 7.7,
+          "quality": 6.8,
+          "governance": 7.7,
+          "fit": 7.55,
+          "debt": 3.9,
+          "overall": 7.5
         },
         "investor": {
-          "product": 8.0,
-          "architecture": 8.0,
-          "delivery": 8.0,
-          "reliability": 8.0,
-          "governance": 8.0,
-          "clarity": 8.0,
-          "overall": 8.0
+          "product": 7.8,
+          "architecture": 7.4,
+          "delivery": 7.7,
+          "reliability": 6.95,
+          "governance": 7.7,
+          "clarity": 7.55,
+          "overall": 7.5
         },
         "operations": {
-          "runtime": 8.0,
-          "reliability": 8.0,
-          "observability": 8.0,
-          "security": 8.0,
-          "traffic": 8.0,
-          "delivery": 8.0,
-          "recovery": 8.0,
-          "overall": 8.0
+          "runtime": 7.1,
+          "reliability": 6.95,
+          "observability": 7.7,
+          "security": 7.7,
+          "traffic": 7.4,
+          "delivery": 7.7,
+          "recovery": 7.25,
+          "overall": 7.5
         }
       },
-      "overall": 8.0,
+      "overall": 7.5,
       "strengths": [
-        "Canonical snapshot/history contracts are present.",
-        "This component is wired into the atlas assessment registry."
+        "Automated site build and publish via GitHub Actions (Antora + gh-pages).",
+        "Clear content pipeline using Antora with search (lunr extension).",
+        "Scheduled Quality Atlas assessment workflow seeded and runnable.",
+        "Structured repo with ops/quality scaffolding (.gate, .deploy, .smoke).",
+        "Custom domain support present (CNAME) and nojekyll handling."
       ],
       "risks": [
-        "Dry-run mode does not perform a live AI verdict.",
-        "Repository scan depth is limited to deterministic probes until OPENAI_API_KEY is provided."
+        "Minimal automated content QA (no link/check steps observed in CI).",
+        "Single-environment deploy on push to gh-pages without previews/canary.",
+        "Operational assets (e.g., Cloudflare, Helm) exist but are not wired into CI.",
+        "Runtime monitoring/observability not defined for the published site.",
+        "Ownership/architecture boundaries for repo tooling are not documented."
       ]
     },
     {
@@ -2803,6 +2809,13 @@
       }
     ],
     "documentating": [
+      {
+        "date": "2026-04-05",
+        "label": "assessment-2026-04-05",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "overall": 7.5
+      },
       {
         "date": "2026-04-05",
         "label": "contract-tightening",
