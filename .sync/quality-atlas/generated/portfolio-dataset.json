@@ -22,22 +22,22 @@
         {
           "id": "delivery",
           "title": "Delivery Readiness",
-          "average": 8.23,
-          "min": 0.0,
+          "average": 8.62,
+          "min": 7.4,
           "max": 9.1
         },
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.0,
-          "min": 0.0,
+          "average": 8.21,
+          "min": 4.2,
           "max": 8.95
         },
         {
           "id": "governance",
           "title": "Security & Governance",
-          "average": 8.23,
-          "min": 0.0,
+          "average": 8.62,
+          "min": 7.4,
           "max": 9.1
         },
         {
@@ -50,8 +50,8 @@
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.07,
-          "min": 0.0,
+          "average": 8.48,
+          "min": 7.7,
           "max": 9.0
         }
       ],
@@ -62,13 +62,13 @@
           "axes": {
             "product": 0.0,
             "architecture": 0.0,
-            "delivery": 0.0,
-            "reliability": 0.0,
-            "governance": 0.0,
+            "delivery": 7.9,
+            "reliability": 4.2,
+            "governance": 7.9,
             "clarity": 0.0,
-            "overall": 0.0
+            "overall": 8.4
           },
-          "overall": 0.0
+          "overall": 4.06
         },
         {
           "component": "addressing",
@@ -338,7 +338,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 8.07
+      "ecosystem_average": 8.27
     },
     {
       "id": "engineering",
@@ -383,36 +383,36 @@
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.08,
-          "min": 0.0,
+          "average": 8.28,
+          "min": 3.95,
           "max": 9.0
         },
         {
           "id": "security",
           "title": "Security",
-          "average": 8.23,
-          "min": 0.0,
+          "average": 8.62,
+          "min": 7.4,
           "max": 9.1
         },
         {
           "id": "delivery",
           "title": "Delivery",
-          "average": 8.23,
-          "min": 0.0,
+          "average": 8.62,
+          "min": 7.4,
           "max": 9.1
         },
         {
           "id": "quality",
           "title": "Quality",
-          "average": 8.05,
-          "min": 0.0,
+          "average": 8.47,
+          "min": 6.9,
           "max": 9.2
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.07,
-          "min": 0.0,
+          "average": 8.48,
+          "min": 7.7,
           "max": 9.0
         }
       ],
@@ -426,13 +426,13 @@
             "data": 0.0,
             "api": 0.0,
             "runtime": 0.0,
-            "reliability": 0.0,
-            "security": 0.0,
-            "delivery": 0.0,
-            "quality": 0.0,
-            "overall": 0.0
+            "reliability": 3.95,
+            "security": 7.9,
+            "delivery": 7.9,
+            "quality": 8.4,
+            "overall": 8.4
           },
-          "overall": 0.0
+          "overall": 3.66
         },
         {
           "component": "addressing",
@@ -759,7 +759,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 8.05
+      "ecosystem_average": 8.23
     },
     {
       "id": "operations",
@@ -776,50 +776,50 @@
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.0,
-          "min": 0.0,
+          "average": 8.21,
+          "min": 4.2,
           "max": 8.95
         },
         {
           "id": "observability",
           "title": "Observability",
-          "average": 8.23,
-          "min": 0.0,
+          "average": 8.62,
+          "min": 7.4,
           "max": 9.1
         },
         {
           "id": "security",
           "title": "Security",
-          "average": 8.23,
-          "min": 0.0,
+          "average": 8.62,
+          "min": 7.4,
           "max": 9.1
         },
         {
           "id": "traffic",
           "title": "Traffic Strategy",
-          "average": 8.08,
-          "min": 0.0,
+          "average": 8.28,
+          "min": 3.95,
           "max": 9.0
         },
         {
           "id": "delivery",
           "title": "Delivery Automation",
-          "average": 8.23,
-          "min": 0.0,
+          "average": 8.62,
+          "min": 7.4,
           "max": 9.1
         },
         {
           "id": "recovery",
           "title": "Recovery",
-          "average": 8.14,
-          "min": 0.0,
+          "average": 8.55,
+          "min": 7.15,
           "max": 9.15
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.07,
-          "min": 0.0,
+          "average": 8.48,
+          "min": 7.7,
           "max": 9.0
         }
       ],
@@ -829,15 +829,15 @@
           "title": "Accessing",
           "axes": {
             "runtime": 0.0,
-            "reliability": 0.0,
-            "observability": 0.0,
-            "security": 0.0,
-            "traffic": 0.0,
-            "delivery": 0.0,
-            "recovery": 0.0,
-            "overall": 0.0
+            "reliability": 4.2,
+            "observability": 7.9,
+            "security": 7.9,
+            "traffic": 3.95,
+            "delivery": 7.9,
+            "recovery": 8.15,
+            "overall": 8.4
           },
-          "overall": 0.0
+          "overall": 6.05
         },
         {
           "component": "addressing",
@@ -1126,7 +1126,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 8.12
+      "ecosystem_average": 8.42
     },
     {
       "id": "owner",
@@ -1150,22 +1150,22 @@
         {
           "id": "delivery",
           "title": "Delivery Maturity",
-          "average": 8.23,
-          "min": 0.0,
+          "average": 8.62,
+          "min": 7.4,
           "max": 9.1
         },
         {
           "id": "quality",
           "title": "Quality Depth",
-          "average": 8.05,
-          "min": 0.0,
+          "average": 8.47,
+          "min": 6.9,
           "max": 9.2
         },
         {
           "id": "governance",
           "title": "Governance",
-          "average": 8.23,
-          "min": 0.0,
+          "average": 8.62,
+          "min": 7.4,
           "max": 9.1
         },
         {
@@ -1178,15 +1178,15 @@
         {
           "id": "debt",
           "title": "Technical Debt",
-          "average": 2.94,
+          "average": 2.78,
           "min": 2.0,
-          "max": 10.0
+          "max": 6.8
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.07,
-          "min": 0.0,
+          "average": 8.48,
+          "min": 7.7,
           "max": 9.0
         }
       ],
@@ -1197,14 +1197,14 @@
           "axes": {
             "identity": 0.0,
             "consistency": 0.0,
-            "delivery": 0.0,
-            "quality": 0.0,
-            "governance": 0.0,
+            "delivery": 7.9,
+            "quality": 8.4,
+            "governance": 7.9,
             "fit": 0.0,
-            "debt": 10.0,
-            "overall": 0.0
+            "debt": 6.8,
+            "overall": 8.4
           },
-          "overall": 1.25
+          "overall": 4.92
         },
         {
           "component": "addressing",
@@ -1493,7 +1493,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 7.44
+      "ecosystem_average": 7.62
     }
   ],
   "components": [
@@ -1513,54 +1513,56 @@
           "data": 0.0,
           "api": 0.0,
           "runtime": 0.0,
-          "reliability": 0.0,
-          "security": 0.0,
-          "delivery": 0.0,
-          "quality": 0.0,
-          "overall": 0.0
+          "reliability": 3.95,
+          "security": 7.9,
+          "delivery": 7.9,
+          "quality": 8.4,
+          "overall": 8.4
         },
         "owner": {
           "identity": 0.0,
           "consistency": 0.0,
-          "delivery": 0.0,
-          "quality": 0.0,
-          "governance": 0.0,
+          "delivery": 7.9,
+          "quality": 8.4,
+          "governance": 7.9,
           "fit": 0.0,
-          "debt": 10.0,
-          "overall": 0.0
+          "debt": 6.8,
+          "overall": 8.4
         },
         "investor": {
           "product": 0.0,
           "architecture": 0.0,
-          "delivery": 0.0,
-          "reliability": 0.0,
-          "governance": 0.0,
+          "delivery": 7.9,
+          "reliability": 4.2,
+          "governance": 7.9,
           "clarity": 0.0,
-          "overall": 0.0
+          "overall": 8.4
         },
         "operations": {
           "runtime": 0.0,
-          "reliability": 0.0,
-          "observability": 0.0,
-          "security": 0.0,
-          "traffic": 0.0,
-          "delivery": 0.0,
-          "recovery": 0.0,
-          "overall": 0.0
+          "reliability": 4.2,
+          "observability": 7.9,
+          "security": 7.9,
+          "traffic": 3.95,
+          "delivery": 7.9,
+          "recovery": 8.15,
+          "overall": 8.4
         }
       },
-      "overall": 0.0,
+      "overall": 8.4,
       "strengths": [
-        "Clear, detailed owner-facing report with explicit scope and RC scorecard",
-        "Antora-based documentation site with structured component page",
-        "Automated site publishing and scheduled assessment workflows present",
-        "Probe snapshot path exists for Accessing, supporting regular refresh cadence"
+        "Clear product scope and manifests",
+        "Symfony 8 + Doctrine 3 layered architecture",
+        "Comprehensive test layout (unit, integration, functional, browser, e2e)",
+        "Built-in security features (2FA, email verification, reset, rate limiting)",
+        "Composer scripts for lint, CS, static analysis, and tests"
       ],
       "risks": [
-        "Evidence here is narrative-only; no Accessing source/tests in this repo",
-        "Potential drift between report claims and implementation reality",
-        "High maturity scores are asserted by docs without linked code artifacts",
-        "Automation relies on scheduled AI-backed assessment; variability possible"
+        "No CI/CD workflows present in-repo",
+        "Static analysis and PHPUnit configs only as .dist",
+        "Observability/operations integrations not evident",
+        "Docs not wired to Antora report path",
+        "Proprietary license may limit external adoption"
       ]
     },
     {
@@ -2749,7 +2751,7 @@
         "label": "assessment-2026-04-05",
         "ref": "master",
         "origin": "quality-atlas responses assessment",
-        "overall": 0.0
+        "overall": 8.4
       },
       {
         "date": "2026-04-05",

@@ -4,7 +4,7 @@ snapshot:
   date: '2026-04-05'
   label: assessment-2026-04-05
   origin: quality-atlas deterministic probes
-  generated_at: '2026-04-05T17:20:30.607762+00:00'
+  generated_at: '2026-04-05T20:16:57.101582+00:00'
 repo_target:
   github_repository: smartresponsor/accessing
   local_path: ''
@@ -12,234 +12,251 @@ repo_target:
 families:
   canon_structure:
     title: Canon & Structure
-    status: pass
-    score: 10.0
-    summary: No material probe findings detected in this family.
-    blockers: []
-    findings: []
-    evidence: []
+    status: warn
+    score: 9.0
+    summary: 0 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - PHP namespace does not use the default App\ root.
+    findings:
+    - severity: warn
+      id: namespace_drift
+      detail: PHP namespace does not use the default App\ root.
+      path: migrations/Version20260330180500.php
+    evidence:
+    - migrations/Version20260330180500.php
   architecture_boundaries:
     title: Architecture & Boundaries
     status: warn
-    score: 7.0
-    summary: 0 fail, 3 warn, 0 info findings detected.
+    score: 5.0
+    summary: 0 fail, 5 warn, 0 info findings detected.
     blockers:
     - No obvious boundary descriptor files were detected.
-    - 'Missing expected repository segment: src/.'
-    - 'Missing expected repository segment: tests/.'
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
     findings:
     - severity: warn
       id: boundary_descriptors_missing
       detail: No obvious boundary descriptor files were detected.
     - severity: warn
-      id: missing_vertical_segment
-      detail: 'Missing expected repository segment: src/.'
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/Integration/VerificationChallengeServiceTest.php
     - severity: warn
-      id: missing_vertical_segment
-      detail: 'Missing expected repository segment: tests/.'
-    evidence: []
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/Functional/SignInFlowTest.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/RepositoryInterface/AccountSessionRepositoryInterface.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/RepositoryInterface/VerificationChallengeRepositoryInterface.php
+    evidence:
+    - src/RepositoryInterface/AccountSessionRepositoryInterface.php
+    - src/RepositoryInterface/VerificationChallengeRepositoryInterface.php
+    - tests/Functional/SignInFlowTest.php
+    - tests/Integration/VerificationChallengeServiceTest.php
   runtime_surface:
     title: Runtime & Application Surface
     status: warn
-    score: 9.0
-    summary: 0 fail, 1 warn, 0 info findings detected.
+    score: 8.75
+    summary: 0 fail, 1 warn, 1 info findings detected.
     blockers:
     - No Docker or compose files were detected.
     findings:
     - severity: warn
       id: docker_surface_missing
       detail: No Docker or compose files were detected.
-    evidence:
-    - .antora-src/modules/ROOT/nav.adoc
-    - .antora-src/modules/ROOT/pages/index.adoc
-    - .deploy/MANIFEST.md
+    - severity: info
+      id: health_surface_not_found
+      detail: No obvious health/readiness markers were detected.
+    evidence: []
   qa_behavior:
     title: QA & Behavioral Assurance
-    status: fail
-    score: 6.5
-    summary: 1 fail, 1 warn, 0 info findings detected.
-    blockers:
-    - tests/ directory is missing.
-    - No fixtures directories were detected.
-    findings:
-    - severity: fail
-      id: tests_missing
-      detail: tests/ directory is missing.
-    - severity: warn
-      id: fixtures_missing
-      detail: No fixtures directories were detected.
-    evidence:
-    - .antora-src/modules/ROOT/pages/component/billing/report/index.adoc
-    - .antora-src/modules/ROOT/pages/component/indexing/report/index.adoc
-    - .antora-src/modules/ROOT/pages/component/rolling/report/index.adoc
-    - .antora-src/modules/ROOT/pages/component/shipping/report/index.adoc
-  documentation_suite:
-    title: Documentation & GitHub Suite
     status: warn
     score: 9.0
     summary: 0 fail, 1 warn, 0 info findings detected.
     blockers:
+    - No fixtures directories were detected.
+    findings:
+    - severity: warn
+      id: fixtures_missing
+      detail: No fixtures directories were detected.
+    evidence:
+    - FULL_MANIFEST.md
+    - composer.json
+    - package-lock.json
+    - tests/
+  documentation_suite:
+    title: Documentation & GitHub Suite
+    status: warn
+    score: 6.75
+    summary: 0 fail, 3 warn, 1 info findings detected.
+    blockers:
     - 'Missing expected documentation asset: CHANGELOG.md.'
+    - Public/protected docblock coverage is 11/382 (3%).
+    - GitHub Suite support files appear sparse.
     findings:
     - severity: warn
       id: missing_doc_asset
       detail: 'Missing expected documentation asset: CHANGELOG.md.'
+    - severity: warn
+      id: docblock_coverage_low
+      detail: Public/protected docblock coverage is 11/382 (3%).
+    - severity: info
+      id: nelmio_openapi_not_detected
+      detail: No obvious Nelmio/OpenAPI markers were detected.
+    - severity: warn
+      id: github_suite_sparse
+      detail: GitHub Suite support files appear sparse.
     evidence:
-    - .antora-src/modules/ROOT/pages/component/paying/report/index.adoc
-    - .antora-src/modules/ROOT/pages/component/shipping/report/index.adoc
-    - .antora-src/modules/ROOT/pages/component/vendoring/report/index.adoc
-    - .github/workflows
-    - .sync/quality-atlas/contract/probe-families.yaml
     - README.md
+    - php-docblock-ratio:11/382
   delivery_observability:
     title: Delivery & Observability
-    status: pass
-    score: 10.0
-    summary: No material probe findings detected in this family.
-    blockers: []
-    findings: []
-    evidence:
-    - .antora-src/modules/ROOT/pages/component/runtiming/report/index.adoc
-    - .antora-src/modules/ROOT/pages/component/taxating/report/index.adoc
-    - .deploy/MANIFEST.md
-    - .deploy/cloudflare/MANIFEST.md
-    - .deploy/docker/MANIFEST.md
-    - .deploy/helm/MANIFEST.md
-    - .github/workflows/gh-pages.yml
-    - .github/workflows/quality-atlas-assessment.yml
-    - .ide/sr_default_inspector.xml
-    - .sync/quality-atlas/contract/probe-families.yaml
-    - MANIFEST.md
+    status: warn
+    score: 7.75
+    summary: 0 fail, 2 warn, 1 info findings detected.
+    blockers:
+    - No GitHub workflow files were detected.
+    - Deploy or packaging markers appear sparse.
+    findings:
+    - severity: warn
+      id: workflows_missing
+      detail: No GitHub workflow files were detected.
+    - severity: info
+      id: observability_markers_missing
+      detail: No Prometheus/Grafana markers were detected.
+    - severity: warn
+      id: deploy_markers_sparse
+      detail: Deploy or packaging markers appear sparse.
+    evidence: []
   solid_refactoring:
     title: SOLID & Refactoring Pressure
-    status: pass
-    score: 7.5
-    summary: 0 fail, 0 warn, 10 info findings detected.
-    blockers: []
+    status: warn
+    score: 3.0
+    summary: 0 fail, 7 warn, 0 info findings detected.
+    blockers:
+    - Class exposes 34 public methods; review interface segregation and SRP.
+    - Class exposes 19 public methods; review interface segregation and SRP.
+    - Class exposes 16 public methods; review interface segregation and SRP.
+    - Class exposes 14 public methods; review interface segregation and SRP.
+    - Class exposes 13 public methods; review interface segregation and SRP.
     findings:
-    - severity: info
-      id: copy_paste_origin_marker
-      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
-        fit.
-      path: .github/workflows/gh-pages.yml
-    - severity: info
-      id: copy_paste_origin_marker
-      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
-        fit.
-      path: .antora-src/modules/ROOT/pages/article/from-ai-coding-to-semi-automated-science.adoc
-    - severity: info
-      id: copy_paste_origin_marker
-      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
-        fit.
-      path: .antora-src/modules/ROOT/pages/article/vibe-coding-is-not-the-problem.adoc
-    - severity: info
-      id: copy_paste_origin_marker
-      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
-        fit.
-      path: doc/article/ollama-0-19-mlx-and-apple-silicon-why-local-ai-on-mac-got-serious.adoc
-    - severity: info
-      id: copy_paste_origin_marker
-      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
-        fit.
-      path: .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/accessing.json
-    - severity: info
-      id: copy_paste_origin_marker
-      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
-        fit.
-      path: .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/accessing.prompt.txt
-    - severity: info
-      id: copy_paste_origin_marker
-      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
-        fit.
-      path: .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/documentating.prompt.txt
-    - severity: info
-      id: copy_paste_origin_marker
-      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
-        fit.
-      path: .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/accessing.request.json
-    - severity: info
-      id: copy_paste_origin_marker
-      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
-        fit.
-      path: .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/documentating.json
-    - severity: info
-      id: copy_paste_origin_marker
-      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
-        fit.
-      path: .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/documentating.request.json
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 34 public methods; review interface segregation and SRP.
+      path: src/Entity/Account.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 19 public methods; review interface segregation and SRP.
+      path: src/Entity/AccountSession.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 16 public methods; review interface segregation and SRP.
+      path: src/Entity/VerificationChallenge.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 14 public methods; review interface segregation and SRP.
+      path: src/Entity/SecurityEvent.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 13 public methods; review interface segregation and SRP.
+      path: src/Entity/SecondFactor.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 8 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Service/Verification/AccessingVerificationChallengeService.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 8 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Service/Account/AccessingAccountAuthenticationService.php
     evidence:
-    - .antora-src/modules/ROOT/pages/article/from-ai-coding-to-semi-automated-science.adoc
-    - .antora-src/modules/ROOT/pages/article/vibe-coding-is-not-the-problem.adoc
-    - .github/workflows/gh-pages.yml
-    - .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/accessing.json
-    - .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/accessing.prompt.txt
-    - .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/accessing.request.json
-    - .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/documentating.json
-    - .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/documentating.prompt.txt
-    - .sync/quality-atlas/generated/assessment-runs/20260405T094431Z/documentating.request.json
-    - doc/article/ollama-0-19-mlx-and-apple-silicon-why-local-ai-on-mac-got-serious.adoc
+    - src/Entity/Account.php
+    - src/Entity/AccountSession.php
+    - src/Entity/SecondFactor.php
+    - src/Entity/SecurityEvent.php
+    - src/Entity/VerificationChallenge.php
+    - src/Service/Account/AccessingAccountAuthenticationService.php
+    - src/Service/Verification/AccessingVerificationChallengeService.php
 summary:
-  overall_status: fail
-  average_score: 8.43
+  overall_status: warn
+  average_score: 7.04
   status_counts:
-    pass: 3
-    warn: 3
-    fail: 1
+    pass: 0
+    warn: 7
+    fail: 0
     not_applicable: 0
   top_blockers:
+  - Canon & Structure — PHP namespace does not use the default App\ root.
   - Architecture & Boundaries — No obvious boundary descriptor files were detected.
-  - 'Architecture & Boundaries — Missing expected repository segment: src/.'
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
   - Runtime & Application Surface — No Docker or compose files were detected.
-  - QA & Behavioral Assurance — tests/ directory is missing.
   - QA & Behavioral Assurance — No fixtures directories were detected.
   - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 11/382 (3%).
+  - Delivery & Observability — No GitHub workflow files were detected.
   families:
     canon_structure:
       title: Canon & Structure
-      status: pass
-      score: 10.0
-      summary: No material probe findings detected in this family.
-      blockers: []
-    architecture_boundaries:
-      title: Architecture & Boundaries
-      status: warn
-      score: 7.0
-      summary: 0 fail, 3 warn, 0 info findings detected.
-      blockers:
-      - No obvious boundary descriptor files were detected.
-      - 'Missing expected repository segment: src/.'
-      - 'Missing expected repository segment: tests/.'
-    runtime_surface:
-      title: Runtime & Application Surface
       status: warn
       score: 9.0
       summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - PHP namespace does not use the default App\ root.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 5.0
+      summary: 0 fail, 5 warn, 0 info findings detected.
+      blockers:
+      - No obvious boundary descriptor files were detected.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: warn
+      score: 8.75
+      summary: 0 fail, 1 warn, 1 info findings detected.
       blockers:
       - No Docker or compose files were detected.
     qa_behavior:
       title: QA & Behavioral Assurance
-      status: fail
-      score: 6.5
-      summary: 1 fail, 1 warn, 0 info findings detected.
-      blockers:
-      - tests/ directory is missing.
-      - No fixtures directories were detected.
-    documentation_suite:
-      title: Documentation & GitHub Suite
       status: warn
       score: 9.0
       summary: 0 fail, 1 warn, 0 info findings detected.
       blockers:
+      - No fixtures directories were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 6.75
+      summary: 0 fail, 3 warn, 1 info findings detected.
+      blockers:
       - 'Missing expected documentation asset: CHANGELOG.md.'
+      - Public/protected docblock coverage is 11/382 (3%).
+      - GitHub Suite support files appear sparse.
     delivery_observability:
       title: Delivery & Observability
-      status: pass
-      score: 10.0
-      summary: No material probe findings detected in this family.
-      blockers: []
+      status: warn
+      score: 7.75
+      summary: 0 fail, 2 warn, 1 info findings detected.
+      blockers:
+      - No GitHub workflow files were detected.
+      - Deploy or packaging markers appear sparse.
     solid_refactoring:
       title: SOLID & Refactoring Pressure
-      status: pass
-      score: 7.5
-      summary: 0 fail, 0 warn, 10 info findings detected.
-      blockers: []
+      status: warn
+      score: 3.0
+      summary: 0 fail, 7 warn, 0 info findings detected.
+      blockers:
+      - Class exposes 34 public methods; review interface segregation and SRP.
+      - Class exposes 19 public methods; review interface segregation and SRP.
+      - Class exposes 16 public methods; review interface segregation and SRP.
