@@ -247,8 +247,7 @@ def build_response_json_schema() -> dict[str, Any]:
                 'evidence_paths': {'type': 'array', 'items': {'type': 'string'}},
                 'suggested_score_overrides': {
                     'type': 'object',
-                    'additionalProperties': False,
-                    'properties': {metric: {'type': 'number', 'minimum': 0.0, 'maximum': 10.0} for metric in BASE_METRICS},
+                    'additionalProperties': {'type': 'number', 'minimum': 0.0, 'maximum': 10.0},
                 },
                 'metric_updates': {
                     'type': 'object',
