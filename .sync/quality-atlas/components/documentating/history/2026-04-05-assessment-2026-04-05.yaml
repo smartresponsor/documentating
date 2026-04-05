@@ -1,0 +1,336 @@
+component: documentating
+title: Documentating
+snapshot:
+  date: '2026-04-05'
+  label: assessment-2026-04-05
+  ref: master
+  origin: quality-atlas responses assessment
+report_status: current
+groups:
+  product_market:
+    score: 0.0
+  domain_architecture:
+    score: 0.0
+  data_persistence:
+    score: 0.0
+  api_contracts:
+    score: 0.0
+  runtime_performance:
+    score: 0.0
+  reliability_resilience:
+    score: 0.0
+  security_governance:
+    score: 0.0
+  delivery_operations:
+    score: 0.0
+  quality_testing:
+    score: 0.0
+profile_axes:
+  engineering:
+    product: 0.0
+    architecture: 0.0
+    data: 0.0
+    api: 0.0
+    runtime: 0.0
+    reliability: 0.0
+    security: 0.0
+    delivery: 0.0
+    quality: 0.0
+    overall: 0.0
+  owner:
+    identity: 0.0
+    consistency: 0.0
+    delivery: 0.0
+    quality: 0.0
+    governance: 0.0
+    fit: 0.0
+    debt: 10.0
+    overall: 0.0
+  investor:
+    product: 0.0
+    architecture: 0.0
+    delivery: 0.0
+    reliability: 0.0
+    governance: 0.0
+    clarity: 0.0
+    overall: 0.0
+  operations:
+    runtime: 0.0
+    reliability: 0.0
+    observability: 0.0
+    security: 0.0
+    traffic: 0.0
+    delivery: 0.0
+    recovery: 0.0
+    overall: 0.0
+metrics:
+  product:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: Antora-driven static documentation site with a custom domain and deterministic
+      GH Actions build/publish pipeline, providing a clear owner-facing identity.
+    risks:
+    - Audience and scope are not explicitly stated on the landing page or README.
+    - Content quality gates (e.g., link/structure checks) are not enforced before
+      publish.
+    improvements:
+    - State the target audience and scope on the landing page/README.
+    - Add pre-publish link and structure validation in the gh-pages workflow.
+    - Publish a simple docs changelog to communicate notable updates.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: package.json
+      note: Metric-level assessment evidence.
+    - path: antora-playbook.yml
+      note: Metric-level assessment evidence.
+    - path: docs/CNAME
+      note: Metric-level assessment evidence.
+    - path: .antora-src/antora.yml
+      note: Metric-level assessment evidence.
+    - path: .github/workflows/gh-pages.yml
+      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/index.adoc
+      note: Metric-level assessment evidence.
+  architecture:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: Clear operational folder boundaries (.gate, .deploy, .smoke, .intelligence,
+      .commanding) and Antora source are present, but responsibilities/ownership and
+      workflow coupling are not documented.
+    risks:
+    - Domain/bounded-context boundaries for repo tooling are not described.
+    - Coupling between scripts/workflows is not documented, which may hinder maintenance.
+    improvements:
+    - Add an architecture/ownership section mapping directories to responsibilities
+      (README or BUILDING.md).
+    - Document how Antora source, CI workflows, and publication artifacts relate end-to-end.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: .gate/MANIFEST.json
+      note: Metric-level assessment evidence.
+    - path: .deploy/MANIFEST.md
+      note: Metric-level assessment evidence.
+    - path: .smoke/probe
+      note: Metric-level assessment evidence.
+    - path: .intelligence/intelligence.json
+      note: Metric-level assessment evidence.
+    - path: .commanding/README.md
+      note: Metric-level assessment evidence.
+    - path: BUILDING.md
+      note: Metric-level assessment evidence.
+    - path: .antora-src/antora.yml
+      note: Metric-level assessment evidence.
+  runtime:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: Static site is served via GitHub Pages; scalability is handled by the
+      platform, with no explicit runtime probes or edge controls wired into the CI.
+    risks:
+    - No runtime health checks or synthetic probes are integrated into the publish
+      workflow.
+    - Cloudflare configuration artifacts exist but are not integrated with CI, risking
+      config drift.
+    improvements:
+    - Document the hosting/edge strategy and expected caching behavior.
+    - Add a post-publish synthetic probe step to verify site availability.
+    - If Cloudflare is intended, add an automated deployment/configuration step.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: .github/workflows/gh-pages.yml
+      note: Metric-level assessment evidence.
+    - path: .deploy/cloudflare
+      note: Metric-level assessment evidence.
+    - path: docs/CNAME
+      note: Metric-level assessment evidence.
+  qa:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: Quality scaffolding exists (.gate, .smoke), but the gh-pages workflow
+      lacks automated link/structure validation and does not run probes before publishing.
+    risks:
+    - Broken links or content regressions could ship without detection.
+    - No contract/e2e checks exist for the published site artifacts.
+    improvements:
+    - Add link and content validation steps to the gh-pages workflow prior to publish.
+    - Wire simple .smoke probes to run on each build.
+    - Introduce a basic PR check that builds the site and surfaces issues early.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: .gate/quality
+      note: Metric-level assessment evidence.
+    - path: .smoke/probe
+      note: Metric-level assessment evidence.
+    - path: .github/workflows/gh-pages.yml
+      note: Metric-level assessment evidence.
+  ops:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: CI automates Antora build and gh-pages publish with concurrency control;
+      a scheduled assessment job maintains Quality Atlas snapshots.
+    risks:
+    - Single production deploy on push without previews or staged environments.
+    - No explicit rollback mechanism is defined for gh-pages publishes.
+    - No dependency caching is configured, leading to slower, less deterministic builds.
+    improvements:
+    - Add PR previews or ephemeral deployments for review.
+    - Keep a last-known-good gh-pages reference and document rollback steps.
+    - Cache npm and pip dependencies in CI to stabilize and speed up builds.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: .github/workflows/gh-pages.yml
+      note: Metric-level assessment evidence.
+    - path: .github/workflows/quality-atlas-assessment.yml
+      note: Metric-level assessment evidence.
+  market:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: As a documentation component, market alignment is secondary; discoverability
+      and clarity are supported by Antora and the lunr extension.
+    risks:
+    - Audience and value proposition are not clearly stated for external readers.
+    - No visible changelog/release notes to communicate documentation updates.
+    improvements:
+    - Add a short 'Who this is for' section on the landing page/README.
+    - Publish a simple docs changelog or release notes section.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: package.json
+      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/index.adoc
+      note: Metric-level assessment evidence.
+    - path: README.md
+      note: Metric-level assessment evidence.
+  overall:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: Solid automated documentation delivery with scheduled assessment support;
+      main gaps are automated content QA, preview environments, and rollback readiness.
+    risks:
+    - Potential to ship regressions due to lack of pre-publish checks.
+    - Operational assets remain unintegrated, creating drift between intent and execution.
+    improvements:
+    - Introduce CI quality gates and previews before publishing.
+    - Connect smoke/probes post-build and document ownership/rollback paths.
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: .github/workflows/gh-pages.yml
+      note: Metric-level assessment evidence.
+    - path: .github/workflows/quality-atlas-assessment.yml
+      note: Metric-level assessment evidence.
+    - path: .deploy/cloudflare
+      note: Metric-level assessment evidence.
+    - path: .gate/README.md
+      note: Metric-level assessment evidence.
+    - path: .smoke/probe
+      note: Metric-level assessment evidence.
+strengths:
+- Deterministic Antora build and gh-pages publish via GitHub Actions
+- Custom domain (CNAME) and nojekyll handling for public site
+- Search enabled through Antora lunr extension
+- Scheduled Quality Atlas assessment workflow with concurrency control
+risks:
+- No pre-publish link/structure validation in CI
+- No PR preview or staged environment before publishing
+- No explicit rollback strategy for gh-pages
+- Cloudflare deploy artifacts exist but are not wired into CI
+recommended_next_actions:
+- Add link and structure validation steps before the publish stage in gh-pages workflow
+- Add a post-publish synthetic probe to verify availability
+- Enable PR previews or ephemeral deployments for docs review
+- Document and automate a rollback path for gh-pages (keep last-known-good ref)
+- If Cloudflare is intended, integrate a CI step to configure/apply edge settings
+- Cache npm/pip dependencies in CI to speed up and stabilize builds
+evidence:
+- path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
+  note: Configured component report path.
+- path: .antora-src/antora.yml
+  note: Assessment evidence path.
+- path: antora-playbook.yml
+  note: Assessment evidence path.
+- path: package.json
+  note: Assessment evidence path.
+- path: .github/workflows/gh-pages.yml
+  note: Assessment evidence path.
+- path: .github/workflows/quality-atlas-assessment.yml
+  note: Assessment evidence path.
+- path: docs/CNAME
+  note: Assessment evidence path.
+- path: .gate/README.md
+  note: Assessment evidence path.
+- path: .smoke/probe
+  note: Assessment evidence path.
+- path: .deploy/MANIFEST.md
+  note: Assessment evidence path.
+- path: BUILDING.md
+  note: Assessment evidence path.
+- path: README.md
+  note: Assessment evidence path.
+- path: .antora-src/modules/ROOT/pages/index.adoc
+  note: Assessment evidence path.
+- path: .deploy/cloudflare
+  note: Assessment evidence path.
+assessment_notes:
+- Antora-powered docs site with custom domain and automated gh-pages publishing; strong
+  operational scaffolding but missing content QA gates, previews, and rollback clarity.
+- Assessment grounded in repository facts and existing snapshot; no runtime telemetry
+  present in-repo.
+- Workflows use Node 24 and Python 3.12; Antora 3.1.12 with lunr extension is configured.
+- Operational directories (.gate, .deploy, .smoke, .intelligence, .commanding) are
+  present but not fully documented.
+assessment_confidence: high

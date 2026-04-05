@@ -1,0 +1,283 @@
+component: accessing
+title: Accessing
+snapshot:
+  date: '2026-04-05'
+  label: assessment-2026-04-05
+  ref: master
+  origin: quality-atlas responses assessment
+report_status: current
+groups:
+  product_market:
+    score: 0.0
+  domain_architecture:
+    score: 0.0
+  data_persistence:
+    score: 0.0
+  api_contracts:
+    score: 0.0
+  runtime_performance:
+    score: 0.0
+  reliability_resilience:
+    score: 0.0
+  security_governance:
+    score: 0.0
+  delivery_operations:
+    score: 0.0
+  quality_testing:
+    score: 0.0
+profile_axes:
+  engineering:
+    product: 0.0
+    architecture: 0.0
+    data: 0.0
+    api: 0.0
+    runtime: 0.0
+    reliability: 0.0
+    security: 0.0
+    delivery: 0.0
+    quality: 0.0
+    overall: 0.0
+  owner:
+    identity: 0.0
+    consistency: 0.0
+    delivery: 0.0
+    quality: 0.0
+    governance: 0.0
+    fit: 0.0
+    debt: 10.0
+    overall: 0.0
+  investor:
+    product: 0.0
+    architecture: 0.0
+    delivery: 0.0
+    reliability: 0.0
+    governance: 0.0
+    clarity: 0.0
+    overall: 0.0
+  operations:
+    runtime: 0.0
+    reliability: 0.0
+    observability: 0.0
+    security: 0.0
+    traffic: 0.0
+    delivery: 0.0
+    recovery: 0.0
+    overall: 0.0
+metrics:
+  product:
+    relevant: true
+    maturity: strong
+    score: 0.0
+    summary: Component identity and market-facing shape remain materially present
+      per the canonical report; scores held pending upstream code-linked evidence.
+    risks:
+    - Product claims are documented but not cross-linked to upstream release artifacts
+      in this repo
+    improvements:
+    - Embed links in the report to upstream releases and roadmap items to anchor product
+      positioning
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+  architecture:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: Symfony-oriented architecture shape is described in the report and remains
+      plausible, but this repo lacks direct code artifacts to verify.
+    risks:
+    - Architecture reading is narrative-only without code or design docs in this repo
+    improvements:
+    - Add references in the report to upstream architecture docs and representative
+      code paths
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+  runtime:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: Runtime surface (security packages, flows) is articulated in the report;
+      verification awaits upstream runtime artifacts.
+    risks:
+    - No runtime configs or package manifests present here to corroborate runtime
+      claims
+    improvements:
+    - Reference upstream environment/config samples and CI status in the report for
+      runtime grounding
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+  qa:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: Testing and QA posture read as materially present but pre-RC per the
+      report; no local QA artifacts exist to confirm.
+    risks:
+    - Absence of test configs or coverage signals in this repo constrains verification
+    improvements:
+    - Link to upstream test strategy, CI badges, and coverage summaries from the report
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+  ops:
+    relevant: true
+    maturity: strong
+    score: 0.0
+    summary: Operational and governance posture is narrated in the report; this repo
+      demonstrates site and assessment automation but not Accessing runtime ops.
+    risks:
+    - Operational claims for Accessing are not evidenced by deployment or security
+      artifacts here
+    improvements:
+    - Add pointers in the report to upstream security policy, threat model, and deployment
+      runbooks
+    - Keep the scheduled assessment producing evidence-linked refreshes
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+    - path: .github/workflows/gh-pages.yml
+      note: Metric-level assessment evidence.
+    - path: .github/workflows/quality-atlas-assessment.yml
+      note: Metric-level assessment evidence.
+  market:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: Business and portfolio alignment signals remain credible via the owner-facing
+      report; evidence remains narrative-first.
+    risks:
+    - Market alignment is not tied to external benchmarks or adoption signals in this
+      repo
+    improvements:
+    - Cite external comparison points and intended customer segments in the report
+      with references
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+  overall:
+    relevant: true
+    maturity: solid
+    score: 0.0
+    summary: Overall RC direction remains visible from the canonical report, with
+      scores preserved until upstream repository evidence is ingested.
+    risks:
+    - Overall readiness may be overstated if the report drifts from upstream implementation
+    improvements:
+    - Run the scheduled assessment to ingest upstream facts and refresh this snapshot
+      with evidence links
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+    - path: .github/workflows/quality-atlas-assessment.yml
+      note: Metric-level assessment evidence.
+strengths:
+- Canonical owner-facing Accessing report is present and maintained in the Antora
+  source tree
+- Automated docs publishing to gh-pages ensures a reliable public snapshot
+- Scheduled Quality Atlas assessment workflow is wired for periodic refresh
+- Repository structure clearly separates canonical content and delivery automation
+risks:
+- Current snapshot relies on narrative content rather than direct upstream code evidence
+- No composer/phpunit or runtime artifacts exist in this repo to verify Accessing
+  claims
+- Possible drift between the report and the upstream smartresponsor/accessing implementation
+recommended_next_actions:
+- Ensure the scheduled Quality Atlas assessment ingests upstream facts for component
+  'accessing' and refreshes this snapshot
+- Augment the Accessing report with explicit links to upstream repo evidence (e.g.,
+  CI badges, composer.json, test configs, security policy) to ground claims
+- Track report updates alongside upstream releases to minimize drift and keep RC signals
+  current
+- Add a short evidence block in the report summarizing latest upstream commit refs
+  used for the assessment
+evidence:
+- path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+  note: Current component report page if present.
+- path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+  note: Seeded atlas dataset source.
+- path: .github/workflows/gh-pages.yml
+  note: Assessment evidence path.
+- path: .github/workflows/quality-atlas-assessment.yml
+  note: Assessment evidence path.
+- path: antora-playbook.yml
+  note: Assessment evidence path.
+- path: README.md
+  note: Assessment evidence path.
+- path: MANIFEST.md
+  note: Assessment evidence path.
+assessment_notes:
+- Refreshed owner-facing snapshot grounded in the repository’s canonical Accessing
+  report and site automation; prior pre-RC scores are retained pending direct upstream
+  code evidence.
+- This update uses only facts available in this documentation repository and the existing
+  snapshot.
+- Owner-facing report for Accessing is the primary evidence source for product and
+  positioning.
+- CI workflows validate site generation and scheduled assessments but do not validate
+  Accessing runtime or QA directly.
+assessment_confidence: medium
