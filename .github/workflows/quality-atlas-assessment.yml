@@ -38,6 +38,7 @@ jobs:
           python3 tools/seed_quality_atlas_snapshots.py
 
       - name: Run scheduled assessment dry-run or AI-backed pass
+        id: assessment
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           QUALITY_ATLAS_OPENAI_MODEL: ${{ vars.QUALITY_ATLAS_OPENAI_MODEL || 'gpt-5' }}
@@ -46,13 +47,26 @@ jobs:
           if [ -n "${OPENAI_API_KEY}" ]; then
             mode="responses"
           fi
+          echo "mode=${mode}" >> "$GITHUB_OUTPUT"
           python3 tools/run_quality_atlas_assessment.py --mode "$mode"
 
+      - name: Upload assessment run artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-atlas-assessment-${{ github.run_id }}
+          path: |
+            .sync/quality-atlas/generated/assessment-runs
+            .sync/quality-atlas/generated/latest-assessment-summary.json
+          if-no-files-found: warn
+
       - name: Regenerate portfolio pages
+        if: success()
         run: |
           python3 tools/generate_quality_atlas_portfolio.py
 
       - name: Commit assessment artifacts
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

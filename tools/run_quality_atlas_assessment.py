@@ -7,6 +7,7 @@ import os
 import subprocess
 import sys
 import textwrap
+import urllib.error
 import urllib.request
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -82,6 +83,10 @@ GROUP_SCORE_MAP = {
 }
 
 
+class AssessmentContractError(RuntimeError):
+    pass
+
+
 def load_yaml(path: Path) -> Any:
     return yaml.safe_load(path.read_text(encoding='utf-8'))
 
@@ -94,6 +99,24 @@ def write_yaml(path: Path, data: dict[str, Any]) -> None:
 def run(cmd: list[str], cwd: Path) -> tuple[int, str]:
     proc = subprocess.run(cmd, cwd=cwd, text=True, capture_output=True)
     return proc.returncode, (proc.stdout + '\n' + proc.stderr).strip()
+
+
+def metric_catalog_summary(metric_catalog: Any) -> list[dict[str, Any]]:
+    items = metric_catalog.get('metrics', metric_catalog) if isinstance(metric_catalog, dict) else metric_catalog
+    if not isinstance(items, list):
+        return []
+    summary: list[dict[str, Any]] = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        summary.append({
+            'id': item.get('id') or item.get('key') or item.get('metric_id'),
+            'title': item.get('title'),
+            'group': item.get('group') or item.get('capability_group'),
+            'audiences': item.get('audience_tags') or item.get('audiences') or [],
+            'default_relevance': item.get('default_relevance'),
+        })
+    return summary
 
 
 def repo_facts(repo_dir: Path, component: dict[str, Any]) -> dict[str, Any]:
@@ -139,6 +162,17 @@ def repo_facts(repo_dir: Path, component: dict[str, Any]) -> dict[str, Any]:
 
 
 def build_prompt(component: dict[str, Any], cards: dict[str, Any], metric_catalog: dict[str, Any], view_profiles: dict[str, Any], scoring_model: dict[str, Any], response_schema: dict[str, Any], facts: dict[str, Any], current_snapshot: dict[str, Any] | None) -> str:
+    current_metric_context = {}
+    if current_snapshot:
+        for metric in BASE_METRICS:
+            block = (current_snapshot.get('metrics') or {}).get(metric, {})
+            current_metric_context[metric] = {
+                'score': block.get('score'),
+                'summary': block.get('summary'),
+                'risks': block.get('risks') or [],
+                'improvements': block.get('improvements') or [],
+            }
+
     response_contract = {
         'component': component['component_id'],
         'summary': 'Short owner-facing summary.',
@@ -146,29 +180,86 @@ def build_prompt(component: dict[str, Any], cards: dict[str, Any], metric_catalo
         'risks': ['list of risks'],
         'next_actions': ['list of concrete next actions'],
         'notes': ['optional notes'],
+        'confidence': 'medium',
+        'evidence_paths': ['repo-relative/path.ext'],
         'suggested_score_overrides': {'product': 8.4, 'overall': 8.2},
         'metric_updates': {
-            'product': {
-                'summary': 'Updated one-sentence assessment for the metric.',
-                'risks': ['metric-specific risk'],
-                'improvements': ['metric-specific improvement'],
+            metric: {
+                'summary': f'Updated one-sentence assessment for {metric}.',
+                'risks': [f'{metric} specific risk'],
+                'improvements': [f'{metric} specific improvement'],
+                'evidence': ['repo-relative/path.ext'],
             }
+            for metric in BASE_METRICS
         },
     }
     return (
-        'You are updating a Smartresponsor Quality Atlas snapshot. '\
-        'Use only the provided repository facts and current snapshot. '\
-        'Do not invent tests, tools, or repo structure that are not evidenced. '\
-        'Keep scores within 0.0..10.0 and only override base metrics when the facts justify it.\n\n'
+        'You are updating a Smartresponsor Quality Atlas snapshot. '
+        'Use only the provided repository facts and current snapshot. '
+        'Do not invent tests, tools, or repo structure that are not evidenced. '
+        'Keep scores within 0.0..10.0 and only override base metrics when the facts justify it. '
+        'Return complete metric_updates for all base metrics. If evidence is insufficient for a metric, preserve the previous narrative in a minimally refreshed form rather than inventing new facts.\n\n'
         f'Component registry entry:\n{json.dumps(component, ensure_ascii=False, indent=2)}\n\n'
         f'Assessment cards:\n{json.dumps(cards["cards"], ensure_ascii=False, indent=2)}\n\n'
-        f'Metric catalog:\n{json.dumps(metric_catalog, ensure_ascii=False, indent=2)[:18000]}\n\n'
+        f'Metric catalog summary:\n{json.dumps(metric_catalog_summary(metric_catalog), ensure_ascii=False, indent=2)}\n\n'
         f'View profiles:\n{json.dumps(view_profiles, ensure_ascii=False, indent=2)}\n\n'
-        f'Current snapshot:\n{json.dumps(current_snapshot or {}, ensure_ascii=False, indent=2)}\n\n'
+        f'Scoring model:\n{json.dumps(scoring_model, ensure_ascii=False, indent=2)[:12000]}\n\n'
+        f'Current snapshot metric context:\n{json.dumps(current_metric_context, ensure_ascii=False, indent=2)}\n\n'
         f'Deterministic repository facts:\n{json.dumps(facts, ensure_ascii=False, indent=2)}\n\n'
+        f'Response contract description:\n{json.dumps(response_schema, ensure_ascii=False, indent=2)}\n\n'
         f'Return strict JSON following this shape:\n{json.dumps(response_contract, ensure_ascii=False, indent=2)}\n'
-        'Rules: risks/next_actions/strengths must be concise arrays of strings. metric_updates keys may only be one of product, architecture, runtime, qa, ops, market, overall. suggested_score_overrides may only include those keys. Every metric update must stay grounded in provided facts or current snapshot. If evidence is insufficient, preserve the previous narrative instead of inventing. Do not return markdown.'
+        'Rules: risks/next_actions/strengths must be concise arrays of strings. '
+        'metric_updates keys must be exactly product, architecture, runtime, qa, ops, market, overall. '
+        'suggested_score_overrides may only include those keys. '
+        'Every metric update must stay grounded in provided facts or current snapshot. Do not return markdown.'
     )
+
+
+def build_response_json_schema() -> dict[str, Any]:
+    metric_update_shape = {
+        'type': 'object',
+        'additionalProperties': False,
+        'required': ['summary', 'risks', 'improvements', 'evidence'],
+        'properties': {
+            'summary': {'type': 'string', 'minLength': 1},
+            'risks': {'type': 'array', 'items': {'type': 'string'}},
+            'improvements': {'type': 'array', 'items': {'type': 'string'}},
+            'evidence': {'type': 'array', 'items': {'type': 'string'}},
+        },
+    }
+    return {
+        'name': 'quality_atlas_assessment_verdict',
+        'schema': {
+            'type': 'object',
+            'additionalProperties': False,
+            'required': [
+                'component', 'summary', 'strengths', 'risks', 'next_actions', 'notes',
+                'confidence', 'evidence_paths', 'suggested_score_overrides', 'metric_updates',
+            ],
+            'properties': {
+                'component': {'type': 'string'},
+                'summary': {'type': 'string', 'minLength': 1},
+                'strengths': {'type': 'array', 'items': {'type': 'string'}},
+                'risks': {'type': 'array', 'items': {'type': 'string'}},
+                'next_actions': {'type': 'array', 'items': {'type': 'string'}},
+                'notes': {'type': 'array', 'items': {'type': 'string'}},
+                'confidence': {'type': 'string', 'enum': ['high', 'medium', 'low']},
+                'evidence_paths': {'type': 'array', 'items': {'type': 'string'}},
+                'suggested_score_overrides': {
+                    'type': 'object',
+                    'additionalProperties': False,
+                    'properties': {metric: {'type': 'number', 'minimum': 0.0, 'maximum': 10.0} for metric in BASE_METRICS},
+                },
+                'metric_updates': {
+                    'type': 'object',
+                    'additionalProperties': False,
+                    'required': BASE_METRICS,
+                    'properties': {metric: metric_update_shape for metric in BASE_METRICS},
+                },
+            },
+        },
+        'strict': True,
+    }
 
 
 def call_openai(prompt: str, model: str) -> dict[str, Any]:
@@ -178,7 +269,7 @@ def call_openai(prompt: str, model: str) -> dict[str, Any]:
     payload = {
         'model': model,
         'input': [{'role': 'user', 'content': [{'type': 'input_text', 'text': prompt}]}],
-        'text': {'format': {'type': 'json_object'}},
+        'text': {'format': {'type': 'json_schema', 'name': 'quality_atlas_assessment_verdict', 'schema': build_response_json_schema()['schema'], 'strict': True}},
     }
     req = urllib.request.Request(
         'https://api.openai.com/v1/responses',
@@ -186,17 +277,24 @@ def call_openai(prompt: str, model: str) -> dict[str, Any]:
         headers={'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json'},
         method='POST',
     )
-    with urllib.request.urlopen(req, timeout=180) as response:
-        data = json.loads(response.read().decode('utf-8'))
-    text = ''.join(
-        item.get('text', '')
-        for output in data.get('output', [])
-        for item in output.get('content', [])
-        if item.get('type') == 'output_text'
-    )
-    return json.loads(text)
+    try:
+        with urllib.request.urlopen(req, timeout=180) as response:
+            data = json.loads(response.read().decode('utf-8'))
+    except urllib.error.HTTPError as exc:  # pragma: no cover
+        body = exc.read().decode('utf-8', errors='ignore')
+        raise RuntimeError(f'OpenAI Responses API request failed with HTTP {exc.code}: {body[:4000]}') from exc
 
+    for output in data.get('output', []):
+        for item in output.get('content', []):
+            if item.get('type') == 'refusal':
+                raise RuntimeError(f"Model refusal: {item.get('refusal') or item.get('text') or 'No reason provided.'}")
+            if item.get('type') == 'output_text' and item.get('text'):
+                return json.loads(item['text'])
 
+    output_text = data.get('output_text')
+    if isinstance(output_text, str) and output_text.strip():
+        return json.loads(output_text)
+    raise RuntimeError('Responses API did not return structured output text.')
 
 
 def bootstrap_snapshot(component: dict[str, Any]) -> dict[str, Any]:
@@ -238,6 +336,7 @@ def bootstrap_snapshot(component: dict[str, Any]) -> dict[str, Any]:
     if component.get('report_path'):
         snapshot['evidence'].append({'path': component['report_path'], 'note': 'Configured component report path.'})
     return snapshot
+
 
 def load_current_snapshot(component_id: str) -> dict[str, Any] | None:
     current_path = SNAPSHOT_ROOT / component_id / 'current.yaml'
@@ -281,6 +380,28 @@ def normalize_verdict(component_id: str, verdict: dict[str, Any]) -> dict[str, A
     return normalized
 
 
+def validate_verdict(component_id: str, verdict: dict[str, Any]) -> None:
+    if verdict.get('component') != component_id:
+        raise AssessmentContractError(f"Verdict component mismatch: expected '{component_id}', received '{verdict.get('component')}'.")
+    if not verdict.get('summary'):
+        raise AssessmentContractError('Verdict summary is empty.')
+    if verdict.get('confidence') not in {'high', 'medium', 'low', 'dry-run'}:
+        raise AssessmentContractError(f"Verdict confidence is invalid: {verdict.get('confidence')!r}.")
+    for metric, value in verdict.get('suggested_score_overrides', {}).items():
+        if metric not in BASE_METRICS:
+            raise AssessmentContractError(f'Unexpected score override key: {metric}.')
+        if not 0.0 <= float(value) <= 10.0:
+            raise AssessmentContractError(f'Score override for {metric} is outside 0..10: {value}.')
+    metric_updates = verdict.get('metric_updates') or {}
+    missing_metrics = [metric for metric in BASE_METRICS if metric not in metric_updates]
+    if missing_metrics:
+        raise AssessmentContractError(f'Metric updates are missing required keys: {", ".join(missing_metrics)}.')
+    for metric in BASE_METRICS:
+        block = metric_updates[metric]
+        if not block.get('summary'):
+            raise AssessmentContractError(f'Metric update for {metric} is missing summary.')
+
+
 def recalc_groups(scores: dict[str, float]) -> dict[str, dict[str, Any]]:
     return {group: {'score': builder(scores)} for group, builder in GROUP_SCORE_MAP.items()}
 
@@ -312,6 +433,7 @@ def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], ve
     evidence_paths = {item.get('path') for item in existing_evidence if isinstance(item, dict)}
     if component.get('report_path') and component['report_path'] not in evidence_paths:
         existing_evidence.append({'path': component['report_path'], 'note': 'Component report path from repository registry.'})
+        evidence_paths.add(component['report_path'])
     for path in verdict.get('evidence_paths', []):
         if path not in evidence_paths:
             existing_evidence.append({'path': path, 'note': 'Assessment evidence path.'})
@@ -365,7 +487,15 @@ def dry_run_verdict(component: dict[str, Any], prompt: str, facts: dict[str, Any
         'confidence': 'dry-run',
         'evidence_paths': [path for path in [component.get('report_path')] if path],
         'suggested_score_overrides': {'overall': base_overall},
-        'metric_updates': {},
+        'metric_updates': {
+            metric: {
+                'summary': ((current or {}).get('metrics', {}).get(metric, {}).get('summary') or f'Dry-run retained current narrative for {metric}.'),
+                'risks': ((current or {}).get('metrics', {}).get(metric, {}).get('risks') or ['Dry-run mode did not refresh this metric with live AI evidence.']),
+                'improvements': ((current or {}).get('metrics', {}).get(metric, {}).get('improvements') or ['Enable responses mode to refresh this metric from repository evidence.']),
+                'evidence': [path for path in [component.get('report_path')] if path],
+            }
+            for metric in BASE_METRICS
+        },
     }
 
 
@@ -380,12 +510,14 @@ def write_snapshot_files(component_id: str, snapshot: dict[str, Any]) -> tuple[P
     return current_path, history_path
 
 
-def update_latest_summary(run_dir: Path, mode: str, components: list[dict[str, Any]]) -> None:
+def update_latest_summary(run_dir: Path, mode: str, components: list[dict[str, Any]], failures: list[dict[str, Any]]) -> None:
     payload = {
         'generated_at': datetime.now(timezone.utc).isoformat(),
         'run_dir': str(run_dir),
         'mode': mode,
         'components': components,
+        'failures': failures,
+        'status': 'failed' if failures else 'ok',
     }
     LATEST_SUMMARY_FILE.parent.mkdir(parents=True, exist_ok=True)
     LATEST_SUMMARY_FILE.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding='utf-8')
@@ -413,6 +545,7 @@ def main() -> None:
 
     assessments: list[dict[str, Any]] = []
     latest_components: list[dict[str, Any]] = []
+    failures: list[dict[str, Any]] = []
     for component in registry['repositories']:
         if not component.get('enabled'):
             continue
@@ -423,34 +556,59 @@ def main() -> None:
         if current is None:
             current = bootstrap_snapshot(component)
         prompt = build_prompt(component, cards, metric_catalog, view_profiles, scoring_model, response_schema, facts, current)
-        if args.mode == 'responses':
-            verdict = call_openai(prompt, args.model)
-        else:
-            verdict = dry_run_verdict(component, prompt, facts, current)
-        normalized = normalize_verdict(component['component_id'], verdict)
-        snapshot = merge_snapshot(current, component, normalized, args.label, f'quality-atlas {args.mode} assessment')
-        current_path, history_path = write_snapshot_files(component['component_id'], snapshot)
 
-        item = {
-            'registry_entry': component,
-            'facts': facts,
-            'verdict': normalized,
-            'snapshot_paths': {'current': str(current_path), 'history': str(history_path)},
-        }
-        assessments.append(item)
-        latest_components.append({
-            'component': component['component_id'],
-            'title': component['component_title'],
-            'overall': snapshot['metrics']['overall']['score'],
-            'history_file': str(history_path),
-            'summary': normalized['summary'],
-        })
-        (run_dir / f"{component['component_id']}.json").write_text(json.dumps(item, indent=2, ensure_ascii=False), encoding='utf-8')
+        try:
+            if args.mode == 'responses':
+                verdict = call_openai(prompt, args.model)
+            else:
+                verdict = dry_run_verdict(component, prompt, facts, current)
+            normalized = normalize_verdict(component['component_id'], verdict)
+            validate_verdict(component['component_id'], normalized)
+            snapshot = merge_snapshot(current, component, normalized, args.label, f'quality-atlas {args.mode} assessment')
+            current_path, history_path = write_snapshot_files(component['component_id'], snapshot)
+            item = {
+                'status': 'ok',
+                'registry_entry': component,
+                'facts': facts,
+                'verdict': normalized,
+                'snapshot_paths': {'current': str(current_path), 'history': str(history_path)},
+            }
+            assessments.append(item)
+            latest_components.append({
+                'component': component['component_id'],
+                'title': component['component_title'],
+                'overall': snapshot['metrics']['overall']['score'],
+                'history_file': str(history_path),
+                'summary': normalized['summary'],
+            })
+            (run_dir / f"{component['component_id']}.json").write_text(json.dumps(item, indent=2, ensure_ascii=False), encoding='utf-8')
+        except Exception as exc:
+            failure = {
+                'status': 'error',
+                'component': component['component_id'],
+                'title': component['component_title'],
+                'mode': args.mode,
+                'error_type': exc.__class__.__name__,
+                'error': str(exc),
+                'registry_entry': component,
+                'facts': facts,
+            }
+            failures.append(failure)
+            (run_dir / f"{component['component_id']}.error.json").write_text(json.dumps(failure, indent=2, ensure_ascii=False), encoding='utf-8')
 
-    summary = {'date': date.today().isoformat(), 'mode': args.mode, 'count': len(assessments), 'label': args.label}
+    summary = {
+        'date': date.today().isoformat(),
+        'mode': args.mode,
+        'count': len(assessments),
+        'failures': len(failures),
+        'label': args.label,
+        'status': 'failed' if failures else 'ok',
+    }
     (run_dir / 'index.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')
-    update_latest_summary(run_dir, args.mode, latest_components)
-    print(json.dumps({'run_dir': str(run_dir), 'count': len(assessments), 'mode': args.mode, 'label': args.label}, indent=2))
+    update_latest_summary(run_dir, args.mode, latest_components, failures)
+    print(json.dumps({'run_dir': str(run_dir), 'count': len(assessments), 'failures': len(failures), 'mode': args.mode, 'label': args.label}, indent=2))
+    if args.mode == 'responses' and failures:
+        raise SystemExit(1)
 
 
 if __name__ == '__main__':
