@@ -5,12 +5,12 @@ description: Registry of ecosystem repositories/components to be visited by the 
 repositories:
 - component_id: accessing
   component_title: Accessing
-  github_repository: ''
+  github_repository: smartresponsor/accessing
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
-  notes: Set enabled=true and github_repository once this component is connected to
-    the scheduled assessment runner.
+  notes: Connected to the scheduled assessment runner via GitHub repository target
+    smartresponsor/accessing.
 - component_id: addressing
   component_title: Addressing
   github_repository: ''
@@ -154,8 +154,8 @@ repositories:
   enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
   local_path: .
-  notes: Bootstrap-enabled in the atlas repository itself so the assessment workflow has a live local target.
-    the scheduled assessment runner.
+  notes: Bootstrap-enabled in the atlas repository itself so the assessment workflow has a
+    live local target.
 - component_id: evaluating
   component_title: Evaluating
   github_repository: ''
