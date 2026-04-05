@@ -67,13 +67,85 @@ jobs:
           elif [ -n "${OPENAI_API_KEY}" ]; then
             mode="responses"
           fi
-          echo "mode=${mode}" >> "$GITHUB_OUTPUT"
+
           component_args=""
+          selected_component="ALL_ENABLED"
           if [ -n "${INPUT_COMPONENT}" ]; then
             component_args="--component ${INPUT_COMPONENT}"
-            echo "component=${INPUT_COMPONENT}" >> "$GITHUB_OUTPUT"
+            selected_component="${INPUT_COMPONENT}"
           fi
+
+          echo "mode=${mode}" >> "$GITHUB_OUTPUT"
+          echo "component=${selected_component}" >> "$GITHUB_OUTPUT"
+
+          echo "Assessment mode=${mode} component=${selected_component}"
           python3 tools/run_quality_atlas_assessment.py --mode "$mode" ${component_args}
+      - name: Print assessment errors
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          root = Path('.sync/quality-atlas/generated/assessment-runs')
+          if not root.exists():
+              print('No assessment run directory found.')
+              raise SystemExit(0)
+          runs = sorted([p for p in root.iterdir() if p.is_dir()])
+          if not runs:
+              print('No assessment runs found.')
+              raise SystemExit(0)
+          run_dir = runs[-1]
+          print(f'Latest assessment run: {run_dir}')
+          errors = sorted(run_dir.glob('*.error.json'))
+          if not errors:
+              print('No component error files found.')
+              raise SystemExit(0)
+          for path in errors:
+              print(f'\n===== {path.name} =====')
+              try:
+                  payload = json.loads(path.read_text(encoding='utf-8'))
+              except Exception:
+                  print(path.read_text(encoding='utf-8', errors='ignore'))
+                  continue
+              compact = {
+                  'component': payload.get('component'),
+                  'title': payload.get('title'),
+                  'mode': payload.get('mode'),
+                  'error_type': payload.get('error_type'),
+                  'error': payload.get('error'),
+              }
+              print(json.dumps(compact, indent=2, ensure_ascii=False))
+          PY
+
+      - name: Write assessment step summary
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          summary_path = Path('.sync/quality-atlas/generated/latest-assessment-summary.json')
+          lines = []
+          lines.append('## Quality Atlas assessment')
+          lines.append('')
+          lines.append("- mode: `${{ steps.assessment.outputs.mode || 'unknown' }}`")
+          lines.append("- component input: `${{ steps.assessment.outputs.component || 'unknown' }}`")
+          if summary_path.exists():
+              payload = json.loads(summary_path.read_text(encoding='utf-8'))
+              lines.append(f"- status: `{payload.get('status', 'unknown')}`")
+              lines.append(f"- successful components: `{len(payload.get('components', []))}`")
+              lines.append(f"- failures: `{len(payload.get('failures', []))}`")
+              selected = payload.get('selected_components') or []
+              lines.append(f"- selected components: `{', '.join(selected) if selected else 'ALL_ENABLED'}`")
+              failures = payload.get('failures', [])
+              if failures:
+                  lines.append('')
+                  lines.append('### Failures')
+                  for failure in failures:
+                      lines.append(f"- **{failure.get('component', 'unknown')}** — `{failure.get('error_type', 'Error')}`: {failure.get('error', 'Unknown error')}")
+          else:
+              lines.append('- latest summary file not found')
+          Path('${GITHUB_STEP_SUMMARY}').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          PY
 
       - name: Upload assessment run artifacts
         if: always()
