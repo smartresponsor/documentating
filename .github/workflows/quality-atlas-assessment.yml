@@ -55,6 +55,7 @@ jobs:
         id: assessment
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
           QUALITY_ATLAS_OPENAI_MODEL: ${{ vars.QUALITY_ATLAS_OPENAI_MODEL || 'gpt-5' }}
           INPUT_COMPONENT: ${{ github.event.inputs.component || '' }}
           INPUT_MODE: ${{ github.event.inputs.mode || 'auto' }}

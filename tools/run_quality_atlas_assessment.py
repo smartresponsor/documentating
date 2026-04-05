@@ -2,10 +2,13 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
+import shutil
 import subprocess
 import sys
+import tempfile
 import textwrap
 import urllib.error
 import urllib.request
@@ -122,10 +125,16 @@ def metric_catalog_summary(metric_catalog: Any) -> list[dict[str, Any]]:
     return summary
 
 
-def repo_facts(repo_dir: Path, component: dict[str, Any]) -> dict[str, Any]:
-    facts: dict[str, Any] = {'repo_root': str(repo_dir), 'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'exists': repo_dir.exists()}
+def repo_facts(repo_dir: Path, docs_repo_dir: Path, component: dict[str, Any]) -> dict[str, Any]:
+    facts: dict[str, Any] = {
+        'repo_root': str(repo_dir),
+        'docs_repo_root': str(docs_repo_dir),
+        'timestamp_utc': datetime.now(timezone.utc).isoformat(),
+        'exists': repo_dir.exists(),
+        'github_repository': component.get('github_repository') or component.get('repo_full_name') or '',
+    }
     if not repo_dir.exists():
-        facts['missing_reason'] = 'Configured local_path does not exist in the current runner workspace.'
+        facts['missing_reason'] = 'Configured repository target does not exist in the current runner workspace.'
         return facts
     for command, key in [(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], 'git_branch'), (['git', 'rev-parse', 'HEAD'], 'git_commit')]:
         try:
@@ -149,11 +158,14 @@ def repo_facts(repo_dir: Path, component: dict[str, Any]) -> dict[str, Any]:
         facts[label] = {'exit_code': rc, 'output': out[:6000]}
     report_path_value = component.get('report_path')
     if report_path_value:
-        report_path = (repo_dir / report_path_value).resolve()
-        if report_path.exists():
-            report_text = report_path.read_text(encoding='utf-8', errors='ignore')
-            facts['report_excerpt'] = textwrap.shorten(report_text.replace('\n', ' '), width=5000, placeholder=' …')
-            facts['report_excerpt_source'] = report_path_value
+        for root, source_label in ((docs_repo_dir, 'docs_repo'), (repo_dir, 'target_repo')):
+            report_path = (root / report_path_value).resolve()
+            if report_path.exists():
+                report_text = report_path.read_text(encoding='utf-8', errors='ignore')
+                facts['report_excerpt'] = textwrap.shorten(report_text.replace('\n', ' '), width=5000, placeholder=' …')
+                facts['report_excerpt_source'] = report_path_value
+                facts['report_excerpt_location'] = source_label
+                break
     key_files = {}
     for rel in ['composer.json', 'package.json', '.github/workflows/gh-pages.yml', '.github/workflows/quality-atlas-assessment.yml']:
         fp = repo_dir / rel
@@ -163,6 +175,26 @@ def repo_facts(repo_dir: Path, component: dict[str, Any]) -> dict[str, Any]:
         facts['key_file_excerpts'] = key_files
     return facts
 
+
+def clone_component_repo(component: dict[str, Any], run_label: str) -> tuple[Path, Path | None]:
+    github_repository = component.get('github_repository') or component.get('repo_full_name') or ''
+    if not github_repository or github_repository.startswith('local/'):
+        return Path('.').resolve(), None
+    temp_root = Path(tempfile.mkdtemp(prefix=f"quality-atlas-{component['component_id']}-{run_label}-"))
+    target_dir = temp_root / component['component_id']
+    branch = component.get('default_branch', 'master')
+    clone_url = f'https://github.com/{github_repository}.git'
+    cmd = ['git']
+    token = os.environ.get('GITHUB_TOKEN') or ''
+    if token:
+        auth = base64.b64encode(f'x-access-token:{token}'.encode('utf-8')).decode('ascii')
+        cmd.extend(['-c', f'http.https://github.com/.extraheader=AUTHORIZATION: basic {auth}'])
+    cmd.extend(['clone', '--depth', '1', '--branch', branch, clone_url, str(target_dir)])
+    proc = subprocess.run(cmd, text=True, capture_output=True)
+    if proc.returncode != 0:
+        shutil.rmtree(temp_root, ignore_errors=True)
+        raise RuntimeError(f"Unable to clone component repository {github_repository}: {(proc.stdout + proc.stderr).strip()[:2000]}")
+    return target_dir, temp_root
 
 def build_prompt(component: dict[str, Any], cards: dict[str, Any], metric_catalog: dict[str, Any], view_profiles: dict[str, Any], scoring_model: dict[str, Any], probe_families: dict[str, Any], response_schema: dict[str, Any], facts: dict[str, Any], current_snapshot: dict[str, Any] | None, probe_snapshot: dict[str, Any]) -> str:
     current_metric_context = {}
@@ -379,7 +411,7 @@ def normalize_verdict(component_id: str, verdict: dict[str, Any]) -> dict[str, A
         'evidence_paths': [str(item).strip() for item in verdict.get('evidence_paths') or [] if str(item).strip()],
     }
     for key, value in (verdict.get('suggested_score_overrides') or {}).items():
-        if key in BASE_METRICS:
+        if key in BASE_METRICS and value is not None:
             normalized['suggested_score_overrides'][key] = safe_float(value, 0.0)
     for key, value in (verdict.get('metric_updates') or {}).items():
         if key not in BASE_METRICS or not isinstance(value, dict):
@@ -574,19 +606,24 @@ def main() -> None:
             continue
         if selected_components and component['component_id'] not in selected_components:
             continue
-        local_path = component.get('local_path') or '.'
-        target_repo = (repo_root / local_path).resolve()
-        facts = repo_facts(target_repo, component)
-        probe_snapshot = collect_repo_probes(target_repo, component)
-        probe_snapshot['snapshot']['label'] = args.label
-        probe_snapshot['snapshot']['date'] = date.today().isoformat()
-        current = load_current_snapshot(component['component_id'])
-        if current is None:
-            current = bootstrap_snapshot(component)
-        prompt = build_prompt(component, cards, metric_catalog, view_profiles, scoring_model, probe_families, response_schema, facts, current, probe_snapshot)
-
-        raw_ai_io: dict[str, Any] | None = None
+        cleanup_root: Path | None = None
+        facts: dict[str, Any] = {}
         try:
+            local_path = component.get('local_path') or ''
+            if local_path:
+                target_repo = (repo_root / local_path).resolve()
+            else:
+                target_repo, cleanup_root = clone_component_repo(component, args.label)
+            facts = repo_facts(target_repo, repo_root, component)
+            probe_snapshot = collect_repo_probes(target_repo, component)
+            probe_snapshot['snapshot']['label'] = args.label
+            probe_snapshot['snapshot']['date'] = date.today().isoformat()
+            current = load_current_snapshot(component['component_id'])
+            if current is None:
+                current = bootstrap_snapshot(component)
+            prompt = build_prompt(component, cards, metric_catalog, view_profiles, scoring_model, probe_families, response_schema, facts, current, probe_snapshot)
+
+            raw_ai_io: dict[str, Any] | None = None
             (run_dir / f"{component['component_id']}.prompt.txt").write_text(prompt, encoding='utf-8')
             if args.mode == 'responses':
                 verdict, raw_ai_io = call_openai(prompt, args.model)
@@ -634,6 +671,9 @@ def main() -> None:
             }
             failures.append(failure)
             (run_dir / f"{component['component_id']}.error.json").write_text(json.dumps(failure, indent=2, ensure_ascii=False), encoding='utf-8')
+        finally:
+            if cleanup_root is not None:
+                shutil.rmtree(cleanup_root, ignore_errors=True)
 
     summary = {
         'date': date.today().isoformat(),
