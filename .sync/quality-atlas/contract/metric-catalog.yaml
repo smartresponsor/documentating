@@ -1,0 +1,932 @@
+version: '1.0'
+description: Canonical Smartresponsor Quality Atlas metric catalog for component assessment,
+  portfolio rollups, and generated reports.
+groups:
+- id: product_market
+  title: Product & Market
+  description: Product & Market capability group used to aggregate detailed assessment
+    metrics into view-specific axes.
+- id: domain_architecture
+  title: Domain & Architecture
+  description: Domain & Architecture capability group used to aggregate detailed assessment
+    metrics into view-specific axes.
+- id: data_persistence
+  title: Data & Persistence
+  description: Data & Persistence capability group used to aggregate detailed assessment
+    metrics into view-specific axes.
+- id: api_contracts
+  title: API & Contracts
+  description: API & Contracts capability group used to aggregate detailed assessment
+    metrics into view-specific axes.
+- id: runtime_performance
+  title: Runtime & Performance
+  description: Runtime & Performance capability group used to aggregate detailed assessment
+    metrics into view-specific axes.
+- id: reliability_resilience
+  title: Reliability & Resilience
+  description: Reliability & Resilience capability group used to aggregate detailed
+    assessment metrics into view-specific axes.
+- id: delivery_operations
+  title: Delivery & Operations
+  description: Delivery & Operations capability group used to aggregate detailed assessment
+    metrics into view-specific axes.
+- id: event_data_flow
+  title: Eventing & Data Flow
+  description: Eventing & Data Flow capability group used to aggregate detailed assessment
+    metrics into view-specific axes.
+- id: security_governance
+  title: Security & Governance
+  description: Security & Governance capability group used to aggregate detailed assessment
+    metrics into view-specific axes.
+- id: quality_testing
+  title: Quality & Testing
+  description: Quality & Testing capability group used to aggregate detailed assessment
+    metrics into view-specific axes.
+metrics:
+- id: product_identity
+  title: Product identity
+  group: product_market
+  audience_tags:
+  - investor
+  - owner
+  - engineering
+  default_relevance: conditional
+- id: market_alignment
+  title: Market alignment
+  group: product_market
+  audience_tags:
+  - investor
+  - owner
+  - engineering
+  default_relevance: conditional
+- id: client_server
+  title: Client-Server
+  group: product_market
+  audience_tags:
+  - investor
+  - owner
+  - engineering
+  default_relevance: conditional
+- id: documentation_quality
+  title: Documentation quality
+  group: product_market
+  audience_tags:
+  - investor
+  - owner
+  - engineering
+  default_relevance: conditional
+- id: operational_clarity
+  title: Operational clarity
+  group: product_market
+  audience_tags:
+  - investor
+  - owner
+  - engineering
+  default_relevance: conditional
+- id: domain_boundaries
+  title: Domain boundaries
+  group: domain_architecture
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: bounded_contexts
+  title: Bounded Contexts
+  group: domain_architecture
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: architectural_consistency
+  title: Architectural consistency
+  group: domain_architecture
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: technical_debt_level
+  title: Technical debt level
+  group: domain_architecture
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: monolith
+  title: Monolith
+  group: domain_architecture
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: microservices
+  title: Microservices
+  group: domain_architecture
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: strangler_pattern
+  title: Strangler Pattern
+  group: domain_architecture
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: bff
+  title: BFF
+  group: domain_architecture
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: database
+  title: Database
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: sql_vs_nosql
+  title: SQL vs NoSQL
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: replication
+  title: Replication
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: partitioning
+  title: Partitioning
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: sharding
+  title: Sharding
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: indexing
+  title: Indexing
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: denormalization
+  title: Denormalization
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: acid
+  title: ACID
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: base
+  title: BASE
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: full_text_search
+  title: Full-Text Search
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: time_series
+  title: Time Series
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: vector_db
+  title: Vector DB
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: materialized_view
+  title: Materialized View
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: query_optimization
+  title: Query Optimization
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: lsm_trees
+  title: LSM Trees
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: b_trees
+  title: B-Trees
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: merkle_trees
+  title: Merkle Trees
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: bloom_filter
+  title: Bloom Filter
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: hyperloglog
+  title: HyperLogLog
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: data_lake
+  title: Data Lake
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: data_warehouse
+  title: Data Warehouse
+  group: data_persistence
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: api_design
+  title: API Design
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: rest
+  title: REST
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: graphql
+  title: GraphQL
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: grpc
+  title: gRPC
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: dto_design
+  title: DTO design
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: contract_design
+  title: Contract design
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: api_versioning
+  title: API versioning
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: schema_evolution
+  title: Schema evolution
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: serialization
+  title: Serialization
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: deserialization
+  title: Deserialization
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: websockets
+  title: WebSockets
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: webrtc
+  title: WebRTC
+  group: api_contracts
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: scalability
+  title: Scalability
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: latency
+  title: Latency
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: throughput
+  title: Throughput
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: capacity
+  title: Capacity
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: load_balancing
+  title: Load Balancing
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: caching
+  title: Caching
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: cache_invalidation
+  title: Cache Invalidation
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: cdn
+  title: CDN
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: dns
+  title: DNS
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: connection_pooling
+  title: Connection Pooling
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: cache_stampede
+  title: Cache Stampede
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: cache_warming
+  title: Cache Warming
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: cdn_caching
+  title: CDN Caching
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: data_compression
+  title: Data Compression
+  group: runtime_performance
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: availability
+  title: Availability
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: reliability
+  title: Reliability
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: fault_tolerance
+  title: Fault Tolerance
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: high_availability
+  title: High Availability
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: cap_theorem
+  title: CAP Theorem
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: consistency_models
+  title: Consistency Models
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: sync_vs_async
+  title: Sync vs Async
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: idempotency
+  title: Idempotency
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: backpressure
+  title: Backpressure
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: circuit_breaker
+  title: Circuit Breaker
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: bulkhead
+  title: Bulkhead
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: retry_logic
+  title: Retry Logic
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: timeout
+  title: Timeout
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: load_shedding
+  title: Load Shedding
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: zero_downtime_migration_readiness
+  title: Zero-downtime migration readiness
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: rollback_strategy
+  title: Rollback strategy
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: checksum
+  title: Checksum
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: erasure_coding
+  title: Erasure Coding
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: consensus
+  title: Consensus
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: leader_election
+  title: Leader Election
+  group: reliability_resilience
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: service_discovery
+  title: Service Discovery
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: api_gateway
+  title: API Gateway
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: autoscaling
+  title: Autoscaling
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: blue_green_deployment
+  title: Blue-Green Deployment
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: canary_release
+  title: Canary Release
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: feature_flags
+  title: Feature Flags
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: observability
+  title: Observability
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: logging
+  title: Logging
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: metrics
+  title: Metrics
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: tracing
+  title: Tracing
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: correlation_id
+  title: Correlation ID
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: monitoring
+  title: Monitoring
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: alerting
+  title: Alerting
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: cicd_readiness
+  title: CI/CD readiness
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: kubernetes_readiness
+  title: Kubernetes readiness
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: traffic_cohort_strategy
+  title: Traffic cohort strategy
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: synthetic_canary_users
+  title: Synthetic / canary users
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: service_mesh
+  title: Service Mesh
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: sidecar
+  title: Sidecar
+  group: delivery_operations
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: event_driven_architecture
+  title: Event-Driven Architecture
+  group: event_data_flow
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: message_queue
+  title: Message Queue
+  group: event_data_flow
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: pub_sub
+  title: Pub/Sub
+  group: event_data_flow
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: cqrs
+  title: CQRS
+  group: event_data_flow
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: event_sourcing
+  title: Event Sourcing
+  group: event_data_flow
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: mapreduce
+  title: MapReduce
+  group: event_data_flow
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: batch_processing
+  title: Batch Processing
+  group: event_data_flow
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: stream_processing
+  title: Stream Processing
+  group: event_data_flow
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: etl
+  title: ETL
+  group: event_data_flow
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: data_pipeline
+  title: Data Pipeline
+  group: event_data_flow
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: authentication
+  title: Authentication
+  group: security_governance
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: authorization
+  title: Authorization
+  group: security_governance
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: rate_limiting
+  title: Rate Limiting
+  group: security_governance
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: secrets_management
+  title: Secrets Management
+  group: security_governance
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: rbac
+  title: RBAC
+  group: security_governance
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: sso
+  title: SSO
+  group: security_governance
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: encryption
+  title: Encryption
+  group: security_governance
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: security_posture
+  title: Security posture
+  group: security_governance
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: threat_modeling
+  title: Threat modeling
+  group: security_governance
+  audience_tags:
+  - engineering
+  - operations
+  - owner
+  default_relevance: conditional
+- id: testing_strategy
+  title: Testing strategy
+  group: quality_testing
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: contract_testing
+  title: Contract testing
+  group: quality_testing
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: e2e_testing
+  title: E2E testing
+  group: quality_testing
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional
+- id: behavioral_testing
+  title: Behavioral testing
+  group: quality_testing
+  audience_tags:
+  - engineering
+  - owner
+  default_relevance: conditional

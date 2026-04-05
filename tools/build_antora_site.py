@@ -559,6 +559,8 @@ def main() -> None:
     restore_component_pages(preserved_component_pages)
     subprocess.run(['python3', str(ROOT / 'tools' / 'generate_quality_baseline_section.py')], check=True)
     subprocess.run(['python3', str(ROOT / 'tools' / 'generate_pre_rc_quality_atlas.py')], check=True)
+    subprocess.run(['python3', str(ROOT / 'tools' / 'seed_quality_atlas_snapshots.py')], check=True)
+    subprocess.run(['python3', str(ROOT / 'tools' / 'generate_quality_atlas_portfolio.py')], check=True)
 
 
 if __name__ == '__main__':

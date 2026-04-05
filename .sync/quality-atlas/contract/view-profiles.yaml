@@ -1,0 +1,171 @@
+version: '1.0'
+description: Audience-specific Quality Atlas views built from the canonical metric
+  catalog.
+profiles:
+- id: investor
+  title: Investor
+  description: Low-noise readiness view for portfolio and confidence conversations.
+  axes:
+  - id: product
+    title: Product & Market
+    groups:
+    - product_market
+  - id: architecture
+    title: Architecture Stability
+    groups:
+    - domain_architecture
+  - id: delivery
+    title: Delivery Readiness
+    groups:
+    - delivery_operations
+    - quality_testing
+  - id: reliability
+    title: Reliability
+    groups:
+    - reliability_resilience
+  - id: governance
+    title: Security & Governance
+    groups:
+    - security_governance
+  - id: clarity
+    title: Operational Clarity
+    groups:
+    - product_market
+    - delivery_operations
+  - id: overall
+    title: Overall RC
+    groups:
+    - product_market
+    - domain_architecture
+    - reliability_resilience
+    - delivery_operations
+    - security_governance
+- id: engineering
+  title: Engineering
+  description: Primary architecture and implementation view for component leads.
+  axes:
+  - id: product
+    title: Product
+    groups:
+    - product_market
+  - id: architecture
+    title: Architecture
+    groups:
+    - domain_architecture
+  - id: data
+    title: Data
+    groups:
+    - data_persistence
+  - id: api
+    title: API & Contracts
+    groups:
+    - api_contracts
+  - id: runtime
+    title: Runtime
+    groups:
+    - runtime_performance
+  - id: reliability
+    title: Reliability
+    groups:
+    - reliability_resilience
+  - id: security
+    title: Security
+    groups:
+    - security_governance
+  - id: delivery
+    title: Delivery
+    groups:
+    - delivery_operations
+  - id: quality
+    title: Quality
+    groups:
+    - quality_testing
+  - id: overall
+    title: Overall RC
+    groups:
+    - domain_architecture
+    - runtime_performance
+    - reliability_resilience
+    - delivery_operations
+    - quality_testing
+- id: operations
+  title: Operations
+  description: Operations and runtime sustainability view.
+  axes:
+  - id: runtime
+    title: Runtime Ops
+    groups:
+    - runtime_performance
+  - id: reliability
+    title: Reliability
+    groups:
+    - reliability_resilience
+  - id: observability
+    title: Observability
+    groups:
+    - delivery_operations
+  - id: security
+    title: Security
+    groups:
+    - security_governance
+  - id: traffic
+    title: Traffic Strategy
+    groups:
+    - delivery_operations
+    - runtime_performance
+  - id: delivery
+    title: Delivery Automation
+    groups:
+    - delivery_operations
+  - id: recovery
+    title: Recovery
+    groups:
+    - reliability_resilience
+  - id: overall
+    title: Overall RC
+    groups:
+    - runtime_performance
+    - reliability_resilience
+    - delivery_operations
+    - security_governance
+- id: owner
+  title: Owner / Portfolio
+  description: Cross-ecosystem portfolio view tuned for Smartresponsor owner decisions.
+  axes:
+  - id: identity
+    title: Product Identity
+    groups:
+    - product_market
+  - id: consistency
+    title: Architecture Consistency
+    groups:
+    - domain_architecture
+  - id: delivery
+    title: Delivery Maturity
+    groups:
+    - delivery_operations
+  - id: quality
+    title: Quality Depth
+    groups:
+    - quality_testing
+  - id: governance
+    title: Governance
+    groups:
+    - security_governance
+  - id: fit
+    title: Ecosystem Fit
+    groups:
+    - product_market
+    - domain_architecture
+  - id: debt
+    title: Technical Debt
+    groups:
+    - domain_architecture
+  - id: overall
+    title: Overall RC
+    groups:
+    - product_market
+    - domain_architecture
+    - quality_testing
+    - delivery_operations
+    - security_governance

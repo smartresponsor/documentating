@@ -65,6 +65,8 @@ That is why this portal should be read not only as a blog, but as a public map o
 
 == Pre-RC Quality Atlas
 
+* xref:quality-atlas/portfolio.adoc[Portfolio] — profile-aware portfolio view, history-backed snapshots, and owner-facing radar overlays.
+
 The current quality layer describes the ecosystem before release-candidate maturity and before versioned portfolio dashboards.
 
 This pre-RC quality layer is auto-generated from component reports on every push to the documentation repository.

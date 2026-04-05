@@ -1,0 +1,237 @@
+component: discovering
+title: Discovering
+snapshot:
+  date: '2026-04-05'
+  label: pre-rc-seed
+  ref: master
+  origin: quality-atlas seed
+report_status: draft
+groups:
+  product_market:
+    score: 7.7
+    source_axis: overall
+  domain_architecture:
+    score: 7.7
+    source_axis: overall
+  runtime_performance:
+    score: 7.7
+    source_axis: overall
+  quality_testing:
+    score: 7.7
+    source_axis: overall
+  delivery_operations:
+    score: 7.7
+    source_axis: overall
+  security_governance:
+    score: 7.7
+    source_axis: overall
+profile_axes:
+  engineering:
+    product: 8.0
+    architecture: 7.8
+    data: 7.75
+    api: 7.9
+    runtime: 7.7
+    reliability: 7.55
+    security: 7.4
+    delivery: 7.4
+    quality: 6.9
+    overall: 7.7
+  owner:
+    identity: 8.0
+    consistency: 7.8
+    delivery: 7.4
+    quality: 6.9
+    governance: 7.4
+    fit: 8.0
+    debt: 3.65
+    overall: 7.7
+  investor:
+    product: 8.0
+    architecture: 7.8
+    delivery: 7.4
+    reliability: 7.3
+    governance: 7.4
+    clarity: 8.0
+    overall: 7.7
+  operations:
+    runtime: 7.7
+    reliability: 7.3
+    observability: 7.4
+    security: 7.4
+    traffic: 7.55
+    delivery: 7.4
+    recovery: 7.15
+    overall: 7.7
+metrics:
+  product:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Component identity and market-facing shape are materially present.
+    risks:
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
+    improvements:
+    - Refresh this metric from a scheduled repository assessment run.
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
+  architecture:
+    relevant: true
+    maturity: solid
+    score: 7.8
+    summary: Symfony-oriented architecture shape is materially present.
+    risks:
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
+    improvements:
+    - Refresh this metric from a scheduled repository assessment run.
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
+  runtime:
+    relevant: true
+    maturity: solid
+    score: 7.7
+    summary: Runtime and application surface are materially present.
+    risks:
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
+    improvements:
+    - Refresh this metric from a scheduled repository assessment run.
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
+  qa:
+    relevant: true
+    maturity: partial
+    score: 6.9
+    summary: Testing and QA posture are materially present but remain pre-RC.
+    risks:
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
+    improvements:
+    - Refresh this metric from a scheduled repository assessment run.
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
+  ops:
+    relevant: true
+    maturity: partial
+    score: 7.4
+    summary: Operational, governance, and security posture are materially present
+      but remain pre-RC.
+    risks:
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
+    improvements:
+    - Refresh this metric from a scheduled repository assessment run.
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
+  market:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Business-facing and portfolio-facing alignment is materially present.
+    risks:
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
+    improvements:
+    - Refresh this metric from a scheduled repository assessment run.
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
+  overall:
+    relevant: true
+    maturity: solid
+    score: 7.7
+    summary: Overall release-candidate direction is visible, but the component remains
+      in pre-RC life.
+    risks:
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
+    improvements:
+    - Refresh this metric from a scheduled repository assessment run.
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
+strengths:
+- 'Highest current axis: product 8.0/10'
+- Component is already represented in the current pre-RC Atlas.
+risks:
+- Snapshot was seeded from the current atlas and does not yet contain repository-scan
+  deltas.
+- Structured metrics should be refreshed by the scheduled assessment workflow.
+recommended_next_actions:
+- Run scheduled repository assessment and enrich narrative evidence.
+- Regenerate component report blocks from the current snapshot contract.
+evidence:
+- path: .antora-src/modules/ROOT/pages/component/discovering/report/index.adoc
+  note: Current component report page if present.
+- path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+  note: Seeded atlas dataset source.

@@ -1,0 +1,29 @@
+version: '1.0'
+description: Scoring and aggregation rules for Smartresponsor Quality Atlas.
+score_scale:
+  min: 0.0
+  max: 10.0
+  display_min: 6.5
+  display_max: 9.5
+maturity_scale:
+- id: missing
+  min_score: 0.0
+  max_score: 2.49
+- id: weak
+  min_score: 2.5
+  max_score: 4.99
+- id: partial
+  min_score: 5.0
+  max_score: 7.49
+- id: solid
+  min_score: 7.5
+  max_score: 8.74
+- id: strong
+  min_score: 8.75
+  max_score: 10.0
+rules:
+  irrelevant_metrics: exclude_from_group_average
+  group_aggregation: weighted_average
+  axis_aggregation: weighted_average
+  overall_aggregation: profile_axis_average
+  history_policy: append_immutable_snapshot_then_refresh_current

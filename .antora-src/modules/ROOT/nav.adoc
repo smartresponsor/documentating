@@ -2,6 +2,7 @@
 * xref:article/index.adoc[Articles]
 * xref:component/index.adoc[Components]
 * xref:quality-atlas/index.adoc[Quality Atlas]
+** xref:quality-atlas/portfolio.adoc[Portfolio]
 ** xref:quality-atlas/overview.adoc[Overview]
 ** xref:quality-atlas/quality-baseline.adoc[Quality Baseline]
 ** xref:quality-atlas/principles.adoc[Principles]

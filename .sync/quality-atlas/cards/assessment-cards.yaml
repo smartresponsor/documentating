@@ -1,0 +1,54 @@
+version: '1.0'
+description: Assessment cards used by the regular Quality Atlas runner when preparing
+  AI prompts and structured outputs.
+cards:
+- id: repo_facts
+  title: Repository Facts
+  purpose: Collect deterministic repository facts before AI scoring.
+  required_inputs:
+  - repository manifest
+  - component report path
+  - git metadata
+  - quality tool outputs
+  required_outputs:
+  - facts bundle
+  - repo summary
+  - tool results
+- id: engineering_assessment
+  title: Engineering Assessment
+  purpose: Score the canonical engineering profile and capture narrative risks/improvements.
+  required_inputs:
+  - metric catalog
+  - view profile engineering
+  - facts bundle
+  - previous snapshot if any
+  required_outputs:
+  - per-axis scores
+  - metric deltas
+  - risks
+  - improvements
+  - tradeoffs
+- id: owner_assessment
+  title: Owner Assessment
+  purpose: Score ecosystem fit, RC momentum, and owner-facing summary.
+  required_inputs:
+  - metric catalog
+  - view profile owner
+  - facts bundle
+  - previous snapshot if any
+  required_outputs:
+  - owner summary
+  - top risks
+  - next actions
+  - overall RC verdict
+- id: adoc_render
+  title: Narrative Report Render
+  purpose: Render or refresh component adoc report from the structured snapshot.
+  required_inputs:
+  - current snapshot
+  - component title
+  - report template context
+  required_outputs:
+  - adoc rc summary
+  - scorecard block
+  - recommended next actions
