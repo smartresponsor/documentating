@@ -1,19 +1,24 @@
 {
-  "generated_at": "2026-04-05T07:08:42.499098+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260405T070750Z",
+  "generated_at": "2026-04-05T09:45:38.924948+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260405T094431Z",
   "mode": "responses",
   "components": [
     {
+      "component": "accessing",
+      "title": "Accessing",
+      "overall": 0.0,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/history/2026-04-05-assessment-2026-04-05.yaml",
+      "summary": "Refreshed owner-facing snapshot grounded in the repository’s canonical Accessing report and site automation; prior pre-RC scores are retained pending direct upstream code evidence."
+    },
+    {
       "component": "documentating",
       "title": "Documentating",
-      "overall": 7.5,
+      "overall": 0.0,
       "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/documentating/history/2026-04-05-assessment-2026-04-05.yaml",
-      "summary": "Antora-driven documentation site with automated GitHub Pages publishing and scheduled Quality Atlas assessment; strong delivery scaffolding but limited automated content QA and minimal runtime/observability typical of static sites."
+      "summary": "Antora-powered docs site with custom domain and automated gh-pages publishing; strong operational scaffolding but missing content QA gates, previews, and rollback clarity."
     }
   ],
   "failures": [],
   "status": "ok",
-  "selected_components": [
-    "documentating"
-  ]
+  "selected_components": []
 }

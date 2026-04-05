@@ -8,74 +8,76 @@ snapshot:
 report_status: current
 groups:
   product_market:
-    score: 7.55
+    score: 0.0
   domain_architecture:
-    score: 7.4
+    score: 0.0
   data_persistence:
-    score: 7.25
+    score: 0.0
   api_contracts:
-    score: 7.35
+    score: 0.0
   runtime_performance:
-    score: 7.1
+    score: 0.0
   reliability_resilience:
-    score: 7.2
+    score: 0.0
   security_governance:
-    score: 7.7
+    score: 0.0
   delivery_operations:
-    score: 7.7
+    score: 0.0
   quality_testing:
-    score: 6.8
+    score: 0.0
 profile_axes:
   engineering:
-    product: 7.8
-    architecture: 7.4
-    data: 7.25
-    api: 7.35
-    runtime: 7.1
-    reliability: 7.4
-    security: 7.7
-    delivery: 7.7
-    quality: 6.8
-    overall: 7.5
+    product: 0.0
+    architecture: 0.0
+    data: 0.0
+    api: 0.0
+    runtime: 0.0
+    reliability: 0.0
+    security: 0.0
+    delivery: 0.0
+    quality: 0.0
+    overall: 0.0
   owner:
-    identity: 7.8
-    consistency: 7.4
-    delivery: 7.7
-    quality: 6.8
-    governance: 7.7
-    fit: 7.55
-    debt: 3.9
-    overall: 7.5
+    identity: 0.0
+    consistency: 0.0
+    delivery: 0.0
+    quality: 0.0
+    governance: 0.0
+    fit: 0.0
+    debt: 10.0
+    overall: 0.0
   investor:
-    product: 7.8
-    architecture: 7.4
-    delivery: 7.7
-    reliability: 6.95
-    governance: 7.7
-    clarity: 7.55
-    overall: 7.5
+    product: 0.0
+    architecture: 0.0
+    delivery: 0.0
+    reliability: 0.0
+    governance: 0.0
+    clarity: 0.0
+    overall: 0.0
   operations:
-    runtime: 7.1
-    reliability: 6.95
-    observability: 7.7
-    security: 7.7
-    traffic: 7.4
-    delivery: 7.7
-    recovery: 7.25
-    overall: 7.5
+    runtime: 0.0
+    reliability: 0.0
+    observability: 0.0
+    security: 0.0
+    traffic: 0.0
+    delivery: 0.0
+    recovery: 0.0
+    overall: 0.0
 metrics:
   product:
     relevant: true
     maturity: solid
-    score: 7.8
-    summary: Antora-based static documentation site with a clear build/publish pipeline
-      and custom domain, providing a solid identity for owner-facing docs.
+    score: 0.0
+    summary: Antora-driven static documentation site with a custom domain and deterministic
+      GH Actions build/publish pipeline, providing a clear owner-facing identity.
     risks:
-    - Content quality gates are not enforced automatically in CI.
-    - Audience/scope for the docs is implicit rather than explicitly stated.
+    - Audience and scope are not explicitly stated on the landing page or README.
+    - Content quality gates (e.g., link/structure checks) are not enforced before
+      publish.
     improvements:
-    - State the target audience and scope on the site landing/README.
-    - Add pre-publish validation for content (e.g., link and structural checks).
+    - State the target audience and scope on the landing page/README.
+    - Add pre-publish link and structure validation in the gh-pages workflow.
+    - Publish a simple docs changelog to communicate notable updates.
     implemented: []
     partial:
     - Bootstrap placeholder only.
@@ -85,30 +87,32 @@ metrics:
     - Neutral bootstrap values unblock portfolio participation without pretending
       to be a real audit.
     evidence:
-    - path: .antora-src/antora.yml
+    - path: package.json
       note: Metric-level assessment evidence.
     - path: antora-playbook.yml
       note: Metric-level assessment evidence.
-    - path: package.json
-      note: Metric-level assessment evidence.
     - path: docs/CNAME
       note: Metric-level assessment evidence.
-    - path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
+    - path: .antora-src/antora.yml
+      note: Metric-level assessment evidence.
+    - path: .github/workflows/gh-pages.yml
+      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/index.adoc
       note: Metric-level assessment evidence.
   architecture:
     relevant: true
     maturity: solid
-    score: 7.4
-    summary: Repository shows organized tooling and content boundaries (.gate, .deploy,
-      .smoke), but there is little application architecture to assess and responsibilities
-      are not documented.
+    score: 0.0
+    summary: Clear operational folder boundaries (.gate, .deploy, .smoke, .intelligence,
+      .commanding) and Antora source are present, but responsibilities/ownership and
+      workflow coupling are not documented.
     risks:
     - Domain/bounded-context boundaries for repo tooling are not described.
     - Coupling between scripts/workflows is not documented, which may hinder maintenance.
     improvements:
-    - Add a brief architecture/ownership section mapping directories to responsibilities
-      in README or BUILDING.
-    - Document how the Antora source, CI workflows, and publication artifacts relate.
+    - Add an architecture/ownership section mapping directories to responsibilities
+      (README or BUILDING.md).
+    - Document how Antora source, CI workflows, and publication artifacts relate end-to-end.
     implemented: []
     partial:
     - Bootstrap placeholder only.
@@ -118,29 +122,34 @@ metrics:
     - Neutral bootstrap values unblock portfolio participation without pretending
       to be a real audit.
     evidence:
-    - path: .gate/README.md
+    - path: .gate/MANIFEST.json
       note: Metric-level assessment evidence.
     - path: .deploy/MANIFEST.md
       note: Metric-level assessment evidence.
     - path: .smoke/probe
       note: Metric-level assessment evidence.
+    - path: .intelligence/intelligence.json
+      note: Metric-level assessment evidence.
+    - path: .commanding/README.md
+      note: Metric-level assessment evidence.
     - path: BUILDING.md
       note: Metric-level assessment evidence.
-    - path: README.md
+    - path: .antora-src/antora.yml
       note: Metric-level assessment evidence.
   runtime:
     relevant: true
     maturity: solid
-    score: 7.1
-    summary: Static site runtime via GitHub Pages; scalability is largely handled
-      by the platform, with no explicit runtime tuning or monitoring in the repo.
+    score: 0.0
+    summary: Static site is served via GitHub Pages; scalability is handled by the
+      platform, with no explicit runtime probes or edge controls wired into the CI.
     risks:
-    - No runtime health checks or synthetic probes are wired into the publishing workflow.
-    - Edge/CDN configuration (e.g., Cloudflare) exists in repo but is not used in
-      CI.
+    - No runtime health checks or synthetic probes are integrated into the publish
+      workflow.
+    - Cloudflare configuration artifacts exist but are not integrated with CI, risking
+      config drift.
     improvements:
     - Document the hosting/edge strategy and expected caching behavior.
-    - Integrate a simple post-publish probe step to verify site availability.
+    - Add a post-publish synthetic probe step to verify site availability.
     - If Cloudflare is intended, add an automated deployment/configuration step.
     implemented: []
     partial:
@@ -153,22 +162,22 @@ metrics:
     evidence:
     - path: .github/workflows/gh-pages.yml
       note: Metric-level assessment evidence.
-    - path: .smoke/probe
-      note: Metric-level assessment evidence.
     - path: .deploy/cloudflare
+      note: Metric-level assessment evidence.
+    - path: docs/CNAME
       note: Metric-level assessment evidence.
   qa:
     relevant: true
     maturity: solid
-    score: 6.8
-    summary: Quality scaffolding exists (.gate, .smoke) but CI does not run automated
-      tests or link/structure validation before publishing.
+    score: 0.0
+    summary: Quality scaffolding exists (.gate, .smoke), but the gh-pages workflow
+      lacks automated link/structure validation and does not run probes before publishing.
     risks:
     - Broken links or content regressions could ship without detection.
     - No contract/e2e checks exist for the published site artifacts.
     improvements:
     - Add link and content validation steps to the gh-pages workflow prior to publish.
-    - Wire .smoke probes or minimal checks to run on each build.
+    - Wire simple .smoke probes to run on each build.
     - Introduce a basic PR check that builds the site and surfaces issues early.
     implemented: []
     partial:
@@ -179,25 +188,26 @@ metrics:
     - Neutral bootstrap values unblock portfolio participation without pretending
       to be a real audit.
     evidence:
-    - path: .github/workflows/gh-pages.yml
-      note: Metric-level assessment evidence.
-    - path: .gate/run.sh
+    - path: .gate/quality
       note: Metric-level assessment evidence.
     - path: .smoke/probe
+      note: Metric-level assessment evidence.
+    - path: .github/workflows/gh-pages.yml
       note: Metric-level assessment evidence.
   ops:
     relevant: true
     maturity: solid
-    score: 7.7
-    summary: CI automates site build and gh-pages publish with concurrency control,
-      and a scheduled assessment job maintains Quality Atlas snapshots.
+    score: 0.0
+    summary: CI automates Antora build and gh-pages publish with concurrency control;
+      a scheduled assessment job maintains Quality Atlas snapshots.
     risks:
-    - Single production deploy on push without preview or staged environments.
+    - Single production deploy on push without previews or staged environments.
     - No explicit rollback mechanism is defined for gh-pages publishes.
+    - No dependency caching is configured, leading to slower, less deterministic builds.
     improvements:
     - Add PR previews or ephemeral deployments for review.
     - Keep a last-known-good gh-pages reference and document rollback steps.
-    - Cache dependencies in CI to stabilize and speed up builds.
+    - Cache npm and pip dependencies in CI to stabilize and speed up builds.
     implemented: []
     partial:
     - Bootstrap placeholder only.
@@ -211,20 +221,18 @@ metrics:
       note: Metric-level assessment evidence.
     - path: .github/workflows/quality-atlas-assessment.yml
       note: Metric-level assessment evidence.
-    - path: package.json
-      note: Metric-level assessment evidence.
   market:
     relevant: true
     maturity: solid
-    score: 7.3
-    summary: As a documentation component, market alignment is secondary; the site
-      emphasizes documentation quality and search via the Antora lunr extension.
+    score: 0.0
+    summary: As a documentation component, market alignment is secondary; discoverability
+      and clarity are supported by Antora and the lunr extension.
     risks:
     - Audience and value proposition are not clearly stated for external readers.
     - No visible changelog/release notes to communicate documentation updates.
     improvements:
     - Add a short 'Who this is for' section on the landing page/README.
-    - Publish a simple docs changelog or release notes section in the site.
+    - Publish a simple docs changelog or release notes section.
     implemented: []
     partial:
     - Bootstrap placeholder only.
@@ -236,16 +244,16 @@ metrics:
     evidence:
     - path: package.json
       note: Metric-level assessment evidence.
-    - path: .antora-src/antora.yml
+    - path: .antora-src/modules/ROOT/pages/index.adoc
       note: Metric-level assessment evidence.
     - path: README.md
       note: Metric-level assessment evidence.
   overall:
     relevant: true
     maturity: solid
-    score: 7.5
+    score: 0.0
     summary: Solid automated documentation delivery with scheduled assessment support;
-      primary gaps are automated content QA and staged delivery practices.
+      main gaps are automated content QA, preview environments, and rollback readiness.
     risks:
     - Potential to ship regressions due to lack of pre-publish checks.
     - Operational assets remain unintegrated, creating drift between intent and execution.
@@ -265,33 +273,29 @@ metrics:
       note: Metric-level assessment evidence.
     - path: .github/workflows/quality-atlas-assessment.yml
       note: Metric-level assessment evidence.
+    - path: .deploy/cloudflare
+      note: Metric-level assessment evidence.
+    - path: .gate/README.md
+      note: Metric-level assessment evidence.
     - path: .smoke/probe
       note: Metric-level assessment evidence.
-    - path: .deploy/MANIFEST.md
-      note: Metric-level assessment evidence.
 strengths:
-- Automated site build and publish via GitHub Actions (Antora + gh-pages).
-- Clear content pipeline using Antora with search (lunr extension).
-- Scheduled Quality Atlas assessment workflow seeded and runnable.
-- Structured repo with ops/quality scaffolding (.gate, .deploy, .smoke).
-- Custom domain support present (CNAME) and nojekyll handling.
+- Deterministic Antora build and gh-pages publish via GitHub Actions
+- Custom domain (CNAME) and nojekyll handling for public site
+- Search enabled through Antora lunr extension
+- Scheduled Quality Atlas assessment workflow with concurrency control
 risks:
-- Minimal automated content QA (no link/check steps observed in CI).
-- Single-environment deploy on push to gh-pages without previews/canary.
-- Operational assets (e.g., Cloudflare, Helm) exist but are not wired into CI.
-- Runtime monitoring/observability not defined for the published site.
-- Ownership/architecture boundaries for repo tooling are not documented.
+- No pre-publish link/structure validation in CI
+- No PR preview or staged environment before publishing
+- No explicit rollback strategy for gh-pages
+- Cloudflare deploy artifacts exist but are not wired into CI
 recommended_next_actions:
-- Add basic content quality gates to CI (broken-link validation and site checks) before
-  publishing.
-- Introduce PR preview builds or ephemeral artifacts to review changes pre-production.
-- Wire existing .smoke probes into CI for post-build validations.
-- If Cloudflare/other edge is intended, add a CI step to publish/configure it and
-  document the flow.
-- Document directory responsibilities and ownership in README/BUILDING to clarify
-  boundaries.
-- Add a lightweight rollback strategy for gh-pages (retain and reference last-good
-  commit).
+- Add link and structure validation steps before the publish stage in gh-pages workflow
+- Add a post-publish synthetic probe to verify availability
+- Enable PR previews or ephemeral deployments for docs review
+- Document and automate a rollback path for gh-pages (keep last-known-good ref)
+- If Cloudflare is intended, integrate a CI step to configure/apply edge settings
+- Cache npm/pip dependencies in CI to speed up and stabilize builds
 evidence:
 - path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
   note: Configured component report path.
@@ -317,13 +321,16 @@ evidence:
   note: Assessment evidence path.
 - path: README.md
   note: Assessment evidence path.
+- path: .antora-src/modules/ROOT/pages/index.adoc
+  note: Assessment evidence path.
+- path: .deploy/cloudflare
+  note: Assessment evidence path.
 assessment_notes:
-- Antora-driven documentation site with automated GitHub Pages publishing and scheduled
-  Quality Atlas assessment; strong delivery scaffolding but limited automated content
-  QA and minimal runtime/observability typical of static sites.
-- Scope is a documentation component; many runtime metrics are naturally less relevant.
-- Assessment is based on repository structure and CI workflows; no separate quality
-  tool outputs were provided.
-- This component is bootstrap-enabled inside the atlas repository to provide a live
-  local target.
-assessment_confidence: medium
+- Antora-powered docs site with custom domain and automated gh-pages publishing; strong
+  operational scaffolding but missing content QA gates, previews, and rollback clarity.
+- Assessment grounded in repository facts and existing snapshot; no runtime telemetry
+  present in-repo.
+- Workflows use Node 24 and Python 3.12; Antora 3.1.12 with lunr extension is configured.
+- Operational directories (.gate, .deploy, .smoke, .intelligence, .commanding) are
+  present but not fully documented.
+assessment_confidence: high
