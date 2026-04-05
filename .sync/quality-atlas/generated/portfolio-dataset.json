@@ -30,7 +30,7 @@
           "id": "reliability",
           "title": "Reliability",
           "average": 8.21,
-          "min": 4.2,
+          "min": 4.25,
           "max": 8.95
         },
         {
@@ -63,12 +63,12 @@
             "product": 0.0,
             "architecture": 0.0,
             "delivery": 7.9,
-            "reliability": 4.2,
+            "reliability": 4.25,
             "governance": 7.9,
             "clarity": 0.0,
-            "overall": 8.4
+            "overall": 8.3
           },
-          "overall": 4.06
+          "overall": 4.05
         },
         {
           "component": "addressing",
@@ -404,7 +404,7 @@
         {
           "id": "quality",
           "title": "Quality",
-          "average": 8.47,
+          "average": 8.48,
           "min": 6.9,
           "max": 9.2
         },
@@ -429,8 +429,8 @@
             "reliability": 3.95,
             "security": 7.9,
             "delivery": 7.9,
-            "quality": 8.4,
-            "overall": 8.4
+            "quality": 8.5,
+            "overall": 8.3
           },
           "overall": 3.66
         },
@@ -777,7 +777,7 @@
           "id": "reliability",
           "title": "Reliability",
           "average": 8.21,
-          "min": 4.2,
+          "min": 4.25,
           "max": 8.95
         },
         {
@@ -829,13 +829,13 @@
           "title": "Accessing",
           "axes": {
             "runtime": 0.0,
-            "reliability": 4.2,
+            "reliability": 4.25,
             "observability": 7.9,
             "security": 7.9,
             "traffic": 3.95,
             "delivery": 7.9,
-            "recovery": 8.15,
-            "overall": 8.4
+            "recovery": 8.2,
+            "overall": 8.3
           },
           "overall": 6.05
         },
@@ -1157,7 +1157,7 @@
         {
           "id": "quality",
           "title": "Quality Depth",
-          "average": 8.47,
+          "average": 8.48,
           "min": 6.9,
           "max": 9.2
         },
@@ -1180,7 +1180,7 @@
           "title": "Technical Debt",
           "average": 2.78,
           "min": 2.0,
-          "max": 6.8
+          "max": 6.75
         },
         {
           "id": "overall",
@@ -1198,11 +1198,11 @@
             "identity": 0.0,
             "consistency": 0.0,
             "delivery": 7.9,
-            "quality": 8.4,
+            "quality": 8.5,
             "governance": 7.9,
             "fit": 0.0,
-            "debt": 6.8,
-            "overall": 8.4
+            "debt": 6.75,
+            "overall": 8.3
           },
           "overall": 4.92
         },
@@ -1516,53 +1516,52 @@
           "reliability": 3.95,
           "security": 7.9,
           "delivery": 7.9,
-          "quality": 8.4,
-          "overall": 8.4
+          "quality": 8.5,
+          "overall": 8.3
         },
         "owner": {
           "identity": 0.0,
           "consistency": 0.0,
           "delivery": 7.9,
-          "quality": 8.4,
+          "quality": 8.5,
           "governance": 7.9,
           "fit": 0.0,
-          "debt": 6.8,
-          "overall": 8.4
+          "debt": 6.75,
+          "overall": 8.3
         },
         "investor": {
           "product": 0.0,
           "architecture": 0.0,
           "delivery": 7.9,
-          "reliability": 4.2,
+          "reliability": 4.25,
           "governance": 7.9,
           "clarity": 0.0,
-          "overall": 8.4
+          "overall": 8.3
         },
         "operations": {
           "runtime": 0.0,
-          "reliability": 4.2,
+          "reliability": 4.25,
           "observability": 7.9,
           "security": 7.9,
           "traffic": 3.95,
           "delivery": 7.9,
-          "recovery": 8.15,
-          "overall": 8.4
+          "recovery": 8.2,
+          "overall": 8.3
         }
       },
-      "overall": 8.4,
+      "overall": 8.3,
       "strengths": [
-        "Clear product scope and manifests",
-        "Symfony 8 + Doctrine 3 layered architecture",
-        "Comprehensive test layout (unit, integration, functional, browser, e2e)",
-        "Built-in security features (2FA, email verification, reset, rate limiting)",
-        "Composer scripts for lint, CS, static analysis, and tests"
+        "Clear product scope and manifests in repo",
+        "Solid Symfony 8 + Doctrine 3 architecture with domain-oriented structure",
+        "Comprehensive tests (unit, integration/functional, Panther, Playwright) and static analysis tools",
+        "Strong security posture (2FA/TOTP, CSRF, password hashing, rate limiting)",
+        "Operational logging via Monolog"
       ],
       "risks": [
-        "No CI/CD workflows present in-repo",
-        "Static analysis and PHPUnit configs only as .dist",
-        "Observability/operations integrations not evident",
-        "Docs not wired to Antora report path",
-        "Proprietary license may limit external adoption"
+        "No CI/CD workflows present in the repo",
+        "Repository docs not wired into Antora report path",
+        "Observability depth (metrics/tracing/alerts) not evidenced",
+        "PHP ^8.4 requirement tightens deployment targets without automated checks"
       ]
     },
     {
@@ -2751,7 +2750,7 @@
         "label": "assessment-2026-04-05",
         "ref": "master",
         "origin": "quality-atlas responses assessment",
-        "overall": 8.4
+        "overall": 8.3
       },
       {
         "date": "2026-04-05",

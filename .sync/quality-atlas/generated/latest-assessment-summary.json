@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-05T20:18:02.395738+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260405T201656Z",
+  "generated_at": "2026-04-05T20:42:35.747522+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260405T204135Z",
   "mode": "responses",
   "components": [
     {
       "component": "accessing",
       "title": "Accessing",
-      "overall": 8.4,
+      "overall": 8.3,
       "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/history/2026-04-05-assessment-2026-04-05.yaml",
-      "summary": "Symfony 8 access-management component with clear product identity, solid architecture, and broad test layers; main RC blockers are missing CI/ops automation and docs publication."
+      "summary": "Symfony 8 account-access application with clear scope, strong security features, and comprehensive tests; main gaps are CI/CD automation and Antora-linked docs."
     }
   ],
   "failures": [],
