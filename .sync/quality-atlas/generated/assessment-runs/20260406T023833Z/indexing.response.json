@@ -1,0 +1,466 @@
+{
+  "id": "resp_0970aa05dafaac390069d31cacb6fc819390c9d1dc60f09b04",
+  "object": "response",
+  "created_at": 1775443116,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1775443188,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "model": "gpt-5-2025-08-07",
+  "output": [
+    {
+      "id": "rs_0970aa05dafaac390069d31caed050819389990468784d4db3",
+      "type": "reasoning",
+      "summary": []
+    },
+    {
+      "id": "msg_0970aa05dafaac390069d31ce4c01c8193a161bb837ee1453d",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"component\":\"indexing\",\"summary\":\"Indexing reads as a Symfony-native indexing/search-runtime component with strong internal scaffolding (dual-DB docker, smoke/probe tooling, governance, and docs), trending toward RC but with gaps in release tagging, Antora navigation, and verified test execution.\",\"strengths\":[\"Clear indexing identity and Symfony 8/PHP 8.4 targeting\",\"Dual-DB runtime scaffolding via docker-compose (MySQL/Postgres) with smoke scripts\",\"Static analysis and code-style tooling present (PHPStan, PHP-CS-Fixer) and CI scripts wired in composer\",\"Operational/observability scaffolding present (ops/grafana, ops/alert, health script)\",\"Governance surfaces present (.gate, MANIFEST files) and structured docs footprint\"],\"risks\":[\"No git tags detected for releases\",\"Antora navigation/root index not present, reducing docs discoverability\",\"PHPUnit config only as .dist; unit test suite execution not evidenced\",\"Kubernetes manifests not evidenced; runtime orchestration appears docker-only\",\"Smoke/perf lanes presence is visible but CI integration is not evidenced\"],\"next_actions\":[\"Create and publish semantic version tags and wire a release workflow\",\"Add Antora nav.adoc and ROOT pages/index.adoc to surface docs in site\",\"Promote phpunit.xml from .dist and ensure test suite runs in CI\",\"Ensure CI runs phpstan, phpunit, and smoke/perf probes on PRs and main\",\"Document and publish Grafana dashboards and alert runbooks in ops/\",\"Add a brief runtime README in docker/ describing MySQL/Postgres flows and health checks\"],\"notes\":[\"Repository scan on master at d10c828 (no exact tag)\",\"Report source present under .antora-src; Antora nav/root index not detected\",\"Composer scripts declare CI lanes; actual workflow wiring not inspected here\"],\"confidence\":\"medium\",\"evidence_paths\":[\"composer.json\",\"docker/index-mysql.yaml\",\"docker/index-postgres.yaml\",\"bin/index-smoke-mysql.php\",\"bin/index-smoke-postgres.php\",\".smoke/k6\",\".gate/MANIFEST.json\",\"ops/grafana\",\"ops/alert\",\".github/workflows\",\"phpstan.neon\",\"phpunit.xml.dist\",\"config/services-index.php\",\"ddl/index\",\".antora-src/modules/ROOT/pages/component/indexing/report/index.adoc\",\"README.md\",\"CHANGELOG.md\",\"MANIFEST.yaml\",\".commanding/health.sh\"],\"suggested_score_overrides\":{\"product\":null,\"architecture\":null,\"runtime\":null,\"qa\":null,\"ops\":null,\"market\":null,\"overall\":null},\"metric_updates\":{\"product\":{\"summary\":\"Component identity and market-facing shape remain materially present, with a clear indexing/search-runtime focus and internal documentation footprint.\",\"risks\":[\"Docs navigation for Antora is missing, reducing discoverability\",\"Release cadence not evidenced due to missing git tags\"],\"improvements\":[\"Add Antora nav.adoc and ROOT pages/index.adoc\",\"Create semantic version tags and maintain CHANGELOG on releases\"],\"evidence\":[\"composer.json\",\".antora-src/modules/ROOT/pages/component/indexing/report/index.adoc\",\"README.md\",\"CHANGELOG.md\"]},\"architecture\":{\"summary\":\"Architecture presents a coherent indexing-runtime shape (config surfaces, DDL, dual-DB options) consistent with a governed internal subsystem.\",\"risks\":[\"Pre-release stabilization risk signaled by lack of tags\",\"Integration boundaries not documented via Antora nav/index\"],\"improvements\":[\"Document module boundaries and data flows in doc/index\",\"Tag stable checkpoints to mark architectural baselines\"],\"evidence\":[\"config/services-index.php\",\"ddl/index\",\"docker/index-mysql.yaml\",\"docker/index-postgres.yaml\",\"MANIFEST.yaml\"]},\"runtime\":{\"summary\":\"Runtime is materially present with docker-based MySQL/Postgres flows, smoke scripts, and health probes indicating an executable surface.\",\"risks\":[\"Orchestration appears docker-only; no Kubernetes readiness evidenced\",\"CI execution of smoke/perf probes not evidenced\"],\"improvements\":[\"Provide runtime README with start/stop, health, and troubleshooting\",\"Add optional Kubernetes manifests or document deployment expectations\"],\"evidence\":[\"docker/index-mysql.yaml\",\"docker/index-postgres.yaml\",\"bin/index-smoke-mysql.php\",\"bin/index-smoke-postgres.php\",\".commanding/health.sh\",\".smoke/k6\"]},\"qa\":{\"summary\":\"QA posture is present via static analysis, code style, and phpunit configuration (.dist), with smoke/perf probes available.\",\"risks\":[\"PHPUnit only configured as .dist; active test suite execution not evidenced\",\"Coverage reporting and CI wiring for tests not evidenced\"],\"improvements\":[\"Promote phpunit.xml from .dist and run tests in CI\",\"Surface coverage and static analysis results in CI artifacts\"],\"evidence\":[\"phpstan.neon\",\"phpunit.xml.dist\",\".php-cs-fixer.php\",\"composer.json\",\".smoke/k6\"]},\"ops\":{\"summary\":\"Operational readiness is signaled by Grafana/alert scaffolding, governance gate, health scripts, and CI directory presence.\",\"risks\":[\"Alerting integrations and dashboards publication not evidenced\",\"No release workflow or tags to anchor operational rollouts\"],\"improvements\":[\"Publish and document dashboards/runbooks under ops/\",\"Add release workflow with tagging and changelog publishing\"],\"evidence\":[\"ops/grafana\",\"ops/alert\",\".gate/MANIFEST.json\",\".github/workflows\",\".commanding/health.sh\"]},\"market\":{\"summary\":\"Business/portfolio alignment reads as an internal, governed indexing capability with maintained docs and changelog.\",\"risks\":[\"Proprietary license limits external adoption\",\"Docs nav gaps may reduce portfolio-facing clarity\"],\"improvements\":[\"Clarify positioning in README and doc/index with use-cases\",\"Add Antora nav to improve documentation entry points\"],\"evidence\":[\"composer.json\",\"README.md\",\"CHANGELOG.md\",\".antora-src/modules/ROOT/pages/component/indexing/report/index.adoc\"]},\"overall\":{\"summary\":\"Overall RC direction remains visible with strong internal indexing signals; remaining gaps are release tagging, docs navigation, and verified CI test execution.\",\"risks\":[\"Missing git tags keep the component pre-release\",\"Docs navigation/index missing for Antora site\",\"Test execution/coverage not evidenced in CI\"],\"improvements\":[\"Introduce semantic version tags and a release workflow\",\"Add Antora nav/index and verify site rendering\",\"Ensure phpunit/phpstan/smoke run in CI with artifacts\"],\"evidence\":[\".github/workflows\",\"phpunit.xml.dist\",\"phpstan.neon\",\".antora-src/modules/ROOT/pages/component/indexing/report/index.adoc\",\"CHANGELOG.md\"]}}}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "quality_atlas_assessment_verdict",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "summary",
+          "strengths",
+          "risks",
+          "next_actions",
+          "notes",
+          "confidence",
+          "evidence_paths",
+          "suggested_score_overrides",
+          "metric_updates"
+        ],
+        "properties": {
+          "component": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "strengths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "next_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "evidence_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "suggested_score_overrides": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "architecture": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "runtime": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "qa": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "ops": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "market": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "overall": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              }
+            }
+          },
+          "metric_updates": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "architecture": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "runtime": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "qa": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "ops": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "market": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "overall": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 15255,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 5528,
+    "output_tokens_details": {
+      "reasoning_tokens": 4160
+    },
+    "total_tokens": 20783
+  },
+  "user": null,
+  "metadata": {}
+}
