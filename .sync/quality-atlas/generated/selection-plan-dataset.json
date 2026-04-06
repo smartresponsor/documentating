@@ -73,32 +73,36 @@
     }
   },
   "plan": {
-    "generated_at": "2026-04-06T02:38:33.288649+00:00",
+    "generated_at": "2026-04-06T16:32:53.206369+00:00",
     "event_name": "workflow_dispatch",
     "manual_components": [
-      "indexing"
+      "attaching"
     ],
+    "normalized_manual_components": [
+      "attaching"
+    ],
+    "unknown_manual_components": [],
     "selected_components": [
-      "indexing"
+      "attaching"
     ],
     "selected_count": 1,
     "items": [
       {
-        "component": "indexing",
-        "title": "Indexing",
-        "repository": "smartresponsor/indexing",
+        "component": "attaching",
+        "title": "Attaching",
+        "repository": "smartresponsor/attaching",
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c",
+        "current_head_commit": "44c55dcf03ed7f71b2d3834ada44cc8432f7b208",
         "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
-        "last_assessed_date": "2026-04-06",
+        "last_assessed_date": null,
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 2.64
+        "hours_since_last_assessment": null
       }
     ],
     "status": "selected"
@@ -156,28 +160,58 @@
       "repository": "smartresponsor/indexing",
       "snapshot": {
         "snapshot_date": "2026-04-06",
-        "snapshot_label": "assessment-2026-04-06",
+        "snapshot_label": "pre-rc-seed",
         "overall": 8.4,
-        "assessed_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c",
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "messaging",
+      "title": "Messaging",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/messaging",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.6,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "attaching",
+      "title": "Attaching",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/attaching",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "assessment-2026-04-06",
+        "overall": 7.4,
+        "assessed_commit": "44c55dcf03ed7f71b2d3834ada44cc8432f7b208",
         "assessed_tag": null,
         "trigger_reason": "manual_override"
       },
       "selection": {
-        "component": "indexing",
-        "title": "Indexing",
-        "repository": "smartresponsor/indexing",
+        "component": "attaching",
+        "title": "Attaching",
+        "repository": "smartresponsor/attaching",
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c",
+        "current_head_commit": "44c55dcf03ed7f71b2d3834ada44cc8432f7b208",
         "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
-        "last_assessed_date": "2026-04-06",
+        "last_assessed_date": null,
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 2.64
+        "hours_since_last_assessment": null
       }
     }
   ]
