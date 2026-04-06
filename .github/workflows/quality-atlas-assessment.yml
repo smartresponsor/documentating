@@ -74,6 +74,8 @@ jobs:
               fh.write(f"selected_count={len(selected)}\n")
               fh.write(f"should_assess={'true' if selected else 'false'}\n")
               fh.write(f"selection_status={plan.get('status', 'unknown')}\n")
+              requested = plan.get('manual_components') or []
+              fh.write(f"requested_csv={','.join(requested)}\n")
           print(json.dumps({'selected_components': selected, 'selected_count': len(selected), 'status': plan.get('status')}, indent=2))
           PY
 
@@ -87,6 +89,7 @@ jobs:
           QUALITY_ATLAS_OPENAI_MODEL: ${{ vars.QUALITY_ATLAS_OPENAI_MODEL || 'gpt-5' }}
           INPUT_MODE: ${{ github.event.inputs.mode || 'auto' }}
           SELECTED_CSV: ${{ steps.selection.outputs.selected_csv }}
+          REQUESTED_CSV: ${{ steps.selection.outputs.requested_csv }}
         run: |
           mode="dry-run"
           if [ "${INPUT_MODE}" = "responses" ]; then
@@ -100,7 +103,9 @@ jobs:
           component_args=()
           IFS=',' read -ra selected <<< "${SELECTED_CSV}"
           selected_component="ALL_ENABLED"
-          if [ -n "${SELECTED_CSV}" ]; then
+          if [ -n "${REQUESTED_CSV}" ]; then
+            selected_component="${REQUESTED_CSV}"
+          elif [ -n "${SELECTED_CSV}" ]; then
             selected_component="${SELECTED_CSV}"
           fi
           for component in "${selected[@]}"; do

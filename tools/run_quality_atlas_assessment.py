@@ -710,6 +710,25 @@ def main() -> None:
                 import shutil
                 shutil.rmtree(cleanup_root, ignore_errors=True)
 
+
+    materialized_success = {item["registry_entry"]["component_id"] for item in assessments}
+    materialized_failures = {item["component"] for item in failures}
+    missing_materialization = sorted(selected_components - materialized_success - materialized_failures)
+    for component_id in missing_materialization:
+        registry_entry = next((item for item in registry["repositories"] if item.get("component_id") == component_id), {"component_id": component_id, "component_title": component_id.title()})
+        failure = {
+            "status": "error",
+            "component": component_id,
+            "title": registry_entry.get("component_title", component_id.title()),
+            "mode": args.mode,
+            "error_type": "MissingAssessmentArtifact",
+            "error": "Selected component completed without success or error artifact.",
+            "registry_entry": registry_entry,
+            "facts": {},
+        }
+        failures.append(failure)
+        (run_dir / f"{component_id}.error.json").write_text(json.dumps(failure, indent=2, ensure_ascii=False), encoding='utf-8')
+
     summary = {
         'date': date.today().isoformat(),
         'mode': args.mode,

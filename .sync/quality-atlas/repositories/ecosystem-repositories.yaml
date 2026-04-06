@@ -37,7 +37,7 @@ repositories:
     the scheduled assessment runner.
 - component_id: applicating
   component_title: Applicating
-  github_repository: 'smartresponsor/applicating'
+  github_repository: smartresponsor/applicating
   default_branch: master
   enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/applicating/report/index.adoc
@@ -154,8 +154,8 @@ repositories:
   enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/documentating/report/index.adoc
   local_path: .
-  notes: Bootstrap-enabled in the atlas repository itself so the assessment workflow has a
-    live local target.
+  notes: Bootstrap-enabled in the atlas repository itself so the assessment workflow
+    has a live local target.
 - component_id: evaluating
   component_title: Evaluating
   github_repository: ''
@@ -238,7 +238,7 @@ repositories:
     the scheduled assessment runner.
 - component_id: indexing
   component_title: Indexing
-  github_repository: 'smartresponsor/indexing'
+  github_repository: smartresponsor/indexing
   default_branch: master
   enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/indexing/report/index.adoc
@@ -270,12 +270,11 @@ repositories:
     the scheduled assessment runner.
 - component_id: messaging
   component_title: Messaging
-  github_repository: ''
+  github_repository: smartresponsor/messaging
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/messaging/report/index.adoc
-  notes: Set enabled=true and github_repository once this component is connected to
-    the scheduled assessment runner.
+  notes: Connected to the scheduled assessment runner.
 - component_id: mobiling
   component_title: Mobiling
   github_repository: ''
@@ -428,3 +427,10 @@ repositories:
   report_path: .antora-src/modules/ROOT/pages/component/vendoring/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
+- component_id: attaching
+  component_title: Attaching
+  github_repository: smartresponsor/attaching
+  default_branch: master
+  enabled: true
+  report_path: .antora-src/modules/ROOT/pages/component/attaching/report/index.adoc
+  notes: Connected to the scheduled assessment runner.

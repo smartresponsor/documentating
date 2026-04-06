@@ -190,15 +190,48 @@ def main() -> None:
     policy = load_yaml(Path(args.policy))
     repo_root = Path(args.repo_root).resolve()
     repo_token = os.environ.get('QUALITY_ATLAS_REPO_TOKEN') or os.environ.get('GITHUB_TOKEN') or ''
-    manual_selected = set(args.components or [])
+    repositories = registry.get('repositories') or []
+    registry_by_id = {item['component_id']: item for item in repositories if item.get('component_id')}
+    registry_by_lower = {str(item['component_id']).lower(): str(item['component_id']) for item in repositories if item.get('component_id')}
+    requested_manual = [str(item) for item in (args.components or []) if str(item).strip()]
+    normalized_manual: set[str] = set()
+    unknown_manual: list[str] = []
+    for raw in requested_manual:
+        key = raw.strip()
+        if not key:
+            continue
+        resolved = registry_by_id.get(key)
+        if resolved is None:
+            resolved_id = registry_by_lower.get(key.lower())
+            resolved = registry_by_id.get(resolved_id) if resolved_id else None
+        if resolved is None:
+            unknown_manual.append(raw)
+            continue
+        normalized_manual.add(resolved['component_id'])
 
     selected_components: list[str] = []
     items: list[dict[str, Any]] = []
-    for component in registry.get('repositories') or []:
+    if unknown_manual:
+        payload = {
+            'generated_at': now_utc().isoformat(),
+            'event_name': args.event_name,
+            'manual_components': requested_manual,
+            'normalized_manual_components': sorted(normalized_manual),
+            'unknown_manual_components': unknown_manual,
+            'selected_components': sorted(normalized_manual),
+            'selected_count': len(normalized_manual),
+            'items': items,
+            'status': 'unknown_manual_component',
+        }
+        write_json(Path(args.output), payload)
+        print(json.dumps({'selected_components': sorted(normalized_manual), 'selected_count': len(normalized_manual), 'status': payload['status'], 'unknown_manual_components': unknown_manual, 'output': args.output}, indent=2))
+        raise SystemExit(2)
+
+    for component in repositories:
         if not component.get('enabled'):
             continue
         component_id = component['component_id']
-        if manual_selected and component_id not in manual_selected:
+        if normalized_manual and component_id not in normalized_manual:
             continue
         state = load_snapshot_state(component_id)
         branch = component.get('default_branch') or policy['defaults'].get('branch', 'master')
@@ -222,7 +255,7 @@ def main() -> None:
                     changed_files = remote_changed_files(component['github_repository'], state.get('assessed_commit'), head.get('head_commit'), repo_token)
                 except Exception as exc:
                     access_error = str(exc)
-        if access_error and not manual_selected:
+        if access_error and not normalized_manual:
             select = False
             reason = 'blocked_access'
             details = {'cadence_group': (policy.get('component_overrides') or {}).get(component_id, {}).get('cadence_group') or policy['defaults']['cadence_group']}
@@ -251,7 +284,9 @@ def main() -> None:
     payload = {
         'generated_at': now_utc().isoformat(),
         'event_name': args.event_name,
-        'manual_components': sorted(manual_selected),
+        'manual_components': requested_manual,
+        'normalized_manual_components': sorted(normalized_manual),
+        'unknown_manual_components': unknown_manual,
         'selected_components': selected_components,
         'selected_count': len(selected_components),
         'items': items,
