@@ -127,7 +127,7 @@ def repo_facts(repo_dir: Path, component: dict[str, Any], docs_repo_root: Path |
     if not repo_dir.exists():
         facts['missing_reason'] = 'Configured local_path does not exist in the current runner workspace.'
         return facts
-    for command, key in [(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], 'git_branch'), (['git', 'rev-parse', 'HEAD'], 'git_commit')]:
+    for command, key in [(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], 'git_branch'), (['git', 'rev-parse', 'HEAD'], 'git_commit'), (['git', 'describe', '--tags', '--exact-match', 'HEAD'], 'git_exact_tag')]:
         try:
             rc, out = run(command, repo_dir)
             facts[key] = {'exit_code': rc, 'output': out[:4000]}
@@ -446,7 +446,7 @@ def recover_baseline_scores(component_id: str, current_scores: dict[str, float])
     return current_scores
 
 
-def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], verdict: dict[str, Any], probe_snapshot: dict[str, Any], run_label: str, origin: str) -> dict[str, Any]:
+def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], verdict: dict[str, Any], probe_snapshot: dict[str, Any], run_label: str, origin: str, facts: dict[str, Any], selection_entry: dict[str, Any] | None = None) -> dict[str, Any]:
     if current is None:
         raise RuntimeError(f"Current snapshot for {component['component_id']} is missing. Seed snapshots before running the assessment.")
     snapshot = json.loads(json.dumps(current))
@@ -459,6 +459,18 @@ def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], ve
         'label': run_label,
         'ref': component.get('default_branch', 'master'),
         'origin': origin,
+        'assessment_basis': {
+            'repository': component.get('github_repository') or component.get('local_path') or '',
+            'assessed_branch': (facts.get('git_branch') or {}).get('output', '').splitlines()[0] if isinstance(facts.get('git_branch'), dict) else None,
+            'assessed_commit': (facts.get('git_commit') or {}).get('output', '').splitlines()[0] if isinstance(facts.get('git_commit'), dict) else None,
+            'assessed_tag': (facts.get('git_exact_tag') or {}).get('output', '').splitlines()[0] if isinstance(facts.get('git_exact_tag'), dict) and (facts.get('git_exact_tag') or {}).get('exit_code') == 0 else None,
+            'trigger_reason': (selection_entry or {}).get('reason'),
+            'previous_commit': (selection_entry or {}).get('last_assessed_commit'),
+            'previous_tag': (selection_entry or {}).get('last_assessed_tag'),
+            'current_head_commit': (selection_entry or {}).get('current_head_commit'),
+            'current_head_tag': (selection_entry or {}).get('current_head_tag'),
+            'changed_files_sample': (selection_entry or {}).get('changed_files_sample') or [],
+        },
     }
     snapshot['report_status'] = 'current'
     snapshot['groups'] = recalc_groups(scores)
@@ -576,6 +588,7 @@ def main() -> None:
     parser.add_argument('--repo-root', default=str(ROOT))
     parser.add_argument('--label', default=f"assessment-{date.today().isoformat()}")
     parser.add_argument('--component', action='append', dest='components', default=[], help='Limit assessment to one or more component_id values.')
+    parser.add_argument('--selection-plan', default='', help='Optional generated selection plan JSON to bind trigger reasons and commit basis to the assessment run.')
     args = parser.parse_args()
 
     registry = load_yaml(Path(args.registry))
@@ -589,6 +602,13 @@ def main() -> None:
     run_dir = OUTBOX_DIR / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     run_dir.mkdir(parents=True, exist_ok=True)
 
+    selection_plan = {}
+    if args.selection_plan:
+        plan_path = Path(args.selection_plan)
+        if plan_path.exists():
+            selection_plan = json.loads(plan_path.read_text(encoding='utf-8'))
+    selection_index = {item.get('component'): item for item in selection_plan.get('items', [])} if isinstance(selection_plan, dict) else {}
+
     assessments: list[dict[str, Any]] = []
     latest_components: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
@@ -598,9 +618,36 @@ def main() -> None:
             continue
         if selected_components and component['component_id'] not in selected_components:
             continue
-        local_path = component.get('local_path') or '.'
-        target_repo = (repo_root / local_path).resolve()
-        facts = repo_facts(target_repo, component)
+        selection_entry = selection_index.get(component['component_id']) if selection_index else None
+        local_path = component.get('local_path') or ''
+        docs_repo_root = repo_root
+        target_repo: Path | None = None
+        cleanup_root: Path | None = None
+        repo_token = os.environ.get('QUALITY_ATLAS_REPO_TOKEN') or os.environ.get('GITHUB_TOKEN') or ''
+        if local_path:
+            candidate = (repo_root / local_path).resolve()
+            if candidate.exists():
+                target_repo = candidate
+        if target_repo is None and component.get('github_repository'):
+            if not repo_token:
+                raise RuntimeError(f"QUALITY_ATLAS_REPO_TOKEN is required to clone component repository {component.get('github_repository')}.")
+            import tempfile
+            cleanup_root = Path(tempfile.mkdtemp(prefix=f"quality-atlas-{component['component_id']}-{args.label}-"))
+            target_repo = cleanup_root / component['component_id']
+            clone_url = f"https://github.com/{component['github_repository']}.git"
+            import base64
+            token_value = os.environ.get('QUALITY_ATLAS_REPO_TOKEN') or os.environ.get('GITHUB_TOKEN') or ''
+            header = 'AUTHORIZATION: basic ' + base64.b64encode(f'x-access-token:{token_value}'.encode('utf-8')).decode('ascii')
+            auth = subprocess.run([
+                'git', '-c', f'http.extraHeader={header}', 'clone', '--depth', '1', '--branch', component.get('default_branch', 'master'), clone_url, str(target_repo)
+            ], text=True, capture_output=True)
+            if auth.returncode != 0:
+                import shutil
+                shutil.rmtree(cleanup_root, ignore_errors=True)
+                raise RuntimeError(f"Unable to clone component repository {component['github_repository']}: {(auth.stdout + '\n' + auth.stderr).strip()}")
+        if target_repo is None:
+            raise RuntimeError(f"Unable to resolve target repository for component {component['component_id']}.")
+        facts = repo_facts(target_repo, component, docs_repo_root=docs_repo_root)
         probe_snapshot = collect_repo_probes(target_repo, component)
         probe_snapshot['snapshot']['label'] = args.label
         probe_snapshot['snapshot']['date'] = date.today().isoformat()
@@ -618,7 +665,7 @@ def main() -> None:
                 verdict = dry_run_verdict(component, prompt, facts, probe_snapshot, current)
             normalized = normalize_verdict(component['component_id'], verdict)
             validate_verdict(component['component_id'], normalized)
-            snapshot = merge_snapshot(current, component, normalized, probe_snapshot, args.label, f'quality-atlas {args.mode} assessment')
+            snapshot = merge_snapshot(current, component, normalized, probe_snapshot, args.label, f'quality-atlas {args.mode} assessment', facts, selection_entry)
             current_path, history_path = write_snapshot_files(component['component_id'], snapshot)
             probe_current_path, probe_history_path = write_probe_files(component['component_id'], probe_snapshot)
             item = {
@@ -658,6 +705,10 @@ def main() -> None:
             }
             failures.append(failure)
             (run_dir / f"{component['component_id']}.error.json").write_text(json.dumps(failure, indent=2, ensure_ascii=False), encoding='utf-8')
+        finally:
+            if cleanup_root is not None:
+                import shutil
+                shutil.rmtree(cleanup_root, ignore_errors=True)
 
     summary = {
         'date': date.today().isoformat(),
