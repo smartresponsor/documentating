@@ -1,0 +1,266 @@
+{
+  "status": "ok",
+  "registry_entry": {
+    "component_id": "accessing",
+    "component_title": "Accessing",
+    "github_repository": "smartresponsor/accessing",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc",
+    "notes": "Connected to the scheduled assessment runner via GitHub repository target smartresponsor/accessing."
+  },
+  "facts": {
+    "repo_root": "/tmp/quality-atlas-accessing-neitcjki/accessing",
+    "timestamp_utc": "2026-04-05T20:41:35.907667+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "bb0013dfbd4df3f201d4cae167f5de4bdf58967f"
+    },
+    "has_composer_json": true,
+    "has_package_json": true,
+    "has_phpstan_neon": false,
+    "has_phpstan_neon_dist": true,
+    "has_phpunit_xml": false,
+    "has_phpunit_xml_dist": true,
+    "has__github_workflows": false,
+    "has__antora-src_modules_ROOT_nav_adoc": false,
+    "has__antora-src_modules_ROOT_pages_index_adoc": false,
+    "git_status": {
+      "exit_code": 0,
+      "output": ""
+    },
+    "git_recent_commits": {
+      "exit_code": 0,
+      "output": "bb0013d inspection"
+    },
+    "top_level_tree": {
+      "exit_code": 0,
+      "output": "./.env\n./.env.test\n./.git\n./.git/HEAD\n./.git/config\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/packed-refs\n./.git/refs\n./.git/shallow\n./.gitignore\n./.php-cs-fixer.dist.php\n./AGENTS.md\n./ARCHITECTURE_MANIFEST.md\n./BOUNDING_MANIFEST.md\n./FULL_MANIFEST.md\n./PRODUCT_MANIFEST.md\n./README.md\n./bin\n./bin/.gitkeep\n./bin/MANIFEST.md\n./bin/console\n./bin/lint-php.php\n./bin/phpunit\n./composer.json\n./composer.lock\n./config\n./config/MANIFEST.md\n./config/bootstrap.php\n./config/bundles.php\n./config/packages\n./config/routes\n./config/routes.yaml\n./config/services.yaml\n./migrations\n./migrations/.gitkeep\n./migrations/MANIFEST.md\n./migrations/Version20260328000431.php\n./migrations/Version20260330174000.php\n./migrations/Version20260330180500.php\n./migrations/Version20260330183000.php\n./package-lock.json\n./package.json\n./phpstan.neon.dist\n./phpunit.xml.dist\n./playwright.config.ts\n./public\n./public/.gitkeep\n./public/MANIFEST.md\n./public/index.php\n./src\n./src/Command\n./src/Controller\n./src/DataFixtures\n./src/Dto\n./src/Entity\n./src/EntityInterface\n./src/Event\n./src/Form\n./src/Kernel.php\n./src/MANIFEST.md\n./src/Message\n./src/MessageHandler\n./src/Repository\n./src/RepositoryInterface\n./src/Security\n./src/Service\n./src/ServiceInterface\n./src/Validator\n./src/ValueObject\n./templates\n./templates/MANIFEST.md\n./templates/accessing\n./templates/base.html.twig\n./templates/security\n./tests\n./tests/Functional\n./tests/Integration\n./tests/MANIFEST.md\n./tests/Panther\n./tests/Playwright\n./tests/Support\n./tests/Unit\n./tests/bootstrap.php"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.3.6 (cli) (built: Jan 27 2026 03:09:47) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n    with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.12.13"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "312"
+    },
+    "key_file_excerpts": {
+      "composer.json": "{\n  \"name\": \"smartresponsor/accessing\",\n  \"description\": \"Symfony 8 account access application for registration, verification, MFA, recovery, sessions, and security events.\",\n  \"type\": \"project\",\n  \"license\": \"proprietary\",\n  \"require\": {\n    \"php\": \"^8.4\",\n    \"ext-ctype\": \"*\",\n    \"ext-iconv\": \"*\",\n    \"doctrine/doctrine-bundle\": \"3.1\",\n    \"doctrine/doctrine-migrations-bundle\": \"3.6\",\n    \"doctrine/orm\": \"^3.3\",\n    \"scheb/2fa-bundle\": \"8.5\",\n    \"scheb/2fa-totp\": \"8.5\",\n    \"symfony/console\": \"8.0.*\",\n    \"symfony/dotenv\": \"8.0.*\",\n    \"symfony/form\": \"8.0.*\",\n    \"symfony/framework-bundle\": \"8.0.*\",\n    \"symfony/mailer\": \"8.0.*\",\n    \"symfony/monolog-bundle\": \"^3.10\",\n    \"symfony/notifier\": \"8.0.*\",\n    \"symfony/password-hasher\": \"8.0.*\",\n    \"symfony/rate-limiter\": \"8.0.*\",\n    \"symfony/runtime\": \"8.0.*\",\n    \"symfony/security-bundle\": \"8.0.*\",\n    \"symfony/security-csrf\": \"8.0.*\",\n    \"symfony/serializer\": \"8.0.*\",\n    \"symfony/twig-bundle\": \"8.0.*\",\n    \"symfony/translation\": \"8.0.*\",\n    \"symfony/validator\": \"8.0.*\",\n    \"symfony/yaml\": \"8.0.*\",\n    \"symfonycasts/reset-password-bundle\": \"^1.23\",\n    \"symfonycasts/verify-email-bundle\": \"^1.17\",\n    \"twig/extra-bundle\": \"^3.15\",\n    \"twig/twig\": \"^3.15\"\n  },\n  \"require-dev\": {\n    \"doctrine/doctrine-fixtures-bundle\": \"^4.1\",\n    \"fakerphp/faker\": \"^1.24\",\n    \"friendsofphp/php-cs-fixer\": \"3.94\",\n    \"phpmd/phpmd\": \"^2.15\",\n    \"phpstan/phpstan\": \"^2.1\",\n    \"symfony/browser-kit\": \"8.0.*\",\n    \"symfony/css-selector\": \"8.0.*\",\n    \"symfony/maker-bundle\": \"^1.64\",\n    \"symfony/panther\": \"^2.2\",\n    \"symfony/phpunit-bridge\": \"^7.3\"\n  },\n  \"autoload\": {\n    \"psr-4\": {\n      \"App\\\\\": \"src/\"\n    }\n  },\n  \"autoload-dev\": {\n    \"psr-4\": {\n      \"App\\\\Tests\\\\\": \"tests/\"\n    }\n  },\n  \"scripts\": {\n    \"lint\": \"php -l $(git ls-files '*.php')\",\n    \"cs:check\": \"php-cs-fixer fix --dry-run --diff --verbose\",\n    \"cs:fix\": \"php-cs-fixer fix --verbose\",\n    \"stan\": \"phpstan analyse\",\n    \"test\": \"vendor/bin/simple-phpunit\",\n    \"pipeline:local:full\": [\n      \"@lint\",\n      \"@cs:check\",\n      \"@stan\",\n      \"@test\"\n    ]\n  },\n  \"extra\": {\n    \"public-dir\": \"public\",\n    \"product-name\": \"Accessing\",\n    \"core-entity\": \"Account\"\n  },\n  \"minimum-stability\": \"stable\",\n  \"prefer-stable\": true,\n  \"config\": {\n    \"allow-plugins\": {\n      \"symfony/runtime\": true\n    }\n  }\n}\n",
+      "package.json": "{\n  \"name\": \"accessing-playwright\",\n  \"private\": true,\n  \"devDependencies\": {\n    \"@playwright/test\": \"^1.54.0\"\n  },\n  \"scripts\": {\n    \"test:e2e\": \"playwright test\"\n  }\n}\n"
+    }
+  },
+  "verdict": {
+    "component": "accessing",
+    "summary": "Symfony 8 account-access application with clear scope, strong security features, and comprehensive tests; main gaps are CI/CD automation and Antora-linked docs.",
+    "strengths": [
+      "Clear product scope and manifests in repo",
+      "Solid Symfony 8 + Doctrine 3 architecture with domain-oriented structure",
+      "Comprehensive tests (unit, integration/functional, Panther, Playwright) and static analysis tools",
+      "Strong security posture (2FA/TOTP, CSRF, password hashing, rate limiting)",
+      "Operational logging via Monolog"
+    ],
+    "risks": [
+      "No CI/CD workflows present in the repo",
+      "Repository docs not wired into Antora report path",
+      "Observability depth (metrics/tracing/alerts) not evidenced",
+      "PHP ^8.4 requirement tightens deployment targets without automated checks"
+    ],
+    "next_actions": [
+      "Add GitHub Actions workflow to run lint, CS tools, PHPStan, PHPUnit, Panther, and Playwright on push/PR",
+      "Publish/attach Antora module content for the component report path",
+      "Document/run the local pipeline in CI (composer scripts and Playwright) with artifacts",
+      "Add basic metrics/tracing instrumentation and document operational runbooks",
+      "Validate production environment against PHP ^8.4 requirement in automated checks"
+    ],
+    "notes": [
+      "Assessment grounded in repository tree and manifests at commit bb0013d.",
+      "Security features and testing breadth are evidenced by dependencies and test directories; delivery automation is not present in-repo."
+    ],
+    "suggested_score_overrides": {
+      "product": 0.0,
+      "architecture": 0.0,
+      "runtime": 0.0,
+      "qa": 8.5,
+      "ops": 7.9,
+      "market": 0.0,
+      "overall": 8.3
+    },
+    "metric_updates": {
+      "product": {
+        "summary": "Product identity and scope are explicit via README and PRODUCT_MANIFEST, describing registration, verification, MFA, recovery, sessions, and security events.",
+        "risks": [
+          "Docs are not integrated into the Antora report path for portfolio visibility",
+          "Proprietary license may limit external adoption paths"
+        ],
+        "improvements": [
+          "Publish/align the Antora component page with existing repo manifests",
+          "Extend README with high-level user journeys and entry points"
+        ],
+        "evidence": [
+          "README.md",
+          "PRODUCT_MANIFEST.md",
+          "composer.json"
+        ]
+      },
+      "architecture": {
+        "summary": "Symfony 8 + Doctrine ORM 3 with a layered structure (Entities/Repositories/Services) and domain/architecture manifests; database migrations are present.",
+        "risks": [
+          "Architecture/documentation drift risk without CI enforcement",
+          "No explicit service boundaries or deployment topology evidenced in-repo"
+        ],
+        "improvements": [
+          "Add static analysis and architectural checks to CI to prevent drift",
+          "Keep BOUNDING_MANIFEST and ARCHITECTURE_MANIFEST referenced from the Antora page"
+        ],
+        "evidence": [
+          "ARCHITECTURE_MANIFEST.md",
+          "BOUNDING_MANIFEST.md",
+          "src",
+          "config/services.yaml",
+          "migrations"
+        ]
+      },
+      "runtime": {
+        "summary": "Runtime shape is material: Symfony front controller and Kernel, env management via .env files, Monolog and rate limiting configured, and 2FA integration present.",
+        "risks": [
+          "Production readiness constraints if hosting does not meet PHP ^8.4 requirement",
+          "Reliance on .env files suggests the need to harden environment configuration for production"
+        ],
+        "improvements": [
+          "Validate production environment compatibility with PHP ^8.4 in automated checks",
+          "Document production environment variables and secret sources in repo docs"
+        ],
+        "evidence": [
+          "public/index.php",
+          "src/Kernel.php",
+          "config/bundles.php",
+          "config/services.yaml",
+          "composer.json",
+          ".env",
+          ".env.test"
+        ]
+      },
+      "qa": {
+        "summary": "Broad QA posture with unit/integration/functional tests, Panther and Playwright E2E, plus PHPStan, PHPMD, and CS fixer wired via composer scripts.",
+        "risks": [
+          "No CI workflow to enforce the local pipeline or run E2E in headless mode",
+          "Test coverage and thresholds are not documented in-repo"
+        ],
+        "improvements": [
+          "Add a GitHub Actions workflow running composer pipeline and Playwright with artifacts",
+          "Publish minimal coverage reporting and thresholds in CI"
+        ],
+        "evidence": [
+          "tests/Unit",
+          "tests/Integration",
+          "tests/Functional",
+          "tests/Panther",
+          "tests/Playwright",
+          "phpunit.xml.dist",
+          "phpstan.neon.dist",
+          "composer.json",
+          "package.json",
+          "playwright.config.ts"
+        ]
+      },
+      "ops": {
+        "summary": "Security and basic logging are strong (2FA/TOTP, CSRF, password hashing, rate limiting, Monolog), but delivery automation and observability depth are not evidenced.",
+        "risks": [
+          "No GitHub Actions workflows for CI/CD in the repo",
+          "Metrics/tracing/alerting setup not evidenced"
+        ],
+        "improvements": [
+          "Introduce CI/CD workflow to run tests and checks on push/PR",
+          "Add metrics/tracing instrumentation and document operational procedures"
+        ],
+        "evidence": [
+          "composer.json",
+          "config/bundles.php",
+          "src/Security",
+          "README.md"
+        ]
+      },
+      "market": {
+        "summary": "Positioning is clear for an account access service within the ecosystem; manifests and README communicate scope and core entity (Account).",
+        "risks": [
+          "Proprietary license narrows external ecosystem engagement",
+          "Absence of Antora-linked docs may reduce portfolio visibility"
+        ],
+        "improvements": [
+          "Expose key value propositions and integration points on the Antora component page",
+          "Reference security features (MFA, recovery flows) prominently in docs"
+        ],
+        "evidence": [
+          "README.md",
+          "PRODUCT_MANIFEST.md",
+          "composer.json"
+        ]
+      },
+      "overall": {
+        "summary": "Strong foundation with security and testing depth; primary RC blockers are lack of CI/CD automation and Antora-linked documentation.",
+        "risks": [
+          "Delivery automation gap could slow feedback and regressions detection",
+          "Operational observability not evidenced"
+        ],
+        "improvements": [
+          "Add end-to-end CI pipeline and publish Antora docs to raise RC readiness",
+          "Augment observability (metrics/tracing) and document runbooks"
+        ],
+        "evidence": [
+          "composer.json",
+          "README.md",
+          "phpunit.xml.dist",
+          "phpstan.neon.dist",
+          "package.json",
+          "playwright.config.ts"
+        ]
+      }
+    },
+    "confidence": "medium",
+    "evidence_paths": [
+      "README.md",
+      "PRODUCT_MANIFEST.md",
+      "ARCHITECTURE_MANIFEST.md",
+      "BOUNDING_MANIFEST.md",
+      "FULL_MANIFEST.md",
+      "composer.json",
+      "phpunit.xml.dist",
+      "phpstan.neon.dist",
+      "package.json",
+      "playwright.config.ts",
+      "public/index.php",
+      "src/Kernel.php",
+      "config/bundles.php",
+      "config/services.yaml",
+      "tests/Unit",
+      "tests/Integration",
+      "tests/Functional",
+      "tests/Panther",
+      "tests/Playwright",
+      "src/Security",
+      "migrations"
+    ]
+  },
+  "snapshot_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/history/2026-04-05-assessment-2026-04-05.yaml"
+  },
+  "probe_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/probes/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/probes/history/2026-04-05-assessment-2026-04-05.yaml"
+  },
+  "ai_io": {
+    "request_file": "accessing.request.json",
+    "response_file": "accessing.response.json"
+  }
+}

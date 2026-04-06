@@ -1,0 +1,355 @@
+component: accessing
+title: Accessing
+snapshot:
+  date: '2026-04-06'
+  label: assessment-2026-04-06
+  ref: master
+  origin: quality-atlas responses assessment
+report_status: current
+groups:
+  product_market:
+    score: 8.55
+  domain_architecture:
+    score: 8.5
+  data_persistence:
+    score: 8.45
+  api_contracts:
+    score: 8.4
+  runtime_performance:
+    score: 8.4
+  reliability_resilience:
+    score: 8.47
+  security_governance:
+    score: 8.9
+  delivery_operations:
+    score: 8.9
+  quality_testing:
+    score: 8.1
+profile_axes:
+  engineering:
+    product: 8.8
+    architecture: 8.5
+    data: 8.45
+    api: 8.4
+    runtime: 8.4
+    reliability: 8.65
+    security: 8.9
+    delivery: 8.9
+    quality: 8.1
+    overall: 8.5
+  owner:
+    identity: 8.8
+    consistency: 8.5
+    delivery: 8.9
+    quality: 8.1
+    governance: 8.9
+    fit: 8.55
+    debt: 2.7
+    overall: 8.5
+  investor:
+    product: 8.8
+    architecture: 8.5
+    delivery: 8.9
+    reliability: 8.25
+    governance: 8.9
+    clarity: 8.55
+    overall: 8.5
+  operations:
+    runtime: 8.4
+    reliability: 8.25
+    observability: 8.9
+    security: 8.9
+    traffic: 8.65
+    delivery: 8.9
+    recovery: 8.5
+    overall: 8.5
+metrics:
+  product:
+    relevant: true
+    maturity: strong
+    score: 8.8
+    summary: Component identity and market-facing shape are materially present per
+      the Accessing report; no new code-level signals were observed in this run.
+    risks:
+    - Current run used the documentation repository only; code repository signals
+      are absent
+    - Assessment remains seeded from pre-RC snapshot
+    improvements:
+    - Refresh from smartresponsor/accessing with code-level probes
+    - Cross-link report assertions to concrete repo evidence
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+    - path: .sync/quality-atlas/components/accessing/current.yaml
+      note: Metric-level assessment evidence.
+  architecture:
+    relevant: true
+    maturity: solid
+    score: 8.5
+    summary: Symfony-oriented architecture shape is described in the report; unverified
+      against the source repository in this run.
+    risks:
+    - Architecture assertions are narrative-only in this run
+    - No direct component repository artifacts were scanned
+    improvements:
+    - Ingest composer.json and Symfony/security configuration from the code repository
+    - Reference domain model and boundary files in the report
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+  runtime:
+    relevant: true
+    maturity: solid
+    score: 8.4
+    summary: Runtime/application surface (security, CSRF, mailer, rate limiter) is
+      reported narratively; no runtime artifacts were observed in this repository.
+    risks:
+    - No executable runtime or environment configuration for the component present
+      in this repo
+    - Claims about runtime packages are unverified in this run
+    improvements:
+    - Ingest runtime/package manifests and environment configs from the code repo
+    - Bind runtime claims to specific files and versions
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+  qa:
+    relevant: true
+    maturity: solid
+    score: 8.1
+    summary: Testing and QA posture remain pre-RC in narrative; this repository holds
+      docs CI but no component-level test configs.
+    risks:
+    - No phpunit/static-analysis configs for the component are present here to validate
+      QA claims
+    - Quality signals depend on the narrative until code repo is scanned
+    improvements:
+    - Pull test configs and recent results from smartresponsor/accessing into the
+      assessment inputs
+    - Cross-reference QA assertions in the report with CI artifacts
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .github/workflows/quality-atlas-assessment.yml
+      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+  ops:
+    relevant: true
+    maturity: strong
+    score: 8.9
+    summary: Operational posture for documentation publishing and scheduled assessments
+      is strong; component security/ops posture is narrative-only in this run.
+    risks:
+    - Component-level ops and security signals were not validated against the code
+      repo
+    - Possible drift between security posture claims and actual configuration
+    improvements:
+    - Augment with security and deployment workflows (SAST/DAST, release) from the
+      code repo
+    - Cite concrete security configuration and safeguards in the report
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .github/workflows/gh-pages.yml
+      note: Metric-level assessment evidence.
+    - path: .github/workflows/quality-atlas-assessment.yml
+      note: Metric-level assessment evidence.
+  market:
+    relevant: true
+    maturity: solid
+    score: 8.3
+    summary: Business-facing and portfolio alignment remain as previously reported;
+      no new market signals were captured in this run.
+    risks:
+    - Narrative could drift without code/usage artifacts to anchor claims
+    improvements:
+    - Reference concrete integration points or consuming components once the code
+      repo is scanned
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+  overall:
+    relevant: true
+    maturity: solid
+    score: 8.5
+    summary: Overall RC direction remains as in the canonical report; this run observed
+      no new code-level evidence, so scores are held pending a repository-backed refresh.
+    risks:
+    - Assessment relies on narrative and lacks direct repository facts from smartresponsor/accessing
+    improvements:
+    - Run the scheduled assessment against the target repository and refresh all axes
+      with code-backed evidence
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .github/workflows/quality-atlas-assessment.yml
+      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+      note: Metric-level assessment evidence.
+development_driving:
+  overall_status: fail
+  average_score: 8.61
+  status_counts:
+    pass: 3
+    warn: 3
+    fail: 1
+    not_applicable: 0
+  top_blockers:
+  - Architecture & Boundaries — No obvious boundary descriptor files were detected.
+  - 'Architecture & Boundaries — Missing expected repository segment: src/.'
+  - Runtime & Application Surface — No Docker or compose files were detected.
+  - QA & Behavioral Assurance — tests/ directory is missing.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 7.0
+      summary: 0 fail, 3 warn, 0 info findings detected.
+      blockers:
+      - No obvious boundary descriptor files were detected.
+      - 'Missing expected repository segment: src/.'
+      - 'Missing expected repository segment: tests/.'
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - No Docker or compose files were detected.
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: fail
+      score: 6.5
+      summary: 1 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - tests/ directory is missing.
+      - No fixtures directories were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 8.75
+      summary: 0 fail, 1 warn, 1 info findings detected.
+      blockers:
+      - 'Missing expected documentation asset: CHANGELOG.md.'
+    delivery_observability:
+      title: Delivery & Observability
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: pass
+      score: 9.0
+      summary: 0 fail, 0 warn, 4 info findings detected.
+      blockers: []
+strengths:
+- Canonical Accessing report clearly articulates account access scope (registration,
+  verification, recovery, MFA)
+- Automated Antora site publishing via gh-pages workflow on master
+- Scheduled Quality Atlas assessment workflow present
+- Quality Atlas snapshot files for Accessing are maintained in-repo
+risks:
+- Current run scanned the documentation repository, not the smartresponsor/accessing
+  codebase
+- Product, architecture, runtime, and security claims are narrative-only in this run
+- Potential drift between report assertions and unscanned code until repository facts
+  are ingested
+recommended_next_actions:
+- Run the scheduled assessment against the smartresponsor/accessing repository to
+  ingest code-level facts
+- Bind report assertions to concrete repository files and CI artifacts
+- 'Capture minimal probes: composer.json, Symfony/security packages, and test suite
+  presence'
+- Re-run the assessment after linking the target repository to refresh all axes
+evidence:
+- path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+  note: Current component report page if present.
+- path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+  note: Seeded atlas dataset source.
+- path: .sync/quality-atlas/components/accessing/probes/current.yaml
+  note: Deterministic development-driving probe layer.
+- path: .github/workflows/gh-pages.yml
+  note: Assessment evidence path.
+- path: .github/workflows/quality-atlas-assessment.yml
+  note: Assessment evidence path.
+- path: package.json
+  note: Assessment evidence path.
+- path: antora-playbook.yml
+  note: Assessment evidence path.
+- path: .sync/quality-atlas/components/accessing/current.yaml
+  note: Assessment evidence path.
+assessment_notes:
+- Refreshed owner-facing portrait from the canonical Accessing report; no new code-level
+  evidence was available in this run, so existing pre-RC scores are retained pending
+  a repository-backed scan.
+- This run operated on the documentation/Antora site repository; component source
+  was not scanned
+- Scores preserved from pre-RC seed pending repository-backed refresh
+assessment_confidence: low

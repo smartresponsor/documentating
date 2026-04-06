@@ -1,0 +1,212 @@
+{
+  "status": "ok",
+  "registry_entry": {
+    "component_id": "accessing",
+    "component_title": "Accessing",
+    "github_repository": "smartresponsor/accessing",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc",
+    "notes": "Connected to the scheduled assessment runner via GitHub repository target smartresponsor/accessing."
+  },
+  "facts": {
+    "repo_root": "/home/runner/work/documentating/documentating",
+    "timestamp_utc": "2026-04-06T00:22:54.445326+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "aaba32645e14c69504afbeec69c71a9f8d728662"
+    },
+    "has_composer_json": false,
+    "has_package_json": true,
+    "has_phpstan_neon": false,
+    "has_phpstan_neon_dist": false,
+    "has_phpunit_xml": false,
+    "has_phpunit_xml_dist": false,
+    "has__github_workflows": true,
+    "has__antora-src_modules_ROOT_nav_adoc": true,
+    "has__antora-src_modules_ROOT_pages_index_adoc": true,
+    "git_status": {
+      "exit_code": 0,
+      "output": "M .sync/quality-atlas/components/accessing/current.yaml\n M .sync/quality-atlas/components/accessing/probes/current.yaml\n M .sync/quality-atlas/components/addressing/current.yaml\n M .sync/quality-atlas/components/addressing/probes/current.yaml\n M .sync/quality-atlas/components/analysing/current.yaml\n M .sync/quality-atlas/components/analysing/probes/current.yaml\n M .sync/quality-atlas/components/applicating/current.yaml\n M .sync/quality-atlas/components/applicating/probes/current.yaml\n M .sync/quality-atlas/components/billing/current.yaml\n M .sync/quality-atlas/components/billing/probes/current.yaml\n M .sync/quality-atlas/components/cataloging/current.yaml\n M .sync/quality-atlas/components/cataloging/probes/current.yaml\n M .sync/quality-atlas/components/discovering/current.yaml\n M .sync/quality-atlas/components/discovering/probes/current.yaml\n M .sync/quality-atlas/components/indexing/current.yaml\n M .sync/quality-atlas/components/indexing/probes/current.yaml\n M .sync/quality-atlas/components/locating/current.yaml\n M .sync/quality-atlas/components/locating/probes/current.yaml\n M .sync/quality-atlas/components/messaging/current.yaml\n M .sync/quality-atlas/components/messaging/probes/current.yaml\n M .sync/quality-atlas/components/ordering/current.yaml\n M .sync/quality-atlas/components/ordering/probes/current.yaml\n M .sync/quality-atlas/components/paying/current.yaml\n M .sync/quality-atlas/components/paying/probes/current.yaml\n M .sync/quality-atlas/components/projecting/current.yaml\n M .sync/quality-atlas/components/projecting/probes/current.yaml\n M .sync/quality-atlas/components/rolling/current.yaml\n M .sync/quality-atlas/components/rolling/probes/current.yaml\n M .sync/quality-atlas/components/runtiming/current.yaml\n M .sync/quality-atlas/components/runtiming/probes/current.yaml\n M .sync/quality-atlas/components/shipping/current.yaml\n M .sync/quality-atlas/components/shipping/probes/current.yaml\n M .sync/quality-atlas/components/tagging/current.yaml\n M .sync/quality-atlas/components/tagging/probes/current.yaml\n M .sync/quality-atlas/components/taxating/current.yaml\n M .sync/quality-atlas/components/taxating/probes/current.yaml\n M .sync/quality-atlas/components/vendoring/current.yaml\n M .sync/quality-atlas/components/vendoring/probes/current.yaml\n?? .sync/quality-atlas/components/accessing/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/accessing/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/addressing/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/addressing/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/analysing/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/analysing/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/applicating/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/applicating/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/billing/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/billing/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/cataloging/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/cataloging/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/discovering/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/discovering/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/indexing/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/indexing/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/locating/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/locating/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/messaging/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/messaging/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/ordering/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/ordering/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/paying/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/paying/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/projecting/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/projecting/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/rolling/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/rolling/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/runtiming/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/runtiming/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/shipping/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/shipping/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/tagging/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/tagging/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/taxating/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/taxating/probes/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/vendoring/history/2026-04-06-pre-rc-seed.yaml\n?? .sync/quality-atlas/components/vendoring/probes/history/2026-04-06-pre-rc-seed.yaml"
+    },
+    "git_recent_commits": {
+      "exit_code": 0,
+      "output": "aaba326 gitignore\n1384c01 gitignore\n96c7f28 gitignore\n6c224c2 ci(actions): update artifact upload to node24 runtime\na277369 docs(article): add Anthropic OpenClaw economics article"
+    },
+    "top_level_tree": {
+      "exit_code": 0,
+      "output": "./.antora-src\n./.antora-src/antora.yml\n./.antora-src/modules\n./.canonization\n./.canonization/.editorconfig\n./.canonization/.gitattributes\n./.canonization/.gitignore\n./.canonization/Federation\n./.canonization/Governance\n./.canonization/Orchestration\n./.cleanup\n./.cleanup/publication-canon-2026-03-31.yml\n./.cleanup/removal-candidates-2026-03-31.yml\n./.commanding\n./.commanding/.gitattributes\n./.commanding/.gitignore\n./.commanding/README.md\n./.commanding/backup\n./.commanding/command.sh\n./.commanding/commanding.cmd\n./.commanding/commanding.sh\n./.commanding/database\n./.commanding/dependencies\n./.commanding/deploy\n./.commanding/docker\n./.commanding/git\n./.commanding/git_diff.sh\n./.commanding/git_status.sh\n./.commanding/git_sync.sh\n./.commanding/health.sh\n./.commanding/helm\n./.commanding/history.sh\n./.commanding/local_ci.sh\n./.commanding/logs\n./.commanding/misc\n./.commanding/patch_zipper.sh\n./.commanding/reorganize-tests.ps1\n./.commanding/run.sh\n./.commanding/sh\n./.commanding/systemd\n./.commanding/test\n./.commanding/zipper.sh\n./.consuming\n./.consuming/.github\n./.consuming/.gitignore\n./.consuming/consuming.json\n./.consuming/consuming.ps1\n./.deploy\n./.deploy/MANIFEST.md\n./.deploy/_template\n./.deploy/cloudflare\n./.deploy/docker\n./.deploy/helm\n./.deploy/systemd\n./.gate\n./.gate/.github\n./.gate/.gitignore\n./.gate/MANIFEST.json\n./.gate/README.md\n./.gate/contract\n./.gate/gate.ps1\n./.gate/gate.sh\n./.gate/linting\n./.gate/policy\n./.gate/quality\n./.gate/run.ps1\n./.gate/run.sh\n./.git\n./.git/FETCH_HEAD\n./.git/HEAD\n./.git/config\n./.git/config.worktree\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/refs\n./.gitattributes\n./.github\n./.github/FUNDING.yml\n./.github/workflows\n./.gitignore\n./.ide\n./.ide/sr_default_inspector.xml\n./.idea\n./.idea/workspace.xml\n./.intelligence\n./.intelligence/.github\n./.intelligence/.gitignore\n./.intelligence/intelligence-engine.ps1\n./.intelligence/intelligence-install.ps1\n./.intelligence/intelligence-run.ps1\n./.intelligence/intelligence.json\n./.release\n./.release/publish\n./.release/sign\n./.release/tag\n./.smoke\n./.smoke/compose\n./.smoke/k6\n./.smoke/probe\n./.sync\n./.sync/manifest\n./.sync/quality-atlas\n./ANTORA_TRANSITION.md\n./BUILDING.md\n./MANIFEST.md\n./RAG_SOURCES.md\n./README.md\n./antora-playbook.yml\n./assets\n./assets/when-power-disguises-itself-as-passion-hero.svg\n./doc\n./doc/article\n./doc/quality-atlas\n./doc/quality-baseline\n./docs\n./docs/CNAME"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.3.6 (cli) (built: Jan 27 2026 03:09:47) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n    with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.12.13"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "656"
+    },
+    "report_excerpt": "= Accessing Report :description: Current owner-oriented maturity report for the Accessing component. :page-slug: accessing-report This page is the current owner-oriented maturity report for *Accessing*. It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward. == Component Portrait Accessing is not shaped as a simple login screen or a lightweight security helper. It reads as a Symfony-oriented account access and account security component: a system intended to manage registration, verification, MFA, password recovery, account locking, and operational discipline around the account lifecycle. The component already shows signs of being treated as a governed subsystem rather than as a convenience layer. Its current shape suggests an internal access and identity surface designed for durability, structured evolution, and integration into a wider ecosystem. == Ecosystem Role Within the broader Smartresponsor direction, Accessing appears to occupy the role of an account access and account security component. Its ecosystem role can be understood across several functions: * as a registration and verification surface, * as an MFA-aware account security layer, * as a password recovery and reset surface, * as a session and lock-discipline component, * and as a governed account-core capability for the ecosystem. This makes Accessing strategically more important than a typical login feature. It points toward a reusable internal access capability that other components can depend on. == Current Maturity Accessing already presents several strong signals of maturity: * a clear account-centric product identity, * explicit Symfony 8 and PHP 8.4 targeting, * strong security package alignment, * multiple test bands, * a governed account model around verification, MFA, lock state, and failure tracking, * and a local quality pipeline for style, static analysis, and tests. In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity. == RC Scorecard [cols=\"2,1,4\",options=\"header\"] |=== | Layer | Score to RC | Reading | Product identity | 8.8 / 10 | The component is already clearly framed as an account access application with registration, verification, MFA, recovery, sessions, and security events. | Architecture and domain shape | 8.5 / 10 | The Account-centered model already expresses verification, MFA, locking, failed-login discipline, and account security state as one coherent surface. | Runtime and application surface | 8.4 / 10 | Symfony Security, CSRF, Mailer, Notifier, Rate Limiter, and runtime packages already establish a real access application layer. | QA maturity | 8.1 / 10 | The quality contour is already solid across linting, style, static analysis, tests, and a local full pipeline. | Security posture | 8.9 / 10 | MFA, password recovery, verify-email, rate limiting, lock state, and failed-login tracking form a very strong security signal. | Market-facing alignment | 8.3 / 10 | The component already aligns well with enterprise-class account access and CIAM-style surfaces, though it still reads more as an internal governed component than a public identity product shell. | Overall readiness to RC | 8.5 / 10 | Accessing is already a strong pre-RC component with clear enterprise-class internal access signals. |=== == Leader Line Accessing should not be measured against basic login forms or narrow authentication helpers. Its natural comparison line is closer to the enterprise-class customer identity, account access, and governed authentication category, including the kind of capability bands represented by: * registration and verification, * password recovery and reset, * MFA and second-factor enablement, * session and lock discipline, * and governed operational handling of account security. This means the component is better understood as targeting the same strategic class of problem addressed by stronger account access and customer identity leaders, while expressing that class through a Symfony-native internal component. In that sense, the leader line is not another login page. It is closer to: * enterprise account access class, * enterprise account security class, * enterprise governed identity-surface class, * reinterpreted as an internal ecosystem component. == Strength Profile Several strengths are already visible and worth naming directly. === Account-centric model clarity Accessing already carries a strong center of gravity around the Account entity itself. That matters because many access systems become vague when registration, MFA, verification, recovery, and account security state are spread across disconnected technical surfaces. That fragmentation is not the dominant signal here. The component instead signals a coherent account-centered model. …",
+    "report_excerpt_source": ".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc",
+    "key_file_excerpts": {
+      "package.json": "{\n  \"name\": \"documentating-antora-site\",\n  \"private\": true,\n  \"scripts\": {\n    \"build:content\": \"python3 tools/build_antora_site.py\",\n    \"build\": \"npm run build:content && node tools/run_antora.mjs\"\n  },\n  \"dependencies\": {\n    \"antora\": \"3.1.12\",\n    \"@antora/lunr-extension\": \"^1.0.0-alpha.10\"\n  }\n}\n",
+      ".github/workflows/gh-pages.yml": "name: gh-pages\n\non:\n  push:\n    branches: [\"master\"]\n  workflow_dispatch: {}\n\npermissions:\n  contents: write\n\nconcurrency:\n  group: \"docs-gh-pages\"\n  cancel-in-progress: false\n\njobs:\n  deploy:\n    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip docs]') }}\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout master\n        uses: actions/checkout@v5\n        with:\n          ref: master\n          fetch-depth: 0\n\n      - name: Setup Node\n        uses: actions/setup-node@v5\n        with:\n          node-version: \"24\"\n\n      - name: Setup Python\n        uses: actions/setup-python@v6\n        with:\n          python-version: \"3.12\"\n\n      - name: Install build dependencies\n        run: |\n          sudo apt-get update\n          sudo apt-get install -y pandoc\n          python -m pip install --upgrade pip\n          python -m pip install pyyaml\n          npm install\n\n      - name: Build canonical Antora source tree\n        run: |\n          python3 tools/build_antora_site.py\n\n      - name: Build site with Antora\n        run: |\n          npx antora antora-playbook.yml --fetch\n\n      - name: Copy public site extras\n        run: |\n          if [ -f docs/CNAME ]; then\n            cp docs/CNAME .site_build/CNAME\n          fi\n          if [ -d assets ]; then\n            mkdir -p .site_build/assets\n            cp -R assets/. .site_build/assets/\n          fi\n          touch .site_build/.nojekyll\n\n      - name: Publish owner-facing site to gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n        run: |\n          set -euo pipefail\n          git config user.name \"github-actions[bot]\"\n          git config user.email \"github-actions[bot]@users.noreply.github.com\"\n          git remote set-url origin \"https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git\"\n\n          workdir=\"$(mktemp -d)\"\n\n          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then\n            git fetch origin gh-pages:gh-pages\n            git worktree add --force \"$workdir\" gh-pages\n          else\n            git worktree add --detach \"$workdir\"\n            (\n              cd \"$workdir\"\n              git checkout --orphan gh-pages\n            )\n          fi\n\n          find \"$workdir\" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +\n          cp -R .site_build/. \"$workdir\"/\n\n          (\n            cd \"$workdir\"\n            git add -A\n            if [ -n \"$(git status --porcelain)\" ]; then\n              git commit -m \"docs: publish canonical Antora site\"\n              git push origin HEAD:gh-pages --force\n            else\n              echo \"No site changes to publish.\"\n            fi\n          )\n\n          git worktree remove \"$workdir\" --force || true\n",
+      ".github/workflows/quality-atlas-assessment.yml": "name: quality-atlas-assessment\n\non:\n  workflow_dispatch:\n    inputs:\n      component:\n        description: 'Optional component_id to assess (for example: documentating)'\n        required: false\n        type: string\n      mode:\n        description: 'Optional run mode override'\n        required: false\n        type: choice\n        options:\n          - auto\n          - dry-run\n          - responses\n        default: auto\n  schedule:\n    - cron: '27 9 */2 * *'\n\npermissions:\n  contents: write\n\nconcurrency:\n  group: quality-atlas-assessment\n  cancel-in-progress: false\n\njobs:\n  assess:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout master\n        uses: actions/checkout@v5\n        with:\n          ref: master\n          fetch-depth: 0\n\n      - name: Setup Python\n        uses: actions/setup-python@v6\n        with:\n          python-version: '3.12'\n\n      - name: Install dependencies\n        run: |\n          python -m pip install --upgrade pip\n          python -m pip install pyyaml\n\n      - name: Seed current component snapshots\n        run: |\n          python3 tools/seed_quality_atlas_snapshots.py\n\n      - name: Run scheduled assessment dry-run or AI-backed pass\n        id: assessment\n        env:\n          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}\n          QUALITY_ATLAS_REPO_TOKEN: ${{ secrets.QUALITY_ATLAS_REPO_TOKEN }}\n          QUALITY_ATLAS_OPENAI_MODEL: ${{ vars.QUALITY_ATLAS_OPENAI_MODEL || 'gpt-5' }}\n          INPUT_COMPONENT: ${{ github.event.inputs.component || '' }}\n          INPUT_MODE: ${{ github.event.inputs.mode || 'auto' }}\n        run: |\n          mode=\"dry-run\"\n          if [ \"${INPUT_MODE}\" = \"responses\" ]; then\n            mode=\"responses\"\n          elif [ \"${INPUT_MODE}\" = \"dry-run\" ]; then\n            mode=\"dry-run\"\n          elif [ -n \"${OPENAI_API_KEY}\" ]; then\n            mode=\"responses\"\n          fi\n\n          component_args=\"\"\n          selected_component=\"ALL_ENABLED\"\n          if [ -n \"${INPUT_COMPONENT}\" ]; then\n            component_args=\"--component ${INPUT_COMPONENT}\"\n            selected_component=\"${INPUT_COMPONENT}\"\n          fi\n\n          echo \"mode=${mode}\" >> \"$GITHUB_OUTPUT\"\n          echo \"component=${selected_component}\" >> \"$GITHUB_OUTPUT\"\n\n          echo \"Assessment mode=${mode} component=${selected_component}\"\n          python3 tools/run_quality_atlas_assessment.py --mode \"$mode\" ${component_args}\n      - name: Print assessment errors\n        if: always()\n        run: |\n          python3 - <<'PY'\n          from pathlib import Path\n          import json\n          root = Path('.sync/quality-atlas/generated/assessment-runs')\n          if not root.exists():\n              print('No assessment run directory found.')\n              raise SystemExit(0)\n          runs = sorted([p for p in root.iterdir() if p.is_dir()])\n          if not runs:\n              print('No assessment runs found.')\n              raise SystemExit(0)\n          run_dir = runs[-1]\n          print(f'Latest assessment run: {run_dir}')\n          errors = sorted(run_dir.glob('*.error.json'))\n          if not errors:\n              print('No component error files found.')\n              raise SystemExit(0)\n          for path in errors:\n              print(f'\\n===== {path.name} =====')\n              try:\n                  payload = json.loads(path.read_text(encoding='utf-8'))\n              except Exception:\n                  print(path.read_text(encoding='utf-8', errors='ignore'))\n                  continue\n              compact = {\n                  'component': payload.get('component'),\n                  'title': payload.get('title'),\n                  'mode': payload.get('mode'),\n                  'error_type': payload.get('error_type'),\n                  'error': payload.get('error'),\n              }\n              print(json.dumps(compact, indent=2, ensure_ascii=False))\n          PY\n\n      - name: Write assessment step summary\n        if: always()\n        run: |\n          python3 - <<'PY'\n          from pathlib import "
+    }
+  },
+  "verdict": {
+    "component": "accessing",
+    "summary": "Refreshed owner-facing portrait from the canonical Accessing report; no new code-level evidence was available in this run, so existing pre-RC scores are retained pending a repository-backed scan.",
+    "strengths": [
+      "Canonical Accessing report clearly articulates account access scope (registration, verification, recovery, MFA)",
+      "Automated Antora site publishing via gh-pages workflow on master",
+      "Scheduled Quality Atlas assessment workflow present",
+      "Quality Atlas snapshot files for Accessing are maintained in-repo"
+    ],
+    "risks": [
+      "Current run scanned the documentation repository, not the smartresponsor/accessing codebase",
+      "Product, architecture, runtime, and security claims are narrative-only in this run",
+      "Potential drift between report assertions and unscanned code until repository facts are ingested"
+    ],
+    "next_actions": [
+      "Run the scheduled assessment against the smartresponsor/accessing repository to ingest code-level facts",
+      "Bind report assertions to concrete repository files and CI artifacts",
+      "Capture minimal probes: composer.json, Symfony/security packages, and test suite presence",
+      "Re-run the assessment after linking the target repository to refresh all axes"
+    ],
+    "notes": [
+      "This run operated on the documentation/Antora site repository; component source was not scanned",
+      "Scores preserved from pre-RC seed pending repository-backed refresh"
+    ],
+    "suggested_score_overrides": {},
+    "metric_updates": {
+      "product": {
+        "summary": "Component identity and market-facing shape are materially present per the Accessing report; no new code-level signals were observed in this run.",
+        "risks": [
+          "Current run used the documentation repository only; code repository signals are absent",
+          "Assessment remains seeded from pre-RC snapshot"
+        ],
+        "improvements": [
+          "Refresh from smartresponsor/accessing with code-level probes",
+          "Cross-link report assertions to concrete repo evidence"
+        ],
+        "evidence": [
+          ".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc",
+          ".sync/quality-atlas/components/accessing/current.yaml"
+        ]
+      },
+      "architecture": {
+        "summary": "Symfony-oriented architecture shape is described in the report; unverified against the source repository in this run.",
+        "risks": [
+          "Architecture assertions are narrative-only in this run",
+          "No direct component repository artifacts were scanned"
+        ],
+        "improvements": [
+          "Ingest composer.json and Symfony/security configuration from the code repository",
+          "Reference domain model and boundary files in the report"
+        ],
+        "evidence": [
+          ".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc"
+        ]
+      },
+      "runtime": {
+        "summary": "Runtime/application surface (security, CSRF, mailer, rate limiter) is reported narratively; no runtime artifacts were observed in this repository.",
+        "risks": [
+          "No executable runtime or environment configuration for the component present in this repo",
+          "Claims about runtime packages are unverified in this run"
+        ],
+        "improvements": [
+          "Ingest runtime/package manifests and environment configs from the code repo",
+          "Bind runtime claims to specific files and versions"
+        ],
+        "evidence": [
+          ".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc"
+        ]
+      },
+      "qa": {
+        "summary": "Testing and QA posture remain pre-RC in narrative; this repository holds docs CI but no component-level test configs.",
+        "risks": [
+          "No phpunit/static-analysis configs for the component are present here to validate QA claims",
+          "Quality signals depend on the narrative until code repo is scanned"
+        ],
+        "improvements": [
+          "Pull test configs and recent results from smartresponsor/accessing into the assessment inputs",
+          "Cross-reference QA assertions in the report with CI artifacts"
+        ],
+        "evidence": [
+          ".github/workflows/quality-atlas-assessment.yml",
+          ".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc"
+        ]
+      },
+      "ops": {
+        "summary": "Operational posture for documentation publishing and scheduled assessments is strong; component security/ops posture is narrative-only in this run.",
+        "risks": [
+          "Component-level ops and security signals were not validated against the code repo",
+          "Possible drift between security posture claims and actual configuration"
+        ],
+        "improvements": [
+          "Augment with security and deployment workflows (SAST/DAST, release) from the code repo",
+          "Cite concrete security configuration and safeguards in the report"
+        ],
+        "evidence": [
+          ".github/workflows/gh-pages.yml",
+          ".github/workflows/quality-atlas-assessment.yml"
+        ]
+      },
+      "market": {
+        "summary": "Business-facing and portfolio alignment remain as previously reported; no new market signals were captured in this run.",
+        "risks": [
+          "Narrative could drift without code/usage artifacts to anchor claims"
+        ],
+        "improvements": [
+          "Reference concrete integration points or consuming components once the code repo is scanned"
+        ],
+        "evidence": [
+          ".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc"
+        ]
+      },
+      "overall": {
+        "summary": "Overall RC direction remains as in the canonical report; this run observed no new code-level evidence, so scores are held pending a repository-backed refresh.",
+        "risks": [
+          "Assessment relies on narrative and lacks direct repository facts from smartresponsor/accessing"
+        ],
+        "improvements": [
+          "Run the scheduled assessment against the target repository and refresh all axes with code-backed evidence"
+        ],
+        "evidence": [
+          ".github/workflows/quality-atlas-assessment.yml",
+          ".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc"
+        ]
+      }
+    },
+    "confidence": "low",
+    "evidence_paths": [
+      ".antora-src/modules/ROOT/pages/component/accessing/report/index.adoc",
+      ".github/workflows/gh-pages.yml",
+      ".github/workflows/quality-atlas-assessment.yml",
+      "package.json",
+      "antora-playbook.yml",
+      ".sync/quality-atlas/components/accessing/current.yaml"
+    ]
+  },
+  "snapshot_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/history/2026-04-06-assessment-2026-04-06.yaml"
+  },
+  "probe_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/probes/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/probes/history/2026-04-06-assessment-2026-04-06.yaml"
+  },
+  "ai_io": {
+    "request_file": "accessing.request.json",
+    "response_file": "accessing.response.json"
+  }
+}
