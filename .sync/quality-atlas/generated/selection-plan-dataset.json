@@ -73,24 +73,24 @@
     }
   },
   "plan": {
-    "generated_at": "2026-04-06T02:38:33.288649+00:00",
+    "generated_at": "2026-04-06T06:27:05.409093+00:00",
     "event_name": "workflow_dispatch",
     "manual_components": [
-      "indexing"
+      "paying"
     ],
     "selected_components": [
-      "indexing"
+      "paying"
     ],
     "selected_count": 1,
     "items": [
       {
-        "component": "indexing",
-        "title": "Indexing",
-        "repository": "smartresponsor/indexing",
+        "component": "paying",
+        "title": "Paying",
+        "repository": "smartresponsor/paying",
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c",
+        "current_head_commit": "262dc205f1237c2578ed6fb1f576d740e827d273",
         "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
@@ -98,7 +98,7 @@
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 2.64
+        "hours_since_last_assessment": 6.45
       }
     ],
     "status": "selected"
@@ -156,20 +156,35 @@
       "repository": "smartresponsor/indexing",
       "snapshot": {
         "snapshot_date": "2026-04-06",
-        "snapshot_label": "assessment-2026-04-06",
+        "snapshot_label": "pre-rc-seed",
         "overall": 8.4,
-        "assessed_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c",
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "paying",
+      "title": "Paying",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/paying",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "assessment-2026-04-06",
+        "overall": 8.9,
+        "assessed_commit": "262dc205f1237c2578ed6fb1f576d740e827d273",
         "assessed_tag": null,
         "trigger_reason": "manual_override"
       },
       "selection": {
-        "component": "indexing",
-        "title": "Indexing",
-        "repository": "smartresponsor/indexing",
+        "component": "paying",
+        "title": "Paying",
+        "repository": "smartresponsor/paying",
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c",
+        "current_head_commit": "262dc205f1237c2578ed6fb1f576d740e827d273",
         "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
@@ -177,7 +192,7 @@
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 2.64
+        "hours_since_last_assessment": 6.45
       }
     }
   ]

@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-06T02:39:48.435658+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T023833Z",
+  "generated_at": "2026-04-06T06:28:18.677269+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T062705Z",
   "mode": "responses",
   "components": [
     {
-      "component": "indexing",
-      "title": "Indexing",
-      "overall": 8.4,
-      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/indexing/history/2026-04-06-assessment-2026-04-06.yaml",
-      "summary": "Indexing reads as a Symfony-native indexing/search-runtime component with strong internal scaffolding (dual-DB docker, smoke/probe tooling, governance, and docs), trending toward RC but with gaps in release tagging, Antora navigation, and verified test execution."
+      "component": "paying",
+      "title": "Paying",
+      "overall": 8.9,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/paying/history/2026-04-06-assessment-2026-04-06.yaml",
+      "summary": "Paying reads as a Symfony-oriented payment lifecycle and operations component with strong documentation, multi-tier testing, and mature local ops tooling; primary gap is visible CI/CD automation in-repo."
     }
   ],
   "failures": [],
   "status": "ok",
   "selected_components": [
-    "indexing"
+    "paying"
   ]
 }

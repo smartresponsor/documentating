@@ -22,7 +22,7 @@
         {
           "id": "delivery",
           "title": "Delivery Readiness",
-          "average": 8.68,
+          "average": 8.67,
           "min": 7.4,
           "max": 9.1
         },
@@ -36,7 +36,7 @@
         {
           "id": "governance",
           "title": "Security & Governance",
-          "average": 8.68,
+          "average": 8.67,
           "min": 7.4,
           "max": 9.1
         },
@@ -50,7 +50,7 @@
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.49,
+          "average": 8.48,
           "min": 7.7,
           "max": 9.0
         }
@@ -230,13 +230,13 @@
           "axes": {
             "product": 8.9,
             "architecture": 8.7,
-            "delivery": 9.1,
+            "delivery": 8.9,
             "reliability": 8.95,
-            "governance": 9.1,
+            "governance": 8.9,
             "clarity": 8.85,
-            "overall": 9.0
+            "overall": 8.9
           },
-          "overall": 8.94
+          "overall": 8.87
         },
         {
           "component": "projecting",
@@ -383,21 +383,21 @@
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.52,
+          "average": 8.51,
           "min": 7.55,
           "max": 9.0
         },
         {
           "id": "security",
           "title": "Security",
-          "average": 8.68,
+          "average": 8.67,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "delivery",
           "title": "Delivery",
-          "average": 8.68,
+          "average": 8.67,
           "min": 7.4,
           "max": 9.1
         },
@@ -411,7 +411,7 @@
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.49,
+          "average": 8.48,
           "min": 7.7,
           "max": 9.0
         }
@@ -630,13 +630,13 @@
             "data": 8.8,
             "api": 8.75,
             "runtime": 8.9,
-            "reliability": 9.0,
-            "security": 9.1,
-            "delivery": 9.1,
+            "reliability": 8.9,
+            "security": 8.9,
+            "delivery": 8.9,
             "quality": 9.0,
-            "overall": 9.0
+            "overall": 8.9
           },
-          "overall": 8.93
+          "overall": 8.87
         },
         {
           "component": "projecting",
@@ -759,7 +759,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 8.48
+      "ecosystem_average": 8.47
     },
     {
       "id": "operations",
@@ -783,42 +783,42 @@
         {
           "id": "observability",
           "title": "Observability",
-          "average": 8.68,
+          "average": 8.67,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "security",
           "title": "Security",
-          "average": 8.68,
+          "average": 8.67,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "traffic",
           "title": "Traffic Strategy",
-          "average": 8.52,
+          "average": 8.51,
           "min": 7.55,
           "max": 9.0
         },
         {
           "id": "delivery",
           "title": "Delivery Automation",
-          "average": 8.68,
+          "average": 8.67,
           "min": 7.4,
           "max": 9.1
         },
         {
           "id": "recovery",
           "title": "Recovery",
-          "average": 8.57,
+          "average": 8.56,
           "min": 7.15,
           "max": 9.15
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.49,
+          "average": 8.48,
           "min": 7.7,
           "max": 9.0
         }
@@ -1010,14 +1010,14 @@
           "axes": {
             "runtime": 8.9,
             "reliability": 8.95,
-            "observability": 9.1,
-            "security": 9.1,
-            "traffic": 9.0,
-            "delivery": 9.1,
-            "recovery": 9.05,
-            "overall": 9.0
+            "observability": 8.9,
+            "security": 8.9,
+            "traffic": 8.9,
+            "delivery": 8.9,
+            "recovery": 8.95,
+            "overall": 8.9
           },
-          "overall": 9.03
+          "overall": 8.91
         },
         {
           "component": "projecting",
@@ -1126,7 +1126,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 8.55
+      "ecosystem_average": 8.54
     },
     {
       "id": "owner",
@@ -1150,7 +1150,7 @@
         {
           "id": "delivery",
           "title": "Delivery Maturity",
-          "average": 8.68,
+          "average": 8.67,
           "min": 7.4,
           "max": 9.1
         },
@@ -1164,7 +1164,7 @@
         {
           "id": "governance",
           "title": "Governance",
-          "average": 8.68,
+          "average": 8.67,
           "min": 7.4,
           "max": 9.1
         },
@@ -1185,7 +1185,7 @@
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.49,
+          "average": 8.48,
           "min": 7.7,
           "max": 9.0
         }
@@ -1377,14 +1377,14 @@
           "axes": {
             "identity": 8.9,
             "consistency": 8.7,
-            "delivery": 9.1,
+            "delivery": 8.9,
             "quality": 9.0,
-            "governance": 9.1,
+            "governance": 8.9,
             "fit": 8.85,
             "debt": 2.15,
-            "overall": 9.0
+            "overall": 8.9
           },
-          "overall": 8.1
+          "overall": 8.04
         },
         {
           "component": "projecting",
@@ -1493,7 +1493,7 @@
         }
       ],
       "component_count": 20,
-      "ecosystem_average": 7.77
+      "ecosystem_average": 7.76
     }
   ],
   "components": [
@@ -1998,21 +1998,9 @@
       "title": "Indexing",
       "snapshot": {
         "date": "2026-04-06",
-        "label": "assessment-2026-04-06",
+        "label": "pre-rc-seed",
         "ref": "master",
-        "origin": "quality-atlas responses assessment",
-        "assessment_basis": {
-          "repository": "smartresponsor/indexing",
-          "assessed_branch": "master",
-          "assessed_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c",
-          "assessed_tag": null,
-          "trigger_reason": "manual_override",
-          "previous_commit": null,
-          "previous_tag": null,
-          "current_head_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c",
-          "current_head_tag": null,
-          "changed_files_sample": []
-        }
+        "origin": "quality-atlas seed"
       },
       "profile_axes": {
         "engineering": {
@@ -2059,18 +2047,12 @@
       },
       "overall": 8.4,
       "strengths": [
-        "Clear indexing identity and Symfony 8/PHP 8.4 targeting",
-        "Dual-DB runtime scaffolding via docker-compose (MySQL/Postgres) with smoke scripts",
-        "Static analysis and code-style tooling present (PHPStan, PHP-CS-Fixer) and CI scripts wired in composer",
-        "Operational/observability scaffolding present (ops/grafana, ops/alert, health script)",
-        "Governance surfaces present (.gate, MANIFEST files) and structured docs footprint"
+        "Highest current axis: product 8.5/10",
+        "Component is already represented in the current pre-RC Atlas."
       ],
       "risks": [
-        "No git tags detected for releases",
-        "Antora navigation/root index not present, reducing docs discoverability",
-        "PHPUnit config only as .dist; unit test suite execution not evidenced",
-        "Kubernetes manifests not evidenced; runtime orchestration appears docker-only",
-        "Smoke/perf lanes presence is visible but CI integration is not evidenced"
+        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
+        "Structured metrics should be refreshed by the scheduled assessment workflow."
       ]
     },
     {
@@ -2264,9 +2246,21 @@
       "title": "Paying",
       "snapshot": {
         "date": "2026-04-06",
-        "label": "pre-rc-seed",
+        "label": "assessment-2026-04-06",
         "ref": "master",
-        "origin": "quality-atlas seed"
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/paying",
+          "assessed_branch": "master",
+          "assessed_commit": "262dc205f1237c2578ed6fb1f576d740e827d273",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "262dc205f1237c2578ed6fb1f576d740e827d273",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        }
       },
       "profile_axes": {
         "engineering": {
@@ -2275,50 +2269,58 @@
           "data": 8.8,
           "api": 8.75,
           "runtime": 8.9,
-          "reliability": 9.0,
-          "security": 9.1,
-          "delivery": 9.1,
+          "reliability": 8.9,
+          "security": 8.9,
+          "delivery": 8.9,
           "quality": 9.0,
-          "overall": 9.0
+          "overall": 8.9
         },
         "owner": {
           "identity": 8.9,
           "consistency": 8.7,
-          "delivery": 9.1,
+          "delivery": 8.9,
           "quality": 9.0,
-          "governance": 9.1,
+          "governance": 8.9,
           "fit": 8.85,
           "debt": 2.15,
-          "overall": 9.0
+          "overall": 8.9
         },
         "investor": {
           "product": 8.9,
           "architecture": 8.7,
-          "delivery": 9.1,
+          "delivery": 8.9,
           "reliability": 8.95,
-          "governance": 9.1,
+          "governance": 8.9,
           "clarity": 8.85,
-          "overall": 9.0
+          "overall": 8.9
         },
         "operations": {
           "runtime": 8.9,
           "reliability": 8.95,
-          "observability": 9.1,
-          "security": 9.1,
-          "traffic": 9.0,
-          "delivery": 9.1,
-          "recovery": 9.05,
-          "overall": 9.0
+          "observability": 8.9,
+          "security": 8.9,
+          "traffic": 8.9,
+          "delivery": 8.9,
+          "recovery": 8.95,
+          "overall": 8.9
         }
       },
-      "overall": 9.0,
+      "overall": 8.9,
       "strengths": [
-        "Highest current axis: ops 9.1/10",
-        "Component is already represented in the current pre-RC Atlas."
+        "Clear payment lifecycle identity and scope documented",
+        "Rich docs set (architecture, API, install, operations, limits)",
+        "Multi-tier tests present (unit, functional, e2e, Playwright) with composer/npm scripts",
+        "Symfony 7/8 stack with Doctrine ORM, Workflow, Messenger, Security",
+        "Operational scaffolding (compose, deploy/docker, ops/grafana, ops/alerts)",
+        "Static analysis and code quality tooling (phpstan, rector, php-cs-fixer)",
+        "Security posture signals (Symfony security-bundle, gitleaks config)"
       ],
       "risks": [
-        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
-        "Structured metrics should be refreshed by the scheduled assessment workflow."
+        "No GitHub Actions or CI workflows detected",
+        "Runtime/tooling target PHP 8.4 while environments may vary; ensure alignment",
+        "No git tags detected (pre-release posture)",
+        "Antora nav/index not detected; report may be orphaned in docs site",
+        "Dual Symfony major targets increase test surface and maintenance load"
       ]
     },
     {
@@ -2996,6 +2998,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 9.0
+      },
+      {
+        "date": "2026-04-06",
+        "label": "assessment-2026-04-06",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/paying",
+          "assessed_branch": "master",
+          "assessed_commit": "262dc205f1237c2578ed6fb1f576d740e827d273",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "262dc205f1237c2578ed6fb1f576d740e827d273",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
+        "overall": 8.9
       },
       {
         "date": "2026-04-06",
