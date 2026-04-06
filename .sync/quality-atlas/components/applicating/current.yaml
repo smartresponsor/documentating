@@ -1,7 +1,7 @@
 component: applicating
 title: Applicating
 snapshot:
-  date: '2026-04-05'
+  date: '2026-04-06'
   label: pre-rc-seed
   ref: master
   origin: quality-atlas seed
