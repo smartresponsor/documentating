@@ -1,0 +1,274 @@
+component: attaching
+title: Attaching
+snapshot:
+  date: '2026-04-06'
+  label: assessment-2026-04-06
+  origin: quality-atlas deterministic probes
+  generated_at: '2026-04-06T16:32:54.138040+00:00'
+repo_target:
+  github_repository: smartresponsor/attaching
+  local_path: ''
+  default_branch: master
+families:
+  canon_structure:
+    title: Canon & Structure
+    status: warn
+    score: 9.0
+    summary: 0 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - PHP namespace does not use the default App\ root.
+    findings:
+    - severity: warn
+      id: namespace_drift
+      detail: PHP namespace does not use the default App\ root.
+      path: src/AttachmentBundle.php
+    evidence:
+    - src/AttachmentBundle.php
+  architecture_boundaries:
+    title: Architecture & Boundaries
+    status: warn
+    score: 5.0
+    summary: 0 fail, 5 warn, 0 info findings detected.
+    blockers:
+    - No obvious boundary descriptor files were detected.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    findings:
+    - severity: warn
+      id: boundary_descriptors_missing
+      detail: No obvious boundary descriptor files were detected.
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/Unit/Attachment/AttachmentVoterTest.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/DataFixtures/AttachmentLinkFixture.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/DataFixtures/AttachmentFixture.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/Security/Attachment/Voter/AttachmentVoter.php
+    evidence:
+    - src/DataFixtures/AttachmentFixture.php
+    - src/DataFixtures/AttachmentLinkFixture.php
+    - src/Security/Attachment/Voter/AttachmentVoter.php
+    - tests/Unit/Attachment/AttachmentVoterTest.php
+  runtime_surface:
+    title: Runtime & Application Surface
+    status: warn
+    score: 8.75
+    summary: 0 fail, 1 warn, 1 info findings detected.
+    blockers:
+    - No Docker or compose files were detected.
+    findings:
+    - severity: warn
+      id: docker_surface_missing
+      detail: No Docker or compose files were detected.
+    - severity: info
+      id: health_surface_not_found
+      detail: No obvious health/readiness markers were detected.
+    evidence: []
+  qa_behavior:
+    title: QA & Behavioral Assurance
+    status: warn
+    score: 8.0
+    summary: 0 fail, 2 warn, 0 info findings detected.
+    blockers:
+    - No fixtures directories were detected.
+    - Neither Playwright nor Symfony Panther markers were detected.
+    findings:
+    - severity: warn
+      id: fixtures_missing
+      detail: No fixtures directories were detected.
+    - severity: warn
+      id: browser_behavior_missing
+      detail: Neither Playwright nor Symfony Panther markers were detected.
+    evidence:
+    - tests/
+  documentation_suite:
+    title: Documentation & GitHub Suite
+    status: warn
+    score: 6.75
+    summary: 0 fail, 3 warn, 1 info findings detected.
+    blockers:
+    - 'Missing expected documentation asset: CHANGELOG.md.'
+    - Public/protected docblock coverage is 8/153 (5%).
+    - GitHub Suite support files appear sparse.
+    findings:
+    - severity: warn
+      id: missing_doc_asset
+      detail: 'Missing expected documentation asset: CHANGELOG.md.'
+    - severity: warn
+      id: docblock_coverage_low
+      detail: Public/protected docblock coverage is 8/153 (5%).
+    - severity: info
+      id: nelmio_openapi_not_detected
+      detail: No obvious Nelmio/OpenAPI markers were detected.
+    - severity: warn
+      id: github_suite_sparse
+      detail: GitHub Suite support files appear sparse.
+    evidence:
+    - README.md
+    - php-docblock-ratio:8/153
+  delivery_observability:
+    title: Delivery & Observability
+    status: warn
+    score: 7.75
+    summary: 0 fail, 2 warn, 1 info findings detected.
+    blockers:
+    - No GitHub workflow files were detected.
+    - Deploy or packaging markers appear sparse.
+    findings:
+    - severity: warn
+      id: workflows_missing
+      detail: No GitHub workflow files were detected.
+    - severity: info
+      id: observability_markers_missing
+      detail: No Prometheus/Grafana markers were detected.
+    - severity: warn
+      id: deploy_markers_sparse
+      detail: Deploy or packaging markers appear sparse.
+    evidence: []
+  solid_refactoring:
+    title: SOLID & Refactoring Pressure
+    status: warn
+    score: 2.0
+    summary: 0 fail, 8 warn, 0 info findings detected.
+    blockers:
+    - Constructor injects 8 parameters; review dependency inversion and class responsibilities.
+    - Constructor injects 10 parameters; review dependency inversion and class responsibilities.
+    - Constructor injects 7 parameters; review dependency inversion and class responsibilities.
+    - Constructor injects 19 parameters; review dependency inversion and class responsibilities.
+    - Constructor injects 9 parameters; review dependency inversion and class responsibilities.
+    findings:
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 8 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Service/Attachment/AttachmentUploadService.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 10 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Dto/Attachment/Input/UploadAttachmentInput.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 7 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Dto/Attachment/Input/AttachAttachmentInput.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 19 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Dto/Attachment/Output/AttachmentView.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 9 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Dto/Attachment/Output/AttachmentLinkView.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 26 public methods; review interface segregation and SRP.
+      path: src/Entity/Attachment/Attachment.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 20 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Entity/Attachment/Attachment.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 8 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Entity/Attachment/AttachmentLink.php
+    evidence:
+    - src/Dto/Attachment/Input/AttachAttachmentInput.php
+    - src/Dto/Attachment/Input/UploadAttachmentInput.php
+    - src/Dto/Attachment/Output/AttachmentLinkView.php
+    - src/Dto/Attachment/Output/AttachmentView.php
+    - src/Entity/Attachment/Attachment.php
+    - src/Entity/Attachment/AttachmentLink.php
+    - src/Service/Attachment/AttachmentUploadService.php
+summary:
+  overall_status: warn
+  average_score: 6.75
+  status_counts:
+    pass: 0
+    warn: 7
+    fail: 0
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — PHP namespace does not use the default App\ root.
+  - Architecture & Boundaries — No obvious boundary descriptor files were detected.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - Runtime & Application Surface — No Docker or compose files were detected.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - QA & Behavioral Assurance — Neither Playwright nor Symfony Panther markers were
+    detected.
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 8/153 (5%).
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - PHP namespace does not use the default App\ root.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 5.0
+      summary: 0 fail, 5 warn, 0 info findings detected.
+      blockers:
+      - No obvious boundary descriptor files were detected.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: warn
+      score: 8.75
+      summary: 0 fail, 1 warn, 1 info findings detected.
+      blockers:
+      - No Docker or compose files were detected.
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - No fixtures directories were detected.
+      - Neither Playwright nor Symfony Panther markers were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 6.75
+      summary: 0 fail, 3 warn, 1 info findings detected.
+      blockers:
+      - 'Missing expected documentation asset: CHANGELOG.md.'
+      - Public/protected docblock coverage is 8/153 (5%).
+      - GitHub Suite support files appear sparse.
+    delivery_observability:
+      title: Delivery & Observability
+      status: warn
+      score: 7.75
+      summary: 0 fail, 2 warn, 1 info findings detected.
+      blockers:
+      - No GitHub workflow files were detected.
+      - Deploy or packaging markers appear sparse.
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: warn
+      score: 2.0
+      summary: 0 fail, 8 warn, 0 info findings detected.
+      blockers:
+      - Constructor injects 8 parameters; review dependency inversion and class responsibilities.
+      - Constructor injects 10 parameters; review dependency inversion and class responsibilities.
+      - Constructor injects 7 parameters; review dependency inversion and class responsibilities.

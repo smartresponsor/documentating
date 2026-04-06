@@ -1,0 +1,255 @@
+{
+  "status": "ok",
+  "registry_entry": {
+    "component_id": "attaching",
+    "component_title": "Attaching",
+    "github_repository": "smartresponsor/attaching",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/attaching/report/index.adoc",
+    "notes": "Connected to the scheduled assessment runner."
+  },
+  "facts": {
+    "repo_root": "/tmp/quality-atlas-attaching-assessment-2026-04-06-_ntlps96/attaching",
+    "timestamp_utc": "2026-04-06T16:32:53.800426+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "44c55dcf03ed7f71b2d3834ada44cc8432f7b208"
+    },
+    "git_exact_tag": {
+      "exit_code": 128,
+      "output": "fatal: No names found, cannot describe anything."
+    },
+    "has_composer_json": true,
+    "has_package_json": false,
+    "has_phpstan_neon": true,
+    "has_phpstan_neon_dist": false,
+    "has_phpunit_xml": false,
+    "has_phpunit_xml_dist": true,
+    "has__github_workflows": false,
+    "has__antora-src_modules_ROOT_nav_adoc": false,
+    "has__antora-src_modules_ROOT_pages_index_adoc": false,
+    "git_status": {
+      "exit_code": 0,
+      "output": ""
+    },
+    "git_recent_commits": {
+      "exit_code": 0,
+      "output": "44c55dc restore boot and quality gates on current slice"
+    },
+    "top_level_tree": {
+      "exit_code": 0,
+      "output": "./.git\n./.git/HEAD\n./.git/config\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/packed-refs\n./.git/refs\n./.git/shallow\n./.gitignore\n./.php-cs-fixer.dist.php\n./README.md\n./bin\n./bin/console\n./composer.json\n./composer.lock\n./config\n./config/bundles.php\n./config/packages\n./config/routes\n./config/services.yaml\n./phpstan.neon\n./phpunit.xml.dist\n./public\n./public/index.php\n./src\n./src/AttachmentBundle.php\n./src/Command\n./src/Contract\n./src/Controller\n./src/DataFixtures\n./src/DependencyInjection\n./src/Dto\n./src/Entity\n./src/Enum\n./src/EventSubscriber\n./src/Exception\n./src/Kernel.php\n./src/Repository\n./src/Security\n./src/Service\n./src/ServiceInterface\n./tests\n./tests/Integration\n./tests/Resources\n./tests/Unit"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.3.6 (cli) (built: Jan 27 2026 03:09:47) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n    with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.12.13"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "122"
+    },
+    "key_file_excerpts": {
+      "composer.json": "{\n  \"name\": \"smartresponsor/attachment\",\n  \"description\": \"Symfony-oriented attachment component for Smart Responsor\",\n  \"type\": \"project\",\n  \"license\": \"proprietary\",\n  \"require\": {\n  \"php\": \"^8.4\",\n  \"ext-fileinfo\": \"*\",\n  \"doctrine/dbal\": \"^4.2\",\n  \"doctrine/orm\": \"^3.3\",\n  \"doctrine/doctrine-bundle\": \"^3.1\",\n  \"symfony/config\": \"^8.0\",\n  \"symfony/console\": \"^8.0\",\n  \"symfony/dependency-injection\": \"^8.0\",\n  \"symfony/filesystem\": \"^8.0\",\n  \"symfony/form\": \"^8.0\",\n  \"symfony/framework-bundle\": \"^8.0\",\n  \"symfony/http-foundation\": \"^8.0\",\n  \"symfony/http-kernel\": \"^8.0\",\n  \"symfony/mime\": \"^8.0\",\n  \"symfony/routing\": \"^8.0\",\n  \"symfony/security-bundle\": \"^8.0\",\n  \"symfony/serializer\": \"^8.0\",\n  \"symfony/validator\": \"^8.0\",\n  \"symfony/yaml\": \"^8.0\"\n},\n\"require-dev\": {\n  \"doctrine/doctrine-fixtures-bundle\": \"^4.0\",\n  \"fakerphp/faker\": \"^1.24\",\n  \"friendsofphp/php-cs-fixer\": \"^3.75\",\n  \"phpstan/phpstan\": \"^2.1\",\n  \"phpunit/phpunit\": \"^12.1\",\n  \"symfony/browser-kit\": \"^8.0\",\n  \"symfony/css-selector\": \"^8.0\"\n},\n  \"autoload\": {\n    \"psr-4\": {\n      \"App\\\\\": \"src/\"\n    }\n  },\n  \"autoload-dev\": {\n    \"psr-4\": {\n      \"App\\\\Tests\\\\\": \"tests/\"\n    }\n  },\n  \"scripts\": {\n    \"cs:check\": \"php-cs-fixer fix --dry-run --diff --verbose\",\n    \"cs:fix\": \"php-cs-fixer fix --verbose\",\n    \"phpstan\": \"phpstan analyse\",\n    \"test\": \"phpunit\"\n  }\n}\n"
+    }
+  },
+  "verdict": {
+    "component": "attaching",
+    "summary": "Modern Symfony 8-based attachment component with tests and static analysis in place; key gaps are CI/release hygiene, documentation depth, and a naming mismatch to the component/repo.",
+    "strengths": [
+      "Symfony 8 and Doctrine ORM 3 stack declared",
+      "Static analysis (phpstan) and code style (php-cs-fixer) configured",
+      "Unit and integration test suites scaffolded",
+      "Clean and conventional Symfony structure (controllers, services, entities)"
+    ],
+    "risks": [
+      "No CI workflow detected to enforce tests/analysis",
+      "No git tags/releases found",
+      "Composer package name differs from repo/component name (attachment vs attaching)",
+      "Requires PHP ^8.4; environments must align",
+      "Documentation appears minimal and no Antora page found in repo",
+      "phpunit.xml not committed (only dist), risking config drift"
+    ],
+    "next_actions": [
+      "Add CI pipeline (e.g., GitHub Actions) running phpunit, phpstan, and CS checks on PHP 8.4",
+      "Create initial tagged release and adopt semantic versioning",
+      "Align naming across repo, component registry, and composer.json",
+      "Promote a project-specific phpunit.xml from the dist template and ensure green tests",
+      "Expand README with setup, run instructions, and usage examples; add Antora page at .antora-src/modules/ROOT/pages/component/attaching/report/index.adoc",
+      "Confirm or document the PHP 8.4 runtime requirement across environments"
+    ],
+    "notes": [
+      "Composer declares proprietary license, indicating internal use",
+      "Public index.php and bin/console indicate a Symfony application footprint alongside a bundle class; clarify packaging intent (app vs reusable bundle)",
+      "Repository is clean (no pending changes) and on master branch"
+    ],
+    "suggested_score_overrides": {
+      "product": 7.6,
+      "architecture": 8.1,
+      "runtime": 7.2,
+      "qa": 7.9,
+      "ops": 6.8,
+      "market": 7.0,
+      "overall": 7.4
+    },
+    "metric_updates": {
+      "product": {
+        "summary": "Product identity is present via composer description and README, but documentation depth and release hygiene are limited and naming is inconsistent with the component/repo.",
+        "risks": [
+          "Composer package name (smartresponsor/attachment) mismatches repo/component (attaching)",
+          "No versioned releases/tags reduce clarity for adopters",
+          "Documentation depth uncertain; no in-repo Antora page"
+        ],
+        "improvements": [
+          "Unify naming across composer.json, repository, and registry entry",
+          "Create initial tagged release and maintain semantic versioning",
+          "Add usage and integration guidance to README and an Antora page"
+        ],
+        "evidence": [
+          "composer.json",
+          "README.md"
+        ]
+      },
+      "architecture": {
+        "summary": "Symfony 8 with Doctrine ORM and conventional layering (controllers, services, entities) suggests a clear and modern architecture with PSR-4 autoloading.",
+        "risks": [
+          "Packaging intent is mixed (app scaffold plus bundle class); clarify whether this is a reusable bundle or an application slice"
+        ],
+        "improvements": [
+          "Add a brief architecture section in README outlining layers and module boundaries",
+          "Document how entities/services/controllers fit the attachment domain"
+        ],
+        "evidence": [
+          "composer.json",
+          "src/AttachmentBundle.php",
+          "config/services.yaml",
+          "src/Controller",
+          "src/Service",
+          "src/Entity"
+        ]
+      },
+      "runtime": {
+        "summary": "Standard Symfony runtime footprint (public/index.php, bin/console) is present; platform requires PHP ^8.4 and should be aligned across environments.",
+        "risks": [
+          "Runtime/platform mismatch risk if environments are < PHP 8.4",
+          "Lack of documented runbook may hinder local and prod setup consistency"
+        ],
+        "improvements": [
+          "Document runtime requirements and start commands in README (PHP 8.4, web server, database)",
+          "Confirm platform alignment or adjust composer constraint if 8.4 is not required"
+        ],
+        "evidence": [
+          "public/index.php",
+          "bin/console",
+          "composer.json",
+          "README.md"
+        ]
+      },
+      "qa": {
+        "summary": "Testing and quality scaffolding exist (unit/integration tests, phpunit.xml.dist, phpstan, cs-fixer) but are not yet enforced by CI.",
+        "risks": [
+          "No CI to run tests/analysis on commits/PRs",
+          "Only phpunit.xml.dist present, risking local configuration drift"
+        ],
+        "improvements": [
+          "Add CI to run phpunit, phpstan, and CS checks on pushes and PRs",
+          "Commit a tailored phpunit.xml and ensure suites are green",
+          "Document how to run tests via composer scripts"
+        ],
+        "evidence": [
+          "tests/Unit",
+          "tests/Integration",
+          "phpunit.xml.dist",
+          "phpstan.neon",
+          ".php-cs-fixer.dist.php",
+          "composer.json"
+        ]
+      },
+      "ops": {
+        "summary": "Operational automation and release hygiene are weak in-repo (no CI workflows, no tags); operational documentation is minimal.",
+        "risks": [
+          "No CI/CD pipeline reduces repeatability and deployment confidence",
+          "No tagged releases hinder rollbacks and version traceability"
+        ],
+        "improvements": [
+          "Introduce a GitHub Actions workflow covering build, test, static analysis, and artifacting",
+          "Adopt tagged releases with changelogs and release notes",
+          "Add minimal operational notes (env vars, migrations, database) to README"
+        ],
+        "evidence": [
+          "composer.json",
+          "README.md"
+        ]
+      },
+      "market": {
+        "summary": "Proprietary license and absence of tagged releases point to internal consumption; external market alignment and discoverability are limited.",
+        "risks": [
+          "Proprietary licensing limits external adoption",
+          "No version tags reduce integrator confidence"
+        ],
+        "improvements": [
+          "Tag stable releases and provide brief integration examples",
+          "Clarify intended consumers and compatibility matrix in README"
+        ],
+        "evidence": [
+          "composer.json",
+          "README.md"
+        ]
+      },
+      "overall": {
+        "summary": "Solid modern Symfony foundation with testing and static analysis scaffolding; to reach RC confidence, add CI/release processes, deepen docs, and resolve naming drift.",
+        "risks": [
+          "Lack of CI and releases undermines reliability of quality gates",
+          "Naming inconsistency can cause integration and documentation confusion"
+        ],
+        "improvements": [
+          "Stand up CI on PHP 8.4 for tests/analysis",
+          "Create initial tagged release and unify naming across artifacts",
+          "Publish minimal architecture/runtime documentation"
+        ],
+        "evidence": [
+          "composer.json",
+          "phpstan.neon",
+          "phpunit.xml.dist",
+          "tests/Unit",
+          "tests/Integration",
+          "README.md"
+        ]
+      }
+    },
+    "confidence": "medium",
+    "evidence_paths": [
+      "composer.json",
+      "phpstan.neon",
+      "phpunit.xml.dist",
+      "tests/Unit",
+      "tests/Integration",
+      "src/AttachmentBundle.php",
+      "public/index.php",
+      "README.md",
+      ".php-cs-fixer.dist.php",
+      "config/services.yaml"
+    ]
+  },
+  "snapshot_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/attaching/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/attaching/history/2026-04-06-assessment-2026-04-06.yaml"
+  },
+  "probe_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/attaching/probes/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/attaching/probes/history/2026-04-06-assessment-2026-04-06.yaml"
+  },
+  "ai_io": {
+    "request_file": "attaching.request.json",
+    "response_file": "attaching.response.json"
+  }
+}

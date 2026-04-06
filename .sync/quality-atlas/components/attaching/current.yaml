@@ -1,0 +1,422 @@
+component: attaching
+title: Attaching
+snapshot:
+  date: '2026-04-06'
+  label: assessment-2026-04-06
+  ref: master
+  origin: quality-atlas responses assessment
+  assessment_basis:
+    repository: smartresponsor/attaching
+    assessed_branch: master
+    assessed_commit: 44c55dcf03ed7f71b2d3834ada44cc8432f7b208
+    assessed_tag: null
+    trigger_reason: manual_override
+    previous_commit: null
+    previous_tag: null
+    current_head_commit: 44c55dcf03ed7f71b2d3834ada44cc8432f7b208
+    current_head_tag: null
+    changed_files_sample: []
+report_status: current
+groups:
+  product_market:
+    score: 7.3
+  domain_architecture:
+    score: 8.1
+  data_persistence:
+    score: 7.65
+  api_contracts:
+    score: 7.55
+  runtime_performance:
+    score: 7.2
+  reliability_resilience:
+    score: 7.3
+  security_governance:
+    score: 6.8
+  delivery_operations:
+    score: 6.8
+  quality_testing:
+    score: 7.9
+profile_axes:
+  engineering:
+    product: 7.6
+    architecture: 8.1
+    data: 7.65
+    api: 7.55
+    runtime: 7.2
+    reliability: 7.0
+    security: 6.8
+    delivery: 6.8
+    quality: 7.9
+    overall: 7.4
+  owner:
+    identity: 7.6
+    consistency: 8.1
+    delivery: 6.8
+    quality: 7.9
+    governance: 6.8
+    fit: 7.3
+    debt: 3.0
+    overall: 7.4
+  investor:
+    product: 7.6
+    architecture: 8.1
+    delivery: 6.8
+    reliability: 7.55
+    governance: 6.8
+    clarity: 7.3
+    overall: 7.4
+  operations:
+    runtime: 7.2
+    reliability: 7.55
+    observability: 6.8
+    security: 6.8
+    traffic: 7.0
+    delivery: 6.8
+    recovery: 7.35
+    overall: 7.4
+metrics:
+  product:
+    relevant: true
+    maturity: solid
+    score: 7.6
+    summary: Product identity is present via composer description and README, but
+      documentation depth and release hygiene are limited and naming is inconsistent
+      with the component/repo.
+    risks:
+    - Composer package name (smartresponsor/attachment) mismatches repo/component
+      (attaching)
+    - No versioned releases/tags reduce clarity for adopters
+    - Documentation depth uncertain; no in-repo Antora page
+    improvements:
+    - Unify naming across composer.json, repository, and registry entry
+    - Create initial tagged release and maintain semantic versioning
+    - Add usage and integration guidance to README and an Antora page
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: README.md
+      note: Metric-level assessment evidence.
+  architecture:
+    relevant: true
+    maturity: solid
+    score: 8.1
+    summary: Symfony 8 with Doctrine ORM and conventional layering (controllers, services,
+      entities) suggests a clear and modern architecture with PSR-4 autoloading.
+    risks:
+    - Packaging intent is mixed (app scaffold plus bundle class); clarify whether
+      this is a reusable bundle or an application slice
+    improvements:
+    - Add a brief architecture section in README outlining layers and module boundaries
+    - Document how entities/services/controllers fit the attachment domain
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: src/AttachmentBundle.php
+      note: Metric-level assessment evidence.
+    - path: config/services.yaml
+      note: Metric-level assessment evidence.
+    - path: src/Controller
+      note: Metric-level assessment evidence.
+    - path: src/Service
+      note: Metric-level assessment evidence.
+    - path: src/Entity
+      note: Metric-level assessment evidence.
+  runtime:
+    relevant: true
+    maturity: solid
+    score: 7.2
+    summary: Standard Symfony runtime footprint (public/index.php, bin/console) is
+      present; platform requires PHP ^8.4 and should be aligned across environments.
+    risks:
+    - Runtime/platform mismatch risk if environments are < PHP 8.4
+    - Lack of documented runbook may hinder local and prod setup consistency
+    improvements:
+    - Document runtime requirements and start commands in README (PHP 8.4, web server,
+      database)
+    - Confirm platform alignment or adjust composer constraint if 8.4 is not required
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: public/index.php
+      note: Metric-level assessment evidence.
+    - path: bin/console
+      note: Metric-level assessment evidence.
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: README.md
+      note: Metric-level assessment evidence.
+  qa:
+    relevant: true
+    maturity: solid
+    score: 7.9
+    summary: Testing and quality scaffolding exist (unit/integration tests, phpunit.xml.dist,
+      phpstan, cs-fixer) but are not yet enforced by CI.
+    risks:
+    - No CI to run tests/analysis on commits/PRs
+    - Only phpunit.xml.dist present, risking local configuration drift
+    improvements:
+    - Add CI to run phpunit, phpstan, and CS checks on pushes and PRs
+    - Commit a tailored phpunit.xml and ensure suites are green
+    - Document how to run tests via composer scripts
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: tests/Unit
+      note: Metric-level assessment evidence.
+    - path: tests/Integration
+      note: Metric-level assessment evidence.
+    - path: phpunit.xml.dist
+      note: Metric-level assessment evidence.
+    - path: phpstan.neon
+      note: Metric-level assessment evidence.
+    - path: .php-cs-fixer.dist.php
+      note: Metric-level assessment evidence.
+    - path: composer.json
+      note: Metric-level assessment evidence.
+  ops:
+    relevant: true
+    maturity: solid
+    score: 6.8
+    summary: Operational automation and release hygiene are weak in-repo (no CI workflows,
+      no tags); operational documentation is minimal.
+    risks:
+    - No CI/CD pipeline reduces repeatability and deployment confidence
+    - No tagged releases hinder rollbacks and version traceability
+    improvements:
+    - Introduce a GitHub Actions workflow covering build, test, static analysis, and
+      artifacting
+    - Adopt tagged releases with changelogs and release notes
+    - Add minimal operational notes (env vars, migrations, database) to README
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: README.md
+      note: Metric-level assessment evidence.
+  market:
+    relevant: true
+    maturity: solid
+    score: 7.0
+    summary: Proprietary license and absence of tagged releases point to internal
+      consumption; external market alignment and discoverability are limited.
+    risks:
+    - Proprietary licensing limits external adoption
+    - No version tags reduce integrator confidence
+    improvements:
+    - Tag stable releases and provide brief integration examples
+    - Clarify intended consumers and compatibility matrix in README
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: README.md
+      note: Metric-level assessment evidence.
+  overall:
+    relevant: true
+    maturity: solid
+    score: 7.4
+    summary: Solid modern Symfony foundation with testing and static analysis scaffolding;
+      to reach RC confidence, add CI/release processes, deepen docs, and resolve naming
+      drift.
+    risks:
+    - Lack of CI and releases undermines reliability of quality gates
+    - Naming inconsistency can cause integration and documentation confusion
+    improvements:
+    - Stand up CI on PHP 8.4 for tests/analysis
+    - Create initial tagged release and unify naming across artifacts
+    - Publish minimal architecture/runtime documentation
+    implemented: []
+    partial:
+    - Bootstrap placeholder only.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Neutral bootstrap values unblock portfolio participation without pretending
+      to be a real audit.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: phpstan.neon
+      note: Metric-level assessment evidence.
+    - path: phpunit.xml.dist
+      note: Metric-level assessment evidence.
+    - path: tests/Unit
+      note: Metric-level assessment evidence.
+    - path: tests/Integration
+      note: Metric-level assessment evidence.
+    - path: README.md
+      note: Metric-level assessment evidence.
+development_driving:
+  overall_status: warn
+  average_score: 6.75
+  status_counts:
+    pass: 0
+    warn: 7
+    fail: 0
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — PHP namespace does not use the default App\ root.
+  - Architecture & Boundaries — No obvious boundary descriptor files were detected.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - Runtime & Application Surface — No Docker or compose files were detected.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - QA & Behavioral Assurance — Neither Playwright nor Symfony Panther markers were
+    detected.
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 8/153 (5%).
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - PHP namespace does not use the default App\ root.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 5.0
+      summary: 0 fail, 5 warn, 0 info findings detected.
+      blockers:
+      - No obvious boundary descriptor files were detected.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: warn
+      score: 8.75
+      summary: 0 fail, 1 warn, 1 info findings detected.
+      blockers:
+      - No Docker or compose files were detected.
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - No fixtures directories were detected.
+      - Neither Playwright nor Symfony Panther markers were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 6.75
+      summary: 0 fail, 3 warn, 1 info findings detected.
+      blockers:
+      - 'Missing expected documentation asset: CHANGELOG.md.'
+      - Public/protected docblock coverage is 8/153 (5%).
+      - GitHub Suite support files appear sparse.
+    delivery_observability:
+      title: Delivery & Observability
+      status: warn
+      score: 7.75
+      summary: 0 fail, 2 warn, 1 info findings detected.
+      blockers:
+      - No GitHub workflow files were detected.
+      - Deploy or packaging markers appear sparse.
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: warn
+      score: 2.0
+      summary: 0 fail, 8 warn, 0 info findings detected.
+      blockers:
+      - Constructor injects 8 parameters; review dependency inversion and class responsibilities.
+      - Constructor injects 10 parameters; review dependency inversion and class responsibilities.
+      - Constructor injects 7 parameters; review dependency inversion and class responsibilities.
+strengths:
+- Symfony 8 and Doctrine ORM 3 stack declared
+- Static analysis (phpstan) and code style (php-cs-fixer) configured
+- Unit and integration test suites scaffolded
+- Clean and conventional Symfony structure (controllers, services, entities)
+risks:
+- No CI workflow detected to enforce tests/analysis
+- No git tags/releases found
+- Composer package name differs from repo/component name (attachment vs attaching)
+- Requires PHP ^8.4; environments must align
+- Documentation appears minimal and no Antora page found in repo
+- phpunit.xml not committed (only dist), risking config drift
+recommended_next_actions:
+- Add CI pipeline (e.g., GitHub Actions) running phpunit, phpstan, and CS checks on
+  PHP 8.4
+- Create initial tagged release and adopt semantic versioning
+- Align naming across repo, component registry, and composer.json
+- Promote a project-specific phpunit.xml from the dist template and ensure green tests
+- Expand README with setup, run instructions, and usage examples; add Antora page
+  at .antora-src/modules/ROOT/pages/component/attaching/report/index.adoc
+- Confirm or document the PHP 8.4 runtime requirement across environments
+evidence:
+- path: .antora-src/modules/ROOT/pages/component/attaching/report/index.adoc
+  note: Configured component report path.
+- path: .sync/quality-atlas/components/attaching/probes/current.yaml
+  note: Deterministic development-driving probe layer.
+- path: composer.json
+  note: Assessment evidence path.
+- path: phpstan.neon
+  note: Assessment evidence path.
+- path: phpunit.xml.dist
+  note: Assessment evidence path.
+- path: tests/Unit
+  note: Assessment evidence path.
+- path: tests/Integration
+  note: Assessment evidence path.
+- path: src/AttachmentBundle.php
+  note: Assessment evidence path.
+- path: public/index.php
+  note: Assessment evidence path.
+- path: README.md
+  note: Assessment evidence path.
+- path: .php-cs-fixer.dist.php
+  note: Assessment evidence path.
+- path: config/services.yaml
+  note: Assessment evidence path.
+assessment_notes:
+- Modern Symfony 8-based attachment component with tests and static analysis in place;
+  key gaps are CI/release hygiene, documentation depth, and a naming mismatch to the
+  component/repo.
+- Composer declares proprietary license, indicating internal use
+- Public index.php and bin/console indicate a Symfony application footprint alongside
+  a bundle class; clarify packaging intent (app vs reusable bundle)
+- Repository is clean (no pending changes) and on master branch
+assessment_confidence: medium
