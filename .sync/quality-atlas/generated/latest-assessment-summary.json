@@ -1,11 +1,19 @@
 {
-  "generated_at": "2026-04-06T07:53:58.804468+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T075358Z",
+  "generated_at": "2026-04-06T00:25:09.686948+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T002254Z",
   "mode": "responses",
-  "components": [],
+  "components": [
+    {
+      "component": "accessing",
+      "title": "Accessing",
+      "overall": 8.5,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/accessing/history/2026-04-06-assessment-2026-04-06.yaml",
+      "summary": "Refreshed owner-facing portrait from the canonical Accessing report; no new code-level evidence was available in this run, so existing pre-RC scores are retained pending a repository-backed scan."
+    }
+  ],
   "failures": [],
   "status": "ok",
   "selected_components": [
-    "attaching"
+    "accessing"
   ]
 }

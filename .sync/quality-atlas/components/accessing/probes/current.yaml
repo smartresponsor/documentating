@@ -2,166 +2,201 @@ component: accessing
 title: Accessing
 snapshot:
   date: '2026-04-06'
-  label: pre-rc-seed
-  origin: quality-atlas probe seed
-  generated_at: '2026-04-06T07:53:58.431695+00:00'
+  label: assessment-2026-04-06
+  origin: quality-atlas deterministic probes
+  generated_at: '2026-04-06T00:22:55.216687+00:00'
 repo_target:
-  github_repository: ''
+  github_repository: smartresponsor/accessing
   local_path: ''
   default_branch: master
 families:
   canon_structure:
     title: Canon & Structure
-    status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
-    blockers:
-    - Seed probe pending first deterministic repository assessment.
-    findings:
-    - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
     evidence: []
   architecture_boundaries:
     title: Architecture & Boundaries
     status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
+    score: 7.0
+    summary: 0 fail, 3 warn, 0 info findings detected.
     blockers:
-    - Seed probe pending first deterministic repository assessment.
+    - No obvious boundary descriptor files were detected.
+    - 'Missing expected repository segment: src/.'
+    - 'Missing expected repository segment: tests/.'
     findings:
     - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
+      id: boundary_descriptors_missing
+      detail: No obvious boundary descriptor files were detected.
+    - severity: warn
+      id: missing_vertical_segment
+      detail: 'Missing expected repository segment: src/.'
+    - severity: warn
+      id: missing_vertical_segment
+      detail: 'Missing expected repository segment: tests/.'
     evidence: []
   runtime_surface:
     title: Runtime & Application Surface
     status: warn
     score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
+    summary: 0 fail, 1 warn, 0 info findings detected.
     blockers:
-    - Seed probe pending first deterministic repository assessment.
+    - No Docker or compose files were detected.
     findings:
     - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+      id: docker_surface_missing
+      detail: No Docker or compose files were detected.
+    evidence:
+    - .deploy/MANIFEST.md
+    - doc/quality-atlas/component-quality-summary.adoc
+    - doc/quality-baseline/quality-baseline.adoc
   qa_behavior:
     title: QA & Behavioral Assurance
-    status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
+    status: fail
+    score: 6.5
+    summary: 1 fail, 1 warn, 0 info findings detected.
     blockers:
-    - Seed probe pending first deterministic repository assessment.
+    - tests/ directory is missing.
+    - No fixtures directories were detected.
     findings:
+    - severity: fail
+      id: tests_missing
+      detail: tests/ directory is missing.
     - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+      id: fixtures_missing
+      detail: No fixtures directories were detected.
+    evidence:
+    - docs/article/2026-03-29--2026-03-29-do-not-scale-the-imitation-of-a-human.md
   documentation_suite:
     title: Documentation & GitHub Suite
     status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
+    score: 8.75
+    summary: 0 fail, 1 warn, 1 info findings detected.
     blockers:
-    - Seed probe pending first deterministic repository assessment.
+    - 'Missing expected documentation asset: CHANGELOG.md.'
     findings:
     - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+      id: missing_doc_asset
+      detail: 'Missing expected documentation asset: CHANGELOG.md.'
+    - severity: info
+      id: nelmio_openapi_not_detected
+      detail: No obvious Nelmio/OpenAPI markers were detected.
+    evidence:
+    - .github/workflows
+    - README.md
   delivery_observability:
     title: Delivery & Observability
-    status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
-    blockers:
-    - Seed probe pending first deterministic repository assessment.
-    findings:
-    - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - .deploy/MANIFEST.md
+    - .deploy/cloudflare/MANIFEST.md
+    - .deploy/docker/MANIFEST.md
+    - .deploy/helm/MANIFEST.md
+    - .github/workflows/gh-pages.yml
+    - .github/workflows/quality-atlas-assessment.yml
+    - .ide/sr_default_inspector.xml
+    - MANIFEST.md
   solid_refactoring:
     title: SOLID & Refactoring Pressure
-    status: warn
+    status: pass
     score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
-    blockers:
-    - Seed probe pending first deterministic repository assessment.
+    summary: 0 fail, 0 warn, 4 info findings detected.
+    blockers: []
     findings:
-    - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: .github/workflows/gh-pages.yml
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: doc/article/ollama-0-19-mlx-and-apple-silicon-why-local-ai-on-mac-got-serious.adoc
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: docs/article/2026-03-29--vibe-coding-is-not-the-problem.adoc
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: docs/article/from-ai-coding-to-semi-automated-science.adoc
+    evidence:
+    - .github/workflows/gh-pages.yml
+    - doc/article/ollama-0-19-mlx-and-apple-silicon-why-local-ai-on-mac-got-serious.adoc
+    - docs/article/2026-03-29--vibe-coding-is-not-the-problem.adoc
+    - docs/article/from-ai-coding-to-semi-automated-science.adoc
 summary:
-  overall_status: warn
-  average_score: 9.0
+  overall_status: fail
+  average_score: 8.61
   status_counts:
-    pass: 0
-    warn: 7
-    fail: 0
+    pass: 3
+    warn: 3
+    fail: 1
     not_applicable: 0
   top_blockers:
-  - Canon & Structure — Seed probe pending first deterministic repository assessment.
-  - Architecture & Boundaries — Seed probe pending first deterministic repository
-    assessment.
-  - Runtime & Application Surface — Seed probe pending first deterministic repository
-    assessment.
-  - QA & Behavioral Assurance — Seed probe pending first deterministic repository
-    assessment.
-  - Documentation & GitHub Suite — Seed probe pending first deterministic repository
-    assessment.
-  - Delivery & Observability — Seed probe pending first deterministic repository assessment.
-  - SOLID & Refactoring Pressure — Seed probe pending first deterministic repository
-    assessment.
+  - Architecture & Boundaries — No obvious boundary descriptor files were detected.
+  - 'Architecture & Boundaries — Missing expected repository segment: src/.'
+  - Runtime & Application Surface — No Docker or compose files were detected.
+  - QA & Behavioral Assurance — tests/ directory is missing.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
   families:
     canon_structure:
       title: Canon & Structure
-      status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
-      blockers:
-      - Seed probe pending first deterministic repository assessment.
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
     architecture_boundaries:
       title: Architecture & Boundaries
       status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
+      score: 7.0
+      summary: 0 fail, 3 warn, 0 info findings detected.
       blockers:
-      - Seed probe pending first deterministic repository assessment.
+      - No obvious boundary descriptor files were detected.
+      - 'Missing expected repository segment: src/.'
+      - 'Missing expected repository segment: tests/.'
     runtime_surface:
       title: Runtime & Application Surface
       status: warn
       score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
+      summary: 0 fail, 1 warn, 0 info findings detected.
       blockers:
-      - Seed probe pending first deterministic repository assessment.
+      - No Docker or compose files were detected.
     qa_behavior:
       title: QA & Behavioral Assurance
-      status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
+      status: fail
+      score: 6.5
+      summary: 1 fail, 1 warn, 0 info findings detected.
       blockers:
-      - Seed probe pending first deterministic repository assessment.
+      - tests/ directory is missing.
+      - No fixtures directories were detected.
     documentation_suite:
       title: Documentation & GitHub Suite
       status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
+      score: 8.75
+      summary: 0 fail, 1 warn, 1 info findings detected.
       blockers:
-      - Seed probe pending first deterministic repository assessment.
+      - 'Missing expected documentation asset: CHANGELOG.md.'
     delivery_observability:
       title: Delivery & Observability
-      status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
-      blockers:
-      - Seed probe pending first deterministic repository assessment.
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
     solid_refactoring:
       title: SOLID & Refactoring Pressure
-      status: warn
+      status: pass
       score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
-      blockers:
-      - Seed probe pending first deterministic repository assessment.
+      summary: 0 fail, 0 warn, 4 info findings detected.
+      blockers: []
