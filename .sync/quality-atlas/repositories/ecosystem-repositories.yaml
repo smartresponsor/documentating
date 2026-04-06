@@ -13,17 +13,17 @@ repositories:
     smartresponsor/accessing.
 - component_id: addressing
   component_title: Addressing
-  github_repository: ''
+  github_repository: 'smartresponsor/addressing'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/addressing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: analytics
   component_title: Analytics
-  github_repository: ''
+  github_repository: 'smartresponsor/analysing'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/analytics/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -31,7 +31,7 @@ repositories:
   component_title: Anchoring
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/anchoring/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -47,15 +47,15 @@ repositories:
   component_title: Automating
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/automating/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: billing
   component_title: Billing
-  github_repository: ''
+  github_repository: 'smartresponsor/billing'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/billing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -63,7 +63,7 @@ repositories:
   component_title: Boundarying
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/boundarying/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -71,15 +71,15 @@ repositories:
   component_title: Canonization
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/canonization/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: cataloging
   component_title: Cataloging
-  github_repository: ''
+  github_repository: 'smartresponsor/cataloging'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/cataloging/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -87,7 +87,7 @@ repositories:
   component_title: Codexing
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/codexing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -95,7 +95,7 @@ repositories:
   component_title: Commanding
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/commanding/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -103,7 +103,7 @@ repositories:
   component_title: Commercializing
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/commercializing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -111,7 +111,7 @@ repositories:
   component_title: Complying
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/complying/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -119,7 +119,7 @@ repositories:
   component_title: Consuming
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/consuming/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -127,7 +127,7 @@ repositories:
   component_title: Containerizing
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/containerizing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -135,15 +135,15 @@ repositories:
   component_title: Cowboy
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/cowboy/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: discovering
   component_title: Discovering
-  github_repository: ''
+  github_repository: 'smartresponsor/discovering'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/discovering/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -160,7 +160,7 @@ repositories:
   component_title: Evaluating
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/evaluating/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -168,15 +168,15 @@ repositories:
   component_title: External
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/external/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: facting
   component_title: Facting
-  github_repository: ''
+  github_repository: 'smartresponsor/facting'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/facting/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -184,7 +184,7 @@ repositories:
   component_title: Federation
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/federation/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -192,7 +192,7 @@ repositories:
   component_title: Finance
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/finance/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -200,7 +200,7 @@ repositories:
   component_title: Financing
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/financing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -208,7 +208,7 @@ repositories:
   component_title: fingeprint
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/fingeprint/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -216,7 +216,7 @@ repositories:
   component_title: Gating
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/gating/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -224,7 +224,7 @@ repositories:
   component_title: Governance
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/governance/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -232,13 +232,13 @@ repositories:
   component_title: Incidend
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/incidend/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: indexing
   component_title: Indexing
-  github_repository: smartresponsor/indexing
+  github_repository: 'smartresponsor/indexing'
   default_branch: master
   enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/indexing/report/index.adoc
@@ -248,7 +248,7 @@ repositories:
   component_title: Intelligence
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/intelligence/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -256,21 +256,21 @@ repositories:
   component_title: Interfacing
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/interfacing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: locating
   component_title: Locating
-  github_repository: ''
+  github_repository: 'smartresponsor/locating'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/locating/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: messaging
   component_title: Messaging
-  github_repository: smartresponsor/messaging
+  github_repository: 'smartresponsor/messaging'
   default_branch: master
   enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/messaging/report/index.adoc
@@ -279,7 +279,7 @@ repositories:
   component_title: Mobiling
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/mobiling/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -287,7 +287,7 @@ repositories:
   component_title: Objecting
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/objecting/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -295,7 +295,7 @@ repositories:
   component_title: Observabiliting
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/observabiliting/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -303,7 +303,7 @@ repositories:
   component_title: Odyssey
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/odyssey/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -311,7 +311,7 @@ repositories:
   component_title: Operation
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/operation/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -319,7 +319,7 @@ repositories:
   component_title: ops
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/ops/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -327,23 +327,23 @@ repositories:
   component_title: Orchestration
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/orchestration/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: ordering
   component_title: Ordering
-  github_repository: ''
+  github_repository: 'smartresponsor/ordering'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/ordering/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: paying
   component_title: Paying
-  github_repository: ''
+  github_repository: 'smartresponsor/paying'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/paying/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -351,7 +351,7 @@ repositories:
   component_title: Projecting
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/projecting/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -359,23 +359,23 @@ repositories:
   component_title: Retailing
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/retailing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: rolling
   component_title: Rolling
-  github_repository: ''
+  github_repository: 'smartresponsor/rolling'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/rolling/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: runtiming
   component_title: Runtiming
-  github_repository: ''
+  github_repository: 'smartresponsor/runtiming'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/runtiming/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -383,7 +383,7 @@ repositories:
   component_title: Sandbox
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/sandbox/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -391,45 +391,45 @@ repositories:
   component_title: Search
   github_repository: ''
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/search/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: shipping
   component_title: Shipping
-  github_repository: ''
+  github_repository: 'smartresponsor/shipping'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/shipping/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: tagging
   component_title: Tagging
-  github_repository: ''
+  github_repository: 'smartresponsor/tagging'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/tagging/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: taxating
   component_title: Taxating
-  github_repository: ''
+  github_repository: 'smartresponsor/taxating'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/taxating/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: vendoring
   component_title: Vendoring
-  github_repository: ''
+  github_repository: 'smartresponsor/vendoring'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/vendoring/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: attaching
   component_title: Attaching
-  github_repository: smartresponsor/attaching
+  github_repository: 'smartresponsor/attaching'
   default_branch: master
   enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/attaching/report/index.adoc
