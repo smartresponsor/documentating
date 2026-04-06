@@ -19,17 +19,17 @@ repositories:
   report_path: .antora-src/modules/ROOT/pages/component/addressing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
-- component_id: analytics
-  component_title: Analytics
+- component_id: analysing
+  component_title: Analysing
   github_repository: 'smartresponsor/analysing'
   default_branch: master
   enabled: true
-  report_path: .antora-src/modules/ROOT/pages/component/analytics/report/index.adoc
+  report_path: .antora-src/modules/ROOT/pages/component/analysing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
 - component_id: anchoring
   component_title: Anchoring
-  github_repository: ''
+  github_repository: 'smartresponsor/anchoring'
   default_branch: master
   enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/anchoring/report/index.adoc
