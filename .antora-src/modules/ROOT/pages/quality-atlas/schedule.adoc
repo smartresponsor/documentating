@@ -1,0 +1,64 @@
+= Quality Atlas Schedule
+:description: Assessment cadence, meaningful-change policy, and latest selection plan.
+
+This page is generated from `.sync/quality-atlas/schedules/assessment-policy.yaml`, the repository registry, and the latest selection plan.
+
+* xref:quality-atlas/index.adoc[Back to Quality Atlas]
+* xref:quality-atlas/internal.adoc[Open internal cockpit]
+
+++++
+<div id="qa-schedule">
+<style>
+#qa-schedule{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#1d2433;}
+.qas-grid{display:grid;grid-template-columns:360px 1fr;gap:22px;}
+.qas-panel,.qas-main,.qas-box{background:#fff;border:1px solid #d9dde8;border-radius:18px;box-shadow:0 16px 44px rgba(16,24,40,.06);}
+.qas-panel{padding:18px;position:sticky;top:84px;height:fit-content;}
+.qas-main{padding:20px;display:grid;gap:18px;}
+.qas-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+.qas-kpi{border:1px solid #d9dde8;border-radius:16px;padding:14px;background:linear-gradient(180deg,#fff,#f8faff);}
+.qas-kpi .big{font-size:26px;font-weight:700;margin-top:4px;}
+.qas-table{display:grid;gap:10px;}
+.qas-row{display:grid;grid-template-columns:1.2fr .7fr .7fr 1.1fr;gap:12px;border:1px solid #d9dde8;border-radius:14px;padding:12px;background:#fcfdff;}
+.qas-meta{font-size:12px;color:#66708a;}
+.qas-pill{display:inline-flex;align-items:center;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:700;background:#eef3ff;color:#3154d6;}
+.qas-pill.skip{background:#f1f3f9;color:#6b7286;} .qas-pill.select{background:#e9f9f2;color:#128157;}
+.qas-box{padding:18px;}
+@media (max-width:1100px){.qas-grid{grid-template-columns:1fr;}.qas-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}.qas-panel{position:static;}.qas-row{grid-template-columns:1fr;}}
+</style>
+<div class="qas-grid">
+  <div class="qas-panel">
+    <h2 style="margin-top:0;">Assessment schedule</h2>
+    <p style="color:#5d6781;line-height:1.55;">This page explains why the scheduler selected or skipped components. It protects API spend by requiring meaningful changes, tags, or age-based refresh windows before a full AI assessment runs.</p>
+    <p class="qas-meta">Policy source: <code>.sync/quality-atlas/schedules/assessment-policy.yaml</code></p>
+    <p class="qas-meta">Latest plan: <code>.sync/quality-atlas/generated/selection-plan.json</code></p>
+  </div>
+  <div class="qas-main">
+    <div class="qas-kpis">
+      <div class="qas-kpi"><div>Enabled components</div><div class="big" id="qas-enabled"></div></div>
+      <div class="qas-kpi"><div>Selected this plan</div><div class="big" id="qas-selected"></div></div>
+      <div class="qas-kpi"><div>Plan status</div><div class="big" id="qas-status"></div></div>
+      <div class="qas-kpi"><div>Event</div><div class="big" id="qas-event"></div></div>
+    </div>
+    <div class="qas-box"><h3 style="margin-top:0;">Current selection plan</h3><div class="qas-table" id="qas-table"></div></div>
+  </div>
+</div>
+<script>
+<<<<<<< HEAD
+const QAS = {"policy": {"version": "1.0", "description": "Selection and cadence policy for Quality Atlas assessments.", "defaults": {"cadence_group": "every_2_days", "cooldown_hours": 24, "force_refresh_max_age_hours": 168, "branch": "master"}, "cadence_groups": {"daily": {"min_interval_hours": 24, "requires_meaningful_change": true}, "every_2_days": {"min_interval_hours": 48, "requires_meaningful_change": true}, "weekly": {"min_interval_hours": 168, "requires_meaningful_change": false}, "manual_only": {"min_interval_hours": 99999, "requires_meaningful_change": false}}, "meaningful_path_prefixes": ["src/", "config/", "tests/", "migrations/", ".github/workflows/", "composer.json", "package.json", "Dockerfile", "docker/", ".deploy/", ".canonization/", ".cleanup/", ".commanding/", "openapi/", "nelmio/", ".sync/quality-atlas/contract/", ".sync/quality-atlas/cards/", ".sync/manifest/"], "noise_path_prefixes": ["docs/article/", ".antora-src/", ".sync/quality-atlas/generated/assessment-runs/", ".sync/quality-atlas/generated/latest-assessment-summary.json", ".sync/quality-atlas/generated/selection-plan.json", ".sync/quality-atlas/generated/selection-plan-dataset.json", ".sync/quality-atlas/generated/portfolio-dataset.json", ".sync/quality-atlas/generated/internal-dataset.json"], "milestone_tag_patterns": ["^v", "rc", "release"], "component_overrides": {"documentating": {"cadence_group": "daily", "priority": 1}, "accessing": {"cadence_group": "daily", "priority": 1}}}, "plan": {"generated_at": "2026-04-06T02:38:33.288649+00:00", "event_name": "workflow_dispatch", "manual_components": ["indexing"], "selected_components": ["indexing"], "selected_count": 1, "items": [{"component": "indexing", "title": "Indexing", "repository": "smartresponsor/indexing", "selected": true, "reason": "manual_override", "event_name": "workflow_dispatch", "current_head_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c", "current_head_tag": null, "last_assessed_commit": null, "last_assessed_tag": null, "last_assessed_date": "2026-04-06", "changed_files_sample": [], "access_error": null, "cadence_group": "every_2_days", "hours_since_last_assessment": 2.64}], "status": "selected"}, "components": [{"component": "accessing", "title": "Accessing", "cadence_group": "daily", "repository": "smartresponsor/accessing", "snapshot": {"snapshot_date": "2026-04-06", "snapshot_label": "pre-rc-seed", "overall": 8.5, "assessed_commit": null, "assessed_tag": null, "trigger_reason": null}, "selection": {}}, {"component": "applicating", "title": "Applicating", "cadence_group": "every_2_days", "repository": "smartresponsor/applicating", "snapshot": {"snapshot_date": "2026-04-06", "snapshot_label": "pre-rc-seed", "overall": 8.4, "assessed_commit": null, "assessed_tag": null, "trigger_reason": null}, "selection": {}}, {"component": "documentating", "title": "Documentating", "cadence_group": "daily", "repository": "local/documentating", "snapshot": {"snapshot_date": "2026-04-05", "snapshot_label": "contract-tightening", "overall": 8.0, "assessed_commit": null, "assessed_tag": null, "trigger_reason": null}, "selection": {}}, {"component": "indexing", "title": "Indexing", "cadence_group": "every_2_days", "repository": "smartresponsor/indexing", "snapshot": {"snapshot_date": "2026-04-06", "snapshot_label": "assessment-2026-04-06", "overall": 8.4, "assessed_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c", "assessed_tag": null, "trigger_reason": "manual_override"}, "selection": {"component": "indexing", "title": "Indexing", "repository": "smartresponsor/indexing", "selected": true, "reason": "manual_override", "event_name": "workflow_dispatch", "current_head_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c", "current_head_tag": null, "last_assessed_commit": null, "last_assessed_tag": null, "last_assessed_date": "2026-04-06", "changed_files_sample": [], "access_error": null, "cadence_group": "every_2_days", "hours_since_last_assessment": 2.64}}]};
+=======
+const QAS = {"policy": {"version": "1.0", "description": "Selection and cadence policy for Quality Atlas assessments.", "defaults": {"cadence_group": "every_2_days", "cooldown_hours": 24, "force_refresh_max_age_hours": 168, "branch": "master"}, "cadence_groups": {"daily": {"min_interval_hours": 24, "requires_meaningful_change": true}, "every_2_days": {"min_interval_hours": 48, "requires_meaningful_change": true}, "weekly": {"min_interval_hours": 168, "requires_meaningful_change": false}, "manual_only": {"min_interval_hours": 99999, "requires_meaningful_change": false}}, "meaningful_path_prefixes": ["src/", "config/", "tests/", "migrations/", ".github/workflows/", "composer.json", "package.json", "Dockerfile", "docker/", ".deploy/", ".canonization/", ".cleanup/", ".commanding/", "openapi/", "nelmio/", ".sync/quality-atlas/contract/", ".sync/quality-atlas/cards/", ".sync/manifest/"], "noise_path_prefixes": ["docs/article/", ".antora-src/", ".sync/quality-atlas/generated/assessment-runs/", ".sync/quality-atlas/generated/latest-assessment-summary.json", ".sync/quality-atlas/generated/selection-plan.json", ".sync/quality-atlas/generated/selection-plan-dataset.json", ".sync/quality-atlas/generated/portfolio-dataset.json", ".sync/quality-atlas/generated/internal-dataset.json"], "milestone_tag_patterns": ["^v", "rc", "release"], "component_overrides": {"documentating": {"cadence_group": "daily", "priority": 1}, "accessing": {"cadence_group": "daily", "priority": 1}}}, "plan": {"generated_at": "2026-04-06T06:27:05.409093+00:00", "event_name": "workflow_dispatch", "manual_components": ["paying"], "selected_components": ["paying"], "selected_count": 1, "items": [{"component": "paying", "title": "Paying", "repository": "smartresponsor/paying", "selected": true, "reason": "manual_override", "event_name": "workflow_dispatch", "current_head_commit": "262dc205f1237c2578ed6fb1f576d740e827d273", "current_head_tag": null, "last_assessed_commit": null, "last_assessed_tag": null, "last_assessed_date": "2026-04-06", "changed_files_sample": [], "access_error": null, "cadence_group": "every_2_days", "hours_since_last_assessment": 6.45}], "status": "selected"}, "components": [{"component": "accessing", "title": "Accessing", "cadence_group": "daily", "repository": "smartresponsor/accessing", "snapshot": {"snapshot_date": "2026-04-06", "snapshot_label": "pre-rc-seed", "overall": 8.5, "assessed_commit": null, "assessed_tag": null, "trigger_reason": null}, "selection": {}}, {"component": "applicating", "title": "Applicating", "cadence_group": "every_2_days", "repository": "smartresponsor/applicating", "snapshot": {"snapshot_date": "2026-04-06", "snapshot_label": "pre-rc-seed", "overall": 8.4, "assessed_commit": null, "assessed_tag": null, "trigger_reason": null}, "selection": {}}, {"component": "documentating", "title": "Documentating", "cadence_group": "daily", "repository": "local/documentating", "snapshot": {"snapshot_date": "2026-04-05", "snapshot_label": "contract-tightening", "overall": 8.0, "assessed_commit": null, "assessed_tag": null, "trigger_reason": null}, "selection": {}}, {"component": "indexing", "title": "Indexing", "cadence_group": "every_2_days", "repository": "smartresponsor/indexing", "snapshot": {"snapshot_date": "2026-04-06", "snapshot_label": "pre-rc-seed", "overall": 8.4, "assessed_commit": null, "assessed_tag": null, "trigger_reason": null}, "selection": {}}, {"component": "paying", "title": "Paying", "cadence_group": "every_2_days", "repository": "smartresponsor/paying", "snapshot": {"snapshot_date": "2026-04-06", "snapshot_label": "assessment-2026-04-06", "overall": 8.9, "assessed_commit": "262dc205f1237c2578ed6fb1f576d740e827d273", "assessed_tag": null, "trigger_reason": "manual_override"}, "selection": {"component": "paying", "title": "Paying", "repository": "smartresponsor/paying", "selected": true, "reason": "manual_override", "event_name": "workflow_dispatch", "current_head_commit": "262dc205f1237c2578ed6fb1f576d740e827d273", "current_head_tag": null, "last_assessed_commit": null, "last_assessed_tag": null, "last_assessed_date": "2026-04-06", "changed_files_sample": [], "access_error": null, "cadence_group": "every_2_days", "hours_since_last_assessment": 6.45}}]};
+>>>>>>> a2afc30ef930cdee95b87cde7df6275d880cf744
+document.getElementById('qas-enabled').textContent = QAS.components.length;
+document.getElementById('qas-selected').textContent = (QAS.plan.selected_components || []).length;
+document.getElementById('qas-status').textContent = QAS.plan.status || 'n/a';
+document.getElementById('qas-event').textContent = QAS.plan.event_name || 'n/a';
+const table = document.getElementById('qas-table');
+QAS.components.forEach((item) => {
+  const sel = item.selection || {};
+  const div = document.createElement('div');
+  div.className = 'qas-row';
+  div.innerHTML = `<div><strong>${item.title}</strong><div class="qas-meta">${item.repository || 'local'} · cadence ${item.cadence_group}</div><div class="qas-meta">last snapshot ${item.snapshot.snapshot_date || 'n/a'} · commit ${item.snapshot.assessed_commit || 'n/a'}</div></div><div><span class="qas-pill ${sel.selected ? 'select' : 'skip'}">${sel.selected ? 'selected' : 'skipped'}</span><div class="qas-meta">reason: ${sel.reason || 'n/a'}</div></div><div><div class="qas-meta">head ${sel.current_head_commit || 'n/a'}</div><div class="qas-meta">tag ${sel.current_head_tag || 'n/a'}</div></div><div><div class="qas-meta">meaningful: ${(sel.meaningful_changes || []).join(', ') || 'none'}</div><div class="qas-meta">noise: ${(sel.noise_changes || []).join(', ') || 'none'}</div></div>`;
+  table.appendChild(div);
+});
+</script></div>
+++++

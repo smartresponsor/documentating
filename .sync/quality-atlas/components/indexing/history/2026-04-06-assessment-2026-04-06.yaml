@@ -1,0 +1,448 @@
+component: indexing
+title: Indexing
+snapshot:
+  date: '2026-04-06'
+  label: assessment-2026-04-06
+  ref: master
+  origin: quality-atlas responses assessment
+  assessment_basis:
+    repository: smartresponsor/indexing
+    assessed_branch: master
+    assessed_commit: d10c8289dfe63a5477e7b2c08f7831f14d2fb59c
+    assessed_tag: null
+    trigger_reason: manual_override
+    previous_commit: null
+    previous_tag: null
+    current_head_commit: d10c8289dfe63a5477e7b2c08f7831f14d2fb59c
+    current_head_tag: null
+    changed_files_sample: []
+report_status: current
+groups:
+  product_market:
+    score: 8.45
+  domain_architecture:
+    score: 8.3
+  data_persistence:
+    score: 8.25
+  api_contracts:
+    score: 8.35
+  runtime_performance:
+    score: 8.2
+  reliability_resilience:
+    score: 8.17
+  security_governance:
+    score: 8.1
+  delivery_operations:
+    score: 8.1
+  quality_testing:
+    score: 8.2
+profile_axes:
+  engineering:
+    product: 8.5
+    architecture: 8.3
+    data: 8.25
+    api: 8.35
+    runtime: 8.2
+    reliability: 8.15
+    security: 8.1
+    delivery: 8.1
+    quality: 8.2
+    overall: 8.4
+  owner:
+    identity: 8.5
+    consistency: 8.3
+    delivery: 8.1
+    quality: 8.2
+    governance: 8.1
+    fit: 8.45
+    debt: 2.75
+    overall: 8.4
+  investor:
+    product: 8.5
+    architecture: 8.3
+    delivery: 8.1
+    reliability: 8.2
+    governance: 8.1
+    clarity: 8.45
+    overall: 8.4
+  operations:
+    runtime: 8.2
+    reliability: 8.2
+    observability: 8.1
+    security: 8.1
+    traffic: 8.15
+    delivery: 8.1
+    recovery: 8.15
+    overall: 8.4
+metrics:
+  product:
+    relevant: true
+    maturity: solid
+    score: 8.5
+    summary: Component identity and market-facing shape remain materially present,
+      with a clear indexing/search-runtime focus and internal documentation footprint.
+    risks:
+    - Docs navigation for Antora is missing, reducing discoverability
+    - Release cadence not evidenced due to missing git tags
+    improvements:
+    - Add Antora nav.adoc and ROOT pages/index.adoc
+    - Create semantic version tags and maintain CHANGELOG on releases
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/component/indexing/report/index.adoc
+      note: Metric-level assessment evidence.
+    - path: README.md
+      note: Metric-level assessment evidence.
+    - path: CHANGELOG.md
+      note: Metric-level assessment evidence.
+  architecture:
+    relevant: true
+    maturity: solid
+    score: 8.3
+    summary: Architecture presents a coherent indexing-runtime shape (config surfaces,
+      DDL, dual-DB options) consistent with a governed internal subsystem.
+    risks:
+    - Pre-release stabilization risk signaled by lack of tags
+    - Integration boundaries not documented via Antora nav/index
+    improvements:
+    - Document module boundaries and data flows in doc/index
+    - Tag stable checkpoints to mark architectural baselines
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: config/services-index.php
+      note: Metric-level assessment evidence.
+    - path: ddl/index
+      note: Metric-level assessment evidence.
+    - path: docker/index-mysql.yaml
+      note: Metric-level assessment evidence.
+    - path: docker/index-postgres.yaml
+      note: Metric-level assessment evidence.
+    - path: MANIFEST.yaml
+      note: Metric-level assessment evidence.
+  runtime:
+    relevant: true
+    maturity: solid
+    score: 8.2
+    summary: Runtime is materially present with docker-based MySQL/Postgres flows,
+      smoke scripts, and health probes indicating an executable surface.
+    risks:
+    - Orchestration appears docker-only; no Kubernetes readiness evidenced
+    - CI execution of smoke/perf probes not evidenced
+    improvements:
+    - Provide runtime README with start/stop, health, and troubleshooting
+    - Add optional Kubernetes manifests or document deployment expectations
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: docker/index-mysql.yaml
+      note: Metric-level assessment evidence.
+    - path: docker/index-postgres.yaml
+      note: Metric-level assessment evidence.
+    - path: bin/index-smoke-mysql.php
+      note: Metric-level assessment evidence.
+    - path: bin/index-smoke-postgres.php
+      note: Metric-level assessment evidence.
+    - path: .commanding/health.sh
+      note: Metric-level assessment evidence.
+    - path: .smoke/k6
+      note: Metric-level assessment evidence.
+  qa:
+    relevant: true
+    maturity: solid
+    score: 8.2
+    summary: QA posture is present via static analysis, code style, and phpunit configuration
+      (.dist), with smoke/perf probes available.
+    risks:
+    - PHPUnit only configured as .dist; active test suite execution not evidenced
+    - Coverage reporting and CI wiring for tests not evidenced
+    improvements:
+    - Promote phpunit.xml from .dist and run tests in CI
+    - Surface coverage and static analysis results in CI artifacts
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: phpstan.neon
+      note: Metric-level assessment evidence.
+    - path: phpunit.xml.dist
+      note: Metric-level assessment evidence.
+    - path: .php-cs-fixer.php
+      note: Metric-level assessment evidence.
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: .smoke/k6
+      note: Metric-level assessment evidence.
+  ops:
+    relevant: true
+    maturity: solid
+    score: 8.1
+    summary: Operational readiness is signaled by Grafana/alert scaffolding, governance
+      gate, health scripts, and CI directory presence.
+    risks:
+    - Alerting integrations and dashboards publication not evidenced
+    - No release workflow or tags to anchor operational rollouts
+    improvements:
+    - Publish and document dashboards/runbooks under ops/
+    - Add release workflow with tagging and changelog publishing
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: ops/grafana
+      note: Metric-level assessment evidence.
+    - path: ops/alert
+      note: Metric-level assessment evidence.
+    - path: .gate/MANIFEST.json
+      note: Metric-level assessment evidence.
+    - path: .github/workflows
+      note: Metric-level assessment evidence.
+    - path: .commanding/health.sh
+      note: Metric-level assessment evidence.
+  market:
+    relevant: true
+    maturity: solid
+    score: 8.4
+    summary: Business/portfolio alignment reads as an internal, governed indexing
+      capability with maintained docs and changelog.
+    risks:
+    - Proprietary license limits external adoption
+    - Docs nav gaps may reduce portfolio-facing clarity
+    improvements:
+    - Clarify positioning in README and doc/index with use-cases
+    - Add Antora nav to improve documentation entry points
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: README.md
+      note: Metric-level assessment evidence.
+    - path: CHANGELOG.md
+      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/component/indexing/report/index.adoc
+      note: Metric-level assessment evidence.
+  overall:
+    relevant: true
+    maturity: solid
+    score: 8.4
+    summary: Overall RC direction remains visible with strong internal indexing signals;
+      remaining gaps are release tagging, docs navigation, and verified CI test execution.
+    risks:
+    - Missing git tags keep the component pre-release
+    - Docs navigation/index missing for Antora site
+    - Test execution/coverage not evidenced in CI
+    improvements:
+    - Introduce semantic version tags and a release workflow
+    - Add Antora nav/index and verify site rendering
+    - Ensure phpunit/phpstan/smoke run in CI with artifacts
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .github/workflows
+      note: Metric-level assessment evidence.
+    - path: phpunit.xml.dist
+      note: Metric-level assessment evidence.
+    - path: phpstan.neon
+      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/component/indexing/report/index.adoc
+      note: Metric-level assessment evidence.
+    - path: CHANGELOG.md
+      note: Metric-level assessment evidence.
+development_driving:
+  overall_status: fail
+  average_score: 7.07
+  status_counts:
+    pass: 1
+    warn: 4
+    fail: 2
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — PHP namespace does not use the default App\ root.
+  - Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep
+    dialect trees clearly separated.
+  - Architecture & Boundaries — No obvious boundary descriptor files were detected.
+  - 'Architecture & Boundaries — Missing expected repository segment: tests/.'
+  - Runtime & Application Surface — No Docker or compose files were detected.
+  - QA & Behavioral Assurance — tests/ directory is missing.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 24/708 (3%).
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - PHP namespace does not use the default App\ root.
+      - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees
+        clearly separated.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - No obvious boundary descriptor files were detected.
+      - 'Missing expected repository segment: tests/.'
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - No Docker or compose files were detected.
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: fail
+      score: 5.5
+      summary: 1 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - tests/ directory is missing.
+      - No fixtures directories were detected.
+      - Neither Playwright nor Symfony Panther markers were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - Public/protected docblock coverage is 24/708 (3%).
+    delivery_observability:
+      title: Delivery & Observability
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: fail
+      score: 0.0
+      summary: 3 fail, 10 warn, 1 info findings detected.
+      blockers:
+      - Class exposes 48 public methods; review interface segregation and SRP.
+      - Class exposes 15 public methods; review interface segregation and SRP.
+      - Class exposes 24 public methods; review interface segregation and SRP.
+strengths:
+- Clear indexing identity and Symfony 8/PHP 8.4 targeting
+- Dual-DB runtime scaffolding via docker-compose (MySQL/Postgres) with smoke scripts
+- Static analysis and code-style tooling present (PHPStan, PHP-CS-Fixer) and CI scripts
+  wired in composer
+- Operational/observability scaffolding present (ops/grafana, ops/alert, health script)
+- Governance surfaces present (.gate, MANIFEST files) and structured docs footprint
+risks:
+- No git tags detected for releases
+- Antora navigation/root index not present, reducing docs discoverability
+- PHPUnit config only as .dist; unit test suite execution not evidenced
+- Kubernetes manifests not evidenced; runtime orchestration appears docker-only
+- Smoke/perf lanes presence is visible but CI integration is not evidenced
+recommended_next_actions:
+- Create and publish semantic version tags and wire a release workflow
+- Add Antora nav.adoc and ROOT pages/index.adoc to surface docs in site
+- Promote phpunit.xml from .dist and ensure test suite runs in CI
+- Ensure CI runs phpstan, phpunit, and smoke/perf probes on PRs and main
+- Document and publish Grafana dashboards and alert runbooks in ops/
+- Add a brief runtime README in docker/ describing MySQL/Postgres flows and health
+  checks
+evidence:
+- path: .antora-src/modules/ROOT/pages/component/indexing/report/index.adoc
+  note: Current component report page if present.
+- path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+  note: Seeded atlas dataset source.
+- path: .sync/quality-atlas/components/indexing/probes/current.yaml
+  note: Deterministic development-driving probe layer.
+- path: composer.json
+  note: Assessment evidence path.
+- path: docker/index-mysql.yaml
+  note: Assessment evidence path.
+- path: docker/index-postgres.yaml
+  note: Assessment evidence path.
+- path: bin/index-smoke-mysql.php
+  note: Assessment evidence path.
+- path: bin/index-smoke-postgres.php
+  note: Assessment evidence path.
+- path: .smoke/k6
+  note: Assessment evidence path.
+- path: .gate/MANIFEST.json
+  note: Assessment evidence path.
+- path: ops/grafana
+  note: Assessment evidence path.
+- path: ops/alert
+  note: Assessment evidence path.
+- path: .github/workflows
+  note: Assessment evidence path.
+- path: phpstan.neon
+  note: Assessment evidence path.
+- path: phpunit.xml.dist
+  note: Assessment evidence path.
+- path: config/services-index.php
+  note: Assessment evidence path.
+- path: ddl/index
+  note: Assessment evidence path.
+- path: README.md
+  note: Assessment evidence path.
+- path: CHANGELOG.md
+  note: Assessment evidence path.
+- path: MANIFEST.yaml
+  note: Assessment evidence path.
+- path: .commanding/health.sh
+  note: Assessment evidence path.
+assessment_notes:
+- Indexing reads as a Symfony-native indexing/search-runtime component with strong
+  internal scaffolding (dual-DB docker, smoke/probe tooling, governance, and docs),
+  trending toward RC but with gaps in release tagging, Antora navigation, and verified
+  test execution.
+- Repository scan on master at d10c828 (no exact tag)
+- Report source present under .antora-src; Antora nav/root index not detected
+- Composer scripts declare CI lanes; actual workflow wiring not inspected here
+assessment_confidence: medium
