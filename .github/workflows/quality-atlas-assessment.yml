@@ -51,14 +51,42 @@ jobs:
         run: |
           python3 tools/seed_quality_atlas_snapshots.py
 
+      - name: Select assessment targets
+        id: selection
+        env:
+          QUALITY_ATLAS_REPO_TOKEN: ${{ secrets.QUALITY_ATLAS_REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INPUT_COMPONENT: ${{ github.event.inputs.component || '' }}
+        run: |
+          component_args=()
+          if [ -n "${INPUT_COMPONENT}" ]; then
+            component_args+=(--component "${INPUT_COMPONENT}")
+          fi
+          python3 tools/select_quality_atlas_targets.py --event-name "${{ github.event_name }}" "${component_args[@]}" --output .sync/quality-atlas/generated/selection-plan.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          plan = json.loads(Path('.sync/quality-atlas/generated/selection-plan.json').read_text(encoding='utf-8'))
+          selected = plan.get('selected_components') or []
+          import os
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as fh:
+              fh.write(f"selected_csv={','.join(selected)}\n")
+              fh.write(f"selected_count={len(selected)}\n")
+              fh.write(f"should_assess={'true' if selected else 'false'}\n")
+              fh.write(f"selection_status={plan.get('status', 'unknown')}\n")
+          print(json.dumps({'selected_components': selected, 'selected_count': len(selected), 'status': plan.get('status')}, indent=2))
+          PY
+
       - name: Run scheduled assessment dry-run or AI-backed pass
         id: assessment
+        if: steps.selection.outputs.should_assess == 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           QUALITY_ATLAS_REPO_TOKEN: ${{ secrets.QUALITY_ATLAS_REPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           QUALITY_ATLAS_OPENAI_MODEL: ${{ vars.QUALITY_ATLAS_OPENAI_MODEL || 'gpt-5' }}
-          INPUT_COMPONENT: ${{ github.event.inputs.component || '' }}
           INPUT_MODE: ${{ github.event.inputs.mode || 'auto' }}
+          SELECTED_CSV: ${{ steps.selection.outputs.selected_csv }}
         run: |
           mode="dry-run"
           if [ "${INPUT_MODE}" = "responses" ]; then
@@ -69,18 +97,29 @@ jobs:
             mode="responses"
           fi
 
-          component_args=""
+          component_args=()
+          IFS=',' read -ra selected <<< "${SELECTED_CSV}"
           selected_component="ALL_ENABLED"
-          if [ -n "${INPUT_COMPONENT}" ]; then
-            component_args="--component ${INPUT_COMPONENT}"
-            selected_component="${INPUT_COMPONENT}"
+          if [ -n "${SELECTED_CSV}" ]; then
+            selected_component="${SELECTED_CSV}"
           fi
+          for component in "${selected[@]}"; do
+            if [ -n "${component}" ]; then
+              component_args+=(--component "${component}")
+            fi
+          done
 
           echo "mode=${mode}" >> "$GITHUB_OUTPUT"
           echo "component=${selected_component}" >> "$GITHUB_OUTPUT"
 
           echo "Assessment mode=${mode} component=${selected_component}"
-          python3 tools/run_quality_atlas_assessment.py --mode "$mode" ${component_args}
+          python3 tools/run_quality_atlas_assessment.py --mode "$mode" --selection-plan .sync/quality-atlas/generated/selection-plan.json "${component_args[@]}"
+
+      - name: Skip assessment when no meaningful changes were detected
+        if: steps.selection.outputs.should_assess != 'true'
+        run: |
+          echo "No components selected by assessment policy; skipping AI assessment."
+
       - name: Print assessment errors
         if: always()
         run: |
@@ -128,8 +167,9 @@ jobs:
           lines = []
           lines.append('## Quality Atlas assessment')
           lines.append('')
-          lines.append("- mode: `${{ steps.assessment.outputs.mode || 'unknown' }}`")
-          lines.append("- component input: `${{ steps.assessment.outputs.component || 'unknown' }}`")
+          lines.append("- mode: `${{ steps.assessment.outputs.mode || 'skipped' }}`")
+          lines.append("- component input: `${{ steps.assessment.outputs.component || steps.selection.outputs.selected_csv || 'none' }}`")
+          lines.append("- selection status: `${{ steps.selection.outputs.selection_status || 'unknown' }}`")
           if summary_path.exists():
               payload = json.loads(summary_path.read_text(encoding='utf-8'))
               lines.append(f"- status: `{payload.get('status', 'unknown')}`")
@@ -145,7 +185,8 @@ jobs:
                       lines.append(f"- **{failure.get('component', 'unknown')}** — `{failure.get('error_type', 'Error')}`: {failure.get('error', 'Unknown error')}")
           else:
               lines.append('- latest summary file not found')
-          Path('${GITHUB_STEP_SUMMARY}').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          import os
+          Path(os.environ['GITHUB_STEP_SUMMARY']).write_text('\n'.join(lines) + '\n', encoding='utf-8')
           PY
 
       - name: Upload assessment run artifacts
@@ -156,15 +197,18 @@ jobs:
           path: |
             .sync/quality-atlas/generated/assessment-runs
             .sync/quality-atlas/generated/latest-assessment-summary.json
+            .sync/quality-atlas/generated/selection-plan.json
           if-no-files-found: warn
 
-      - name: Regenerate portfolio pages
-        if: success()
+      - name: Regenerate atlas pages
+        if: success() && steps.selection.outputs.should_assess == 'true'
         run: |
           python3 tools/generate_quality_atlas_portfolio.py
+          python3 tools/generate_quality_atlas_internal.py
+          python3 tools/generate_quality_atlas_schedule.py
 
       - name: Commit assessment artifacts
-        if: success()
+        if: success() && steps.selection.outputs.should_assess == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
