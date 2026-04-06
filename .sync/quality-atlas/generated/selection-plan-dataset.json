@@ -73,28 +73,28 @@
     }
   },
   "plan": {
-    "generated_at": "2026-04-06T17:27:33.619952+00:00",
+    "generated_at": "2026-04-06T18:28:54.940618+00:00",
     "event_name": "workflow_dispatch",
     "manual_components": [
-      "messaging"
+      "tagging"
     ],
     "normalized_manual_components": [
-      "messaging"
+      "tagging"
     ],
     "unknown_manual_components": [],
     "selected_components": [
-      "messaging"
+      "tagging"
     ],
     "selected_count": 1,
     "items": [
       {
-        "component": "messaging",
-        "title": "Messaging",
-        "repository": "smartresponsor/messaging",
+        "component": "tagging",
+        "title": "Tagging",
+        "repository": "smartresponsor/tagging",
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "daa9296b6c37da189a53dc8189e875193550691b",
+        "current_head_commit": "5ce284ea116d4737e198763106b47ccaf80d5018",
         "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
@@ -102,7 +102,7 @@
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 17.46
+        "hours_since_last_assessment": 18.48
       }
     ],
     "status": "selected"
@@ -124,6 +124,37 @@
       "selection": {}
     },
     {
+      "component": "addressing",
+      "title": "Addressing",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/addressing",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.5,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "analytics",
+      "title": "Analytics",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/analysing",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "anchoring",
+      "title": "Anchoring",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
       "component": "applicating",
       "title": "Applicating",
       "cadence_group": "every_2_days",
@@ -132,6 +163,131 @@
         "snapshot_date": "2026-04-06",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.4,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "automating",
+      "title": "Automating",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "billing",
+      "title": "Billing",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/billing",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.8,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "boundarying",
+      "title": "Boundarying",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "canonization",
+      "title": "Canonization",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "cataloging",
+      "title": "Cataloging",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/cataloging",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.4,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "codexing",
+      "title": "Codexing",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "commanding",
+      "title": "Commanding",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "commercializing",
+      "title": "Commercializing",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "complying",
+      "title": "Complying",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "consuming",
+      "title": "Consuming",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "containerizing",
+      "title": "Containerizing",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "cowboy",
+      "title": "Cowboy",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "discovering",
+      "title": "Discovering",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/discovering",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 7.7,
         "assessed_commit": null,
         "assessed_tag": null,
         "trigger_reason": null
@@ -154,6 +310,86 @@
       "selection": {}
     },
     {
+      "component": "evaluating",
+      "title": "Evaluating",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "external",
+      "title": "External",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "facting",
+      "title": "Facting",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/facting",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "federation",
+      "title": "Federation",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "finance",
+      "title": "Finance",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "financing",
+      "title": "Financing",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "fingeprint",
+      "title": "fingeprint",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "gating",
+      "title": "Gating",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "governance",
+      "title": "Governance",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "incidend",
+      "title": "Incidend",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
       "component": "indexing",
       "title": "Indexing",
       "cadence_group": "every_2_days",
@@ -169,26 +405,242 @@
       "selection": {}
     },
     {
+      "component": "intelligence",
+      "title": "Intelligence",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "interfacing",
+      "title": "Interfacing",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "locating",
+      "title": "Locating",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/locating",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.6,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
       "component": "messaging",
       "title": "Messaging",
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/messaging",
       "snapshot": {
         "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.6,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "mobiling",
+      "title": "Mobiling",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "objecting",
+      "title": "Objecting",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "observabiliting",
+      "title": "Observabiliting",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "odyssey",
+      "title": "Odyssey",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "operation",
+      "title": "Operation",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "ops",
+      "title": "ops",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "orchestration",
+      "title": "Orchestration",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "ordering",
+      "title": "Ordering",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/ordering",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.7,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "paying",
+      "title": "Paying",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/paying",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 9.0,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "projecting",
+      "title": "Projecting",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.1,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "retailing",
+      "title": "Retailing",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "rolling",
+      "title": "Rolling",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/rolling",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.3,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "runtiming",
+      "title": "Runtiming",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/runtiming",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.8,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "sandbox",
+      "title": "Sandbox",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "search",
+      "title": "Search",
+      "cadence_group": "every_2_days",
+      "repository": "",
+      "snapshot": {},
+      "selection": {}
+    },
+    {
+      "component": "shipping",
+      "title": "Shipping",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/shipping",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 9.0,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "tagging",
+      "title": "Tagging",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/tagging",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
         "snapshot_label": "assessment-2026-04-06",
-        "overall": 8.5,
-        "assessed_commit": "daa9296b6c37da189a53dc8189e875193550691b",
+        "overall": 8.6,
+        "assessed_commit": "5ce284ea116d4737e198763106b47ccaf80d5018",
         "assessed_tag": null,
         "trigger_reason": "manual_override"
       },
       "selection": {
-        "component": "messaging",
-        "title": "Messaging",
-        "repository": "smartresponsor/messaging",
+        "component": "tagging",
+        "title": "Tagging",
+        "repository": "smartresponsor/tagging",
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "daa9296b6c37da189a53dc8189e875193550691b",
+        "current_head_commit": "5ce284ea116d4737e198763106b47ccaf80d5018",
         "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
@@ -196,8 +648,38 @@
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 17.46
+        "hours_since_last_assessment": 18.48
       }
+    },
+    {
+      "component": "taxating",
+      "title": "Taxating",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/taxating",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.6,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
+    },
+    {
+      "component": "vendoring",
+      "title": "Vendoring",
+      "cadence_group": "every_2_days",
+      "repository": "smartresponsor/vendoring",
+      "snapshot": {
+        "snapshot_date": "2026-04-06",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.8,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
+      },
+      "selection": {}
     },
     {
       "component": "attaching",

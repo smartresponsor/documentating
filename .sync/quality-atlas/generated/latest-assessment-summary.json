@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-06T17:28:28.681459+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T172733Z",
+  "generated_at": "2026-04-06T18:30:24.062154+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T182855Z",
   "mode": "responses",
   "components": [
     {
-      "component": "messaging",
-      "title": "Messaging",
-      "overall": 8.5,
-      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/messaging/history/2026-04-06-assessment-2026-04-06.yaml",
-      "summary": "Messaging presents as a governed Symfony-based messaging runtime with strong runtime scripts, API/GraphQL surface, and observability hooks; primary gap is visible CI/release automation in-repo."
+      "component": "tagging",
+      "title": "Tagging",
+      "overall": 8.6,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/tagging/history/2026-04-06-assessment-2026-04-06.yaml",
+      "summary": "Tagging presents as a governed, canonical tagging runtime with explicit HTTP contracts, rich configuration, host-minimal runnable surface, and ops assets, reading as a strong pre-RC component with a few release-hygiene gaps."
     }
   ],
   "failures": [],
   "status": "ok",
   "selected_components": [
-    "messaging"
+    "tagging"
   ]
 }

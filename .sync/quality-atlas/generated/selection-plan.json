@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-04-06T17:27:33.619952+00:00",
+  "generated_at": "2026-04-06T18:28:54.940618+00:00",
   "event_name": "workflow_dispatch",
   "manual_components": [
-    "messaging"
+    "tagging"
   ],
   "normalized_manual_components": [
-    "messaging"
+    "tagging"
   ],
   "unknown_manual_components": [],
   "selected_components": [
-    "messaging"
+    "tagging"
   ],
   "selected_count": 1,
   "items": [
     {
-      "component": "messaging",
-      "title": "Messaging",
-      "repository": "smartresponsor/messaging",
+      "component": "tagging",
+      "title": "Tagging",
+      "repository": "smartresponsor/tagging",
       "selected": true,
       "reason": "manual_override",
       "event_name": "workflow_dispatch",
-      "current_head_commit": "daa9296b6c37da189a53dc8189e875193550691b",
+      "current_head_commit": "5ce284ea116d4737e198763106b47ccaf80d5018",
       "current_head_tag": null,
       "last_assessed_commit": null,
       "last_assessed_tag": null,
@@ -28,7 +28,7 @@
       "changed_files_sample": [],
       "access_error": null,
       "cadence_group": "every_2_days",
-      "hours_since_last_assessment": 17.46
+      "hours_since_last_assessment": 18.48
     }
   ],
   "status": "selected"
