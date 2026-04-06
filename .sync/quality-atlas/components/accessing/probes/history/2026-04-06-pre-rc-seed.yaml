@@ -1,10 +1,10 @@
-component: taxating
-title: Taxating
+component: accessing
+title: Accessing
 snapshot:
   date: '2026-04-06'
   label: pre-rc-seed
   origin: quality-atlas probe seed
-  generated_at: '2026-04-06T00:22:53.878553+00:00'
+  generated_at: '2026-04-06T00:22:53.915657+00:00'
 repo_target:
   github_repository: ''
   local_path: ''

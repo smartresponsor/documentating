@@ -1,5 +1,5 @@
-component: locating
-title: Locating
+component: accessing
+title: Accessing
 snapshot:
   date: '2026-04-06'
   label: pre-rc-seed
@@ -8,66 +8,66 @@ snapshot:
 report_status: draft
 groups:
   product_market:
-    score: 8.6
+    score: 8.5
     source_axis: overall
   domain_architecture:
-    score: 8.6
+    score: 8.5
     source_axis: overall
   runtime_performance:
-    score: 8.6
+    score: 8.5
     source_axis: overall
   quality_testing:
-    score: 8.6
+    score: 8.5
     source_axis: overall
   delivery_operations:
-    score: 8.6
+    score: 8.5
     source_axis: overall
   security_governance:
-    score: 8.6
+    score: 8.5
     source_axis: overall
 profile_axes:
   engineering:
-    product: 8.7
+    product: 8.8
     architecture: 8.5
     data: 8.45
-    api: 8.5
+    api: 8.4
     runtime: 8.4
-    reliability: 8.55
-    security: 8.7
-    delivery: 8.7
-    quality: 8.8
-    overall: 8.6
+    reliability: 8.65
+    security: 8.9
+    delivery: 8.9
+    quality: 8.1
+    overall: 8.5
   owner:
-    identity: 8.7
+    identity: 8.8
     consistency: 8.5
-    delivery: 8.7
-    quality: 8.8
-    governance: 8.7
-    fit: 8.6
-    debt: 2.35
-    overall: 8.6
+    delivery: 8.9
+    quality: 8.1
+    governance: 8.9
+    fit: 8.55
+    debt: 2.7
+    overall: 8.5
   investor:
-    product: 8.7
+    product: 8.8
     architecture: 8.5
-    delivery: 8.7
-    reliability: 8.6
-    governance: 8.7
-    clarity: 8.6
-    overall: 8.6
+    delivery: 8.9
+    reliability: 8.25
+    governance: 8.9
+    clarity: 8.55
+    overall: 8.5
   operations:
     runtime: 8.4
-    reliability: 8.6
-    observability: 8.7
-    security: 8.7
-    traffic: 8.55
-    delivery: 8.7
-    recovery: 8.75
-    overall: 8.6
+    reliability: 8.25
+    observability: 8.9
+    security: 8.9
+    traffic: 8.65
+    delivery: 8.9
+    recovery: 8.5
+    overall: 8.5
 metrics:
   product:
     relevant: true
-    maturity: solid
-    score: 8.7
+    maturity: strong
+    score: 8.8
     summary: Component identity and market-facing shape are materially present.
     risks:
     - Assessment seeded from current pre-RC atlas and should be enriched by regular
@@ -132,8 +132,8 @@ metrics:
       note: Current atlas dataset seed.
   qa:
     relevant: true
-    maturity: strong
-    score: 8.8
+    maturity: solid
+    score: 8.1
     summary: Testing and QA posture are materially present but remain pre-RC.
     risks:
     - Assessment seeded from current pre-RC atlas and should be enriched by regular
@@ -154,8 +154,8 @@ metrics:
       note: Current atlas dataset seed.
   ops:
     relevant: true
-    maturity: solid
-    score: 8.7
+    maturity: strong
+    score: 8.9
     summary: Operational, governance, and security posture are materially present
       but remain pre-RC.
     risks:
@@ -178,7 +178,7 @@ metrics:
   market:
     relevant: true
     maturity: solid
-    score: 8.5
+    score: 8.3
     summary: Business-facing and portfolio-facing alignment is materially present.
     risks:
     - Assessment seeded from current pre-RC atlas and should be enriched by regular
@@ -200,7 +200,7 @@ metrics:
   overall:
     relevant: true
     maturity: solid
-    score: 8.6
+    score: 8.5
     summary: Overall release-candidate direction is visible, but the component remains
       in pre-RC life.
     risks:
@@ -292,7 +292,7 @@ development_driving:
       blockers:
       - Seed probe pending first deterministic repository assessment.
 strengths:
-- 'Highest current axis: qa 8.8/10'
+- 'Highest current axis: ops 8.9/10'
 - Component is already represented in the current pre-RC Atlas.
 risks:
 - Snapshot was seeded from the current atlas and does not yet contain repository-scan
@@ -302,9 +302,9 @@ recommended_next_actions:
 - Run scheduled repository assessment and enrich narrative evidence.
 - Regenerate component report blocks from the current snapshot contract.
 evidence:
-- path: .antora-src/modules/ROOT/pages/component/locating/report/index.adoc
+- path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
   note: Current component report page if present.
 - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
   note: Seeded atlas dataset source.
-- path: .sync/quality-atlas/components/locating/probes/current.yaml
+- path: .sync/quality-atlas/components/accessing/probes/current.yaml
   note: Deterministic development-driving probe layer.

@@ -1501,8 +1501,8 @@
       "component": "accessing",
       "title": "Accessing",
       "snapshot": {
-        "date": "2026-04-05",
-        "label": "assessment-2026-04-05",
+        "date": "2026-04-06",
+        "label": "assessment-2026-04-06",
         "ref": "master",
         "origin": "quality-atlas responses assessment"
       },
@@ -1551,21 +1551,22 @@
       },
       "overall": 8.5,
       "strengths": [
-        "Report page clearly defines scope: registration, verification, MFA, recovery, sessions, and lock discipline.",
-        "Quality Atlas scheduled workflow exists to refresh assessments.",
-        "Docs publishing pipeline to gh-pages is configured and active."
+        "Canonical Accessing report clearly articulates account access scope (registration, verification, recovery, MFA)",
+        "Automated Antora site publishing via gh-pages workflow on master",
+        "Scheduled Quality Atlas assessment workflow present",
+        "Quality Atlas snapshot files for Accessing are maintained in-repo"
       ],
       "risks": [
-        "No Accessing source code present here; evidence is narrative-only within the report page.",
-        "Scores originate from pre-RC atlas content and may drift without code-backed scans.",
-        "Potential divergence between documentation and implementation is not verifiable in this repo."
+        "Current run scanned the documentation repository, not the smartresponsor/accessing codebase",
+        "Product, architecture, runtime, and security claims are narrative-only in this run",
+        "Potential drift between report assertions and unscanned code until repository facts are ingested"
       ]
     },
     {
       "component": "addressing",
       "title": "Addressing",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1627,7 +1628,7 @@
       "component": "analysing",
       "title": "Analysing",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1689,7 +1690,7 @@
       "component": "applicating",
       "title": "Applicating",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1751,7 +1752,7 @@
       "component": "billing",
       "title": "Billing",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1813,7 +1814,7 @@
       "component": "cataloging",
       "title": "Cataloging",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1875,7 +1876,7 @@
       "component": "discovering",
       "title": "Discovering",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1999,7 +2000,7 @@
       "component": "indexing",
       "title": "Indexing",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2061,7 +2062,7 @@
       "component": "locating",
       "title": "Locating",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2123,7 +2124,7 @@
       "component": "messaging",
       "title": "Messaging",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2185,7 +2186,7 @@
       "component": "ordering",
       "title": "Ordering",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2247,7 +2248,7 @@
       "component": "paying",
       "title": "Paying",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2309,7 +2310,7 @@
       "component": "projecting",
       "title": "Projecting",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2371,7 +2372,7 @@
       "component": "rolling",
       "title": "Rolling",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2433,7 +2434,7 @@
       "component": "runtiming",
       "title": "Runtiming",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2495,7 +2496,7 @@
       "component": "shipping",
       "title": "Shipping",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2557,7 +2558,7 @@
       "component": "tagging",
       "title": "Tagging",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2619,7 +2620,7 @@
       "component": "taxating",
       "title": "Taxating",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2681,7 +2682,7 @@
       "component": "vendoring",
       "title": "Vendoring",
       "snapshot": {
-        "date": "2026-04-05",
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2755,11 +2756,32 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.5
+      },
+      {
+        "date": "2026-04-06",
+        "label": "assessment-2026-04-06",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "overall": 8.5
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.5
       }
     ],
     "addressing": [
       {
         "date": "2026-04-05",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.5
+      },
+      {
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -2773,11 +2795,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.0
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.0
       }
     ],
     "applicating": [
       {
         "date": "2026-04-05",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.4
+      },
+      {
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -2791,6 +2827,13 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.8
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.8
       }
     ],
     "cataloging": [
@@ -2800,11 +2843,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.4
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.4
       }
     ],
     "discovering": [
       {
         "date": "2026-04-05",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 7.7
+      },
+      {
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -2841,11 +2898,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.4
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.4
       }
     ],
     "locating": [
       {
         "date": "2026-04-05",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -2859,11 +2930,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.6
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
       }
     ],
     "ordering": [
       {
         "date": "2026-04-05",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.7
+      },
+      {
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -2877,11 +2962,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 9.0
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 9.0
       }
     ],
     "projecting": [
       {
         "date": "2026-04-05",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.1
+      },
+      {
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -2895,11 +2994,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.3
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.3
       }
     ],
     "runtiming": [
       {
         "date": "2026-04-05",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.8
+      },
+      {
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -2913,11 +3026,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 9.0
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 9.0
       }
     ],
     "tagging": [
       {
         "date": "2026-04-05",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -2931,11 +3058,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.6
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
       }
     ],
     "vendoring": [
       {
         "date": "2026-04-05",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.8
+      },
+      {
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
