@@ -91,12 +91,12 @@
             "product": 7.9,
             "architecture": 8.1,
             "delivery": 8.4,
-            "reliability": 7.85,
+            "reliability": 7.95,
             "governance": 8.4,
             "clarity": 7.85,
             "overall": 8.0
           },
-          "overall": 8.07
+          "overall": 8.09
         },
         {
           "component": "applicating",
@@ -376,7 +376,7 @@
         {
           "id": "data",
           "title": "Data",
-          "average": 8.34,
+          "average": 8.35,
           "min": 7.65,
           "max": 8.85
         },
@@ -390,7 +390,7 @@
         {
           "id": "runtime",
           "title": "Runtime",
-          "average": 8.3,
+          "average": 8.31,
           "min": 7.2,
           "max": 8.9
         },
@@ -471,16 +471,16 @@
           "axes": {
             "product": 7.9,
             "architecture": 8.1,
-            "data": 7.95,
+            "data": 8.05,
             "api": 7.95,
-            "runtime": 7.8,
-            "reliability": 8.1,
+            "runtime": 8.0,
+            "reliability": 8.2,
             "security": 8.4,
             "delivery": 8.4,
             "quality": 7.9,
             "overall": 8.0
           },
-          "overall": 8.05
+          "overall": 8.09
         },
         {
           "component": "applicating",
@@ -790,7 +790,7 @@
         }
       ],
       "component_count": 21,
-      "ecosystem_average": 8.42
+      "ecosystem_average": 8.43
     },
     {
       "id": "operations",
@@ -800,7 +800,7 @@
         {
           "id": "runtime",
           "title": "Runtime Ops",
-          "average": 8.3,
+          "average": 8.31,
           "min": 7.2,
           "max": 8.9
         },
@@ -889,16 +889,16 @@
           "component": "analysing",
           "title": "Analysing",
           "axes": {
-            "runtime": 7.8,
-            "reliability": 7.85,
+            "runtime": 8.0,
+            "reliability": 7.95,
             "observability": 8.4,
             "security": 8.4,
-            "traffic": 8.1,
+            "traffic": 8.2,
             "delivery": 8.4,
             "recovery": 8.15,
             "overall": 8.0
           },
-          "overall": 8.14
+          "overall": 8.19
         },
         {
           "component": "applicating",
@@ -1687,18 +1687,30 @@
       "title": "Analysing",
       "snapshot": {
         "date": "2026-04-06",
-        "label": "pre-rc-seed",
+        "label": "assessment-2026-04-06",
         "ref": "master",
-        "origin": "quality-atlas seed"
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/analysing",
+          "assessed_branch": "master",
+          "assessed_commit": "588b19e2d7004e70521f3980969cd871ab17c530",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "588b19e2d7004e70521f3980969cd871ab17c530",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        }
       },
       "profile_axes": {
         "engineering": {
           "product": 7.9,
           "architecture": 8.1,
-          "data": 7.95,
+          "data": 8.05,
           "api": 7.95,
-          "runtime": 7.8,
-          "reliability": 8.1,
+          "runtime": 8.0,
+          "reliability": 8.2,
           "security": 8.4,
           "delivery": 8.4,
           "quality": 7.9,
@@ -1718,17 +1730,17 @@
           "product": 7.9,
           "architecture": 8.1,
           "delivery": 8.4,
-          "reliability": 7.85,
+          "reliability": 7.95,
           "governance": 8.4,
           "clarity": 7.85,
           "overall": 8.0
         },
         "operations": {
-          "runtime": 7.8,
-          "reliability": 7.85,
+          "runtime": 8.0,
+          "reliability": 7.95,
           "observability": 8.4,
           "security": 8.4,
-          "traffic": 8.1,
+          "traffic": 8.2,
           "delivery": 8.4,
           "recovery": 8.15,
           "overall": 8.0
@@ -1736,12 +1748,17 @@
       },
       "overall": 8.0,
       "strengths": [
-        "Highest current axis: ops 8.4/10",
-        "Component is already represented in the current pre-RC Atlas."
+        "Symfony + Doctrine application skeleton with public entrypoint and console",
+        "Containerization and Nginx configs for a runnable local environment",
+        "Robust internal guards (namespace, domain-hygiene, header) and QA tooling (PHPStan, PHPUnit, CS Fixer, Psalm)",
+        "Secrets scanning present via .gitleaks.toml",
+        "Smoke and unit tests exist alongside a QA environment check script"
       ],
       "risks": [
-        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
-        "Structured metrics should be refreshed by the scheduled assessment workflow."
+        "No README or public quickstart; external/product story is thin",
+        "CI/CD status unclear despite workflows directory",
+        "No git tags/releases; maturity and change history are opaque",
+        "Playwright config exists without package.json, suggesting e2e harness is not wired in this repo"
       ]
     },
     {
@@ -2697,21 +2714,9 @@
       "title": "Tagging",
       "snapshot": {
         "date": "2026-04-06",
-        "label": "assessment-2026-04-06",
+        "label": "pre-rc-seed",
         "ref": "master",
-        "origin": "quality-atlas responses assessment",
-        "assessment_basis": {
-          "repository": "smartresponsor/tagging",
-          "assessed_branch": "master",
-          "assessed_commit": "5ce284ea116d4737e198763106b47ccaf80d5018",
-          "assessed_tag": null,
-          "trigger_reason": "manual_override",
-          "previous_commit": null,
-          "previous_tag": null,
-          "current_head_commit": "5ce284ea116d4737e198763106b47ccaf80d5018",
-          "current_head_tag": null,
-          "changed_files_sample": []
-        }
+        "origin": "quality-atlas seed"
       },
       "profile_axes": {
         "engineering": {
@@ -2758,17 +2763,12 @@
       },
       "overall": 8.6,
       "strengths": [
-        "Clear canonical product identity (composer description, docs)",
-        "Explicit HTTP contract directory and route/catalog configs",
-        "Host-minimal runtime and Docker compose for local runs",
-        "QA/tooling hooks present (phpunit/phpstan/phpmd/cs-fixer, Playwright)",
-        "Ops artifacts (alerts, Grafana) and CI workflows in place"
+        "Highest current axis: ops 9.0/10",
+        "Component is already represented in the current pre-RC Atlas."
       ],
       "risks": [
-        "No git tags detected for release/version traceability",
-        "Antora module/navigation pages not detected in repo tree",
-        "phpunit/phpstan only .dist configs committed; local tuning unknown",
-        "E2E/browser test presence inferred from tooling; test suites not enumerated in facts"
+        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
+        "Structured metrics should be refreshed by the scheduled assessment workflow."
       ]
     },
     {
@@ -2949,6 +2949,25 @@
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
+        "overall": 8.0
+      },
+      {
+        "date": "2026-04-06",
+        "label": "assessment-2026-04-06",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/analysing",
+          "assessed_branch": "master",
+          "assessed_commit": "588b19e2d7004e70521f3980969cd871ab17c530",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "588b19e2d7004e70521f3980969cd871ab17c530",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
         "overall": 8.0
       },
       {

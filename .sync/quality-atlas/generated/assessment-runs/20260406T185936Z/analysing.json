@@ -1,0 +1,281 @@
+{
+  "status": "ok",
+  "registry_entry": {
+    "component_id": "analysing",
+    "component_title": "Analysing",
+    "github_repository": "smartresponsor/analysing",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/analysing/report/index.adoc",
+    "notes": "Set enabled=true and github_repository once this component is connected to the scheduled assessment runner."
+  },
+  "facts": {
+    "repo_root": "/tmp/quality-atlas-analysing-assessment-2026-04-06-g6qhrggj/analysing",
+    "timestamp_utc": "2026-04-06T18:59:37.301023+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "588b19e2d7004e70521f3980969cd871ab17c530"
+    },
+    "git_exact_tag": {
+      "exit_code": 128,
+      "output": "fatal: No names found, cannot describe anything."
+    },
+    "has_composer_json": true,
+    "has_package_json": false,
+    "has_phpstan_neon": true,
+    "has_phpstan_neon_dist": false,
+    "has_phpunit_xml": false,
+    "has_phpunit_xml_dist": true,
+    "has__github_workflows": true,
+    "has__antora-src_modules_ROOT_nav_adoc": false,
+    "has__antora-src_modules_ROOT_pages_index_adoc": false,
+    "git_status": {
+      "exit_code": 0,
+      "output": ""
+    },
+    "git_recent_commits": {
+      "exit_code": 0,
+      "output": "588b19e Merge fix/qodana-report-wave into master"
+    },
+    "top_level_tree": {
+      "exit_code": 0,
+      "output": "./.editorconfig\n./.git\n./.git/HEAD\n./.git/config\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/packed-refs\n./.git/refs\n./.git/shallow\n./.gitattributes\n./.github\n./.github/prompts\n./.github/workflows\n./.gitignore\n./.gitleaks.toml\n./.php-cs-fixer.cache\n./.php-cs-fixer.dist.php\n./.php-cs-fixer.php\n./MANIFEST.md\n./RECONCILIATION_SUMMARY.txt\n./bin\n./bin/console\n./composer.json\n./config\n./config/.editorconfig\n./config/.gitattributes\n./config/.gitignore\n./config/.keep\n./config/bootstrap.php\n./config/bundles.php\n./config/cron\n./config/guard\n./config/packages\n./config/routes.php\n./config/routes.yaml\n./config/services.php\n./config/services.yaml\n./docker\n./docker-compose.yml\n./docker/Dockerfile\n./docker/docker-compose.yml\n./docker/nginx.conf\n./docs\n./docs/analytics-core-doc-layer-map.md\n./docs/analytics-core-doc-namespace-target.md\n./docs/analytics-core-doc-rwe-sketch9.md\n./docs/analytics-core-doc-source-domain.md\n./docs/qa-environment.md\n./patch.py\n./php-cs-fixer.dist.php\n./phpstan.neon\n./phpunit.xml.dist\n./phpunit.xsd\n./playwright.config.ts\n./psalm.xml\n./public\n./public/index.php\n./rector.neon\n./src\n./src/.keep\n./src/Command\n./src/Controller\n./src/ControllerInterface\n./src/DTO\n./src/Domain\n./src/DomainInterface\n./src/Entity\n./src/Infrastructure\n./src/Kernel.php\n./src/Repository\n./src/RepositoryInterface\n./src/Service\n./src/ServiceInterface\n./src/ValueObject\n./src/metric_tree\n./tests\n./tests/AlertsSmokeTest.php\n./tests/AnalyticsSmokeTest.php\n./tests/DashboardPageSmokeTest.php\n./tests/DashboardSmokeTest.php\n./tests/ExportersSmokeTest.php\n./tests/Support\n./tests/Unit\n./tmp_health_interface.php\n./tools\n./tools/analytics\n./tools/analytics-config-garbage-clean.php\n./tools/analytics-domain-hygiene-guard.php\n./tools/analytics-interfaceinterface-guard.php\n./tools/analytics-interfaceinterface-purge.php\n./tools/analytics-namespace-guard.php\n./tools/analytics-php-header-guard.php\n./tools/analytics-scan-layer-map.php\n./tools/analytics-source-domain-migrate.php\n./tools/phpstan\n./tools/qa\n./touched\n./touched/src"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.3.6 (cli) (built: Jan 27 2026 03:09:47) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n    with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.12.13"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "378"
+    },
+    "report_excerpt": "= Analysing Report :description: Current owner-oriented maturity report for the Analysing component. :page-slug: analysing-report This page is the current owner-oriented maturity report for *Analysing*. It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward. == Component Portrait Analysing is not shaped as a simple reporting script bundle or a lightweight analysis helper. It reads as a Symfony-oriented analytics and analysis-process component: a system intended to manage analytics-oriented application runtime, Doctrine-backed processing, scan-layer mapping, namespace and domain-hygiene control, and guarded structural evolution around analytical logic. The currently visible public slice is thinner than in some of the more mature ecosystem repositories, but even that thinner slice already shows signs of being treated as a governed subsystem rather than as a convenience utility. Its current shape suggests an internal analytics and insight-runtime platform layer designed for structured evolution and integration into a wider ecosystem. == Ecosystem Role Within the broader Smartresponsor direction, Analysing appears to occupy the role of an analytics, analysis-process, and structural-guard component. Its ecosystem role can be understood across several functions: * as an analytics-oriented application runtime, * as a scan and layer-map surface, * as a namespace and domain-hygiene enforcement layer, * as a Doctrine-backed processing component, * and as a reusable internal analytical capability for broader applications. This makes Analysing strategically more important than a typical dashboard helper or local report generator. It points toward a reusable internal analytics capability that other components can depend on. == Current Maturity Analysing already presents several useful signals of maturity: * a clear analytics-process product identity, * explicit PHP 8.4, Symfony, Doctrine ORM, and DBAL targeting, * PHPUnit, PHPStan, and php-cs-fixer quality posture, * dedicated scan, canon, namespace, domain-hygiene, and PHP-header guard scripts, * and an application stack that already reads as runtime-capable rather than as a one-off analysis utility. At the same time, the currently visible public slice is thinner than for components like Billing, Shipping, Paying, or Ordering. The README is not present, and the publicly exposed business-surface evidence is comparatively light. So the current reading is strong in structural discipline and architectural intent, but thinner in public runtime proof and domain-surface richness. == RC Scorecard [cols=\"2,1,4\",options=\"header\"] |=== | Layer | Score to RC | Reading | Product identity | 7.9 / 10 | The component is already clearly framed as an analytics and analysis-process application rather than a generic helper layer. | Architecture and domain shape | 8.1 / 10 | Symfony, Doctrine, and guard-driven structural controls already form a coherent analysis-runtime architecture. | Runtime and application surface | 7.8 / 10 | The repo clearly targets application runtime, but the currently visible public runtime evidence is still thinner than in the strongest ecosystem components. | QA maturity | 7.9 / 10 | PHPUnit, PHPStan, and cs posture are present, though the visible QA contour remains lighter than the most mature repositories. | Governance and operational readiness | 8.4 / 10 | Scan-layer mapping, namespace guard, domain-hygiene guard, and header/canon controls form one of the component’s clearest strengths. | Analytics and insight posture | 8.0 / 10 | The component already reads as insight-oriented runtime rather than passive reporting, but public domain-surface richness is still developing. | Market-facing alignment | 7.8 / 10 | The component already aligns with enterprise analytics and insight-runtime classes, though it still reads more as a structured platform seed than a finished public analytics suite. | Overall readiness to RC | 8.0 / 10 | Analysing is a promising pre-RC component with strong structural discipline and thinner current public evidence. |=== == Leader Line Analysing should not be measured against simple reporting scripts or spreadsheet-style exports. Its natural comparison line is closer to the enterprise-class analytics, product insight, and business-intelligence runtime category, including the kind of capability bands represented by: * centralized insight generation, * structural and event-aware analysis runtime, * product and operational analytics posture, * governed analytical processing, * and disciplined handling of analytical application structure. This means the component is better understood as targeting the same strategic class of problem addressed by stronger analytics and BI leaders, while expressing that class through a Symfony-native internal component. In that sense, the leader line …",
+    "report_excerpt_source": ".antora-src/modules/ROOT/pages/component/analysing/report/index.adoc",
+    "key_file_excerpts": {
+      "composer.json": "{\n  \"name\": \"analysing/analytics\",\n  \"description\": \"Analysing process app\",\n  \"type\": \"project\",\n  \"license\": \"proprietary\",\n  \"authors\": [\n    {\n      \"name\": \"Oleksandr Tishchenko\",\n      \"email\": \"dev@highhopesamerica.com\"\n    }\n  ],\n  \"require\": {\n    \"php\": \"^8.4\",\n    \"symfony/framework-bundle\": \"^6.3 || ^7.0\",\n    \"symfony/console\": \"^6.3 || ^7.0\",\n    \"symfony/http-foundation\": \"^6.3 || ^7.0\",\n    \"symfony/http-client\": \"^6.3 || ^7.0\",\n    \"symfony/dependency-injection\": \"^6.3 || ^7.0\",\n    \"doctrine/orm\": \"^2.15 || ^3.0\",\n    \"doctrine/dbal\": \"^3.6\",\n    \"psr/log\": \"^3.0\"\n  },\n  \"require-dev\": {\n    \"phpunit/phpunit\": \"^10.4\",\n    \"phpstan/phpstan\": \"^1.11\",\n    \"friendsofphp/php-cs-fixer\": \"^3.20\",\n    \"symfony/var-dumper\": \"^6.3 || ^7.0\"\n  },\n  \"autoload\": {\n    \"psr-4\": {\n      \"App\\\\\": \"src/\"\n    }\n  },\n  \"autoload-dev\": {\n    \"psr-4\": {\n      \"App\\\\Tests\\\\\": \"tests/\"\n    }\n  },\n  \"scripts\": {\n    \"scan\": \"php tools/analytics-scan-layer-map.php\",\n    \"lint:canon\": \"php tools/analytics-scan-layer-map.php\",\n    \"guard:interfaceinterface\": \"php tools/analytics-interfaceinterface-guard.php\",\n    \"guard:namespace\": \"php tools/analytics-namespace-guard.php --mode=report\",\n    \"qa:env\": \"php tools/qa/AnalyticsQaEnvironmentCheck.php\",\n    \"test\": [\n      \"@qa:env\",\n      \"phpunit\"\n    ],\n    \"analyse\": \"phpstan analyse src --level=max\",\n    \"fix\": \"php-cs-fixer fix --allow-risky=yes\",\n    \"clean:config-garbage\": \"php tools/analytics-config-garbage-clean.php\",\n    \"purge:interfaceinterface\": \"php tools/analytics-interfaceinterface-purge.php\",\n    \"guard:domain-hygiene\": \"php tools/analytics-domain-hygiene-guard.php\",\n    \"guard:php-header\": \"php tools/analytics-php-header-guard.php\"\n  },\n  \"config\": {\n    \"sort-packages\": true,\n    \"optimize-autoloader\": true\n  }\n}\n"
+    }
+  },
+  "verdict": {
+    "component": "analysing",
+    "summary": "Analysing reads as a Symfony/Doctrine-backed analytics runtime with strong internal guards and containerized ops, but it lacks a README, visible CI evidence, and release tagging to confidently claim RC.",
+    "strengths": [
+      "Symfony + Doctrine application skeleton with public entrypoint and console",
+      "Containerization and Nginx configs for a runnable local environment",
+      "Robust internal guards (namespace, domain-hygiene, header) and QA tooling (PHPStan, PHPUnit, CS Fixer, Psalm)",
+      "Secrets scanning present via .gitleaks.toml",
+      "Smoke and unit tests exist alongside a QA environment check script"
+    ],
+    "risks": [
+      "No README or public quickstart; external/product story is thin",
+      "CI/CD status unclear despite workflows directory",
+      "No git tags/releases; maturity and change history are opaque",
+      "Playwright config exists without package.json, suggesting e2e harness is not wired in this repo"
+    ],
+    "next_actions": [
+      "Add a README with quickstart, run commands, architecture outline, and domain map links",
+      "Define and enable GitHub Actions to run qa:env, phpunit, phpstan, cs-fixer (dry-run), guards, and gitleaks on PRs",
+      "Introduce semantic version tags and a CHANGELOG, and create a release workflow",
+      "Either wire Playwright e2e (add package.json and CI job) or remove the unused config",
+      "Document container runbook (docker-compose up, health check, URLs) and add a CI smoke boot test",
+      "Promote docs/ content into the public docs site (or add a lightweight Antora module) and link from README"
+    ],
+    "notes": [
+      "Assessment grounded only in repository files and current snapshot; no external tool outputs parsed",
+      "Component is enabled in registry; scheduled assessment runner integration is assumed but not evidenced here",
+      "Docs exist under docs/, but no README and no Antora nav/index are present in this repo",
+      "phpunit.xml.dist is present; prefer a concrete phpunit.xml (or CI override) with coverage thresholds"
+    ],
+    "suggested_score_overrides": {
+      "runtime": 8.0
+    },
+    "metric_updates": {
+      "product": {
+        "summary": "Product identity as an analytics/analysis-process Symfony app is clear from composer metadata, layered src layout, and focused docs, though public-facing narrative remains thin.",
+        "risks": [
+          "No README or quickstart blurs external understanding of value and scope",
+          "Absence of release tags weakens perceived product maturity"
+        ],
+        "improvements": [
+          "Add a README with positioning, quickstart, example flows, and links to docs/",
+          "Publish a minimal feature map and usage examples to clarify boundaries"
+        ],
+        "evidence": [
+          "composer.json",
+          "src/Domain",
+          "docs/analytics-core-doc-layer-map.md",
+          "docs/analytics-core-doc-source-domain.md"
+        ]
+      },
+      "architecture": {
+        "summary": "A coherent Symfony + Doctrine architecture is present with layered directories and custom guard scripts enforcing namespaces, domain hygiene, and headers.",
+        "risks": [
+          "Architectural intent is implied by structure/guards but not formalized in ADRs",
+          "Guards rely on manual/script execution unless wired into CI"
+        ],
+        "improvements": [
+          "Add a short architecture/ADR note in docs/ to capture decisions and boundaries",
+          "Run all guard scripts in CI to keep structure enforced continuously"
+        ],
+        "evidence": [
+          "src/Domain",
+          "src/Infrastructure",
+          "src/DTO",
+          "config/bundles.php",
+          "tools/analytics-namespace-guard.php",
+          "tools/analytics-domain-hygiene-guard.php",
+          "tools/analytics-php-header-guard.php",
+          "composer.json"
+        ]
+      },
+      "runtime": {
+        "summary": "Deployable runtime surface is evident (public/index.php, Kernel, routes, bin/console) with Docker and Nginx for local execution and smoke tests in tests/.",
+        "risks": [
+          "No README/runbook leaves runtime steps implicit",
+          "Pipeline boot/health checks are not evidenced",
+          "Playwright config without package.json suggests e2e browser tests are not wired"
+        ],
+        "improvements": [
+          "Document run commands and endpoints in README and add a CI smoke boot test against the container",
+          "Either wire Playwright (add package.json and CI job) or remove the unused config",
+          "Expose and document a simple health endpoint checked in CI"
+        ],
+        "evidence": [
+          "public/index.php",
+          "src/Kernel.php",
+          "config/routes.yaml",
+          "bin/console",
+          "docker-compose.yml",
+          "docker/Dockerfile",
+          "docker/nginx.conf",
+          "tests/AnalyticsSmokeTest.php"
+        ]
+      },
+      "qa": {
+        "summary": "Testing and static analysis are configured (PHPUnit, PHPStan, Psalm, CS Fixer) with smoke and unit tests plus a QA environment checker.",
+        "risks": [
+          "Only phpunit.xml.dist is present; CI configuration and coverage thresholds are not visible",
+          "No published CI results or coverage report in the repo"
+        ],
+        "improvements": [
+          "Add GitHub Actions to run qa:env, phpunit with coverage, and phpstan at level max",
+          "Commit or CI-generate a phpunit.xml with coverage thresholds and report artifacts",
+          "Include Psalm in CI to complement PHPStan"
+        ],
+        "evidence": [
+          "phpunit.xml.dist",
+          "phpstan.neon",
+          "psalm.xml",
+          "composer.json",
+          "tools/qa/AnalyticsQaEnvironmentCheck.php",
+          "tests/Unit",
+          "tests/AnalyticsSmokeTest.php"
+        ]
+      },
+      "ops": {
+        "summary": "Operational and governance posture is strong: container assets, secrets scanning, code hygiene/guard scripts, and a workflows directory for CI are present.",
+        "risks": [
+          "Actual CI job definitions and deployment automation are not evidenced",
+          "No release tags/changelog reduce operational traceability of changes"
+        ],
+        "improvements": [
+          "Add CI pipelines for static analysis, tests, guards, and gitleaks on PRs",
+          "Add image build/push steps and a lightweight release workflow with semantic tags and CHANGELOG"
+        ],
+        "evidence": [
+          ".gitleaks.toml",
+          ".github/workflows",
+          "docker-compose.yml",
+          "docker/Dockerfile",
+          "tools/analytics-namespace-guard.php",
+          "tools/analytics-domain-hygiene-guard.php",
+          "php-cs-fixer.dist.php",
+          "rector.neon"
+        ]
+      },
+      "market": {
+        "summary": "The component aligns with an internal analytics/insight platform role and includes some docs, but outward-facing product narrative and packaging are minimal.",
+        "risks": [
+          "Proprietary license limits external adoption possibilities",
+          "Missing README and no releases/tags obscure market readiness"
+        ],
+        "improvements": [
+          "Add a README with value proposition and integration examples",
+          "Introduce versioned releases and minimal change notes to signal stability"
+        ],
+        "evidence": [
+          "composer.json",
+          "docs/analytics-core-doc-layer-map.md",
+          "docs/analytics-core-doc-namespace-target.md"
+        ]
+      },
+      "overall": {
+        "summary": "Analysing shows strong structural and ops hygiene with a real runtime scaffold; wiring CI, release tagging, and a README would close the remaining pre-RC gaps.",
+        "risks": [
+          "Lack of README and public runbook",
+          "CI execution and coverage thresholds not evidenced",
+          "No version tags/releases"
+        ],
+        "improvements": [
+          "Stand up CI for tests/analysis/guards and publish artifacts",
+          "Add semantic version tags and a CHANGELOG",
+          "Provide a concise README and link existing docs for onboarding"
+        ],
+        "evidence": [
+          "composer.json",
+          "docker-compose.yml",
+          "tests/AnalyticsSmokeTest.php",
+          ".gitleaks.toml"
+        ]
+      }
+    },
+    "confidence": "medium",
+    "evidence_paths": [
+      "composer.json",
+      "public/index.php",
+      "src/Kernel.php",
+      "src/Domain",
+      "src/Service",
+      "src/ValueObject",
+      "config/routes.yaml",
+      "config/bootstrap.php",
+      "bin/console",
+      "docker-compose.yml",
+      "docker/Dockerfile",
+      "docker/nginx.conf",
+      ".github/workflows",
+      "phpstan.neon",
+      "phpunit.xml.dist",
+      "psalm.xml",
+      "tests/AnalyticsSmokeTest.php",
+      "tests/Unit",
+      ".gitleaks.toml",
+      "tools/analytics-namespace-guard.php",
+      "tools/analytics-domain-hygiene-guard.php",
+      "tools/analytics-php-header-guard.php",
+      "docs/analytics-core-doc-layer-map.md",
+      "docs/analytics-core-doc-namespace-target.md",
+      "docs/qa-environment.md"
+    ]
+  },
+  "snapshot_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/analysing/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/analysing/history/2026-04-06-assessment-2026-04-06.yaml"
+  },
+  "probe_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/analysing/probes/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/analysing/probes/history/2026-04-06-assessment-2026-04-06.yaml"
+  },
+  "ai_io": {
+    "request_file": "analysing.request.json",
+    "response_file": "analysing.response.json"
+  }
+}

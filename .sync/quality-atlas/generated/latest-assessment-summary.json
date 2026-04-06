@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-06T18:30:24.062154+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T182855Z",
+  "generated_at": "2026-04-06T19:01:40.809019+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T185936Z",
   "mode": "responses",
   "components": [
     {
-      "component": "tagging",
-      "title": "Tagging",
-      "overall": 8.6,
-      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/tagging/history/2026-04-06-assessment-2026-04-06.yaml",
-      "summary": "Tagging presents as a governed, canonical tagging runtime with explicit HTTP contracts, rich configuration, host-minimal runnable surface, and ops assets, reading as a strong pre-RC component with a few release-hygiene gaps."
+      "component": "analysing",
+      "title": "Analysing",
+      "overall": 8.0,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/analysing/history/2026-04-06-assessment-2026-04-06.yaml",
+      "summary": "Analysing reads as a Symfony/Doctrine-backed analytics runtime with strong internal guards and containerized ops, but it lacks a README, visible CI evidence, and release tagging to confidently claim RC."
     }
   ],
   "failures": [],
   "status": "ok",
   "selected_components": [
-    "tagging"
+    "analysing"
   ]
 }

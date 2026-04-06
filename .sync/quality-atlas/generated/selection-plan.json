@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-04-06T18:28:54.940618+00:00",
+  "generated_at": "2026-04-06T18:59:36.613113+00:00",
   "event_name": "workflow_dispatch",
   "manual_components": [
-    "tagging"
+    "analysing"
   ],
   "normalized_manual_components": [
-    "tagging"
+    "analysing"
   ],
   "unknown_manual_components": [],
   "selected_components": [
-    "tagging"
+    "analysing"
   ],
   "selected_count": 1,
   "items": [
     {
-      "component": "tagging",
-      "title": "Tagging",
-      "repository": "smartresponsor/tagging",
+      "component": "analysing",
+      "title": "Analysing",
+      "repository": "smartresponsor/analysing",
       "selected": true,
       "reason": "manual_override",
       "event_name": "workflow_dispatch",
-      "current_head_commit": "5ce284ea116d4737e198763106b47ccaf80d5018",
+      "current_head_commit": "588b19e2d7004e70521f3980969cd871ab17c530",
       "current_head_tag": null,
       "last_assessed_commit": null,
       "last_assessed_tag": null,
@@ -28,7 +28,7 @@
       "changed_files_sample": [],
       "access_error": null,
       "cadence_group": "every_2_days",
-      "hours_since_last_assessment": 18.48
+      "hours_since_last_assessment": 18.99
     }
   ],
   "status": "selected"
