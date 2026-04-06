@@ -55,7 +55,6 @@ jobs:
         id: assessment
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          QUALITY_ATLAS_REPO_TOKEN: ${{ secrets.QUALITY_ATLAS_REPO_TOKEN }}
           QUALITY_ATLAS_OPENAI_MODEL: ${{ vars.QUALITY_ATLAS_OPENAI_MODEL || 'gpt-5' }}
           INPUT_COMPONENT: ${{ github.event.inputs.component || '' }}
           INPUT_MODE: ${{ github.event.inputs.mode || 'auto' }}
@@ -150,7 +149,7 @@ jobs:
 
       - name: Upload assessment run artifacts
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v4
         with:
           name: quality-atlas-assessment-${{ github.run_id }}
           path: |

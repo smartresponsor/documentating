@@ -1502,9 +1502,9 @@
       "title": "Accessing",
       "snapshot": {
         "date": "2026-04-06",
-        "label": "assessment-2026-04-06",
+        "label": "pre-rc-seed",
         "ref": "master",
-        "origin": "quality-atlas responses assessment"
+        "origin": "quality-atlas seed"
       },
       "profile_axes": {
         "engineering": {
@@ -1551,15 +1551,12 @@
       },
       "overall": 8.5,
       "strengths": [
-        "Canonical Accessing report clearly articulates account access scope (registration, verification, recovery, MFA)",
-        "Automated Antora site publishing via gh-pages workflow on master",
-        "Scheduled Quality Atlas assessment workflow present",
-        "Quality Atlas snapshot files for Accessing are maintained in-repo"
+        "Highest current axis: ops 8.9/10",
+        "Component is already represented in the current pre-RC Atlas."
       ],
       "risks": [
-        "Current run scanned the documentation repository, not the smartresponsor/accessing codebase",
-        "Product, architecture, runtime, and security claims are narrative-only in this run",
-        "Potential drift between report assertions and unscanned code until repository facts are ingested"
+        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
+        "Structured metrics should be refreshed by the scheduled assessment workflow."
       ]
     },
     {
@@ -2748,7 +2745,7 @@
         "label": "assessment-2026-04-05",
         "ref": "master",
         "origin": "quality-atlas responses assessment",
-        "overall": 8.5
+        "overall": 0.0
       },
       {
         "date": "2026-04-05",
@@ -2901,6 +2898,25 @@
       },
       {
         "date": "2026-04-06",
+        "label": "assessment-2026-04-06",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/indexing",
+          "assessed_branch": "master",
+          "assessed_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
+        "overall": 8.4
+      },
+      {
+        "date": "2026-04-06",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -2962,6 +2978,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 9.0
+      },
+      {
+        "date": "2026-04-06",
+        "label": "assessment-2026-04-06",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/paying",
+          "assessed_branch": "master",
+          "assessed_commit": "262dc205f1237c2578ed6fb1f576d740e827d273",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "262dc205f1237c2578ed6fb1f576d740e827d273",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
+        "overall": 8.9
       },
       {
         "date": "2026-04-06",

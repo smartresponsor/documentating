@@ -12,9 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PROBE_FAMILIES_FILE = ROOT / '.sync' / 'quality-atlas' / 'contract' / 'probe-families.yaml'
 EXCLUDED_DIRS = {
     '.git', 'vendor', 'node_modules', '.idea', '.commanding', '.watchdog', '.sandbox',
-    '.antora-src', '.sync', 'var', 'cache', 'build', 'dist', '__pycache__',
+    '.antora-src', '.sync/quality-atlas/generated', 'var', 'cache', 'build', 'dist',
 }
-EXCLUDED_PREFIXES = ('var/', 'vendor/', 'node_modules/', '.git/', '.sync/', '.antora-src/', 'build/', 'dist/', 'cache/')
 TEXT_SUFFIXES = {'.php', '.md', '.adoc', '.yml', '.yaml', '.json', '.txt', '.xml', '.neon'}
 PHP_SUFFIX = '.php'
 BASE_FAMILY_IDS = [
@@ -60,13 +59,11 @@ def component_tokens(component: dict[str, Any]) -> set[str]:
 
 
 def should_skip_path(path: Path) -> bool:
-    lowered = path.as_posix().lower().lstrip('./')
-    if any(lowered == prefix.rstrip('/') or lowered.startswith(prefix) for prefix in EXCLUDED_PREFIXES):
-        return True
+    lowered = path.as_posix().lower()
     if '/.git/' in lowered or lowered.endswith('/.git'):
         return True
     for part in path.parts:
-        if part.lower() in EXCLUDED_DIRS:
+        if part in {'.git', 'vendor', 'node_modules', '.idea', '.commanding', '.watchdog', '.sandbox', 'var', 'cache', 'build', 'dist'}:
             return True
     return False
 

@@ -8,75 +8,75 @@ snapshot:
 report_status: current
 groups:
   product_market:
-    score: 8.55
+    score: 0.0
   domain_architecture:
-    score: 8.5
+    score: 0.0
   data_persistence:
-    score: 8.45
+    score: 0.0
   api_contracts:
-    score: 8.4
+    score: 0.0
   runtime_performance:
-    score: 8.4
+    score: 0.0
   reliability_resilience:
-    score: 8.47
+    score: 0.0
   security_governance:
-    score: 8.9
+    score: 0.0
   delivery_operations:
-    score: 8.9
+    score: 0.0
   quality_testing:
-    score: 8.1
+    score: 0.0
 profile_axes:
   engineering:
-    product: 8.8
-    architecture: 8.5
-    data: 8.45
-    api: 8.4
-    runtime: 8.4
-    reliability: 8.65
-    security: 8.9
-    delivery: 8.9
-    quality: 8.1
-    overall: 8.5
+    product: 0.0
+    architecture: 0.0
+    data: 0.0
+    api: 0.0
+    runtime: 0.0
+    reliability: 0.0
+    security: 0.0
+    delivery: 0.0
+    quality: 0.0
+    overall: 0.0
   owner:
-    identity: 8.8
-    consistency: 8.5
-    delivery: 8.9
-    quality: 8.1
-    governance: 8.9
-    fit: 8.55
-    debt: 2.7
-    overall: 8.5
+    identity: 0.0
+    consistency: 0.0
+    delivery: 0.0
+    quality: 0.0
+    governance: 0.0
+    fit: 0.0
+    debt: 10.0
+    overall: 0.0
   investor:
-    product: 8.8
-    architecture: 8.5
-    delivery: 8.9
-    reliability: 8.25
-    governance: 8.9
-    clarity: 8.55
-    overall: 8.5
+    product: 0.0
+    architecture: 0.0
+    delivery: 0.0
+    reliability: 0.0
+    governance: 0.0
+    clarity: 0.0
+    overall: 0.0
   operations:
-    runtime: 8.4
-    reliability: 8.25
-    observability: 8.9
-    security: 8.9
-    traffic: 8.65
-    delivery: 8.9
-    recovery: 8.5
-    overall: 8.5
+    runtime: 0.0
+    reliability: 0.0
+    observability: 0.0
+    security: 0.0
+    traffic: 0.0
+    delivery: 0.0
+    recovery: 0.0
+    overall: 0.0
 metrics:
   product:
     relevant: true
     maturity: strong
-    score: 8.8
-    summary: Component identity and market-facing shape are materially present as
-      described in the owner-facing report page; scores retained pending code-backed
-      validation.
+    score: 0.0
+    summary: Component identity remains clearly articulated in the Accessing report
+      (registration, verification, MFA, recovery, sessions), with RC-oriented positioning
+      documented; verification against the implementation repo is still pending.
     risks:
-    - Evidence is limited to narrative documentation in this repo; no direct product
-      signals from the codebase.
+    - Current evidence is documentation-only in this repo; product claims are not
+      cross-linked to code or releases
     improvements:
-    - Refresh this metric from a scheduled repository assessment run that ingests
-      the Accessing code repository facts.
+    - Link the report to the Accessing implementation repository, releases, and user
+      journeys
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -92,15 +92,16 @@ metrics:
   architecture:
     relevant: true
     maturity: solid
-    score: 8.5
-    summary: Symfony-oriented architecture shape is materially present per the report
-      narrative, but not independently verified here.
+    score: 0.0
+    summary: Symfony-oriented, account-centric architecture is described in the report
+      (verification, MFA, lock state, failure tracking), but this repository does
+      not contain the source to validate it.
     risks:
-    - No source layout or architectural code artifacts for Accessing are available
-      in this repo.
+    - No code-level architectural artifacts (ADRs, module layout) in this repo to
+      confirm design details
     improvements:
-    - Augment the report with links to concrete architectural evidence (packages,
-      modules, boundaries) from the code repository.
+    - Add or link ADRs/architecture diagrams and key module boundaries from the code
+      repo
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -116,15 +117,15 @@ metrics:
   runtime:
     relevant: true
     maturity: solid
-    score: 8.4
-    summary: Runtime and application surface are presented in the report (security
-      packages, flows) but remain unverified by code in this repository.
+    score: 0.0
+    summary: Runtime surface (Symfony Security, CSRF, Mailer, Notifier, Rate Limiter)
+      is claimed in the report; this docs repo does not provide runtime configs or
+      executable artifacts for confirmation.
     risks:
-    - Runtime claims (security integrations, rate limiting, mailer/notifier) are not
-      evidenced by source here.
+    - Lack of runtime configuration/manifests or sample env in this repo limits verification
     improvements:
-    - Ingest runtime/package manifests and CI outputs from the Accessing code repository
-      into the assessment run.
+    - Link to runtime configuration examples and environment templates from the implementation
+      repo
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -140,15 +141,15 @@ metrics:
   qa:
     relevant: true
     maturity: solid
-    score: 8.1
-    summary: Testing and QA posture are described as materially present but remain
-      pre-RC; this repository lacks test artifacts for Accessing itself.
+    score: 0.0
+    summary: QA posture is described in the report as multi-band (lint/style/static
+      analysis/tests), but this repository’s automation targets documentation and
+      assessment only; no Accessing test artifacts are present here.
     risks:
-    - No unit/integration test configs or results for Accessing are present in this
-      docs repo.
+    - No unit/integration/E2E test configs or reports for Accessing in this repo
     improvements:
-    - Link to or ingest test configs/results from the Accessing code repository during
-      scheduled assessments.
+    - Reference CI pipelines and test reports from the Accessing repo (coverage, static
+      analysis, security scans)
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -159,20 +160,20 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+    - path: .github/workflows/quality-atlas-assessment.yml
       note: Metric-level assessment evidence.
   ops:
     relevant: true
     maturity: strong
-    score: 8.9
-    summary: Operational, governance, and security posture read as strong in the report;
-      this repo evidences documentation and assessment automation, not service operations.
+    score: 0.0
+    summary: Operational cadence is evidenced by automated docs publishing and scheduled
+      assessments; security/ops posture for Accessing itself is documented but not
+      code-verified in this repo.
     risks:
-    - Operational readiness of the Accessing service cannot be validated from this
-      documentation repo alone.
+    - No deployment/runbooks/monitoring artifacts for Accessing are present here
     improvements:
-    - Add references to operational runbooks and deployment workflows from the Accessing
-      code/infra repos into the report.
+    - Add or link runbooks, monitoring/alerting dashboards, and operational checklists
+      from the code repo
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -183,24 +184,23 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
+    - path: .github/workflows/gh-pages.yml
       note: Metric-level assessment evidence.
     - path: .github/workflows/quality-atlas-assessment.yml
-      note: Metric-level assessment evidence.
-    - path: .github/workflows/gh-pages.yml
       note: Metric-level assessment evidence.
   market:
     relevant: true
     maturity: solid
-    score: 8.3
-    summary: Business- and portfolio-facing alignment is articulated in the report
-      and remains plausible but unvalidated by external adoption signals in this repo.
+    score: 0.0
+    summary: Market-facing alignment and ecosystem role are well-documented (internal
+      access/identity capability), reading more as an internal governed component
+      than a public product shell.
     risks:
-    - No adoption/usage data or external references are present here to corroborate
-      market alignment.
+    - No external integration guides or public-facing collateral are linked from this
+      page
     improvements:
-    - Augment the report with pointers to usage/adoption metrics or portfolio integration
-      references when available.
+    - Add integration guidance and boundary/fit notes vs. other ecosystem components
+      with links to examples
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -216,15 +216,16 @@ metrics:
   overall:
     relevant: true
     maturity: solid
-    score: 8.5
-    summary: Overall RC direction is visible in the report page; scores are retained
-      in this pass pending ingestion of code-backed evidence.
+    score: 0.0
+    summary: Overall RC direction is clearly presented in the Accessing report and
+      prior snapshot; current repository evidence is documentation and automation,
+      with implementation verification pending.
     risks:
-    - Assessment remains documentation-driven; implementation drift cannot be detected
-      from this repo.
+    - Maturity signals rely on narrative; lack of linked implementation evidence may
+      mask gaps
     improvements:
-    - Execute a code-backed scheduled run against smartresponsor/accessing and refresh
-      this overall metric.
+    - Cross-link the report to implementation evidence (code, CI, security, runtime)
+      and maintain a simple evidence matrix
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -237,11 +238,11 @@ metrics:
     evidence:
     - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
       note: Metric-level assessment evidence.
-    - path: .sync/quality-atlas/components/accessing/current.yaml
+    - path: .sync/quality-atlas/components/accessing/probes/current.yaml
       note: Metric-level assessment evidence.
 development_driving:
   overall_status: fail
-  average_score: 8.61
+  average_score: 8.43
   status_counts:
     pass: 3
     warn: 3
@@ -288,8 +289,8 @@ development_driving:
     documentation_suite:
       title: Documentation & GitHub Suite
       status: warn
-      score: 8.75
-      summary: 0 fail, 1 warn, 1 info findings detected.
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
       blockers:
       - 'Missing expected documentation asset: CHANGELOG.md.'
     delivery_observability:
@@ -301,26 +302,25 @@ development_driving:
     solid_refactoring:
       title: SOLID & Refactoring Pressure
       status: pass
-      score: 9.0
-      summary: 0 fail, 0 warn, 4 info findings detected.
+      score: 7.5
+      summary: 0 fail, 0 warn, 10 info findings detected.
       blockers: []
 strengths:
-- 'Report page clearly defines scope: registration, verification, MFA, recovery, sessions,
-  and lock discipline.'
-- Quality Atlas scheduled workflow exists to refresh assessments.
-- Docs publishing pipeline to gh-pages is configured and active.
+- Clear, detailed owner-facing report with explicit scope and RC scorecard
+- Antora-based documentation site with structured component page
+- Automated site publishing and scheduled assessment workflows present
+- Probe snapshot path exists for Accessing, supporting regular refresh cadence
 risks:
-- No Accessing source code present here; evidence is narrative-only within the report
-  page.
-- Scores originate from pre-RC atlas content and may drift without code-backed scans.
-- Potential divergence between documentation and implementation is not verifiable
-  in this repo.
+- Evidence here is narrative-only; no Accessing source/tests in this repo
+- Potential drift between report claims and implementation reality
+- High maturity scores are asserted by docs without linked code artifacts
+- Automation relies on scheduled AI-backed assessment; variability possible
 recommended_next_actions:
-- Run the scheduled assessment against the smartresponsor/accessing code repository
-  or ingest its facts.
-- Cross-link concrete evidence (tests, build workflows, package manifests) from the
-  code repo into this report page.
-- Keep the report synchronized with validated evidence on the next scheduled run.
+- Link the Accessing report to its implementation repository and specific commit SHAs
+- Attach references to actual tests, security checks, and CI logs from the code repo
+- Add architecture diagram/ADRs or link them from the code repo
+- Provide runbook/ops artifacts (monitoring, alerts) or links to them
+- Include changelog/release cadence and version targeting sourced from code repo
 evidence:
 - path: .antora-src/modules/ROOT/pages/component/accessing/report/index.adoc
   note: Current component report page if present.
@@ -332,17 +332,14 @@ evidence:
   note: Assessment evidence path.
 - path: .github/workflows/gh-pages.yml
   note: Assessment evidence path.
-- path: .sync/quality-atlas/components/accessing/current.yaml
-  note: Assessment evidence path.
 - path: antora-playbook.yml
   note: Assessment evidence path.
 assessment_notes:
-- Accessing remains presented as a governed account-access/security component with
-  clear pre-RC maturity in the owner-facing report; in this documentation repository
-  we only have narrative evidence, so prior scores are retained pending code-backed
-  validation.
-- This repository hosts the Antora-based owner-facing site; Accessing evidence here
-  is the report content, not source code.
-- Quality Atlas automation is present and can refresh when upstream code evidence
-  is connected.
+- Owner-facing report for Accessing presents a strong, enterprise-leaning access/security
+  component narrative with RC-level contours, but current evidence in this repository
+  is documentation and automation only; code-level verification remains pending.
+- This repository is the canonical Antora documentation site; Accessing implementation
+  likely lives in a separate code repo
+- The Accessing page is present and detailed, but code/test artifacts are not in this
+  repository
 assessment_confidence: medium

@@ -122,7 +122,7 @@ def metric_catalog_summary(metric_catalog: Any) -> list[dict[str, Any]]:
     return summary
 
 
-def repo_facts(repo_dir: Path, component: dict[str, Any], docs_repo_root: Path | None = None) -> dict[str, Any]:
+def repo_facts(repo_dir: Path, component: dict[str, Any]) -> dict[str, Any]:
     facts: dict[str, Any] = {'repo_root': str(repo_dir), 'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'exists': repo_dir.exists()}
     if not repo_dir.exists():
         facts['missing_reason'] = 'Configured local_path does not exist in the current runner workspace.'
@@ -149,8 +149,7 @@ def repo_facts(repo_dir: Path, component: dict[str, Any], docs_repo_root: Path |
         facts[label] = {'exit_code': rc, 'output': out[:6000]}
     report_path_value = component.get('report_path')
     if report_path_value:
-        report_root = docs_repo_root or repo_dir
-        report_path = (report_root / report_path_value).resolve()
+        report_path = (repo_dir / report_path_value).resolve()
         if report_path.exists():
             report_text = report_path.read_text(encoding='utf-8', errors='ignore')
             facts['report_excerpt'] = textwrap.shorten(report_text.replace('\n', ' '), width=5000, placeholder=' …')
@@ -380,11 +379,8 @@ def normalize_verdict(component_id: str, verdict: dict[str, Any]) -> dict[str, A
         'evidence_paths': [str(item).strip() for item in verdict.get('evidence_paths') or [] if str(item).strip()],
     }
     for key, value in (verdict.get('suggested_score_overrides') or {}).items():
-        if key not in BASE_METRICS:
-            continue
-        if value is None or value == '':
-            continue
-        normalized['suggested_score_overrides'][key] = safe_float(value, 0.0)
+        if key in BASE_METRICS:
+            normalized['suggested_score_overrides'][key] = safe_float(value, 0.0)
     for key, value in (verdict.get('metric_updates') or {}).items():
         if key not in BASE_METRICS or not isinstance(value, dict):
             continue
@@ -427,31 +423,11 @@ def recalc_profile_axes(scores: dict[str, float]) -> dict[str, dict[str, float]]
     return {profile_id: builder(scores) for profile_id, builder in PROFILE_AXIS_BUILDERS.items()}
 
 
-def recover_baseline_scores(component_id: str, current_scores: dict[str, float]) -> dict[str, float]:
-    if any(value > 0.0 for value in current_scores.values()):
-        return current_scores
-    history_dir = SNAPSHOT_ROOT / component_id / 'history'
-    if not history_dir.exists():
-        return current_scores
-    history_files = sorted(history_dir.glob('*.yaml'), reverse=True)
-    for history_path in history_files:
-        try:
-            payload = load_yaml(history_path)
-        except Exception:
-            continue
-        metrics = payload.get('metrics') or {}
-        candidate = {metric: safe_float((metrics.get(metric) or {}).get('score'), 0.0) for metric in BASE_METRICS}
-        if any(value > 0.0 for value in candidate.values()):
-            return candidate
-    return current_scores
-
-
 def merge_snapshot(current: dict[str, Any] | None, component: dict[str, Any], verdict: dict[str, Any], probe_snapshot: dict[str, Any], run_label: str, origin: str) -> dict[str, Any]:
     if current is None:
         raise RuntimeError(f"Current snapshot for {component['component_id']} is missing. Seed snapshots before running the assessment.")
     snapshot = json.loads(json.dumps(current))
     scores = {metric: safe_float(snapshot['metrics'][metric]['score'], 0.0) for metric in BASE_METRICS}
-    scores = recover_baseline_scores(component['component_id'], scores)
     for key, value in verdict['suggested_score_overrides'].items():
         scores[key] = max(0.0, min(10.0, safe_float(value, scores[key])))
     snapshot['snapshot'] = {
