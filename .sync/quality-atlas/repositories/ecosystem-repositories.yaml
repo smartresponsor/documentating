@@ -342,9 +342,9 @@ repositories:
     the scheduled assessment runner.
 - component_id: paying
   component_title: Paying
-  github_repository: ''
+  github_repository: 'smartresponsor/paying'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/paying/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
