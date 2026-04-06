@@ -1,0 +1,262 @@
+{
+  "status": "ok",
+  "registry_entry": {
+    "component_id": "indexing",
+    "component_title": "Indexing",
+    "github_repository": "smartresponsor/indexing",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/indexing/report/index.adoc",
+    "notes": "Set enabled=true and github_repository once this component is connected to the scheduled assessment runner."
+  },
+  "facts": {
+    "repo_root": "/tmp/quality-atlas-indexing-assessment-2026-04-06-w0ablpr6/indexing",
+    "timestamp_utc": "2026-04-06T02:38:33.930347+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "d10c8289dfe63a5477e7b2c08f7831f14d2fb59c"
+    },
+    "git_exact_tag": {
+      "exit_code": 128,
+      "output": "fatal: No names found, cannot describe anything."
+    },
+    "has_composer_json": true,
+    "has_package_json": false,
+    "has_phpstan_neon": true,
+    "has_phpstan_neon_dist": false,
+    "has_phpunit_xml": false,
+    "has_phpunit_xml_dist": true,
+    "has__github_workflows": true,
+    "has__antora-src_modules_ROOT_nav_adoc": false,
+    "has__antora-src_modules_ROOT_pages_index_adoc": false,
+    "git_status": {
+      "exit_code": 0,
+      "output": ""
+    },
+    "git_recent_commits": {
+      "exit_code": 0,
+      "output": "d10c828 sync"
+    },
+    "top_level_tree": {
+      "exit_code": 0,
+      "output": "./.canonization\n./.canonization/Federation\n./.canonization/Governance\n./.canonization/Orchestration\n./.commanding\n./.commanding/.gitattributes\n./.commanding/README.md\n./.commanding/backup\n./.commanding/command.sh\n./.commanding/commanding.cmd\n./.commanding/commanding.sh\n./.commanding/database\n./.commanding/dependencies\n./.commanding/deploy\n./.commanding/docker\n./.commanding/git\n./.commanding/git_diff.sh\n./.commanding/git_status.sh\n./.commanding/git_sync.sh\n./.commanding/health.sh\n./.commanding/history.sh\n./.commanding/local_ci.sh\n./.commanding/logs\n./.commanding/misc\n./.commanding/patch_zipper.sh\n./.commanding/reorganize-tests.ps1\n./.commanding/run.sh\n./.commanding/sh\n./.commanding/test\n./.commanding/zipper.sh\n./.consuming\n./.consuming/consuming.json\n./.consuming/consuming.ps1\n./.editorconfig\n./.env\n./.gate\n./.gate/MANIFEST.json\n./.gate/README.md\n./.gate/contract\n./.gate/gate.ps1\n./.gate/gate.sh\n./.gate/linting\n./.gate/policy\n./.gate/quality\n./.git\n./.git/HEAD\n./.git/config\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/packed-refs\n./.git/refs\n./.git/shallow\n./.gitattributes\n./.githooks\n./.githooks/pre-commit\n./.github\n./.github/codex\n./.github/dependabot.yml\n./.github/prompts\n./.github/release.yml\n./.github/workflows\n./.gitignore\n./.idea\n./.idea/.gitignore\n./.idea/inspectionProfiles\n./.idea/laravel-idea.xml\n./.idea/markdown.xml\n./.idea/misc.xml\n./.idea/modules.xml\n./.idea/php.xml\n./.idea/phpspec.xml\n./.idea/vcs.xml\n./.intelligence\n./.intelligence/intelligence-engine.ps1\n./.intelligence/intelligence-install.ps1\n./.intelligence/intelligence-run.ps1\n./.intelligence/intelligence.json\n./.php-cs-fixer.php\n./.release\n./.release/publish\n./.release/sign\n./.release/tag\n./.report\n./.report/gate-fix-proposal.ndjson\n./.smoke\n./.smoke/compose\n./.smoke/k6\n./.smoke/probe\n./CHANGELOG.md\n./MANIFEST.yaml\n./README.md\n./bin\n./bin/index-smoke-mysql.php\n./bin/index-smoke-postgres.php\n./composer.json\n./config\n./config/example\n./config/packages\n./config/routes\n./config/services-index.php\n./config/snippet\n./db\n./db/migration\n./db/mysql\n./db/postgres\n./ddl\n./ddl/index\n./doc\n./doc/index\n./docker\n./docker/index-mysql.yaml\n./docker/index-postgres.yaml\n./ops\n./ops/alert\n./ops/grafana\n./phpdoc.dist.xml"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.3.6 (cli) (built: Jan 27 2026 03:09:47) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n    with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.12.13"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "520"
+    },
+    "report_excerpt": "= Indexing Report :description: Current owner-oriented maturity report for the Indexing component. :page-slug: indexing-report This page is the current owner-oriented maturity report for *Indexing*. It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward. == Component Portrait Indexing is not shaped as a simple database search helper or a narrow query utility. It reads as a Symfony-oriented indexing and search-runtime component: a system intended to manage index lifecycle control, transport-driven execution, query building, alias handling, configuration management, health visibility, and machine-facing search operations. The component already shows signs of being treated as a governed subsystem rather than as a convenience layer. Its current shape suggests an internal indexing and retrieval platform layer designed for durability, structured evolution, and integration into a wider ecosystem. == Ecosystem Role Within the broader Smartresponsor direction, Indexing appears to occupy the role of an indexing and search-runtime component. Its ecosystem role can be understood across several functions: * as an index lifecycle surface, * as a query-building and search-execution layer, * as an alias and configuration management surface, * as a health and operational visibility layer, * and as a reusable internal search capability for broader systems. This makes Indexing strategically more important than a typical search helper. It points toward a reusable internal indexing capability that other components can depend on. == Current Maturity Indexing already presents several strong signals of maturity: * a clear indexing-centric product identity, * explicit Symfony 7.4 and PHP 8.4 targeting, * action-based index lifecycle operations, * query and transport separation, * dedicated health, alias, configuration, and query-layer signals, * and unit, HTTP, Panther, and e2e test lanes. In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity. == RC Scorecard [cols=\"2,1,4\",options=\"header\"] |=== | Layer | Score to RC | Reading | Product identity | 8.5 / 10 | The component is already clearly framed around indexing and search runtime rather than a generic search helper. | Architecture and domain shape | 8.3 / 10 | Index lifecycle, alias handling, configuration, health, query building, and transport-driven execution already form a coherent indexing-runtime shape. | Runtime and application surface | 8.2 / 10 | Symfony runtime, server start/stop scripts, HTTP test lane, Panther lane, and action-based index operations establish a real runtime layer. | QA maturity | 8.2 / 10 | Linting, PHPStan, PHPUnit, Panther, and e2e surfaces give the component a solid verification contour. | Governance and operational readiness | 8.1 / 10 | Health-check, alias, configuration, and server-operation signals indicate a meaningful operational posture. | Search and indexing posture | 8.7 / 10 | Index create/delete/search actions, query-building, and operational indexing control are among the component’s clearest strengths. | Market-facing alignment | 8.4 / 10 | The component already aligns well with enterprise indexing and search-runtime classes, though it still reads more as a governed platform layer than a finished public search product shell. | Overall readiness to RC | 8.4 / 10 | Indexing is already a strong pre-RC component with clear enterprise-class internal search and indexing signals. |=== == Leader Line Indexing should not be measured against simple SQL search helpers or lightweight full-text wrappers. Its natural comparison line is closer to the enterprise-class indexing, search, and retrieval-runtime category, including the kind of capability bands represented by: * index lifecycle management, * query construction and execution, * alias and configuration handling, * health-aware operational search runtime, * and governed handling of retrieval infrastructure. This means the component is better understood as targeting the same strategic class of problem addressed by stronger search and indexing leaders, while expressing that class through a Symfony-native internal component. In that sense, the leader line is not another search helper. It is closer to: * enterprise indexing-runtime class, * enterprise search-infrastructure class, * enterprise retrieval-and-query-control class, * reinterpreted as an internal ecosystem component. == Strength Profile Several strengths are already visible and worth naming directly. === Index-runtime clarity Indexing already carries a strong center of gravity around index lifecycle and search execution rather than vague “search” language. That matters because many search systems become fragmented when lifecycle operations, alias management, …",
+    "report_excerpt_source": ".antora-src/modules/ROOT/pages/component/indexing/report/index.adoc",
+    "key_file_excerpts": {
+      "composer.json": "{\n    \"name\": \"smartresponsor/index\",\n    \"description\": \"SmartResponsor Index component\",\n    \"type\": \"project\",\n    \"license\": \"proprietary\",\n    \"require\": {\n        \"php\": \"^8.4\",\n        \"ext-json\": \"*\",\n        \"doctrine/dbal\": \"^4.3\",\n        \"symfony/dependency-injection\": \"^8.0\",\n        \"symfony/config\": \"^8.0\",\n        \"symfony/http-client\": \"^8.0\",\n        \"symfony/console\": \"^8.0\",\n        \"symfony/http-foundation\": \"^8.0\",\n        \"symfony/routing\": \"^8.0\",\n        \"symfony/yaml\": \"^8.0\",\n        \"symfony/http-kernel\": \"^8.0\"\n    },\n    \"require-dev\": {\n        \"code-lts/doctum\": \"^5.6\",\n        \"friendsofphp/php-cs-fixer\": \"^3.94\",\n        \"nelmio/api-doc-bundle\": \"^5.9\",\n        \"phpstan/phpstan\": \"^1.12\",\n        \"phpstan/phpstan-phpunit\": \"^1.4\",\n        \"phpunit/phpunit\": \"^10.5\",\n        \"rector/rector\": \"^1.1\",\n        \"symfony/framework-bundle\": \"^8.0\",\n        \"symfony/options-resolver\": \"^8.0\",\n        \"symfony/property-info\": \"^8.0\",\n        \"symfony/type-info\": \"^8.0\"\n    },\n    \"autoload\": {\n        \"psr-4\": {\n            \"SmartResponsor\\\\Index\\\\\": \"src/\"\n        }\n    },\n    \"autoload-dev\": {\n        \"psr-4\": {\n            \"SmartResponsor\\\\Index\\\\Tests\\\\\": \"test/\"\n        }\n    },\n    \"scripts\": {\n        \"ci:lint\": [\n            \"@php -r \\\"foreach (['.github', 'config', 'doc'] as $dir) { if (!is_dir($dir)) { continue; } $it = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir)); foreach ($it as $file) { if (!$file->isFile()) { continue; } $path = $file->getPathname(); $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION)); if ($ext === 'json') { json_decode(file_get_contents($path)); if (JSON_ERROR_NONE !== json_last_error()) { fwrite(STDERR, 'Invalid JSON: ' . $path . PHP_EOL); exit(1); } } } }\\\"\",\n            \"@php -r \\\"require 'vendor/autoload.php'; foreach (['.github', 'config'] as $dir) { if (!is_dir($dir)) { continue; } $it = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir)); foreach ($it as $file) { if (!$file->isFile()) { continue; } $path = $file->getPathname(); $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION)); if (!in_array($ext, ['yml', 'yaml'], true)) { continue; } try { Symfony\\\\Component\\\\Yaml\\\\Yaml::parseFile($path); } catch (Throwable $exception) { fwrite(STDERR, 'Invalid YAML: ' . $path . PHP_EOL . $exception->getMessage() . PHP_EOL); exit(1); } } }\\\"\"\n        ],\n        \"ci:phpstan\": \"phpstan analyse\",\n        \"ci:phpunit\": \"phpunit\",\n        \"ci:docs\": [\n            \"@php -r \\\"foreach (['README.md', 'CHANGELOG.md', 'doc/index/README.md', 'doc/index/TOC.md', 'doc/index/GITHUB-OPERATIONS.md', 'doctum.php'] as $file) { if (!file_exists($file)) { fwrite(STDERR, \\\\\\\"Missing documentation file: $file\\\\n\\\\\\\"); exit(1); } }\\\"\",\n            \"@ci:docs:consistency\",\n            \"@docs:doctum:clean\",\n            \"@docs:doctum\"\n        ],\n        \"ci:syntax\": \"@php -r \\\"$dirs=['src','test','config','bin','tool']; foreach ($dirs as $dir) { if (!is_dir($dir)) { continue; } $it = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS)); foreach ($it as $file) { if (!$file->isFile() || strtolower($file->getExtension()) !== 'php') { continue; } $cmd = escapeshellarg(PHP_BINARY) . ' -l ' . escapeshellarg($file->getPathname()) . ' > /dev/null 2>&1'; exec($cmd, $out, $code); if ($code !== 0) { fwrite(STDERR, 'PHP syntax error: ' . $file->getPathname() . PHP_EOL); exit($code); } } }\\\"\",\n        \"ci:docs:consistency\": [\n            \"@php tool/qa/index-consistency.php\"\n        ],\n        \"ci:consistency\": [\n            \"@php tool/qa/index-consistency.php\"\n        ],\n        \"ci:cs:guard\": [\n            \"@php tool/qa/index-docblock-guard.php\"\n        ],\n        \"ci:cs\": \"php-cs-fixer fix --dry-run --diff --verbose\",\n        \"docs:doctum\": \"vendor/bin/doctum update doctum.php --force\",\n        \"docs:doctum:clean\": \"@php -r \\\"foreach (['var/doctum/build', 'var/doctum/cache'] as $path) { if (!is_dir($path)) { continue; } $it = "
+    }
+  },
+  "verdict": {
+    "component": "indexing",
+    "summary": "Indexing reads as a Symfony-native indexing/search-runtime component with strong internal scaffolding (dual-DB docker, smoke/probe tooling, governance, and docs), trending toward RC but with gaps in release tagging, Antora navigation, and verified test execution.",
+    "strengths": [
+      "Clear indexing identity and Symfony 8/PHP 8.4 targeting",
+      "Dual-DB runtime scaffolding via docker-compose (MySQL/Postgres) with smoke scripts",
+      "Static analysis and code-style tooling present (PHPStan, PHP-CS-Fixer) and CI scripts wired in composer",
+      "Operational/observability scaffolding present (ops/grafana, ops/alert, health script)",
+      "Governance surfaces present (.gate, MANIFEST files) and structured docs footprint"
+    ],
+    "risks": [
+      "No git tags detected for releases",
+      "Antora navigation/root index not present, reducing docs discoverability",
+      "PHPUnit config only as .dist; unit test suite execution not evidenced",
+      "Kubernetes manifests not evidenced; runtime orchestration appears docker-only",
+      "Smoke/perf lanes presence is visible but CI integration is not evidenced"
+    ],
+    "next_actions": [
+      "Create and publish semantic version tags and wire a release workflow",
+      "Add Antora nav.adoc and ROOT pages/index.adoc to surface docs in site",
+      "Promote phpunit.xml from .dist and ensure test suite runs in CI",
+      "Ensure CI runs phpstan, phpunit, and smoke/perf probes on PRs and main",
+      "Document and publish Grafana dashboards and alert runbooks in ops/",
+      "Add a brief runtime README in docker/ describing MySQL/Postgres flows and health checks"
+    ],
+    "notes": [
+      "Repository scan on master at d10c828 (no exact tag)",
+      "Report source present under .antora-src; Antora nav/root index not detected",
+      "Composer scripts declare CI lanes; actual workflow wiring not inspected here"
+    ],
+    "suggested_score_overrides": {},
+    "metric_updates": {
+      "product": {
+        "summary": "Component identity and market-facing shape remain materially present, with a clear indexing/search-runtime focus and internal documentation footprint.",
+        "risks": [
+          "Docs navigation for Antora is missing, reducing discoverability",
+          "Release cadence not evidenced due to missing git tags"
+        ],
+        "improvements": [
+          "Add Antora nav.adoc and ROOT pages/index.adoc",
+          "Create semantic version tags and maintain CHANGELOG on releases"
+        ],
+        "evidence": [
+          "composer.json",
+          ".antora-src/modules/ROOT/pages/component/indexing/report/index.adoc",
+          "README.md",
+          "CHANGELOG.md"
+        ]
+      },
+      "architecture": {
+        "summary": "Architecture presents a coherent indexing-runtime shape (config surfaces, DDL, dual-DB options) consistent with a governed internal subsystem.",
+        "risks": [
+          "Pre-release stabilization risk signaled by lack of tags",
+          "Integration boundaries not documented via Antora nav/index"
+        ],
+        "improvements": [
+          "Document module boundaries and data flows in doc/index",
+          "Tag stable checkpoints to mark architectural baselines"
+        ],
+        "evidence": [
+          "config/services-index.php",
+          "ddl/index",
+          "docker/index-mysql.yaml",
+          "docker/index-postgres.yaml",
+          "MANIFEST.yaml"
+        ]
+      },
+      "runtime": {
+        "summary": "Runtime is materially present with docker-based MySQL/Postgres flows, smoke scripts, and health probes indicating an executable surface.",
+        "risks": [
+          "Orchestration appears docker-only; no Kubernetes readiness evidenced",
+          "CI execution of smoke/perf probes not evidenced"
+        ],
+        "improvements": [
+          "Provide runtime README with start/stop, health, and troubleshooting",
+          "Add optional Kubernetes manifests or document deployment expectations"
+        ],
+        "evidence": [
+          "docker/index-mysql.yaml",
+          "docker/index-postgres.yaml",
+          "bin/index-smoke-mysql.php",
+          "bin/index-smoke-postgres.php",
+          ".commanding/health.sh",
+          ".smoke/k6"
+        ]
+      },
+      "qa": {
+        "summary": "QA posture is present via static analysis, code style, and phpunit configuration (.dist), with smoke/perf probes available.",
+        "risks": [
+          "PHPUnit only configured as .dist; active test suite execution not evidenced",
+          "Coverage reporting and CI wiring for tests not evidenced"
+        ],
+        "improvements": [
+          "Promote phpunit.xml from .dist and run tests in CI",
+          "Surface coverage and static analysis results in CI artifacts"
+        ],
+        "evidence": [
+          "phpstan.neon",
+          "phpunit.xml.dist",
+          ".php-cs-fixer.php",
+          "composer.json",
+          ".smoke/k6"
+        ]
+      },
+      "ops": {
+        "summary": "Operational readiness is signaled by Grafana/alert scaffolding, governance gate, health scripts, and CI directory presence.",
+        "risks": [
+          "Alerting integrations and dashboards publication not evidenced",
+          "No release workflow or tags to anchor operational rollouts"
+        ],
+        "improvements": [
+          "Publish and document dashboards/runbooks under ops/",
+          "Add release workflow with tagging and changelog publishing"
+        ],
+        "evidence": [
+          "ops/grafana",
+          "ops/alert",
+          ".gate/MANIFEST.json",
+          ".github/workflows",
+          ".commanding/health.sh"
+        ]
+      },
+      "market": {
+        "summary": "Business/portfolio alignment reads as an internal, governed indexing capability with maintained docs and changelog.",
+        "risks": [
+          "Proprietary license limits external adoption",
+          "Docs nav gaps may reduce portfolio-facing clarity"
+        ],
+        "improvements": [
+          "Clarify positioning in README and doc/index with use-cases",
+          "Add Antora nav to improve documentation entry points"
+        ],
+        "evidence": [
+          "composer.json",
+          "README.md",
+          "CHANGELOG.md",
+          ".antora-src/modules/ROOT/pages/component/indexing/report/index.adoc"
+        ]
+      },
+      "overall": {
+        "summary": "Overall RC direction remains visible with strong internal indexing signals; remaining gaps are release tagging, docs navigation, and verified CI test execution.",
+        "risks": [
+          "Missing git tags keep the component pre-release",
+          "Docs navigation/index missing for Antora site",
+          "Test execution/coverage not evidenced in CI"
+        ],
+        "improvements": [
+          "Introduce semantic version tags and a release workflow",
+          "Add Antora nav/index and verify site rendering",
+          "Ensure phpunit/phpstan/smoke run in CI with artifacts"
+        ],
+        "evidence": [
+          ".github/workflows",
+          "phpunit.xml.dist",
+          "phpstan.neon",
+          ".antora-src/modules/ROOT/pages/component/indexing/report/index.adoc",
+          "CHANGELOG.md"
+        ]
+      }
+    },
+    "confidence": "medium",
+    "evidence_paths": [
+      "composer.json",
+      "docker/index-mysql.yaml",
+      "docker/index-postgres.yaml",
+      "bin/index-smoke-mysql.php",
+      "bin/index-smoke-postgres.php",
+      ".smoke/k6",
+      ".gate/MANIFEST.json",
+      "ops/grafana",
+      "ops/alert",
+      ".github/workflows",
+      "phpstan.neon",
+      "phpunit.xml.dist",
+      "config/services-index.php",
+      "ddl/index",
+      ".antora-src/modules/ROOT/pages/component/indexing/report/index.adoc",
+      "README.md",
+      "CHANGELOG.md",
+      "MANIFEST.yaml",
+      ".commanding/health.sh"
+    ]
+  },
+  "snapshot_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/indexing/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/indexing/history/2026-04-06-assessment-2026-04-06.yaml"
+  },
+  "probe_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/indexing/probes/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/indexing/probes/history/2026-04-06-assessment-2026-04-06.yaml"
+  },
+  "ai_io": {
+    "request_file": "indexing.request.json",
+    "response_file": "indexing.response.json"
+  }
+}
