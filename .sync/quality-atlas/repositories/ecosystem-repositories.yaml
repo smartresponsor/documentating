@@ -37,9 +37,9 @@ repositories:
     the scheduled assessment runner.
 - component_id: applicating
   component_title: Applicating
-  github_repository: ''
+  github_repository: 'smartresponsor/applicating'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/applicating/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
@@ -238,9 +238,9 @@ repositories:
     the scheduled assessment runner.
 - component_id: indexing
   component_title: Indexing
-  github_repository: ''
+  github_repository: 'smartresponsor/indexing'
   default_branch: master
-  enabled: false
+  enabled: true
   report_path: .antora-src/modules/ROOT/pages/component/indexing/report/index.adoc
   notes: Set enabled=true and github_repository once this component is connected to
     the scheduled assessment runner.
