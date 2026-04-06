@@ -1502,9 +1502,9 @@
       "title": "Accessing",
       "snapshot": {
         "date": "2026-04-06",
-        "label": "assessment-2026-04-06",
+        "label": "pre-rc-seed",
         "ref": "master",
-        "origin": "quality-atlas responses assessment"
+        "origin": "quality-atlas seed"
       },
       "profile_axes": {
         "engineering": {
@@ -1551,15 +1551,12 @@
       },
       "overall": 8.5,
       "strengths": [
-        "Canonical Accessing report clearly articulates account access scope (registration, verification, recovery, MFA)",
-        "Automated Antora site publishing via gh-pages workflow on master",
-        "Scheduled Quality Atlas assessment workflow present",
-        "Quality Atlas snapshot files for Accessing are maintained in-repo"
+        "Highest current axis: ops 8.9/10",
+        "Component is already represented in the current pre-RC Atlas."
       ],
       "risks": [
-        "Current run scanned the documentation repository, not the smartresponsor/accessing codebase",
-        "Product, architecture, runtime, and security claims are narrative-only in this run",
-        "Potential drift between report assertions and unscanned code until repository facts are ingested"
+        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
+        "Structured metrics should be refreshed by the scheduled assessment workflow."
       ]
     },
     {

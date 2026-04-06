@@ -84,7 +84,7 @@
       "repository": "smartresponsor/accessing",
       "snapshot": {
         "snapshot_date": "2026-04-06",
-        "snapshot_label": "assessment-2026-04-06",
+        "snapshot_label": "pre-rc-seed",
         "overall": 8.5,
         "assessed_commit": null,
         "assessed_tag": null,
