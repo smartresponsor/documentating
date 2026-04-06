@@ -22,7 +22,7 @@
         {
           "id": "delivery",
           "title": "Delivery Readiness",
-          "average": 8.59,
+          "average": 8.58,
           "min": 6.8,
           "max": 9.1
         },
@@ -36,7 +36,7 @@
         {
           "id": "governance",
           "title": "Security & Governance",
-          "average": 8.59,
+          "average": 8.58,
           "min": 6.8,
           "max": 9.1
         },
@@ -50,7 +50,7 @@
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.44,
+          "average": 8.43,
           "min": 7.4,
           "max": 9.0
         }
@@ -216,13 +216,13 @@
           "axes": {
             "product": 8.6,
             "architecture": 8.3,
-            "delivery": 9.0,
+            "delivery": 8.8,
             "reliability": 8.6,
-            "governance": 9.0,
+            "governance": 8.8,
             "clarity": 8.5,
-            "overall": 8.6
+            "overall": 8.5
           },
-          "overall": 8.66
+          "overall": 8.59
         },
         {
           "component": "ordering",
@@ -352,7 +352,7 @@
         }
       ],
       "component_count": 21,
-      "ecosystem_average": 8.45
+      "ecosystem_average": 8.44
     },
     {
       "id": "engineering",
@@ -397,21 +397,21 @@
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.45,
+          "average": 8.44,
           "min": 7.0,
           "max": 9.0
         },
         {
           "id": "security",
           "title": "Security",
-          "average": 8.59,
+          "average": 8.58,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "delivery",
           "title": "Delivery",
-          "average": 8.59,
+          "average": 8.58,
           "min": 6.8,
           "max": 9.1
         },
@@ -425,7 +425,7 @@
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.44,
+          "average": 8.43,
           "min": 7.4,
           "max": 9.0
         }
@@ -627,13 +627,13 @@
             "data": 8.6,
             "api": 8.35,
             "runtime": 8.9,
-            "reliability": 8.95,
-            "security": 9.0,
-            "delivery": 9.0,
+            "reliability": 8.85,
+            "security": 8.8,
+            "delivery": 8.8,
             "quality": 8.3,
-            "overall": 8.6
+            "overall": 8.5
           },
-          "overall": 8.66
+          "overall": 8.6
         },
         {
           "component": "ordering",
@@ -814,42 +814,42 @@
         {
           "id": "observability",
           "title": "Observability",
-          "average": 8.59,
+          "average": 8.58,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "security",
           "title": "Security",
-          "average": 8.59,
+          "average": 8.58,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "traffic",
           "title": "Traffic Strategy",
-          "average": 8.45,
+          "average": 8.44,
           "min": 7.0,
           "max": 9.0
         },
         {
           "id": "delivery",
           "title": "Delivery Automation",
-          "average": 8.59,
+          "average": 8.58,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "recovery",
           "title": "Recovery",
-          "average": 8.51,
+          "average": 8.5,
           "min": 7.15,
           "max": 9.15
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.44,
+          "average": 8.43,
           "min": 7.4,
           "max": 9.0
         }
@@ -1026,14 +1026,14 @@
           "axes": {
             "runtime": 8.9,
             "reliability": 8.6,
-            "observability": 9.0,
-            "security": 9.0,
-            "traffic": 8.95,
-            "delivery": 9.0,
-            "recovery": 8.65,
-            "overall": 8.6
+            "observability": 8.8,
+            "security": 8.8,
+            "traffic": 8.85,
+            "delivery": 8.8,
+            "recovery": 8.55,
+            "overall": 8.5
           },
-          "overall": 8.84
+          "overall": 8.72
         },
         {
           "component": "ordering",
@@ -1172,7 +1172,7 @@
         }
       ],
       "component_count": 21,
-      "ecosystem_average": 8.48
+      "ecosystem_average": 8.47
     },
     {
       "id": "owner",
@@ -1196,7 +1196,7 @@
         {
           "id": "delivery",
           "title": "Delivery Maturity",
-          "average": 8.59,
+          "average": 8.58,
           "min": 6.8,
           "max": 9.1
         },
@@ -1210,7 +1210,7 @@
         {
           "id": "governance",
           "title": "Governance",
-          "average": 8.59,
+          "average": 8.58,
           "min": 6.8,
           "max": 9.1
         },
@@ -1231,7 +1231,7 @@
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.44,
+          "average": 8.43,
           "min": 7.4,
           "max": 9.0
         }
@@ -1408,14 +1408,14 @@
           "axes": {
             "identity": 8.6,
             "consistency": 8.3,
-            "delivery": 9.0,
+            "delivery": 8.8,
             "quality": 8.3,
-            "governance": 9.0,
+            "governance": 8.8,
             "fit": 8.5,
             "debt": 2.7,
-            "overall": 8.6
+            "overall": 8.5
           },
-          "overall": 7.88
+          "overall": 7.81
         },
         {
           "component": "ordering",
@@ -2263,9 +2263,21 @@
       "title": "Messaging",
       "snapshot": {
         "date": "2026-04-06",
-        "label": "pre-rc-seed",
+        "label": "assessment-2026-04-06",
         "ref": "master",
-        "origin": "quality-atlas seed"
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/messaging",
+          "assessed_branch": "master",
+          "assessed_commit": "daa9296b6c37da189a53dc8189e875193550691b",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "daa9296b6c37da189a53dc8189e875193550691b",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        }
       },
       "profile_axes": {
         "engineering": {
@@ -2274,50 +2286,56 @@
           "data": 8.6,
           "api": 8.35,
           "runtime": 8.9,
-          "reliability": 8.95,
-          "security": 9.0,
-          "delivery": 9.0,
+          "reliability": 8.85,
+          "security": 8.8,
+          "delivery": 8.8,
           "quality": 8.3,
-          "overall": 8.6
+          "overall": 8.5
         },
         "owner": {
           "identity": 8.6,
           "consistency": 8.3,
-          "delivery": 9.0,
+          "delivery": 8.8,
           "quality": 8.3,
-          "governance": 9.0,
+          "governance": 8.8,
           "fit": 8.5,
           "debt": 2.7,
-          "overall": 8.6
+          "overall": 8.5
         },
         "investor": {
           "product": 8.6,
           "architecture": 8.3,
-          "delivery": 9.0,
+          "delivery": 8.8,
           "reliability": 8.6,
-          "governance": 9.0,
+          "governance": 8.8,
           "clarity": 8.5,
-          "overall": 8.6
+          "overall": 8.5
         },
         "operations": {
           "runtime": 8.9,
           "reliability": 8.6,
-          "observability": 9.0,
-          "security": 9.0,
-          "traffic": 8.95,
-          "delivery": 9.0,
-          "recovery": 8.65,
-          "overall": 8.6
+          "observability": 8.8,
+          "security": 8.8,
+          "traffic": 8.85,
+          "delivery": 8.8,
+          "recovery": 8.55,
+          "overall": 8.5
         }
       },
-      "overall": 8.6,
+      "overall": 8.5,
       "strengths": [
-        "Highest current axis: ops 9.0/10",
-        "Component is already represented in the current pre-RC Atlas."
+        "Symfony 7.4/8.0 app with API Platform, GraphQL, Messenger, Mercure, Redis, Doctrine breadth",
+        "Clear runtime governance via preflight/install/test/boot-ledger scripts",
+        "OpenAPI contract present for external surface",
+        "Observability and tracing hooks (Prometheus rules, OTEL/tracing service configs)",
+        "Solid test/tooling posture (PHPUnit, PHPStan, Panther; Playwright script scaffolding)",
+        "Structured docs assets (README, ROADMAP, owner-facing Antora report)"
       ],
       "risks": [
-        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
-        "Structured metrics should be refreshed by the scheduled assessment workflow."
+        "No committed CI workflows found in-repo",
+        ".dist-only PHPUnit config may require local setup for contributors",
+        "No git tags detected for release/version governance",
+        "Antora navigation/index files absent, which may limit docs surfacing"
       ]
     },
     {
@@ -3108,6 +3126,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.6
+      },
+      {
+        "date": "2026-04-06",
+        "label": "assessment-2026-04-06",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/messaging",
+          "assessed_branch": "master",
+          "assessed_commit": "daa9296b6c37da189a53dc8189e875193550691b",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "daa9296b6c37da189a53dc8189e875193550691b",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
+        "overall": 8.5
       },
       {
         "date": "2026-04-06",

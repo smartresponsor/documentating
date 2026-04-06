@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-06T16:34:44.050074+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T163253Z",
+  "generated_at": "2026-04-06T17:28:28.681459+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T172733Z",
   "mode": "responses",
   "components": [
     {
-      "component": "attaching",
-      "title": "Attaching",
-      "overall": 7.4,
-      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/attaching/history/2026-04-06-assessment-2026-04-06.yaml",
-      "summary": "Modern Symfony 8-based attachment component with tests and static analysis in place; key gaps are CI/release hygiene, documentation depth, and a naming mismatch to the component/repo."
+      "component": "messaging",
+      "title": "Messaging",
+      "overall": 8.5,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/messaging/history/2026-04-06-assessment-2026-04-06.yaml",
+      "summary": "Messaging presents as a governed Symfony-based messaging runtime with strong runtime scripts, API/GraphQL surface, and observability hooks; primary gap is visible CI/release automation in-repo."
     }
   ],
   "failures": [],
   "status": "ok",
   "selected_components": [
-    "attaching"
+    "messaging"
   ]
 }
