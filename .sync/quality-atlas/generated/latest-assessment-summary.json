@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-06T16:03:43.585532+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T160343Z",
+  "generated_at": "2026-04-06T16:06:11.546501+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T160611Z",
   "mode": "responses",
   "components": [],
   "failures": [],
   "status": "ok",
   "selected_components": [
-    "attaching"
+    "messaging"
   ]
 }
