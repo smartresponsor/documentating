@@ -1,0 +1,285 @@
+component: paying
+title: Paying
+snapshot:
+  date: '2026-04-06'
+  label: assessment-2026-04-06
+  origin: quality-atlas deterministic probes
+  generated_at: '2026-04-06T06:27:07.832363+00:00'
+repo_target:
+  github_repository: smartresponsor/paying
+  local_path: ''
+  default_branch: master
+families:
+  canon_structure:
+    title: Canon & Structure
+    status: warn
+    score: 8.0
+    summary: 0 fail, 2 warn, 0 info findings detected.
+    blockers:
+    - PHP namespace does not use the default App\ root.
+    - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly
+      separated.
+    findings:
+    - severity: warn
+      id: namespace_drift
+      detail: PHP namespace does not use the default App\ root.
+      path: config/reference.php
+    - severity: warn
+      id: dialect_mixing
+      detail: Both MySQL and PostgreSQL dialect markers are present; keep dialect
+        trees clearly separated.
+      path: config/reference.php
+    evidence:
+    - compose.yml
+    - config/reference.php
+  architecture_boundaries:
+    title: Architecture & Boundaries
+    status: warn
+    score: 5.0
+    summary: 0 fail, 5 warn, 0 info findings detected.
+    blockers:
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    findings:
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/Unit/PaymentConsoleRefundHandlerTest.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/Unit/PaymentApiStartHandlerTest.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/Unit/PaymentConsoleCreateHandlerTest.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/Unit/RefundServiceTest.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/Unit/ProviderGuardTest.php
+    evidence:
+    - tests/Unit/Architecture/ControllerJsonDecodeBoundaryTest.php
+    - tests/Unit/Architecture/ControllerServiceBoundaryTest.php
+    - tests/Unit/Architecture/ControllerValidationBoundaryTest.php
+    - tests/Unit/Architecture/ServiceLayerDependencyBoundaryTest.php
+    - tests/Unit/PaymentApiStartHandlerTest.php
+    - tests/Unit/PaymentConsoleCreateHandlerTest.php
+    - tests/Unit/PaymentConsoleRefundHandlerTest.php
+    - tests/Unit/ProviderGuardTest.php
+    - tests/Unit/RefundServiceTest.php
+  runtime_surface:
+    title: Runtime & Application Surface
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - CHANGELOG.md
+    - README.md
+    - RELEASE_NOTES.md
+    - compose.yml
+    - deploy/docker/Dockerfile
+    - tools/deploy/docker-compose.yml
+  qa_behavior:
+    title: QA & Behavioral Assurance
+    status: warn
+    score: 9.0
+    summary: 0 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - No fixtures directories were detected.
+    findings:
+    - severity: warn
+      id: fixtures_missing
+      detail: No fixtures directories were detected.
+    evidence:
+    - README.md
+    - composer.json
+    - package-lock.json
+    - tests/
+  documentation_suite:
+    title: Documentation & GitHub Suite
+    status: warn
+    score: 8.0
+    summary: 0 fail, 2 warn, 0 info findings detected.
+    blockers:
+    - Public/protected docblock coverage is 101/697 (14%).
+    - GitHub Suite support files appear sparse.
+    findings:
+    - severity: warn
+      id: docblock_coverage_low
+      detail: Public/protected docblock coverage is 101/697 (14%).
+    - severity: warn
+      id: github_suite_sparse
+      detail: GitHub Suite support files appear sparse.
+    evidence:
+    - CHANGELOG.md
+    - README.md
+    - composer.json
+    - config/bundles.php
+    - config/reference.php
+    - php-docblock-ratio:101/697
+  delivery_observability:
+    title: Delivery & Observability
+    status: warn
+    score: 9.0
+    summary: 0 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - No GitHub workflow files were detected.
+    findings:
+    - severity: warn
+      id: workflows_missing
+      detail: No GitHub workflow files were detected.
+    evidence:
+    - CHANGELOG.md
+    - README.md
+    - compose.yml
+    - composer.json
+    - ops/release/checklist.md
+    - task.txt
+  solid_refactoring:
+    title: SOLID & Refactoring Pressure
+    status: fail
+    score: 0.0
+    summary: 1 fail, 8 warn, 1 info findings detected.
+    blockers:
+    - PHP file is very large (1636 lines); review SRP and refactoring pressure.
+    - Class exposes 13 public methods; review interface segregation and SRP.
+    - Class exposes 17 public methods; review interface segregation and SRP.
+    - Class exposes 17 public methods; review interface segregation and SRP.
+    - Class exposes 13 public methods; review interface segregation and SRP.
+    findings:
+    - severity: fail
+      id: large_class
+      detail: PHP file is very large (1636 lines); review SRP and refactoring pressure.
+      path: config/reference.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 13 public methods; review interface segregation and SRP.
+      path: tests/Unit/RefundServiceTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 17 public methods; review interface segregation and SRP.
+      path: tests/Unit/PaymentStartServiceTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 17 public methods; review interface segregation and SRP.
+      path: tests/Unit/PaymentConsoleReadModelTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 13 public methods; review interface segregation and SRP.
+      path: tests/Unit/PaymentConsoleFinalizeHandlerTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 20 public methods; review interface segregation and SRP.
+      path: tests/E2E/PaymentWebhookToOrderFlowTest.php
+    - severity: warn
+      id: class_size_pressure
+      detail: PHP file is large (408 lines); review SRP pressure.
+      path: tests/Functional/Webhook/PaymentWebhookOutboxConsumerIntegratedProofTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 28 public methods; review interface segregation and SRP.
+      path: tests/Functional/Webhook/PaymentWebhookOutboxConsumerIntegratedProofTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 17 public methods; review interface segregation and SRP.
+      path: src/Entity/Payment.php
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: README.md
+    evidence:
+    - README.md
+    - config/reference.php
+    - src/Entity/Payment.php
+    - tests/E2E/PaymentWebhookToOrderFlowTest.php
+    - tests/Functional/Webhook/PaymentWebhookOutboxConsumerIntegratedProofTest.php
+    - tests/Unit/PaymentConsoleFinalizeHandlerTest.php
+    - tests/Unit/PaymentConsoleReadModelTest.php
+    - tests/Unit/PaymentStartServiceTest.php
+    - tests/Unit/RefundServiceTest.php
+summary:
+  overall_status: fail
+  average_score: 7.0
+  status_counts:
+    pass: 1
+    warn: 5
+    fail: 1
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — PHP namespace does not use the default App\ root.
+  - Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep
+    dialect trees clearly separated.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 101/697 (14%).
+  - Documentation & GitHub Suite — GitHub Suite support files appear sparse.
+  - Delivery & Observability — No GitHub workflow files were detected.
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - PHP namespace does not use the default App\ root.
+      - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees
+        clearly separated.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 5.0
+      summary: 0 fail, 5 warn, 0 info findings detected.
+      blockers:
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - No fixtures directories were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - Public/protected docblock coverage is 101/697 (14%).
+      - GitHub Suite support files appear sparse.
+    delivery_observability:
+      title: Delivery & Observability
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - No GitHub workflow files were detected.
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: fail
+      score: 0.0
+      summary: 1 fail, 8 warn, 1 info findings detected.
+      blockers:
+      - PHP file is very large (1636 lines); review SRP and refactoring pressure.
+      - Class exposes 13 public methods; review interface segregation and SRP.
+      - Class exposes 17 public methods; review interface segregation and SRP.

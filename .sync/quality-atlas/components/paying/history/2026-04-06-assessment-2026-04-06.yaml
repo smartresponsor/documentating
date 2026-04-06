@@ -1,0 +1,471 @@
+component: paying
+title: Paying
+snapshot:
+  date: '2026-04-06'
+  label: assessment-2026-04-06
+  ref: master
+  origin: quality-atlas responses assessment
+  assessment_basis:
+    repository: smartresponsor/paying
+    assessed_branch: master
+    assessed_commit: 262dc205f1237c2578ed6fb1f576d740e827d273
+    assessed_tag: null
+    trigger_reason: manual_override
+    previous_commit: null
+    previous_tag: null
+    current_head_commit: 262dc205f1237c2578ed6fb1f576d740e827d273
+    current_head_tag: null
+    changed_files_sample: []
+report_status: current
+groups:
+  product_market:
+    score: 8.85
+  domain_architecture:
+    score: 8.7
+  data_persistence:
+    score: 8.8
+  api_contracts:
+    score: 8.75
+  runtime_performance:
+    score: 8.9
+  reliability_resilience:
+    score: 8.93
+  security_governance:
+    score: 8.9
+  delivery_operations:
+    score: 8.9
+  quality_testing:
+    score: 9.0
+profile_axes:
+  engineering:
+    product: 8.9
+    architecture: 8.7
+    data: 8.8
+    api: 8.75
+    runtime: 8.9
+    reliability: 8.9
+    security: 8.9
+    delivery: 8.9
+    quality: 9.0
+    overall: 8.9
+  owner:
+    identity: 8.9
+    consistency: 8.7
+    delivery: 8.9
+    quality: 9.0
+    governance: 8.9
+    fit: 8.85
+    debt: 2.15
+    overall: 8.9
+  investor:
+    product: 8.9
+    architecture: 8.7
+    delivery: 8.9
+    reliability: 8.95
+    governance: 8.9
+    clarity: 8.85
+    overall: 8.9
+  operations:
+    runtime: 8.9
+    reliability: 8.95
+    observability: 8.9
+    security: 8.9
+    traffic: 8.9
+    delivery: 8.9
+    recovery: 8.95
+    overall: 8.9
+metrics:
+  product:
+    relevant: true
+    maturity: strong
+    score: 8.9
+    summary: The component’s product identity as an internal payment lifecycle and
+      operations platform is clearly articulated and well-documented.
+    risks:
+    - Reads primarily as an internal platform layer; external productization and packaging
+      signals are limited
+    improvements:
+    - Tighten public-facing positioning and usage narratives in README and docs/API.md
+      for non-internal consumers
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: README.md
+      note: Metric-level assessment evidence.
+    - path: docs/API.md
+      note: Metric-level assessment evidence.
+    - path: docs/LIMITS.md
+      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/component/paying/report/index.adoc
+      note: Metric-level assessment evidence.
+  architecture:
+    relevant: true
+    maturity: solid
+    score: 8.7
+    summary: Symfony-first architecture with Doctrine ORM, Workflow, Messenger, and
+      clear interfaces suggests a governed, modular domain shape.
+    risks:
+    - Supporting Symfony ^7.1 || ^8.0 increases compatibility and test matrix complexity
+    improvements:
+    - Document key bounded contexts and interface contracts in docs/architecture to
+      aid contributor onboarding
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: docs/ARCHITECTURE.md
+      note: Metric-level assessment evidence.
+    - path: src/ServiceInterface
+      note: Metric-level assessment evidence.
+    - path: src/InfrastructureInterface
+      note: Metric-level assessment evidence.
+    - path: src/RepositoryInterface
+      note: Metric-level assessment evidence.
+    - path: Migrations
+      note: Metric-level assessment evidence.
+  runtime:
+    relevant: true
+    maturity: strong
+    score: 8.9
+    summary: A real application surface is present (public/index.php, config, compose)
+      with operational docs and scripts indicating runnable environments.
+    risks:
+    - Declared PHP 8.4 platform may diverge from some environments; ensure runtime
+      parity in automation
+    improvements:
+    - Provide a documented, reproducible container image and compose flow used in
+      CI and local runs
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: public/index.php
+      note: Metric-level assessment evidence.
+    - path: config
+      note: Metric-level assessment evidence.
+    - path: compose.yml
+      note: Metric-level assessment evidence.
+    - path: docs/OPERATIONS.md
+      note: Metric-level assessment evidence.
+    - path: composer.json
+      note: Metric-level assessment evidence.
+  qa:
+    relevant: true
+    maturity: strong
+    score: 9.0
+    summary: Multi-tier testing (unit, functional, e2e, Playwright) and static analysis
+      are wired via composer/npm with strong local QA posture.
+    risks:
+    - Lack of hosted CI may limit consistent execution of the full test matrix on
+      PRs
+    improvements:
+    - Introduce CI pipelines to run phpunit suites, Panther/Playwright e2e, and phpstan
+      on every change
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: tests/Unit
+      note: Metric-level assessment evidence.
+    - path: tests/Functional
+      note: Metric-level assessment evidence.
+    - path: tests/E2E
+      note: Metric-level assessment evidence.
+    - path: tests/Playwright
+      note: Metric-level assessment evidence.
+    - path: phpunit.xml.dist
+      note: Metric-level assessment evidence.
+    - path: phpstan.neon
+      note: Metric-level assessment evidence.
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: package.json
+      note: Metric-level assessment evidence.
+    - path: docs/qa
+      note: Metric-level assessment evidence.
+  ops:
+    relevant: true
+    maturity: strong
+    score: 8.9
+    summary: Operational readiness is signaled by compose, docker deploy assets, ops
+      dashboards/alerts, and governance docs, though hosted CI is absent.
+    risks:
+    - No .github/workflows detected; delivery and release automation likely manual
+    improvements:
+    - Add CI workflows for build/test/scan, and automate release tagging and artifact
+      publication
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: compose.yml
+      note: Metric-level assessment evidence.
+    - path: deploy/docker
+      note: Metric-level assessment evidence.
+    - path: ops/grafana
+      note: Metric-level assessment evidence.
+    - path: ops/alerts
+      note: Metric-level assessment evidence.
+    - path: docs/OPERATIONS.md
+      note: Metric-level assessment evidence.
+    - path: .gitleaks.toml
+      note: Metric-level assessment evidence.
+    - path: docs/PROOF_PACK.md
+      note: Metric-level assessment evidence.
+  market:
+    relevant: true
+    maturity: strong
+    score: 8.8
+    summary: Positioning aligns with an enterprise payment lifecycle/operations capability
+      suitable for internal ecosystem reuse.
+    risks:
+    - Market-facing packaging and external adoption signals are limited in-repo
+    improvements:
+    - Expand docs with integration recipes and provider matrices to clarify fit for
+      external consumers
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: README.md
+      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/component/paying/report/index.adoc
+      note: Metric-level assessment evidence.
+    - path: docs/API.md
+      note: Metric-level assessment evidence.
+  overall:
+    relevant: true
+    maturity: strong
+    score: 8.9
+    summary: Pre-RC maturity is evident across docs, architecture, runtime, QA, and
+      ops tooling; the main gap is visible CI/CD automation.
+    risks:
+    - Missing hosted CI and release automation can slow RC hardening and confidence
+    improvements:
+    - Stand up CI/CD with tests, static analysis, security scans, and tagged releases
+      to close the RC gap
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .antora-src/modules/ROOT/pages/component/paying/report/index.adoc
+      note: Metric-level assessment evidence.
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: phpstan.neon
+      note: Metric-level assessment evidence.
+    - path: phpunit.xml.dist
+      note: Metric-level assessment evidence.
+    - path: tests
+      note: Metric-level assessment evidence.
+    - path: compose.yml
+      note: Metric-level assessment evidence.
+    - path: .gitleaks.toml
+      note: Metric-level assessment evidence.
+development_driving:
+  overall_status: fail
+  average_score: 7.0
+  status_counts:
+    pass: 1
+    warn: 5
+    fail: 1
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — PHP namespace does not use the default App\ root.
+  - Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep
+    dialect trees clearly separated.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 101/697 (14%).
+  - Documentation & GitHub Suite — GitHub Suite support files appear sparse.
+  - Delivery & Observability — No GitHub workflow files were detected.
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - PHP namespace does not use the default App\ root.
+      - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees
+        clearly separated.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 5.0
+      summary: 0 fail, 5 warn, 0 info findings detected.
+      blockers:
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - No fixtures directories were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - Public/protected docblock coverage is 101/697 (14%).
+      - GitHub Suite support files appear sparse.
+    delivery_observability:
+      title: Delivery & Observability
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - No GitHub workflow files were detected.
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: fail
+      score: 0.0
+      summary: 1 fail, 8 warn, 1 info findings detected.
+      blockers:
+      - PHP file is very large (1636 lines); review SRP and refactoring pressure.
+      - Class exposes 13 public methods; review interface segregation and SRP.
+      - Class exposes 17 public methods; review interface segregation and SRP.
+strengths:
+- Clear payment lifecycle identity and scope documented
+- Rich docs set (architecture, API, install, operations, limits)
+- Multi-tier tests present (unit, functional, e2e, Playwright) with composer/npm scripts
+- Symfony 7/8 stack with Doctrine ORM, Workflow, Messenger, Security
+- Operational scaffolding (compose, deploy/docker, ops/grafana, ops/alerts)
+- Static analysis and code quality tooling (phpstan, rector, php-cs-fixer)
+- Security posture signals (Symfony security-bundle, gitleaks config)
+risks:
+- No GitHub Actions or CI workflows detected
+- Runtime/tooling target PHP 8.4 while environments may vary; ensure alignment
+- No git tags detected (pre-release posture)
+- Antora nav/index not detected; report may be orphaned in docs site
+- Dual Symfony major targets increase test surface and maintenance load
+recommended_next_actions:
+- Add CI workflows to run phpstan, cs checks, unit/functional/e2e, and Playwright
+  on PRs
+- Add CI step to run gitleaks and composer audit, and publish artifacts/reports
+- Introduce release tagging and changelog automation; publish RC builds
+- Validate and enforce PHP 8.4 runtime in CI containers; document matrix if needed
+- Wire the Antora report into site navigation so it’s discoverable
+- Optionally publish container images from compose/Docker tooling for consistent runtime
+evidence:
+- path: .antora-src/modules/ROOT/pages/component/paying/report/index.adoc
+  note: Current component report page if present.
+- path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+  note: Seeded atlas dataset source.
+- path: .sync/quality-atlas/components/paying/probes/current.yaml
+  note: Deterministic development-driving probe layer.
+- path: README.md
+  note: Assessment evidence path.
+- path: docs/ARCHITECTURE.md
+  note: Assessment evidence path.
+- path: docs/API.md
+  note: Assessment evidence path.
+- path: docs/INSTALL.md
+  note: Assessment evidence path.
+- path: docs/OPERATIONS.md
+  note: Assessment evidence path.
+- path: docs/LIMITS.md
+  note: Assessment evidence path.
+- path: docs/PROOF_PACK.md
+  note: Assessment evidence path.
+- path: composer.json
+  note: Assessment evidence path.
+- path: package.json
+  note: Assessment evidence path.
+- path: phpstan.neon
+  note: Assessment evidence path.
+- path: phpunit.xml.dist
+  note: Assessment evidence path.
+- path: tests/Unit
+  note: Assessment evidence path.
+- path: tests/Functional
+  note: Assessment evidence path.
+- path: tests/E2E
+  note: Assessment evidence path.
+- path: tests/Playwright
+  note: Assessment evidence path.
+- path: public/index.php
+  note: Assessment evidence path.
+- path: config/services.yaml
+  note: Assessment evidence path.
+- path: Migrations
+  note: Assessment evidence path.
+- path: compose.yml
+  note: Assessment evidence path.
+- path: deploy/docker
+  note: Assessment evidence path.
+- path: .gitleaks.toml
+  note: Assessment evidence path.
+- path: ops/grafana
+  note: Assessment evidence path.
+- path: ops/alerts
+  note: Assessment evidence path.
+assessment_notes:
+- Paying reads as a Symfony-oriented payment lifecycle and operations component with
+  strong documentation, multi-tier testing, and mature local ops tooling; primary
+  gap is visible CI/CD automation in-repo.
+- Assessment grounded on repo tree, composer/npm scripts, and the component’s embedded
+  report
+- Branch master at 262dc205f1237c2578ed6fb1f576d740e827d273 with no exact tag
+- Tooling directories and docs indicate strong local governance despite missing hosted
+  CI
+- Scores retain pre-RC contour with a small ops/overall adjustment for CI visibility
+assessment_confidence: medium

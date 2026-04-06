@@ -1,5 +1,134 @@
-# Python runtime residue
-__pycache__/
-*.py[cod]
-# Explicit tools cache guard
-tools/__pycache__/
+# ──────────────────────────────────────────────
+#  💻 OS & IDE junk
+# ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*.iml
+*.zip
+/tools/__pycache__/
+# ──────────────────────────────────────────────
+#  🐘 PHP / Composer
+# ──────────────────────────────────────────────
+/vendor/
+/composer.lock
+/composer.phar
+/.phpunit.cache
+/phpunit.result.cache
+/report/
+
+# ──────────────────────────────────────────────
+#  🧩 Symfony cache, logs, temp
+# ──────────────────────────────────────────────
+/var/cache/
+/var/log/
+/var/sessions/
+/var/test/
+/var/tmp/
+/var/export/
+/var/data/
+/var/backups/
+/var/build/
+/var/storage/
+/var/metrics/
+/var/runtime/
+
+# ──────────────────────────────────────────────
+#  📦 Node / Frontend
+# ──────────────────────────────────────────────
+/node_modules/
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+
+# ──────────────────────────────────────────────
+#  🧪 Tests / Coverage
+# ──────────────────────────────────────────────
+/coverage/
+/build/
+/reports/
+/test-output/
+/playwright-report/
+/test-results/
+.cachegrind.out.*
+
+# ──────────────────────────────────────────────
+#  🚀 CI/CD generated
+# ──────────────────────────────────────────────
+/dist/
+/downloads/
+/public/api/
+/public/dev/
+/public/coverage/
+/docs/export/
+/docs/releases/
+/tmp/
+/cache/
+/artifacts/
+
+# ──────────────────────────────────────────────
+#  🧰 Temporary & Backup files
+# ──────────────────────────────────────────────
+*.tmp
+*.bak
+*.old
+*.orig
+*.log
+*~
+# PHP-CS-Fixer cache
+.php-cs-fixer.cache
+
+# ──────────────────────────────────────────────
+#  🔐 Local environment (never commit)
+# ──────────────────────────────────────────────
+.env.local
+.env.test.local
+.env.*.local
+/.env.backup
+/.envrc
+/.env.secrets
+/.env.private
+/.env.cache
+
+# ──────────────────────────────────────────────
+#  📁 User / app storage
+# ──────────────────────────────────────────────
+/storage/
+/runtime/
+/uploads/
+/media/
+/cache_private/
+
+# ──────────────────────────────────────────────
+#  ⚙️ System / Misc
+# ──────────────────────────────────────────────
+*.pid
+*.seed
+*.sqlite*
+*.db
+*.sql
+*.log.*
+*.gz
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# ──────────────────────────────────────────────
+#  📦 Build outputs from CI (keep CI scripts)
+# ──────────────────────────────────────────────
+!/.github/
+!/.github/workflows/
+!/.yamllint.yml
+!/.editorconfig
+!/.gitattributes
+!/.php-cs-fixer.cache
+!/var/metrics/
+/.codex-tmp/
+/var/phpunit/
+/var/report/local/
+/var/report/inspection/
+/var/payment-create-endpoint-error.txt
