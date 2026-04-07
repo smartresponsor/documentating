@@ -1,0 +1,466 @@
+{
+  "id": "resp_07532d1ed982755f0069d4029ab3948196bc999c99ba0bf8c3",
+  "object": "response",
+  "created_at": 1775501978,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1775502100,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "model": "gpt-5-2025-08-07",
+  "output": [
+    {
+      "id": "rs_07532d1ed982755f0069d4029c27d881968eaa32afe9e50e8d",
+      "type": "reasoning",
+      "summary": []
+    },
+    {
+      "id": "msg_07532d1ed982755f0069d402fe4eb4819685bed8c6208c9d9d",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"component\":\"analysing\",\"summary\":\"Analysing reads as a Symfony/Doctrine-backed analytics runtime with strong internal guards and containerized ops, but it lacks a README, visible CI evidence, and release tagging to confidently claim RC.\",\"strengths\":[\"Symfony + Doctrine application skeleton with public entrypoint and console\",\"Containerization and Nginx configs for a runnable local environment\",\"Robust internal guards (namespace, domain-hygiene, header) and QA tooling (PHPStan, PHPUnit, CS Fixer, Psalm)\",\"Secrets scanning present via .gitleaks.toml\",\"Smoke and unit tests exist alongside a QA environment check script\"],\"risks\":[\"No README or public quickstart; external/product story is thin\",\"CI/CD status unclear despite workflows directory\",\"No git tags/releases; maturity and change history are opaque\",\"Playwright config exists without package.json, suggesting e2e harness is not wired in this repo\"],\"next_actions\":[\"Add a README with quickstart, run commands, architecture outline, and domain map links\",\"Define and enable GitHub Actions to run qa:env, phpunit, phpstan, cs-fixer (dry-run), guards, and gitleaks on PRs\",\"Introduce semantic version tags and a CHANGELOG, and create a release workflow\",\"Either wire Playwright e2e (add package.json and CI job) or remove the unused config\",\"Document container runbook (docker-compose up, health check, URLs) and add a CI smoke boot test\",\"Promote docs/ content into the public docs site (or add a lightweight Antora module) and link from README\"],\"notes\":[\"Assessment grounded only in repository files and current snapshot; no external tool outputs parsed\",\"Component is enabled in registry; scheduled assessment runner integration is assumed but not evidenced here\",\"Docs exist under docs/, but no README and no Antora nav/index are present in this repo\",\"phpunit.xml.dist is present; prefer a concrete phpunit.xml (or CI override) with coverage thresholds\"],\"confidence\":\"medium\",\"evidence_paths\":[\"composer.json\",\"public/index.php\",\"src/Kernel.php\",\"src/Domain\",\"src/Service\",\"src/ValueObject\",\"config/routes.yaml\",\"config/bootstrap.php\",\"bin/console\",\"docker-compose.yml\",\"docker/Dockerfile\",\"docker/nginx.conf\",\".github/workflows\",\"phpstan.neon\",\"phpunit.xml.dist\",\"psalm.xml\",\"tests/AnalyticsSmokeTest.php\",\"tests/Unit\",\".gitleaks.toml\",\"tools/analytics-namespace-guard.php\",\"tools/analytics-domain-hygiene-guard.php\",\"tools/analytics-php-header-guard.php\",\"docs/analytics-core-doc-layer-map.md\",\"docs/analytics-core-doc-namespace-target.md\",\"docs/qa-environment.md\"],\"suggested_score_overrides\":{\"product\":null,\"architecture\":null,\"runtime\":8.0,\"qa\":null,\"ops\":null,\"market\":null,\"overall\":null},\"metric_updates\":{\"product\":{\"summary\":\"Product identity as an analytics/analysis-process Symfony app is clear from composer metadata, layered src layout, and focused docs, though public-facing narrative remains thin.\",\"risks\":[\"No README or quickstart blurs external understanding of value and scope\",\"Absence of release tags weakens perceived product maturity\"],\"improvements\":[\"Add a README with positioning, quickstart, example flows, and links to docs/\",\"Publish a minimal feature map and usage examples to clarify boundaries\"],\"evidence\":[\"composer.json\",\"src/Domain\",\"docs/analytics-core-doc-layer-map.md\",\"docs/analytics-core-doc-source-domain.md\"]},\"architecture\":{\"summary\":\"A coherent Symfony + Doctrine architecture is present with layered directories and custom guard scripts enforcing namespaces, domain hygiene, and headers.\",\"risks\":[\"Architectural intent is implied by structure/guards but not formalized in ADRs\",\"Guards rely on manual/script execution unless wired into CI\"],\"improvements\":[\"Add a short architecture/ADR note in docs/ to capture decisions and boundaries\",\"Run all guard scripts in CI to keep structure enforced continuously\"],\"evidence\":[\"src/Domain\",\"src/Infrastructure\",\"src/DTO\",\"config/bundles.php\",\"tools/analytics-namespace-guard.php\",\"tools/analytics-domain-hygiene-guard.php\",\"tools/analytics-php-header-guard.php\",\"composer.json\"]},\"runtime\":{\"summary\":\"Deployable runtime surface is evident (public/index.php, Kernel, routes, bin/console) with Docker and Nginx for local execution and smoke tests in tests/.\",\"risks\":[\"No README/runbook leaves runtime steps implicit\",\"Pipeline boot/health checks are not evidenced\",\"Playwright config without package.json suggests e2e browser tests are not wired\"],\"improvements\":[\"Document run commands and endpoints in README and add a CI smoke boot test against the container\",\"Either wire Playwright (add package.json and CI job) or remove the unused config\",\"Expose and document a simple health endpoint checked in CI\"],\"evidence\":[\"public/index.php\",\"src/Kernel.php\",\"config/routes.yaml\",\"bin/console\",\"docker-compose.yml\",\"docker/Dockerfile\",\"docker/nginx.conf\",\"tests/AnalyticsSmokeTest.php\"]},\"qa\":{\"summary\":\"Testing and static analysis are configured (PHPUnit, PHPStan, Psalm, CS Fixer) with smoke and unit tests plus a QA environment checker.\",\"risks\":[\"Only phpunit.xml.dist is present; CI configuration and coverage thresholds are not visible\",\"No published CI results or coverage report in the repo\"],\"improvements\":[\"Add GitHub Actions to run qa:env, phpunit with coverage, and phpstan at level max\",\"Commit or CI-generate a phpunit.xml with coverage thresholds and report artifacts\",\"Include Psalm in CI to complement PHPStan\"],\"evidence\":[\"phpunit.xml.dist\",\"phpstan.neon\",\"psalm.xml\",\"composer.json\",\"tools/qa/AnalyticsQaEnvironmentCheck.php\",\"tests/Unit\",\"tests/AnalyticsSmokeTest.php\"]},\"ops\":{\"summary\":\"Operational and governance posture is strong: container assets, secrets scanning, code hygiene/guard scripts, and a workflows directory for CI are present.\",\"risks\":[\"Actual CI job definitions and deployment automation are not evidenced\",\"No release tags/changelog reduce operational traceability of changes\"],\"improvements\":[\"Add CI pipelines for static analysis, tests, guards, and gitleaks on PRs\",\"Add image build/push steps and a lightweight release workflow with semantic tags and CHANGELOG\"],\"evidence\":[\".gitleaks.toml\",\".github/workflows\",\"docker-compose.yml\",\"docker/Dockerfile\",\"tools/analytics-namespace-guard.php\",\"tools/analytics-domain-hygiene-guard.php\",\"php-cs-fixer.dist.php\",\"rector.neon\"]},\"market\":{\"summary\":\"The component aligns with an internal analytics/insight platform role and includes some docs, but outward-facing product narrative and packaging are minimal.\",\"risks\":[\"Proprietary license limits external adoption possibilities\",\"Missing README and no releases/tags obscure market readiness\"],\"improvements\":[\"Add a README with value proposition and integration examples\",\"Introduce versioned releases and minimal change notes to signal stability\"],\"evidence\":[\"composer.json\",\"docs/analytics-core-doc-layer-map.md\",\"docs/analytics-core-doc-namespace-target.md\"]},\"overall\":{\"summary\":\"Analysing shows strong structural and ops hygiene with a real runtime scaffold; wiring CI, release tagging, and a README would close the remaining pre-RC gaps.\",\"risks\":[\"Lack of README and public runbook\",\"CI execution and coverage thresholds not evidenced\",\"No version tags/releases\"],\"improvements\":[\"Stand up CI for tests/analysis/guards and publish artifacts\",\"Add semantic version tags and a CHANGELOG\",\"Provide a concise README and link existing docs for onboarding\"],\"evidence\":[\"composer.json\",\"docker-compose.yml\",\"tests/AnalyticsSmokeTest.php\",\".gitleaks.toml\"]}}}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "quality_atlas_assessment_verdict",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "summary",
+          "strengths",
+          "risks",
+          "next_actions",
+          "notes",
+          "confidence",
+          "evidence_paths",
+          "suggested_score_overrides",
+          "metric_updates"
+        ],
+        "properties": {
+          "component": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "strengths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "next_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "evidence_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "suggested_score_overrides": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "architecture": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "runtime": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "qa": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "ops": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "market": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "overall": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              }
+            }
+          },
+          "metric_updates": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "architecture": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "runtime": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "qa": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "ops": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "market": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "overall": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 14479,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 6970,
+    "output_tokens_details": {
+      "reasoning_tokens": 5312
+    },
+    "total_tokens": 21449
+  },
+  "user": null,
+  "metadata": {}
+}

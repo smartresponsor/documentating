@@ -1,0 +1,271 @@
+component: analysing
+title: Analysing
+snapshot:
+  date: '2026-04-06'
+  label: assessment-2026-04-06
+  origin: quality-atlas deterministic probes
+  generated_at: '2026-04-06T18:59:37.962907+00:00'
+repo_target:
+  github_repository: smartresponsor/analysing
+  local_path: ''
+  default_branch: master
+families:
+  canon_structure:
+    title: Canon & Structure
+    status: warn
+    score: 7.0
+    summary: 0 fail, 3 warn, 0 info findings detected.
+    blockers:
+    - Legacy/deprecated marker found in tree.
+    - PHP namespace does not use the default App\ root.
+    - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly
+      separated.
+    findings:
+    - severity: warn
+      id: legacy_marker
+      detail: Legacy/deprecated marker found in tree.
+      path: tools/analytics/legacy
+    - severity: warn
+      id: namespace_drift
+      detail: PHP namespace does not use the default App\ root.
+      path: src/Kernel.php
+    - severity: warn
+      id: dialect_mixing
+      detail: Both MySQL and PostgreSQL dialect markers are present; keep dialect
+        trees clearly separated.
+      path: .github/prompts/prompt-audit.yml
+    evidence:
+    - .github/prompts/prompt-audit.yml
+    - src/Kernel.php
+    - tools/analytics/legacy
+  architecture_boundaries:
+    title: Architecture & Boundaries
+    status: warn
+    score: 5.0
+    summary: 0 fail, 5 warn, 0 info findings detected.
+    blockers:
+    - No obvious boundary descriptor files were detected.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    findings:
+    - severity: warn
+      id: boundary_descriptors_missing
+      detail: No obvious boundary descriptor files were detected.
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/AnalyticsSmokeTest.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: touched/src/Service/Analytics/AnalyticsCollector.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/Unit/Analytics/AnalyticsCollectorTest.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/Unit/Analytics/AlertEvaluatorTest.php
+    evidence:
+    - tests/AnalyticsSmokeTest.php
+    - tests/Unit/Analytics/AlertEvaluatorTest.php
+    - tests/Unit/Analytics/AnalyticsCollectorTest.php
+    - touched/src/Service/Analytics/AnalyticsCollector.php
+  runtime_surface:
+    title: Runtime & Application Surface
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - config/routes.php
+    - config/routes.yaml
+    - docker-compose.yml
+    - docker/Dockerfile
+    - docker/docker-compose.yml
+    - docs/analytics-core-doc-source-domain.md
+  qa_behavior:
+    title: QA & Behavioral Assurance
+    status: warn
+    score: 8.0
+    summary: 0 fail, 2 warn, 0 info findings detected.
+    blockers:
+    - No fixtures directories were detected.
+    - Neither Playwright nor Symfony Panther markers were detected.
+    findings:
+    - severity: warn
+      id: fixtures_missing
+      detail: No fixtures directories were detected.
+    - severity: warn
+      id: browser_behavior_missing
+      detail: Neither Playwright nor Symfony Panther markers were detected.
+    evidence:
+    - tests/
+  documentation_suite:
+    title: Documentation & GitHub Suite
+    status: warn
+    score: 6.75
+    summary: 0 fail, 3 warn, 1 info findings detected.
+    blockers:
+    - 'Missing expected documentation asset: README.md.'
+    - 'Missing expected documentation asset: CHANGELOG.md.'
+    - Public/protected docblock coverage is 87/637 (14%).
+    findings:
+    - severity: warn
+      id: missing_doc_asset
+      detail: 'Missing expected documentation asset: README.md.'
+    - severity: warn
+      id: missing_doc_asset
+      detail: 'Missing expected documentation asset: CHANGELOG.md.'
+    - severity: warn
+      id: docblock_coverage_low
+      detail: Public/protected docblock coverage is 87/637 (14%).
+    - severity: info
+      id: nelmio_openapi_not_detected
+      detail: No obvious Nelmio/OpenAPI markers were detected.
+    evidence:
+    - .github/workflows
+    - php-docblock-ratio:87/637
+  delivery_observability:
+    title: Delivery & Observability
+    status: pass
+    score: 9.75
+    summary: 0 fail, 0 warn, 1 info findings detected.
+    blockers: []
+    findings:
+    - severity: info
+      id: observability_markers_missing
+      detail: No Prometheus/Grafana markers were detected.
+    evidence:
+    - .github/workflows/automate-kit-sync.yml
+    - MANIFEST.md
+    - docker-compose.yml
+    - docker/docker-compose.yml
+    - docs/analytics-core-doc-rwe-sketch9.md
+    - tools/analytics-scan-layer-map.php
+  solid_refactoring:
+    title: SOLID & Refactoring Pressure
+    status: warn
+    score: 4.0
+    summary: 0 fail, 6 warn, 0 info findings detected.
+    blockers:
+    - PHP file is large (410 lines); review SRP pressure.
+    - PHP file is large (350 lines); review SRP pressure.
+    - Constructor injects 7 parameters; review dependency inversion and class responsibilities.
+    - Constructor injects 18 parameters; review dependency inversion and class responsibilities.
+    - Class exposes 15 public methods; review interface segregation and SRP.
+    findings:
+    - severity: warn
+      id: class_size_pressure
+      detail: PHP file is large (410 lines); review SRP pressure.
+      path: tools/analytics-scan-layer-map.php
+    - severity: warn
+      id: class_size_pressure
+      detail: PHP file is large (350 lines); review SRP pressure.
+      path: touched/src/Repository/Analytics/InfraRepository.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 7 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/ValueObject/Http/AnalyticsRateLimitDecision.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 18 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Service/Analytics/HealthService.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 15 public methods; review interface segregation and SRP.
+      path: src/Entity/Analytics/ExportJob.php
+    - severity: warn
+      id: class_size_pressure
+      detail: PHP file is large (356 lines); review SRP pressure.
+      path: src/Repository/Analytics/InfraRepository.php
+    evidence:
+    - src/Entity/Analytics/ExportJob.php
+    - src/Repository/Analytics/InfraRepository.php
+    - src/Service/Analytics/HealthService.php
+    - src/ValueObject/Http/AnalyticsRateLimitDecision.php
+    - tools/analytics-scan-layer-map.php
+    - touched/src/Repository/Analytics/InfraRepository.php
+summary:
+  overall_status: warn
+  average_score: 7.21
+  status_counts:
+    pass: 2
+    warn: 5
+    fail: 0
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — Legacy/deprecated marker found in tree.
+  - Canon & Structure — PHP namespace does not use the default App\ root.
+  - Architecture & Boundaries — No obvious boundary descriptor files were detected.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - QA & Behavioral Assurance — Neither Playwright nor Symfony Panther markers were
+    detected.
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: README.md.'
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: warn
+      score: 7.0
+      summary: 0 fail, 3 warn, 0 info findings detected.
+      blockers:
+      - Legacy/deprecated marker found in tree.
+      - PHP namespace does not use the default App\ root.
+      - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees
+        clearly separated.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 5.0
+      summary: 0 fail, 5 warn, 0 info findings detected.
+      blockers:
+      - No obvious boundary descriptor files were detected.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - No fixtures directories were detected.
+      - Neither Playwright nor Symfony Panther markers were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 6.75
+      summary: 0 fail, 3 warn, 1 info findings detected.
+      blockers:
+      - 'Missing expected documentation asset: README.md.'
+      - 'Missing expected documentation asset: CHANGELOG.md.'
+      - Public/protected docblock coverage is 87/637 (14%).
+    delivery_observability:
+      title: Delivery & Observability
+      status: pass
+      score: 9.75
+      summary: 0 fail, 0 warn, 1 info findings detected.
+      blockers: []
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: warn
+      score: 4.0
+      summary: 0 fail, 6 warn, 0 info findings detected.
+      blockers:
+      - PHP file is large (410 lines); review SRP pressure.
+      - PHP file is large (350 lines); review SRP pressure.
+      - Constructor injects 7 parameters; review dependency inversion and class responsibilities.

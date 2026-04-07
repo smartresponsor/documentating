@@ -1,0 +1,284 @@
+{
+  "status": "ok",
+  "registry_entry": {
+    "component_id": "discovering",
+    "component_title": "Discovering",
+    "github_repository": "smartresponsor/discovering",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/discovering/report/index.adoc",
+    "notes": "Set enabled=true and github_repository once this component is connected to the scheduled assessment runner."
+  },
+  "facts": {
+    "repo_root": "/tmp/quality-atlas-discovering-assessment-2026-04-07-nakg18he/discovering",
+    "timestamp_utc": "2026-04-07T01:02:04.662245+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "234fc92f5a0c075b5ec7a5f2497c14a3ff341f9d"
+    },
+    "git_exact_tag": {
+      "exit_code": 128,
+      "output": "fatal: No names found, cannot describe anything."
+    },
+    "has_composer_json": true,
+    "has_package_json": false,
+    "has_phpstan_neon": false,
+    "has_phpstan_neon_dist": true,
+    "has_phpunit_xml": false,
+    "has_phpunit_xml_dist": true,
+    "has__github_workflows": true,
+    "has__antora-src_modules_ROOT_nav_adoc": false,
+    "has__antora-src_modules_ROOT_pages_index_adoc": false,
+    "git_status": {
+      "exit_code": 0,
+      "output": ""
+    },
+    "git_recent_commits": {
+      "exit_code": 0,
+      "output": "234fc92 Add Antora producer surface and clean legacy documentation"
+    },
+    "top_level_tree": {
+      "exit_code": 0,
+      "output": "./.env\n./.env.test\n./.git\n./.git/HEAD\n./.git/config\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/packed-refs\n./.git/refs\n./.git/shallow\n./.github\n./.github/workflows\n./.gitignore\n./.php-cs-fixer.dist.php\n./ARCHITECTURE_MANIFEST.md\n./BOUNDING_MANIFEST.md\n./CODEX_CLI_PROMPT.txt\n./PRODUCT_MANIFEST.md\n./README.md\n./bin\n./bin/console\n./composer.json\n./composer.lock\n./config\n./config/MANIFEST.md\n./config/bundles.php\n./config/packages\n./config/routes\n./config/services.yaml\n./config/services_test.yaml\n./docs\n./docs/antora.yml\n./docs/discovery\n./docs/generated\n./docs/manifests\n./docs/modules\n./phpstan.neon.dist\n./phpunit.xml.dist\n./public\n./public/index.php\n./report\n./report/.gitkeep\n./report/discovering-installability-proof-2026-04-03.md\n./report/discovering-status-2026-04-03.md\n./report/legacy\n./resources\n./resources/discovery\n./src\n./src/Command\n./src/Controller\n./src/Dto\n./src/EventSubscriber\n./src/Form\n./src/Kernel.php\n./src/MANIFEST.md\n./src/Service\n./src/ServiceInterface\n./src/ValueObject\n./templates\n./templates/MANIFEST.md\n./templates/base.html.twig\n./templates/discovery\n./templates/management\n./tests\n./tests/Behavioral\n./tests/Contract\n./tests/Functional\n./tests/MANIFEST.md\n./tests/Support\n./tests/Unit\n./tests/bootstrap.php\n./tools\n./tools/MANIFEST.md\n./tools/docblock_policy_check.php\n./tools/qa_guard.php\n./tools/runtime_preflight.php\n./tools/security_preflight.php"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.3.6 (cli) (built: Jan 27 2026 03:09:47) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n    with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.12.13"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "361"
+    },
+    "report_excerpt": "= Discovering Report :description: Current owner-oriented maturity report for the Discovering component. :page-slug: discovering-report This page is the current owner-oriented maturity report for *Discovering*. It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward. == Component Portrait Discovering is not shaped as a generic search engine or a thin search-adapter shell. It reads as a Symfony-oriented application resource discovery component: a system intended to expose, index, scope, and retrieve relevant application resources through seeded source providers, source-record-to-document mapping, typed query/result models, operator diagnostics, human-facing discovery UI, and machine-facing discovery APIs. The component already shows signs of being treated as a governed subsystem rather than as a convenience feature. Its current shape suggests an internal discovery and retrieval platform layer designed for structured evolution and integration into a wider ecosystem. == Ecosystem Role Within the broader Smartresponsor direction, Discovering appears to occupy the role of an application resource discovery and retrieval component. Its ecosystem role can be understood across several functions: * as a source-provider and indexing surface, * as a typed query and result layer, * as a human-facing discovery UI, * as a machine-facing JSON discovery endpoint, * and as an operator-visible diagnostics surface. This makes Discovering strategically more important than a typical search box. It points toward a reusable internal discovery capability that other components can depend on. == Current Maturity Discovering already presents several strong signals of maturity for its current stage: * a clear discovery-centric product identity, * an explicit mission around resource exposure, indexing, scoping, and retrieval, * a seeded discovery-provider and indexer posture, * typed query and result modeling, * both human-facing and machine-facing surfaces, * and operator-oriented diagnostics. In its current public reading, the component still sits earlier in its lifecycle than some of the more hardened ecosystem components, but it already behaves like a structured component with a coherent discovery thesis rather than a vague experimental search repo. == RC Scorecard [cols=\"2,1,4\",options=\"header\"] |=== | Layer | Score to RC | Reading | Product identity | 8.0 / 10 | The component is already clearly framed as application resource discovery rather than generic search. | Architecture and domain shape | 7.8 / 10 | Source providers, record-to-document mapping, typed query/results, and separate human/machine surfaces already point toward a coherent discovery model. | Runtime and application surface | 7.7 / 10 | Human-facing UI, JSON API, and operator overview routes already establish a meaningful application runtime surface. | QA maturity | 6.9 / 10 | The visible repository surface is still lighter here than in the more hardened components, suggesting an earlier maturation band. | Governance and operational readiness | 7.4 / 10 | Operator diagnostics and scoped discovery posture are strong early signals, though the public contour remains lighter than the most mature ecosystem components. | Retrieval and indexing posture | 8.1 / 10 | The mission around exposing, indexing, scoping, and retrieving relevant resources is already explicit and well-focused. | Market-facing alignment | 8.0 / 10 | The component already aligns well with enterprise search, AI retrieval, and discovery-platform classes, though it still reads as an internal platform seed rather than a hardened product shell. | Overall readiness to RC | 7.7 / 10 | Discovering is already a promising structured pre-RC component with a clear discovery and retrieval direction. |=== == Leader Line Discovering should not be measured against simple site-search widgets or undifferentiated full-text search add-ons. Its natural comparison line is closer to the enterprise-class search, retrieval, and discovery category, including the kind of capability bands represented by: * unified resource indexing, * relevant retrieval and scoped search, * typed discovery models, * human and machine discovery surfaces, * and governed operational handling of findability. This means the component is better understood as targeting the same strategic class of problem addressed by stronger discovery and retrieval leaders, while expressing that class through a Symfony-native internal component. In that sense, the leader line is not another search box. It is closer to: * enterprise discovery class, * enterprise retrieval class, * enterprise search-and-findability class, * reinterpreted as an internal ecosystem component. == Strength Profile Several strengths are already visible and worth naming directly. === Discovery thesis clarity Discovering already …",
+    "report_excerpt_source": ".antora-src/modules/ROOT/pages/component/discovering/report/index.adoc",
+    "key_file_excerpts": {
+      "composer.json": "{\n  \"name\": \"smartresponsor/discovering\",\n  \"description\": \"Symfony-oriented application resource discovery component for indexing and retrieving relevant application resources.\",\n  \"type\": \"project\",\n  \"license\": \"proprietary\",\n  \"require\": {\n    \"ext-json\": \"*\",\n    \"ext-pdo\": \"*\",\n    \"ext-pdo_sqlite\": \"*\",\n    \"php\": \">=8.4\",\n    \"symfony/console\": \"^7.3\",\n    \"symfony/dotenv\": \"^7.3\",\n    \"symfony/error-handler\": \"^7.3\",\n    \"symfony/form\": \"^7.3\",\n    \"symfony/framework-bundle\": \"^7.3\",\n    \"symfony/twig-bundle\": \"^7.3\",\n    \"symfony/yaml\": \"^7.3\",\n    \"twig/twig\": \"^3.0\"\n  },\n  \"autoload\": {\n    \"psr-4\": {\n      \"App\\\\\": \"src/\"\n    }\n  },\n  \"autoload-dev\": {\n    \"psr-4\": {\n      \"App\\\\Tests\\\\\": \"tests/\"\n    }\n  },\n  \"require-dev\": {\n    \"phpunit/phpunit\": \"^11.5\",\n    \"symfony/browser-kit\": \"^7.3\",\n    \"symfony/css-selector\": \"^7.3\",\n    \"symfony/dom-crawler\": \"^7.3\"\n  },\n  \"scripts\": {\n    \"test\": \"phpunit\",\n    \"lint:php\": \"find src tests -name '*.php' -print0 | xargs -0 -n1 php -l\",\n    \"validate:composer\": \"composer validate --strict\",\n    \"verify:runtime-preflight\": \"php tools/runtime_preflight.php --require-vendor\",\n    \"verify:console\": \"php bin/console list --raw\",\n    \"test:unit\": \"phpunit --testsuite Unit\",\n    \"test:functional\": \"phpunit --testsuite Functional\",\n    \"test:contract\": \"phpunit --testsuite Contract\",\n    \"test:behavioral\": \"phpunit --testsuite Behavioral\",\n    \"test:all\": [\n      \"@test:unit\",\n      \"@test:contract\",\n      \"@test:behavioral\",\n      \"@test:functional\"\n    ],\n    \"ci\": [\n      \"@validate:composer\",\n      \"@verify:runtime-preflight\",\n      \"@verify:console\",\n      \"@verify:docblocks\",\n      \"@verify:security\",\n      \"@lint:php\",\n      \"@test:all\"\n    ],\n    \"analyse\": \"php tools/qa_guard.php phpstan\",\n    \"lint:cs\": \"php tools/qa_guard.php cs-check\",\n    \"lint:cs:fix\": \"php tools/qa_guard.php cs-fix\",\n    \"verify:docblocks\": \"php tools/docblock_policy_check.php\",\n    \"verify:security\": \"php tools/security_preflight.php\",\n    \"docs:openapi:dump:public\": \"php tools/qa_guard.php openapi-public\",\n    \"docs:openapi:dump:management\": \"php tools/qa_guard.php openapi-management\"\n  }\n}\n"
+    }
+  },
+  "verdict": {
+    "component": "discovering",
+    "summary": "Discovering presents as a Symfony 7.x discovery/retrieval subsystem with clear identity, structured architecture manifests, multi-surface runtime, and seeded QA/ops tooling; it remains pre-RC but materially organized for portfolio integration.",
+    "strengths": [
+      "Clear product identity and scope captured in PRODUCT_MANIFEST.md and README.md",
+      "Structured Symfony 7.x architecture with manifests and typed layers (Dto/Service/Controller)",
+      "Multi-surface runtime (console, web UI) with preflight checks",
+      "Multiple test suites scaffolded (Unit, Functional, Contract, Behavioral)",
+      "Seeded QA/security tooling (qa_guard, docblock policy, security/runtime preflight)",
+      "Active documentation/report posture (Antora docs, installability/status reports)"
+    ],
+    "risks": [
+      "CI execution depth not evidenced; presence of .github/workflows without visible pipeline guarantees",
+      "phpunit.xml and phpstan.neon only as *.dist; local policy/config materialization may lag",
+      "Limited explicit observability/deployment automation evidence",
+      "PHP 8.4+ requirement may constrain deployment targets if environments trail"
+    ],
+    "next_actions": [
+      "Promote phpunit.xml.dist and phpstan.neon.dist to enforced configs in CI",
+      "Wire a GitHub Actions workflow to run composer ci (preflights, lint, tests) on PRs/main",
+      "Run OpenAPI dump scripts in CI and publish artifacts to docs/report",
+      "Document/verify runtime observability and deployment automation in repo (metrics/logging steps)",
+      "Gate runtime/security preflight scripts in CI to fail on violations",
+      "Add a status badge linking to CI runs in README.md"
+    ],
+    "notes": [
+      "Assessment grounded in repository tree and manifests at commit 234fc92 on branch master",
+      "Report excerpts sourced from in-repo Antora report and recent status/installability reports",
+      "Repository facts captured 2026-04-07T01:02:04.662245Z"
+    ],
+    "suggested_score_overrides": {
+      "product": 8.3,
+      "architecture": 8.0,
+      "runtime": 7.8,
+      "qa": 7.2,
+      "ops": 7.4,
+      "market": 8.0,
+      "overall": 7.8
+    },
+    "metric_updates": {
+      "product": {
+        "summary": "Product identity is explicit and coherent as an internal discovery/retrieval component, supported by in-repo product and boundary manifests and Symfony-native framing.",
+        "risks": [
+          "Public positioning remains internal platform-first rather than hardened external product",
+          "Assessment should continue to be refreshed by scheduled scans to capture drift"
+        ],
+        "improvements": [
+          "Keep PRODUCT_MANIFEST.md aligned with surface capabilities and API dumps",
+          "Expose CI status and published docs links in README.md"
+        ],
+        "evidence": [
+          "composer.json",
+          "README.md",
+          "PRODUCT_MANIFEST.md",
+          "BOUNDING_MANIFEST.md",
+          ".antora-src/modules/ROOT/pages/component/discovering/report/index.adoc"
+        ]
+      },
+      "architecture": {
+        "summary": "Architecture reads as a structured Symfony 7.x subsystem with manifests and clear layering (Dto/Service/Controller) and service wiring via config.",
+        "risks": [
+          "Deeper bounded-context articulation beyond directory structure not fully evidenced",
+          "Technical debt and refactoring cadence not yet observable via CI signals"
+        ],
+        "improvements": [
+          "Expand ARCHITECTURE_MANIFEST.md with context boundaries and dependencies",
+          "Add architectural checks (e.g., layer rules) to qa_guard and run in CI"
+        ],
+        "evidence": [
+          "ARCHITECTURE_MANIFEST.md",
+          "BOUNDING_MANIFEST.md",
+          "src/Dto",
+          "src/Service",
+          "src/Controller",
+          "config/services.yaml"
+        ]
+      },
+      "runtime": {
+        "summary": "Meaningful runtime surface exists (web UI, console) with runtime preflight and security checks aiding operability.",
+        "risks": [
+          "No explicit containerization, autoscaling, or environment playbooks evident",
+          "PHP 8.4+ requirement narrows compatible runtimes"
+        ],
+        "improvements": [
+          "Enforce tools/runtime_preflight.php and tools/security_preflight.php in CI",
+          "Document runbooks and supported PHP/Symfony matrix in README.md"
+        ],
+        "evidence": [
+          "public/index.php",
+          "bin/console",
+          "templates/base.html.twig",
+          "templates/discovery",
+          "tools/runtime_preflight.php",
+          "tools/security_preflight.php",
+          "composer.json"
+        ]
+      },
+      "qa": {
+        "summary": "Multi-suite PHPUnit scaffolding and QA guard tooling are present, with policy and static analysis configs supplied as *.dist awaiting CI enforcement.",
+        "risks": [
+          "CI execution of tests and analysis is not evidenced",
+          "phpunit.xml and phpstan.neon not materialized may cause local drift"
+        ],
+        "improvements": [
+          "Promote phpunit.xml.dist and phpstan.neon.dist to active configs and commit local overrides",
+          "Run composer ci in GitHub Actions on push/PR and publish coverage/artifacts"
+        ],
+        "evidence": [
+          "tests/Unit",
+          "tests/Functional",
+          "tests/Contract",
+          "tests/Behavioral",
+          "phpunit.xml.dist",
+          "phpstan.neon.dist",
+          "tools/qa_guard.php",
+          "tools/docblock_policy_check.php",
+          "composer.json"
+        ]
+      },
+      "ops": {
+        "summary": "Operational posture shows early strength via preflight/security scripts and documentation/report surfaces, though explicit observability and deployment automation are light.",
+        "risks": [
+          "Observability (metrics/tracing/logging) and alerting hooks not shown",
+          "Delivery automation specifics in .github/workflows are not visible"
+        ],
+        "improvements": [
+          "Add CI workflows to run preflights, lint, tests, and publish docs",
+          "Document/logging and metrics strategy; add health endpoints where applicable"
+        ],
+        "evidence": [
+          "tools/security_preflight.php",
+          "tools/runtime_preflight.php",
+          ".github/workflows",
+          "report/discovering-status-2026-04-03.md",
+          "docs/antora.yml"
+        ]
+      },
+      "market": {
+        "summary": "Positioning aligns with enterprise discovery/retrieval classes, expressed as a Symfony-native internal platform capability.",
+        "risks": [
+          "Proprietary license and internal focus may limit external product signals"
+        ],
+        "improvements": [
+          "Keep report and README language consistent with discovery/retrieval leader line",
+          "Surface API docs via OpenAPI dump scripts for ecosystem consumers"
+        ],
+        "evidence": [
+          "composer.json",
+          "README.md",
+          ".antora-src/modules/ROOT/pages/component/discovering/report/index.adoc",
+          "docs/antora.yml"
+        ]
+      },
+      "overall": {
+        "summary": "Pre-RC component with clear discovery thesis, structured architecture, and seeded QA/ops; modest CI and observability hardening should move it toward RC.",
+        "risks": [
+          "Pipeline enforcement and runtime observability are not yet evidenced",
+          "Config *.dist reliance may hide local divergence until CI is in place"
+        ],
+        "improvements": [
+          "Stand up CI to run composer ci and publish docs",
+          "Promote *.dist configs, enforce preflights, and add observability documentation"
+        ],
+        "evidence": [
+          "report/discovering-installability-proof-2026-04-03.md",
+          "report/discovering-status-2026-04-03.md",
+          ".github/workflows",
+          "tools/runtime_preflight.php",
+          "tools/security_preflight.php"
+        ]
+      }
+    },
+    "confidence": "medium",
+    "evidence_paths": [
+      "composer.json",
+      "README.md",
+      "PRODUCT_MANIFEST.md",
+      "ARCHITECTURE_MANIFEST.md",
+      "BOUNDING_MANIFEST.md",
+      "src/MANIFEST.md",
+      "src/Controller",
+      "src/Service",
+      "src/Dto",
+      "config/services.yaml",
+      "public/index.php",
+      "bin/console",
+      "templates/base.html.twig",
+      "templates/discovery",
+      "tests",
+      "tests/Unit",
+      "tests/Functional",
+      "tests/Contract",
+      "tests/Behavioral",
+      "phpunit.xml.dist",
+      "phpstan.neon.dist",
+      "tools/qa_guard.php",
+      "tools/runtime_preflight.php",
+      "tools/security_preflight.php",
+      "tools/docblock_policy_check.php",
+      "report/discovering-installability-proof-2026-04-03.md",
+      "report/discovering-status-2026-04-03.md",
+      "docs/antora.yml",
+      ".github/workflows"
+    ]
+  },
+  "snapshot_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/discovering/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/discovering/history/2026-04-07-assessment-2026-04-07.yaml"
+  },
+  "probe_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/discovering/probes/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/discovering/probes/history/2026-04-07-assessment-2026-04-07.yaml"
+  },
+  "ai_io": {
+    "request_file": "discovering.request.json",
+    "response_file": "discovering.response.json"
+  }
+}
