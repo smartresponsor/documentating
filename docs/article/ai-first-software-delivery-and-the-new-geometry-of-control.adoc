@@ -5,6 +5,7 @@
 :page-tags: ai, software-delivery, management, fractional-cto, engineering, delivery-governance
 :toc: macro
 :toclevels: 3
+:imagesdir: images
 
 [abstract]
 AI-first delivery changes more than developer productivity. As implementation becomes cheaper, the hidden cost of coordination becomes easier to see. That shifts competitive advantage away from raw coding capacity and toward controllability: the ability to translate product intent into reliable production change with minimal distortion.
@@ -16,6 +17,9 @@ AI changes that equation.
 The shift is not simply that code can now be written faster. The deeper shift is that the center of gravity moves away from raw implementation effort and toward management quality: problem framing, architecture choice, validation, guardrails, and operational discipline. Once the marginal cost of execution drops, the hidden cost of coordination becomes much easier to see. In many small companies, that cost is now the dominant drag on delivery.
 
 toc::[]
+
+[.text-center]
+image::ai-control-geometry.svg[width=100%,align=center]
 
 == From acceleration requests to operating-model redesign
 
@@ -36,6 +40,9 @@ AI compresses the implementation loop. A strong engineer with good context, assi
 Once this happens, the real bottleneck often moves upstream and sideways. It lives in conflicting priorities, unclear ownership, unnecessary review surfaces, overloaded rituals, approval latency, and context loss between business intent and technical action. As execution becomes cheaper, coordination becomes more visibly expensive.
 
 This is why many small firms experience AI not merely as a developer productivity tool but as a pressure test of their management architecture. The question stops being whether the team can produce code. The question becomes whether the company can turn intent into validated production change without drowning in process overhead.
+
+[.text-center]
+image::ai-coordination-economics.svg[width=100%,align=center]
 
 == Controllability, not just speed
 
@@ -64,6 +71,9 @@ The founder still owns product truth. The technical lead still owns architecture
 This is why the role of a fractional CTO becomes especially valuable in AI-first companies. AI can compress execution, but it does not automatically generate sound architecture, deployment discipline, test strategy, observability, or rollback logic. In fact, the faster the implementation loop becomes, the more dangerous weak governance becomes. Thoughtworks, commenting on the 2025 DORA findings, put the point clearly: without the right structure and processes, AI becomes a faster way to create chaos. <<thoughtworks>>
 
 AI-first delivery is not the abolition of engineering leadership. It is the opposite: a stronger demand for engineering leadership concentrated at the system level rather than distributed across a large hierarchy.
+
+[.text-center]
+image::ai-compact-operating-model.svg[width=100%,align=center]
 
 == Why some stacks and repo shapes win
 
@@ -98,6 +108,14 @@ When execution becomes cheaper, coordination overhead stops hiding in the backgr
 That is why the strongest AI-first organizations are not simply developer teams with better tools. They are management systems rebuilt around shorter loops, clearer ownership, stronger technical governance, and a delivery model in which a small number of high-context people can move with unusual force.
 
 The next competitive advantage is not intelligence alone. Intelligence is becoming cheaper. The durable advantage is the ability to convert intent into reliable production change with minimal distortion.
+
+== Editorial illustration notes
+
+The SVG diagrams bundled with this article are original editorial visuals created for this piece. They are schematic by design and are intended to clarify the argument rather than reproduce third-party charts.
+
+* `ai-control-geometry.svg` — the controllability loop between product intent, technical decision, and production release.
+* `ai-coordination-economics.svg` — a schematic view of delivery drag shifting from implementation effort toward coordination overhead.
+* `ai-compact-operating-model.svg` — the compact operating model and the guardrails required to keep it trustworthy.
 
 == References
 
