@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-06T19:01:40.809019+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T185936Z",
+  "generated_at": "2026-04-07T01:03:23.117082+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260407T010203Z",
   "mode": "responses",
   "components": [
     {
-      "component": "analysing",
-      "title": "Analysing",
-      "overall": 8.0,
-      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/analysing/history/2026-04-06-assessment-2026-04-06.yaml",
-      "summary": "Analysing reads as a Symfony/Doctrine-backed analytics runtime with strong internal guards and containerized ops, but it lacks a README, visible CI evidence, and release tagging to confidently claim RC."
+      "component": "discovering",
+      "title": "Discovering",
+      "overall": 7.8,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/discovering/history/2026-04-07-assessment-2026-04-07.yaml",
+      "summary": "Discovering presents as a Symfony 7.x discovery/retrieval subsystem with clear identity, structured architecture manifests, multi-surface runtime, and seeded QA/ops tooling; it remains pre-RC but materially organized for portfolio integration."
     }
   ],
   "failures": [],
   "status": "ok",
   "selected_components": [
-    "analysing"
+    "discovering"
   ]
 }
