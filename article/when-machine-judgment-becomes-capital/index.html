@@ -222,7 +222,30 @@ The current wave of AI still encourages a very short-term way of thinking. Teams
 </div>
 <div class="paragraph">
 <p>A machine system that can accumulate this kind of action-shaping experience begins to resemble a professional asset, not just a software feature.
-Unresolved include directive in modules/ROOT/pages/article/when-machine-judgment-becomes-capital.adoc - include::when-machine-judgment-becomes-capital-04.adoc[]
+= when-machine-judgment-becomes-capital-04
+:page-slug: when-machine-judgment-becomes-capital-04</p>
+</div>
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/when-machine-judgment-becomes-capital-04.adoc`</em>
+== Why Bayesian Updating Fits the Problem</p>
+</div>
+<div class="paragraph">
+<p>One of the most useful ideas in this space is to treat judgment as something that should grow or weaken with evidence. That is why Bayesian logic is attractive here. Not because it magically solves intelligence, but because it gives a disciplined way to update confidence as outcomes arrive.</p>
+</div>
+<div class="paragraph">
+<p>A Beta-posterior style mechanism is especially intuitive for operational systems. Successful outcomes add weight in one direction. Failures add weight in another. Confidence is not declared once; it is earned through repeated exposure to evidence. And importantly, stale priors can be decayed if they stop receiving confirmation.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/posterior-confidence.svg" alt="Confidence grows when evidence compounds" width="100%">
+</div>
+<div class="title">Figure 2. Confidence grows when evidence compounds</div>
+</div>
+<div class="paragraph">
+<p>This matters because many real workflows are neither static nor fully deterministic. A playbook that worked last quarter may become mediocre under new pricing, different competition, new regulation, or a changing customer mix. A usable judgment layer therefore cannot behave like an archive. It must behave like a living confidence system.</p>
+</div>
+<div class="paragraph">
+<p>Research on Bayesian confidence and evidence accumulation supports this broader framing: confidence is often best modeled not as a mood attached to a decision, but as a function of accumulated evidence and the path by which that evidence was gathered.<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup> For AI systems, the implication is straightforward. Confidence should become a control surface. It should influence autonomy, escalation, retrieval breadth, model routing, and willingness to explore alternatives.
 Unresolved include directive in modules/ROOT/pages/article/when-machine-judgment-becomes-capital.adoc - include::when-machine-judgment-becomes-capital-05.adoc[]
 Unresolved include directive in modules/ROOT/pages/article/when-machine-judgment-becomes-capital.adoc - include::when-machine-judgment-becomes-capital-06.adoc[]
 Unresolved include directive in modules/ROOT/pages/article/when-machine-judgment-becomes-capital.adoc - include::when-machine-judgment-becomes-capital-07.adoc[]
@@ -237,6 +260,9 @@ Unresolved include directive in modules/ROOT/pages/article/when-machine-judgment
 </div>
 <div class="footnote" id="_footnotedef_2">
 <a href="#_footnoteref_2">2</a>. A recent survey on memory for autonomous LLM agents formalizes memory as a write-manage-read loop coupled with perception and action, and argues that memory turns a stateless generator into an adaptive agent. See Pengfei Du, “Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers,” arXiv:2603.07670, <a href="https://arxiv.org/abs/2603.07670" class="bare">https://arxiv.org/abs/2603.07670</a>.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. See J. Calder-Travis and W. J. Ma, “Bayesian Confidence in Optimal Decisions,” <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7617410/" class="bare">https://pmc.ncbi.nlm.nih.gov/articles/PMC7617410/</a>, and related work on evidence accumulation and confidence judgments.
 </div>
 </div>
 </article>
