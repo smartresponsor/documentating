@@ -1,0 +1,11 @@
+== Where This Approach Creates Real Economic Value
+
+The strongest applications are not everywhere. They are concentrated in workflows with three characteristics.
+
+First, the system faces repeated decisions rather than one-off puzzles. Second, downstream outcomes are observable, even if imperfectly. Third, good judgment is expensive because it is currently trapped inside a small number of strong operators.
+
+That is why the most promising zones are sales qualification, account expansion, recruiting, underwriting, support triage, collections, procurement, operations, and other expert workflows where “what usually works here” has large economic consequences.
+
+In those environments, the prize is not simply automation. The prize is compounded decision quality. An ordinary AI stack may help a team move faster. A judgment-compounding stack may help a team become systematically harder to replace.
+
+That is a very different strategic claim.
