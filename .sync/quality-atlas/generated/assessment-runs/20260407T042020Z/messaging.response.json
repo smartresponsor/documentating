@@ -1,0 +1,466 @@
+{
+  "id": "resp_0a3a6a893043b80a0069d4860723948190887ee9d29f75e184",
+  "object": "response",
+  "created_at": 1775535623,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1775535700,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "model": "gpt-5-2025-08-07",
+  "output": [
+    {
+      "id": "rs_0a3a6a893043b80a0069d486081f6c81908299acc9b8101efd",
+      "type": "reasoning",
+      "summary": []
+    },
+    {
+      "id": "msg_0a3a6a893043b80a0069d48641ae34819087be68a314d3fb57",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"component\":\"messaging\",\"summary\":\"Messaging reads as a governed Symfony-based messaging runtime with strong operational discipline, solid QA posture, and clear API/GraphQL surface, tracking toward RC with minor release/documentation hygiene gaps.\",\"strengths\":[\"Symfony 8 + API Platform + GraphQL + Messenger + Redis + Mercure integration\",\"Governed runtime with preflight/install/about/test and boot-ledger flows\",\"Observability and audit wiring (Prometheus rules, OTEL/tracing)\",\"Strong repo hygiene (CODEOWNERS, SECURITY.md, Dependabot, workflows)\",\"QA toolchain present (PHPUnit, PHPStan, CS Fixer, Panther, Playwright)\"],\"risks\":[\"No git tags detected, RC not formally cut\",\"Composer description/product messaging needs polish\",\"Docs navigation incomplete (Antora module root index not present)\",\"Proprietary license may limit external adoption\",\"CI execution details for browser E2E not evidenced\"],\"next_actions\":[\"Cut and sign an RC tag and release notes\",\"Polish composer.json description and README positioning\",\"Add Antora navigation index and link the report page\",\"Integrate Playwright E2E into CI workflows and publish artifacts\",\"Document secrets/operational requirements and verify alert rules in runtime\"],\"notes\":[\"Assessment grounded in repository files and current Antora report; no external assumptions made.\",\"Scores retain prior snapshot shape except QA, which is nudged by explicit Playwright harness presence.\"],\"confidence\":\"medium\",\"evidence_paths\":[\"composer.json\",\"package.json\",\".github/workflows\",\"alerts/prometheus_rules.yaml\",\"config/services_observability.yaml\",\"config/services_audit_otel_v1.yaml\",\"config/services_audit_tracing_v1.yaml\",\"bin/boot-ledger.sh\",\"bin/preflight.php\",\"bin/install-runtime.sh\",\"bin/test-runtime.sh\",\"phpunit.xml.dist\",\"phpunit.xml\",\"phpstan.neon\",\".php-cs-fixer.php\",\"README.md\",\"ROADMAP.md\",\"CHANGELOG.md\",\"SECURITY.md\",\".antora-src/modules/ROOT/pages/component/messaging/report/index.adoc\",\"api/openapi.yaml\"],\"suggested_score_overrides\":{\"product\":8.6,\"architecture\":8.3,\"runtime\":8.9,\"qa\":8.5,\"ops\":9.0,\"market\":8.4,\"overall\":8.6},\"metric_updates\":{\"product\":{\"summary\":\"Clear internal product identity as a Symfony-native messaging runtime with API/GraphQL surface and documented owner-facing report, suitable for enterprise conversation/realtime use within the ecosystem.\",\"risks\":[\"Composer description is terse/typoed and weakly market-facing\",\"No git tags reduce external product signaling\",\"Proprietary license narrows external product posture\"],\"improvements\":[\"Refine composer.json description and README positioning\",\"Publish tagged releases with changelog entries\",\"Link Antora report prominently from README and navigation\"],\"evidence\":[\"composer.json\",\"README.md\",\".antora-src/modules/ROOT/pages/component/messaging/report/index.adoc\",\"api/openapi.yaml\",\"ROADMAP.md\"]},\"architecture\":{\"summary\":\"Architecture centers on Symfony 8 with Doctrine ORM, API Platform + GraphQL, Messenger, Redis, Mercure and numerous service modules (outbox, partitions, presence, realtime), reinforced by internal analysis/report scripts.\",\"risks\":[\"Breadth of service configuration increases surface area to govern\",\"Domain reads runtime-heavy; bounded contexts not explicitly documented in-repo\"],\"improvements\":[\"Document bounded contexts and service ownership in repo docs\",\"Run report-* analysis scripts in CI to guard drift\"],\"evidence\":[\"composer.json\",\"config/services_outbox.yaml\",\"config/services_partitions.yaml\",\"config/services_presence.yaml\",\"config/services_realtime.yaml\",\"config/services_eventbus.yaml\",\"bin/report-message-controller-topology.php\"]},\"runtime\":{\"summary\":\"Strong runtime posture via boot-ledger, preflight/install/test flows, rate limiting/cache, Redis/Mercure/React Socket realtime channels, and ready-to-serve scripts.\",\"risks\":[\"Multiple realtime channels (Mercure, React Socket, Messenger) raise coordination/ops complexity\",\"Environment bootstrap relies on consistent .env templates across modes\"],\"improvements\":[\"Keep boot-ledger/preflight in CI and publish summaries\",\"Validate and document runtime health/diagnostic endpoints and required env vars\"],\"evidence\":[\"bin/boot-ledger.sh\",\"bin/preflight.php\",\"bin/install-runtime.sh\",\"bin/test-runtime.sh\",\"config/services_ratelimit.yaml\",\"config/services_cache.yaml\",\"composer.json\"]},\"qa\":{\"summary\":\"QA depth is solid: PHPUnit 11 with xml configs, PHPStan 2, CS Fixer, Symfony Panther, and a Playwright browser E2E harness alongside consolidated composer scripts.\",\"risks\":[\"CI execution/coverage publishing for browser E2E not evidenced in repo facts\",\"Large surface may hide flaky realtime tests if not isolated\"],\"improvements\":[\"Integrate Playwright test job in .github/workflows and publish artifacts\",\"Add static analysis and test gates to required checks\"],\"evidence\":[\"phpunit.xml\",\"phpunit.xml.dist\",\"phpstan.neon\",\".php-cs-fixer.php\",\"composer.json\",\"package.json\"]},\"ops\":{\"summary\":\"Operational readiness is strong with Prometheus alert rules, observability and audit tracing configs, governance scripts, SECURITY policy, CODEOWNERS, Dependabot, and GitHub workflows.\",\"risks\":[\"No tagged releases to anchor deployments\",\"Secrets management approach not evidenced in-repo\"],\"improvements\":[\"Cut signed tags and wire release workflow to environments\",\"Document secrets/keys handling and rotate policies\"],\"evidence\":[\"alerts/prometheus_rules.yaml\",\"config/services_observability.yaml\",\"config/services_audit_otel_v1.yaml\",\"config/services_audit_tracing_v1.yaml\",\".github/workflows\",\".github/dependabot.yml\",\"SECURITY.md\",\".github/CODEOWNERS\",\".github/release.yml\"]},\"market\":{\"summary\":\"Ecosystem/market alignment leans toward an internal enterprise messaging runtime with API/GraphQL and realtime delivery; roadmap and public report exist, but packaging remains internally focused.\",\"risks\":[\"Proprietary license and lack of release tags limit external signaling\",\"Composer description underplays capability\"],\"improvements\":[\"Publish versioned releases and badges in README\",\"Clarify target audience and capabilities in docs\"],\"evidence\":[\"README.md\",\"ROADMAP.md\",\"CHANGELOG.md\",\"composer.json\",\".antora-src/modules/ROOT/pages/component/messaging/report/index.adoc\"]},\"overall\":{\"summary\":\"Pre-RC component with notably strong ops/runtime and solid QA; a few release/documentation hygiene steps (tags, navigation, positioning) will strengthen RC posture.\",\"risks\":[\"Absence of tags undermines RC readiness signaling\",\"Docs navigation gap may hinder discoverability\"],\"improvements\":[\"Cut RC tag and align release workflow\",\"Add Antora navigation and cross-links from README\"],\"evidence\":[\"git_exact_tag output: none\",\".antora-src/modules/ROOT/pages/component/messaging/report/index.adoc\",\".github/release.yml\",\"CHANGELOG.md\"]}}}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "quality_atlas_assessment_verdict",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "summary",
+          "strengths",
+          "risks",
+          "next_actions",
+          "notes",
+          "confidence",
+          "evidence_paths",
+          "suggested_score_overrides",
+          "metric_updates"
+        ],
+        "properties": {
+          "component": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "strengths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "next_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "evidence_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "suggested_score_overrides": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "architecture": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "runtime": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "qa": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "ops": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "market": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "overall": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              }
+            }
+          },
+          "metric_updates": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "architecture": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "runtime": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "qa": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "ops": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "market": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "overall": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 15617,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 4865,
+    "output_tokens_details": {
+      "reasoning_tokens": 3392
+    },
+    "total_tokens": 20482
+  },
+  "user": null,
+  "metadata": {}
+}
