@@ -1,0 +1,167 @@
+component: taxating
+title: Taxating
+snapshot:
+  date: '2026-04-07'
+  label: pre-rc-seed
+  origin: quality-atlas probe seed
+  generated_at: '2026-04-07T01:02:02.489439+00:00'
+repo_target:
+  github_repository: ''
+  local_path: ''
+  default_branch: master
+families:
+  canon_structure:
+    title: Canon & Structure
+    status: warn
+    score: 9.0
+    summary: Seed probe pending first deterministic repository assessment.
+    blockers:
+    - Seed probe pending first deterministic repository assessment.
+    findings:
+    - severity: warn
+      id: seed_pending
+      detail: Seed probe pending first deterministic repository assessment.
+    evidence: []
+  architecture_boundaries:
+    title: Architecture & Boundaries
+    status: warn
+    score: 9.0
+    summary: Seed probe pending first deterministic repository assessment.
+    blockers:
+    - Seed probe pending first deterministic repository assessment.
+    findings:
+    - severity: warn
+      id: seed_pending
+      detail: Seed probe pending first deterministic repository assessment.
+    evidence: []
+  runtime_surface:
+    title: Runtime & Application Surface
+    status: warn
+    score: 9.0
+    summary: Seed probe pending first deterministic repository assessment.
+    blockers:
+    - Seed probe pending first deterministic repository assessment.
+    findings:
+    - severity: warn
+      id: seed_pending
+      detail: Seed probe pending first deterministic repository assessment.
+    evidence: []
+  qa_behavior:
+    title: QA & Behavioral Assurance
+    status: warn
+    score: 9.0
+    summary: Seed probe pending first deterministic repository assessment.
+    blockers:
+    - Seed probe pending first deterministic repository assessment.
+    findings:
+    - severity: warn
+      id: seed_pending
+      detail: Seed probe pending first deterministic repository assessment.
+    evidence: []
+  documentation_suite:
+    title: Documentation & GitHub Suite
+    status: warn
+    score: 9.0
+    summary: Seed probe pending first deterministic repository assessment.
+    blockers:
+    - Seed probe pending first deterministic repository assessment.
+    findings:
+    - severity: warn
+      id: seed_pending
+      detail: Seed probe pending first deterministic repository assessment.
+    evidence: []
+  delivery_observability:
+    title: Delivery & Observability
+    status: warn
+    score: 9.0
+    summary: Seed probe pending first deterministic repository assessment.
+    blockers:
+    - Seed probe pending first deterministic repository assessment.
+    findings:
+    - severity: warn
+      id: seed_pending
+      detail: Seed probe pending first deterministic repository assessment.
+    evidence: []
+  solid_refactoring:
+    title: SOLID & Refactoring Pressure
+    status: warn
+    score: 9.0
+    summary: Seed probe pending first deterministic repository assessment.
+    blockers:
+    - Seed probe pending first deterministic repository assessment.
+    findings:
+    - severity: warn
+      id: seed_pending
+      detail: Seed probe pending first deterministic repository assessment.
+    evidence: []
+summary:
+  overall_status: warn
+  average_score: 9.0
+  status_counts:
+    pass: 0
+    warn: 7
+    fail: 0
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — Seed probe pending first deterministic repository assessment.
+  - Architecture & Boundaries — Seed probe pending first deterministic repository
+    assessment.
+  - Runtime & Application Surface — Seed probe pending first deterministic repository
+    assessment.
+  - QA & Behavioral Assurance — Seed probe pending first deterministic repository
+    assessment.
+  - Documentation & GitHub Suite — Seed probe pending first deterministic repository
+    assessment.
+  - Delivery & Observability — Seed probe pending first deterministic repository assessment.
+  - SOLID & Refactoring Pressure — Seed probe pending first deterministic repository
+    assessment.
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: warn
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
+      blockers:
+      - Seed probe pending first deterministic repository assessment.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
+      blockers:
+      - Seed probe pending first deterministic repository assessment.
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: warn
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
+      blockers:
+      - Seed probe pending first deterministic repository assessment.
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: warn
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
+      blockers:
+      - Seed probe pending first deterministic repository assessment.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
+      blockers:
+      - Seed probe pending first deterministic repository assessment.
+    delivery_observability:
+      title: Delivery & Observability
+      status: warn
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
+      blockers:
+      - Seed probe pending first deterministic repository assessment.
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: warn
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
+      blockers:
+      - Seed probe pending first deterministic repository assessment.

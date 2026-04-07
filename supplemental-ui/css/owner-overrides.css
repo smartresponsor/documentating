@@ -63,3 +63,38 @@
 .toolbar .breadcrumbs ul {
   flex-wrap: wrap;
 }
+
+
+.owner-navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.owner-brand {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0;
+}
+
+.owner-brand__logo {
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+}
+
+
+
+.owner-footer-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.owner-footer-badge {
+  display: inline-block;
+  height: 2rem;
+  width: auto;
+  vertical-align: middle;
+}

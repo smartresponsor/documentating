@@ -1,0 +1,466 @@
+{
+  "id": "resp_03ed23c6a03f4d0a0069d4578e5ce08194a95e2477d2eac788",
+  "object": "response",
+  "created_at": 1775523726,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1775523802,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "model": "gpt-5-2025-08-07",
+  "output": [
+    {
+      "id": "rs_03ed23c6a03f4d0a0069d45791293c819495a4379a3b461e7f",
+      "type": "reasoning",
+      "summary": []
+    },
+    {
+      "id": "msg_03ed23c6a03f4d0a0069d457c074d081949489d2fa7fe4bfe9",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"component\":\"discovering\",\"summary\":\"Discovering presents as a Symfony 7.x discovery/retrieval subsystem with clear identity, structured architecture manifests, multi-surface runtime, and seeded QA/ops tooling; it remains pre-RC but materially organized for portfolio integration.\",\"strengths\":[\"Clear product identity and scope captured in PRODUCT_MANIFEST.md and README.md\",\"Structured Symfony 7.x architecture with manifests and typed layers (Dto/Service/Controller)\",\"Multi-surface runtime (console, web UI) with preflight checks\",\"Multiple test suites scaffolded (Unit, Functional, Contract, Behavioral)\",\"Seeded QA/security tooling (qa_guard, docblock policy, security/runtime preflight)\",\"Active documentation/report posture (Antora docs, installability/status reports)\"],\"risks\":[\"CI execution depth not evidenced; presence of .github/workflows without visible pipeline guarantees\",\"phpunit.xml and phpstan.neon only as *.dist; local policy/config materialization may lag\",\"Limited explicit observability/deployment automation evidence\",\"PHP 8.4+ requirement may constrain deployment targets if environments trail\"],\"next_actions\":[\"Promote phpunit.xml.dist and phpstan.neon.dist to enforced configs in CI\",\"Wire a GitHub Actions workflow to run composer ci (preflights, lint, tests) on PRs/main\",\"Run OpenAPI dump scripts in CI and publish artifacts to docs/report\",\"Document/verify runtime observability and deployment automation in repo (metrics/logging steps)\",\"Gate runtime/security preflight scripts in CI to fail on violations\",\"Add a status badge linking to CI runs in README.md\"],\"notes\":[\"Assessment grounded in repository tree and manifests at commit 234fc92 on branch master\",\"Report excerpts sourced from in-repo Antora report and recent status/installability reports\",\"Repository facts captured 2026-04-07T01:02:04.662245Z\"],\"confidence\":\"medium\",\"evidence_paths\":[\"composer.json\",\"README.md\",\"PRODUCT_MANIFEST.md\",\"ARCHITECTURE_MANIFEST.md\",\"BOUNDING_MANIFEST.md\",\"src/MANIFEST.md\",\"src/Controller\",\"src/Service\",\"src/Dto\",\"config/services.yaml\",\"public/index.php\",\"bin/console\",\"templates/base.html.twig\",\"templates/discovery\",\"tests\",\"tests/Unit\",\"tests/Functional\",\"tests/Contract\",\"tests/Behavioral\",\"phpunit.xml.dist\",\"phpstan.neon.dist\",\"tools/qa_guard.php\",\"tools/runtime_preflight.php\",\"tools/security_preflight.php\",\"tools/docblock_policy_check.php\",\"report/discovering-installability-proof-2026-04-03.md\",\"report/discovering-status-2026-04-03.md\",\"docs/antora.yml\",\".github/workflows\"],\"suggested_score_overrides\":{\"product\":8.3,\"architecture\":8.0,\"runtime\":7.8,\"qa\":7.2,\"ops\":7.4,\"market\":8.0,\"overall\":7.8},\"metric_updates\":{\"product\":{\"summary\":\"Product identity is explicit and coherent as an internal discovery/retrieval component, supported by in-repo product and boundary manifests and Symfony-native framing.\",\"risks\":[\"Public positioning remains internal platform-first rather than hardened external product\",\"Assessment should continue to be refreshed by scheduled scans to capture drift\"],\"improvements\":[\"Keep PRODUCT_MANIFEST.md aligned with surface capabilities and API dumps\",\"Expose CI status and published docs links in README.md\"],\"evidence\":[\"composer.json\",\"README.md\",\"PRODUCT_MANIFEST.md\",\"BOUNDING_MANIFEST.md\",\".antora-src/modules/ROOT/pages/component/discovering/report/index.adoc\"]},\"architecture\":{\"summary\":\"Architecture reads as a structured Symfony 7.x subsystem with manifests and clear layering (Dto/Service/Controller) and service wiring via config.\",\"risks\":[\"Deeper bounded-context articulation beyond directory structure not fully evidenced\",\"Technical debt and refactoring cadence not yet observable via CI signals\"],\"improvements\":[\"Expand ARCHITECTURE_MANIFEST.md with context boundaries and dependencies\",\"Add architectural checks (e.g., layer rules) to qa_guard and run in CI\"],\"evidence\":[\"ARCHITECTURE_MANIFEST.md\",\"BOUNDING_MANIFEST.md\",\"src/Dto\",\"src/Service\",\"src/Controller\",\"config/services.yaml\"]},\"runtime\":{\"summary\":\"Meaningful runtime surface exists (web UI, console) with runtime preflight and security checks aiding operability.\",\"risks\":[\"No explicit containerization, autoscaling, or environment playbooks evident\",\"PHP 8.4+ requirement narrows compatible runtimes\"],\"improvements\":[\"Enforce tools/runtime_preflight.php and tools/security_preflight.php in CI\",\"Document runbooks and supported PHP/Symfony matrix in README.md\"],\"evidence\":[\"public/index.php\",\"bin/console\",\"templates/base.html.twig\",\"templates/discovery\",\"tools/runtime_preflight.php\",\"tools/security_preflight.php\",\"composer.json\"]},\"qa\":{\"summary\":\"Multi-suite PHPUnit scaffolding and QA guard tooling are present, with policy and static analysis configs supplied as *.dist awaiting CI enforcement.\",\"risks\":[\"CI execution of tests and analysis is not evidenced\",\"phpunit.xml and phpstan.neon not materialized may cause local drift\"],\"improvements\":[\"Promote phpunit.xml.dist and phpstan.neon.dist to active configs and commit local overrides\",\"Run composer ci in GitHub Actions on push/PR and publish coverage/artifacts\"],\"evidence\":[\"tests/Unit\",\"tests/Functional\",\"tests/Contract\",\"tests/Behavioral\",\"phpunit.xml.dist\",\"phpstan.neon.dist\",\"tools/qa_guard.php\",\"tools/docblock_policy_check.php\",\"composer.json\"]},\"ops\":{\"summary\":\"Operational posture shows early strength via preflight/security scripts and documentation/report surfaces, though explicit observability and deployment automation are light.\",\"risks\":[\"Observability (metrics/tracing/logging) and alerting hooks not shown\",\"Delivery automation specifics in .github/workflows are not visible\"],\"improvements\":[\"Add CI workflows to run preflights, lint, tests, and publish docs\",\"Document/logging and metrics strategy; add health endpoints where applicable\"],\"evidence\":[\"tools/security_preflight.php\",\"tools/runtime_preflight.php\",\".github/workflows\",\"report/discovering-status-2026-04-03.md\",\"docs/antora.yml\"]},\"market\":{\"summary\":\"Positioning aligns with enterprise discovery/retrieval classes, expressed as a Symfony-native internal platform capability.\",\"risks\":[\"Proprietary license and internal focus may limit external product signals\"],\"improvements\":[\"Keep report and README language consistent with discovery/retrieval leader line\",\"Surface API docs via OpenAPI dump scripts for ecosystem consumers\"],\"evidence\":[\"composer.json\",\"README.md\",\".antora-src/modules/ROOT/pages/component/discovering/report/index.adoc\",\"docs/antora.yml\"]},\"overall\":{\"summary\":\"Pre-RC component with clear discovery thesis, structured architecture, and seeded QA/ops; modest CI and observability hardening should move it toward RC.\",\"risks\":[\"Pipeline enforcement and runtime observability are not yet evidenced\",\"Config *.dist reliance may hide local divergence until CI is in place\"],\"improvements\":[\"Stand up CI to run composer ci and publish docs\",\"Promote *.dist configs, enforce preflights, and add observability documentation\"],\"evidence\":[\"report/discovering-installability-proof-2026-04-03.md\",\"report/discovering-status-2026-04-03.md\",\".github/workflows\",\"tools/runtime_preflight.php\",\"tools/security_preflight.php\"]}}}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "quality_atlas_assessment_verdict",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "summary",
+          "strengths",
+          "risks",
+          "next_actions",
+          "notes",
+          "confidence",
+          "evidence_paths",
+          "suggested_score_overrides",
+          "metric_updates"
+        ],
+        "properties": {
+          "component": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "strengths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "next_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "evidence_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "suggested_score_overrides": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "architecture": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "runtime": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "qa": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "ops": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "market": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "overall": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              }
+            }
+          },
+          "metric_updates": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "architecture": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "runtime": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "qa": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "ops": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "market": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "overall": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 14364,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 4734,
+    "output_tokens_details": {
+      "reasoning_tokens": 3136
+    },
+    "total_tokens": 19098
+  },
+  "user": null,
+  "metadata": {}
+}

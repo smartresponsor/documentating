@@ -1,0 +1,498 @@
+component: analysing
+title: Analysing
+snapshot:
+  date: '2026-04-06'
+  label: assessment-2026-04-06
+  ref: master
+  origin: quality-atlas responses assessment
+  assessment_basis:
+    repository: smartresponsor/analysing
+    assessed_branch: master
+    assessed_commit: 588b19e2d7004e70521f3980969cd871ab17c530
+    assessed_tag: null
+    trigger_reason: manual_override
+    previous_commit: null
+    previous_tag: null
+    current_head_commit: 588b19e2d7004e70521f3980969cd871ab17c530
+    current_head_tag: null
+    changed_files_sample: []
+report_status: current
+groups:
+  product_market:
+    score: 7.85
+  domain_architecture:
+    score: 8.1
+  data_persistence:
+    score: 8.05
+  api_contracts:
+    score: 7.95
+  runtime_performance:
+    score: 8.0
+  reliability_resilience:
+    score: 8.1
+  security_governance:
+    score: 8.4
+  delivery_operations:
+    score: 8.4
+  quality_testing:
+    score: 7.9
+profile_axes:
+  engineering:
+    product: 7.9
+    architecture: 8.1
+    data: 8.05
+    api: 7.95
+    runtime: 8.0
+    reliability: 8.2
+    security: 8.4
+    delivery: 8.4
+    quality: 7.9
+    overall: 8.0
+  owner:
+    identity: 7.9
+    consistency: 8.1
+    delivery: 8.4
+    quality: 7.9
+    governance: 8.4
+    fit: 7.85
+    debt: 3.0
+    overall: 8.0
+  investor:
+    product: 7.9
+    architecture: 8.1
+    delivery: 8.4
+    reliability: 7.95
+    governance: 8.4
+    clarity: 7.85
+    overall: 8.0
+  operations:
+    runtime: 8.0
+    reliability: 7.95
+    observability: 8.4
+    security: 8.4
+    traffic: 8.2
+    delivery: 8.4
+    recovery: 8.15
+    overall: 8.0
+metrics:
+  product:
+    relevant: true
+    maturity: solid
+    score: 7.9
+    summary: Product identity as an analytics/analysis-process Symfony app is clear
+      from composer metadata, layered src layout, and focused docs, though public-facing
+      narrative remains thin.
+    risks:
+    - No README or quickstart blurs external understanding of value and scope
+    - Absence of release tags weakens perceived product maturity
+    improvements:
+    - Add a README with positioning, quickstart, example flows, and links to docs/
+    - Publish a minimal feature map and usage examples to clarify boundaries
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: src/Domain
+      note: Metric-level assessment evidence.
+    - path: docs/analytics-core-doc-layer-map.md
+      note: Metric-level assessment evidence.
+    - path: docs/analytics-core-doc-source-domain.md
+      note: Metric-level assessment evidence.
+  architecture:
+    relevant: true
+    maturity: solid
+    score: 8.1
+    summary: A coherent Symfony + Doctrine architecture is present with layered directories
+      and custom guard scripts enforcing namespaces, domain hygiene, and headers.
+    risks:
+    - Architectural intent is implied by structure/guards but not formalized in ADRs
+    - Guards rely on manual/script execution unless wired into CI
+    improvements:
+    - Add a short architecture/ADR note in docs/ to capture decisions and boundaries
+    - Run all guard scripts in CI to keep structure enforced continuously
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: src/Domain
+      note: Metric-level assessment evidence.
+    - path: src/Infrastructure
+      note: Metric-level assessment evidence.
+    - path: src/DTO
+      note: Metric-level assessment evidence.
+    - path: config/bundles.php
+      note: Metric-level assessment evidence.
+    - path: tools/analytics-namespace-guard.php
+      note: Metric-level assessment evidence.
+    - path: tools/analytics-domain-hygiene-guard.php
+      note: Metric-level assessment evidence.
+    - path: tools/analytics-php-header-guard.php
+      note: Metric-level assessment evidence.
+    - path: composer.json
+      note: Metric-level assessment evidence.
+  runtime:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Deployable runtime surface is evident (public/index.php, Kernel, routes,
+      bin/console) with Docker and Nginx for local execution and smoke tests in tests/.
+    risks:
+    - No README/runbook leaves runtime steps implicit
+    - Pipeline boot/health checks are not evidenced
+    - Playwright config without package.json suggests e2e browser tests are not wired
+    improvements:
+    - Document run commands and endpoints in README and add a CI smoke boot test against
+      the container
+    - Either wire Playwright (add package.json and CI job) or remove the unused config
+    - Expose and document a simple health endpoint checked in CI
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: public/index.php
+      note: Metric-level assessment evidence.
+    - path: src/Kernel.php
+      note: Metric-level assessment evidence.
+    - path: config/routes.yaml
+      note: Metric-level assessment evidence.
+    - path: bin/console
+      note: Metric-level assessment evidence.
+    - path: docker-compose.yml
+      note: Metric-level assessment evidence.
+    - path: docker/Dockerfile
+      note: Metric-level assessment evidence.
+    - path: docker/nginx.conf
+      note: Metric-level assessment evidence.
+    - path: tests/AnalyticsSmokeTest.php
+      note: Metric-level assessment evidence.
+  qa:
+    relevant: true
+    maturity: solid
+    score: 7.9
+    summary: Testing and static analysis are configured (PHPUnit, PHPStan, Psalm,
+      CS Fixer) with smoke and unit tests plus a QA environment checker.
+    risks:
+    - Only phpunit.xml.dist is present; CI configuration and coverage thresholds are
+      not visible
+    - No published CI results or coverage report in the repo
+    improvements:
+    - Add GitHub Actions to run qa:env, phpunit with coverage, and phpstan at level
+      max
+    - Commit or CI-generate a phpunit.xml with coverage thresholds and report artifacts
+    - Include Psalm in CI to complement PHPStan
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: phpunit.xml.dist
+      note: Metric-level assessment evidence.
+    - path: phpstan.neon
+      note: Metric-level assessment evidence.
+    - path: psalm.xml
+      note: Metric-level assessment evidence.
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: tools/qa/AnalyticsQaEnvironmentCheck.php
+      note: Metric-level assessment evidence.
+    - path: tests/Unit
+      note: Metric-level assessment evidence.
+    - path: tests/AnalyticsSmokeTest.php
+      note: Metric-level assessment evidence.
+  ops:
+    relevant: true
+    maturity: solid
+    score: 8.4
+    summary: 'Operational and governance posture is strong: container assets, secrets
+      scanning, code hygiene/guard scripts, and a workflows directory for CI are present.'
+    risks:
+    - Actual CI job definitions and deployment automation are not evidenced
+    - No release tags/changelog reduce operational traceability of changes
+    improvements:
+    - Add CI pipelines for static analysis, tests, guards, and gitleaks on PRs
+    - Add image build/push steps and a lightweight release workflow with semantic
+      tags and CHANGELOG
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: .gitleaks.toml
+      note: Metric-level assessment evidence.
+    - path: .github/workflows
+      note: Metric-level assessment evidence.
+    - path: docker-compose.yml
+      note: Metric-level assessment evidence.
+    - path: docker/Dockerfile
+      note: Metric-level assessment evidence.
+    - path: tools/analytics-namespace-guard.php
+      note: Metric-level assessment evidence.
+    - path: tools/analytics-domain-hygiene-guard.php
+      note: Metric-level assessment evidence.
+    - path: php-cs-fixer.dist.php
+      note: Metric-level assessment evidence.
+    - path: rector.neon
+      note: Metric-level assessment evidence.
+  market:
+    relevant: true
+    maturity: solid
+    score: 7.8
+    summary: The component aligns with an internal analytics/insight platform role
+      and includes some docs, but outward-facing product narrative and packaging are
+      minimal.
+    risks:
+    - Proprietary license limits external adoption possibilities
+    - Missing README and no releases/tags obscure market readiness
+    improvements:
+    - Add a README with value proposition and integration examples
+    - Introduce versioned releases and minimal change notes to signal stability
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: docs/analytics-core-doc-layer-map.md
+      note: Metric-level assessment evidence.
+    - path: docs/analytics-core-doc-namespace-target.md
+      note: Metric-level assessment evidence.
+  overall:
+    relevant: true
+    maturity: solid
+    score: 8.0
+    summary: Analysing shows strong structural and ops hygiene with a real runtime
+      scaffold; wiring CI, release tagging, and a README would close the remaining
+      pre-RC gaps.
+    risks:
+    - Lack of README and public runbook
+    - CI execution and coverage thresholds not evidenced
+    - No version tags/releases
+    improvements:
+    - Stand up CI for tests/analysis/guards and publish artifacts
+    - Add semantic version tags and a CHANGELOG
+    - Provide a concise README and link existing docs for onboarding
+    implemented:
+    - Current component report contributes to the Quality Atlas dataset.
+    partial:
+    - Narrative evidence and automated probe evidence should be expanded over time.
+    absent: []
+    intentionally_not_needed: []
+    tradeoffs:
+    - Current snapshot is lightweight and optimized for portfolio generation rather
+      than exhaustive per-metric evidence.
+    evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: docker-compose.yml
+      note: Metric-level assessment evidence.
+    - path: tests/AnalyticsSmokeTest.php
+      note: Metric-level assessment evidence.
+    - path: .gitleaks.toml
+      note: Metric-level assessment evidence.
+development_driving:
+  overall_status: warn
+  average_score: 7.21
+  status_counts:
+    pass: 2
+    warn: 5
+    fail: 0
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — Legacy/deprecated marker found in tree.
+  - Canon & Structure — PHP namespace does not use the default App\ root.
+  - Architecture & Boundaries — No obvious boundary descriptor files were detected.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - QA & Behavioral Assurance — Neither Playwright nor Symfony Panther markers were
+    detected.
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: README.md.'
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: warn
+      score: 7.0
+      summary: 0 fail, 3 warn, 0 info findings detected.
+      blockers:
+      - Legacy/deprecated marker found in tree.
+      - PHP namespace does not use the default App\ root.
+      - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees
+        clearly separated.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 5.0
+      summary: 0 fail, 5 warn, 0 info findings detected.
+      blockers:
+      - No obvious boundary descriptor files were detected.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - No fixtures directories were detected.
+      - Neither Playwright nor Symfony Panther markers were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 6.75
+      summary: 0 fail, 3 warn, 1 info findings detected.
+      blockers:
+      - 'Missing expected documentation asset: README.md.'
+      - 'Missing expected documentation asset: CHANGELOG.md.'
+      - Public/protected docblock coverage is 87/637 (14%).
+    delivery_observability:
+      title: Delivery & Observability
+      status: pass
+      score: 9.75
+      summary: 0 fail, 0 warn, 1 info findings detected.
+      blockers: []
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: warn
+      score: 4.0
+      summary: 0 fail, 6 warn, 0 info findings detected.
+      blockers:
+      - PHP file is large (410 lines); review SRP pressure.
+      - PHP file is large (350 lines); review SRP pressure.
+      - Constructor injects 7 parameters; review dependency inversion and class responsibilities.
+strengths:
+- Symfony + Doctrine application skeleton with public entrypoint and console
+- Containerization and Nginx configs for a runnable local environment
+- Robust internal guards (namespace, domain-hygiene, header) and QA tooling (PHPStan,
+  PHPUnit, CS Fixer, Psalm)
+- Secrets scanning present via .gitleaks.toml
+- Smoke and unit tests exist alongside a QA environment check script
+risks:
+- No README or public quickstart; external/product story is thin
+- CI/CD status unclear despite workflows directory
+- No git tags/releases; maturity and change history are opaque
+- Playwright config exists without package.json, suggesting e2e harness is not wired
+  in this repo
+recommended_next_actions:
+- Add a README with quickstart, run commands, architecture outline, and domain map
+  links
+- Define and enable GitHub Actions to run qa:env, phpunit, phpstan, cs-fixer (dry-run),
+  guards, and gitleaks on PRs
+- Introduce semantic version tags and a CHANGELOG, and create a release workflow
+- Either wire Playwright e2e (add package.json and CI job) or remove the unused config
+- Document container runbook (docker-compose up, health check, URLs) and add a CI
+  smoke boot test
+- Promote docs/ content into the public docs site (or add a lightweight Antora module)
+  and link from README
+evidence:
+- path: .antora-src/modules/ROOT/pages/component/analysing/report/index.adoc
+  note: Current component report page if present.
+- path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+  note: Seeded atlas dataset source.
+- path: .sync/quality-atlas/components/analysing/probes/current.yaml
+  note: Deterministic development-driving probe layer.
+- path: composer.json
+  note: Assessment evidence path.
+- path: public/index.php
+  note: Assessment evidence path.
+- path: src/Kernel.php
+  note: Assessment evidence path.
+- path: src/Domain
+  note: Assessment evidence path.
+- path: src/Service
+  note: Assessment evidence path.
+- path: src/ValueObject
+  note: Assessment evidence path.
+- path: config/routes.yaml
+  note: Assessment evidence path.
+- path: config/bootstrap.php
+  note: Assessment evidence path.
+- path: bin/console
+  note: Assessment evidence path.
+- path: docker-compose.yml
+  note: Assessment evidence path.
+- path: docker/Dockerfile
+  note: Assessment evidence path.
+- path: docker/nginx.conf
+  note: Assessment evidence path.
+- path: .github/workflows
+  note: Assessment evidence path.
+- path: phpstan.neon
+  note: Assessment evidence path.
+- path: phpunit.xml.dist
+  note: Assessment evidence path.
+- path: psalm.xml
+  note: Assessment evidence path.
+- path: tests/AnalyticsSmokeTest.php
+  note: Assessment evidence path.
+- path: tests/Unit
+  note: Assessment evidence path.
+- path: .gitleaks.toml
+  note: Assessment evidence path.
+- path: tools/analytics-namespace-guard.php
+  note: Assessment evidence path.
+- path: tools/analytics-domain-hygiene-guard.php
+  note: Assessment evidence path.
+- path: tools/analytics-php-header-guard.php
+  note: Assessment evidence path.
+- path: docs/analytics-core-doc-layer-map.md
+  note: Assessment evidence path.
+- path: docs/analytics-core-doc-namespace-target.md
+  note: Assessment evidence path.
+- path: docs/qa-environment.md
+  note: Assessment evidence path.
+assessment_notes:
+- Analysing reads as a Symfony/Doctrine-backed analytics runtime with strong internal
+  guards and containerized ops, but it lacks a README, visible CI evidence, and release
+  tagging to confidently claim RC.
+- Assessment grounded only in repository files and current snapshot; no external tool
+  outputs parsed
+- Component is enabled in registry; scheduled assessment runner integration is assumed
+  but not evidenced here
+- Docs exist under docs/, but no README and no Antora nav/index are present in this
+  repo
+- phpunit.xml.dist is present; prefer a concrete phpunit.xml (or CI override) with
+  coverage thresholds
+assessment_confidence: medium
