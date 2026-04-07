@@ -1,0 +1,9 @@
+== Organizational Memory, Revisited for AI
+
+This also reconnects AI to a much older management question: what exactly is organizational memory?
+
+Long before LLM agents existed, management research treated organizational memory as a real source of institutional capability. It was not just a database of facts. It included acquisition, retention, maintenance, retrieval, and forgetting, all of which shaped future action.footnote:[Eric W. Stein, “Organization Memory: Review of Concepts and Recommendations for Management,” International Journal of Information Management 15(1), 1995. Overview available at https://pure.psu.edu/en/publications/organization-memory-review-of-concepts-and-recommendations-for-ma.] Related work on transactive memory systems showed that teams become more effective not merely when they know more, but when they know who knows what and how to coordinate around distributed expertise.footnote:[Yuqing Ren, Kathleen M. Carley, and Linda Argote, “The Contingent Effects of Transactive Memory: When Is It More Beneficial to Know What Others Know?,” Management Science 52(5), 2006, https://doi.org/10.1287/mnsc.1050.0496.]
+
+AI reopens this literature in a new form. A mature agent instance can act as a compressed operating layer for specific judgments that once lived only inside people or teams. That does not mean replacing the expert. It means making the expert’s validated patterns more durable, more replayable, and more available at the point of action.
+
+In that sense, a well-governed judgment layer behaves like institutional capital. It is built over time, can survive personnel turnover, and becomes more valuable when it is regularly tested against outcomes instead of being frozen as doctrine.
