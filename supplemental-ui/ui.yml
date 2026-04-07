@@ -1,0 +1,3 @@
+static_files:
+  - robots.txt
+  - llms.txt
