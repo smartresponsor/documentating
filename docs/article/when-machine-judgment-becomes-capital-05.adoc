@@ -1,0 +1,11 @@
+== Why This Is Bigger Than “Agent Memory”
+
+If this argument is right, then the real value is not in memory alone. It is in the conversion pipeline:
+
+observation -> action -> outcome -> update -> changed future policy.
+
+That pipeline is what turns interaction history into compounding machine judgment.
+
+Recent work in agent memory is moving in exactly this direction. MemoryBank focused on long-term memory and selective forgetting.footnote:[Wanjun Zhong et al., “MemoryBank: Enhancing Large Language Models with Long-Term Memory,” AAAI 2024, https://ojs.aaai.org/index.php/AAAI/article/view/29946.] ReasoningBank goes further by distilling reusable strategies from successful and failed trajectories and using them to improve future behavior, explicitly framing memory-driven experience scaling as a new dimension for agent capability.footnote:[Siru Ouyang et al., “ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory,” OpenReview, ICLR 2026 poster, https://openreview.net/forum?id=jL7fwchScm.] Even the language in newer surveys is evolving from simple storage metaphors toward more dynamic concepts such as experience, control policy, and memory lifecycle.
+
+That evolution matters. It suggests that the field is slowly realizing that persistence is not valuable merely because it extends context. It is valuable because it governs adaptation.
