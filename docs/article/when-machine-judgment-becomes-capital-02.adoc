@@ -1,0 +1,9 @@
+== The Limits of Plain Memory
+
+Most so-called memory layers in AI are still closer to recall systems than to judgment systems. They help a model recover facts, preferences, prior messages, or external documents. That is useful, but it does not automatically produce better decisions.
+
+A long transcript is not wisdom. A vector hit is not judgment. A bigger context window is not experience.
+
+This is exactly why many agent systems still drift, repeat earlier mistakes, or fail to carry forward the one lesson that actually mattered. They can retrieve what happened, yet they often cannot convert what happened into a stronger next decision. Recent surveys and course material on self-improving agents make this point increasingly clear: memory is becoming central not because agents need more text, but because long-running systems need mechanisms that connect past interaction to future behavior in a disciplined way.footnote:[Stanford CS329A frames self-improving AI agents as systems that continuously improve through interaction with themselves and the environment. See https://cs329a.stanford.edu/.]
+
+This is where the conversation becomes more interesting. The next-generation agent is not just an LLM with tools. It is an LLM-based decision system with a write-manage-read loop for experience, and with rules for what should be reinforced, decayed, ignored, escalated, or overridden.footnote:[A recent survey on memory for autonomous LLM agents formalizes memory as a write-manage-read loop coupled with perception and action, and argues that memory turns a stateless generator into an adaptive agent. See Pengfei Du, “Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers,” arXiv:2603.07670, https://arxiv.org/abs/2603.07670.]
