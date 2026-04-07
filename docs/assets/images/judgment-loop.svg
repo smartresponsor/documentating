@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <style>
+    .title { font: 700 34px Arial, sans-serif; fill: #111; }
+    .sub { font: 400 22px Arial, sans-serif; fill: #111; }
+    .box { fill: #fff; stroke: #111; stroke-width: 3; }
+    .label { font: 700 24px Arial, sans-serif; fill: #111; text-anchor: middle; dominant-baseline: middle; }
+    .small { font: 400 21px Arial, sans-serif; fill: #111; text-anchor: middle; }
+    .line { stroke: #111; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#111"/>
+    </marker>
+  </defs>
+  <text x="800" y="60" class="title" text-anchor="middle">From Prompt Memory to Compounding Judgment</text>
+
+  <rect x="90" y="180" rx="18" ry="18" width="270" height="120" class="box"/>
+  <rect x="465" y="180" rx="18" ry="18" width="270" height="120" class="box"/>
+  <rect x="840" y="180" rx="18" ry="18" width="270" height="120" class="box"/>
+  <rect x="1215" y="180" rx="18" ry="18" width="270" height="120" class="box"/>
+  <rect x="465" y="520" rx="18" ry="18" width="270" height="120" class="box"/>
+  <rect x="840" y="520" rx="18" ry="18" width="270" height="120" class="box"/>
+
+  <text x="225" y="240" class="label">Context</text>
+  <text x="600" y="240" class="label">Action</text>
+  <text x="975" y="240" class="label">Outcome</text>
+  <text x="1350" y="240" class="label">Evidence</text>
+  <text x="600" y="580" class="label">Policy</text>
+  <text x="975" y="580" class="label">Next Decision</text>
+
+  <path d="M360 240 H465" class="line"/>
+  <path d="M735 240 H840" class="line"/>
+  <path d="M1110 240 H1215" class="line"/>
+  <path d="M1350 300 V410 H600 V520" class="line"/>
+  <path d="M735 580 H840" class="line"/>
+  <path d="M975 640 V745 H225 V300" class="line"/>
+
+  <text x="225" y="340" class="small">facts, history,</text>
+  <text x="225" y="366" class="small">state, constraints</text>
+
+  <text x="600" y="340" class="small">tool call, message,</text>
+  <text x="600" y="366" class="small">recommendation</text>
+
+  <text x="975" y="340" class="small">success, failure,</text>
+  <text x="975" y="366" class="small">delay, side effects</text>
+
+  <text x="1350" y="452" class="small">update trust, confidence,</text>
+  <text x="1350" y="478" class="small">and decay</text>
+
+  <text x="600" y="680" class="small">autonomy, routing,</text>
+  <text x="600" y="706" class="small">risk tolerance</text>
+
+  <text x="975" y="680" class="small">the system acts</text>
+  <text x="975" y="706" class="small">with stronger priors</text>
+
+  <text x="90" y="805" class="sub">A mature system does not just retrieve old text. It converts outcomes into evidence,</text>
+  <text x="90" y="835" class="sub">evidence into confidence, and confidence into policy for the next action.</text>
+</svg>
