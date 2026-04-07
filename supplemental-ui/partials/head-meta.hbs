@@ -1,0 +1,52 @@
+{{#if page.attributes.description}}
+<meta name="description" content="{{page.attributes.description}}">
+<meta property="og:description" content="{{page.attributes.description}}">
+<meta name="twitter:description" content="{{page.attributes.description}}">
+{{else}}
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+{{/if}}
+{{#if page.attributes.keywords}}
+<meta name="keywords" content="{{page.attributes.keywords}}">
+{{/if}}
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+{{#if page.url}}
+<link rel="canonical" href="{{site.url}}{{page.url}}">
+<meta property="og:url" content="{{site.url}}{{page.url}}">
+{{else}}
+<link rel="canonical" href="{{site.url}}">
+<meta property="og:url" content="{{site.url}}">
+{{/if}}
+<meta property="og:site_name" content="{{site.title}}">
+<meta property="og:type" content="website">
+{{#if page.title}}
+<meta property="og:title" content="{{page.title}}">
+<meta name="twitter:title" content="{{page.title}}">
+{{else}}
+<meta property="og:title" content="{{site.title}}">
+<meta name="twitter:title" content="{{site.title}}">
+{{/if}}
+<meta property="og:image" content="{{site.url}}/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{site.url}}/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
