@@ -217,12 +217,12 @@
             "product": 8.6,
             "architecture": 8.3,
             "delivery": 9.0,
-            "reliability": 8.7,
+            "reliability": 8.6,
             "governance": 9.0,
             "clarity": 8.5,
             "overall": 8.6
           },
-          "overall": 8.67
+          "overall": 8.66
         },
         {
           "component": "ordering",
@@ -418,7 +418,7 @@
         {
           "id": "quality",
           "title": "Quality",
-          "average": 8.44,
+          "average": 8.43,
           "min": 6.9,
           "max": 9.2
         },
@@ -630,10 +630,10 @@
             "reliability": 8.95,
             "security": 9.0,
             "delivery": 9.0,
-            "quality": 8.5,
+            "quality": 8.3,
             "overall": 8.6
           },
-          "overall": 8.68
+          "overall": 8.66
         },
         {
           "component": "ordering",
@@ -790,7 +790,7 @@
         }
       ],
       "component_count": 21,
-      "ecosystem_average": 8.43
+      "ecosystem_average": 8.42
     },
     {
       "id": "operations",
@@ -1025,15 +1025,15 @@
           "title": "Messaging",
           "axes": {
             "runtime": 8.9,
-            "reliability": 8.7,
+            "reliability": 8.6,
             "observability": 9.0,
             "security": 9.0,
             "traffic": 8.95,
             "delivery": 9.0,
-            "recovery": 8.75,
+            "recovery": 8.65,
             "overall": 8.6
           },
-          "overall": 8.86
+          "overall": 8.84
         },
         {
           "component": "ordering",
@@ -1203,7 +1203,7 @@
         {
           "id": "quality",
           "title": "Quality Depth",
-          "average": 8.44,
+          "average": 8.43,
           "min": 6.9,
           "max": 9.2
         },
@@ -1224,7 +1224,7 @@
         {
           "id": "debt",
           "title": "Technical Debt",
-          "average": 2.59,
+          "average": 2.6,
           "min": 2.0,
           "max": 3.65
         },
@@ -1409,13 +1409,13 @@
             "identity": 8.6,
             "consistency": 8.3,
             "delivery": 9.0,
-            "quality": 8.5,
+            "quality": 8.3,
             "governance": 9.0,
             "fit": 8.5,
-            "debt": 2.6,
+            "debt": 2.7,
             "overall": 8.6
           },
-          "overall": 7.89
+          "overall": 7.88
         },
         {
           "component": "ordering",
@@ -2263,21 +2263,9 @@
       "title": "Messaging",
       "snapshot": {
         "date": "2026-04-07",
-        "label": "assessment-2026-04-07",
+        "label": "pre-rc-seed",
         "ref": "master",
-        "origin": "quality-atlas responses assessment",
-        "assessment_basis": {
-          "repository": "smartresponsor/messaging",
-          "assessed_branch": "master",
-          "assessed_commit": "b7b63279e3233cc7ce123f6e3ed766ead01442bb",
-          "assessed_tag": null,
-          "trigger_reason": "manual_override",
-          "previous_commit": null,
-          "previous_tag": null,
-          "current_head_commit": "b7b63279e3233cc7ce123f6e3ed766ead01442bb",
-          "current_head_tag": null,
-          "changed_files_sample": []
-        }
+        "origin": "quality-atlas seed"
       },
       "profile_axes": {
         "engineering": {
@@ -2289,53 +2277,47 @@
           "reliability": 8.95,
           "security": 9.0,
           "delivery": 9.0,
-          "quality": 8.5,
+          "quality": 8.3,
           "overall": 8.6
         },
         "owner": {
           "identity": 8.6,
           "consistency": 8.3,
           "delivery": 9.0,
-          "quality": 8.5,
+          "quality": 8.3,
           "governance": 9.0,
           "fit": 8.5,
-          "debt": 2.6,
+          "debt": 2.7,
           "overall": 8.6
         },
         "investor": {
           "product": 8.6,
           "architecture": 8.3,
           "delivery": 9.0,
-          "reliability": 8.7,
+          "reliability": 8.6,
           "governance": 9.0,
           "clarity": 8.5,
           "overall": 8.6
         },
         "operations": {
           "runtime": 8.9,
-          "reliability": 8.7,
+          "reliability": 8.6,
           "observability": 9.0,
           "security": 9.0,
           "traffic": 8.95,
           "delivery": 9.0,
-          "recovery": 8.75,
+          "recovery": 8.65,
           "overall": 8.6
         }
       },
       "overall": 8.6,
       "strengths": [
-        "Symfony 8 + API Platform + GraphQL + Messenger + Redis + Mercure integration",
-        "Governed runtime with preflight/install/about/test and boot-ledger flows",
-        "Observability and audit wiring (Prometheus rules, OTEL/tracing)",
-        "Strong repo hygiene (CODEOWNERS, SECURITY.md, Dependabot, workflows)",
-        "QA toolchain present (PHPUnit, PHPStan, CS Fixer, Panther, Playwright)"
+        "Highest current axis: ops 9.0/10",
+        "Component is already represented in the current pre-RC Atlas."
       ],
       "risks": [
-        "No git tags detected, RC not formally cut",
-        "Composer description/product messaging needs polish",
-        "Docs navigation incomplete (Antora module root index not present)",
-        "Proprietary license may limit external adoption",
-        "CI execution details for browser E2E not evidenced"
+        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
+        "Structured metrics should be refreshed by the scheduled assessment workflow."
       ]
     },
     {
@@ -2715,9 +2697,21 @@
       "title": "Tagging",
       "snapshot": {
         "date": "2026-04-07",
-        "label": "pre-rc-seed",
+        "label": "assessment-2026-04-07",
         "ref": "master",
-        "origin": "quality-atlas seed"
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/tagging",
+          "assessed_branch": "master",
+          "assessed_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        }
       },
       "profile_axes": {
         "engineering": {
@@ -2764,12 +2758,17 @@
       },
       "overall": 8.6,
       "strengths": [
-        "Highest current axis: ops 9.0/10",
-        "Component is already represented in the current pre-RC Atlas."
+        "Canonical HTTP contract present (contracts/http)",
+        "Runnable host-minimal runtime and Docker assets",
+        "Rich governance configs (security, RBAC, quota, policy, observability)",
+        "Docs and Antora project config present",
+        "QA toolchain declared (PHPUnit, PHPStan, PHP CS Fixer, Panther, Playwright)"
       ],
       "risks": [
-        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
-        "Structured metrics should be refreshed by the scheduled assessment workflow."
+        "Repository docs/report path may not match registry path (.antora-src not present here)",
+        "No git tag found in this snapshot, suggesting pre-release state",
+        "Test suite depth and CI execution not verified in this run",
+        "Operational observability hooks not validated beyond config presence"
       ]
     },
     {
@@ -3470,6 +3469,25 @@
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-07",
+        "label": "assessment-2026-04-07",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/tagging",
+          "assessed_branch": "master",
+          "assessed_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
         "overall": 8.6
       },
       {

@@ -73,28 +73,28 @@
     }
   },
   "plan": {
-    "generated_at": "2026-04-07T04:20:20.679247+00:00",
+    "generated_at": "2026-04-07T04:36:20.295182+00:00",
     "event_name": "workflow_dispatch",
     "manual_components": [
-      "messaging"
+      "tagging"
     ],
     "normalized_manual_components": [
-      "messaging"
+      "tagging"
     ],
     "unknown_manual_components": [],
     "selected_components": [
-      "messaging"
+      "tagging"
     ],
     "selected_count": 1,
     "items": [
       {
-        "component": "messaging",
-        "title": "Messaging",
-        "repository": "smartresponsor/messaging",
+        "component": "tagging",
+        "title": "Tagging",
+        "repository": "smartresponsor/tagging",
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "b7b63279e3233cc7ce123f6e3ed766ead01442bb",
+        "current_head_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
         "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
@@ -102,7 +102,7 @@
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 4.34
+        "hours_since_last_assessment": 4.61
       }
     ],
     "status": "selected"
@@ -449,29 +449,13 @@
       "repository": "smartresponsor/messaging",
       "snapshot": {
         "snapshot_date": "2026-04-07",
-        "snapshot_label": "assessment-2026-04-07",
+        "snapshot_label": "pre-rc-seed",
         "overall": 8.6,
-        "assessed_commit": "b7b63279e3233cc7ce123f6e3ed766ead01442bb",
+        "assessed_commit": null,
         "assessed_tag": null,
-        "trigger_reason": "manual_override"
+        "trigger_reason": null
       },
-      "selection": {
-        "component": "messaging",
-        "title": "Messaging",
-        "repository": "smartresponsor/messaging",
-        "selected": true,
-        "reason": "manual_override",
-        "event_name": "workflow_dispatch",
-        "current_head_commit": "b7b63279e3233cc7ce123f6e3ed766ead01442bb",
-        "current_head_tag": null,
-        "last_assessed_commit": null,
-        "last_assessed_tag": null,
-        "last_assessed_date": "2026-04-07",
-        "changed_files_sample": [],
-        "access_error": null,
-        "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 4.34
-      }
+      "selection": {}
     },
     {
       "component": "mobiling",
@@ -650,13 +634,29 @@
       "repository": "smartresponsor/tagging",
       "snapshot": {
         "snapshot_date": "2026-04-07",
-        "snapshot_label": "pre-rc-seed",
+        "snapshot_label": "assessment-2026-04-07",
         "overall": 8.6,
-        "assessed_commit": null,
+        "assessed_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
         "assessed_tag": null,
-        "trigger_reason": null
+        "trigger_reason": "manual_override"
       },
-      "selection": {}
+      "selection": {
+        "component": "tagging",
+        "title": "Tagging",
+        "repository": "smartresponsor/tagging",
+        "selected": true,
+        "reason": "manual_override",
+        "event_name": "workflow_dispatch",
+        "current_head_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
+        "current_head_tag": null,
+        "last_assessed_commit": null,
+        "last_assessed_tag": null,
+        "last_assessed_date": "2026-04-07",
+        "changed_files_sample": [],
+        "access_error": null,
+        "cadence_group": "every_2_days",
+        "hours_since_last_assessment": 4.61
+      }
     },
     {
       "component": "taxating",

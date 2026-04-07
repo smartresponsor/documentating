@@ -3514,190 +3514,174 @@
       "overall": 8.6,
       "snapshot": {
         "date": "2026-04-07",
-        "label": "assessment-2026-04-07",
+        "label": "pre-rc-seed",
         "ref": "master",
-        "origin": "quality-atlas responses assessment",
-        "assessment_basis": {
-          "repository": "smartresponsor/messaging",
-          "assessed_branch": "master",
-          "assessed_commit": "b7b63279e3233cc7ce123f6e3ed766ead01442bb",
-          "assessed_tag": null,
-          "trigger_reason": "manual_override",
-          "previous_commit": null,
-          "previous_tag": null,
-          "current_head_commit": "b7b63279e3233cc7ce123f6e3ed766ead01442bb",
-          "current_head_tag": null,
-          "changed_files_sample": []
-        }
+        "origin": "quality-atlas seed"
       },
       "development_driving": {
-        "overall_status": "fail",
-        "average_score": 7.29,
+        "overall_status": "warn",
+        "average_score": 9.0,
         "status_counts": {
-          "pass": 2,
-          "warn": 4,
-          "fail": 1,
+          "pass": 0,
+          "warn": 7,
+          "fail": 0,
           "not_applicable": 0
         },
         "top_blockers": [
-          "Canon & Structure — PHP namespace does not use the default App\\ root.",
-          "Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated.",
-          "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-          "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-          "QA & Behavioral Assurance — No fixtures directories were detected.",
-          "Documentation & GitHub Suite — Public/protected docblock coverage is 231/2674 (9%).",
-          "SOLID & Refactoring Pressure — PHP file is very large (1851 lines); review SRP and refactoring pressure.",
-          "SOLID & Refactoring Pressure — Constructor injects 9 parameters; review dependency inversion and class responsibilities."
+          "Canon & Structure — Seed probe pending first deterministic repository assessment.",
+          "Architecture & Boundaries — Seed probe pending first deterministic repository assessment.",
+          "Runtime & Application Surface — Seed probe pending first deterministic repository assessment.",
+          "QA & Behavioral Assurance — Seed probe pending first deterministic repository assessment.",
+          "Documentation & GitHub Suite — Seed probe pending first deterministic repository assessment.",
+          "Delivery & Observability — Seed probe pending first deterministic repository assessment.",
+          "SOLID & Refactoring Pressure — Seed probe pending first deterministic repository assessment."
         ],
         "families": {
           "canon_structure": {
             "title": "Canon & Structure",
             "status": "warn",
-            "score": 8.0,
-            "summary": "0 fail, 2 warn, 0 info findings detected.",
+            "score": 9.0,
+            "summary": "Seed probe pending first deterministic repository assessment.",
             "blockers": [
-              "PHP namespace does not use the default App\\ root.",
-              "Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated."
+              "Seed probe pending first deterministic repository assessment."
             ]
           },
           "architecture_boundaries": {
             "title": "Architecture & Boundaries",
             "status": "warn",
-            "score": 5.0,
-            "summary": "0 fail, 5 warn, 0 info findings detected.",
+            "score": 9.0,
+            "summary": "Seed probe pending first deterministic repository assessment.",
             "blockers": [
-              "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "Non-entity PHP file imports App\\Entity directly; review vertical leakage."
+              "Seed probe pending first deterministic repository assessment."
             ]
           },
           "runtime_surface": {
             "title": "Runtime & Application Surface",
-            "status": "pass",
-            "score": 10.0,
-            "summary": "No material probe findings detected in this family.",
-            "blockers": []
+            "status": "warn",
+            "score": 9.0,
+            "summary": "Seed probe pending first deterministic repository assessment.",
+            "blockers": [
+              "Seed probe pending first deterministic repository assessment."
+            ]
           },
           "qa_behavior": {
             "title": "QA & Behavioral Assurance",
             "status": "warn",
             "score": 9.0,
-            "summary": "0 fail, 1 warn, 0 info findings detected.",
+            "summary": "Seed probe pending first deterministic repository assessment.",
             "blockers": [
-              "No fixtures directories were detected."
+              "Seed probe pending first deterministic repository assessment."
             ]
           },
           "documentation_suite": {
             "title": "Documentation & GitHub Suite",
             "status": "warn",
             "score": 9.0,
-            "summary": "0 fail, 1 warn, 0 info findings detected.",
+            "summary": "Seed probe pending first deterministic repository assessment.",
             "blockers": [
-              "Public/protected docblock coverage is 231/2674 (9%)."
+              "Seed probe pending first deterministic repository assessment."
             ]
           },
           "delivery_observability": {
             "title": "Delivery & Observability",
-            "status": "pass",
-            "score": 10.0,
-            "summary": "No material probe findings detected in this family.",
-            "blockers": []
+            "status": "warn",
+            "score": 9.0,
+            "summary": "Seed probe pending first deterministic repository assessment.",
+            "blockers": [
+              "Seed probe pending first deterministic repository assessment."
+            ]
           },
           "solid_refactoring": {
             "title": "SOLID & Refactoring Pressure",
-            "status": "fail",
-            "score": 0.0,
-            "summary": "1 fail, 11 warn, 1 info findings detected.",
+            "status": "warn",
+            "score": 9.0,
+            "summary": "Seed probe pending first deterministic repository assessment.",
             "blockers": [
-              "PHP file is very large (1851 lines); review SRP and refactoring pressure.",
-              "Constructor injects 9 parameters; review dependency inversion and class responsibilities.",
-              "Constructor injects 7 parameters; review dependency inversion and class responsibilities."
+              "Seed probe pending first deterministic repository assessment."
             ]
           }
         }
       },
       "probe_summary": {
-        "overall_status": "fail",
-        "average_score": 7.29,
+        "overall_status": "warn",
+        "average_score": 9.0,
         "status_counts": {
-          "pass": 2,
-          "warn": 4,
-          "fail": 1,
+          "pass": 0,
+          "warn": 7,
+          "fail": 0,
           "not_applicable": 0
         },
         "top_blockers": [
-          "Canon & Structure — PHP namespace does not use the default App\\ root.",
-          "Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated.",
-          "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-          "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-          "QA & Behavioral Assurance — No fixtures directories were detected.",
-          "Documentation & GitHub Suite — Public/protected docblock coverage is 231/2674 (9%).",
-          "SOLID & Refactoring Pressure — PHP file is very large (1851 lines); review SRP and refactoring pressure.",
-          "SOLID & Refactoring Pressure — Constructor injects 9 parameters; review dependency inversion and class responsibilities."
+          "Canon & Structure — Seed probe pending first deterministic repository assessment.",
+          "Architecture & Boundaries — Seed probe pending first deterministic repository assessment.",
+          "Runtime & Application Surface — Seed probe pending first deterministic repository assessment.",
+          "QA & Behavioral Assurance — Seed probe pending first deterministic repository assessment.",
+          "Documentation & GitHub Suite — Seed probe pending first deterministic repository assessment.",
+          "Delivery & Observability — Seed probe pending first deterministic repository assessment.",
+          "SOLID & Refactoring Pressure — Seed probe pending first deterministic repository assessment."
         ],
         "families": {
           "canon_structure": {
             "title": "Canon & Structure",
             "status": "warn",
-            "score": 8.0,
-            "summary": "0 fail, 2 warn, 0 info findings detected.",
+            "score": 9.0,
+            "summary": "Seed probe pending first deterministic repository assessment.",
             "blockers": [
-              "PHP namespace does not use the default App\\ root.",
-              "Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated."
+              "Seed probe pending first deterministic repository assessment."
             ]
           },
           "architecture_boundaries": {
             "title": "Architecture & Boundaries",
             "status": "warn",
-            "score": 5.0,
-            "summary": "0 fail, 5 warn, 0 info findings detected.",
+            "score": 9.0,
+            "summary": "Seed probe pending first deterministic repository assessment.",
             "blockers": [
-              "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "Non-entity PHP file imports App\\Entity directly; review vertical leakage."
+              "Seed probe pending first deterministic repository assessment."
             ]
           },
           "runtime_surface": {
             "title": "Runtime & Application Surface",
-            "status": "pass",
-            "score": 10.0,
-            "summary": "No material probe findings detected in this family.",
-            "blockers": []
+            "status": "warn",
+            "score": 9.0,
+            "summary": "Seed probe pending first deterministic repository assessment.",
+            "blockers": [
+              "Seed probe pending first deterministic repository assessment."
+            ]
           },
           "qa_behavior": {
             "title": "QA & Behavioral Assurance",
             "status": "warn",
             "score": 9.0,
-            "summary": "0 fail, 1 warn, 0 info findings detected.",
+            "summary": "Seed probe pending first deterministic repository assessment.",
             "blockers": [
-              "No fixtures directories were detected."
+              "Seed probe pending first deterministic repository assessment."
             ]
           },
           "documentation_suite": {
             "title": "Documentation & GitHub Suite",
             "status": "warn",
             "score": 9.0,
-            "summary": "0 fail, 1 warn, 0 info findings detected.",
+            "summary": "Seed probe pending first deterministic repository assessment.",
             "blockers": [
-              "Public/protected docblock coverage is 231/2674 (9%)."
+              "Seed probe pending first deterministic repository assessment."
             ]
           },
           "delivery_observability": {
             "title": "Delivery & Observability",
-            "status": "pass",
-            "score": 10.0,
-            "summary": "No material probe findings detected in this family.",
-            "blockers": []
+            "status": "warn",
+            "score": 9.0,
+            "summary": "Seed probe pending first deterministic repository assessment.",
+            "blockers": [
+              "Seed probe pending first deterministic repository assessment."
+            ]
           },
           "solid_refactoring": {
             "title": "SOLID & Refactoring Pressure",
-            "status": "fail",
-            "score": 0.0,
-            "summary": "1 fail, 11 warn, 1 info findings detected.",
+            "status": "warn",
+            "score": 9.0,
+            "summary": "Seed probe pending first deterministic repository assessment.",
             "blockers": [
-              "PHP file is very large (1851 lines); review SRP and refactoring pressure.",
-              "Constructor injects 9 parameters; review dependency inversion and class responsibilities.",
-              "Constructor injects 7 parameters; review dependency inversion and class responsibilities."
+              "Seed probe pending first deterministic repository assessment."
             ]
           }
         }
@@ -3706,286 +3690,121 @@
         "canon_structure": {
           "title": "Canon & Structure",
           "status": "warn",
-          "score": 8.0,
-          "summary": "0 fail, 2 warn, 0 info findings detected.",
+          "score": 9.0,
+          "summary": "Seed probe pending first deterministic repository assessment.",
           "blockers": [
-            "PHP namespace does not use the default App\\ root.",
-            "Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated."
+            "Seed probe pending first deterministic repository assessment."
           ],
           "findings": [
             {
               "severity": "warn",
-              "id": "namespace_drift",
-              "detail": "PHP namespace does not use the default App\\ root.",
-              "path": "config/reference.php"
-            },
-            {
-              "severity": "warn",
-              "id": "dialect_mixing",
-              "detail": "Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated.",
-              "path": "config/reference.php"
+              "id": "seed_pending",
+              "detail": "Seed probe pending first deterministic repository assessment."
             }
           ],
-          "evidence": [
-            "config/reference.php",
-            "docker-compose.yml"
-          ]
+          "evidence": []
         },
         "architecture_boundaries": {
           "title": "Architecture & Boundaries",
           "status": "warn",
-          "score": 5.0,
-          "summary": "0 fail, 5 warn, 0 info findings detected.",
+          "score": 9.0,
+          "summary": "Seed probe pending first deterministic repository assessment.",
           "blockers": [
-            "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-            "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-            "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-            "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-            "Non-entity PHP file imports App\\Entity directly; review vertical leakage."
+            "Seed probe pending first deterministic repository assessment."
           ],
           "findings": [
             {
               "severity": "warn",
-              "id": "entity_leakage_signal",
-              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "path": "tests/DeliveryServiceTest.php"
-            },
-            {
-              "severity": "warn",
-              "id": "entity_leakage_signal",
-              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "path": "src/Api/State/ThreadCreateProcessor.php"
-            },
-            {
-              "severity": "warn",
-              "id": "entity_leakage_signal",
-              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "path": "src/Api/State/MessageSendProcessor.php"
-            },
-            {
-              "severity": "warn",
-              "id": "entity_leakage_signal",
-              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "path": "src/Service/Message/MessageSecureService.php"
-            },
-            {
-              "severity": "warn",
-              "id": "entity_leakage_signal",
-              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "path": "src/Service/Reaction/MessageReactionService.php"
+              "id": "seed_pending",
+              "detail": "Seed probe pending first deterministic repository assessment."
             }
           ],
-          "evidence": [
-            "docs/SERVICE_BOUNDARY_CONSOLIDATION_WAVE_59.md",
-            "docs/SERVICE_BOUNDARY_CONSOLIDATION_WAVE_60.json",
-            "docs/SERVICE_BOUNDARY_CONSOLIDATION_WAVE_61.json",
-            "docs/SERVICE_BOUNDARY_CONSOLIDATION_WAVE_61.md",
-            "docs/SERVICE_BOUNDARY_CONSOLIDATION_WAVE_63.json",
-            "src/Api/State/MessageSendProcessor.php",
-            "src/Api/State/ThreadCreateProcessor.php",
-            "src/Service/Message/MessageSecureService.php",
-            "src/Service/Reaction/MessageReactionService.php",
-            "tests/DeliveryServiceTest.php"
-          ]
+          "evidence": []
         },
         "runtime_surface": {
           "title": "Runtime & Application Surface",
-          "status": "pass",
-          "score": 10.0,
-          "summary": "No material probe findings detected in this family.",
-          "blockers": [],
-          "findings": [],
-          "evidence": [
-            "api/openapi.yaml",
-            "deploy/docker/compose.yaml",
-            "docker-compose.yml",
-            "docker/php/Dockerfile",
-            "migrations/Version20251012_AttachmentBlob.php",
-            "ws-gateway/Dockerfile"
-          ]
+          "status": "warn",
+          "score": 9.0,
+          "summary": "Seed probe pending first deterministic repository assessment.",
+          "blockers": [
+            "Seed probe pending first deterministic repository assessment."
+          ],
+          "findings": [
+            {
+              "severity": "warn",
+              "id": "seed_pending",
+              "detail": "Seed probe pending first deterministic repository assessment."
+            }
+          ],
+          "evidence": []
         },
         "qa_behavior": {
           "title": "QA & Behavioral Assurance",
           "status": "warn",
           "score": 9.0,
-          "summary": "0 fail, 1 warn, 0 info findings detected.",
+          "summary": "Seed probe pending first deterministic repository assessment.",
           "blockers": [
-            "No fixtures directories were detected."
+            "Seed probe pending first deterministic repository assessment."
           ],
           "findings": [
             {
               "severity": "warn",
-              "id": "fixtures_missing",
-              "detail": "No fixtures directories were detected."
+              "id": "seed_pending",
+              "detail": "Seed probe pending first deterministic repository assessment."
             }
           ],
-          "evidence": [
-            "composer.json",
-            "package-lock.json",
-            "package.json",
-            "phpunit.xml",
-            "tests/"
-          ]
+          "evidence": []
         },
         "documentation_suite": {
           "title": "Documentation & GitHub Suite",
           "status": "warn",
           "score": 9.0,
-          "summary": "0 fail, 1 warn, 0 info findings detected.",
+          "summary": "Seed probe pending first deterministic repository assessment.",
           "blockers": [
-            "Public/protected docblock coverage is 231/2674 (9%)."
+            "Seed probe pending first deterministic repository assessment."
           ],
           "findings": [
             {
               "severity": "warn",
-              "id": "docblock_coverage_low",
-              "detail": "Public/protected docblock coverage is 231/2674 (9%)."
+              "id": "seed_pending",
+              "detail": "Seed probe pending first deterministic repository assessment."
             }
           ],
-          "evidence": [
-            ".github/ISSUE_TEMPLATE",
-            ".github/PULL_REQUEST_TEMPLATE.md",
-            ".github/workflows",
-            "CHANGELOG.md",
-            "README.md",
-            "composer.json",
-            "config/bundles.php",
-            "config/reference.php",
-            "config/routes.yaml",
-            "php-docblock-ratio:231/2674"
-          ]
+          "evidence": []
         },
         "delivery_observability": {
           "title": "Delivery & Observability",
-          "status": "pass",
-          "score": 10.0,
-          "summary": "No material probe findings detected in this family.",
-          "blockers": [],
-          "findings": [],
-          "evidence": [
-            ".github/dependabot.yml",
-            ".github/workflows/api-reference.yml",
-            ".github/workflows/e2e.yml",
-            ".github/workflows/qa.yml",
-            ".github/workflows/release.yml",
-            ".github/workflows/security.yml",
-            "README.md",
-            "api/openapi.yaml",
-            "config/bootstrap.php",
-            "docker-compose.yml",
-            "docs/AUDIT_TRACING_V1_NOTES.txt",
-            "report/architecture/wave08-system-design-review.md",
-            "tests/Unit/Spam/SpamFilterChainTest.php",
-            "tests/bootstrap.php"
-          ]
-        },
-        "solid_refactoring": {
-          "title": "SOLID & Refactoring Pressure",
-          "status": "fail",
-          "score": 0.0,
-          "summary": "1 fail, 11 warn, 1 info findings detected.",
+          "status": "warn",
+          "score": 9.0,
+          "summary": "Seed probe pending first deterministic repository assessment.",
           "blockers": [
-            "PHP file is very large (1851 lines); review SRP and refactoring pressure.",
-            "Constructor injects 9 parameters; review dependency inversion and class responsibilities.",
-            "Constructor injects 7 parameters; review dependency inversion and class responsibilities.",
-            "Constructor injects 7 parameters; review dependency inversion and class responsibilities.",
-            "PHP file is large (339 lines); review SRP pressure."
+            "Seed probe pending first deterministic repository assessment."
           ],
           "findings": [
             {
-              "severity": "fail",
-              "id": "large_class",
-              "detail": "PHP file is very large (1851 lines); review SRP and refactoring pressure.",
-              "path": "config/reference.php"
-            },
-            {
               "severity": "warn",
-              "id": "constructor_injection_pressure",
-              "detail": "Constructor injects 9 parameters; review dependency inversion and class responsibilities.",
-              "path": "src/Moderation/ModerationService.php"
-            },
-            {
-              "severity": "warn",
-              "id": "constructor_injection_pressure",
-              "detail": "Constructor injects 7 parameters; review dependency inversion and class responsibilities.",
-              "path": "src/Search/IndexableMessage.php"
-            },
-            {
-              "severity": "warn",
-              "id": "constructor_injection_pressure",
-              "detail": "Constructor injects 7 parameters; review dependency inversion and class responsibilities.",
-              "path": "src/Search/ThreadSearchService.php"
-            },
-            {
-              "severity": "warn",
-              "id": "class_size_pressure",
-              "detail": "PHP file is large (339 lines); review SRP pressure.",
-              "path": "src/Service/Attachment/AttachmentStorageService.php"
-            },
-            {
-              "severity": "warn",
-              "id": "constructor_injection_pressure",
-              "detail": "Constructor injects 10 parameters; review dependency inversion and class responsibilities.",
-              "path": "src/Service/Attachment/AttachmentIngestService.php"
-            },
-            {
-              "severity": "warn",
-              "id": "constructor_injection_pressure",
-              "detail": "Constructor injects 18 parameters; review dependency inversion and class responsibilities.",
-              "path": "src/Service/Spam/SpamPolicy.php"
-            },
-            {
-              "severity": "warn",
-              "id": "constructor_injection_pressure",
-              "detail": "Constructor injects 9 parameters; review dependency inversion and class responsibilities.",
-              "path": "src/Service/Spam/SpamFilterChain.php"
-            },
-            {
-              "severity": "warn",
-              "id": "constructor_injection_pressure",
-              "detail": "Constructor injects 7 parameters; review dependency inversion and class responsibilities.",
-              "path": "src/Service/Message/RateLimiterService.php"
-            },
-            {
-              "severity": "warn",
-              "id": "public_api_pressure",
-              "detail": "Class exposes 16 public methods; review interface segregation and SRP.",
-              "path": "src/Service/Moderation/ModerationService.php"
-            },
-            {
-              "severity": "warn",
-              "id": "public_api_pressure",
-              "detail": "Class exposes 14 public methods; review interface segregation and SRP.",
-              "path": "src/Service/Observability/DbalMetricsMiddleware.php"
-            },
-            {
-              "severity": "warn",
-              "id": "public_api_pressure",
-              "detail": "Class exposes 13 public methods; review interface segregation and SRP.",
-              "path": "src/Service/Room/ModerationService.php"
-            },
-            {
-              "severity": "info",
-              "id": "copy_paste_origin_marker",
-              "detail": "Possible copy-paste provenance marker detected; review SOLID and ownership fit.",
-              "path": "README.md"
+              "id": "seed_pending",
+              "detail": "Seed probe pending first deterministic repository assessment."
             }
           ],
-          "evidence": [
-            "README.md",
-            "config/reference.php",
-            "src/Moderation/ModerationService.php",
-            "src/Search/IndexableMessage.php",
-            "src/Search/ThreadSearchService.php",
-            "src/Service/Attachment/AttachmentIngestService.php",
-            "src/Service/Attachment/AttachmentStorageService.php",
-            "src/Service/Message/RateLimiterService.php",
-            "src/Service/Moderation/ModerationService.php",
-            "src/Service/Observability/DbalMetricsMiddleware.php",
-            "src/Service/Room/ModerationService.php",
-            "src/Service/Spam/SpamFilterChain.php",
-            "src/Service/Spam/SpamPolicy.php"
-          ]
+          "evidence": []
+        },
+        "solid_refactoring": {
+          "title": "SOLID & Refactoring Pressure",
+          "status": "warn",
+          "score": 9.0,
+          "summary": "Seed probe pending first deterministic repository assessment.",
+          "blockers": [
+            "Seed probe pending first deterministic repository assessment."
+          ],
+          "findings": [
+            {
+              "severity": "warn",
+              "id": "seed_pending",
+              "detail": "Seed probe pending first deterministic repository assessment."
+            }
+          ],
+          "evidence": []
         }
       }
     },
@@ -5795,174 +5614,184 @@
       "overall": 8.6,
       "snapshot": {
         "date": "2026-04-07",
-        "label": "pre-rc-seed",
+        "label": "assessment-2026-04-07",
         "ref": "master",
-        "origin": "quality-atlas seed"
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/tagging",
+          "assessed_branch": "master",
+          "assessed_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        }
       },
       "development_driving": {
         "overall_status": "warn",
-        "average_score": 9.0,
+        "average_score": 7.43,
         "status_counts": {
-          "pass": 0,
-          "warn": 7,
+          "pass": 3,
+          "warn": 4,
           "fail": 0,
           "not_applicable": 0
         },
         "top_blockers": [
-          "Canon & Structure — Seed probe pending first deterministic repository assessment.",
-          "Architecture & Boundaries — Seed probe pending first deterministic repository assessment.",
-          "Runtime & Application Surface — Seed probe pending first deterministic repository assessment.",
-          "QA & Behavioral Assurance — Seed probe pending first deterministic repository assessment.",
-          "Documentation & GitHub Suite — Seed probe pending first deterministic repository assessment.",
-          "Delivery & Observability — Seed probe pending first deterministic repository assessment.",
-          "SOLID & Refactoring Pressure — Seed probe pending first deterministic repository assessment."
+          "Canon & Structure — PHP namespace does not use the default App\\ root.",
+          "Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated.",
+          "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+          "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+          "Documentation & GitHub Suite — Public/protected docblock coverage is 185/773 (24%).",
+          "SOLID & Refactoring Pressure — Class exposes 15 public methods; review interface segregation and SRP.",
+          "SOLID & Refactoring Pressure — Class exposes 18 public methods; review interface segregation and SRP."
         ],
         "families": {
           "canon_structure": {
             "title": "Canon & Structure",
             "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
+            "score": 8.0,
+            "summary": "0 fail, 2 warn, 0 info findings detected.",
             "blockers": [
-              "Seed probe pending first deterministic repository assessment."
+              "PHP namespace does not use the default App\\ root.",
+              "Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated."
             ]
           },
           "architecture_boundaries": {
             "title": "Architecture & Boundaries",
             "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
+            "score": 5.0,
+            "summary": "0 fail, 5 warn, 0 info findings detected.",
             "blockers": [
-              "Seed probe pending first deterministic repository assessment."
+              "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+              "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+              "Non-entity PHP file imports App\\Entity directly; review vertical leakage."
             ]
           },
           "runtime_surface": {
             "title": "Runtime & Application Surface",
-            "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
-            "blockers": [
-              "Seed probe pending first deterministic repository assessment."
-            ]
+            "status": "pass",
+            "score": 10.0,
+            "summary": "No material probe findings detected in this family.",
+            "blockers": []
           },
           "qa_behavior": {
             "title": "QA & Behavioral Assurance",
-            "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
-            "blockers": [
-              "Seed probe pending first deterministic repository assessment."
-            ]
+            "status": "pass",
+            "score": 10.0,
+            "summary": "No material probe findings detected in this family.",
+            "blockers": []
           },
           "documentation_suite": {
             "title": "Documentation & GitHub Suite",
             "status": "warn",
             "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
+            "summary": "0 fail, 1 warn, 0 info findings detected.",
             "blockers": [
-              "Seed probe pending first deterministic repository assessment."
+              "Public/protected docblock coverage is 185/773 (24%)."
             ]
           },
           "delivery_observability": {
             "title": "Delivery & Observability",
-            "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
-            "blockers": [
-              "Seed probe pending first deterministic repository assessment."
-            ]
+            "status": "pass",
+            "score": 10.0,
+            "summary": "No material probe findings detected in this family.",
+            "blockers": []
           },
           "solid_refactoring": {
             "title": "SOLID & Refactoring Pressure",
             "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
+            "score": 0.0,
+            "summary": "0 fail, 12 warn, 1 info findings detected.",
             "blockers": [
-              "Seed probe pending first deterministic repository assessment."
+              "Class exposes 15 public methods; review interface segregation and SRP.",
+              "Class exposes 18 public methods; review interface segregation and SRP.",
+              "Class exposes 18 public methods; review interface segregation and SRP."
             ]
           }
         }
       },
       "probe_summary": {
         "overall_status": "warn",
-        "average_score": 9.0,
+        "average_score": 7.43,
         "status_counts": {
-          "pass": 0,
-          "warn": 7,
+          "pass": 3,
+          "warn": 4,
           "fail": 0,
           "not_applicable": 0
         },
         "top_blockers": [
-          "Canon & Structure — Seed probe pending first deterministic repository assessment.",
-          "Architecture & Boundaries — Seed probe pending first deterministic repository assessment.",
-          "Runtime & Application Surface — Seed probe pending first deterministic repository assessment.",
-          "QA & Behavioral Assurance — Seed probe pending first deterministic repository assessment.",
-          "Documentation & GitHub Suite — Seed probe pending first deterministic repository assessment.",
-          "Delivery & Observability — Seed probe pending first deterministic repository assessment.",
-          "SOLID & Refactoring Pressure — Seed probe pending first deterministic repository assessment."
+          "Canon & Structure — PHP namespace does not use the default App\\ root.",
+          "Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated.",
+          "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+          "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+          "Documentation & GitHub Suite — Public/protected docblock coverage is 185/773 (24%).",
+          "SOLID & Refactoring Pressure — Class exposes 15 public methods; review interface segregation and SRP.",
+          "SOLID & Refactoring Pressure — Class exposes 18 public methods; review interface segregation and SRP."
         ],
         "families": {
           "canon_structure": {
             "title": "Canon & Structure",
             "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
+            "score": 8.0,
+            "summary": "0 fail, 2 warn, 0 info findings detected.",
             "blockers": [
-              "Seed probe pending first deterministic repository assessment."
+              "PHP namespace does not use the default App\\ root.",
+              "Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated."
             ]
           },
           "architecture_boundaries": {
             "title": "Architecture & Boundaries",
             "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
+            "score": 5.0,
+            "summary": "0 fail, 5 warn, 0 info findings detected.",
             "blockers": [
-              "Seed probe pending first deterministic repository assessment."
+              "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+              "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+              "Non-entity PHP file imports App\\Entity directly; review vertical leakage."
             ]
           },
           "runtime_surface": {
             "title": "Runtime & Application Surface",
-            "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
-            "blockers": [
-              "Seed probe pending first deterministic repository assessment."
-            ]
+            "status": "pass",
+            "score": 10.0,
+            "summary": "No material probe findings detected in this family.",
+            "blockers": []
           },
           "qa_behavior": {
             "title": "QA & Behavioral Assurance",
-            "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
-            "blockers": [
-              "Seed probe pending first deterministic repository assessment."
-            ]
+            "status": "pass",
+            "score": 10.0,
+            "summary": "No material probe findings detected in this family.",
+            "blockers": []
           },
           "documentation_suite": {
             "title": "Documentation & GitHub Suite",
             "status": "warn",
             "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
+            "summary": "0 fail, 1 warn, 0 info findings detected.",
             "blockers": [
-              "Seed probe pending first deterministic repository assessment."
+              "Public/protected docblock coverage is 185/773 (24%)."
             ]
           },
           "delivery_observability": {
             "title": "Delivery & Observability",
-            "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
-            "blockers": [
-              "Seed probe pending first deterministic repository assessment."
-            ]
+            "status": "pass",
+            "score": 10.0,
+            "summary": "No material probe findings detected in this family.",
+            "blockers": []
           },
           "solid_refactoring": {
             "title": "SOLID & Refactoring Pressure",
             "status": "warn",
-            "score": 9.0,
-            "summary": "Seed probe pending first deterministic repository assessment.",
+            "score": 0.0,
+            "summary": "0 fail, 12 warn, 1 info findings detected.",
             "blockers": [
-              "Seed probe pending first deterministic repository assessment."
+              "Class exposes 15 public methods; review interface segregation and SRP.",
+              "Class exposes 18 public methods; review interface segregation and SRP.",
+              "Class exposes 18 public methods; review interface segregation and SRP."
             ]
           }
         }
@@ -5971,121 +5800,274 @@
         "canon_structure": {
           "title": "Canon & Structure",
           "status": "warn",
-          "score": 9.0,
-          "summary": "Seed probe pending first deterministic repository assessment.",
+          "score": 8.0,
+          "summary": "0 fail, 2 warn, 0 info findings detected.",
           "blockers": [
-            "Seed probe pending first deterministic repository assessment."
+            "PHP namespace does not use the default App\\ root.",
+            "Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated."
           ],
           "findings": [
             {
               "severity": "warn",
-              "id": "seed_pending",
-              "detail": "Seed probe pending first deterministic repository assessment."
+              "id": "namespace_drift",
+              "detail": "PHP namespace does not use the default App\\ root.",
+              "path": "tests/TagSmokeOpsScriptsTest.php"
+            },
+            {
+              "severity": "warn",
+              "id": "dialect_mixing",
+              "detail": "Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated.",
+              "path": "docs/acceptance/e14.md"
             }
           ],
-          "evidence": []
+          "evidence": [
+            "docs/acceptance/e14.md",
+            "repo-map.md",
+            "tests/TagSmokeOpsScriptsTest.php"
+          ]
         },
         "architecture_boundaries": {
           "title": "Architecture & Boundaries",
           "status": "warn",
-          "score": 9.0,
-          "summary": "Seed probe pending first deterministic repository assessment.",
+          "score": 5.0,
+          "summary": "0 fail, 5 warn, 0 info findings detected.",
           "blockers": [
-            "Seed probe pending first deterministic repository assessment."
+            "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+            "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+            "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+            "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+            "Non-entity PHP file imports App\\Entity directly; review vertical leakage."
           ],
           "findings": [
             {
               "severity": "warn",
-              "id": "seed_pending",
-              "detail": "Seed probe pending first deterministic repository assessment."
+              "id": "entity_leakage_signal",
+              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+              "path": "tests/TagGraphTest.php"
+            },
+            {
+              "severity": "warn",
+              "id": "entity_leakage_signal",
+              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+              "path": "src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php"
+            },
+            {
+              "severity": "warn",
+              "id": "entity_leakage_signal",
+              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+              "path": "src/Infrastructure/Persistence/Tag/PdoTagRepository.php"
+            },
+            {
+              "severity": "warn",
+              "id": "entity_leakage_signal",
+              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+              "path": "src/Service/Core/Tag/TagRepositoryAdapter.php"
+            },
+            {
+              "severity": "warn",
+              "id": "entity_leakage_signal",
+              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+              "path": "src/Service/Core/Tag/TagRepositoryInterface.php"
             }
           ],
-          "evidence": []
+          "evidence": [
+            "docs/architecture/decisions/adr-0001-tenancy-boundary.md",
+            "docs/architecture/decisions/adr-host-minimal-runtime-boundary.md",
+            "docs/architecture/tag-core-boundary.md",
+            "src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php",
+            "src/Infrastructure/Persistence/Tag/PdoTagRepository.php",
+            "src/Service/Core/Tag/TagRepositoryAdapter.php",
+            "src/Service/Core/Tag/TagRepositoryInterface.php",
+            "tests/CoreBoundaryAuditTest.php",
+            "tests/TagGraphTest.php",
+            "tools/audit/tag-core-boundary-audit.php"
+          ]
         },
         "runtime_surface": {
           "title": "Runtime & Application Surface",
-          "status": "warn",
-          "score": 9.0,
-          "summary": "Seed probe pending first deterministic repository assessment.",
-          "blockers": [
-            "Seed probe pending first deterministic repository assessment."
-          ],
-          "findings": [
-            {
-              "severity": "warn",
-              "id": "seed_pending",
-              "detail": "Seed probe pending first deterministic repository assessment."
-            }
-          ],
-          "evidence": []
+          "status": "pass",
+          "score": 10.0,
+          "summary": "No material probe findings detected in this family.",
+          "blockers": [],
+          "findings": [],
+          "evidence": [
+            "CHANGELOG.md",
+            "MANIFEST.json",
+            "deploy/docker/Dockerfile",
+            "docker-compose.yml",
+            "host-minimal/smoke-health.php",
+            "host/Dockerfile",
+            "tools/test-db/docker-compose.yml"
+          ]
         },
         "qa_behavior": {
           "title": "QA & Behavioral Assurance",
-          "status": "warn",
-          "score": 9.0,
-          "summary": "Seed probe pending first deterministic repository assessment.",
-          "blockers": [
-            "Seed probe pending first deterministic repository assessment."
-          ],
-          "findings": [
-            {
-              "severity": "warn",
-              "id": "seed_pending",
-              "detail": "Seed probe pending first deterministic repository assessment."
-            }
-          ],
-          "evidence": []
+          "status": "pass",
+          "score": 10.0,
+          "summary": "No material probe findings detected in this family.",
+          "blockers": [],
+          "findings": [],
+          "evidence": [
+            "composer.json",
+            "docker-compose.yml",
+            "docs/fixtures",
+            "fixtures",
+            "tests/"
+          ]
         },
         "documentation_suite": {
           "title": "Documentation & GitHub Suite",
           "status": "warn",
           "score": 9.0,
-          "summary": "Seed probe pending first deterministic repository assessment.",
+          "summary": "0 fail, 1 warn, 0 info findings detected.",
           "blockers": [
-            "Seed probe pending first deterministic repository assessment."
+            "Public/protected docblock coverage is 185/773 (24%)."
           ],
           "findings": [
             {
               "severity": "warn",
-              "id": "seed_pending",
-              "detail": "Seed probe pending first deterministic repository assessment."
+              "id": "docblock_coverage_low",
+              "detail": "Public/protected docblock coverage is 185/773 (24%)."
             }
           ],
-          "evidence": []
+          "evidence": [
+            ".github/workflows",
+            "CHANGELOG.md",
+            "README.md",
+            "RELEASE_NOTES.md",
+            "composer.json",
+            "php-docblock-ratio:185/773",
+            "tests/TagGeneratedOpenApiSurfaceTest.php"
+          ]
         },
         "delivery_observability": {
           "title": "Delivery & Observability",
-          "status": "warn",
-          "score": 9.0,
-          "summary": "Seed probe pending first deterministic repository assessment.",
-          "blockers": [
-            "Seed probe pending first deterministic repository assessment."
-          ],
-          "findings": [
-            {
-              "severity": "warn",
-              "id": "seed_pending",
-              "detail": "Seed probe pending first deterministic repository assessment."
-            }
-          ],
-          "evidence": []
+          "status": "pass",
+          "score": 10.0,
+          "summary": "No material probe findings detected in this family.",
+          "blockers": [],
+          "findings": [],
+          "evidence": [
+            ".github/workflows/ci.yml",
+            ".github/workflows/release-rc.yml",
+            "MANIFEST.json",
+            "RELEASE_NOTES.md",
+            "composer.json",
+            "docker-compose.yml",
+            "release/tag-rc5/RC5-E5-MANIFEST.json",
+            "repo-map.md",
+            "src/Ops/Metrics/PrometheusExporter.php",
+            "src/Ops/Metrics/TagMetrics.php",
+            "src/Service/Core/Tag/Metric/TagMetrics.php",
+            "tests/TagObservabilityDocsTruthTest.php"
+          ]
         },
         "solid_refactoring": {
           "title": "SOLID & Refactoring Pressure",
           "status": "warn",
-          "score": 9.0,
-          "summary": "Seed probe pending first deterministic repository assessment.",
+          "score": 0.0,
+          "summary": "0 fail, 12 warn, 1 info findings detected.",
           "blockers": [
-            "Seed probe pending first deterministic repository assessment."
+            "Class exposes 15 public methods; review interface segregation and SRP.",
+            "Class exposes 18 public methods; review interface segregation and SRP.",
+            "Class exposes 18 public methods; review interface segregation and SRP.",
+            "Class exposes 14 public methods; review interface segregation and SRP.",
+            "Class exposes 33 public methods; review interface segregation and SRP."
           ],
           "findings": [
             {
               "severity": "warn",
-              "id": "seed_pending",
-              "detail": "Seed probe pending first deterministic repository assessment."
+              "id": "public_api_pressure",
+              "detail": "Class exposes 15 public methods; review interface segregation and SRP.",
+              "path": "tests/SearchSuggestControllerContractTest.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 18 public methods; review interface segregation and SRP.",
+              "path": "tests/TagWriteUseCaseTest.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 18 public methods; review interface segregation and SRP.",
+              "path": "tests/TagRouteCatalogTruthTest.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 14 public methods; review interface segregation and SRP.",
+              "path": "sdk/php/tag/Client.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 33 public methods; review interface segregation and SRP.",
+              "path": "src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php"
+            },
+            {
+              "severity": "warn",
+              "id": "class_size_pressure",
+              "detail": "PHP file is large (385 lines); review SRP pressure.",
+              "path": "src/Infrastructure/Persistence/Tag/PdoTagRepository.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 34 public methods; review interface segregation and SRP.",
+              "path": "src/Infrastructure/Persistence/Tag/PdoTagRepository.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 34 public methods; review interface segregation and SRP.",
+              "path": "src/Service/Core/Tag/TagRepositoryAdapter.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 33 public methods; review interface segregation and SRP.",
+              "path": "src/Service/Core/Tag/TagRepositoryInterface.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 13 public methods; review interface segregation and SRP.",
+              "path": "src/Service/Core/Tag/TagReadRepositoryInterface.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 15 public methods; review interface segregation and SRP.",
+              "path": "src/Service/Core/Tag/TagWriteRepositoryInterface.php"
+            },
+            {
+              "severity": "warn",
+              "id": "class_size_pressure",
+              "detail": "PHP file is large (349 lines); review SRP pressure.",
+              "path": "src/Http/Api/Tag/AssignController.php"
+            },
+            {
+              "severity": "info",
+              "id": "copy_paste_origin_marker",
+              "detail": "Possible copy-paste provenance marker detected; review SOLID and ownership fit.",
+              "path": ".github/workflows/ci.yml"
             }
           ],
-          "evidence": []
+          "evidence": [
+            ".github/workflows/ci.yml",
+            "sdk/php/tag/Client.php",
+            "src/Http/Api/Tag/AssignController.php",
+            "src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php",
+            "src/Infrastructure/Persistence/Tag/PdoTagRepository.php",
+            "src/Service/Core/Tag/TagReadRepositoryInterface.php",
+            "src/Service/Core/Tag/TagRepositoryAdapter.php",
+            "src/Service/Core/Tag/TagRepositoryInterface.php",
+            "src/Service/Core/Tag/TagWriteRepositoryInterface.php",
+            "tests/SearchSuggestControllerContractTest.php",
+            "tests/TagRouteCatalogTruthTest.php",
+            "tests/TagWriteUseCaseTest.php"
+          ]
         }
       }
     },
@@ -6727,10 +6709,10 @@
     {
       "id": "qa_behavior",
       "title": "QA & Behavioral Assurance",
-      "average_score": 8.83,
+      "average_score": 8.88,
       "statuses": {
-        "pass": 0,
-        "warn": 20,
+        "pass": 1,
+        "warn": 19,
         "fail": 1,
         "not_applicable": 0
       }
@@ -6763,8 +6745,8 @@
       "average_score": 8.24,
       "statuses": {
         "pass": 1,
-        "warn": 19,
-        "fail": 1,
+        "warn": 20,
+        "fail": 0,
         "not_applicable": 0
       }
     }
