@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <style>
+    .t{font:700 32px Arial,sans-serif;fill:#111}.b{fill:#fff;stroke:#111;stroke-width:3}.h{font:700 22px Arial,sans-serif;fill:#111}.s{font:20px Arial,sans-serif;fill:#111}.a{stroke:#111;stroke-width:4;fill:none;marker-end:url(#m)}
+  </style>
+  <defs><marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#111"/></marker></defs>
+  <text x="700" y="55" class="t" text-anchor="middle">Where the Durable Moat May Move</text>
+  <rect x="180" y="150" rx="18" ry="18" width="1040" height="95" class="b"/>
+  <rect x="180" y="275" rx="18" ry="18" width="1040" height="95" class="b"/>
+  <rect x="180" y="400" rx="18" ry="18" width="1040" height="95" class="b"/>
+  <rect x="180" y="525" rx="18" ry="18" width="1040" height="95" class="b"/>
+  <rect x="180" y="650" rx="18" ry="18" width="1040" height="95" class="b"/>
+  <text x="210" y="185" class="h">Frontier model</text><text x="210" y="220" class="s">reasoning, generation, multimodal capability</text>
+  <text x="210" y="310" class="h">Tools and integrations</text><text x="210" y="345" class="s">search, CRM, email, browser, code, workflow actions</text>
+  <text x="210" y="435" class="h">Context and recall</text><text x="210" y="470" class="s">documents, history, preferences, state, retrieval</text>
+  <text x="210" y="560" class="h">Judgment layer</text><text x="210" y="595" class="s">verified patterns, confidence, decay, routing, escalation</text>
+  <text x="210" y="685" class="h">Operational capital</text><text x="210" y="720" class="s">compounded decision quality inside a specific environment</text>
+  <path d="M700 245 V268" class="a"/><path d="M700 370 V393" class="a"/><path d="M700 495 V518" class="a"/><path d="M700 620 V643" class="a"/>
+  <text x="120" y="820" class="s">The thesis is not that models stop mattering. It is that advantage may become harder to copy</text>
+  <text x="120" y="850" class="s">when it sits in a persistent judgment system rather than in model access alone.</text>
+</svg>
