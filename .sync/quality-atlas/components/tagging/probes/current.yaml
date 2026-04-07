@@ -1,10 +1,10 @@
 component: tagging
 title: Tagging
 snapshot:
-  date: '2026-04-07'
-  label: assessment-2026-04-07
+  date: '2026-04-06'
+  label: assessment-2026-04-06
   origin: quality-atlas deterministic probes
-  generated_at: '2026-04-07T04:36:22.517164+00:00'
+  generated_at: '2026-04-06T18:28:56.569496+00:00'
 repo_target:
   github_repository: smartresponsor/tagging
   local_path: ''
@@ -84,8 +84,8 @@ families:
     blockers: []
     findings: []
     evidence:
-    - CHANGELOG.md
     - MANIFEST.json
+    - config/tag_public_surface.php
     - deploy/docker/Dockerfile
     - docker-compose.yml
     - host-minimal/smoke-health.php
@@ -107,22 +107,26 @@ families:
   documentation_suite:
     title: Documentation & GitHub Suite
     status: warn
-    score: 9.0
-    summary: 0 fail, 1 warn, 0 info findings detected.
+    score: 8.0
+    summary: 0 fail, 2 warn, 0 info findings detected.
     blockers:
-    - Public/protected docblock coverage is 185/773 (24%).
+    - 'Missing expected documentation asset: CHANGELOG.md.'
+    - Public/protected docblock coverage is 185/756 (24%).
     findings:
     - severity: warn
+      id: missing_doc_asset
+      detail: 'Missing expected documentation asset: CHANGELOG.md.'
+    - severity: warn
       id: docblock_coverage_low
-      detail: Public/protected docblock coverage is 185/773 (24%).
+      detail: Public/protected docblock coverage is 185/756 (24%).
     evidence:
     - .github/workflows
-    - CHANGELOG.md
     - README.md
-    - RELEASE_NOTES.md
-    - composer.json
-    - php-docblock-ratio:185/773
-    - tests/TagGeneratedOpenApiSurfaceTest.php
+    - php-docblock-ratio:185/756
+    - tests/HostMinimalSurfaceTest.php
+    - tests/TagApiErrorCatalogTruthTest.php
+    - tests/TagOpenApiContractTest.php
+    - tests/TagPublicShellReadSurfaceTruthTest.php
   delivery_observability:
     title: Delivery & Observability
     status: pass
@@ -132,9 +136,8 @@ families:
     findings: []
     evidence:
     - .github/workflows/ci.yml
-    - .github/workflows/release-rc.yml
     - MANIFEST.json
-    - RELEASE_NOTES.md
+    - README.md
     - composer.json
     - docker-compose.yml
     - release/tag-rc5/RC5-E5-MANIFEST.json
@@ -223,7 +226,7 @@ families:
     - tests/TagWriteUseCaseTest.php
 summary:
   overall_status: warn
-  average_score: 7.43
+  average_score: 7.29
   status_counts:
     pass: 3
     warn: 4
@@ -237,7 +240,8 @@ summary:
     vertical leakage.
   - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
     vertical leakage.
-  - Documentation & GitHub Suite — Public/protected docblock coverage is 185/773 (24%).
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 185/756 (24%).
   - SOLID & Refactoring Pressure — Class exposes 15 public methods; review interface
     segregation and SRP.
   - SOLID & Refactoring Pressure — Class exposes 18 public methods; review interface
@@ -276,10 +280,11 @@ summary:
     documentation_suite:
       title: Documentation & GitHub Suite
       status: warn
-      score: 9.0
-      summary: 0 fail, 1 warn, 0 info findings detected.
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
       blockers:
-      - Public/protected docblock coverage is 185/773 (24%).
+      - 'Missing expected documentation asset: CHANGELOG.md.'
+      - Public/protected docblock coverage is 185/756 (24%).
     delivery_observability:
       title: Delivery & Observability
       status: pass

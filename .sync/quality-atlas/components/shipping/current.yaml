@@ -1,7 +1,7 @@
 component: shipping
 title: Shipping
 snapshot:
-  date: '2026-04-07'
+  date: '2026-04-06'
   label: pre-rc-seed
   ref: master
   origin: quality-atlas seed
