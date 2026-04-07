@@ -1,0 +1,12 @@
+== Why Bayesian Updating Fits the Problem
+
+One of the most useful ideas in this space is to treat judgment as something that should grow or weaken with evidence. That is why Bayesian logic is attractive here. Not because it magically solves intelligence, but because it gives a disciplined way to update confidence as outcomes arrive.
+
+A Beta-posterior style mechanism is especially intuitive for operational systems. Successful outcomes add weight in one direction. Failures add weight in another. Confidence is not declared once; it is earned through repeated exposure to evidence. And importantly, stale priors can be decayed if they stop receiving confirmation.
+
+.Confidence grows when evidence compounds
+image::/assets/posterior-confidence.svg[Confidence grows when evidence compounds, width=100%]
+
+This matters because many real workflows are neither static nor fully deterministic. A playbook that worked last quarter may become mediocre under new pricing, different competition, new regulation, or a changing customer mix. A usable judgment layer therefore cannot behave like an archive. It must behave like a living confidence system.
+
+Research on Bayesian confidence and evidence accumulation supports this broader framing: confidence is often best modeled not as a mood attached to a decision, but as a function of accumulated evidence and the path by which that evidence was gathered.footnote:[See J. Calder-Travis and W. J. Ma, “Bayesian Confidence in Optimal Decisions,” https://pmc.ncbi.nlm.nih.gov/articles/PMC7617410/, and related work on evidence accumulation and confidence judgments.] For AI systems, the implication is straightforward. Confidence should become a control surface. It should influence autonomy, escalation, retrieval breadth, model routing, and willingness to explore alternatives.
