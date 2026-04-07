@@ -1,94 +1,79 @@
 component: discovering
 title: Discovering
 snapshot:
-  date: '2026-04-07'
-  label: assessment-2026-04-07
+  date: '2026-04-06'
+  label: pre-rc-seed
   ref: master
-  origin: quality-atlas responses assessment
-  assessment_basis:
-    repository: smartresponsor/discovering
-    assessed_branch: master
-    assessed_commit: 234fc92f5a0c075b5ec7a5f2497c14a3ff341f9d
-    assessed_tag: null
-    trigger_reason: manual_override
-    previous_commit: null
-    previous_tag: null
-    current_head_commit: 234fc92f5a0c075b5ec7a5f2497c14a3ff341f9d
-    current_head_tag: null
-    changed_files_sample: []
-report_status: current
+  origin: quality-atlas seed
+report_status: draft
 groups:
   product_market:
-    score: 8.15
+    score: 7.7
+    source_axis: overall
   domain_architecture:
-    score: 8.0
-  data_persistence:
-    score: 7.9
-  api_contracts:
-    score: 8.0
+    score: 7.7
+    source_axis: overall
   runtime_performance:
-    score: 7.8
-  reliability_resilience:
-    score: 7.47
-  security_governance:
-    score: 7.4
-  delivery_operations:
-    score: 7.4
+    score: 7.7
+    source_axis: overall
   quality_testing:
-    score: 7.2
+    score: 7.7
+    source_axis: overall
+  delivery_operations:
+    score: 7.7
+    source_axis: overall
+  security_governance:
+    score: 7.7
+    source_axis: overall
 profile_axes:
   engineering:
-    product: 8.3
-    architecture: 8.0
-    data: 7.9
-    api: 8.0
-    runtime: 7.8
-    reliability: 7.6
+    product: 8.0
+    architecture: 7.8
+    data: 7.75
+    api: 7.9
+    runtime: 7.7
+    reliability: 7.55
     security: 7.4
     delivery: 7.4
-    quality: 7.2
-    overall: 7.8
+    quality: 6.9
+    overall: 7.7
   owner:
-    identity: 8.3
-    consistency: 8.0
+    identity: 8.0
+    consistency: 7.8
     delivery: 7.4
-    quality: 7.2
+    quality: 6.9
     governance: 7.4
-    fit: 8.15
-    debt: 3.4
-    overall: 7.8
+    fit: 8.0
+    debt: 3.65
+    overall: 7.7
   investor:
-    product: 8.3
-    architecture: 8.0
+    product: 8.0
+    architecture: 7.8
     delivery: 7.4
-    reliability: 7.5
+    reliability: 7.3
     governance: 7.4
-    clarity: 8.15
-    overall: 7.8
+    clarity: 8.0
+    overall: 7.7
   operations:
-    runtime: 7.8
-    reliability: 7.5
+    runtime: 7.7
+    reliability: 7.3
     observability: 7.4
     security: 7.4
-    traffic: 7.6
+    traffic: 7.55
     delivery: 7.4
-    recovery: 7.3
-    overall: 7.8
+    recovery: 7.15
+    overall: 7.7
 metrics:
   product:
     relevant: true
     maturity: solid
-    score: 8.3
-    summary: Product identity is explicit and coherent as an internal discovery/retrieval
-      component, supported by in-repo product and boundary manifests and Symfony-native
-      framing.
+    score: 8.0
+    summary: Component identity and market-facing shape are materially present.
     risks:
-    - Public positioning remains internal platform-first rather than hardened external
-      product
-    - Assessment should continue to be refreshed by scheduled scans to capture drift
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
     improvements:
-    - Keep PRODUCT_MANIFEST.md aligned with surface capabilities and API dumps
-    - Expose CI status and published docs links in README.md
+    - Refresh this metric from a scheduled repository assessment run.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -99,28 +84,18 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: composer.json
-      note: Metric-level assessment evidence.
-    - path: README.md
-      note: Metric-level assessment evidence.
-    - path: PRODUCT_MANIFEST.md
-      note: Metric-level assessment evidence.
-    - path: BOUNDING_MANIFEST.md
-      note: Metric-level assessment evidence.
-    - path: .antora-src/modules/ROOT/pages/component/discovering/report/index.adoc
-      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
   architecture:
     relevant: true
     maturity: solid
-    score: 8.0
-    summary: Architecture reads as a structured Symfony 7.x subsystem with manifests
-      and clear layering (Dto/Service/Controller) and service wiring via config.
+    score: 7.8
+    summary: Symfony-oriented architecture shape is materially present.
     risks:
-    - Deeper bounded-context articulation beyond directory structure not fully evidenced
-    - Technical debt and refactoring cadence not yet observable via CI signals
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
     improvements:
-    - Expand ARCHITECTURE_MANIFEST.md with context boundaries and dependencies
-    - Add architectural checks (e.g., layer rules) to qa_guard and run in CI
+    - Refresh this metric from a scheduled repository assessment run.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -131,30 +106,18 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: ARCHITECTURE_MANIFEST.md
-      note: Metric-level assessment evidence.
-    - path: BOUNDING_MANIFEST.md
-      note: Metric-level assessment evidence.
-    - path: src/Dto
-      note: Metric-level assessment evidence.
-    - path: src/Service
-      note: Metric-level assessment evidence.
-    - path: src/Controller
-      note: Metric-level assessment evidence.
-    - path: config/services.yaml
-      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
   runtime:
     relevant: true
     maturity: solid
-    score: 7.8
-    summary: Meaningful runtime surface exists (web UI, console) with runtime preflight
-      and security checks aiding operability.
+    score: 7.7
+    summary: Runtime and application surface are materially present.
     risks:
-    - No explicit containerization, autoscaling, or environment playbooks evident
-    - PHP 8.4+ requirement narrows compatible runtimes
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
     improvements:
-    - Enforce tools/runtime_preflight.php and tools/security_preflight.php in CI
-    - Document runbooks and supported PHP/Symfony matrix in README.md
+    - Refresh this metric from a scheduled repository assessment run.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -165,33 +128,18 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: public/index.php
-      note: Metric-level assessment evidence.
-    - path: bin/console
-      note: Metric-level assessment evidence.
-    - path: templates/base.html.twig
-      note: Metric-level assessment evidence.
-    - path: templates/discovery
-      note: Metric-level assessment evidence.
-    - path: tools/runtime_preflight.php
-      note: Metric-level assessment evidence.
-    - path: tools/security_preflight.php
-      note: Metric-level assessment evidence.
-    - path: composer.json
-      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
   qa:
     relevant: true
     maturity: partial
-    score: 7.2
-    summary: Multi-suite PHPUnit scaffolding and QA guard tooling are present, with
-      policy and static analysis configs supplied as *.dist awaiting CI enforcement.
+    score: 6.9
+    summary: Testing and QA posture are materially present but remain pre-RC.
     risks:
-    - CI execution of tests and analysis is not evidenced
-    - phpunit.xml and phpstan.neon not materialized may cause local drift
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
     improvements:
-    - Promote phpunit.xml.dist and phpstan.neon.dist to active configs and commit
-      local overrides
-    - Run composer ci in GitHub Actions on push/PR and publish coverage/artifacts
+    - Refresh this metric from a scheduled repository assessment run.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -202,37 +150,19 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: tests/Unit
-      note: Metric-level assessment evidence.
-    - path: tests/Functional
-      note: Metric-level assessment evidence.
-    - path: tests/Contract
-      note: Metric-level assessment evidence.
-    - path: tests/Behavioral
-      note: Metric-level assessment evidence.
-    - path: phpunit.xml.dist
-      note: Metric-level assessment evidence.
-    - path: phpstan.neon.dist
-      note: Metric-level assessment evidence.
-    - path: tools/qa_guard.php
-      note: Metric-level assessment evidence.
-    - path: tools/docblock_policy_check.php
-      note: Metric-level assessment evidence.
-    - path: composer.json
-      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
   ops:
     relevant: true
     maturity: partial
     score: 7.4
-    summary: Operational posture shows early strength via preflight/security scripts
-      and documentation/report surfaces, though explicit observability and deployment
-      automation are light.
+    summary: Operational, governance, and security posture are materially present
+      but remain pre-RC.
     risks:
-    - Observability (metrics/tracing/logging) and alerting hooks not shown
-    - Delivery automation specifics in .github/workflows are not visible
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
     improvements:
-    - Add CI workflows to run preflights, lint, tests, and publish docs
-    - Document/logging and metrics strategy; add health endpoints where applicable
+    - Refresh this metric from a scheduled repository assessment run.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -243,27 +173,18 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: tools/security_preflight.php
-      note: Metric-level assessment evidence.
-    - path: tools/runtime_preflight.php
-      note: Metric-level assessment evidence.
-    - path: .github/workflows
-      note: Metric-level assessment evidence.
-    - path: report/discovering-status-2026-04-03.md
-      note: Metric-level assessment evidence.
-    - path: docs/antora.yml
-      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
   market:
     relevant: true
     maturity: solid
     score: 8.0
-    summary: Positioning aligns with enterprise discovery/retrieval classes, expressed
-      as a Symfony-native internal platform capability.
+    summary: Business-facing and portfolio-facing alignment is materially present.
     risks:
-    - Proprietary license and internal focus may limit external product signals
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
     improvements:
-    - Keep report and README language consistent with discovery/retrieval leader line
-    - Surface API docs via OpenAPI dump scripts for ecosystem consumers
+    - Refresh this metric from a scheduled repository assessment run.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -274,27 +195,19 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: composer.json
-      note: Metric-level assessment evidence.
-    - path: README.md
-      note: Metric-level assessment evidence.
-    - path: .antora-src/modules/ROOT/pages/component/discovering/report/index.adoc
-      note: Metric-level assessment evidence.
-    - path: docs/antora.yml
-      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
   overall:
     relevant: true
     maturity: solid
-    score: 7.8
-    summary: Pre-RC component with clear discovery thesis, structured architecture,
-      and seeded QA/ops; modest CI and observability hardening should move it toward
-      RC.
+    score: 7.7
+    summary: Overall release-candidate direction is visible, but the component remains
+      in pre-RC life.
     risks:
-    - Pipeline enforcement and runtime observability are not yet evidenced
-    - Config *.dist reliance may hide local divergence until CI is in place
+    - Assessment seeded from current pre-RC atlas and should be enriched by regular
+      repository scans.
     improvements:
-    - Stand up CI to run composer ci and publish docs
-    - Promote *.dist configs, enforce preflights, and add observability documentation
+    - Refresh this metric from a scheduled repository assessment run.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -305,111 +218,89 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: report/discovering-installability-proof-2026-04-03.md
-      note: Metric-level assessment evidence.
-    - path: report/discovering-status-2026-04-03.md
-      note: Metric-level assessment evidence.
-    - path: .github/workflows
-      note: Metric-level assessment evidence.
-    - path: tools/runtime_preflight.php
-      note: Metric-level assessment evidence.
-    - path: tools/security_preflight.php
-      note: Metric-level assessment evidence.
+    - path: .antora-src/modules/ROOT/pages/quality-atlas/dataset.json
+      note: Current atlas dataset seed.
 development_driving:
   overall_status: warn
-  average_score: 7.25
+  average_score: 9.0
   status_counts:
     pass: 0
     warn: 7
     fail: 0
     not_applicable: 0
   top_blockers:
-  - Canon & Structure — Legacy/deprecated marker found in tree.
-  - Canon & Structure — PHP namespace does not use the default App\ root.
-  - Architecture & Boundaries — No obvious boundary descriptor files were detected.
-  - Runtime & Application Surface — No Docker or compose files were detected.
-  - QA & Behavioral Assurance — No fixtures directories were detected.
-  - QA & Behavioral Assurance — Neither Playwright nor Symfony Panther markers were
-    detected.
-  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
-  - Documentation & GitHub Suite — Public/protected docblock coverage is 100/676 (15%).
+  - Canon & Structure — Seed probe pending first deterministic repository assessment.
+  - Architecture & Boundaries — Seed probe pending first deterministic repository
+    assessment.
+  - Runtime & Application Surface — Seed probe pending first deterministic repository
+    assessment.
+  - QA & Behavioral Assurance — Seed probe pending first deterministic repository
+    assessment.
+  - Documentation & GitHub Suite — Seed probe pending first deterministic repository
+    assessment.
+  - Delivery & Observability — Seed probe pending first deterministic repository assessment.
+  - SOLID & Refactoring Pressure — Seed probe pending first deterministic repository
+    assessment.
   families:
     canon_structure:
       title: Canon & Structure
       status: warn
-      score: 8.0
-      summary: 0 fail, 2 warn, 0 info findings detected.
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
       blockers:
-      - Legacy/deprecated marker found in tree.
-      - PHP namespace does not use the default App\ root.
+      - Seed probe pending first deterministic repository assessment.
     architecture_boundaries:
       title: Architecture & Boundaries
       status: warn
       score: 9.0
-      summary: 0 fail, 1 warn, 0 info findings detected.
+      summary: Seed probe pending first deterministic repository assessment.
       blockers:
-      - No obvious boundary descriptor files were detected.
+      - Seed probe pending first deterministic repository assessment.
     runtime_surface:
       title: Runtime & Application Surface
       status: warn
       score: 9.0
-      summary: 0 fail, 1 warn, 0 info findings detected.
+      summary: Seed probe pending first deterministic repository assessment.
       blockers:
-      - No Docker or compose files were detected.
+      - Seed probe pending first deterministic repository assessment.
     qa_behavior:
       title: QA & Behavioral Assurance
       status: warn
-      score: 8.0
-      summary: 0 fail, 2 warn, 0 info findings detected.
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
       blockers:
-      - No fixtures directories were detected.
-      - Neither Playwright nor Symfony Panther markers were detected.
+      - Seed probe pending first deterministic repository assessment.
     documentation_suite:
       title: Documentation & GitHub Suite
       status: warn
-      score: 8.0
-      summary: 0 fail, 2 warn, 0 info findings detected.
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
       blockers:
-      - 'Missing expected documentation asset: CHANGELOG.md.'
-      - Public/protected docblock coverage is 100/676 (15%).
+      - Seed probe pending first deterministic repository assessment.
     delivery_observability:
       title: Delivery & Observability
       status: warn
-      score: 8.75
-      summary: 0 fail, 1 warn, 1 info findings detected.
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
       blockers:
-      - No GitHub workflow files were detected.
+      - Seed probe pending first deterministic repository assessment.
     solid_refactoring:
       title: SOLID & Refactoring Pressure
       status: warn
-      score: 0.0
-      summary: 0 fail, 12 warn, 0 info findings detected.
+      score: 9.0
+      summary: Seed probe pending first deterministic repository assessment.
       blockers:
-      - Class exposes 19 public methods; review interface segregation and SRP.
-      - Class exposes 28 public methods; review interface segregation and SRP.
-      - Constructor injects 7 parameters; review dependency inversion and class responsibilities.
+      - Seed probe pending first deterministic repository assessment.
 strengths:
-- Clear product identity and scope captured in PRODUCT_MANIFEST.md and README.md
-- Structured Symfony 7.x architecture with manifests and typed layers (Dto/Service/Controller)
-- Multi-surface runtime (console, web UI) with preflight checks
-- Multiple test suites scaffolded (Unit, Functional, Contract, Behavioral)
-- Seeded QA/security tooling (qa_guard, docblock policy, security/runtime preflight)
-- Active documentation/report posture (Antora docs, installability/status reports)
+- 'Highest current axis: product 8.0/10'
+- Component is already represented in the current pre-RC Atlas.
 risks:
-- CI execution depth not evidenced; presence of .github/workflows without visible
-  pipeline guarantees
-- phpunit.xml and phpstan.neon only as *.dist; local policy/config materialization
-  may lag
-- Limited explicit observability/deployment automation evidence
-- PHP 8.4+ requirement may constrain deployment targets if environments trail
+- Snapshot was seeded from the current atlas and does not yet contain repository-scan
+  deltas.
+- Structured metrics should be refreshed by the scheduled assessment workflow.
 recommended_next_actions:
-- Promote phpunit.xml.dist and phpstan.neon.dist to enforced configs in CI
-- Wire a GitHub Actions workflow to run composer ci (preflights, lint, tests) on PRs/main
-- Run OpenAPI dump scripts in CI and publish artifacts to docs/report
-- Document/verify runtime observability and deployment automation in repo (metrics/logging
-  steps)
-- Gate runtime/security preflight scripts in CI to fail on violations
-- Add a status badge linking to CI runs in README.md
+- Run scheduled repository assessment and enrich narrative evidence.
+- Regenerate component report blocks from the current snapshot contract.
 evidence:
 - path: .antora-src/modules/ROOT/pages/component/discovering/report/index.adoc
   note: Current component report page if present.
@@ -417,71 +308,3 @@ evidence:
   note: Seeded atlas dataset source.
 - path: .sync/quality-atlas/components/discovering/probes/current.yaml
   note: Deterministic development-driving probe layer.
-- path: composer.json
-  note: Assessment evidence path.
-- path: README.md
-  note: Assessment evidence path.
-- path: PRODUCT_MANIFEST.md
-  note: Assessment evidence path.
-- path: ARCHITECTURE_MANIFEST.md
-  note: Assessment evidence path.
-- path: BOUNDING_MANIFEST.md
-  note: Assessment evidence path.
-- path: src/MANIFEST.md
-  note: Assessment evidence path.
-- path: src/Controller
-  note: Assessment evidence path.
-- path: src/Service
-  note: Assessment evidence path.
-- path: src/Dto
-  note: Assessment evidence path.
-- path: config/services.yaml
-  note: Assessment evidence path.
-- path: public/index.php
-  note: Assessment evidence path.
-- path: bin/console
-  note: Assessment evidence path.
-- path: templates/base.html.twig
-  note: Assessment evidence path.
-- path: templates/discovery
-  note: Assessment evidence path.
-- path: tests
-  note: Assessment evidence path.
-- path: tests/Unit
-  note: Assessment evidence path.
-- path: tests/Functional
-  note: Assessment evidence path.
-- path: tests/Contract
-  note: Assessment evidence path.
-- path: tests/Behavioral
-  note: Assessment evidence path.
-- path: phpunit.xml.dist
-  note: Assessment evidence path.
-- path: phpstan.neon.dist
-  note: Assessment evidence path.
-- path: tools/qa_guard.php
-  note: Assessment evidence path.
-- path: tools/runtime_preflight.php
-  note: Assessment evidence path.
-- path: tools/security_preflight.php
-  note: Assessment evidence path.
-- path: tools/docblock_policy_check.php
-  note: Assessment evidence path.
-- path: report/discovering-installability-proof-2026-04-03.md
-  note: Assessment evidence path.
-- path: report/discovering-status-2026-04-03.md
-  note: Assessment evidence path.
-- path: docs/antora.yml
-  note: Assessment evidence path.
-- path: .github/workflows
-  note: Assessment evidence path.
-assessment_notes:
-- Discovering presents as a Symfony 7.x discovery/retrieval subsystem with clear identity,
-  structured architecture manifests, multi-surface runtime, and seeded QA/ops tooling;
-  it remains pre-RC but materially organized for portfolio integration.
-- Assessment grounded in repository tree and manifests at commit 234fc92 on branch
-  master
-- Report excerpts sourced from in-repo Antora report and recent status/installability
-  reports
-- Repository facts captured 2026-04-07T01:02:04.662245Z
-assessment_confidence: medium

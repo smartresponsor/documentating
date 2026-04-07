@@ -1,167 +1,302 @@
 component: tagging
 title: Tagging
 snapshot:
-  date: '2026-04-07'
-  label: pre-rc-seed
-  origin: quality-atlas probe seed
-  generated_at: '2026-04-07T01:02:02.451828+00:00'
+  date: '2026-04-06'
+  label: assessment-2026-04-06
+  origin: quality-atlas deterministic probes
+  generated_at: '2026-04-06T18:28:56.569496+00:00'
 repo_target:
-  github_repository: ''
+  github_repository: smartresponsor/tagging
   local_path: ''
   default_branch: master
 families:
   canon_structure:
     title: Canon & Structure
     status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
+    score: 8.0
+    summary: 0 fail, 2 warn, 0 info findings detected.
     blockers:
-    - Seed probe pending first deterministic repository assessment.
+    - PHP namespace does not use the default App\ root.
+    - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly
+      separated.
     findings:
     - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+      id: namespace_drift
+      detail: PHP namespace does not use the default App\ root.
+      path: tests/TagSmokeOpsScriptsTest.php
+    - severity: warn
+      id: dialect_mixing
+      detail: Both MySQL and PostgreSQL dialect markers are present; keep dialect
+        trees clearly separated.
+      path: docs/acceptance/e14.md
+    evidence:
+    - docs/acceptance/e14.md
+    - repo-map.md
+    - tests/TagSmokeOpsScriptsTest.php
   architecture_boundaries:
     title: Architecture & Boundaries
     status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
+    score: 5.0
+    summary: 0 fail, 5 warn, 0 info findings detected.
     blockers:
-    - Seed probe pending first deterministic repository assessment.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
     findings:
     - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/TagGraphTest.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/Infrastructure/Persistence/Tag/PdoTagRepository.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/Service/Core/Tag/TagRepositoryAdapter.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/Service/Core/Tag/TagRepositoryInterface.php
+    evidence:
+    - docs/architecture/decisions/adr-0001-tenancy-boundary.md
+    - docs/architecture/decisions/adr-host-minimal-runtime-boundary.md
+    - docs/architecture/tag-core-boundary.md
+    - src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php
+    - src/Infrastructure/Persistence/Tag/PdoTagRepository.php
+    - src/Service/Core/Tag/TagRepositoryAdapter.php
+    - src/Service/Core/Tag/TagRepositoryInterface.php
+    - tests/CoreBoundaryAuditTest.php
+    - tests/TagGraphTest.php
+    - tools/audit/tag-core-boundary-audit.php
   runtime_surface:
     title: Runtime & Application Surface
-    status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
-    blockers:
-    - Seed probe pending first deterministic repository assessment.
-    findings:
-    - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - MANIFEST.json
+    - config/tag_public_surface.php
+    - deploy/docker/Dockerfile
+    - docker-compose.yml
+    - host-minimal/smoke-health.php
+    - host/Dockerfile
+    - tools/test-db/docker-compose.yml
   qa_behavior:
     title: QA & Behavioral Assurance
-    status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
-    blockers:
-    - Seed probe pending first deterministic repository assessment.
-    findings:
-    - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - composer.json
+    - docker-compose.yml
+    - docs/fixtures
+    - fixtures
+    - tests/
   documentation_suite:
     title: Documentation & GitHub Suite
     status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
+    score: 8.0
+    summary: 0 fail, 2 warn, 0 info findings detected.
     blockers:
-    - Seed probe pending first deterministic repository assessment.
+    - 'Missing expected documentation asset: CHANGELOG.md.'
+    - Public/protected docblock coverage is 185/756 (24%).
     findings:
     - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+      id: missing_doc_asset
+      detail: 'Missing expected documentation asset: CHANGELOG.md.'
+    - severity: warn
+      id: docblock_coverage_low
+      detail: Public/protected docblock coverage is 185/756 (24%).
+    evidence:
+    - .github/workflows
+    - README.md
+    - php-docblock-ratio:185/756
+    - tests/HostMinimalSurfaceTest.php
+    - tests/TagApiErrorCatalogTruthTest.php
+    - tests/TagOpenApiContractTest.php
+    - tests/TagPublicShellReadSurfaceTruthTest.php
   delivery_observability:
     title: Delivery & Observability
-    status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
-    blockers:
-    - Seed probe pending first deterministic repository assessment.
-    findings:
-    - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - .github/workflows/ci.yml
+    - MANIFEST.json
+    - README.md
+    - composer.json
+    - docker-compose.yml
+    - release/tag-rc5/RC5-E5-MANIFEST.json
+    - repo-map.md
+    - src/Ops/Metrics/PrometheusExporter.php
+    - src/Ops/Metrics/TagMetrics.php
+    - src/Service/Core/Tag/Metric/TagMetrics.php
+    - tests/TagObservabilityDocsTruthTest.php
   solid_refactoring:
     title: SOLID & Refactoring Pressure
     status: warn
-    score: 9.0
-    summary: Seed probe pending first deterministic repository assessment.
+    score: 0.0
+    summary: 0 fail, 12 warn, 1 info findings detected.
     blockers:
-    - Seed probe pending first deterministic repository assessment.
+    - Class exposes 15 public methods; review interface segregation and SRP.
+    - Class exposes 18 public methods; review interface segregation and SRP.
+    - Class exposes 18 public methods; review interface segregation and SRP.
+    - Class exposes 14 public methods; review interface segregation and SRP.
+    - Class exposes 33 public methods; review interface segregation and SRP.
     findings:
     - severity: warn
-      id: seed_pending
-      detail: Seed probe pending first deterministic repository assessment.
-    evidence: []
+      id: public_api_pressure
+      detail: Class exposes 15 public methods; review interface segregation and SRP.
+      path: tests/SearchSuggestControllerContractTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 18 public methods; review interface segregation and SRP.
+      path: tests/TagWriteUseCaseTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 18 public methods; review interface segregation and SRP.
+      path: tests/TagRouteCatalogTruthTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 14 public methods; review interface segregation and SRP.
+      path: sdk/php/tag/Client.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 33 public methods; review interface segregation and SRP.
+      path: src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php
+    - severity: warn
+      id: class_size_pressure
+      detail: PHP file is large (385 lines); review SRP pressure.
+      path: src/Infrastructure/Persistence/Tag/PdoTagRepository.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 34 public methods; review interface segregation and SRP.
+      path: src/Infrastructure/Persistence/Tag/PdoTagRepository.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 34 public methods; review interface segregation and SRP.
+      path: src/Service/Core/Tag/TagRepositoryAdapter.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 33 public methods; review interface segregation and SRP.
+      path: src/Service/Core/Tag/TagRepositoryInterface.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 13 public methods; review interface segregation and SRP.
+      path: src/Service/Core/Tag/TagReadRepositoryInterface.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 15 public methods; review interface segregation and SRP.
+      path: src/Service/Core/Tag/TagWriteRepositoryInterface.php
+    - severity: warn
+      id: class_size_pressure
+      detail: PHP file is large (349 lines); review SRP pressure.
+      path: src/Http/Api/Tag/AssignController.php
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: .github/workflows/ci.yml
+    evidence:
+    - .github/workflows/ci.yml
+    - sdk/php/tag/Client.php
+    - src/Http/Api/Tag/AssignController.php
+    - src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php
+    - src/Infrastructure/Persistence/Tag/PdoTagRepository.php
+    - src/Service/Core/Tag/TagReadRepositoryInterface.php
+    - src/Service/Core/Tag/TagRepositoryAdapter.php
+    - src/Service/Core/Tag/TagRepositoryInterface.php
+    - src/Service/Core/Tag/TagWriteRepositoryInterface.php
+    - tests/SearchSuggestControllerContractTest.php
+    - tests/TagRouteCatalogTruthTest.php
+    - tests/TagWriteUseCaseTest.php
 summary:
   overall_status: warn
-  average_score: 9.0
+  average_score: 7.29
   status_counts:
-    pass: 0
-    warn: 7
+    pass: 3
+    warn: 4
     fail: 0
     not_applicable: 0
   top_blockers:
-  - Canon & Structure — Seed probe pending first deterministic repository assessment.
-  - Architecture & Boundaries — Seed probe pending first deterministic repository
-    assessment.
-  - Runtime & Application Surface — Seed probe pending first deterministic repository
-    assessment.
-  - QA & Behavioral Assurance — Seed probe pending first deterministic repository
-    assessment.
-  - Documentation & GitHub Suite — Seed probe pending first deterministic repository
-    assessment.
-  - Delivery & Observability — Seed probe pending first deterministic repository assessment.
-  - SOLID & Refactoring Pressure — Seed probe pending first deterministic repository
-    assessment.
+  - Canon & Structure — PHP namespace does not use the default App\ root.
+  - Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep
+    dialect trees clearly separated.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 185/756 (24%).
+  - SOLID & Refactoring Pressure — Class exposes 15 public methods; review interface
+    segregation and SRP.
+  - SOLID & Refactoring Pressure — Class exposes 18 public methods; review interface
+    segregation and SRP.
   families:
     canon_structure:
       title: Canon & Structure
       status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
       blockers:
-      - Seed probe pending first deterministic repository assessment.
+      - PHP namespace does not use the default App\ root.
+      - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees
+        clearly separated.
     architecture_boundaries:
       title: Architecture & Boundaries
       status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
+      score: 5.0
+      summary: 0 fail, 5 warn, 0 info findings detected.
       blockers:
-      - Seed probe pending first deterministic repository assessment.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
     runtime_surface:
       title: Runtime & Application Surface
-      status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
-      blockers:
-      - Seed probe pending first deterministic repository assessment.
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
     qa_behavior:
       title: QA & Behavioral Assurance
-      status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
-      blockers:
-      - Seed probe pending first deterministic repository assessment.
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
     documentation_suite:
       title: Documentation & GitHub Suite
       status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
       blockers:
-      - Seed probe pending first deterministic repository assessment.
+      - 'Missing expected documentation asset: CHANGELOG.md.'
+      - Public/protected docblock coverage is 185/756 (24%).
     delivery_observability:
       title: Delivery & Observability
-      status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
-      blockers:
-      - Seed probe pending first deterministic repository assessment.
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
     solid_refactoring:
       title: SOLID & Refactoring Pressure
       status: warn
-      score: 9.0
-      summary: Seed probe pending first deterministic repository assessment.
+      score: 0.0
+      summary: 0 fail, 12 warn, 1 info findings detected.
       blockers:
-      - Seed probe pending first deterministic repository assessment.
+      - Class exposes 15 public methods; review interface segregation and SRP.
+      - Class exposes 18 public methods; review interface segregation and SRP.
+      - Class exposes 18 public methods; review interface segregation and SRP.
