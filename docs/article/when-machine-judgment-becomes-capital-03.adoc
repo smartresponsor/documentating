@@ -1,0 +1,16 @@
+== From Stored Context to Verified Judgment
+
+The deeper move is to stop treating persistence as transcript retention and start treating it as evidence-weighted judgment.
+
+In practical terms, that means a system should preserve more than a summary of what was said. It should preserve claims like these:
+
+* In this class of sales conversations, opening with proof before price improves reply quality.
+* In this class of support tickets, escalating early reduces total time to resolution.
+* In this account profile, a direct call is better than a long email sequence.
+* In this coding environment, this verification path is more reliable than that one.
+
+Now the system is not merely remembering facts. It is storing and updating judgments about action quality.
+
+That is much closer to how valuable human expertise actually works. The best operators are rarely superior because they can recall more raw information than everyone else. They are superior because they have compressed repeated feedback into high-quality action bias. They know what to try first, what to distrust, what to avoid, and when to slow down.
+
+A machine system that can accumulate this kind of action-shaping experience begins to resemble a professional asset, not just a software feature.
