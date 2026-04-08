@@ -1562,7 +1562,7 @@
       "component": "accessing",
       "title": "Accessing",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1624,7 +1624,7 @@
       "component": "addressing",
       "title": "Addressing",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1686,7 +1686,7 @@
       "component": "analysing",
       "title": "Analysing",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1748,7 +1748,7 @@
       "component": "applicating",
       "title": "Applicating",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1890,7 +1890,7 @@
       "component": "billing",
       "title": "Billing",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1952,7 +1952,7 @@
       "component": "cataloging",
       "title": "Cataloging",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2014,7 +2014,7 @@
       "component": "discovering",
       "title": "Discovering",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2138,7 +2138,7 @@
       "component": "indexing",
       "title": "Indexing",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2200,7 +2200,7 @@
       "component": "locating",
       "title": "Locating",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2262,7 +2262,7 @@
       "component": "messaging",
       "title": "Messaging",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2324,7 +2324,7 @@
       "component": "ordering",
       "title": "Ordering",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2386,7 +2386,7 @@
       "component": "paying",
       "title": "Paying",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2448,7 +2448,7 @@
       "component": "projecting",
       "title": "Projecting",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2510,7 +2510,7 @@
       "component": "rolling",
       "title": "Rolling",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2572,7 +2572,7 @@
       "component": "runtiming",
       "title": "Runtiming",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2634,7 +2634,7 @@
       "component": "shipping",
       "title": "Shipping",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2696,19 +2696,19 @@
       "component": "tagging",
       "title": "Tagging",
       "snapshot": {
-        "date": "2026-04-06",
-        "label": "assessment-2026-04-06",
+        "date": "2026-04-08",
+        "label": "assessment-2026-04-08",
         "ref": "master",
         "origin": "quality-atlas responses assessment",
         "assessment_basis": {
           "repository": "smartresponsor/tagging",
           "assessed_branch": "master",
-          "assessed_commit": "5ce284ea116d4737e198763106b47ccaf80d5018",
+          "assessed_commit": "cd92d3514dbe61d9fc316876501bd0b59bc52bbd",
           "assessed_tag": null,
           "trigger_reason": "manual_override",
           "previous_commit": null,
           "previous_tag": null,
-          "current_head_commit": "5ce284ea116d4737e198763106b47ccaf80d5018",
+          "current_head_commit": "cd92d3514dbe61d9fc316876501bd0b59bc52bbd",
           "current_head_tag": null,
           "changed_files_sample": []
         }
@@ -2758,24 +2758,25 @@
       },
       "overall": 8.6,
       "strengths": [
-        "Clear canonical product identity (composer description, docs)",
-        "Explicit HTTP contract directory and route/catalog configs",
-        "Host-minimal runtime and Docker compose for local runs",
-        "QA/tooling hooks present (phpunit/phpstan/phpmd/cs-fixer, Playwright)",
-        "Ops artifacts (alerts, Grafana) and CI workflows in place"
+        "Clear canonical tagging identity (composer description, README, docs)",
+        "Runnable host-minimal runtime with Docker and local server assets",
+        "Explicit HTTP contract surface and route/public-surface catalogs",
+        "Governance configs for RBAC, quotas, security, observability, webhooks",
+        "Multi-band testing/tooling present: PHPUnit, PHPStan, Panther, Playwright",
+        "GitHub Actions workflows present"
       ],
       "risks": [
-        "No git tags detected for release/version traceability",
-        "Antora module/navigation pages not detected in repo tree",
-        "phpunit/phpstan only .dist configs committed; local tuning unknown",
-        "E2E/browser test presence inferred from tooling; test suites not enumerated in facts"
+        "No git tags found; release maturity not yet signaled",
+        "Antora report_path not present in repo tree; docs surfacing path may be mismatched",
+        "Test and static-analysis configs are .dist; CI execution/coverage not evidenced",
+        "E2E test tooling declared but CI wiring and outcomes not evidenced"
       ]
     },
     {
       "component": "taxating",
       "title": "Taxating",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2837,7 +2838,7 @@
       "component": "vendoring",
       "title": "Vendoring",
       "snapshot": {
-        "date": "2026-04-06",
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2925,6 +2926,20 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.5
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.5
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.5
       }
     ],
     "addressing": [
@@ -2941,6 +2956,20 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.5
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.5
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.5
       }
     ],
     "analysing": [
@@ -2953,6 +2982,39 @@
       },
       {
         "date": "2026-04-06",
+        "label": "assessment-2026-04-06",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/analysing",
+          "assessed_branch": "master",
+          "assessed_commit": "588b19e2d7004e70521f3980969cd871ab17c530",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "588b19e2d7004e70521f3980969cd871ab17c530",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
+        "overall": 8.0
+      },
+      {
+        "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.0
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.0
+      },
+      {
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -2969,6 +3031,20 @@
       },
       {
         "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.4
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.4
+      },
+      {
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -3010,6 +3086,20 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.8
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.8
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.8
       }
     ],
     "cataloging": [
@@ -3026,6 +3116,20 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.4
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.4
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.4
       }
     ],
     "discovering": [
@@ -3038,6 +3142,39 @@
       },
       {
         "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 7.7
+      },
+      {
+        "date": "2026-04-07",
+        "label": "assessment-2026-04-07",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/discovering",
+          "assessed_branch": "master",
+          "assessed_commit": "234fc92f5a0c075b5ec7a5f2497c14a3ff341f9d",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "234fc92f5a0c075b5ec7a5f2497c14a3ff341f9d",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
+        "overall": 7.8
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 7.7
+      },
+      {
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -3100,6 +3237,20 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.4
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.4
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.4
       }
     ],
     "locating": [
@@ -3112,6 +3263,20 @@
       },
       {
         "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -3151,6 +3316,39 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.6
+      },
+      {
+        "date": "2026-04-07",
+        "label": "assessment-2026-04-07",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/messaging",
+          "assessed_branch": "master",
+          "assessed_commit": "b7b63279e3233cc7ce123f6e3ed766ead01442bb",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "b7b63279e3233cc7ce123f6e3ed766ead01442bb",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
       }
     ],
     "ordering": [
@@ -3163,6 +3361,20 @@
       },
       {
         "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.7
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.7
+      },
+      {
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -3202,6 +3414,20 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 9.0
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 9.0
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 9.0
       }
     ],
     "projecting": [
@@ -3214,6 +3440,20 @@
       },
       {
         "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.1
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.1
+      },
+      {
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -3234,6 +3474,20 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.3
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.3
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.3
       }
     ],
     "runtiming": [
@@ -3250,6 +3504,20 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.8
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.8
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.8
       }
     ],
     "shipping": [
@@ -3262,6 +3530,20 @@
       },
       {
         "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 9.0
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 9.0
+      },
+      {
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",
@@ -3301,6 +3583,58 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.6
+      },
+      {
+        "date": "2026-04-07",
+        "label": "assessment-2026-04-07",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/tagging",
+          "assessed_branch": "master",
+          "assessed_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "b6c6a0bd2092f91f52607cfab85bae05ba326e9d",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-08",
+        "label": "assessment-2026-04-08",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/tagging",
+          "assessed_branch": "master",
+          "assessed_commit": "cd92d3514dbe61d9fc316876501bd0b59bc52bbd",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "cd92d3514dbe61d9fc316876501bd0b59bc52bbd",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
       }
     ],
     "taxating": [
@@ -3317,6 +3651,20 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.6
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
+      },
+      {
+        "date": "2026-04-08",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.6
       }
     ],
     "vendoring": [
@@ -3329,6 +3677,20 @@
       },
       {
         "date": "2026-04-06",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.8
+      },
+      {
+        "date": "2026-04-07",
+        "label": "pre-rc-seed",
+        "ref": "master",
+        "origin": "quality-atlas seed",
+        "overall": 8.8
+      },
+      {
+        "date": "2026-04-08",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed",

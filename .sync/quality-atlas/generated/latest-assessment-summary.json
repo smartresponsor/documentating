@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-06T18:30:24.062154+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260406T182855Z",
+  "generated_at": "2026-04-08T05:46:43.094668+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260408T054556Z",
   "mode": "responses",
   "components": [
     {
       "component": "tagging",
       "title": "Tagging",
       "overall": 8.6,
-      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/tagging/history/2026-04-06-assessment-2026-04-06.yaml",
-      "summary": "Tagging presents as a governed, canonical tagging runtime with explicit HTTP contracts, rich configuration, host-minimal runnable surface, and ops assets, reading as a strong pre-RC component with a few release-hygiene gaps."
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/tagging/history/2026-04-08-assessment-2026-04-08.yaml",
+      "summary": "Pre-RC, governed tagging-runtime with clear identity, runnable host-minimal, strong config/governance, and multi-band test tooling; finalize release and docs wiring to reach RC."
     }
   ],
   "failures": [],

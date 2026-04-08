@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-06T18:28:54.940618+00:00",
+  "generated_at": "2026-04-08T05:45:56.229931+00:00",
   "event_name": "workflow_dispatch",
   "manual_components": [
     "tagging"
@@ -20,15 +20,15 @@
       "selected": true,
       "reason": "manual_override",
       "event_name": "workflow_dispatch",
-      "current_head_commit": "5ce284ea116d4737e198763106b47ccaf80d5018",
+      "current_head_commit": "cd92d3514dbe61d9fc316876501bd0b59bc52bbd",
       "current_head_tag": null,
       "last_assessed_commit": null,
       "last_assessed_tag": null,
-      "last_assessed_date": "2026-04-06",
+      "last_assessed_date": "2026-04-08",
       "changed_files_sample": [],
       "access_error": null,
       "cadence_group": "every_2_days",
-      "hours_since_last_assessment": 18.48
+      "hours_since_last_assessment": 5.77
     }
   ],
   "status": "selected"

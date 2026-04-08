@@ -1,0 +1,466 @@
+{
+  "id": "resp_0c5a2744b0d729b60069d5eb9649b881938ddad91350098079",
+  "object": "response",
+  "created_at": 1775627158,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1775627202,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "model": "gpt-5-2025-08-07",
+  "output": [
+    {
+      "id": "rs_0c5a2744b0d729b60069d5eb97ba34819384863cf20ba3c255",
+      "type": "reasoning",
+      "summary": []
+    },
+    {
+      "id": "msg_0c5a2744b0d729b60069d5ebb64c8c8193a7a46b86102a11ed",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"component\":\"tagging\",\"summary\":\"Pre-RC, governed tagging-runtime with clear identity, runnable host-minimal, strong config/governance, and multi-band test tooling; finalize release and docs wiring to reach RC.\",\"strengths\":[\"Clear canonical tagging identity (composer description, README, docs)\",\"Runnable host-minimal runtime with Docker and local server assets\",\"Explicit HTTP contract surface and route/public-surface catalogs\",\"Governance configs for RBAC, quotas, security, observability, webhooks\",\"Multi-band testing/tooling present: PHPUnit, PHPStan, Panther, Playwright\",\"GitHub Actions workflows present\"],\"risks\":[\"No git tags found; release maturity not yet signaled\",\"Antora report_path not present in repo tree; docs surfacing path may be mismatched\",\"Test and static-analysis configs are .dist; CI execution/coverage not evidenced\",\"E2E test tooling declared but CI wiring and outcomes not evidenced\"],\"next_actions\":[\"Create a signed git tag and publish a release aligned to current CHANGELOG\",\"Ensure phpunit, phpstan, and playwright jobs run in CI with published artifacts/status\",\"Align Antora content with registry report_path or update registry to docs location\",\"Connect this repository to the scheduled assessment runner to keep metrics fresh\",\"Publish contract/docs artifacts via existing composer scripts in CI\"],\"notes\":[\"Assessment grounded on master@cd92d3514dbe61d9fc316876501bd0b59bc52bbd (2026-04-08) with 566 files\",\"Composer audit/test scripts were not executed in this run; findings based on repo contents\"],\"confidence\":\"medium\",\"evidence_paths\":[\"composer.json\",\"README.md\",\"CHANGELOG.md\",\"RELEASE_NOTES.md\",\"contracts/http\",\"config/tag_public_surface.php\",\"config/tag_route_catalog.php\",\"config/tag_security.yaml\",\"config/tag_rbac.yaml\",\"config/tag_observability.yaml\",\"config/tag_quota.yaml\",\"config/tag_webhooks.yaml\",\"host-minimal/index.php\",\"host/Dockerfile\",\"docker-compose.yml\",\"package.json\",\".github/workflows\",\"docs/antora.yml\"],\"suggested_score_overrides\":{\"product\":null,\"architecture\":null,\"runtime\":null,\"qa\":null,\"ops\":null,\"market\":null,\"overall\":null},\"metric_updates\":{\"product\":{\"summary\":\"Component identity and market-facing shape are materially present, with a clear canonical tagging-library posture in README/docs and explicit HTTP contract cues.\",\"risks\":[\"Release signals are weak without git tags\",\"Atlas report path vs repo docs path may reduce public clarity\"],\"improvements\":[\"Tag a release and align CHANGELOG with the tag\",\"Align Antora registry path with docs/ or add missing .antora-src content\"],\"evidence\":[\"composer.json\",\"README.md\",\"docs/antora.yml\",\"contracts/http\"]},\"architecture\":{\"summary\":\"Symfony-oriented architecture shape is materially present, with host-minimal runtime and explicit route/surface catalogs outlining boundaries.\",\"risks\":[\"Boundary hardening and documentation linkage require a scheduled deeper scan\",\"No release tags to freeze architectural milestones\"],\"improvements\":[\"Run scheduled assessment to verify core/adjacent boundaries and contracts\",\"Publish a tagged release capturing current architectural state\"],\"evidence\":[\"host-minimal/bootstrap.php\",\"config/tag_runtime.php\",\"config/tag_public_surface.php\",\"config/tag_route_catalog.php\",\"docker-compose.yml\"]},\"runtime\":{\"summary\":\"Runtime and application surface are materially present via host-minimal, Docker compose, routes, and smoke/health entry points.\",\"risks\":[\"CI/runtime smoke execution not evidenced\",\"No tags to reflect runtime stability across releases\"],\"improvements\":[\"Add CI jobs to run runtime smoke and container build checks\",\"Publish a tagged release after green runtime smoke\"],\"evidence\":[\"docker-compose.yml\",\"host-minimal/index.php\",\"host-minimal/smoke-health.php\",\"config/tag_runtime.php\"]},\"qa\":{\"summary\":\"Testing and QA posture are materially present but remain pre-RC, with PHPUnit/PHPStan/Panther/Playwright tooling configured via .dist and scripts.\",\"risks\":[\"Actual CI execution and coverage levels are not evidenced\",\".dist configs may diverge from enforced CI settings\"],\"improvements\":[\"Wire phpunit, phpstan, and playwright into CI with artifacts/badges\",\"Promote necessary config from .dist to enforced CI-ready files where applicable\"],\"evidence\":[\"phpunit.xml.dist\",\"phpstan.neon.dist\",\"composer.json\",\"package.json\",\".github/workflows\"]},\"ops\":{\"summary\":\"Operational, governance, and security posture are materially present but remain pre-RC, with RBAC, security, quota, observability, and webhook configs.\",\"risks\":[\"Operational runbooks and CI policy enforcement not evidenced\",\"No release tags reduce traceability for ops changes\"],\"improvements\":[\"Add CI policy checks for configs and publish ops docs artifacts\",\"Tag releases to improve ops traceability and rollback readiness\"],\"evidence\":[\"config/tag_security.yaml\",\"config/tag_rbac.yaml\",\"config/tag_quota.yaml\",\"config/tag_observability.yaml\",\"config/tag_webhooks.yaml\",\".github/workflows\"]},\"market\":{\"summary\":\"Business-facing and portfolio-facing alignment is materially present, reading as an internal enterprise tagging/classification runtime.\",\"risks\":[\"Docs surfacing path mismatch may blunt portfolio clarity\",\"Pre-RC status without releases limits external consumption signals\"],\"improvements\":[\"Finalize public report/doc surfacing through Antora or update registry path\",\"Publish a first tagged release and summarize positioning in RELEASE_NOTES\"],\"evidence\":[\"README.md\",\"RELEASE_NOTES.md\",\"CHANGELOG.md\",\"docs/antora.yml\",\".antora-src/modules/ROOT/pages/component/tagging/report/index.adoc\"]},\"overall\":{\"summary\":\"Overall release-candidate direction is visible, but the component remains in pre-RC pending release tagging, CI execution evidence, and docs path alignment.\",\"risks\":[\"Lack of git tags and CI evidence leaves RC posture unverified\",\"Docs/report path mismatch can degrade owner-facing clarity\"],\"improvements\":[\"Publish a tagged release after green CI across tests and smoke checks\",\"Align Antora registry path to current docs location or restore expected path\"],\"evidence\":[\"git_exact_tag output\",\"composer.json\",\".github/workflows\",\"docs/antora.yml\"]}}}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "quality_atlas_assessment_verdict",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "summary",
+          "strengths",
+          "risks",
+          "next_actions",
+          "notes",
+          "confidence",
+          "evidence_paths",
+          "suggested_score_overrides",
+          "metric_updates"
+        ],
+        "properties": {
+          "component": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "strengths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "next_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "evidence_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "suggested_score_overrides": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "architecture": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "runtime": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "qa": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "ops": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "market": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              },
+              "overall": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0.0,
+                "maximum": 10.0
+              }
+            }
+          },
+          "metric_updates": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "product",
+              "architecture",
+              "runtime",
+              "qa",
+              "ops",
+              "market",
+              "overall"
+            ],
+            "properties": {
+              "product": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "architecture": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "runtime": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "qa": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "ops": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "market": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "overall": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "summary",
+                  "risks",
+                  "improvements",
+                  "evidence"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "improvements": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "evidence": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 1.0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 15325,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 4206,
+    "output_tokens_details": {
+      "reasoning_tokens": 2880
+    },
+    "total_tokens": 19531
+  },
+  "user": null,
+  "metadata": {}
+}
