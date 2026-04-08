@@ -1,0 +1,42 @@
+name: public-surface-verify
+
+on:
+  push:
+    branches: ["master", "docs-harden-public-surface"]
+  pull_request: {}
+  workflow_dispatch: {}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml
+          npm install
+
+      - name: Build canonical Antora source tree
+        run: python3 tools/build_antora_site.py
+
+      - name: Build site with Antora
+        run: npx antora antora-playbook.yml --fetch
+
+      - name: Verify public surface outputs
+        run: python3 tools/verify_public_site_outputs.py
