@@ -66,3 +66,4 @@ jobs:
           name: local-vendored-ui-site-preview
           path: .site_build
           if-no-files-found: error
+          include-hidden-files: true
