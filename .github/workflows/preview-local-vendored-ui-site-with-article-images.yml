@@ -1,0 +1,73 @@
+name: preview-local-vendored-ui-site-with-article-images
+
+on:
+  push:
+    branches: ["docs-pin-local-ui-bundle-v2"]
+  workflow_dispatch: {}
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml
+          npm install
+
+      - name: Bootstrap vendored Antora UI bundle
+        run: |
+          bash tools/ensure_local_ui_bundle.sh
+          test -f vendor/antora-ui/ui-bundle.zip
+          test -f vendor/antora-ui/ui-bundle.zip.sha256
+
+      - name: Build canonical Antora source tree
+        run: |
+          python3 tools/build_antora_site.py
+
+      - name: Stage article images into generated Antora tree
+        run: |
+          python3 tools/stage_article_images_into_antora_tree.py
+
+      - name: Build site with local vendored UI playbook
+        run: |
+          npx antora antora-playbook-local-ui.yml
+
+      - name: Verify public surface outputs
+        run: |
+          python3 tools/verify_public_site_outputs.py
+
+      - name: Copy public site extras
+        run: |
+          if [ -f docs/CNAME ]; then
+            cp docs/CNAME .site_build/CNAME
+          fi
+          if [ -d assets ]; then
+            mkdir -p .site_build/assets
+            cp -R assets/. .site_build/assets/
+          fi
+          touch .site_build/.nojekyll
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: local-vendored-ui-site-preview-with-article-images
+          path: .site_build
+          if-no-files-found: error
+          include-hidden-files: true
