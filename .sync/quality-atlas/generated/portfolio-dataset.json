@@ -8,49 +8,49 @@
         {
           "id": "product",
           "title": "Product & Market",
-          "average": 8.44,
+          "average": 8.43,
           "min": 7.6,
           "max": 9.0
         },
         {
           "id": "architecture",
           "title": "Architecture Stability",
-          "average": 8.38,
+          "average": 8.37,
           "min": 7.8,
           "max": 8.9
         },
         {
           "id": "delivery",
           "title": "Delivery Readiness",
-          "average": 8.58,
+          "average": 8.48,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.37,
-          "min": 7.3,
+          "average": 8.29,
+          "min": 7.05,
           "max": 8.95
         },
         {
           "id": "governance",
           "title": "Security & Governance",
-          "average": 8.58,
+          "average": 8.48,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "clarity",
           "title": "Operational Clarity",
-          "average": 8.34,
+          "average": 8.32,
           "min": 7.3,
           "max": 8.95
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.44,
+          "average": 8.39,
           "min": 7.4,
           "max": 9.0
         }
@@ -130,15 +130,15 @@
           "component": "billing",
           "title": "Billing",
           "axes": {
-            "product": 8.8,
-            "architecture": 8.6,
-            "delivery": 9.1,
-            "reliability": 8.75,
-            "governance": 9.1,
-            "clarity": 8.75,
-            "overall": 8.8
+            "product": 8.5,
+            "architecture": 8.4,
+            "delivery": 6.8,
+            "reliability": 7.05,
+            "governance": 6.8,
+            "clarity": 8.4,
+            "overall": 7.7
           },
-          "overall": 8.84
+          "overall": 7.66
         },
         {
           "component": "cataloging",
@@ -314,13 +314,13 @@
           "axes": {
             "product": 8.6,
             "architecture": 8.4,
-            "delivery": 8.8,
+            "delivery": 9.0,
             "reliability": 8.65,
-            "governance": 8.8,
+            "governance": 9.0,
             "clarity": 8.5,
             "overall": 8.6
           },
-          "overall": 8.62
+          "overall": 8.68
         },
         {
           "component": "taxating",
@@ -352,7 +352,7 @@
         }
       ],
       "component_count": 21,
-      "ecosystem_average": 8.44
+      "ecosystem_average": 8.39
     },
     {
       "id": "engineering",
@@ -362,70 +362,70 @@
         {
           "id": "product",
           "title": "Product",
-          "average": 8.44,
+          "average": 8.43,
           "min": 7.6,
           "max": 9.0
         },
         {
           "id": "architecture",
           "title": "Architecture",
-          "average": 8.38,
+          "average": 8.37,
           "min": 7.8,
           "max": 8.9
         },
         {
           "id": "data",
           "title": "Data",
-          "average": 8.34,
+          "average": 8.3,
           "min": 7.65,
           "max": 8.85
         },
         {
           "id": "api",
           "title": "API & Contracts",
-          "average": 8.3,
+          "average": 8.29,
           "min": 7.55,
           "max": 8.85
         },
         {
           "id": "runtime",
           "title": "Runtime",
-          "average": 8.3,
-          "min": 7.2,
+          "average": 8.23,
+          "min": 7.0,
           "max": 8.9
         },
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.44,
-          "min": 7.0,
+          "average": 8.35,
+          "min": 6.9,
           "max": 9.0
         },
         {
           "id": "security",
           "title": "Security",
-          "average": 8.58,
+          "average": 8.48,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "delivery",
           "title": "Delivery",
-          "average": 8.58,
+          "average": 8.48,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "quality",
           "title": "Quality",
-          "average": 8.43,
+          "average": 8.34,
           "min": 6.9,
           "max": 9.2
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.44,
+          "average": 8.39,
           "min": 7.4,
           "max": 9.0
         }
@@ -520,18 +520,18 @@
           "component": "billing",
           "title": "Billing",
           "axes": {
-            "product": 8.8,
-            "architecture": 8.6,
-            "data": 8.55,
-            "api": 8.65,
-            "runtime": 8.5,
-            "reliability": 8.8,
-            "security": 9.1,
-            "delivery": 9.1,
-            "quality": 9.0,
-            "overall": 8.8
+            "product": 8.5,
+            "architecture": 8.4,
+            "data": 7.7,
+            "api": 8.35,
+            "runtime": 7.0,
+            "reliability": 6.9,
+            "security": 6.8,
+            "delivery": 6.8,
+            "quality": 7.1,
+            "overall": 7.7
           },
-          "overall": 8.79
+          "overall": 7.53
         },
         {
           "component": "cataloging",
@@ -746,13 +746,13 @@
             "data": 8.45,
             "api": 8.4,
             "runtime": 8.5,
-            "reliability": 8.65,
-            "security": 8.8,
-            "delivery": 8.8,
+            "reliability": 8.75,
+            "security": 9.0,
+            "delivery": 9.0,
             "quality": 8.8,
             "overall": 8.6
           },
-          "overall": 8.6
+          "overall": 8.65
         },
         {
           "component": "taxating",
@@ -790,7 +790,7 @@
         }
       ],
       "component_count": 21,
-      "ecosystem_average": 8.42
+      "ecosystem_average": 8.36
     },
     {
       "id": "operations",
@@ -800,56 +800,56 @@
         {
           "id": "runtime",
           "title": "Runtime Ops",
-          "average": 8.3,
-          "min": 7.2,
+          "average": 8.23,
+          "min": 7.0,
           "max": 8.9
         },
         {
           "id": "reliability",
           "title": "Reliability",
-          "average": 8.37,
-          "min": 7.3,
+          "average": 8.29,
+          "min": 7.05,
           "max": 8.95
         },
         {
           "id": "observability",
           "title": "Observability",
-          "average": 8.58,
+          "average": 8.48,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "security",
           "title": "Security",
-          "average": 8.58,
+          "average": 8.48,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "traffic",
           "title": "Traffic Strategy",
-          "average": 8.44,
-          "min": 7.0,
+          "average": 8.35,
+          "min": 6.9,
           "max": 9.0
         },
         {
           "id": "delivery",
           "title": "Delivery Automation",
-          "average": 8.58,
+          "average": 8.48,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "recovery",
           "title": "Recovery",
-          "average": 8.5,
-          "min": 7.15,
+          "average": 8.41,
+          "min": 6.95,
           "max": 9.15
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.44,
+          "average": 8.39,
           "min": 7.4,
           "max": 9.0
         }
@@ -934,16 +934,16 @@
           "component": "billing",
           "title": "Billing",
           "axes": {
-            "runtime": 8.5,
-            "reliability": 8.75,
-            "observability": 9.1,
-            "security": 9.1,
-            "traffic": 8.8,
-            "delivery": 9.1,
-            "recovery": 9.05,
-            "overall": 8.8
+            "runtime": 7.0,
+            "reliability": 7.05,
+            "observability": 6.8,
+            "security": 6.8,
+            "traffic": 6.9,
+            "delivery": 6.8,
+            "recovery": 6.95,
+            "overall": 7.7
           },
-          "overall": 8.9
+          "overall": 7.0
         },
         {
           "component": "cataloging",
@@ -1131,14 +1131,14 @@
           "axes": {
             "runtime": 8.5,
             "reliability": 8.65,
-            "observability": 8.8,
-            "security": 8.8,
-            "traffic": 8.65,
-            "delivery": 8.8,
-            "recovery": 8.8,
+            "observability": 9.0,
+            "security": 9.0,
+            "traffic": 8.75,
+            "delivery": 9.0,
+            "recovery": 8.9,
             "overall": 8.6
           },
-          "overall": 8.7
+          "overall": 8.8
         },
         {
           "component": "taxating",
@@ -1172,7 +1172,7 @@
         }
       ],
       "component_count": 21,
-      "ecosystem_average": 8.47
+      "ecosystem_average": 8.39
     },
     {
       "id": "owner",
@@ -1182,56 +1182,56 @@
         {
           "id": "identity",
           "title": "Product Identity",
-          "average": 8.44,
+          "average": 8.43,
           "min": 7.6,
           "max": 9.0
         },
         {
           "id": "consistency",
           "title": "Architecture Consistency",
-          "average": 8.38,
+          "average": 8.37,
           "min": 7.8,
           "max": 8.9
         },
         {
           "id": "delivery",
           "title": "Delivery Maturity",
-          "average": 8.58,
+          "average": 8.48,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "quality",
           "title": "Quality Depth",
-          "average": 8.43,
+          "average": 8.34,
           "min": 6.9,
           "max": 9.2
         },
         {
           "id": "governance",
           "title": "Governance",
-          "average": 8.58,
+          "average": 8.48,
           "min": 6.8,
           "max": 9.1
         },
         {
           "id": "fit",
           "title": "Ecosystem Fit",
-          "average": 8.34,
+          "average": 8.32,
           "min": 7.3,
           "max": 8.95
         },
         {
           "id": "debt",
           "title": "Technical Debt",
-          "average": 2.6,
+          "average": 2.65,
           "min": 2.0,
           "max": 3.65
         },
         {
           "id": "overall",
           "title": "Overall RC",
-          "average": 8.44,
+          "average": 8.39,
           "min": 7.4,
           "max": 9.0
         }
@@ -1316,16 +1316,16 @@
           "component": "billing",
           "title": "Billing",
           "axes": {
-            "identity": 8.8,
-            "consistency": 8.6,
-            "delivery": 9.1,
-            "quality": 9.0,
-            "governance": 9.1,
-            "fit": 8.75,
-            "debt": 2.2,
-            "overall": 8.8
+            "identity": 8.5,
+            "consistency": 8.4,
+            "delivery": 6.8,
+            "quality": 7.1,
+            "governance": 6.8,
+            "fit": 8.4,
+            "debt": 3.25,
+            "overall": 7.7
           },
-          "overall": 8.04
+          "overall": 7.12
         },
         {
           "component": "cataloging",
@@ -1513,14 +1513,14 @@
           "axes": {
             "identity": 8.6,
             "consistency": 8.4,
-            "delivery": 8.8,
+            "delivery": 9.0,
             "quality": 8.8,
-            "governance": 8.8,
+            "governance": 9.0,
             "fit": 8.5,
             "debt": 2.4,
             "overall": 8.6
           },
-          "overall": 7.86
+          "overall": 7.91
         },
         {
           "component": "taxating",
@@ -1554,7 +1554,7 @@
         }
       ],
       "component_count": 21,
-      "ecosystem_average": 7.72
+      "ecosystem_average": 7.68
     }
   ],
   "components": [
@@ -1891,61 +1891,79 @@
       "title": "Billing",
       "snapshot": {
         "date": "2026-04-11",
-        "label": "pre-rc-seed",
+        "label": "assessment-2026-04-11",
         "ref": "master",
-        "origin": "quality-atlas seed"
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/billing",
+          "assessed_branch": "master",
+          "assessed_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        }
       },
       "profile_axes": {
         "engineering": {
-          "product": 8.8,
-          "architecture": 8.6,
-          "data": 8.55,
-          "api": 8.65,
-          "runtime": 8.5,
-          "reliability": 8.8,
-          "security": 9.1,
-          "delivery": 9.1,
-          "quality": 9.0,
-          "overall": 8.8
+          "product": 8.5,
+          "architecture": 8.4,
+          "data": 7.7,
+          "api": 8.35,
+          "runtime": 7.0,
+          "reliability": 6.9,
+          "security": 6.8,
+          "delivery": 6.8,
+          "quality": 7.1,
+          "overall": 7.7
         },
         "owner": {
-          "identity": 8.8,
-          "consistency": 8.6,
-          "delivery": 9.1,
-          "quality": 9.0,
-          "governance": 9.1,
-          "fit": 8.75,
-          "debt": 2.2,
-          "overall": 8.8
+          "identity": 8.5,
+          "consistency": 8.4,
+          "delivery": 6.8,
+          "quality": 7.1,
+          "governance": 6.8,
+          "fit": 8.4,
+          "debt": 3.25,
+          "overall": 7.7
         },
         "investor": {
-          "product": 8.8,
-          "architecture": 8.6,
-          "delivery": 9.1,
-          "reliability": 8.75,
-          "governance": 9.1,
-          "clarity": 8.75,
-          "overall": 8.8
+          "product": 8.5,
+          "architecture": 8.4,
+          "delivery": 6.8,
+          "reliability": 7.05,
+          "governance": 6.8,
+          "clarity": 8.4,
+          "overall": 7.7
         },
         "operations": {
-          "runtime": 8.5,
-          "reliability": 8.75,
-          "observability": 9.1,
-          "security": 9.1,
-          "traffic": 8.8,
-          "delivery": 9.1,
-          "recovery": 9.05,
-          "overall": 8.8
+          "runtime": 7.0,
+          "reliability": 7.05,
+          "observability": 6.8,
+          "security": 6.8,
+          "traffic": 6.9,
+          "delivery": 6.8,
+          "recovery": 6.95,
+          "overall": 7.7
         }
       },
-      "overall": 8.8,
+      "overall": 7.7,
       "strengths": [
-        "Highest current axis: ops 9.1/10",
-        "Component is already represented in the current pre-RC Atlas."
+        "Clear billing boundary and domain artifacts (invoices, ledger, idempotency)",
+        "Layered PHP structure (Http, Service, Infrastructure, ServiceInterface)",
+        "Architectural governance signal via deptrac.yaml",
+        "Documentation present for boundary and testing strategy",
+        "Presence of unit/e2e/Playwright test directories indicating verification intent"
       ],
       "risks": [
-        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
-        "Structured metrics should be refreshed by the scheduled assessment workflow."
+        "No composer.json found (packaging/autoload unknown)",
+        "No GitHub Actions workflows present",
+        "phpunit.xml and phpstan config not found",
+        "No release tags in git metadata",
+        "Playwright tests present without package.json"
       ]
     },
     {
@@ -2697,21 +2715,9 @@
       "title": "Tagging",
       "snapshot": {
         "date": "2026-04-11",
-        "label": "assessment-2026-04-11",
+        "label": "pre-rc-seed",
         "ref": "master",
-        "origin": "quality-atlas responses assessment",
-        "assessment_basis": {
-          "repository": "smartresponsor/tagging",
-          "assessed_branch": "master",
-          "assessed_commit": "c759d978fc3520eaa81cb70a68a129371b5df1ee",
-          "assessed_tag": null,
-          "trigger_reason": "manual_override",
-          "previous_commit": null,
-          "previous_tag": null,
-          "current_head_commit": "c759d978fc3520eaa81cb70a68a129371b5df1ee",
-          "current_head_tag": null,
-          "changed_files_sample": []
-        }
+        "origin": "quality-atlas seed"
       },
       "profile_axes": {
         "engineering": {
@@ -2720,18 +2726,18 @@
           "data": 8.45,
           "api": 8.4,
           "runtime": 8.5,
-          "reliability": 8.65,
-          "security": 8.8,
-          "delivery": 8.8,
+          "reliability": 8.75,
+          "security": 9.0,
+          "delivery": 9.0,
           "quality": 8.8,
           "overall": 8.6
         },
         "owner": {
           "identity": 8.6,
           "consistency": 8.4,
-          "delivery": 8.8,
+          "delivery": 9.0,
           "quality": 8.8,
-          "governance": 8.8,
+          "governance": 9.0,
           "fit": 8.5,
           "debt": 2.4,
           "overall": 8.6
@@ -2739,36 +2745,31 @@
         "investor": {
           "product": 8.6,
           "architecture": 8.4,
-          "delivery": 8.8,
+          "delivery": 9.0,
           "reliability": 8.65,
-          "governance": 8.8,
+          "governance": 9.0,
           "clarity": 8.5,
           "overall": 8.6
         },
         "operations": {
           "runtime": 8.5,
           "reliability": 8.65,
-          "observability": 8.8,
-          "security": 8.8,
-          "traffic": 8.65,
-          "delivery": 8.8,
-          "recovery": 8.8,
+          "observability": 9.0,
+          "security": 9.0,
+          "traffic": 8.75,
+          "delivery": 9.0,
+          "recovery": 8.9,
           "overall": 8.6
         }
       },
       "overall": 8.6,
       "strengths": [
-        "Clear canonical tagging product identity and HTTP contract surface",
-        "Runnable host-minimal runtime with Docker and DB flows",
-        "Rich governance/audit scripts and security/RBAC/observability configs",
-        "Multi-band test/tooling (PHPUnit, PHPStan, Panther, Playwright) with GitHub Actions present",
-        "Comprehensive docs, demos, and fixtures"
+        "Highest current axis: ops 9.0/10",
+        "Component is already represented in the current pre-RC Atlas."
       ],
       "risks": [
-        "No git release tags reduce release traceability",
-        "Requires PHP ^8.4 which may constrain some environments",
-        "Dist-only static analysis/test configs risk drift (phpstan.neon.dist, phpunit.xml.dist)",
-        "E2E (Playwright/Panther) presence not clearly wired into CI"
+        "Snapshot was seeded from the current atlas and does not yet contain repository-scan deltas.",
+        "Structured metrics should be refreshed by the scheduled assessment workflow."
       ]
     },
     {
@@ -3127,6 +3128,25 @@
         "ref": "master",
         "origin": "quality-atlas seed",
         "overall": 8.8
+      },
+      {
+        "date": "2026-04-11",
+        "label": "assessment-2026-04-11",
+        "ref": "master",
+        "origin": "quality-atlas responses assessment",
+        "assessment_basis": {
+          "repository": "smartresponsor/billing",
+          "assessed_branch": "master",
+          "assessed_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
+          "assessed_tag": null,
+          "trigger_reason": "manual_override",
+          "previous_commit": null,
+          "previous_tag": null,
+          "current_head_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
+          "current_head_tag": null,
+          "changed_files_sample": []
+        },
+        "overall": 7.7
       },
       {
         "date": "2026-04-11",

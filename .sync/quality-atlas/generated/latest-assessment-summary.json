@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-11T00:30:59.538954+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260411T002903Z",
+  "generated_at": "2026-04-11T03:13:04.338887+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260411T031148Z",
   "mode": "responses",
   "components": [
     {
-      "component": "tagging",
-      "title": "Tagging",
-      "overall": 8.6,
-      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/tagging/history/2026-04-11-assessment-2026-04-11.yaml",
-      "summary": "Tagging reads as a governed, reusable tagging-and-classification runtime with strong audits, docs, and test/tooling; it looks pre-RC with minor release-governance gaps to close."
+      "component": "billing",
+      "title": "Billing",
+      "overall": 7.7,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/billing/history/2026-04-11-assessment-2026-04-11.yaml",
+      "summary": "Billing shows a clearly bounded billing domain with layered PHP code and domain migrations, but packaging, CI, and runner configs are missing, keeping it pre-RC despite strong internal docs and structure."
     }
   ],
   "failures": [],
   "status": "ok",
   "selected_components": [
-    "tagging"
+    "billing"
   ]
 }

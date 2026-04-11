@@ -73,28 +73,28 @@
     }
   },
   "plan": {
-    "generated_at": "2026-04-11T00:29:03.338816+00:00",
+    "generated_at": "2026-04-11T03:11:47.837648+00:00",
     "event_name": "workflow_dispatch",
     "manual_components": [
-      "tagging"
+      "billing"
     ],
     "normalized_manual_components": [
-      "tagging"
+      "billing"
     ],
     "unknown_manual_components": [],
     "selected_components": [
-      "tagging"
+      "billing"
     ],
     "selected_count": 1,
     "items": [
       {
-        "component": "tagging",
-        "title": "Tagging",
-        "repository": "smartresponsor/tagging",
+        "component": "billing",
+        "title": "Billing",
+        "repository": "smartresponsor/billing",
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "c759d978fc3520eaa81cb70a68a129371b5df1ee",
+        "current_head_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
         "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
@@ -102,7 +102,7 @@
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 0.48
+        "hours_since_last_assessment": 3.2
       }
     ],
     "status": "selected"
@@ -191,13 +191,29 @@
       "repository": "smartresponsor/billing",
       "snapshot": {
         "snapshot_date": "2026-04-11",
-        "snapshot_label": "pre-rc-seed",
-        "overall": 8.8,
-        "assessed_commit": null,
+        "snapshot_label": "assessment-2026-04-11",
+        "overall": 7.7,
+        "assessed_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
         "assessed_tag": null,
-        "trigger_reason": null
+        "trigger_reason": "manual_override"
       },
-      "selection": {}
+      "selection": {
+        "component": "billing",
+        "title": "Billing",
+        "repository": "smartresponsor/billing",
+        "selected": true,
+        "reason": "manual_override",
+        "event_name": "workflow_dispatch",
+        "current_head_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
+        "current_head_tag": null,
+        "last_assessed_commit": null,
+        "last_assessed_tag": null,
+        "last_assessed_date": "2026-04-11",
+        "changed_files_sample": [],
+        "access_error": null,
+        "cadence_group": "every_2_days",
+        "hours_since_last_assessment": 3.2
+      }
     },
     {
       "component": "boundarying",
@@ -634,29 +650,13 @@
       "repository": "smartresponsor/tagging",
       "snapshot": {
         "snapshot_date": "2026-04-11",
-        "snapshot_label": "assessment-2026-04-11",
+        "snapshot_label": "pre-rc-seed",
         "overall": 8.6,
-        "assessed_commit": "c759d978fc3520eaa81cb70a68a129371b5df1ee",
+        "assessed_commit": null,
         "assessed_tag": null,
-        "trigger_reason": "manual_override"
+        "trigger_reason": null
       },
-      "selection": {
-        "component": "tagging",
-        "title": "Tagging",
-        "repository": "smartresponsor/tagging",
-        "selected": true,
-        "reason": "manual_override",
-        "event_name": "workflow_dispatch",
-        "current_head_commit": "c759d978fc3520eaa81cb70a68a129371b5df1ee",
-        "current_head_tag": null,
-        "last_assessed_commit": null,
-        "last_assessed_tag": null,
-        "last_assessed_date": "2026-04-11",
-        "changed_files_sample": [],
-        "access_error": null,
-        "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 0.48
-      }
+      "selection": {}
     },
     {
       "component": "taxating",

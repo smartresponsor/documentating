@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-04-11T00:29:03.338816+00:00",
+  "generated_at": "2026-04-11T03:11:47.837648+00:00",
   "event_name": "workflow_dispatch",
   "manual_components": [
-    "tagging"
+    "billing"
   ],
   "normalized_manual_components": [
-    "tagging"
+    "billing"
   ],
   "unknown_manual_components": [],
   "selected_components": [
-    "tagging"
+    "billing"
   ],
   "selected_count": 1,
   "items": [
     {
-      "component": "tagging",
-      "title": "Tagging",
-      "repository": "smartresponsor/tagging",
+      "component": "billing",
+      "title": "Billing",
+      "repository": "smartresponsor/billing",
       "selected": true,
       "reason": "manual_override",
       "event_name": "workflow_dispatch",
-      "current_head_commit": "c759d978fc3520eaa81cb70a68a129371b5df1ee",
+      "current_head_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
       "current_head_tag": null,
       "last_assessed_commit": null,
       "last_assessed_tag": null,
@@ -28,7 +28,7 @@
       "changed_files_sample": [],
       "access_error": null,
       "cadence_group": "every_2_days",
-      "hours_since_last_assessment": 0.48
+      "hours_since_last_assessment": 3.2
     }
   ],
   "status": "selected"
