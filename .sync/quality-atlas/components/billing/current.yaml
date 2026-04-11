@@ -8,85 +8,89 @@ snapshot:
   assessment_basis:
     repository: smartresponsor/billing
     assessed_branch: master
-    assessed_commit: e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac
+    assessed_commit: a885cef03a1b6813c45cedef3510371a0345dd02
     assessed_tag: null
     trigger_reason: manual_override
     previous_commit: null
     previous_tag: null
-    current_head_commit: e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac
+    current_head_commit: a885cef03a1b6813c45cedef3510371a0345dd02
     current_head_tag: null
     changed_files_sample: []
 report_status: current
 groups:
   product_market:
-    score: 8.4
+    score: 8.75
   domain_architecture:
-    score: 8.4
+    score: 8.6
   data_persistence:
-    score: 7.7
+    score: 8.55
   api_contracts:
-    score: 8.35
+    score: 8.65
   runtime_performance:
-    score: 7.0
+    score: 8.5
   reliability_resilience:
-    score: 6.97
+    score: 8.73
   security_governance:
-    score: 6.8
+    score: 8.7
   delivery_operations:
-    score: 6.8
+    score: 8.7
   quality_testing:
-    score: 7.1
+    score: 9.0
 profile_axes:
   engineering:
-    product: 8.5
-    architecture: 8.4
-    data: 7.7
-    api: 8.35
-    runtime: 7.0
-    reliability: 6.9
-    security: 6.8
-    delivery: 6.8
-    quality: 7.1
-    overall: 7.7
+    product: 8.8
+    architecture: 8.6
+    data: 8.55
+    api: 8.65
+    runtime: 8.5
+    reliability: 8.6
+    security: 8.7
+    delivery: 8.7
+    quality: 9.0
+    overall: 8.7
   owner:
-    identity: 8.5
-    consistency: 8.4
-    delivery: 6.8
-    quality: 7.1
-    governance: 6.8
-    fit: 8.4
-    debt: 3.25
-    overall: 7.7
+    identity: 8.8
+    consistency: 8.6
+    delivery: 8.7
+    quality: 9.0
+    governance: 8.7
+    fit: 8.75
+    debt: 2.2
+    overall: 8.7
   investor:
-    product: 8.5
-    architecture: 8.4
-    delivery: 6.8
-    reliability: 7.05
-    governance: 6.8
-    clarity: 8.4
-    overall: 7.7
+    product: 8.8
+    architecture: 8.6
+    delivery: 8.7
+    reliability: 8.75
+    governance: 8.7
+    clarity: 8.75
+    overall: 8.7
   operations:
-    runtime: 7.0
-    reliability: 7.05
-    observability: 6.8
-    security: 6.8
-    traffic: 6.9
-    delivery: 6.8
-    recovery: 6.95
-    overall: 7.7
+    runtime: 8.5
+    reliability: 8.75
+    observability: 8.7
+    security: 8.7
+    traffic: 8.6
+    delivery: 8.7
+    recovery: 8.85
+    overall: 8.7
 metrics:
   product:
     relevant: true
     maturity: strong
-    score: 8.5
-    summary: Product identity is clearly expressed via boundary documentation and
-      domain-specific migrations, but lack of packaging and releases keeps it internal-facing.
+    score: 8.8
+    summary: A clear billing-focused product identity is documented and reinforced
+      by API versioning, error contracts, and boundary docs.
     risks:
-    - No release tags reduce external consumption confidence
-    - Absence of composer.json obscures packaging and dependency model
+    - Assessment remains pre-RC seeded and should continue to be refreshed by scheduled
+      scans.
+    - Docs publishing path may be misaligned with registry, risking stale or missing
+      owner-facing pages.
     improvements:
-    - Add composer.json and a concise README product overview
-    - Begin semantic versioning and publish tagged releases
+    - Keep API/feature narratives synchronized across README and docs/* to reduce
+      drift.
+    - Publish and link the generated OpenAPI spec within the docs site for a cohesive
+      product surface.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -97,26 +101,32 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: README.md
+      note: Metric-level assessment evidence.
     - path: docs/billing-boundary.md
       note: Metric-level assessment evidence.
-    - path: migrations/001_create_invoices.sql
+    - path: docs/api-versioning.md
       note: Metric-level assessment evidence.
-    - path: migrations/002_create_ledger.sql
+    - path: docs/api-error-contract.md
       note: Metric-level assessment evidence.
   architecture:
     relevant: true
     maturity: solid
-    score: 8.4
-    summary: A governed architecture is evident through layered src (Http/Service/Infrastructure/ServiceInterface)
-      and deptrac.yaml, though static-analysis enforcement is not yet wired.
+    score: 8.6
+    summary: Layered Symfony architecture with Doctrine and deptrac-enforced boundaries
+      is evident across src/* and configuration.
     risks:
-    - No phpstan config to enforce architectural and type discipline
-    - Missing composer autoload mapping for namespaces
-    - No CI to run deptrac and prevent drift
+    - Domain boundary enforcement depends on deptrac coverage; gaps could allow silent
+      drift.
+    - No explicit module packaging or bounded-context segregation beyond directories
+      is evidenced.
     improvements:
-    - Add PSR-4 autoload in composer.json and align namespaces
-    - Introduce phpstan.neon and enforce in CI
-    - Run deptrac in CI and document layer rules in docs/architecture
+    - Sustain deptrac coverage and address uncovered/unused rules to prevent canon
+      drift.
+    - Extend docs/architecture with updated component diagrams reflecting current
+      packages and flows.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -129,29 +139,27 @@ metrics:
     evidence:
     - path: deptrac.yaml
       note: Metric-level assessment evidence.
-    - path: src/Http
-      note: Metric-level assessment evidence.
-    - path: src/Service
+    - path: src/Controller
       note: Metric-level assessment evidence.
     - path: src/Infrastructure
       note: Metric-level assessment evidence.
-    - path: src/ServiceInterface
+    - path: src/Service
+      note: Metric-level assessment evidence.
+    - path: docs/architecture
       note: Metric-level assessment evidence.
   runtime:
     relevant: true
     maturity: solid
-    score: 7.0
-    summary: Runtime surface is implied by Symfony-style service configuration and
-      HTTP layer plus SQL migrations, but no containerization, bootstrap scripts,
-      or packaging are present.
+    score: 8.5
+    summary: Symfony runtime, environment configs, migrations, and test DB tooling
+      provide a real application surface.
     risks:
-    - No Docker/Kubernetes or run scripts in-repo
-    - No composer.json to install dependencies and bootstrap the app
-    - No CI workflow to exercise migrations/runtime paths
+    - No deployment manifests (container/Kubernetes) or runtime observability hooks
+      are evidenced.
+    - Operational readiness for health/readiness probes and correlation may be incomplete.
     improvements:
-    - Add composer.json and documented bootstrap instructions
-    - Provide Dockerfile/docker-compose for local/dev runs
-    - Create CI job that installs deps and validates migrations
+    - Add readiness/liveness endpoints and request correlation to improve operability.
+    - Introduce container/Kubernetes manifests or document deployment steps in docs/operations.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -162,26 +170,33 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
+    - path: public/index.php
+      note: Metric-level assessment evidence.
     - path: config/services.yaml
       note: Metric-level assessment evidence.
-    - path: migrations/003_create_billing_idempotency.sql
+    - path: .env
       note: Metric-level assessment evidence.
-    - path: src/Http
+    - path: .env.test
+      note: Metric-level assessment evidence.
+    - path: migrations/001_create_invoices.sql
+      note: Metric-level assessment evidence.
+    - path: tools/test-db-start.sh
       note: Metric-level assessment evidence.
   qa:
     relevant: true
     maturity: strong
-    score: 7.1
-    summary: Testing intent is documented and test directories exist (unit/e2e/Playwright),
-      but runner and static-analysis configs are missing.
+    score: 9.0
+    summary: 'Strong multi-lane verification posture: unit/integration/contract/e2e
+      with phpstan, deptrac, and Playwright/Panther.'
     risks:
-    - phpunit.xml not found to configure unit test runs
-    - package.json missing for Playwright-based e2e
-    - phpstan configuration absent and no CI workflows
+    - CI workflow specifics are not visible here; tests and static analysis may not
+      be gating.
+    - phpunit.xml is provided as .dist; ensure environment parity in CI and local
+      runs.
     improvements:
-    - Add phpunit.xml (and coverage/baseline if needed) and run in CI
-    - Add package.json and Playwright config with documented scripts
-    - Introduce phpstan.neon and integrate into CI
+    - Ensure .github/workflows execute phpstan, deptrac, phpunit, and Playwright with
+      fail-the-build gating.
+    - Track and publish coverage and static-analysis budgets in docs/quality-gates.md.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -192,28 +207,37 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: phpunit.xml.dist
+      note: Metric-level assessment evidence.
+    - path: phpstan.neon.dist
+      note: Metric-level assessment evidence.
+    - path: deptrac.yaml
+      note: Metric-level assessment evidence.
+    - path: tests
+      note: Metric-level assessment evidence.
+    - path: playwright.config.js
+      note: Metric-level assessment evidence.
     - path: docs/testing-strategy.md
       note: Metric-level assessment evidence.
-    - path: tests/unit
-      note: Metric-level assessment evidence.
-    - path: tests/e2e
-      note: Metric-level assessment evidence.
-    - path: tests/playwright
+    - path: docs/quality-gates.md
       note: Metric-level assessment evidence.
   ops:
     relevant: true
     maturity: strong
-    score: 6.8
-    summary: Operational and governance automation is thin in-repo; documentation
-      exists but CI/CD, releases, and observability hooks are not committed.
+    score: 8.7
+    summary: Governance and quality gates are present (CODEOWNERS, PR template, Qodana,
+      operations docs), but observability and security scans are not evidenced.
     risks:
-    - .github/workflows is missing (no automated build/test pipeline)
-    - No git release tags found
-    - No observability/monitoring/tracing configuration in repo
+    - Missing explicit dependency/secret scanning and observability instrumentation
+      reduce operational confidence.
+    - Docs site source path mismatch may impair report publishing.
     improvements:
-    - Create GitHub Actions workflows for build/test/lint/security scans
-    - Adopt release tagging and changelog discipline
-    - Document and add basic operational runbooks and probes where applicable
+    - Add composer audit and secret/dependency scans in CI and surface results in
+      PRs.
+    - Introduce minimal metrics/tracing/logging and document runbooks in docs/operations.
+    - Align Antora pathing or registry report_path to ensure report publishing.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -224,23 +248,31 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
-    - path: docs/documentation-guidelines.md
+    - path: .github/CODEOWNERS
       note: Metric-level assessment evidence.
-    - path: deptrac.yaml
+    - path: .github/pull_request_template.md
+      note: Metric-level assessment evidence.
+    - path: .github/workflows
+      note: Metric-level assessment evidence.
+    - path: qodana.yaml
+      note: Metric-level assessment evidence.
+    - path: docs/operations
+      note: Metric-level assessment evidence.
+    - path: docs/security
       note: Metric-level assessment evidence.
   market:
     relevant: true
     maturity: solid
-    score: 8.3
-    summary: Artifacts like invoices, ledger, and idempotency tables plus boundary
-      docs align the component with billing/monetization scenarios, though public
-      packaging is not yet available.
+    score: 8.7
+    summary: Docs and API contracts position the component toward recurring billing/subscription
+      flows with clear error and versioning posture.
     risks:
-    - Lack of packaged releases limits adoption in the wider ecosystem
-    - Public-facing docs remain internal markdown without a high-level brief
+    - Docs publishing misalignment may limit external discoverability.
+    - Public packaging/distribution positioning is not explicit in-repo.
     improvements:
-    - Publish a concise capability overview and usage guide in README/docs
-    - Add versioned migration notes aligned with releases
+    - Publish OpenAPI artifact to docs/modules and link it from README for easier
+      adoption.
+    - Clarify consumer integration paths and supported scenarios in docs/billing-boundary.md.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -251,26 +283,29 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
+    - path: docs/api-versioning.md
+      note: Metric-level assessment evidence.
+    - path: docs/api-error-contract.md
+      note: Metric-level assessment evidence.
     - path: docs/billing-boundary.md
       note: Metric-level assessment evidence.
-    - path: migrations/001_create_invoices.sql
-      note: Metric-level assessment evidence.
-    - path: migrations/002_create_ledger.sql
-      note: Metric-level assessment evidence.
-    - path: migrations/003_create_billing_idempotency.sql
+    - path: README.md
       note: Metric-level assessment evidence.
   overall:
     relevant: true
     maturity: strong
-    score: 7.7
-    summary: Strong domain and architectural signals are present, but missing packaging,
-      CI, and release discipline keep Billing solidly pre-RC.
+    score: 8.7
+    summary: A strong pre-RC billing subsystem with deep QA and clear architecture;
+      slight reductions reflect missing observability/security scanning and docs-path
+      drift.
     risks:
-    - No composer.json or CI workflows committed
-    - No release tags or standardized test/static configs
+    - Operational gaps (observability/scanning) and release tagging absence lower
+      RC confidence.
+    - Docs/report publishing path drift could hide progress from stakeholders.
     improvements:
-    - Add packaging (composer.json), CI pipelines, and release tagging
-    - Wire unit/e2e/static analysis and document run/deploy paths
+    - Close the observability and security-scanning gaps and align docs publishing
+      to move confidently to RC.
+    - Adopt release tagging and CI gating across QA lanes to stabilize RC cadence.
     implemented:
     - Current component report contributes to the Quality Atlas dataset.
     partial:
@@ -281,39 +316,44 @@ metrics:
     - Current snapshot is lightweight and optimized for portfolio generation rather
       than exhaustive per-metric evidence.
     evidence:
+    - path: .github/workflows
+      note: Metric-level assessment evidence.
+    - path: qodana.yaml
+      note: Metric-level assessment evidence.
+    - path: docs/operations
+      note: Metric-level assessment evidence.
+    - path: docs/antora.yml
+      note: Metric-level assessment evidence.
+    - path: composer.json
+      note: Metric-level assessment evidence.
+    - path: tests
+      note: Metric-level assessment evidence.
     - path: deptrac.yaml
-      note: Metric-level assessment evidence.
-    - path: docs/testing-strategy.md
-      note: Metric-level assessment evidence.
-    - path: config/services.yaml
-      note: Metric-level assessment evidence.
-    - path: migrations/001_create_invoices.sql
       note: Metric-level assessment evidence.
 development_driving:
   overall_status: fail
-  average_score: 7.75
+  average_score: 7.46
   status_counts:
-    pass: 2
-    warn: 4
-    fail: 1
+    pass: 3
+    warn: 2
+    fail: 2
     not_applicable: 0
   top_blockers:
   - Canon & Structure — Repository/domain-named directory is too close to root for
     owner canon.
   - Canon & Structure — Repository/domain-named directory is too close to root for
     owner canon.
-  - Runtime & Application Surface — No Docker or compose files were detected.
   - QA & Behavioral Assurance — No fixtures directories were detected.
-  - 'Documentation & GitHub Suite — Missing expected documentation asset: README.md.'
-  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
-  - Delivery & Observability — No GitHub workflow files were detected.
-  - Delivery & Observability — Deploy or packaging markers appear sparse.
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 123/223 (55%).
+  - SOLID & Refactoring Pressure — PHP file is very large (548 lines); review SRP
+    and refactoring pressure.
+  - SOLID & Refactoring Pressure — PHP file is large (350 lines); review SRP pressure.
   families:
     canon_structure:
       title: Canon & Structure
       status: fail
-      score: 2.5
-      summary: 3 fail, 0 warn, 0 info findings detected.
+      score: 0.0
+      summary: 4 fail, 1 warn, 0 info findings detected.
       blockers:
       - Repository/domain-named directory is too close to root for owner canon.
       - Repository/domain-named directory is too close to root for owner canon.
@@ -326,11 +366,10 @@ development_driving:
       blockers: []
     runtime_surface:
       title: Runtime & Application Surface
-      status: warn
-      score: 9.0
-      summary: 0 fail, 1 warn, 0 info findings detected.
-      blockers:
-      - No Docker or compose files were detected.
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
     qa_behavior:
       title: QA & Behavioral Assurance
       status: warn
@@ -341,45 +380,48 @@ development_driving:
     documentation_suite:
       title: Documentation & GitHub Suite
       status: warn
-      score: 6.0
-      summary: 0 fail, 4 warn, 0 info findings detected.
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
       blockers:
-      - 'Missing expected documentation asset: README.md.'
-      - 'Missing expected documentation asset: CHANGELOG.md.'
-      - Public/protected docblock coverage is 6/72 (8%).
+      - Public/protected docblock coverage is 123/223 (55%).
     delivery_observability:
       title: Delivery & Observability
-      status: warn
-      score: 7.75
-      summary: 0 fail, 2 warn, 1 info findings detected.
-      blockers:
-      - No GitHub workflow files were detected.
-      - Deploy or packaging markers appear sparse.
+      status: pass
+      score: 9.75
+      summary: 0 fail, 0 warn, 1 info findings detected.
+      blockers: []
     solid_refactoring:
       title: SOLID & Refactoring Pressure
-      status: pass
-      score: 10.0
-      summary: No material probe findings detected in this family.
-      blockers: []
+      status: fail
+      score: 4.5
+      summary: 1 fail, 3 warn, 0 info findings detected.
+      blockers:
+      - PHP file is very large (548 lines); review SRP and refactoring pressure.
+      - PHP file is large (350 lines); review SRP pressure.
+      - Constructor injects 9 parameters; review dependency inversion and class responsibilities.
 strengths:
-- Clear billing boundary and domain artifacts (invoices, ledger, idempotency)
-- Layered PHP structure (Http, Service, Infrastructure, ServiceInterface)
-- Architectural governance signal via deptrac.yaml
-- Documentation present for boundary and testing strategy
-- Presence of unit/e2e/Playwright test directories indicating verification intent
+- Symfony 8 + PHP 8.4 targeting with clear billing domain focus
+- Multi-lane tests (unit, integration, contract, Panther, Playwright) and strong static
+  analysis (phpstan, deptrac)
+- Doctrine-backed persistence with migrations and operational indexes
+- API contract posture with Swagger-PHP and explicit API versioning/error-contract
+  docs
+- Governance signals (CODEOWNERS, PR template, quality gates, Qodana) and rich internal
+  docs
 risks:
-- No composer.json found (packaging/autoload unknown)
-- No GitHub Actions workflows present
-- phpunit.xml and phpstan config not found
-- No release tags in git metadata
-- Playwright tests present without package.json
+- Docs publishing path appears misaligned with registry (.antora-src vs docs/modules)
+- No explicit observability/metrics/tracing or deployment manifests evidenced
+- Security scanning (e.g., dependency and secret scans) not evidenced in repo
+- Release tagging absent (no exact git tags)
 recommended_next_actions:
-- Add composer.json with PSR-4 autoload and dependencies
-- Introduce GitHub Actions to run unit/e2e/static checks on PRs
-- Add phpunit.xml and phpstan.neon; wire them in CI
-- Add package.json and Playwright config; document e2e run steps
-- Provide Dockerfile/docker-compose or runtime bootstrap instructions
-- Start semantic versioning and tag an initial release
+- Align Antora source/report path with docs/modules or update registry report_path
+- Extend CI to run composer audit and npm/audit-equivalent and publish OpenAPI artifact
+- Introduce baseline observability (structured logging, correlation ID) and metrics/tracing
+  hooks
+- Add container/Kubernetes or runtime deployment manifests, or document deployment
+  path
+- Adopt release tagging and changelog automation in CI
+- Ensure CI runs phpstan, deptrac, phpunit, and Playwright lanes with gating
 evidence:
 - path: .antora-src/modules/ROOT/pages/component/billing/report/index.adoc
   note: Current component report page if present.
@@ -387,46 +429,58 @@ evidence:
   note: Seeded atlas dataset source.
 - path: .sync/quality-atlas/components/billing/probes/current.yaml
   note: Deterministic development-driving probe layer.
-- path: config/services.yaml
+- path: composer.json
+  note: Assessment evidence path.
+- path: README.md
   note: Assessment evidence path.
 - path: deptrac.yaml
   note: Assessment evidence path.
-- path: docs/billing-boundary.md
+- path: phpstan.neon.dist
   note: Assessment evidence path.
-- path: docs/testing-strategy.md
+- path: phpunit.xml.dist
   note: Assessment evidence path.
-- path: docs/documentation-guidelines.md
-  note: Assessment evidence path.
-- path: migrations/001_create_invoices.sql
-  note: Assessment evidence path.
-- path: migrations/002_create_ledger.sql
-  note: Assessment evidence path.
-- path: migrations/003_create_billing_idempotency.sql
-  note: Assessment evidence path.
-- path: phpdoc.xml.dist
-  note: Assessment evidence path.
-- path: src/Http
-  note: Assessment evidence path.
-- path: src/Infrastructure
-  note: Assessment evidence path.
-- path: src/Service
-  note: Assessment evidence path.
-- path: src/ServiceInterface
+- path: playwright.config.js
   note: Assessment evidence path.
 - path: tests/unit
   note: Assessment evidence path.
+- path: tests/Integration
+  note: Assessment evidence path.
+- path: tests/Contract
+  note: Assessment evidence path.
 - path: tests/e2e
   note: Assessment evidence path.
-- path: tests/playwright
+- path: docs/antora.yml
+  note: Assessment evidence path.
+- path: docs/api-versioning.md
+  note: Assessment evidence path.
+- path: docs/api-error-contract.md
+  note: Assessment evidence path.
+- path: docs/billing-boundary.md
+  note: Assessment evidence path.
+- path: docs/operations
+  note: Assessment evidence path.
+- path: docs/testing-strategy.md
+  note: Assessment evidence path.
+- path: qodana.yaml
+  note: Assessment evidence path.
+- path: .github/workflows
+  note: Assessment evidence path.
+- path: .github/CODEOWNERS
+  note: Assessment evidence path.
+- path: .github/pull_request_template.md
+  note: Assessment evidence path.
+- path: config/services.yaml
+  note: Assessment evidence path.
+- path: public/index.php
+  note: Assessment evidence path.
+- path: migrations/005_add_operational_indexes_and_timestamps.sql
   note: Assessment evidence path.
 assessment_notes:
-- Billing shows a clearly bounded billing domain with layered PHP code and domain
-  migrations, but packaging, CI, and runner configs are missing, keeping it pre-RC
-  despite strong internal docs and structure.
-- All observations are grounded in the provided repository facts as of 2026-04-11
-  UTC.
-- Report excerpt mentions tooling that is not present in this repo; treat as aspirational
-  until committed.
-- Symfony-style structure is inferred from config/services.yaml and Http directory;
-  version is not asserted.
+- Billing reads as a governed Symfony 8 billing subsystem with strong QA and documentation
+  depth; minor gaps remain in observability, security scanning, and docs publishing
+  alignment.
+- Scores refreshed from repository evidence where justified; unchanged areas retain
+  prior narrative with minor refinements.
+- Security posture is inferred from present configs and docs only; no secret/dependency
+  scanners were found in-tree.
 assessment_confidence: medium

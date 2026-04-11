@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-11T03:13:04.338887+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260411T031148Z",
+  "generated_at": "2026-04-11T03:25:41.161853+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260411T032428Z",
   "mode": "responses",
   "components": [
     {
       "component": "billing",
       "title": "Billing",
-      "overall": 7.7,
+      "overall": 8.7,
       "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/billing/history/2026-04-11-assessment-2026-04-11.yaml",
-      "summary": "Billing shows a clearly bounded billing domain with layered PHP code and domain migrations, but packaging, CI, and runner configs are missing, keeping it pre-RC despite strong internal docs and structure."
+      "summary": "Billing reads as a governed Symfony 8 billing subsystem with strong QA and documentation depth; minor gaps remain in observability, security scanning, and docs publishing alignment."
     }
   ],
   "failures": [],

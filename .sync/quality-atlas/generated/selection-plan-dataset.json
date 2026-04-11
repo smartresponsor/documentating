@@ -73,7 +73,7 @@
     }
   },
   "plan": {
-    "generated_at": "2026-04-11T03:11:47.837648+00:00",
+    "generated_at": "2026-04-11T03:24:28.432824+00:00",
     "event_name": "workflow_dispatch",
     "manual_components": [
       "billing"
@@ -94,7 +94,7 @@
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
+        "current_head_commit": "a885cef03a1b6813c45cedef3510371a0345dd02",
         "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
@@ -102,7 +102,7 @@
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 3.2
+        "hours_since_last_assessment": 3.41
       }
     ],
     "status": "selected"
@@ -192,8 +192,8 @@
       "snapshot": {
         "snapshot_date": "2026-04-11",
         "snapshot_label": "assessment-2026-04-11",
-        "overall": 7.7,
-        "assessed_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
+        "overall": 8.7,
+        "assessed_commit": "a885cef03a1b6813c45cedef3510371a0345dd02",
         "assessed_tag": null,
         "trigger_reason": "manual_override"
       },
@@ -204,7 +204,7 @@
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
+        "current_head_commit": "a885cef03a1b6813c45cedef3510371a0345dd02",
         "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
@@ -212,7 +212,7 @@
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 3.2
+        "hours_since_last_assessment": 3.41
       }
     },
     {

@@ -1668,7 +1668,7 @@
     {
       "component": "billing",
       "title": "Billing",
-      "overall": 7.7,
+      "overall": 8.7,
       "snapshot": {
         "date": "2026-04-11",
         "label": "assessment-2026-04-11",
@@ -1677,41 +1677,39 @@
         "assessment_basis": {
           "repository": "smartresponsor/billing",
           "assessed_branch": "master",
-          "assessed_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
+          "assessed_commit": "a885cef03a1b6813c45cedef3510371a0345dd02",
           "assessed_tag": null,
           "trigger_reason": "manual_override",
           "previous_commit": null,
           "previous_tag": null,
-          "current_head_commit": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac",
+          "current_head_commit": "a885cef03a1b6813c45cedef3510371a0345dd02",
           "current_head_tag": null,
           "changed_files_sample": []
         }
       },
       "development_driving": {
         "overall_status": "fail",
-        "average_score": 7.75,
+        "average_score": 7.46,
         "status_counts": {
-          "pass": 2,
-          "warn": 4,
-          "fail": 1,
+          "pass": 3,
+          "warn": 2,
+          "fail": 2,
           "not_applicable": 0
         },
         "top_blockers": [
           "Canon & Structure — Repository/domain-named directory is too close to root for owner canon.",
           "Canon & Structure — Repository/domain-named directory is too close to root for owner canon.",
-          "Runtime & Application Surface — No Docker or compose files were detected.",
           "QA & Behavioral Assurance — No fixtures directories were detected.",
-          "Documentation & GitHub Suite — Missing expected documentation asset: README.md.",
-          "Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.",
-          "Delivery & Observability — No GitHub workflow files were detected.",
-          "Delivery & Observability — Deploy or packaging markers appear sparse."
+          "Documentation & GitHub Suite — Public/protected docblock coverage is 123/223 (55%).",
+          "SOLID & Refactoring Pressure — PHP file is very large (548 lines); review SRP and refactoring pressure.",
+          "SOLID & Refactoring Pressure — PHP file is large (350 lines); review SRP pressure."
         ],
         "families": {
           "canon_structure": {
             "title": "Canon & Structure",
             "status": "fail",
-            "score": 2.5,
-            "summary": "3 fail, 0 warn, 0 info findings detected.",
+            "score": 0.0,
+            "summary": "4 fail, 1 warn, 0 info findings detected.",
             "blockers": [
               "Repository/domain-named directory is too close to root for owner canon.",
               "Repository/domain-named directory is too close to root for owner canon.",
@@ -1727,12 +1725,10 @@
           },
           "runtime_surface": {
             "title": "Runtime & Application Surface",
-            "status": "warn",
-            "score": 9.0,
-            "summary": "0 fail, 1 warn, 0 info findings detected.",
-            "blockers": [
-              "No Docker or compose files were detected."
-            ]
+            "status": "pass",
+            "score": 10.0,
+            "summary": "No material probe findings detected in this family.",
+            "blockers": []
           },
           "qa_behavior": {
             "title": "QA & Behavioral Assurance",
@@ -1746,58 +1742,55 @@
           "documentation_suite": {
             "title": "Documentation & GitHub Suite",
             "status": "warn",
-            "score": 6.0,
-            "summary": "0 fail, 4 warn, 0 info findings detected.",
+            "score": 9.0,
+            "summary": "0 fail, 1 warn, 0 info findings detected.",
             "blockers": [
-              "Missing expected documentation asset: README.md.",
-              "Missing expected documentation asset: CHANGELOG.md.",
-              "Public/protected docblock coverage is 6/72 (8%)."
+              "Public/protected docblock coverage is 123/223 (55%)."
             ]
           },
           "delivery_observability": {
             "title": "Delivery & Observability",
-            "status": "warn",
-            "score": 7.75,
-            "summary": "0 fail, 2 warn, 1 info findings detected.",
-            "blockers": [
-              "No GitHub workflow files were detected.",
-              "Deploy or packaging markers appear sparse."
-            ]
+            "status": "pass",
+            "score": 9.75,
+            "summary": "0 fail, 0 warn, 1 info findings detected.",
+            "blockers": []
           },
           "solid_refactoring": {
             "title": "SOLID & Refactoring Pressure",
-            "status": "pass",
-            "score": 10.0,
-            "summary": "No material probe findings detected in this family.",
-            "blockers": []
+            "status": "fail",
+            "score": 4.5,
+            "summary": "1 fail, 3 warn, 0 info findings detected.",
+            "blockers": [
+              "PHP file is very large (548 lines); review SRP and refactoring pressure.",
+              "PHP file is large (350 lines); review SRP pressure.",
+              "Constructor injects 9 parameters; review dependency inversion and class responsibilities."
+            ]
           }
         }
       },
       "probe_summary": {
         "overall_status": "fail",
-        "average_score": 7.75,
+        "average_score": 7.46,
         "status_counts": {
-          "pass": 2,
-          "warn": 4,
-          "fail": 1,
+          "pass": 3,
+          "warn": 2,
+          "fail": 2,
           "not_applicable": 0
         },
         "top_blockers": [
           "Canon & Structure — Repository/domain-named directory is too close to root for owner canon.",
           "Canon & Structure — Repository/domain-named directory is too close to root for owner canon.",
-          "Runtime & Application Surface — No Docker or compose files were detected.",
           "QA & Behavioral Assurance — No fixtures directories were detected.",
-          "Documentation & GitHub Suite — Missing expected documentation asset: README.md.",
-          "Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.",
-          "Delivery & Observability — No GitHub workflow files were detected.",
-          "Delivery & Observability — Deploy or packaging markers appear sparse."
+          "Documentation & GitHub Suite — Public/protected docblock coverage is 123/223 (55%).",
+          "SOLID & Refactoring Pressure — PHP file is very large (548 lines); review SRP and refactoring pressure.",
+          "SOLID & Refactoring Pressure — PHP file is large (350 lines); review SRP pressure."
         ],
         "families": {
           "canon_structure": {
             "title": "Canon & Structure",
             "status": "fail",
-            "score": 2.5,
-            "summary": "3 fail, 0 warn, 0 info findings detected.",
+            "score": 0.0,
+            "summary": "4 fail, 1 warn, 0 info findings detected.",
             "blockers": [
               "Repository/domain-named directory is too close to root for owner canon.",
               "Repository/domain-named directory is too close to root for owner canon.",
@@ -1813,12 +1806,10 @@
           },
           "runtime_surface": {
             "title": "Runtime & Application Surface",
-            "status": "warn",
-            "score": 9.0,
-            "summary": "0 fail, 1 warn, 0 info findings detected.",
-            "blockers": [
-              "No Docker or compose files were detected."
-            ]
+            "status": "pass",
+            "score": 10.0,
+            "summary": "No material probe findings detected in this family.",
+            "blockers": []
           },
           "qa_behavior": {
             "title": "QA & Behavioral Assurance",
@@ -1832,30 +1823,29 @@
           "documentation_suite": {
             "title": "Documentation & GitHub Suite",
             "status": "warn",
-            "score": 6.0,
-            "summary": "0 fail, 4 warn, 0 info findings detected.",
+            "score": 9.0,
+            "summary": "0 fail, 1 warn, 0 info findings detected.",
             "blockers": [
-              "Missing expected documentation asset: README.md.",
-              "Missing expected documentation asset: CHANGELOG.md.",
-              "Public/protected docblock coverage is 6/72 (8%)."
+              "Public/protected docblock coverage is 123/223 (55%)."
             ]
           },
           "delivery_observability": {
             "title": "Delivery & Observability",
-            "status": "warn",
-            "score": 7.75,
-            "summary": "0 fail, 2 warn, 1 info findings detected.",
-            "blockers": [
-              "No GitHub workflow files were detected.",
-              "Deploy or packaging markers appear sparse."
-            ]
+            "status": "pass",
+            "score": 9.75,
+            "summary": "0 fail, 0 warn, 1 info findings detected.",
+            "blockers": []
           },
           "solid_refactoring": {
             "title": "SOLID & Refactoring Pressure",
-            "status": "pass",
-            "score": 10.0,
-            "summary": "No material probe findings detected in this family.",
-            "blockers": []
+            "status": "fail",
+            "score": 4.5,
+            "summary": "1 fail, 3 warn, 0 info findings detected.",
+            "blockers": [
+              "PHP file is very large (548 lines); review SRP and refactoring pressure.",
+              "PHP file is large (350 lines); review SRP pressure.",
+              "Constructor injects 9 parameters; review dependency inversion and class responsibilities."
+            ]
           }
         }
       },
@@ -1863,12 +1853,14 @@
         "canon_structure": {
           "title": "Canon & Structure",
           "status": "fail",
-          "score": 2.5,
-          "summary": "3 fail, 0 warn, 0 info findings detected.",
+          "score": 0.0,
+          "summary": "4 fail, 1 warn, 0 info findings detected.",
           "blockers": [
             "Repository/domain-named directory is too close to root for owner canon.",
             "Repository/domain-named directory is too close to root for owner canon.",
-            "Repository/domain-named directory is too close to root for owner canon."
+            "Repository/domain-named directory is too close to root for owner canon.",
+            "Repository/domain-named directory is too close to root for owner canon.",
+            "PHP namespace does not use the default App\\ root."
           ],
           "findings": [
             {
@@ -1888,10 +1880,24 @@
               "id": "forbidden_domain_depth",
               "detail": "Repository/domain-named directory is too close to root for owner canon.",
               "path": "src/Service/Billing"
+            },
+            {
+              "severity": "fail",
+              "id": "forbidden_domain_depth",
+              "detail": "Repository/domain-named directory is too close to root for owner canon.",
+              "path": "src/Fixture/Billing"
+            },
+            {
+              "severity": "warn",
+              "id": "namespace_drift",
+              "detail": "PHP namespace does not use the default App\\ root.",
+              "path": "src/Kernel.php"
             }
           ],
           "evidence": [
+            "src/Fixture/Billing",
             "src/Http/Billing",
+            "src/Kernel.php",
             "src/Service/Billing",
             "src/ServiceInterface/Billing"
           ]
@@ -1909,21 +1915,16 @@
         },
         "runtime_surface": {
           "title": "Runtime & Application Surface",
-          "status": "warn",
-          "score": 9.0,
-          "summary": "0 fail, 1 warn, 0 info findings detected.",
-          "blockers": [
-            "No Docker or compose files were detected."
-          ],
-          "findings": [
-            {
-              "severity": "warn",
-              "id": "docker_surface_missing",
-              "detail": "No Docker or compose files were detected."
-            }
-          ],
+          "status": "pass",
+          "score": 10.0,
+          "summary": "No material probe findings detected in this family.",
+          "blockers": [],
+          "findings": [],
           "evidence": [
-            "docs/architecture/pre-subscription-hardening.md"
+            "CHANGELOG.md",
+            "README.md",
+            "docs/release-readiness.md",
+            "tools/test-db/docker-compose.yml"
           ]
         },
         "qa_behavior": {
@@ -1942,87 +1943,104 @@
             }
           ],
           "evidence": [
-            "docs/architecture/billing-platform-overview.md",
-            "docs/testing-strategy.md",
-            "tests/",
-            "tests/e2e/panther/BillingSmokeTest.php"
+            "README.md",
+            "composer.json",
+            "package-lock.json",
+            "tests/"
           ]
         },
         "documentation_suite": {
           "title": "Documentation & GitHub Suite",
           "status": "warn",
-          "score": 6.0,
-          "summary": "0 fail, 4 warn, 0 info findings detected.",
+          "score": 9.0,
+          "summary": "0 fail, 1 warn, 0 info findings detected.",
           "blockers": [
-            "Missing expected documentation asset: README.md.",
-            "Missing expected documentation asset: CHANGELOG.md.",
-            "Public/protected docblock coverage is 6/72 (8%).",
-            "GitHub Suite support files appear sparse."
+            "Public/protected docblock coverage is 123/223 (55%)."
           ],
           "findings": [
             {
               "severity": "warn",
-              "id": "missing_doc_asset",
-              "detail": "Missing expected documentation asset: README.md."
-            },
-            {
-              "severity": "warn",
-              "id": "missing_doc_asset",
-              "detail": "Missing expected documentation asset: CHANGELOG.md."
-            },
-            {
-              "severity": "warn",
               "id": "docblock_coverage_low",
-              "detail": "Public/protected docblock coverage is 6/72 (8%)."
-            },
-            {
-              "severity": "warn",
-              "id": "github_suite_sparse",
-              "detail": "GitHub Suite support files appear sparse."
+              "detail": "Public/protected docblock coverage is 123/223 (55%)."
             }
           ],
           "evidence": [
-            "docs/architecture/pre-subscription-hardening.md",
-            "docs/documentation-guidelines.md",
-            "php-docblock-ratio:6/72"
+            ".github/ISSUE_TEMPLATE",
+            ".github/pull_request_template.md",
+            ".github/workflows",
+            "CHANGELOG.md",
+            "README.md",
+            "composer.json",
+            "deptrac.yaml",
+            "php-docblock-ratio:123/223"
           ]
         },
         "delivery_observability": {
           "title": "Delivery & Observability",
-          "status": "warn",
-          "score": 7.75,
-          "summary": "0 fail, 2 warn, 1 info findings detected.",
-          "blockers": [
-            "No GitHub workflow files were detected.",
-            "Deploy or packaging markers appear sparse."
-          ],
+          "status": "pass",
+          "score": 9.75,
+          "summary": "0 fail, 0 warn, 1 info findings detected.",
+          "blockers": [],
           "findings": [
-            {
-              "severity": "warn",
-              "id": "workflows_missing",
-              "detail": "No GitHub workflow files were detected."
-            },
             {
               "severity": "info",
               "id": "observability_markers_missing",
               "detail": "No Prometheus/Grafana markers were detected."
-            },
-            {
-              "severity": "warn",
-              "id": "deploy_markers_sparse",
-              "detail": "Deploy or packaging markers appear sparse."
             }
           ],
-          "evidence": []
+          "evidence": [
+            ".github/pull_request_template.md",
+            ".github/workflows/ci.yml",
+            ".github/workflows/docs-surfaces.yml",
+            "README.md",
+            "docs/quality-gates.md",
+            "docs/testing-strategy.md",
+            "qodana.yaml"
+          ]
         },
         "solid_refactoring": {
           "title": "SOLID & Refactoring Pressure",
-          "status": "pass",
-          "score": 10.0,
-          "summary": "No material probe findings detected in this family.",
-          "blockers": [],
-          "findings": [],
-          "evidence": []
+          "status": "fail",
+          "score": 4.5,
+          "summary": "1 fail, 3 warn, 0 info findings detected.",
+          "blockers": [
+            "PHP file is very large (548 lines); review SRP and refactoring pressure.",
+            "PHP file is large (350 lines); review SRP pressure.",
+            "Constructor injects 9 parameters; review dependency inversion and class responsibilities.",
+            "Class exposes 16 public methods; review interface segregation and SRP."
+          ],
+          "findings": [
+            {
+              "severity": "fail",
+              "id": "large_class",
+              "detail": "PHP file is very large (548 lines); review SRP and refactoring pressure.",
+              "path": "src/Http/Billing/BillingController.php"
+            },
+            {
+              "severity": "warn",
+              "id": "class_size_pressure",
+              "detail": "PHP file is large (350 lines); review SRP pressure.",
+              "path": "src/Service/Billing/FileBillingStateStore.php"
+            },
+            {
+              "severity": "warn",
+              "id": "constructor_injection_pressure",
+              "detail": "Constructor injects 9 parameters; review dependency inversion and class responsibilities.",
+              "path": "src/Service/Billing/InvoiceResult.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 16 public methods; review interface segregation and SRP.",
+              "path": "tests/unit/Controller/HomeControllerTest.php"
+            }
+          ],
+          "evidence": [
+            "src/Http/Billing/BillingController.php",
+            "src/Service/Billing/FileBillingStateStore.php",
+            "src/Service/Billing/InvoiceResult.php",
+            "tests/unit/Controller/HomeControllerTest.php"
+          ]
         }
       }
     },
@@ -6574,7 +6592,7 @@
     {
       "id": "canon_structure",
       "title": "Canon & Structure",
-      "average_score": 8.74,
+      "average_score": 8.62,
       "statuses": {
         "pass": 1,
         "warn": 19,
@@ -6596,10 +6614,10 @@
     {
       "id": "runtime_surface",
       "title": "Runtime & Application Surface",
-      "average_score": 8.99,
+      "average_score": 9.04,
       "statuses": {
-        "pass": 0,
-        "warn": 21,
+        "pass": 1,
+        "warn": 20,
         "fail": 0,
         "not_applicable": 0
       }
@@ -6618,7 +6636,7 @@
     {
       "id": "documentation_suite",
       "title": "Documentation & GitHub Suite",
-      "average_score": 8.75,
+      "average_score": 8.89,
       "statuses": {
         "pass": 0,
         "warn": 21,
@@ -6629,10 +6647,10 @@
     {
       "id": "delivery_observability",
       "title": "Delivery & Observability",
-      "average_score": 8.93,
+      "average_score": 9.02,
       "statuses": {
-        "pass": 1,
-        "warn": 20,
+        "pass": 2,
+        "warn": 19,
         "fail": 0,
         "not_applicable": 0
       }
@@ -6640,11 +6658,11 @@
     {
       "id": "solid_refactoring",
       "title": "SOLID & Refactoring Pressure",
-      "average_score": 8.71,
+      "average_score": 8.45,
       "statuses": {
-        "pass": 2,
+        "pass": 1,
         "warn": 19,
-        "fail": 0,
+        "fail": 1,
         "not_applicable": 0
       }
     }
@@ -6787,17 +6805,17 @@
     },
     {
       "component": "Billing",
-      "detail": "Runtime & Application Surface — No Docker or compose files were detected.",
-      "status": "fail"
-    },
-    {
-      "component": "Billing",
       "detail": "QA & Behavioral Assurance — No fixtures directories were detected.",
       "status": "fail"
     },
     {
       "component": "Billing",
-      "detail": "Documentation & GitHub Suite — Missing expected documentation asset: README.md.",
+      "detail": "Documentation & GitHub Suite — Public/protected docblock coverage is 123/223 (55%).",
+      "status": "fail"
+    },
+    {
+      "component": "Billing",
+      "detail": "SOLID & Refactoring Pressure — PHP file is very large (548 lines); review SRP and refactoring pressure.",
       "status": "fail"
     }
   ]
