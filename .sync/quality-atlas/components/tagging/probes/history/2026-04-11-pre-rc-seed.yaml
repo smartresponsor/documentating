@@ -1,10 +1,10 @@
-component: indexing
-title: Indexing
+component: tagging
+title: Tagging
 snapshot:
   date: '2026-04-11'
   label: pre-rc-seed
   origin: quality-atlas probe seed
-  generated_at: '2026-04-11T00:29:02.609441+00:00'
+  generated_at: '2026-04-11T00:29:02.386794+00:00'
 repo_target:
   github_repository: ''
   local_path: ''

@@ -1,0 +1,247 @@
+{
+  "status": "ok",
+  "registry_entry": {
+    "component_id": "tagging",
+    "component_title": "Tagging",
+    "github_repository": "smartresponsor/tagging",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/tagging/report/index.adoc",
+    "notes": "Set enabled=true and github_repository once this component is connected to the scheduled assessment runner."
+  },
+  "facts": {
+    "repo_root": "/tmp/quality-atlas-tagging-assessment-2026-04-11-72l9lseo/tagging",
+    "timestamp_utc": "2026-04-11T00:29:03.998757+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "c759d978fc3520eaa81cb70a68a129371b5df1ee"
+    },
+    "git_exact_tag": {
+      "exit_code": 128,
+      "output": "fatal: No names found, cannot describe anything."
+    },
+    "has_composer_json": true,
+    "has_package_json": true,
+    "has_phpstan_neon": false,
+    "has_phpstan_neon_dist": true,
+    "has_phpunit_xml": false,
+    "has_phpunit_xml_dist": true,
+    "has__github_workflows": true,
+    "has__antora-src_modules_ROOT_nav_adoc": false,
+    "has__antora-src_modules_ROOT_pages_index_adoc": false,
+    "git_status": {
+      "exit_code": 0,
+      "output": ""
+    },
+    "git_recent_commits": {
+      "exit_code": 0,
+      "output": "c759d97 Merge pull request #40 from smartresponsor/codex/fix-test-failures-in-integration-tests"
+    },
+    "top_level_tree": {
+      "exit_code": 0,
+      "output": "./.commanding\n./.commanding/.gitattributes\n./.commanding/README.md\n./.commanding/backup\n./.commanding/command.sh\n./.commanding/commanding.cmd\n./.commanding/commanding.sh\n./.commanding/database\n./.commanding/dependencies\n./.commanding/deploy\n./.commanding/docker\n./.commanding/git\n./.commanding/health.sh\n./.commanding/history.sh\n./.commanding/local_ci.sh\n./.commanding/misc\n./.commanding/patch_zipper.sh\n./.commanding/policy\n./.commanding/ps1\n./.commanding/reorganize-tests.ps1\n./.commanding/run.sh\n./.commanding/sh\n./.commanding/test\n./.commanding/zipper.sh\n./.editorconfig\n./.env.example\n./.git\n./.git/HEAD\n./.git/config\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/packed-refs\n./.git/refs\n./.git/shallow\n./.gitattributes\n./.githooks\n./.githooks/pre-commit\n./.github\n./.github/workflows\n./.gitignore\n./.php-cs-fixer.dist.php\n./CHANGELOG.md\n./MANIFEST.json\n./Makefile\n./README.md\n./RELEASE_NOTES.md\n./Tagging\n./admin\n./admin/app.js\n./admin/index.html\n./admin/style.css\n./composer.json\n./composer.lock\n./config\n./config/routes\n./config/security_signature.yaml\n./config/tag_assignment.yaml\n./config/tag_cache.yaml\n./config/tag_observability.yaml\n./config/tag_policy.yaml\n./config/tag_public_route_paths.php\n./config/tag_public_surface.php\n./config/tag_quota.yaml\n./config/tag_rbac.yaml\n./config/tag_route_catalog.php\n./config/tag_runtime.php\n./config/tag_search.yaml\n./config/tag_security.yaml\n./config/tag_slug.yaml\n./config/tag_tenant.yaml\n./config/tag_webhooks.yaml\n./contracts\n./contracts/http\n./db\n./db/postgres\n./deploy\n./deploy/docker\n./docker-compose.yml\n./docs\n./docs/README.md\n./docs/acceptance\n./docs/admin\n./docs/antora.yml\n./docs/api\n./docs/architecture\n./docs/bulk\n./docs/data\n./docs/db\n./docs/demo\n./docs/deploy\n./docs/fixtures\n./docs/http\n./docs/modules\n./docs/ops\n./docs/policy\n./docs/public\n./docs/rbac.md\n./docs/rc5\n./docs/release\n./docs/security\n./docs/seed\n./docs/slug-policy.md\n./docs/tag\n./fixtures\n./fixtures/tag-demo-catalog.php\n./fixtures/tag-demo-fixture.php\n./fixtures/tag-demo.sql\n./host\n./host-minimal\n./host-minimal/autoload.php\n./host-minimal/bootstrap.php\n./host-minimal/cors.php\n./host-minimal/index.php\n./host-minimal/route.php\n./host-minimal/smoke-health.php\n./host/Dockerfile"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.3.6 (cli) (built: Mar 20 2026 02:32:55) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n    with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.12.13"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "579"
+    },
+    "report_excerpt": "= Tagging Report :description: Current owner-oriented maturity report for the Tagging component. :page-slug: tagging-report This page is the current owner-oriented maturity report for *Tagging*. It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward. == Component Portrait Tagging is not shaped as a simple tags CRUD helper or a lightweight metadata convenience layer. It reads as a canonical tagging component library: a system intended to manage tag creation and management, attach and detach flows across object types, assignment listing, search and suggest, stable status and surface exposure, runtime contract governance, and canonical delivery discipline. The component already shows signs of being treated as a governed subsystem rather than as a convenience feature. Its current shape suggests an internal tagging and classification runtime layer designed for durability, structured evolution, and integration into a wider ecosystem. == Ecosystem Role Within the broader Smartresponsor direction, Tagging appears to occupy the role of a canonical tagging and classification component. Its ecosystem role can be understood across several functions: * as a tag CRUD and assignment surface, * as a search and suggest layer, * as a status and surface-discovery runtime, * as a canonical HTTP contract surface, * and as a reusable classification capability for broader systems. This makes Tagging strategically more important than a typical tags table helper. It points toward a reusable internal tagging capability that other components can depend on. == Current Maturity Tagging already presents several strong signals of maturity: * a clear canonical tagging product identity, * explicit runtime scope around CRUD, assignment, search, suggest, status, and surface discovery, * a host-minimal runtime treated as the source of truth for what is actually runnable, * an explicit HTTP contract under `contracts/http/`, * deep audit and publish-gate coverage, * and multiple test bands across unit, integration, panther, and e2e flows. In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity. == RC Scorecard [cols=\"2,1,4\",options=\"header\"] |=== | Layer | Score to RC | Reading | Product identity | 8.6 / 10 | The component is already clearly framed as a canonical tagging component library rather than a generic metadata helper. | Architecture and domain shape | 8.4 / 10 | Host-minimal runtime, canonical HTTP contract, and core-vs-adjacent asset separation already form a coherent tagging-runtime shape. | Runtime and application surface | 8.5 / 10 | CRUD, assignment, search, suggest, status, surface discovery, local server flows, Docker paths, and stable HTTP endpoints establish a real runtime layer. | QA maturity | 8.8 / 10 | The quality contour is strong across linting, phpstan, fixture validation, unit/integration/panther/e2e suites, and install/test gates. | Governance and operational readiness | 9.0 / 10 | Surface, contract, route, bootstrap, config, SDK, canonical-structure, release-grade portrait, and repo-hygiene audits form one of the strongest governance signals among the components. | Classification and tagging posture | 8.7 / 10 | CRUD, attach/detach, assignment list by entity, search, suggest, and surface discovery together show a strong canonical tagging runtime posture. | Market-facing alignment | 8.4 / 10 | The component already aligns well with enterprise tagging, taxonomy-runtime, and classification-governance classes, though it still reads more as a governed platform layer than a finished public metadata product shell. | Overall readiness to RC | 8.6 / 10 | Tagging is already a strong pre-RC component with clear enterprise-class internal tagging-runtime signals. |=== == Leader Line Tagging should not be measured against simple label fields or lightweight tag plugins. Its natural comparison line is closer to the enterprise-class tagging, taxonomy, and classification-governance category, including the kind of capability bands represented by: * tag lifecycle management, * attach and detach operations across resource types, * search and suggestion surfaces, * runtime contract stability, * and governed operational handling of classification surfaces. This means the component is better understood as targeting the same strategic class of problem addressed by stronger tagging and taxonomy-runtime leaders, while expressing that class through a Smartresponsor internal component. In that sense, the leader line is not another tags helper. It is closer to: * enterprise tagging-runtime class, * enterprise classification-governance class, * enterprise taxonomy-and-surface-discovery class, * reinterpreted as an internal ecosystem component. == Strength Profile Several …",
+    "report_excerpt_source": ".antora-src/modules/ROOT/pages/component/tagging/report/index.adoc",
+    "key_file_excerpts": {
+      "composer.json": "{\n    \"name\": \"smartresponsor/tag\",\n    \"type\": \"library\",\n    \"license\": \"proprietary\",\n    \"description\": \"Smartresponsor canonical tagging component library.\",\n    \"require\": {\n        \"php\": \"^8.4\",\n        \"ext-pdo\": \"*\",\n        \"ext-curl\": \"*\",\n        \"ext-mbstring\": \"*\",\n        \"ext-ctype\": \"*\",\n        \"ext-intl\": \"*\"\n    },\n    \"require-dev\": {\n        \"doctrine/doctrine-fixtures-bundle\": \"^3.6\",\n        \"doctrine/doctrine-migrations-bundle\": \"^3.4\",\n        \"friendsofphp/php-cs-fixer\": \"^3.94\",\n        \"phpmd/phpmd\": \"^2.15\",\n        \"phpstan/phpstan\": \"^2.1\",\n        \"phpunit/phpunit\": \"^10.5\",\n        \"symfony/panther\": \"^2.2\"\n    },\n    \"autoload\": {\n        \"psr-4\": {\n            \"App\\\\\": \"src/\"\n        }\n    },\n    \"autoload-dev\": {\n        \"psr-4\": {\n            \"Tests\\\\\": \"tests/\",\n            \"Tests\\\\Integration\\\\\": \"tests/integration/\",\n            \"Tests\\\\E2E\\\\\": \"tests/e2e/\",\n            \"Tests\\\\Panther\\\\\": \"tests/panther/\"\n        }\n    },\n    \"scripts\": {\n        \"lint\": \"php tools/lint.php\",\n        \"lint:admin\": \"node --check admin/app.js\",\n        \"phpstan\": \"vendor/bin/phpstan analyse -c phpstan.neon.dist --memory-limit=512M\",\n        \"cs:check\": \"vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --dry-run --diff --using-cache=no\",\n        \"cs:fix\": \"vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --using-cache=no\",\n        \"fixture:validate\": \"php tools/seed/tag-fixture-validate.php\",\n        \"fixture:dry-run\": \"php tools/seed/tag-fixture-dry-run.php\",\n        \"docs:openapi:publish\": \"php tools/release/tag-openapi-publish.php\",\n        \"audit:surface\": \"php tools/audit/tag-surface-audit.php\",\n        \"audit:contract\": \"php tools/audit/tag-contract-audit.php\",\n        \"audit:route\": \"php tools/audit/tag-route-controller-audit.php\",\n        \"audit:bootstrap\": \"php tools/audit/tag-bootstrap-audit.php\",\n        \"audit:bootstrap-runtime\": \"php tools/audit/tag-bootstrap-runtime-audit.php\",\n        \"audit:config\": \"php tools/audit/tag-config-audit.php\",\n        \"audit:sdk\": \"php tools/audit/tag-sdk-audit.php\",\n        \"audit:version\": \"php tools/audit/tag-version-audit.php\",\n        \"audit:release-assets\": \"php tools/audit/tag-release-assets-audit.php\",\n        \"audit:openapi-semantics\": \"php tools/audit/tag-openapi-semantics-audit.php\",\n        \"audit:generated-openapi-surface\": \"php tools/audit/tag-generated-openapi-surface-audit.php\",\n        \"audit:antora-surface\": \"php tools/audit/tag-antora-surface-audit.php\",\n        \"release:preflight\": \"php tools/release/tag-preflight.php\",\n        \"db:migrate\": \"php tools/db/tag-migrate.php\",\n        \"db:smoke\": \"bash tools/db/tag-migration-smoke.sh\",\n        \"db:test:start\": \"bash tools/test-db-start.sh\",\n        \"db:test:stop\": \"bash tools/test-db-stop.sh\",\n        \"db:smoke:self-contained\": \"bash tools/migration-smoke.sh\",\n        \"demo:seed\": \"php tools/seed/tag-seed.php\",\n        \"demo:clear\": \"php tools/seed/tag-clear.php\",\n        \"smoke:runtime\": \"php tools/smoke/tag-smoke.php\",\n        \"audit:canonical-stale\": \"php tools/audit/tag-canonical-stale-reference-audit.php\",\n        \"audit:canonical-structure\": \"php tools/audit/tag-canonical-structure-audit.php\",\n        \"audit:ci\": [\n            \"@docs:openapi:publish\",\n            \"@audit:composer-integrity\",\n            \"@audit:surface\",\n            \"@audit:contract\",\n            \"@audit:route\",\n            \"@audit:bootstrap\",\n            \"@audit:bootstrap-runtime\",\n            \"@audit:config\",\n            \"@audit:sdk\",\n            \"@audit:version\",\n            \"@audit:release-assets\",\n            \"@audit:openapi-semantics\",\n            \"@audit:generated-openapi-surface\",\n            \"@audit:antora-surface\",\n            \"@audit:core-boundary\",\n            \"@audit:canonical-stale\",\n            \"@audit:canonical-structure\",\n            \"@audit:repo-hygiene\",\n            \"@audit:snapshot-purity\",\n            \"@audit:repo-map-truth\",\n            \"@audit:ci-workflow\",\n            \"@audit:",
+      "package.json": "{\n  \"name\": \"tagging\",\n  \"version\": \"1.0.0\",\n  \"private\": true,\n  \"description\": \"Local E2E tooling for the Smartresponsor tagging runtime.\",\n  \"scripts\": {\n    \"e2e\": \"playwright test\",\n    \"e2e:install\": \"playwright install chromium\"\n  },\n  \"devDependencies\": {\n    \"@playwright/test\": \"^1.54.2\"\n  }\n}\n"
+    }
+  },
+  "verdict": {
+    "component": "tagging",
+    "summary": "Tagging reads as a governed, reusable tagging-and-classification runtime with strong audits, docs, and test/tooling; it looks pre-RC with minor release-governance gaps to close.",
+    "strengths": [
+      "Clear canonical tagging product identity and HTTP contract surface",
+      "Runnable host-minimal runtime with Docker and DB flows",
+      "Rich governance/audit scripts and security/RBAC/observability configs",
+      "Multi-band test/tooling (PHPUnit, PHPStan, Panther, Playwright) with GitHub Actions present",
+      "Comprehensive docs, demos, and fixtures"
+    ],
+    "risks": [
+      "No git release tags reduce release traceability",
+      "Requires PHP ^8.4 which may constrain some environments",
+      "Dist-only static analysis/test configs risk drift (phpstan.neon.dist, phpunit.xml.dist)",
+      "E2E (Playwright/Panther) presence not clearly wired into CI"
+    ],
+    "next_actions": [
+      "Publish annotated release tags and add a release workflow in GitHub Actions",
+      "Wire composer audit:ci, OpenAPI publish, and E2E suites (Panther/Playwright) into CI",
+      "Pin PHP 8.4+ in Docker/runtime docs and images to match composer constraints",
+      "Promote phpstan.neon and phpunit.xml from *.dist with agreed levels and enforce in CI",
+      "Clarify public consumption examples and API usage in docs"
+    ],
+    "notes": [
+      "Assessment grounded in repository facts at master@c759d978fc3520eaa81cb70a68a129371b5df1ee; no external scans executed.",
+      "Adoc report excerpt used as internal context alongside repo files and scripts."
+    ],
+    "suggested_score_overrides": {
+      "ops": 8.8
+    },
+    "metric_updates": {
+      "product": {
+        "summary": "Product identity is clearly expressed as a canonical tagging-and-classification component with a stable HTTP surface and rich docs/fixtures.",
+        "risks": [
+          "Proprietary licensing and internal posture may limit external adoption paths"
+        ],
+        "improvements": [
+          "Expand public usage examples and API walkthroughs in docs to guide consumers"
+        ],
+        "evidence": [
+          "composer.json",
+          "contracts/http/",
+          "docs/tag/",
+          "README.md"
+        ]
+      },
+      "architecture": {
+        "summary": "Architecture presents a coherent, Symfony-aligned component with explicit contracts, host-minimal runtime, and governed configs/boundaries.",
+        "risks": [
+          "Broad surface (CRUD, assign, search/suggest, discovery) increases complexity and boundary drift risk"
+        ],
+        "improvements": [
+          "Keep core-boundary audits enforced in CI and document bounded-context edges in docs"
+        ],
+        "evidence": [
+          "host-minimal/",
+          "contracts/http/",
+          "config/tag_policy.yaml",
+          "config/tag_route_catalog.php",
+          "composer.json"
+        ]
+      },
+      "runtime": {
+        "summary": "Runnable surface is present via host-minimal, Docker Compose, DB migration/seed scripts, and route/catalog configs.",
+        "risks": [
+          "Runtime requires PHP ^8.4 per composer.json, which may gate some environments"
+        ],
+        "improvements": [
+          "Pin PHP version in Dockerfiles/docs and keep smoke/DB scripts exercised in CI"
+        ],
+        "evidence": [
+          "docker-compose.yml",
+          "host/Dockerfile",
+          "host-minimal/smoke-health.php",
+          "config/tag_route_catalog.php",
+          "composer.json"
+        ]
+      },
+      "qa": {
+        "summary": "Quality toolchain spans PHPUnit, PHPStan, Panther, and Playwright with fixtures validation, pre-commit hooks, and CI workflows present.",
+        "risks": [
+          "E2E suites (Panther/Playwright) are declared but not visibly enforced in CI",
+          "Dist-only configs (phpstan.neon.dist, phpunit.xml.dist) can drift from enforced settings"
+        ],
+        "improvements": [
+          "Add CI jobs for Playwright and Panther; promote and lock phpstan/phpunit configs in CI"
+        ],
+        "evidence": [
+          "composer.json",
+          "phpstan.neon.dist",
+          "phpunit.xml.dist",
+          ".githooks/pre-commit",
+          ".github/workflows/",
+          "package.json"
+        ]
+      },
+      "ops": {
+        "summary": "Operational governance is strong (security/RBAC/observability configs, deploy artifacts, audit scripts, and ops docs), with a minor release-governance gap.",
+        "risks": [
+          "Absence of git release tags reduces traceability of releases and artifacts"
+        ],
+        "improvements": [
+          "Publish annotated tags and a release workflow; run audit:ci and OpenAPI publish in CI"
+        ],
+        "evidence": [
+          "config/tag_security.yaml",
+          "config/tag_rbac.yaml",
+          "config/tag_observability.yaml",
+          "deploy/docker/",
+          "docs/ops/",
+          "composer.json",
+          ".github/workflows/"
+        ]
+      },
+      "market": {
+        "summary": "Positioning aligns with enterprise tagging/classification runtime more than a simple tags helper, with portfolio-friendly docs and fixtures.",
+        "risks": [
+          "Internal, proprietary posture and platform focus may limit external market-facing narrative"
+        ],
+        "improvements": [
+          "Clarify ecosystem fit and external consumption stories (SDK/API examples, SLAs) in docs"
+        ],
+        "evidence": [
+          ".antora-src/modules/ROOT/pages/component/tagging/report/index.adoc",
+          "docs/tag/",
+          "README.md"
+        ]
+      },
+      "overall": {
+        "summary": "Component reads as a strong pre-RC subsystem with governed runtime, audits, and tests; close minor release-governance and CI wiring gaps to reach RC.",
+        "risks": [
+          "Release traceability (tags) and CI coverage for E2E remain partially unverified"
+        ],
+        "improvements": [
+          "Add release tagging workflow and enforce E2E/audit steps in CI to harden RC posture"
+        ],
+        "evidence": [
+          ".github/workflows/",
+          "docs/rc5",
+          "composer.json"
+        ]
+      }
+    },
+    "confidence": "medium",
+    "evidence_paths": [
+      "composer.json",
+      "README.md",
+      "docker-compose.yml",
+      "host-minimal/index.php",
+      "host/Dockerfile",
+      "contracts/http/",
+      "config/tag_route_catalog.php",
+      "config/tag_observability.yaml",
+      "config/tag_security.yaml",
+      "config/tag_rbac.yaml",
+      "config/tag_quota.yaml",
+      ".github/workflows/",
+      "phpstan.neon.dist",
+      "phpunit.xml.dist",
+      ".githooks/pre-commit",
+      "package.json",
+      "docs/antora.yml",
+      "docs/ops/",
+      "docs/tag/",
+      ".antora-src/modules/ROOT/pages/component/tagging/report/index.adoc"
+    ]
+  },
+  "snapshot_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/tagging/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/tagging/history/2026-04-11-assessment-2026-04-11.yaml"
+  },
+  "probe_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/tagging/probes/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/tagging/probes/history/2026-04-11-assessment-2026-04-11.yaml"
+  },
+  "ai_io": {
+    "request_file": "tagging.request.json",
+    "response_file": "tagging.response.json"
+  }
+}

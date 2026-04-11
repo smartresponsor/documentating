@@ -5,7 +5,7 @@
       "title": "Accessing",
       "overall": 8.5,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -305,7 +305,7 @@
       "title": "Addressing",
       "overall": 8.5,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -605,7 +605,7 @@
       "title": "Analysing",
       "overall": 8.0,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -905,7 +905,7 @@
       "title": "Applicating",
       "overall": 8.4,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1670,7 +1670,7 @@
       "title": "Billing",
       "overall": 8.8,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -1970,7 +1970,7 @@
       "title": "Cataloging",
       "overall": 8.4,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2270,7 +2270,7 @@
       "title": "Discovering",
       "overall": 7.7,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -2913,7 +2913,7 @@
       "title": "Indexing",
       "overall": 8.4,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -3213,7 +3213,7 @@
       "title": "Locating",
       "overall": 8.6,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -3513,7 +3513,7 @@
       "title": "Messaging",
       "overall": 8.6,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -3813,7 +3813,7 @@
       "title": "Ordering",
       "overall": 8.7,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -4113,7 +4113,7 @@
       "title": "Paying",
       "overall": 9.0,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -4413,7 +4413,7 @@
       "title": "Projecting",
       "overall": 8.1,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -4713,7 +4713,7 @@
       "title": "Rolling",
       "overall": 8.3,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -5013,7 +5013,7 @@
       "title": "Runtiming",
       "overall": 8.8,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -5313,7 +5313,7 @@
       "title": "Shipping",
       "overall": 9.0,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -5613,19 +5613,19 @@
       "title": "Tagging",
       "overall": 8.6,
       "snapshot": {
-        "date": "2026-04-08",
-        "label": "assessment-2026-04-08",
+        "date": "2026-04-11",
+        "label": "assessment-2026-04-11",
         "ref": "master",
         "origin": "quality-atlas responses assessment",
         "assessment_basis": {
           "repository": "smartresponsor/tagging",
           "assessed_branch": "master",
-          "assessed_commit": "cd92d3514dbe61d9fc316876501bd0b59bc52bbd",
+          "assessed_commit": "c759d978fc3520eaa81cb70a68a129371b5df1ee",
           "assessed_tag": null,
           "trigger_reason": "manual_override",
           "previous_commit": null,
           "previous_tag": null,
-          "current_head_commit": "cd92d3514dbe61d9fc316876501bd0b59bc52bbd",
+          "current_head_commit": "c759d978fc3520eaa81cb70a68a129371b5df1ee",
           "current_head_tag": null,
           "changed_files_sample": []
         }
@@ -5644,8 +5644,8 @@
           "Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated.",
           "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
           "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-          "Documentation & GitHub Suite — Public/protected docblock coverage is 181/780 (23%).",
-          "SOLID & Refactoring Pressure — Class exposes 13 public methods; review interface segregation and SRP.",
+          "Documentation & GitHub Suite — Public/protected docblock coverage is 175/787 (22%).",
+          "SOLID & Refactoring Pressure — Class exposes 18 public methods; review interface segregation and SRP.",
           "SOLID & Refactoring Pressure — Class exposes 18 public methods; review interface segregation and SRP."
         ],
         "families": {
@@ -5690,7 +5690,7 @@
             "score": 9.0,
             "summary": "0 fail, 1 warn, 0 info findings detected.",
             "blockers": [
-              "Public/protected docblock coverage is 181/780 (23%)."
+              "Public/protected docblock coverage is 175/787 (22%)."
             ]
           },
           "delivery_observability": {
@@ -5704,9 +5704,9 @@
             "title": "SOLID & Refactoring Pressure",
             "status": "fail",
             "score": 0.0,
-            "summary": "1 fail, 11 warn, 1 info findings detected.",
+            "summary": "1 fail, 12 warn, 0 info findings detected.",
             "blockers": [
-              "Class exposes 13 public methods; review interface segregation and SRP.",
+              "Class exposes 18 public methods; review interface segregation and SRP.",
               "Class exposes 18 public methods; review interface segregation and SRP.",
               "Class exposes 18 public methods; review interface segregation and SRP."
             ]
@@ -5727,8 +5727,8 @@
           "Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly separated.",
           "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
           "Architecture & Boundaries — Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-          "Documentation & GitHub Suite — Public/protected docblock coverage is 181/780 (23%).",
-          "SOLID & Refactoring Pressure — Class exposes 13 public methods; review interface segregation and SRP.",
+          "Documentation & GitHub Suite — Public/protected docblock coverage is 175/787 (22%).",
+          "SOLID & Refactoring Pressure — Class exposes 18 public methods; review interface segregation and SRP.",
           "SOLID & Refactoring Pressure — Class exposes 18 public methods; review interface segregation and SRP."
         ],
         "families": {
@@ -5773,7 +5773,7 @@
             "score": 9.0,
             "summary": "0 fail, 1 warn, 0 info findings detected.",
             "blockers": [
-              "Public/protected docblock coverage is 181/780 (23%)."
+              "Public/protected docblock coverage is 175/787 (22%)."
             ]
           },
           "delivery_observability": {
@@ -5787,9 +5787,9 @@
             "title": "SOLID & Refactoring Pressure",
             "status": "fail",
             "score": 0.0,
-            "summary": "1 fail, 11 warn, 1 info findings detected.",
+            "summary": "1 fail, 12 warn, 0 info findings detected.",
             "blockers": [
-              "Class exposes 13 public methods; review interface segregation and SRP.",
+              "Class exposes 18 public methods; review interface segregation and SRP.",
               "Class exposes 18 public methods; review interface segregation and SRP.",
               "Class exposes 18 public methods; review interface segregation and SRP."
             ]
@@ -5811,7 +5811,7 @@
               "severity": "warn",
               "id": "namespace_drift",
               "detail": "PHP namespace does not use the default App\\ root.",
-              "path": "tests/TagSmokeOpsScriptsTest.php"
+              "path": "tests/SnapshotPurityAuditTest.php"
             },
             {
               "severity": "warn",
@@ -5821,9 +5821,9 @@
             }
           ],
           "evidence": [
+            "README.md",
             "docs/acceptance/e14.md",
-            "repo-map.md",
-            "tests/TagSmokeOpsScriptsTest.php"
+            "tests/SnapshotPurityAuditTest.php"
           ]
         },
         "architecture_boundaries": {
@@ -5849,35 +5849,35 @@
               "severity": "warn",
               "id": "entity_leakage_signal",
               "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "path": "src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php"
+              "path": "src/Service/Core/Tag/TagGraph.php"
             },
             {
               "severity": "warn",
               "id": "entity_leakage_signal",
               "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "path": "src/Infrastructure/Persistence/Tag/PdoTagRepository.php"
-            },
-            {
-              "severity": "warn",
-              "id": "entity_leakage_signal",
-              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
-              "path": "src/Service/Core/Tag/TagRepositoryAdapter.php"
+              "path": "src/Service/Core/Tag/TagService.php"
             },
             {
               "severity": "warn",
               "id": "entity_leakage_signal",
               "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
               "path": "src/Service/Core/Tag/TagRepositoryInterface.php"
+            },
+            {
+              "severity": "warn",
+              "id": "entity_leakage_signal",
+              "detail": "Non-entity PHP file imports App\\Entity directly; review vertical leakage.",
+              "path": "src/Service/Core/Tag/TagRepositoryAdapter.php"
             }
           ],
           "evidence": [
             "docs/architecture/decisions/adr-0001-tenancy-boundary.md",
             "docs/architecture/decisions/adr-host-minimal-runtime-boundary.md",
             "docs/architecture/tag-core-boundary.md",
-            "src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php",
-            "src/Infrastructure/Persistence/Tag/PdoTagRepository.php",
+            "src/Service/Core/Tag/TagGraph.php",
             "src/Service/Core/Tag/TagRepositoryAdapter.php",
             "src/Service/Core/Tag/TagRepositoryInterface.php",
+            "src/Service/Core/Tag/TagService.php",
             "tests/CoreBoundaryAuditTest.php",
             "tests/TagGraphTest.php",
             "tools/audit/tag-core-boundary-audit.php"
@@ -5895,8 +5895,8 @@
             "MANIFEST.json",
             "deploy/docker/Dockerfile",
             "docker-compose.yml",
-            "host-minimal/smoke-health.php",
             "host/Dockerfile",
+            "tests/TagReadinessPlanTruthTest.php",
             "tools/test-db/docker-compose.yml"
           ]
         },
@@ -5908,10 +5908,11 @@
           "blockers": [],
           "findings": [],
           "evidence": [
+            "README.md",
             "composer.json",
-            "docker-compose.yml",
             "docs/fixtures",
             "fixtures",
+            "package-lock.json",
             "tests/"
           ]
         },
@@ -5921,13 +5922,13 @@
           "score": 9.0,
           "summary": "0 fail, 1 warn, 0 info findings detected.",
           "blockers": [
-            "Public/protected docblock coverage is 181/780 (23%)."
+            "Public/protected docblock coverage is 175/787 (22%)."
           ],
           "findings": [
             {
               "severity": "warn",
               "id": "docblock_coverage_low",
-              "detail": "Public/protected docblock coverage is 181/780 (23%)."
+              "detail": "Public/protected docblock coverage is 175/787 (22%)."
             }
           ],
           "evidence": [
@@ -5936,8 +5937,8 @@
             "README.md",
             "RELEASE_NOTES.md",
             "composer.json",
-            "php-docblock-ratio:181/780",
-            "tests/TagGeneratedOpenApiSurfaceTest.php"
+            "php-docblock-ratio:175/787",
+            "tests/TagOpenApiContractTest.php"
           ]
         },
         "delivery_observability": {
@@ -5949,11 +5950,12 @@
           "findings": [],
           "evidence": [
             ".github/workflows/ci.yml",
+            ".github/workflows/quality-atlas.yml",
             ".github/workflows/release-rc.yml",
-            "MANIFEST.json",
+            "README.md",
             "RELEASE_NOTES.md",
             "composer.json",
-            "docker-compose.yml",
+            "qodana.yaml",
             "release/tag-rc5/RC5-E5-MANIFEST.json",
             "repo-map.md",
             "src/Ops/Metrics/PrometheusExporter.php",
@@ -5966,27 +5968,15 @@
           "title": "SOLID & Refactoring Pressure",
           "status": "fail",
           "score": 0.0,
-          "summary": "1 fail, 11 warn, 1 info findings detected.",
+          "summary": "1 fail, 12 warn, 0 info findings detected.",
           "blockers": [
+            "Class exposes 18 public methods; review interface segregation and SRP.",
+            "Class exposes 18 public methods; review interface segregation and SRP.",
+            "Class exposes 18 public methods; review interface segregation and SRP.",
             "Class exposes 13 public methods; review interface segregation and SRP.",
-            "Class exposes 18 public methods; review interface segregation and SRP.",
-            "Class exposes 18 public methods; review interface segregation and SRP.",
-            "Class exposes 18 public methods; review interface segregation and SRP.",
-            "Class exposes 14 public methods; review interface segregation and SRP."
+            "PHP file is large (379 lines); review SRP pressure."
           ],
           "findings": [
-            {
-              "severity": "warn",
-              "id": "public_api_pressure",
-              "detail": "Class exposes 13 public methods; review interface segregation and SRP.",
-              "path": "tests/SearchSuggestCleanupTest.php"
-            },
-            {
-              "severity": "warn",
-              "id": "public_api_pressure",
-              "detail": "Class exposes 18 public methods; review interface segregation and SRP.",
-              "path": "tests/SearchSuggestControllerContractTest.php"
-            },
             {
               "severity": "warn",
               "id": "public_api_pressure",
@@ -6002,38 +5992,26 @@
             {
               "severity": "warn",
               "id": "public_api_pressure",
-              "detail": "Class exposes 14 public methods; review interface segregation and SRP.",
-              "path": "sdk/php/tag/Client.php"
+              "detail": "Class exposes 18 public methods; review interface segregation and SRP.",
+              "path": "tests/SearchSuggestControllerContractTest.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 13 public methods; review interface segregation and SRP.",
+              "path": "tests/SearchSuggestCleanupTest.php"
             },
             {
               "severity": "warn",
               "id": "class_size_pressure",
-              "detail": "PHP file is large (342 lines); review SRP pressure.",
-              "path": "tools/cli/tag.php"
-            },
-            {
-              "severity": "warn",
-              "id": "class_size_pressure",
-              "detail": "PHP file is large (345 lines); review SRP pressure.",
-              "path": "src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php"
+              "detail": "PHP file is large (379 lines); review SRP pressure.",
+              "path": "src/Http/Api/Tag/AssignController.php"
             },
             {
               "severity": "warn",
               "id": "public_api_pressure",
               "detail": "Class exposes 33 public methods; review interface segregation and SRP.",
-              "path": "src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php"
-            },
-            {
-              "severity": "fail",
-              "id": "large_class",
-              "detail": "PHP file is very large (554 lines); review SRP and refactoring pressure.",
-              "path": "src/Infrastructure/Persistence/Tag/PdoTagRepository.php"
-            },
-            {
-              "severity": "warn",
-              "id": "public_api_pressure",
-              "detail": "Class exposes 34 public methods; review interface segregation and SRP.",
-              "path": "src/Infrastructure/Persistence/Tag/PdoTagRepository.php"
+              "path": "src/Service/Core/Tag/TagRepositoryInterface.php"
             },
             {
               "severity": "warn",
@@ -6044,28 +6022,53 @@
             {
               "severity": "warn",
               "id": "public_api_pressure",
-              "detail": "Class exposes 33 public methods; review interface segregation and SRP.",
-              "path": "src/Service/Core/Tag/TagRepositoryInterface.php"
+              "detail": "Class exposes 13 public methods; review interface segregation and SRP.",
+              "path": "src/Service/Core/Tag/TagReadRepositoryInterface.php"
             },
             {
-              "severity": "info",
-              "id": "copy_paste_origin_marker",
-              "detail": "Possible copy-paste provenance marker detected; review SOLID and ownership fit.",
-              "path": ".github/workflows/ci.yml"
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 15 public methods; review interface segregation and SRP.",
+              "path": "src/Service/Core/Tag/TagWriteRepositoryInterface.php"
+            },
+            {
+              "severity": "warn",
+              "id": "constructor_injection_pressure",
+              "detail": "Constructor injects 7 parameters; review dependency inversion and class responsibilities.",
+              "path": "src/Service/Core/Tag/Record/TagEffectRecord.php"
+            },
+            {
+              "severity": "warn",
+              "id": "constructor_injection_pressure",
+              "detail": "Constructor injects 10 parameters; review dependency inversion and class responsibilities.",
+              "path": "src/HostMinimal/Container/HostMinimalRuntimeConfig.php"
+            },
+            {
+              "severity": "fail",
+              "id": "large_class",
+              "detail": "PHP file is very large (539 lines); review SRP and refactoring pressure.",
+              "path": "src/Infrastructure/Persistence/Tag/PdoTagRepository.php"
+            },
+            {
+              "severity": "warn",
+              "id": "public_api_pressure",
+              "detail": "Class exposes 34 public methods; review interface segregation and SRP.",
+              "path": "src/Infrastructure/Persistence/Tag/PdoTagRepository.php"
             }
           ],
           "evidence": [
-            ".github/workflows/ci.yml",
-            "sdk/php/tag/Client.php",
-            "src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php",
+            "src/HostMinimal/Container/HostMinimalRuntimeConfig.php",
+            "src/Http/Api/Tag/AssignController.php",
             "src/Infrastructure/Persistence/Tag/PdoTagRepository.php",
+            "src/Service/Core/Tag/Record/TagEffectRecord.php",
+            "src/Service/Core/Tag/TagReadRepositoryInterface.php",
             "src/Service/Core/Tag/TagRepositoryAdapter.php",
             "src/Service/Core/Tag/TagRepositoryInterface.php",
+            "src/Service/Core/Tag/TagWriteRepositoryInterface.php",
             "tests/SearchSuggestCleanupTest.php",
             "tests/SearchSuggestControllerContractTest.php",
             "tests/TagRouteCatalogTruthTest.php",
-            "tests/TagWriteUseCaseTest.php",
-            "tools/cli/tag.php"
+            "tests/TagWriteUseCaseTest.php"
           ]
         }
       }
@@ -6075,7 +6078,7 @@
       "title": "Taxating",
       "overall": 8.6,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
@@ -6375,7 +6378,7 @@
       "title": "Vendoring",
       "overall": 8.8,
       "snapshot": {
-        "date": "2026-04-08",
+        "date": "2026-04-11",
         "label": "pre-rc-seed",
         "ref": "master",
         "origin": "quality-atlas seed"
