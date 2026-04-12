@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-11T03:25:41.161853+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260411T032428Z",
+  "generated_at": "2026-04-12T19:24:57.359224+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260412T192358Z",
   "mode": "responses",
   "components": [
     {
-      "component": "billing",
-      "title": "Billing",
-      "overall": 8.7,
-      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/billing/history/2026-04-11-assessment-2026-04-11.yaml",
-      "summary": "Billing reads as a governed Symfony 8 billing subsystem with strong QA and documentation depth; minor gaps remain in observability, security scanning, and docs publishing alignment."
+      "component": "vendoring",
+      "title": "Vendoring",
+      "overall": 9.0,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/vendoring/history/2026-04-12-assessment-2026-04-12.yaml",
+      "summary": "Vendoring is a Symfony 8/PHP 8.4 vendor-operations component now tagged v1.0.0-RC1 with strong QA/governance and deployment scaffolding indicating solid RC readiness."
     }
   ],
   "failures": [],
   "status": "ok",
   "selected_components": [
-    "billing"
+    "vendoring"
   ]
 }

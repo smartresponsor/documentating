@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-04-11T03:24:28.432824+00:00",
+  "generated_at": "2026-04-12T19:23:58.570961+00:00",
   "event_name": "workflow_dispatch",
   "manual_components": [
-    "billing"
+    "vendoring"
   ],
   "normalized_manual_components": [
-    "billing"
+    "vendoring"
   ],
   "unknown_manual_components": [],
   "selected_components": [
-    "billing"
+    "vendoring"
   ],
   "selected_count": 1,
   "items": [
     {
-      "component": "billing",
-      "title": "Billing",
-      "repository": "smartresponsor/billing",
+      "component": "vendoring",
+      "title": "Vendoring",
+      "repository": "smartresponsor/vendoring",
       "selected": true,
       "reason": "manual_override",
       "event_name": "workflow_dispatch",
-      "current_head_commit": "a885cef03a1b6813c45cedef3510371a0345dd02",
-      "current_head_tag": null,
+      "current_head_commit": "915e662bf29bb76015e5fa365f10f30b257150d5",
+      "current_head_tag": "v1.0.0-RC1",
       "last_assessed_commit": null,
       "last_assessed_tag": null,
-      "last_assessed_date": "2026-04-11",
+      "last_assessed_date": "2026-04-12",
       "changed_files_sample": [],
       "access_error": null,
       "cadence_group": "every_2_days",
-      "hours_since_last_assessment": 3.41
+      "hours_since_last_assessment": 19.4
     }
   ],
   "status": "selected"
