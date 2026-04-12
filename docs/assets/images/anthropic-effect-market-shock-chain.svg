@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <style>
+    .t{font:700 34px Arial,sans-serif;fill:#111}
+    .h{font:700 24px Arial,sans-serif;fill:#111}
+    .s{font:20px Arial,sans-serif;fill:#111}
+    .b{fill:#fff;stroke:#111;stroke-width:3}
+    .a{stroke:#111;stroke-width:4;fill:none;marker-end:url(#m)}
+  </style>
+  <defs>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#111"/>
+    </marker>
+  </defs>
+  <text x="800" y="60" text-anchor="middle" class="t">The Anthropic Effect: From Model Launch to Market Repricing</text>
+
+  <rect x="70" y="170" rx="18" ry="18" width="280" height="140" class="b"/>
+  <text x="210" y="220" text-anchor="middle" class="h">Glasswing / Mythos</text>
+  <text x="210" y="255" text-anchor="middle" class="s">cyber-capable frontier model</text>
+  <text x="210" y="285" text-anchor="middle" class="s">restricted release</text>
+
+  <rect x="430" y="170" rx="18" ry="18" width="280" height="140" class="b"/>
+  <text x="570" y="220" text-anchor="middle" class="h">New perception of risk</text>
+  <text x="570" y="255" text-anchor="middle" class="s">faster vulnerability discovery</text>
+  <text x="570" y="285" text-anchor="middle" class="s">and exploit generation</text>
+
+  <rect x="790" y="170" rx="18" ry="18" width="280" height="140" class="b"/>
+  <text x="930" y="220" text-anchor="middle" class="h">Sector-wide fear</text>
+  <text x="930" y="255" text-anchor="middle" class="s">software and cyber names</text>
+  <text x="930" y="285" text-anchor="middle" class="s">re-priced together</text>
+
+  <rect x="1150" y="170" rx="18" ry="18" width="320" height="140" class="b"/>
+  <text x="1310" y="220" text-anchor="middle" class="h">Visible casualty: Cloudflare</text>
+  <text x="1310" y="255" text-anchor="middle" class="s">symbol of infrastructure stress</text>
+  <text x="1310" y="285" text-anchor="middle" class="s">rather than isolated proof</text>
+
+  <path d="M350 240 H425" class="a"/>
+  <path d="M710 240 H785" class="a"/>
+  <path d="M1070 240 H1145" class="a"/>
+
+  <rect x="180" y="470" rx="18" ry="18" width="1240" height="210" class="b"/>
+  <text x="220" y="525" class="h">Key analytical takeaway</text>
+  <text x="220" y="570" class="s">The market did not react as if one company had been technically broken. It reacted as if the time structure of cyber defense had changed.</text>
+  <text x="220" y="610" class="s">That turns a model release into a repricing event for any firm whose moat depends on human-speed detection, remediation, or operational adaptation.</text>
+  <text x="220" y="650" class="s">Cloudflare became a market symbol because it sits close to critical internet flows, application delivery, edge services, and security enforcement.</text>
+
+  <text x="120" y="805" class="s">Interpretation: model launch -&gt; risk narrative -&gt; category repricing -&gt; infrastructure proxy sell-off.</text>
+</svg>
