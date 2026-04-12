@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="white"/>
+  <text x="60" y="55" font-size="28" font-family="Arial">Where AI Service Automation Is Most Plausible</text>
+
+  <line x1="140" y1="620" x2="1080" y2="620" stroke="#111827" stroke-width="3"/>
+  <line x1="140" y1="620" x2="140" y2="120" stroke="#111827" stroke-width="3"/>
+
+  <text x="470" y="680" font-size="22" font-family="Arial">Rule density and process standardization →</text>
+  <g transform="translate(45,470) rotate(-90)">
+    <text font-size="22" font-family="Arial">Error tolerance and risk sensitivity →</text>
+  </g>
+
+  <rect x="780" y="170" width="220" height="90" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="810" y="208" font-size="22" font-family="Arial">Medical billing</text>
+  <text x="810" y="236" font-size="18" font-family="Arial">High upside, high controls</text>
+
+  <rect x="820" y="300" width="220" height="90" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="868" y="338" font-size="22" font-family="Arial">Managed IT</text>
+  <text x="848" y="366" font-size="18" font-family="Arial">Alerting, access, triage</text>
+
+  <rect x="700" y="430" width="220" height="90" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="750" y="468" font-size="22" font-family="Arial">Bookkeeping</text>
+  <text x="740" y="496" font-size="18" font-family="Arial">Repeatable monthly flows</text>
+
+  <rect x="560" y="350" width="220" height="90" rx="14" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="605" y="388" font-size="22" font-family="Arial">Recruiting ops</text>
+  <text x="592" y="416" font-size="18" font-family="Arial">Screening and funnel work</text>
+
+  <rect x="880" y="470" width="220" height="90" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="925" y="508" font-size="22" font-family="Arial">Compliance ops</text>
+  <text x="920" y="536" font-size="18" font-family="Arial">Evidence-heavy routines</text>
+
+  <rect x="310" y="230" width="240" height="90" rx="14" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+  <text x="355" y="268" font-size="22" font-family="Arial">Elite advisory</text>
+  <text x="345" y="296" font-size="18" font-family="Arial">High judgment density</text>
+
+  <rect x="250" y="430" width="240" height="90" rx="14" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+  <text x="313" y="468" font-size="22" font-family="Arial">Enterprise sales</text>
+  <text x="302" y="496" font-size="18" font-family="Arial">Messy human persuasion</text>
+
+  <text x="760" y="140" font-size="18" font-family="Arial">Most promising zone</text>
+  <path d="M820 145 L950 145 L950 160" fill="none" stroke="#111827" stroke-width="2"/>
+</svg>
