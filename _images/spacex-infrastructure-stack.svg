@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860">
+  <style>
+    .t{font:700 34px Arial,sans-serif;fill:#111}
+    .h{font:700 24px Arial,sans-serif;fill:#111}
+    .s{font:20px Arial,sans-serif;fill:#111}
+    .b{fill:#fff;stroke:#111;stroke-width:3}
+    .a{stroke:#111;stroke-width:3.5;fill:none;marker-end:url(#m)}
+  </style>
+  <defs>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#111"/>
+    </marker>
+  </defs>
+  <text x="700" y="60" text-anchor="middle" class="t">Why SpaceX Fits the Infrastructure-Capital Narrative</text>
+
+  <rect x="170" y="170" width="240" height="110" rx="16" ry="16" class="b"/>
+  <text x="290" y="225" text-anchor="middle" class="h">launch systems</text>
+  <text x="290" y="255" text-anchor="middle" class="s">physical execution layer</text>
+
+  <rect x="510" y="170" width="240" height="110" rx="16" ry="16" class="b"/>
+  <text x="630" y="225" text-anchor="middle" class="h">orbital connectivity</text>
+  <text x="630" y="255" text-anchor="middle" class="s">network and coverage layer</text>
+
+  <rect x="850" y="170" width="240" height="110" rx="16" ry="16" class="b"/>
+  <text x="970" y="225" text-anchor="middle" class="h">AI-era ambition</text>
+  <text x="970" y="255" text-anchor="middle" class="s">compute and strategic demand</text>
+
+  <rect x="420" y="430" width="560" height="150" rx="18" ry="18" class="b"/>
+  <text x="700" y="485" text-anchor="middle" class="h">integrated infrastructure story</text>
+  <text x="700" y="525" text-anchor="middle" class="s">not just a company valuation event, but a test of whether public markets</text>
+  <text x="700" y="555" text-anchor="middle" class="s">are ready to finance the physical systems behind the next technology cycle</text>
+
+  <path d="M290 280 C320 340, 380 390, 500 430" class="a"/>
+  <path d="M630 280 C640 340, 660 390, 690 430" class="a"/>
+  <path d="M970 280 C920 340, 860 390, 800 430" class="a"/>
+
+  <text x="140" y="780" class="s">Editorial schematic for documentation use: a public-markets thesis built around infrastructure depth, not a literal corporate structure diagram.</text>
+</svg>
