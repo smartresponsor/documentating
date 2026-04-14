@@ -73,36 +73,36 @@
     }
   },
   "plan": {
-    "generated_at": "2026-04-12T19:23:58.570961+00:00",
+    "generated_at": "2026-04-14T04:41:37.931389+00:00",
     "event_name": "workflow_dispatch",
     "manual_components": [
-      "vendoring"
+      "messaging"
     ],
     "normalized_manual_components": [
-      "vendoring"
+      "messaging"
     ],
     "unknown_manual_components": [],
     "selected_components": [
-      "vendoring"
+      "messaging"
     ],
     "selected_count": 1,
     "items": [
       {
-        "component": "vendoring",
-        "title": "Vendoring",
-        "repository": "smartresponsor/vendoring",
+        "component": "messaging",
+        "title": "Messaging",
+        "repository": "smartresponsor/messaging",
         "selected": true,
         "reason": "manual_override",
         "event_name": "workflow_dispatch",
-        "current_head_commit": "915e662bf29bb76015e5fa365f10f30b257150d5",
-        "current_head_tag": "v1.0.0-RC1",
+        "current_head_commit": "12a67d6a40e39b3f526c33c048e19402e4bbbd78",
+        "current_head_tag": null,
         "last_assessed_commit": null,
         "last_assessed_tag": null,
-        "last_assessed_date": "2026-04-12",
+        "last_assessed_date": "2026-04-14",
         "changed_files_sample": [],
         "access_error": null,
         "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 19.4
+        "hours_since_last_assessment": 4.69
       }
     ],
     "status": "selected"
@@ -114,7 +114,7 @@
       "cadence_group": "daily",
       "repository": "smartresponsor/accessing",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.5,
         "assessed_commit": null,
@@ -129,7 +129,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/addressing",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.5,
         "assessed_commit": null,
@@ -144,7 +144,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/analysing",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.0,
         "assessed_commit": null,
@@ -167,7 +167,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/applicating",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.4,
         "assessed_commit": null,
@@ -190,7 +190,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/billing",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.8,
         "assessed_commit": null,
@@ -221,7 +221,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/cataloging",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.4,
         "assessed_commit": null,
@@ -292,7 +292,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/discovering",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 7.7,
         "assessed_commit": null,
@@ -402,7 +402,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/indexing",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.4,
         "assessed_commit": null,
@@ -433,7 +433,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/locating",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.6,
         "assessed_commit": null,
@@ -448,14 +448,30 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/messaging",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
-        "snapshot_label": "pre-rc-seed",
+        "snapshot_date": "2026-04-14",
+        "snapshot_label": "assessment-2026-04-14",
         "overall": 8.6,
-        "assessed_commit": null,
+        "assessed_commit": "12a67d6a40e39b3f526c33c048e19402e4bbbd78",
         "assessed_tag": null,
-        "trigger_reason": null
+        "trigger_reason": "manual_override"
       },
-      "selection": {}
+      "selection": {
+        "component": "messaging",
+        "title": "Messaging",
+        "repository": "smartresponsor/messaging",
+        "selected": true,
+        "reason": "manual_override",
+        "event_name": "workflow_dispatch",
+        "current_head_commit": "12a67d6a40e39b3f526c33c048e19402e4bbbd78",
+        "current_head_tag": null,
+        "last_assessed_commit": null,
+        "last_assessed_tag": null,
+        "last_assessed_date": "2026-04-14",
+        "changed_files_sample": [],
+        "access_error": null,
+        "cadence_group": "every_2_days",
+        "hours_since_last_assessment": 4.69
+      }
     },
     {
       "component": "mobiling",
@@ -519,7 +535,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/ordering",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.7,
         "assessed_commit": null,
@@ -534,7 +550,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/paying",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 9.0,
         "assessed_commit": null,
@@ -549,7 +565,7 @@
       "cadence_group": "every_2_days",
       "repository": "",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.1,
         "assessed_commit": null,
@@ -572,7 +588,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/rolling",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.3,
         "assessed_commit": null,
@@ -587,7 +603,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/runtiming",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.8,
         "assessed_commit": null,
@@ -618,7 +634,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/shipping",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 9.0,
         "assessed_commit": null,
@@ -633,7 +649,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/tagging",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.6,
         "assessed_commit": null,
@@ -648,7 +664,7 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/taxating",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
+        "snapshot_date": "2026-04-14",
         "snapshot_label": "pre-rc-seed",
         "overall": 8.6,
         "assessed_commit": null,
@@ -663,30 +679,14 @@
       "cadence_group": "every_2_days",
       "repository": "smartresponsor/vendoring",
       "snapshot": {
-        "snapshot_date": "2026-04-12",
-        "snapshot_label": "assessment-2026-04-12",
-        "overall": 9.0,
-        "assessed_commit": "915e662bf29bb76015e5fa365f10f30b257150d5",
-        "assessed_tag": "v1.0.0-RC1",
-        "trigger_reason": "manual_override"
+        "snapshot_date": "2026-04-14",
+        "snapshot_label": "pre-rc-seed",
+        "overall": 8.8,
+        "assessed_commit": null,
+        "assessed_tag": null,
+        "trigger_reason": null
       },
-      "selection": {
-        "component": "vendoring",
-        "title": "Vendoring",
-        "repository": "smartresponsor/vendoring",
-        "selected": true,
-        "reason": "manual_override",
-        "event_name": "workflow_dispatch",
-        "current_head_commit": "915e662bf29bb76015e5fa365f10f30b257150d5",
-        "current_head_tag": "v1.0.0-RC1",
-        "last_assessed_commit": null,
-        "last_assessed_tag": null,
-        "last_assessed_date": "2026-04-12",
-        "changed_files_sample": [],
-        "access_error": null,
-        "cadence_group": "every_2_days",
-        "hours_since_last_assessment": 19.4
-      }
+      "selection": {}
     },
     {
       "component": "attaching",

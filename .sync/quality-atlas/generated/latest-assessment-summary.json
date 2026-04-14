@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-12T19:24:57.359224+00:00",
-  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260412T192358Z",
+  "generated_at": "2026-04-14T04:42:47.447233+00:00",
+  "run_dir": "/home/runner/work/documentating/documentating/.sync/quality-atlas/generated/assessment-runs/20260414T044138Z",
   "mode": "responses",
   "components": [
     {
-      "component": "vendoring",
-      "title": "Vendoring",
-      "overall": 9.0,
-      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/vendoring/history/2026-04-12-assessment-2026-04-12.yaml",
-      "summary": "Vendoring is a Symfony 8/PHP 8.4 vendor-operations component now tagged v1.0.0-RC1 with strong QA/governance and deployment scaffolding indicating solid RC readiness."
+      "component": "messaging",
+      "title": "Messaging",
+      "overall": 8.6,
+      "history_file": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/messaging/history/2026-04-14-assessment-2026-04-14.yaml",
+      "summary": "Messaging presents a governed Symfony 8/PHP 8.4 messaging runtime with strong realtime, observability, and operational posture; it remains pre-RC primarily due to missing release tags and incomplete Antora navigation wiring."
     }
   ],
   "failures": [],
   "status": "ok",
   "selected_components": [
-    "vendoring"
+    "messaging"
   ]
 }
