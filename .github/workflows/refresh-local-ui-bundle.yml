@@ -1,0 +1,40 @@
+name: refresh-local-ui-bundle
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v5
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Refresh vendored Antora UI bundle
+        env:
+          FORCE_REFRESH_UI_BUNDLE: "1"
+        run: |
+          bash tools/ensure_local_ui_bundle.sh
+
+      - name: Commit vendored UI bundle if changed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -n "$(git status --porcelain -- vendor/antora-ui)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            git add vendor/antora-ui
+            git commit -m "docs(ui): refresh vendored Antora reference UI bundle [skip docs]"
+            git push origin HEAD:master
+          else
+            echo "Vendored UI bundle already up to date."
+          fi
