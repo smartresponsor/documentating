@@ -66,6 +66,11 @@ jobs:
             cp -R docs/quality-atlas/. .site_build/quality-atlas/
           fi
 
+          if [ -d docs/qa-rc ]; then
+            mkdir -p .site_build/qa-rc
+            cp -R docs/qa-rc/. .site_build/qa-rc/
+          fi
+
           touch .site_build/.nojekyll
 
       - name: Publish owner-facing site to gh-pages

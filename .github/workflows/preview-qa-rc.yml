@@ -1,0 +1,38 @@
+name: preview-qa-rc
+
+on:
+  pull_request:
+    branches: ["master"]
+  workflow_dispatch: {}
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Verify QA-RC source files
+        run: |
+          set -euo pipefail
+          test -f docs/qa-rc/index.html
+          test -f docs/qa-rc/documentating/index.html
+          test -f docs/qa-rc/assets/css/atlas.css
+          test -f docs/qa-rc/assets/js/atlas.js
+          test -f docs/qa-rc/assets/data/portfolio.json
+          test -f docs/qa-rc/assets/data/documentating.json
+
+      - name: Stage QA-RC preview
+        run: |
+          set -euo pipefail
+          mkdir -p .site_build/qa-rc
+          cp -R docs/qa-rc/. .site_build/qa-rc/
+          test -f .site_build/qa-rc/index.html
+          test -f .site_build/qa-rc/documentating/index.html
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-rc-preview
+          path: .site_build/qa-rc
