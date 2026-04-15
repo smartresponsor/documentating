@@ -1,15 +1,87 @@
 {
-  "summary": {
-    "averageScore": "8.1 / 10",
-    "repositoriesTracked": 12,
-    "lastReview": "2026-04-07"
-  },
-  "components": [
-    {"name": "Billing", "score": 8.8},
-    {"name": "Documentating", "score": 8.4},
-    {"name": "Paying", "score": 8.1},
-    {"name": "Shipping", "score": 7.9},
-    {"name": "Ordering", "score": 7.6},
-    {"name": "Messaging", "score": 7.4}
+  "schema": "qa-rc.portfolio.v1",
+  "title": "QA-RC Portfolio",
+  "score": 8.1,
+  "capabilities": [
+    {
+      "label": "Architecture",
+      "score": 8.4
+    },
+    {
+      "label": "Docs",
+      "score": 8.7
+    },
+    {
+      "label": "Release",
+      "score": 7.9
+    },
+    {
+      "label": "Operations",
+      "score": 7.4
+    },
+    {
+      "label": "Evidence",
+      "score": 7.8
+    },
+    {
+      "label": "UI Surface",
+      "score": 7.2
+    }
+  ],
+  "repositories": [
+    {
+      "name": "Documentating",
+      "score": 8.4,
+      "status": "RC surface active"
+    },
+    {
+      "name": "Billing",
+      "score": 8.7,
+      "status": "Strong readiness"
+    },
+    {
+      "name": "Ordering",
+      "score": 7.9,
+      "status": "Needs polish"
+    },
+    {
+      "name": "Messaging",
+      "score": 7.6,
+      "status": "Planned atlas page"
+    }
+  ],
+  "risks": [
+    "Atlas schema is not canonical yet.",
+    "Component drilldown pages are not normalized.",
+    "Graph meaning and evidence links need stronger semantics.",
+    "Published standalone surface currently depends on CDN assets."
+  ],
+  "recommendations": [
+    "Canonize QA-RC widget registry and chart presets.",
+    "Normalize JSON contract before adding more component pages.",
+    "Add local vendored assets after the interactive model stabilizes.",
+    "Create one component page template before scaling across repositories."
+  ],
+  "timeline": [
+    {
+      "label": "Prototype",
+      "score": 6.6
+    },
+    {
+      "label": "RC route",
+      "score": 7.2
+    },
+    {
+      "label": "Controls",
+      "score": 7.7
+    },
+    {
+      "label": "Builder",
+      "score": 8.1
+    },
+    {
+      "label": "Schema",
+      "score": 8.6
+    }
   ]
 }
