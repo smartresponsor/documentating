@@ -55,10 +55,17 @@ jobs:
           if [ -f docs/CNAME ]; then
             cp docs/CNAME .site_build/CNAME
           fi
+
           if [ -d assets ]; then
             mkdir -p .site_build/assets
             cp -R assets/. .site_build/assets/
           fi
+
+          if [ -d docs/quality-atlas ]; then
+            mkdir -p .site_build/quality-atlas
+            cp -R docs/quality-atlas/. .site_build/quality-atlas/
+          fi
+
           touch .site_build/.nojekyll
 
       - name: Publish owner-facing site to gh-pages
