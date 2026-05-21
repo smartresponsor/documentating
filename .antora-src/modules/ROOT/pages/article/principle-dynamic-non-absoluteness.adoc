@@ -1,0 +1,348 @@
+= Principle of Dynamic Non-Absoluteness
+:page-slug: principle-dynamic-non-absoluteness
+:page-published: 2026-05-21
+:page-author: Oleksandr Tishchenko
+:description: A working scientific-philosophical checkpoint on dynamic non-absoluteness, dynamic non-identity of driving forces, open systems, symmetry, and originality.
+:page-tags: physics, philosophy-of-physics, dynamic-systems, symmetry, hypothesis
+
+_Source asciidoc: `docs/article/principle_dynamic_non_absoluteness.adoc`_
+
+== Working Status
+
+This document is a working scientific-philosophical checkpoint.
+
+It does not present the idea as a proven physical law. It records a hypothesis, checks its possible overlap with existing intellectual traditions, and defines a possible niche for further development.
+
+Working names:
+
+* Principle of Dynamic Non-Absoluteness
+* Principle of Dynamic Non-Identity
+* Hypothesis of Dynamic Non-Identity of Driving Forces
+
+== 1. Core of My Thought
+
+My thought is that the observable universe cannot contain one single, absolute, constant, and fully dominant driving force as an ordinary physical reality.
+
+If such a force existed in an absolute sense, it would not merely be one force among others. It would become a limiting background against which all other influences would lose independent dynamic significance. Any other finite force would be unable to meaningfully change the course of events, because the entire dynamic field would already be suppressed or predetermined by that absolute dominant factor.
+
+Therefore, I should not formulate this as a crude claim that an absolute force would simply “stop all motion.”
+
+A more careful formulation is:
+
+[quote]
+An absolutely dominant and unchanging driving force would not necessarily stop motion as such; rather, it would make all other finite influences dynamically insignificant.
+
+The second part of my thought concerns the impossibility of two absolutely identical driving forces over time.
+
+Two forces, impulses, factors, or processes may appear identical at a single moment of observation. However, during extended observation, their absolute identity should eventually break down because they do not exist in a vacuum. They exist within different relations, different contexts, different perturbations, different fluctuations, and different external or internal influences.
+
+Therefore, my thought is not simply:
+
+[quote]
+Two identical forces do not exist.
+
+A more precise formulation is:
+
+[quote]
+Two driving forces may be equal with respect to a selected parameter at a specific moment in time, but they cannot preserve absolute identity across all dynamic properties over an extended interval in an open system, unless the conditions of their existence remain absolutely symmetrical.
+
+== 2. Working Formulation of the Hypothesis
+
+I can formulate this as the Principle of Dynamic Non-Absoluteness:
+
+[quote]
+In the observable universe, every driving force is not absolute but relational. It manifests only through interactions, constraints, perturbations, differences, and relations. An absolutely isolated driving force and the eternal identity of two driving factors are not ordinary physical realities, but limiting abstractions.
+
+A narrower version may be called the Principle of Dynamic Non-Identity:
+
+[quote]
+In an open dynamic system, any two initially equal driving factors can preserve equality only under stable symmetry of conditions. If that symmetry is disturbed by external influences, internal fluctuations, different relations, or contextual asymmetry, equality becomes temporary and the later dynamics of those factors diverge.
+
+== 3. Originality Check: Is This Merely a Copy of an Existing Theory?
+
+At this checkpoint, I do not see my thought as a direct copy of one known theory.
+
+However, almost every part of it intersects with existing fields:
+
+* fundamental interactions in physics;
+* symmetry and symmetry breaking;
+* dynamic systems;
+* chaos theory;
+* open systems;
+* process philosophy;
+* the philosophy of identity and difference;
+* the principle of the identity of indiscernibles.
+
+This is important.
+
+My task is not to naively claim that I have discovered a completely new physical law. My task is to determine whether there is a real conceptual niche where the idea can be developed responsibly.
+
+Preliminary conclusion:
+
+[quote]
+This thought does not look like a direct copy of a single existing theory. Its possible originality lies not in each isolated element, but in the specific combination: driving force, open system, non-absoluteness, breakdown of identity over time, and the impossibility of eternal dynamic sameness.
+
+== 4. Intersection with Fundamental Interactions in Physics
+
+Modern physics is not built around one single absolute force. It describes several fundamental interactions, usually classified as gravitational, electromagnetic, strong, and weak interactions.
+
+In that sense, my thought that there is no single absolute observable force does not directly conflict with the modern physical picture. Physics itself does not ordinarily describe reality as being governed by one visible mechanical force that suppresses all others.
+
+However, I must be careful.
+
+In physics, the word “force” is not merely a philosophical metaphor. It may refer to a concrete interaction, a field effect, a resulting influence, or a mathematically described quantity.
+
+Therefore, if I use the word “force” too broadly, a physicist may reasonably object.
+
+For a stricter version, it may be better to speak not only about “force,” but also about:
+
+* a driving factor;
+* a dynamic influence;
+* an interaction;
+* a cause of state change;
+* a structure that gives direction to a dynamic process.
+
+This makes the hypothesis more stable and less vulnerable to naive physical objections.
+
+== 5. Intersection with Symmetry and Symmetry Breaking
+
+A strong intersection of my thought is the topic of symmetry.
+
+In physics, symmetry may exist at the level of laws, while a concrete state of a system may break that symmetry. This is important for my idea: two forces or two processes may be symmetrical in an abstract model, but in a real open system, the symmetry of conditions almost never remains absolute.
+
+My possible niche here is the following:
+
+[quote]
+I am not speaking only about the symmetry of laws. I am speaking about the impossibility of eternal identity of driving factors under open dynamic conditions.
+
+This does not reject symmetry. It makes symmetry a condition.
+
+[quote]
+Absolute identity is possible only under absolute symmetry of conditions. But absolute symmetry of conditions in an open system is practically unreachable, or at least belongs to idealized modeling rather than ordinary observable reality.
+
+== 6. Intersection with Chaos Theory and Dynamic Systems
+
+Here the risk of “this has already been said” is especially high.
+
+Chaos theory and the theory of dynamic systems already show that small differences in initial conditions can produce large differences in later system behavior. This is close to my thought: two forces or two processes may begin as equal, but their trajectories can diverge over time.
+
+However, my thought is broader than sensitivity to initial conditions.
+
+I am not only saying that similar trajectories may diverge. I am making a more general claim:
+
+[quote]
+Absolute dynamic identity of two factors over time is impossible in an open system if those factors are not protected by absolutely identical conditions and absolutely identical relations.
+
+Chaos theory may therefore be one scientific neighbor of this hypothesis, but it does not necessarily exhaust it.
+
+== 7. Intersection with Process Philosophy
+
+My thought is also close to process philosophy, where reality is understood not primarily as a collection of static entities, but as becoming, change, and interaction.
+
+However, my idea should not be reduced to the general statement that “everything flows” or “everything changes.”
+
+I want to formulate a more specific thesis:
+
+[quote]
+Not only does everything change; no driving force can be absolutely isolated, and no two driving forces can preserve absolute identity over time in an open system.
+
+This gives the idea a more precise structure:
+
+* there are driving factors;
+* there is an open system;
+* there is a duration of observation;
+* there may be equality at a given moment;
+* that equality may break under external or internal differences.
+
+This is no longer only a philosophical intuition. It can become a framework for a scientific-philosophical hypothesis.
+
+== 8. Intersection with Heraclitus
+
+It is easy to draw a parallel between my thought and Heraclitus: everything flows, everything changes, and one cannot step into the same river twice.
+
+However, I should not reduce the hypothesis to an ancient aphorism.
+
+My thought is narrower and more modern:
+
+[quote]
+I am not speaking merely about universal change. I am speaking about the impossibility of absolute identity of driving forces over time under conditions of open systems, perturbations, contextual differences, and symmetry breaking.
+
+Heraclitus may be a philosophical ancestor of this intuition.
+
+But my possible niche is not the repetition of “everything changes.” My possible niche is the attempt to connect change with dynamic force, symmetry, open systems, and the impossibility of absolute identity.
+
+== 9. Intersection with the Identity of Indiscernibles
+
+Another important philosophical intersection is the principle of the identity of indiscernibles, often associated with Leibniz.
+
+In a simplified form, this principle raises the question: if two things are absolutely indistinguishable in all properties, are they truly two different things?
+
+My thought touches a similar issue but moves it into dynamics.
+
+I am not asking only:
+
+[quote]
+Can two absolutely identical things exist?
+
+I am asking:
+
+[quote]
+Can two absolutely identical driving forces exist while preserving their identity over time in an open system?
+
+This is a different question.
+
+Here, identity is not only identity of properties. It is identity of trajectories, influences, conditions, relations, and future changes.
+
+Therefore, my thought may be framed as a dynamic version of the problem of identity:
+
+[quote]
+Even if two driving factors appear indistinguishable at a given moment, their absolute indistinguishability over time is impossible without absolute coincidence of the conditions of their existence.
+
+== 10. Main Scientific Caution
+
+The most dangerous mistake would be to formulate the idea too crudely.
+
+I should not claim:
+
+[quote]
+An absolute force would stop all motion.
+
+That statement is physically vulnerable. In mechanics, force does not necessarily stop motion. It may cause acceleration, change direction, produce deformation, or modify the state of a system in other ways.
+
+A stronger version is:
+
+[quote]
+An absolutely dominant force would not stop motion as such. It would deprive all other finite influences of independent dynamic significance.
+
+I should also avoid saying too simply:
+
+[quote]
+Two identical forces do not exist.
+
+A more careful version is:
+
+[quote]
+Two forces may be equal with respect to one or several measurable parameters at a given moment, but absolute identity of all their dynamic properties over time is impossible in an open system without absolute symmetry of conditions.
+
+== 11. Possible Niche for Development
+
+The most promising niche is not the declaration of a new physical force or a new fundamental law of nature.
+
+A stronger niche is this:
+
+[quote]
+A metaprinciple of open dynamic systems: every observable driving force is relative to a system of interactions, while absolute identity of driving factors over time is a limiting idealization rather than a stable feature of open reality.
+
+Even shorter:
+
+[quote]
+The niche of my hypothesis lies at the intersection of philosophy of physics, dynamic systems, symmetry, and process ontology.
+
+== 12. What May Be Original in My Thought
+
+The isolated elements already exist:
+
+* change;
+* perturbation;
+* symmetry;
+* symmetry breaking;
+* sensitivity to conditions;
+* open systems;
+* identity and difference;
+* process philosophy.
+
+The possible originality is in the combination.
+
+[quote]
+I am attempting to connect the impossibility of an absolute force and the impossibility of eternal identity between two forces into one principle of dynamic non-absoluteness.
+
+In other words, my thought is not merely that “everything changes.”
+
+It is that:
+
+. an absolutely dominant driving force cannot be an ordinary observable part of dynamic reality, because it would suppress the independent significance of other influences;
+. two driving forces cannot remain absolutely identical over time in an open system, because their contexts, relations, and influences eventually diverge;
+. equality of forces is possible as a local, momentary, or model-based state, but not as an eternal absolute reality;
+. observable dynamics requires difference, interaction, and changeability.
+
+== 13. Preliminary Conclusion on Originality
+
+My intermediate conclusion is:
+
+[quote]
+This thought does not appear to be a direct copy of one known theory, but it exists within a dense field of related ideas. Therefore, it should be developed not as a sensational claim of a new physical law, but as a careful authorial principle synthesizing several directions: dynamic systems, open systems, symmetry, breakdown of identity, and process philosophy.
+
+The strongest current formulation is:
+
+[quote]
+Principle of Dynamic Non-Identity: In an open dynamic system, two initially equal driving forces can preserve equality only under stable symmetry of conditions. Since an open system is exposed to differences, fluctuations, external influences, and uneven relations, absolute identity of such forces over time is not a real stable state, but a limiting abstraction.
+
+== 14. Checkpoint for Further Development
+
+At this stage, I record the idea not as a proven law, but as a working hypothesis.
+
+It should be developed in three layers.
+
+=== Physical Layer
+
+The hypothesis must not contradict mechanics, field theory, fundamental interactions, or the mathematical language of physics.
+
+It should avoid vague or naive use of the term “force.”
+
+=== Mathematical Layer
+
+The idea should be tested through concepts such as:
+
+* open systems;
+* state parameters;
+* symmetry of conditions;
+* perturbations;
+* stability;
+* divergence of trajectories;
+* equality under selected measurable parameters;
+* long-term non-identity.
+
+=== Philosophical Layer
+
+The idea should develop the question of why absolute force and eternal identity are better understood as limiting abstractions of thought rather than ordinary observable realities.
+
+== 15. Working Summary
+
+My thought may be summarized as follows:
+
+[quote]
+Real dynamics is impossible without difference. If there is only one absolute force, other influences lose significance. If there are two absolutely identical forces, their identity can be fixed only at a moment of observation or inside an ideal model. In an open system, time, interaction, perturbation, and difference of conditions inevitably transform equality into divergence. Therefore, the observable universe is not a system of absolute forces, but a system of relative, interacting, and dynamically non-identical factors.
+
+== 16. Reference Directions for Later Research
+
+This draft should later be checked against authoritative literature in at least the following areas:
+
+* fundamental interactions in modern physics;
+* Newtonian and post-Newtonian concepts of force;
+* field theory and interaction-based descriptions of physical reality;
+* symmetry and symmetry breaking;
+* Noether's theorem and conservation laws;
+* dynamic systems and stability theory;
+* chaos theory and sensitivity to initial conditions;
+* open systems and nonequilibrium dynamics;
+* process philosophy;
+* Heraclitus and the philosophy of change;
+* Leibniz and the identity of indiscernibles;
+* philosophy of laws of nature.
+
+== 17. Current Development Position
+
+This document is a first checkpoint.
+
+The idea should be treated as a candidate authorial principle, not as a finished discovery.
+
+The next useful step is to build a stricter version with definitions:
+
+* what exactly counts as a driving force;
+* what “absolute” means;
+* what “identity” means;
+* what “open system” means;
+* what time interval is being considered;
+* which claims are physical;
+* which claims are mathematical;
+* which claims are philosophical.
