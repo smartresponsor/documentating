@@ -1,0 +1,324 @@
+= Manifesto of Dynamic Non-Absoluteness
+:page-slug: manifesto-of-dynamic-non-absoluteness
+:page-published: 2026-05-21
+:page-author: Oleksandr Tishchenko
+:description: A first manifesto version of the hypothesis of dynamic non-absoluteness and dynamic non-identity of driving forces.
+:page-tags: physics, philosophy-of-physics, dynamic-systems, open-systems, manifesto, hypothesis
+:lang: en
+
+== Opening Statement
+
+Real dynamics begins where absolute identity fails.
+
+If a force were absolute, isolated, constant, and fully dominant, it would no longer be one participant in the movement of reality. It would become a final background before which every other finite influence would lose independent dynamic significance.
+
+If two driving forces were absolutely identical over time, their identity would require more than equality of magnitude. It would require equality of context, relation, perturbation, history, and future exposure. In an open universe, such equality is not a stable observable reality. It is a limiting abstraction.
+
+Therefore, the observable universe should not be understood as a field of absolute forces. It should be understood as a field of relative, interacting, and dynamically non-identical factors.
+
+This manifesto records that position.
+
+== Why This Manifesto Exists
+
+This text does not claim a finished physical discovery.
+
+It does not introduce a new fundamental force. It does not replace mechanics, field theory, symmetry theory, thermodynamics, chaos theory, or the existing language of dynamic systems.
+
+Its purpose is different.
+
+It proposes a philosophical-scientific principle for thinking about motion, force, equality, difference, and persistence in open reality.
+
+The principle may be stated as follows:
+
+[quote]
+A driving force can be observed only as part of a field of relations. It is never absolutely isolated. Equality between driving forces can exist locally, momentarily, or inside an idealized model, but absolute dynamic identity over time is not a stable feature of open systems.
+
+This is why I call the principle *dynamic non-absoluteness*.
+
+== The Core Claim
+
+The core claim has two parts.
+
+First:
+
+[quote]
+There is no single absolute, constant, fully dominant driving force as an ordinary observable physical reality.
+
+Second:
+
+[quote]
+There are no two absolutely identical driving forces that can preserve total dynamic identity over time in an open system.
+
+The two claims belong together.
+
+The first rejects the idea of an absolute force that would make all other finite influences dynamically irrelevant. The second rejects the idea of eternal equality between distinct driving factors under real open conditions.
+
+Together, they point toward one broader thesis:
+
+[quote]
+Observable dynamics requires relation, difference, interaction, and the possibility of perturbation.
+
+A reality without difference would not be a dynamic reality in the ordinary observable sense. A reality governed by one absolute force would not contain meaningful independent dynamics among finite influences. A reality containing two perfectly identical dynamic factors over time would require an impossible preservation of total symmetry across context, relation, perturbation, and exposure.
+
+== Against the Myth of the Absolute Force
+
+An absolute force is tempting as an idea.
+
+Human thought often searches for a final driver: one deepest cause, one permanent power, one force behind all forces. Such a concept may have metaphysical, religious, poetic, or speculative value. But as an ordinary physical description of observable dynamics, it becomes problematic.
+
+A force that is merely strong is still part of a dynamic field.
+
+A force that is dominant in a given system is still related to other factors.
+
+A force that persists for a long time is still not necessarily absolute.
+
+The problem begins only when a force is imagined as absolute in every relevant sense: isolated, constant, fully dominant, unchangeable, and not meaningfully affected by anything else.
+
+Such a force would not behave like one participant among many. It would become the total condition before which every finite counterforce loses significance.
+
+This is why the careful formulation is not:
+
+[quote]
+An absolute force would stop all motion.
+
+That is too crude.
+
+The stronger formulation is:
+
+[quote]
+An absolutely dominant and unchanging driving force would make all other finite influences dynamically insignificant.
+
+The issue is not that motion would necessarily cease. The issue is that independent finite dynamics would lose meaning.
+
+== Against Eternal Dynamic Identity
+
+The second part of the principle concerns equality.
+
+Two forces may be equal in magnitude. Two impulses may be measured as equivalent. Two processes may begin from the same model state. Two trajectories may appear indistinguishable at a single moment of observation.
+
+But absolute dynamic identity over time is much stronger than local equality.
+
+It would require not only equal values, but equal conditions.
+
+It would require not only equal conditions, but equal relations.
+
+It would require not only equal relations, but equal exposure to perturbations.
+
+It would require not only equal exposure, but equal histories and equal future interactions.
+
+In an open system, this is not a normal reality. It is an idealization.
+
+Therefore, the principle does not say that equality is impossible. It says something narrower and stronger:
+
+[quote]
+Equality may exist locally, momentarily, or parametrically, but absolute dynamic identity over time requires an absolute symmetry of conditions that open systems do not normally preserve.
+
+== Open Systems and the Fragility of Equality
+
+An open system is not sealed away from influence.
+
+It exchanges energy, matter, information, constraints, disturbances, or causal effects with its environment. It does not preserve perfect isolation. Its elements are exposed to difference.
+
+In such a system, equality is fragile.
+
+Two initially equal factors may remain equal only if the conditions around them remain symmetrical. But symmetry is not self-guaranteeing. It may be broken by small perturbations, unequal relations, uneven exposure, microscopic fluctuations, or different histories of interaction.
+
+This does not require a mystical principle. It is enough that the system is open and that the factors are not literally the same factor in the same position, same relation, same environment, and same future.
+
+The more time passes, the greater the burden placed on the claim of absolute identity.
+
+Momentary equality is easy to imagine.
+
+Long-term absolute identity is not.
+
+== Difference as a Condition of Real Dynamics
+
+The hypothesis can be expressed in a shorter philosophical form:
+
+[quote]
+Real dynamics is impossible without difference.
+
+Difference is not only a defect in measurement. It is not merely a failure of ideal symmetry. It is one of the conditions under which dynamics becomes observable.
+
+Motion, change, interaction, causation, perturbation, and divergence all require some form of distinction.
+
+If there were no difference at all, there would be nothing to distinguish as moving, affecting, changing, resisting, accelerating, diverging, or transforming.
+
+This does not mean that symmetry is unreal. Symmetry is real and powerful as a structure of laws, models, and states. But the observable world does not consist only of perfect symmetry. It also contains symmetry breaking, perturbation, instability, and contextual difference.
+
+Dynamic non-absoluteness does not deny symmetry. It denies the unrestricted elevation of symmetry into eternal total identity under open conditions.
+
+== What This Hypothesis Is Not
+
+This hypothesis is not a new fundamental interaction.
+
+It is not a replacement for Newtonian mechanics.
+
+It is not a denial of conservation laws.
+
+It is not a denial of symmetry.
+
+It is not a claim that measured equality is impossible.
+
+It is not a claim that every system is chaotic in the same sense.
+
+It is not a claim that no stable structures exist.
+
+It is not a claim that everything immediately collapses into disorder.
+
+The hypothesis is more limited:
+
+[quote]
+It concerns the status of absoluteness and identity in open dynamic reality.
+
+It asks whether absolute force and eternal dynamic identity are observable features of reality, or whether they are limiting abstractions used by thought and modeling.
+
+== What This Hypothesis Claims
+
+This hypothesis claims that a driving factor is never fully self-explanatory when considered as part of observable reality.
+
+It always appears within a system of relations.
+
+Its effect depends on context, structure, constraints, opposition, scale, duration, and interaction.
+
+It also claims that two driving factors can be called equal only relative to selected parameters. Equality of magnitude is not equality of total dynamic identity. Equality at a moment is not equality across time. Equality inside a model is not necessarily equality in open reality.
+
+Therefore:
+
+[quote]
+The more complete the meaning of identity becomes, the less plausible its absolute preservation becomes in an open dynamic system.
+
+== The Physical Layer
+
+At the physical layer, the hypothesis must remain disciplined.
+
+The word “force” cannot be used carelessly. In physics, force may refer to a mathematically defined quantity, a resulting interaction, or a concept tied to a specific theory.
+
+For that reason, the broader phrase “driving factor” may sometimes be safer.
+
+A driving factor may include force in the strict physical sense, but it may also refer to an influence, interaction, constraint, field condition, gradient, instability, or causal structure that contributes to a change of state.
+
+The physical version of the hypothesis should therefore avoid overstatement.
+
+It should not say:
+
+[quote]
+Physics has missed one basic law.
+
+It should say:
+
+[quote]
+There may be a useful metaprinciple for interpreting why absolute force and absolute long-term dynamic identity function better as ideal abstractions than as ordinary features of open observable systems.
+
+== The Mathematical Layer
+
+At the mathematical layer, the hypothesis should be developed through formal concepts.
+
+Possible concepts include:
+
+* open systems;
+* state spaces;
+* parameters of equality;
+* symmetry of conditions;
+* perturbations;
+* stability and instability;
+* divergence of trajectories;
+* equivalence classes;
+* invariants;
+* boundary conditions;
+* time evolution.
+
+A possible formal direction is this:
+
+[quote]
+Two dynamic factors may be equal under a defined equivalence relation at time t, but preservation of stronger equivalence over an interval requires preservation of the symmetries and constraints that make the equivalence valid.
+
+This does not prove the whole hypothesis. But it gives a mathematical path for developing it responsibly.
+
+== The Philosophical Layer
+
+At the philosophical layer, the hypothesis concerns the difference between reality and abstraction.
+
+Human thought can imagine absolutes.
+
+It can imagine a perfect force, perfect identity, perfect symmetry, perfect equality, perfect isolation, and perfect continuity.
+
+But the observable world is not given to us as a collection of perfect absolutes. It is given through relations, changes, limits, disturbances, measurements, and distinctions.
+
+The philosophical claim is therefore:
+
+[quote]
+The absolute may be a useful boundary concept, but dynamic reality is encountered through non-absoluteness.
+
+This places the hypothesis near process philosophy, the philosophy of change, and the philosophy of identity, but it does not simply repeat them. Its specific focus is the dynamic identity of driving factors in open systems.
+
+== Relation to Existing Ideas
+
+This hypothesis has neighbors.
+
+It is near symmetry and symmetry breaking, because it treats identity as dependent on preserved symmetry of conditions.
+
+It is near dynamic systems and chaos theory, because it treats long-term equality as vulnerable to perturbation and divergence.
+
+It is near process philosophy, because it treats reality as relational and dynamic rather than purely static.
+
+It is near the principle of the identity of indiscernibles, because it asks what it would mean for two things to be truly identical.
+
+It is near Heraclitus, because it takes change seriously.
+
+But it is not reducible to any one of these neighbors.
+
+Its proposed niche is the synthesis:
+
+[quote]
+The hypothesis links the impossibility of an absolute driving force with the impossibility of eternal dynamic identity between two driving factors in open reality.
+
+== Principles
+
+The manifesto may be condensed into the following principles.
+
+. No observable driving force is absolutely isolated.
+. No finite influence is meaningful outside a field of relations.
+. Absolute dominance would erase the independent dynamic significance of other finite influences.
+. Equality between driving factors is always relative to selected parameters.
+. Momentary equality is not the same as identity over time.
+. Identity over time requires preservation of conditions.
+. In open systems, conditions are exposed to perturbation and asymmetry.
+. Therefore, absolute dynamic identity is a limiting abstraction rather than a stable ordinary reality.
+. Real dynamics requires relation, difference, interaction, and the possibility of change.
+. The observable universe is better understood as a field of dynamically non-identical factors than as a system of absolute forces.
+
+== Research Program
+
+The next step is not to expand the manifesto rhetorically, but to sharpen it.
+
+The following definitions must be developed:
+
+* what counts as a driving force or driving factor;
+* what “absolute” means in physical, mathematical, and philosophical contexts;
+* what “identity” means for dynamic factors;
+* what “open system” means in the scope of the hypothesis;
+* what counts as preservation of equality over time;
+* what kinds of perturbation matter;
+* whether the hypothesis is universal, statistical, conditional, or only interpretive;
+* where the boundary lies between scientific hypothesis and philosophical principle.
+
+The hypothesis should also be checked against authoritative sources in physics, mathematics, and philosophy.
+
+It should be developed with caution, not inflated into a premature grand theory.
+
+== Final Statement
+
+Real dynamics is not made of absolutes.
+
+It is made of relations, constraints, asymmetries, interactions, perturbations, and transformations.
+
+A single absolute force would no longer be one force among others. It would become a final background before which other finite influences lose independent significance.
+
+Two absolutely identical driving forces could remain identical over time only if their conditions, relations, histories, perturbations, and future exposures remained absolutely identical. In an open system, such total identity is not a stable ordinary reality.
+
+Therefore, the observable universe should be approached not as a system of absolute forces, but as a system of relative, interacting, dynamically non-identical factors.
+
+This is the principle of dynamic non-absoluteness.
+
+This is the hypothesis of dynamic non-identity.
