@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Principle of Dynamic Non-Absoluteness :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/principle-of-dynamic-non-absoluteness/">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/principle-of-dynamic-non-absoluteness/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/principle-of-dynamic-non-absoluteness/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Principle of Dynamic Non-Absoluteness">
+<meta name="twitter:title" content="Principle of Dynamic Non-Absoluteness">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-logo.svg" alt="Marketing America Corp logo">
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">Principle of Dynamic Non-Absoluteness</a></li>
+    <li><span>Principle of Dynamic Non-Absoluteness</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Principle of Dynamic Non-Absoluteness</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/principle_dynamic_non_absoluteness.adoc`</em>
+Oleksandr Tishchenko
+:doctype: article
+:toc: left
+:toclevels: 3
+:sectanchors:
+:sectlinks:
+:icons: font
+:experimental:
+:lang: en</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_working_status"><a class="anchor" href="#_working_status"></a>Working Status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document is a working scientific-philosophical checkpoint.</p>
+</div>
+<div class="paragraph">
+<p>It does not present the idea as a proven physical law. It records a hypothesis, checks its possible overlap with existing intellectual traditions, and defines a possible niche for further development.</p>
+</div>
+<div class="paragraph">
+<p>Working names:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Principle of Dynamic Non-Absoluteness</p>
+</li>
+<li>
+<p>Principle of Dynamic Non-Identity</p>
+</li>
+<li>
+<p>Hypothesis of Dynamic Non-Identity of Driving Forces</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_core_of_my_thought"><a class="anchor" href="#_1_core_of_my_thought"></a>1. Core of My Thought</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My thought is that the observable universe cannot contain one single, absolute, constant, and fully dominant driving force as an ordinary physical reality.</p>
+</div>
+<div class="paragraph">
+<p>If such a force existed in an absolute sense, it would not merely be one force among others. It would become a limiting background against which all other influences would lose independent dynamic significance. Any other finite force would be unable to meaningfully change the course of events, because the entire dynamic field would already be suppressed or predetermined by that absolute dominant factor.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, I should not formulate this as a crude claim that an absolute force would simply “stop all motion.”</p>
+</div>
+<div class="paragraph">
+<p>A more careful formulation is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+An absolutely dominant and unchanging driving force would not necessarily stop motion as such; rather, it would make all other finite influences dynamically insignificant.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The second part of my thought concerns the impossibility of two absolutely identical driving forces over time.</p>
+</div>
+<div class="paragraph">
+<p>Two forces, impulses, factors, or processes may appear identical at a single moment of observation. However, during extended observation, their absolute identity should eventually break down because they do not exist in a vacuum. They exist within different relations, different contexts, different perturbations, different fluctuations, and different external or internal influences.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, my thought is not simply:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Two identical forces do not exist.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A more precise formulation is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Two driving forces may be equal with respect to a selected parameter at a specific moment in time, but they cannot preserve absolute identity across all dynamic properties over an extended interval in an open system, unless the conditions of their existence remain absolutely symmetrical.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_working_formulation_of_the_hypothesis"><a class="anchor" href="#_2_working_formulation_of_the_hypothesis"></a>2. Working Formulation of the Hypothesis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I can formulate this as the Principle of Dynamic Non-Absoluteness:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+In the observable universe, every driving force is not absolute but relational. It manifests only through interactions, constraints, perturbations, differences, and relations. An absolutely isolated driving force and the eternal identity of two driving factors are not ordinary physical realities, but limiting abstractions.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A narrower version may be called the Principle of Dynamic Non-Identity:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+In an open dynamic system, any two initially equal driving factors can preserve equality only under stable symmetry of conditions. If that symmetry is disturbed by external influences, internal fluctuations, different relations, or contextual asymmetry, equality becomes temporary and the later dynamics of those factors diverge.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_originality_check_is_this_merely_a_copy_of_an_existing_theory"><a class="anchor" href="#_3_originality_check_is_this_merely_a_copy_of_an_existing_theory"></a>3. Originality Check: Is This Merely a Copy of an Existing Theory?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At this checkpoint, I do not see my thought as a direct copy of one known theory.</p>
+</div>
+<div class="paragraph">
+<p>However, almost every part of it intersects with existing fields:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>fundamental interactions in physics;</p>
+</li>
+<li>
+<p>symmetry and symmetry breaking;</p>
+</li>
+<li>
+<p>dynamic systems;</p>
+</li>
+<li>
+<p>chaos theory;</p>
+</li>
+<li>
+<p>open systems;</p>
+</li>
+<li>
+<p>process philosophy;</p>
+</li>
+<li>
+<p>the philosophy of identity and difference;</p>
+</li>
+<li>
+<p>the principle of the identity of indiscernibles.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is important.</p>
+</div>
+<div class="paragraph">
+<p>My task is not to naively claim that I have discovered a completely new physical law. My task is to determine whether there is a real conceptual niche where the idea can be developed responsibly.</p>
+</div>
+<div class="paragraph">
+<p>Preliminary conclusion:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+This thought does not look like a direct copy of a single existing theory. Its possible originality lies not in each isolated element, but in the specific combination: driving force, open system, non-absoluteness, breakdown of identity over time, and the impossibility of eternal dynamic sameness.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_intersection_with_fundamental_interactions_in_physics"><a class="anchor" href="#_4_intersection_with_fundamental_interactions_in_physics"></a>4. Intersection with Fundamental Interactions in Physics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Modern physics is not built around one single absolute force. It describes several fundamental interactions, usually classified as gravitational, electromagnetic, strong, and weak interactions.</p>
+</div>
+<div class="paragraph">
+<p>In that sense, my thought that there is no single absolute observable force does not directly conflict with the modern physical picture. Physics itself does not ordinarily describe reality as being governed by one visible mechanical force that suppresses all others.</p>
+</div>
+<div class="paragraph">
+<p>However, I must be careful.</p>
+</div>
+<div class="paragraph">
+<p>In physics, the word “force” is not merely a philosophical metaphor. It may refer to a concrete interaction, a field effect, a resulting influence, or a mathematically described quantity.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, if I use the word “force” too broadly, a physicist may reasonably object.</p>
+</div>
+<div class="paragraph">
+<p>For a stricter version, it may be better to speak not only about “force,” but also about:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a driving factor;</p>
+</li>
+<li>
+<p>a dynamic influence;</p>
+</li>
+<li>
+<p>an interaction;</p>
+</li>
+<li>
+<p>a cause of state change;</p>
+</li>
+<li>
+<p>a structure that gives direction to a dynamic process.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This makes the hypothesis more stable and less vulnerable to naive physical objections.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_intersection_with_symmetry_and_symmetry_breaking"><a class="anchor" href="#_5_intersection_with_symmetry_and_symmetry_breaking"></a>5. Intersection with Symmetry and Symmetry Breaking</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A strong intersection of my thought is the topic of symmetry.</p>
+</div>
+<div class="paragraph">
+<p>In physics, symmetry may exist at the level of laws, while a concrete state of a system may break that symmetry. This is important for my idea: two forces or two processes may be symmetrical in an abstract model, but in a real open system, the symmetry of conditions almost never remains absolute.</p>
+</div>
+<div class="paragraph">
+<p>My possible niche here is the following:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+I am not speaking only about the symmetry of laws. I am speaking about the impossibility of eternal identity of driving factors under open dynamic conditions.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This does not reject symmetry. It makes symmetry a condition.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Absolute identity is possible only under absolute symmetry of conditions. But absolute symmetry of conditions in an open system is practically unreachable, or at least belongs to idealized modeling rather than ordinary observable reality.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_6_intersection_with_chaos_theory_and_dynamic_systems"><a class="anchor" href="#_6_intersection_with_chaos_theory_and_dynamic_systems"></a>6. Intersection with Chaos Theory and Dynamic Systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here the risk of “this has already been said” is especially high.</p>
+</div>
+<div class="paragraph">
+<p>Chaos theory and the theory of dynamic systems already show that small differences in initial conditions can produce large differences in later system behavior. This is close to my thought: two forces or two processes may begin as equal, but their trajectories can diverge over time.</p>
+</div>
+<div class="paragraph">
+<p>However, my thought is broader than sensitivity to initial conditions.</p>
+</div>
+<div class="paragraph">
+<p>I am not only saying that similar trajectories may diverge. I am making a more general claim:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Absolute dynamic identity of two factors over time is impossible in an open system if those factors are not protected by absolutely identical conditions and absolutely identical relations.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Chaos theory may therefore be one scientific neighbor of this hypothesis, but it does not necessarily exhaust it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_7_intersection_with_process_philosophy"><a class="anchor" href="#_7_intersection_with_process_philosophy"></a>7. Intersection with Process Philosophy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My thought is also close to process philosophy, where reality is understood not primarily as a collection of static entities, but as becoming, change, and interaction.</p>
+</div>
+<div class="paragraph">
+<p>However, my idea should not be reduced to the general statement that “everything flows” or “everything changes.”</p>
+</div>
+<div class="paragraph">
+<p>I want to formulate a more specific thesis:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Not only does everything change; no driving force can be absolutely isolated, and no two driving forces can preserve absolute identity over time in an open system.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This gives the idea a more precise structure:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>there are driving factors;</p>
+</li>
+<li>
+<p>there is an open system;</p>
+</li>
+<li>
+<p>there is a duration of observation;</p>
+</li>
+<li>
+<p>there may be equality at a given moment;</p>
+</li>
+<li>
+<p>that equality may break under external or internal differences.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is no longer only a philosophical intuition. It can become a framework for a scientific-philosophical hypothesis.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_8_intersection_with_heraclitus"><a class="anchor" href="#_8_intersection_with_heraclitus"></a>8. Intersection with Heraclitus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is easy to draw a parallel between my thought and Heraclitus: everything flows, everything changes, and one cannot step into the same river twice.</p>
+</div>
+<div class="paragraph">
+<p>However, I should not reduce the hypothesis to an ancient aphorism.</p>
+</div>
+<div class="paragraph">
+<p>My thought is narrower and more modern:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+I am not speaking merely about universal change. I am speaking about the impossibility of absolute identity of driving forces over time under conditions of open systems, perturbations, contextual differences, and symmetry breaking.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Heraclitus may be a philosophical ancestor of this intuition.</p>
+</div>
+<div class="paragraph">
+<p>But my possible niche is not the repetition of “everything changes.” My possible niche is the attempt to connect change with dynamic force, symmetry, open systems, and the impossibility of absolute identity.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_9_intersection_with_the_identity_of_indiscernibles"><a class="anchor" href="#_9_intersection_with_the_identity_of_indiscernibles"></a>9. Intersection with the Identity of Indiscernibles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Another important philosophical intersection is the principle of the identity of indiscernibles, often associated with Leibniz.</p>
+</div>
+<div class="paragraph">
+<p>In a simplified form, this principle raises the question: if two things are absolutely indistinguishable in all properties, are they truly two different things?</p>
+</div>
+<div class="paragraph">
+<p>My thought touches a similar issue but moves it into dynamics.</p>
+</div>
+<div class="paragraph">
+<p>I am not asking only:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Can two absolutely identical things exist?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>I am asking:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Can two absolutely identical driving forces exist while preserving their identity over time in an open system?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is a different question.</p>
+</div>
+<div class="paragraph">
+<p>Here, identity is not only identity of properties. It is identity of trajectories, influences, conditions, relations, and future changes.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, my thought may be framed as a dynamic version of the problem of identity:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Even if two driving factors appear indistinguishable at a given moment, their absolute indistinguishability over time is impossible without absolute coincidence of the conditions of their existence.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_10_main_scientific_caution"><a class="anchor" href="#_10_main_scientific_caution"></a>10. Main Scientific Caution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The most dangerous mistake would be to formulate the idea too crudely.</p>
+</div>
+<div class="paragraph">
+<p>I should not claim:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+An absolute force would stop all motion.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That statement is physically vulnerable. In mechanics, force does not necessarily stop motion. It may cause acceleration, change direction, produce deformation, or modify the state of a system in other ways.</p>
+</div>
+<div class="paragraph">
+<p>A stronger version is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+An absolutely dominant force would not stop motion as such. It would deprive all other finite influences of independent dynamic significance.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>I should also avoid saying too simply:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Two identical forces do not exist.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A more careful version is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Two forces may be equal with respect to one or several measurable parameters at a given moment, but absolute identity of all their dynamic properties over time is impossible in an open system without absolute symmetry of conditions.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_11_possible_niche_for_development"><a class="anchor" href="#_11_possible_niche_for_development"></a>11. Possible Niche for Development</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The most promising niche is not the declaration of a new physical force or a new fundamental law of nature.</p>
+</div>
+<div class="paragraph">
+<p>A stronger niche is this:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+A metaprinciple of open dynamic systems: every observable driving force is relative to a system of interactions, while absolute identity of driving factors over time is a limiting idealization rather than a stable feature of open reality.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Even shorter:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+The niche of my hypothesis lies at the intersection of philosophy of physics, dynamic systems, symmetry, and process ontology.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_12_what_may_be_original_in_my_thought"><a class="anchor" href="#_12_what_may_be_original_in_my_thought"></a>12. What May Be Original in My Thought</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The isolated elements already exist:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>change;</p>
+</li>
+<li>
+<p>perturbation;</p>
+</li>
+<li>
+<p>symmetry;</p>
+</li>
+<li>
+<p>symmetry breaking;</p>
+</li>
+<li>
+<p>sensitivity to conditions;</p>
+</li>
+<li>
+<p>open systems;</p>
+</li>
+<li>
+<p>identity and difference;</p>
+</li>
+<li>
+<p>process philosophy.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The possible originality is in the combination.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+I am attempting to connect the impossibility of an absolute force and the impossibility of eternal identity between two forces into one principle of dynamic non-absoluteness.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>In other words, my thought is not merely that “everything changes.”</p>
+</div>
+<div class="paragraph">
+<p>It is that:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>an absolutely dominant driving force cannot be an ordinary observable part of dynamic reality, because it would suppress the independent significance of other influences;</p>
+</li>
+<li>
+<p>two driving forces cannot remain absolutely identical over time in an open system, because their contexts, relations, and influences eventually diverge;</p>
+</li>
+<li>
+<p>equality of forces is possible as a local, momentary, or model-based state, but not as an eternal absolute reality;</p>
+</li>
+<li>
+<p>observable dynamics requires difference, interaction, and changeability.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_13_preliminary_conclusion_on_originality"><a class="anchor" href="#_13_preliminary_conclusion_on_originality"></a>13. Preliminary Conclusion on Originality</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My intermediate conclusion is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+This thought does not appear to be a direct copy of one known theory, but it exists within a dense field of related ideas. Therefore, it should be developed not as a sensational claim of a new physical law, but as a careful authorial principle synthesizing several directions: dynamic systems, open systems, symmetry, breakdown of identity, and process philosophy.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The strongest current formulation is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Principle of Dynamic Non-Identity: In an open dynamic system, two initially equal driving forces can preserve equality only under stable symmetry of conditions. Since an open system is exposed to differences, fluctuations, external influences, and uneven relations, absolute identity of such forces over time is not a real stable state, but a limiting abstraction.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_14_checkpoint_for_further_development"><a class="anchor" href="#_14_checkpoint_for_further_development"></a>14. Checkpoint for Further Development</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At this stage, I record the idea not as a proven law, but as a working hypothesis.</p>
+</div>
+<div class="paragraph">
+<p>It should be developed in three layers.</p>
+</div>
+<div class="sect2">
+<h3 id="_physical_layer"><a class="anchor" href="#_physical_layer"></a>Physical Layer</h3>
+<div class="paragraph">
+<p>The hypothesis must not contradict mechanics, field theory, fundamental interactions, or the mathematical language of physics.</p>
+</div>
+<div class="paragraph">
+<p>It should avoid vague or naive use of the term “force.”</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mathematical_layer"><a class="anchor" href="#_mathematical_layer"></a>Mathematical Layer</h3>
+<div class="paragraph">
+<p>The idea should be tested through concepts such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>open systems;</p>
+</li>
+<li>
+<p>state parameters;</p>
+</li>
+<li>
+<p>symmetry of conditions;</p>
+</li>
+<li>
+<p>perturbations;</p>
+</li>
+<li>
+<p>stability;</p>
+</li>
+<li>
+<p>divergence of trajectories;</p>
+</li>
+<li>
+<p>equality under selected measurable parameters;</p>
+</li>
+<li>
+<p>long-term non-identity.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_philosophical_layer"><a class="anchor" href="#_philosophical_layer"></a>Philosophical Layer</h3>
+<div class="paragraph">
+<p>The idea should develop the question of why absolute force and eternal identity are better understood as limiting abstractions of thought rather than ordinary observable realities.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_15_working_summary"><a class="anchor" href="#_15_working_summary"></a>15. Working Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My thought may be summarized as follows:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Real dynamics is impossible without difference. If there is only one absolute force, other influences lose significance. If there are two absolutely identical forces, their identity can be fixed only at a moment of observation or inside an ideal model. In an open system, time, interaction, perturbation, and difference of conditions inevitably transform equality into divergence. Therefore, the observable universe is not a system of absolute forces, but a system of relative, interacting, and dynamically non-identical factors.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_16_reference_directions_for_later_research"><a class="anchor" href="#_16_reference_directions_for_later_research"></a>16. Reference Directions for Later Research</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This draft should later be checked against authoritative literature in at least the following areas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>fundamental interactions in modern physics;</p>
+</li>
+<li>
+<p>Newtonian and post-Newtonian concepts of force;</p>
+</li>
+<li>
+<p>field theory and interaction-based descriptions of physical reality;</p>
+</li>
+<li>
+<p>symmetry and symmetry breaking;</p>
+</li>
+<li>
+<p>Noether&#8217;s theorem and conservation laws;</p>
+</li>
+<li>
+<p>dynamic systems and stability theory;</p>
+</li>
+<li>
+<p>chaos theory and sensitivity to initial conditions;</p>
+</li>
+<li>
+<p>open systems and nonequilibrium dynamics;</p>
+</li>
+<li>
+<p>process philosophy;</p>
+</li>
+<li>
+<p>Heraclitus and the philosophy of change;</p>
+</li>
+<li>
+<p>Leibniz and the identity of indiscernibles;</p>
+</li>
+<li>
+<p>philosophy of laws of nature.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_17_current_development_position"><a class="anchor" href="#_17_current_development_position"></a>17. Current Development Position</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document is a first checkpoint.</p>
+</div>
+<div class="paragraph">
+<p>The idea should be treated as a candidate authorial principle, not as a finished discovery.</p>
+</div>
+<div class="paragraph">
+<p>The next useful step is to build a stricter version with definitions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>what exactly counts as a driving force;</p>
+</li>
+<li>
+<p>what “absolute” means;</p>
+</li>
+<li>
+<p>what “identity” means;</p>
+</li>
+<li>
+<p>what “open system” means;</p>
+</li>
+<li>
+<p>what time interval is being considered;</p>
+</li>
+<li>
+<p>which claims are physical;</p>
+</li>
+<li>
+<p>which claims are mathematical;</p>
+</li>
+<li>
+<p>which claims are philosophical.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <p>Marketing America Corp · High Hopes · Oleksandr Tishchenko</p>
+</footer>
+  </body>
+</html>
