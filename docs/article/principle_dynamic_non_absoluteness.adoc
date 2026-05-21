@@ -1,12 +1,9 @@
 = Principle of Dynamic Non-Absoluteness
-Oleksandr Tishchenko
-:doctype: article
-:toc: left
-:toclevels: 3
-:sectanchors:
-:sectlinks:
-:icons: font
-:experimental:
+:page-slug: principle-dynamic-non-absoluteness
+:page-published: 2026-05-21
+:page-author: Oleksandr Tishchenko
+:description: A working scientific-philosophical checkpoint on dynamic non-absoluteness, dynamic non-identity of driving forces, open systems, symmetry, and originality.
+:page-tags: physics, philosophy-of-physics, dynamic-systems, symmetry, hypothesis
 :lang: en
 
 == Working Status
