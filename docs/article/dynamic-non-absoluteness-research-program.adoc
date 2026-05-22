@@ -70,6 +70,10 @@ The authorial statement of the hypothesis. It gives the strongest readable versi
 +
 The vocabulary baseline. It defines force, driving factor, absolute, equality, identity, open system, and scope.
 
+. xref:article/glossary-of-dynamic-non-absoluteness.adoc[Glossary of Dynamic Non-Absoluteness]
++
+The controlled terminology layer. It defines the exact working meanings of absolute, dynamic identity, driving factor, perturbation, preservation condition, symmetry of conditions, and related terms.
+
 . xref:article/literature-and-conceptual-overlap-map-dynamic-non-absoluteness.adoc[Literature and Conceptual Overlap Map for Dynamic Non-Absoluteness]
 +
 The originality checkpoint. It maps the hypothesis against symmetry, dynamic systems, chaos theory, open systems, process philosophy, and identity theory.
@@ -125,6 +129,27 @@ It prevents the hypothesis from becoming vague by requiring every future text to
 * what time interval matters;
 * whether the claim is physical, mathematical, or philosophical.
 
+=== Glossary
+
+The glossary is the controlled vocabulary layer.
+
+It exists so that future documents do not use the same terms in incompatible ways. It defines terms such as:
+
+* absolute;
+* driving factor;
+* dynamic identity;
+* open system;
+* perturbation;
+* preservation condition;
+* preservation mechanism;
+* symmetry of conditions;
+* limiting abstraction.
+
+Its main rule is:
+
+[quote]
+Never use equality, identity, force, absolute, or open system without specifying the relevant scope.
+
 === Literature and Overlap Map
 
 The literature map is the originality layer.
@@ -159,6 +184,7 @@ The program currently has the following status:
 * *Hypothesis:* formulated.
 * *Manifesto:* published.
 * *Definitions:* first version published.
+* *Glossary:* first version published.
 * *Overlap map:* first version published.
 * *Formalization:* first draft published.
 * *Originality check:* preliminary, not final.
@@ -184,7 +210,6 @@ Define the terms, map the neighbors, formalize the conditions, and only then str
 
 The next useful tasks are:
 
-. Build a glossary of controlled terms.
 . Add a source-backed bibliography page.
 . Create examples and counterexamples.
 . Separate weak, medium, and strong claims.
@@ -196,7 +221,6 @@ The next useful tasks are:
 
 Future documents may include:
 
-* Glossary of Dynamic Non-Absoluteness;
 * Bibliography and Source Notes;
 * Examples and Counterexamples;
 * Weak, Medium, and Strong Forms of the Hypothesis;
