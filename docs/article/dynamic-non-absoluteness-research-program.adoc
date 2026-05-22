@@ -1,0 +1,220 @@
+= Dynamic Non-Absoluteness Research Program
+:page-slug: dynamic-non-absoluteness-research-program
+:page-published: 2026-05-21
+:page-author: Oleksandr Tishchenko
+:description: A series index and reading map for the hypothesis of dynamic non-absoluteness and dynamic non-identity.
+:page-tags: dynamic-non-absoluteness, research-program, philosophy-of-physics, dynamic-systems, hypothesis
+:lang: en
+
+== Purpose
+
+This page is the public entry point for the *Dynamic Non-Absoluteness* research program.
+
+The series develops a scientific-philosophical hypothesis about force, relation, equality, identity, open systems, and the limits of absoluteness in observable dynamics.
+
+The central idea is simple but requires careful handling:
+
+[quote]
+Observable reality should not be understood as a system of absolute forces, but as a field of relative, interacting, and dynamically non-identical factors.
+
+This page provides the reading order, document roles, and current development status.
+
+== Core Hypothesis
+
+The hypothesis has two connected claims.
+
+First:
+
+[quote]
+No single driving force should be treated as absolute, isolated, constant, and fully dominant within ordinary observable dynamics.
+
+Second:
+
+[quote]
+Two distinct driving factors may be equal at a moment or under selected parameters, but they do not thereby preserve absolute dynamic identity over time in an open system.
+
+Together, these claims form the principle of dynamic non-absoluteness:
+
+[quote]
+Real dynamics requires relation, difference, interaction, and the possibility of perturbation. Equality at a moment is not identity over time; identity over time requires preserved conditions; open systems do not automatically preserve those conditions.
+
+== What This Program Is Not
+
+This program does not claim a finished physical law.
+
+It does not introduce a new fundamental force.
+
+It does not replace mechanics, field theory, thermodynamics, symmetry theory, chaos theory, or dynamic systems theory.
+
+It does not deny stability, invariants, conservation laws, or symmetry.
+
+It is a hypothesis-building program: a disciplined attempt to transform an authorial intuition into a clearer conceptual, philosophical, and eventually formal framework.
+
+== Recommended Reading Order
+
+The documents should be read in this order.
+
+. xref:article/abstract-hypothesis-of-dynamic-non-absoluteness.adoc[Abstract: The Hypothesis of Dynamic Non-Absoluteness]
++
+A short public introduction. This is the fastest entry point.
+
+. xref:article/principle-dynamic-non-absoluteness.adoc[Principle of Dynamic Non-Absoluteness]
++
+The first checkpoint article. It records the idea, checks the niche, and separates the hypothesis from naive overclaiming.
+
+. xref:article/manifesto-of-dynamic-non-absoluteness.adoc[Manifesto of Dynamic Non-Absoluteness]
++
+The authorial statement of the hypothesis. It gives the strongest readable version of the position.
+
+. xref:article/definitions-and-scope-of-dynamic-non-absoluteness.adoc[Definitions and Scope of Dynamic Non-Absoluteness]
++
+The vocabulary baseline. It defines force, driving factor, absolute, equality, identity, open system, and scope.
+
+. xref:article/literature-and-conceptual-overlap-map-dynamic-non-absoluteness.adoc[Literature and Conceptual Overlap Map for Dynamic Non-Absoluteness]
++
+The originality checkpoint. It maps the hypothesis against symmetry, dynamic systems, chaos theory, open systems, process philosophy, and identity theory.
+
+. xref:article/toward-a-formal-statement-of-dynamic-non-identity.adoc[Toward a Formal Statement of Dynamic Non-Identity]
++
+The first bridge toward formalization. It introduces equivalence relations, time intervals, perturbations, preservation conditions, and weak/medium/strong versions of the claim.
+
+== Document Roles
+
+=== Abstract
+
+The abstract is for readers who need the shortest possible explanation.
+
+It should answer:
+
+* What is the hypothesis?
+* What does it not claim?
+* Why is it not just “everything changes”?
+* What is the research direction?
+
+=== Checkpoint Article
+
+The checkpoint article is the first analytical record.
+
+It protects the idea from two opposite errors:
+
+* pretending that nothing like it has ever been discussed;
+* reducing it too quickly to existing ideas.
+
+It is a positioning document.
+
+=== Manifesto
+
+The manifesto is the authorial declaration.
+
+It is not meant to be the strictest version. It is meant to state the principle clearly and powerfully.
+
+The manifesto says:
+
+[quote]
+Real dynamics is not made of absolutes. It is made of relations, constraints, asymmetries, interactions, perturbations, and transformations.
+
+=== Definitions and Scope
+
+The definitions document is the discipline layer.
+
+It prevents the hypothesis from becoming vague by requiring every future text to clarify:
+
+* what kind of force or driving factor is meant;
+* what kind of equality is being discussed;
+* what system is being considered;
+* what time interval matters;
+* whether the claim is physical, mathematical, or philosophical.
+
+=== Literature and Overlap Map
+
+The literature map is the originality layer.
+
+It identifies conceptual neighbors:
+
+* fundamental interactions;
+* symmetry and symmetry breaking;
+* Noether-style preservation thinking;
+* dynamic systems;
+* chaos theory;
+* open systems;
+* process philosophy;
+* Heraclitus and change;
+* Leibniz and identity of indiscernibles;
+* philosophy of laws of nature.
+
+Its purpose is not to deny overlap. Its purpose is to define the niche responsibly.
+
+=== Formal Statement Draft
+
+The formal statement draft is the mathematical bridge.
+
+It introduces the idea that two factors may be equivalent under a selected relation at a time t, but preserving stronger identity over an interval requires preservation of the conditions that define the equivalence.
+
+This is the path from manifesto to disciplined formulation.
+
+== Current Development Status
+
+The program currently has the following status:
+
+* *Hypothesis:* formulated.
+* *Manifesto:* published.
+* *Definitions:* first version published.
+* *Overlap map:* first version published.
+* *Formalization:* first draft published.
+* *Originality check:* preliminary, not final.
+* *Mathematical proof:* not yet attempted.
+* *Scientific claim level:* metaprinciple / research hypothesis, not established physical law.
+
+== Main Development Rule
+
+The hypothesis should be developed with discipline.
+
+Every next step should avoid three failures:
+
+. making the claim too vague;
+. making the claim too grand;
+. making the claim too isolated from existing literature.
+
+The correct path is narrower and stronger:
+
+[quote]
+Define the terms, map the neighbors, formalize the conditions, and only then strengthen the claim.
+
+== Next Research Tasks
+
+The next useful tasks are:
+
+. Build a glossary of controlled terms.
+. Add a source-backed bibliography page.
+. Create examples and counterexamples.
+. Separate weak, medium, and strong claims.
+. Draft a formal proposition with assumptions.
+. Identify which parts are physical, mathematical, philosophical, or metaphorical.
+. Test the hypothesis against simple dynamic-system examples.
+
+== Possible Future Documents
+
+Future documents may include:
+
+* Glossary of Dynamic Non-Absoluteness;
+* Bibliography and Source Notes;
+* Examples and Counterexamples;
+* Weak, Medium, and Strong Forms of the Hypothesis;
+* Dynamic Identity and Equivalence Relations;
+* Open Systems and the Fragility of Equality;
+* Symmetry Preservation and Identity Over Time;
+* Research Notes on Dynamic Non-Identity.
+
+== Closing Statement
+
+This research program begins from one core intuition:
+
+[quote]
+Real dynamics is impossible without difference.
+
+But that intuition is not enough by itself. It must be disciplined by definitions, formalization, and literature.
+
+The goal of this series is to turn the intuition into a responsible scientific-philosophical hypothesis:
+
+[quote]
+No observable driving factor is absolutely isolated, and no two distinct driving factors preserve absolute dynamic identity over time in an open system unless the conditions preserving that identity remain absolutely symmetrical.
