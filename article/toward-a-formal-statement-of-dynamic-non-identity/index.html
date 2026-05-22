@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Toward a Formal Statement of Dynamic Non-Identity :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/toward-a-formal-statement-of-dynamic-non-identity/">
+    <meta name="description" content="A first formalization draft for the hypothesis of dynamic non-identity in open systems.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/toward-a-formal-statement-of-dynamic-non-identity/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/toward-a-formal-statement-of-dynamic-non-identity/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Toward a Formal Statement of Dynamic Non-Identity">
+<meta name="twitter:title" content="Toward a Formal Statement of Dynamic Non-Identity">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-logo.svg" alt="Marketing America Corp logo">
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">Toward a Formal Statement of Dynamic Non-Identity</a></li>
+    <li><span>Toward a Formal Statement of Dynamic Non-Identity</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Toward a Formal Statement of Dynamic Non-Identity</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/toward-a-formal-statement-of-dynamic-non-identity.adoc`</em>
+== Purpose</p>
+</div>
+<div class="paragraph">
+<p>This note translates the hypothesis of dynamic non-identity into a preliminary formal vocabulary.</p>
+</div>
+<div class="paragraph">
+<p>It is not a proof. It is a bridge between manifesto language and mathematical language.</p>
+</div>
+<div class="paragraph">
+<p>The goal is to identify what would need to be specified before the hypothesis could become more than a philosophical statement.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_informal_hypothesis"><a class="anchor" href="#_informal_hypothesis"></a>Informal Hypothesis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The informal hypothesis is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Two initially equal driving factors do not preserve absolute dynamic identity over time in an open system unless the conditions preserving that identity remain symmetrical.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This can be developed through the concepts of state, equivalence, time evolution, perturbation, and preservation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_objects_of_discussion"><a class="anchor" href="#_objects_of_discussion"></a>Objects of Discussion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let S be a system.</p>
+</div>
+<div class="paragraph">
+<p>Let A and B be two distinguishable dynamic factors within or related to S.</p>
+</div>
+<div class="paragraph">
+<p>A and B may represent forces, influences, interactions, constraints, gradients, instabilities, or other driving factors, depending on the chosen model.</p>
+</div>
+<div class="paragraph">
+<p>Let t denote time, or a parameter playing the role of temporal ordering.</p>
+</div>
+<div class="paragraph">
+<p>Let x_A(t) and x_B(t) denote the relevant states or parameter-vectors of A and B at time t.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_equality_at_a_moment"><a class="anchor" href="#_equality_at_a_moment"></a>Equality at a Moment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A and B may be equal at time t under a selected equivalence relation E.</p>
+</div>
+<div class="paragraph">
+<p>This may be written informally as:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$E(x_A(t), x_B(t)) = true\$
+</div>
+</div>
+<div class="paragraph">
+<p>This does not mean A and B are absolutely identical.</p>
+</div>
+<div class="paragraph">
+<p>It only means that they are equivalent under the selected relation E.</p>
+</div>
+<div class="paragraph">
+<p>Examples of E may include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>equality of magnitude;</p>
+</li>
+<li>
+<p>equality of direction;</p>
+</li>
+<li>
+<p>equality of energy contribution;</p>
+</li>
+<li>
+<p>equality of a selected vector component;</p>
+</li>
+<li>
+<p>equality of a modeled role;</p>
+</li>
+<li>
+<p>equality of a defined state class.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dynamic_identity_over_an_interval"><a class="anchor" href="#_dynamic_identity_over_an_interval"></a>Dynamic Identity Over an Interval</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dynamic identity over time is stronger.</p>
+</div>
+<div class="paragraph">
+<p>For an interval I = [t0, t1], strong dynamic identity would require:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$for all t in I: E_strong(x_A(t), x_B(t)) = true\$
+</div>
+</div>
+<div class="paragraph">
+<p>Here E_strong is not merely equality of one measurement. It may include relations, context, exposure, constraints, histories, and transition behavior.</p>
+</div>
+<div class="paragraph">
+<p>The stronger E becomes, the more demanding its preservation becomes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preservation_condition"><a class="anchor" href="#_preservation_condition"></a>Preservation Condition</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The key formal insight is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Equivalence over time requires preservation of the conditions that make the equivalence valid.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Let C_A(t) and C_B(t) represent the relevant conditions around A and B.</p>
+</div>
+<div class="paragraph">
+<p>These conditions may include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>boundary conditions;</p>
+</li>
+<li>
+<p>relations to other factors;</p>
+</li>
+<li>
+<p>perturbation exposure;</p>
+</li>
+<li>
+<p>constraints;</p>
+</li>
+<li>
+<p>environmental inputs;</p>
+</li>
+<li>
+<p>histories of interaction;</p>
+</li>
+<li>
+<p>rules of state transition.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If C_A and C_B remain symmetrical with respect to E, then E may be preserved.</p>
+</div>
+<div class="paragraph">
+<p>If C_A and C_B diverge in a way relevant to E, then E may fail.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_open_system_disturbance"><a class="anchor" href="#_open_system_disturbance"></a>Open-System Disturbance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let P_A(t) and P_B(t) denote perturbations or external influences affecting A and B.</p>
+</div>
+<div class="paragraph">
+<p>In a perfectly symmetrical case:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$P_A(t) = P_B(t)\$
+</div>
+</div>
+<div class="paragraph">
+<p>with respect to the relevant model.</p>
+</div>
+<div class="paragraph">
+<p>In an open system, however, there is no automatic guarantee that:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$P_A(t) == P_B(t) for all t\$
+</div>
+</div>
+<div class="paragraph">
+<p>A minimal disturbance condition may be stated as:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+If there exists a time t in I such that the relevant perturbation, relation, or boundary condition affecting A differs from that affecting B, then strong dynamic identity requires an additional preservation mechanism.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Without such a mechanism, identity becomes contingent rather than absolute.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_weak_claim"><a class="anchor" href="#_weak_claim"></a>Weak Claim</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The weak version of the hypothesis is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+In an open system, equality at a moment does not imply dynamic identity over an interval.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is safe and modest.</p>
+</div>
+<div class="paragraph">
+<p>It is almost definitional once equality and dynamic identity are distinguished.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_medium_claim"><a class="anchor" href="#_medium_claim"></a>Medium Claim</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The medium version is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+In an open system, preservation of dynamic identity over time requires preservation of the relevant symmetry conditions.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This claim is stronger but still disciplined.</p>
+</div>
+<div class="paragraph">
+<p>It says that identity is conditional, not automatic.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_strong_claim"><a class="anchor" href="#_strong_claim"></a>Strong Claim</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The strong version is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+In real open systems, absolute dynamic identity between two distinct driving factors over long intervals is not an ordinary stable reality, but a limiting abstraction.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is the philosophical-scientific heart of the hypothesis.</p>
+</div>
+<div class="paragraph">
+<p>It is not yet a theorem. To become formal, it would need a specified class of systems, perturbations, equivalence relations, and preservation conditions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_possible_formal_statement"><a class="anchor" href="#_possible_formal_statement"></a>Possible Formal Statement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A first formal statement may be written in prose:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+For two distinguishable dynamic factors A and B in an open system S, equality under a selected equivalence relation E at time t0 does not entail equality under a stronger dynamic equivalence relation E_strong over interval I. Preservation of E_strong requires preservation of the relevant symmetry conditions C that define the equivalence. In the absence of such preserved conditions, strong dynamic identity is not guaranteed and should be treated as a limiting idealization.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conditional_version"><a class="anchor" href="#_conditional_version"></a>Conditional Version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A conditional version is safer:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+If two dynamic factors are exposed to non-identical relevant perturbations or non-identical relevant relations over time, and if the system lacks a mechanism that cancels or absorbs those differences, then strong dynamic identity between those factors will not be preserved.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This version avoids overclaiming.</p>
+</div>
+<div class="paragraph">
+<p>It allows stable systems, attractors, feedback, and conservation structures to exist.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_statistical_version"><a class="anchor" href="#_statistical_version"></a>Statistical Version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statistical version may be possible:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+For many classes of open systems, the probability that two distinguishable factors preserve total dynamic identity over long intervals decreases as the number of relevant uncontrolled perturbation channels increases.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This statement would require real mathematical development.</p>
+</div>
+<div class="paragraph">
+<p>It may connect the hypothesis to probability, statistical mechanics, stochastic processes, and information theory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_relation_to_stability"><a class="anchor" href="#_relation_to_stability"></a>Relation to Stability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The hypothesis must distinguish identity from stability.</p>
+</div>
+<div class="paragraph">
+<p>A system may be stable without preserving absolute identity between two factors.</p>
+</div>
+<div class="paragraph">
+<p>A perturbation may be absorbed. A trajectory may return to an attractor. A structure may remain recognizable. But this does not necessarily mean that two dynamic factors remained absolutely identical in all relevant properties.</p>
+</div>
+<div class="paragraph">
+<p>Therefore:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Stability is not the same as absolute identity.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This distinction is essential.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_relation_to_invariants"><a class="anchor" href="#_relation_to_invariants"></a>Relation to Invariants</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The hypothesis must also respect invariants.</p>
+</div>
+<div class="paragraph">
+<p>Some quantities can remain invariant under transformations. This is not a problem for the hypothesis.</p>
+</div>
+<div class="paragraph">
+<p>The hypothesis does not say invariants are impossible. It says that total dynamic identity of distinguishable factors is stronger than preservation of a selected invariant.</p>
+</div>
+<div class="paragraph">
+<p>Therefore:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Invariant preservation is compatible with dynamic non-identity.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Two factors may share an invariant while differing in context, trajectory, exposure, or relation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_relation_to_equivalence_classes"><a class="anchor" href="#_relation_to_equivalence_classes"></a>Relation to Equivalence Classes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A useful mathematical framing is equivalence class membership.</p>
+</div>
+<div class="paragraph">
+<p>A and B may belong to the same equivalence class under E at time t.</p>
+</div>
+<div class="paragraph">
+<p>But under a stronger relation E_strong, or at a later time, they may not.</p>
+</div>
+<div class="paragraph">
+<p>This suggests a hierarchy:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>equality of one value;</p>
+</li>
+<li>
+<p>equivalence under a relation;</p>
+</li>
+<li>
+<p>equivalence under a class of transformations;</p>
+</li>
+<li>
+<p>preservation of equivalence under time evolution;</p>
+</li>
+<li>
+<p>total dynamic identity.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The hypothesis mainly concerns the final levels of this hierarchy.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_must_be_developed_next"><a class="anchor" href="#_what_must_be_developed_next"></a>What Must Be Developed Next</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A complete formalization would require:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>a defined class of systems;</p>
+</li>
+<li>
+<p>a definition of driving factor;</p>
+</li>
+<li>
+<p>a state representation;</p>
+</li>
+<li>
+<p>a distinction between weak and strong equivalence;</p>
+</li>
+<li>
+<p>a definition of openness;</p>
+</li>
+<li>
+<p>a definition of relevant perturbation;</p>
+</li>
+<li>
+<p>a preservation condition;</p>
+</li>
+<li>
+<p>a theorem, proposition, or conditional argument;</p>
+</li>
+<li>
+<p>examples and counterexamples.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_candidate_proposition"><a class="anchor" href="#_candidate_proposition"></a>Candidate Proposition</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A candidate proposition for future work:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Given two distinguishable dynamic factors A and B in an open system S, if A and B are equal under E at t0 but are subject to non-equivalent relevant conditions C_A and C_B over interval I, then E_strong(A, B) over I cannot be assumed without an explicit preservation mechanism.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is intentionally modest.</p>
+</div>
+<div class="paragraph">
+<p>It is a bridge toward rigor, not a final law.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_candidate_research_question"><a class="anchor" href="#_candidate_research_question"></a>Candidate Research Question</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The main research question becomes:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Under what conditions can initially equal dynamic factors preserve strong identity over time, and when does openness make that preservation impossible, unstable, or only idealized?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This question can be investigated philosophically, mathematically, and through examples from dynamic systems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_closing_statement"><a class="anchor" href="#_closing_statement"></a>Closing Statement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The formal heart of dynamic non-identity is not the denial of equality.</p>
+</div>
+<div class="paragraph">
+<p>It is the distinction between equality at a moment and identity over time.</p>
+</div>
+<div class="paragraph">
+<p>Equality is parameter-bound. Identity over time is condition-bound. In open systems, conditions are exposed to difference.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, the burden of proof belongs to any claim of absolute dynamic identity, not to the ordinary expectation of divergence, asymmetry, or contextual difference.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <p>Marketing America Corp · High Hopes · Oleksandr Tishchenko</p>
+</footer>
+  </body>
+</html>
