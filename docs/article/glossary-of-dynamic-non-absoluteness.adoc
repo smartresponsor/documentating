@@ -1,0 +1,432 @@
+= Glossary of Dynamic Non-Absoluteness
+:page-slug: glossary-of-dynamic-non-absoluteness
+:page-published: 2026-05-21
+:page-author: Oleksandr Tishchenko
+:description: A controlled glossary for the hypothesis of dynamic non-absoluteness and dynamic non-identity.
+:page-tags: glossary, dynamic-non-absoluteness, philosophy-of-physics, dynamic-systems, hypothesis
+:lang: en
+
+== Purpose
+
+This glossary defines the controlled vocabulary of the *Dynamic Non-Absoluteness* research program.
+
+Its purpose is not to freeze the hypothesis permanently. Its purpose is to prevent future documents from using the same words in incompatible ways.
+
+The hypothesis depends on terms that can easily become ambiguous: force, equality, identity, absolute, open system, perturbation, symmetry, and preservation. This glossary gives each term a working meaning.
+
+== Absolute
+
+In this program, *absolute* means more than strong, stable, large, long-lasting, or fundamental.
+
+A factor is treated as absolute only if it is assumed to be:
+
+* fully isolated from other influences;
+* constant across the relevant interval;
+* fully dominant over finite counter-influences;
+* not meaningfully changed by context;
+* not dependent on relations for its observable effect.
+
+The hypothesis rejects this kind of absoluteness as an ordinary feature of observable dynamic reality.
+
+It does not reject invariants, conservation laws, stable structures, or useful idealizations.
+
+== Absolute Dynamic Identity
+
+*Absolute dynamic identity* means total identity of two dynamic factors over time.
+
+It would require more than equality of magnitude or equality at one moment. It would require preserved identity of:
+
+* relevant parameters;
+* relations;
+* constraints;
+* histories;
+* exposure to perturbations;
+* boundary conditions;
+* future state evolution;
+* contextual role inside the system.
+
+The hypothesis treats absolute dynamic identity as a limiting abstraction in open systems, not as an ordinary stable condition.
+
+== Boundary Condition
+
+A *boundary condition* is a condition that constrains how a system or factor behaves at the edge of a domain, interval, environment, or model.
+
+Boundary conditions matter because two factors that are initially equal may evolve differently if their boundaries differ.
+
+In this program, boundary conditions are part of the preservation problem:
+
+[quote]
+If the boundary conditions are not preserved symmetrically, strong identity cannot simply be assumed.
+
+== Context
+
+*Context* means the surrounding conditions, relations, constraints, and influences that shape the role or behavior of a factor.
+
+A factor is not interpreted in isolation. Its effect depends on context.
+
+The hypothesis uses context to reject the idea that a driving factor can be fully understood as an isolated absolute.
+
+== Difference
+
+*Difference* is any relevant distinction between factors, states, relations, conditions, trajectories, perturbations, or histories.
+
+The program treats difference as a condition of observable dynamics.
+
+Difference does not always mean instability or disorder. It may also be the basis of structure, relation, measurement, interaction, and transformation.
+
+== Distinguishable Factors
+
+Two factors are *distinguishable* if the model or observation treats them as two rather than one.
+
+This matters because absolute identity between distinguishable factors is stronger than identity of a factor with itself.
+
+The hypothesis asks:
+
+[quote]
+Can two distinguishable dynamic factors preserve total identity over time under open conditions?
+
+== Driving Factor
+
+A *driving factor* is any influence, interaction, constraint, gradient, field condition, instability, asymmetry, or causal structure that contributes to change of state or direction of a dynamic process.
+
+This term is broader than force.
+
+It is used when the strict physical term *force* would be too narrow or theory-dependent.
+
+Examples may include:
+
+* a physical force;
+* a field condition;
+* a pressure gradient;
+* a constraint;
+* an instability;
+* an asymmetry;
+* a perturbing influence;
+* a causal relation;
+* a state-transition rule.
+
+== Driving Force
+
+A *driving force* is a more intuitive phrase for a factor that pushes, directs, causes, or contributes to change.
+
+In strict physical contexts, this phrase must be used carefully.
+
+The program prefers *driving factor* when speaking across physics, mathematics, and philosophy.
+
+== Dynamic Factor
+
+A *dynamic factor* is a factor whose state, influence, role, or relation is considered across time or state evolution.
+
+A dynamic factor is not merely a static object. It is examined through change, persistence, relation, and possible divergence.
+
+== Dynamic Identity
+
+*Dynamic identity* means identity considered across time or state evolution.
+
+It is stronger than equality at one moment.
+
+Dynamic identity asks whether a factor, or a relation between factors, remains the same through a process.
+
+In this program, dynamic identity is always tied to preservation conditions.
+
+== Dynamic Non-Absoluteness
+
+*Dynamic non-absoluteness* is the principle that observable driving factors are not absolutely isolated, not absolutely self-sufficient, and not absolutely independent of relations.
+
+The principle states:
+
+[quote]
+Observable dynamics is relational. A driving factor becomes meaningful through interaction, constraint, context, opposition, scale, and time.
+
+Dynamic non-absoluteness does not deny stability or lawfulness. It denies that dynamic reality is ordinarily made of isolated absolutes.
+
+== Dynamic Non-Identity
+
+*Dynamic non-identity* is the principle that two initially equal or similar dynamic factors do not automatically preserve strong identity over time.
+
+The principle states:
+
+[quote]
+Equality at a moment is not identity over time. Identity over time requires preserved conditions. Open systems do not automatically preserve those conditions.
+
+Dynamic non-identity is the time-oriented part of dynamic non-absoluteness.
+
+== Equality
+
+*Equality* means equivalence under a selected parameter or relation.
+
+Equality may refer to:
+
+* equal magnitude;
+* equal direction;
+* equal measured value;
+* equal energy contribution;
+* equal state class;
+* equal modeled role;
+* equality under a defined equivalence relation.
+
+The hypothesis distinguishes equality from identity.
+
+Equality is usually parameter-bound. Identity over time is condition-bound.
+
+== Equivalence Relation
+
+An *equivalence relation* is a rule under which two factors are considered equivalent for a specific purpose.
+
+In the formal development of the hypothesis, equivalence relation is essential.
+
+Two factors may be equivalent under one relation and not equivalent under another.
+
+For example, two forces may have equal magnitude but different directions, histories, or contextual roles.
+
+== Exposure
+
+*Exposure* means the way a factor is subject to influence from conditions, perturbations, relations, or environment.
+
+Two factors may begin equal but diverge because their exposure differs.
+
+Exposure is central to open-system reasoning.
+
+== Force
+
+*Force* is a strict term in physics and should not be used carelessly.
+
+In this program, force may mean a physical quantity within a specific theory, but broader statements should usually use *driving factor* instead.
+
+The hypothesis is not a claim that physics has missed a new force.
+
+== Identity
+
+*Identity* means sameness.
+
+In this program, identity must always be qualified:
+
+* identity of value;
+* identity of state;
+* identity of relation;
+* identity of role;
+* identity of trajectory;
+* identity over time;
+* absolute dynamic identity.
+
+The program rejects vague identity claims. It requires each identity claim to specify what is being preserved.
+
+== Invariant
+
+An *invariant* is something that remains unchanged under a specified transformation or evolution.
+
+The hypothesis does not deny invariants.
+
+It distinguishes invariance from total dynamic identity.
+
+Two factors may share an invariant while differing in relation, exposure, context, or trajectory.
+
+== Isolated System
+
+An *isolated system* is a system treated as having no relevant exchange or influence with an environment.
+
+In practice, isolation is often an idealization.
+
+The hypothesis focuses mainly on open systems, but isolated-system models may be useful as contrast cases.
+
+== Limiting Abstraction
+
+A *limiting abstraction* is an ideal concept useful for thought, modeling, or boundary reasoning, but not necessarily an ordinary observable reality.
+
+In this program, absolute force and absolute dynamic identity are treated as limiting abstractions unless their preservation conditions are explicitly defined.
+
+== Local Equality
+
+*Local equality* is equality within a restricted scope.
+
+It may be equality:
+
+* at one time;
+* at one position;
+* under one measurement;
+* under one model assumption;
+* relative to one selected parameter.
+
+Local equality should not be confused with total identity.
+
+== Momentary Equality
+
+*Momentary equality* is equality at a specific moment of observation.
+
+It does not imply equality before or after that moment.
+
+It also does not imply identity of history, relation, or future development.
+
+== Open Reality
+
+*Open reality* refers to observable reality as a field of interacting systems, influences, conditions, and relations rather than perfectly sealed ideal objects.
+
+The phrase is philosophical rather than strictly technical.
+
+It expresses the background intuition that real observed systems are usually embedded in wider fields of influence.
+
+== Open System
+
+An *open system* is a system that exchanges or receives relevant influence from outside its selected boundary.
+
+This may include exchange of:
+
+* energy;
+* matter;
+* information;
+* constraints;
+* perturbations;
+* boundary effects;
+* causal influences.
+
+The hypothesis uses open systems to explain why strong identity over time is not automatically preserved.
+
+== Parameter-Bound Equality
+
+*Parameter-bound equality* means equality that holds only with respect to a specified parameter.
+
+For example, two factors may be equal in magnitude but not equal in direction, context, relation, or evolution.
+
+This distinction protects the hypothesis from confusing measurement equality with total sameness.
+
+== Perturbation
+
+A *perturbation* is a disturbance, influence, fluctuation, or modification that can affect the state or evolution of a factor or system.
+
+Perturbations may be small or large.
+
+The hypothesis does not require every perturbation to produce dramatic divergence. It only requires that relevant perturbations matter for claims of strong identity.
+
+== Preservation Condition
+
+A *preservation condition* is a condition that must remain in place for equality, equivalence, identity, stability, or invariance to continue over time.
+
+This is one of the core terms of the program.
+
+The central formula is:
+
+[quote]
+Identity over time requires preserved conditions.
+
+If the preservation condition fails, identity cannot be assumed.
+
+== Preservation Mechanism
+
+A *preservation mechanism* is a structure, rule, constraint, feedback process, symmetry, invariant, or stabilizing feature that maintains equivalence or identity across time.
+
+The hypothesis allows preservation mechanisms.
+
+It does not claim that all equalities immediately break. It says that strong identity must be supported by something; it is not automatic in open systems.
+
+== Relation
+
+A *relation* is any connection, dependency, opposition, constraint, interaction, or structural placement through which a factor becomes meaningful inside a system.
+
+Dynamic non-absoluteness treats relation as primary for observable dynamics.
+
+A factor without relation may be thinkable as an abstraction, but it is not an ordinary observable driver inside a dynamic system.
+
+== Relational Dynamics
+
+*Relational dynamics* means dynamics understood through interactions and dependencies rather than through isolated absolutes.
+
+The hypothesis belongs to relational dynamics because it treats driving factors as meaningful through context, relation, and system structure.
+
+== Stability
+
+*Stability* means persistence, return, boundedness, or resistance to disturbance under specified conditions.
+
+Stability is not the same as absolute identity.
+
+A system may be stable while still containing dynamic non-identity among its factors.
+
+== Strong Identity
+
+*Strong identity* means identity across a richer set of properties than a single measurement.
+
+Strong identity may include:
+
+* values;
+* relations;
+* histories;
+* exposure;
+* trajectories;
+* roles;
+* transition behavior.
+
+The stronger the identity claim, the stronger the preservation conditions must be.
+
+== Symmetry
+
+*Symmetry* means preservation of structure under transformation, comparison, or condition mapping.
+
+In this program, symmetry matters because identity over time depends on preserved relevant symmetry.
+
+Symmetry is not rejected. It is treated as a condition of identity.
+
+== Symmetry of Conditions
+
+*Symmetry of conditions* means that two factors are subject to equivalent relevant conditions.
+
+This may include equivalent:
+
+* boundaries;
+* perturbations;
+* relations;
+* constraints;
+* histories;
+* transition rules;
+* environmental inputs.
+
+If symmetry of conditions is broken, strong dynamic identity becomes unstable or unsupported.
+
+== Time Interval
+
+A *time interval* is the duration over which equality or identity is being evaluated.
+
+The hypothesis is most meaningful across intervals, not instants.
+
+At one instant, equality may be easy to define. Across time, identity becomes a preservation problem.
+
+== Trajectory
+
+A *trajectory* is the path of a factor or system through state space, time, or modeled evolution.
+
+Two factors may have equal values at one moment but different trajectories.
+
+Dynamic identity requires more than momentary intersection of trajectories.
+
+== Weak, Medium, and Strong Claims
+
+The hypothesis should be separated into claim levels.
+
+=== Weak Claim
+
+[quote]
+Equality at a moment does not imply identity over time.
+
+=== Medium Claim
+
+[quote]
+Identity over time requires preservation of relevant conditions.
+
+=== Strong Claim
+
+[quote]
+In open systems, absolute dynamic identity between distinct driving factors is a limiting abstraction rather than an ordinary stable reality.
+
+== Controlled Usage Rule
+
+Future documents in this series should follow one rule:
+
+[quote]
+Never use equality, identity, force, absolute, or open system without specifying the relevant scope.
+
+This rule protects the research program from ambiguity.
+
+== Closing Summary
+
+The controlled vocabulary of this program can be reduced to one chain:
+
+[quote]
+Driving factors exist through relations. Equality is parameter-bound. Identity over time is condition-bound. Open systems expose conditions to difference. Therefore, absolute dynamic identity is not automatic and should be treated as a limiting abstraction unless its preservation mechanism is defined.
