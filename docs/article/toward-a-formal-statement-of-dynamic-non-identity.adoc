@@ -1,0 +1,279 @@
+= Toward a Formal Statement of Dynamic Non-Identity
+:page-slug: toward-a-formal-statement-of-dynamic-non-identity
+:page-published: 2026-05-21
+:page-author: Oleksandr Tishchenko
+:description: A first formalization draft for the hypothesis of dynamic non-identity in open systems.
+:page-tags: dynamic-systems, formalization, philosophy-of-physics, open-systems, hypothesis
+:lang: en
+
+== Purpose
+
+This note translates the hypothesis of dynamic non-identity into a preliminary formal vocabulary.
+
+It is not a proof. It is a bridge between manifesto language and mathematical language.
+
+The goal is to identify what would need to be specified before the hypothesis could become more than a philosophical statement.
+
+== Informal Hypothesis
+
+The informal hypothesis is:
+
+[quote]
+Two initially equal driving factors do not preserve absolute dynamic identity over time in an open system unless the conditions preserving that identity remain symmetrical.
+
+This can be developed through the concepts of state, equivalence, time evolution, perturbation, and preservation.
+
+== Objects of Discussion
+
+Let S be a system.
+
+Let A and B be two distinguishable dynamic factors within or related to S.
+
+A and B may represent forces, influences, interactions, constraints, gradients, instabilities, or other driving factors, depending on the chosen model.
+
+Let t denote time, or a parameter playing the role of temporal ordering.
+
+Let x_A(t) and x_B(t) denote the relevant states or parameter-vectors of A and B at time t.
+
+== Equality at a Moment
+
+A and B may be equal at time t under a selected equivalence relation E.
+
+This may be written informally as:
+
+[stem]
+++++
+E(x_A(t), x_B(t)) = true
+++++
+
+This does not mean A and B are absolutely identical.
+
+It only means that they are equivalent under the selected relation E.
+
+Examples of E may include:
+
+* equality of magnitude;
+* equality of direction;
+* equality of energy contribution;
+* equality of a selected vector component;
+* equality of a modeled role;
+* equality of a defined state class.
+
+== Dynamic Identity Over an Interval
+
+Dynamic identity over time is stronger.
+
+For an interval I = [t0, t1], strong dynamic identity would require:
+
+[stem]
+++++
+for all t in I: E_strong(x_A(t), x_B(t)) = true
+++++
+
+Here E_strong is not merely equality of one measurement. It may include relations, context, exposure, constraints, histories, and transition behavior.
+
+The stronger E becomes, the more demanding its preservation becomes.
+
+== Preservation Condition
+
+The key formal insight is:
+
+[quote]
+Equivalence over time requires preservation of the conditions that make the equivalence valid.
+
+Let C_A(t) and C_B(t) represent the relevant conditions around A and B.
+
+These conditions may include:
+
+* boundary conditions;
+* relations to other factors;
+* perturbation exposure;
+* constraints;
+* environmental inputs;
+* histories of interaction;
+* rules of state transition.
+
+If C_A and C_B remain symmetrical with respect to E, then E may be preserved.
+
+If C_A and C_B diverge in a way relevant to E, then E may fail.
+
+== Open-System Disturbance
+
+Let P_A(t) and P_B(t) denote perturbations or external influences affecting A and B.
+
+In a perfectly symmetrical case:
+
+[stem]
+++++
+P_A(t) = P_B(t)
+++++
+
+with respect to the relevant model.
+
+In an open system, however, there is no automatic guarantee that:
+
+[stem]
+++++
+P_A(t) == P_B(t) for all t
+++++
+
+A minimal disturbance condition may be stated as:
+
+[quote]
+If there exists a time t in I such that the relevant perturbation, relation, or boundary condition affecting A differs from that affecting B, then strong dynamic identity requires an additional preservation mechanism.
+
+Without such a mechanism, identity becomes contingent rather than absolute.
+
+== Weak Claim
+
+The weak version of the hypothesis is:
+
+[quote]
+In an open system, equality at a moment does not imply dynamic identity over an interval.
+
+This is safe and modest.
+
+It is almost definitional once equality and dynamic identity are distinguished.
+
+== Medium Claim
+
+The medium version is:
+
+[quote]
+In an open system, preservation of dynamic identity over time requires preservation of the relevant symmetry conditions.
+
+This claim is stronger but still disciplined.
+
+It says that identity is conditional, not automatic.
+
+== Strong Claim
+
+The strong version is:
+
+[quote]
+In real open systems, absolute dynamic identity between two distinct driving factors over long intervals is not an ordinary stable reality, but a limiting abstraction.
+
+This is the philosophical-scientific heart of the hypothesis.
+
+It is not yet a theorem. To become formal, it would need a specified class of systems, perturbations, equivalence relations, and preservation conditions.
+
+== Possible Formal Statement
+
+A first formal statement may be written in prose:
+
+[quote]
+For two distinguishable dynamic factors A and B in an open system S, equality under a selected equivalence relation E at time t0 does not entail equality under a stronger dynamic equivalence relation E_strong over interval I. Preservation of E_strong requires preservation of the relevant symmetry conditions C that define the equivalence. In the absence of such preserved conditions, strong dynamic identity is not guaranteed and should be treated as a limiting idealization.
+
+== Conditional Version
+
+A conditional version is safer:
+
+[quote]
+If two dynamic factors are exposed to non-identical relevant perturbations or non-identical relevant relations over time, and if the system lacks a mechanism that cancels or absorbs those differences, then strong dynamic identity between those factors will not be preserved.
+
+This version avoids overclaiming.
+
+It allows stable systems, attractors, feedback, and conservation structures to exist.
+
+== Statistical Version
+
+A statistical version may be possible:
+
+[quote]
+For many classes of open systems, the probability that two distinguishable factors preserve total dynamic identity over long intervals decreases as the number of relevant uncontrolled perturbation channels increases.
+
+This statement would require real mathematical development.
+
+It may connect the hypothesis to probability, statistical mechanics, stochastic processes, and information theory.
+
+== Relation to Stability
+
+The hypothesis must distinguish identity from stability.
+
+A system may be stable without preserving absolute identity between two factors.
+
+A perturbation may be absorbed. A trajectory may return to an attractor. A structure may remain recognizable. But this does not necessarily mean that two dynamic factors remained absolutely identical in all relevant properties.
+
+Therefore:
+
+[quote]
+Stability is not the same as absolute identity.
+
+This distinction is essential.
+
+== Relation to Invariants
+
+The hypothesis must also respect invariants.
+
+Some quantities can remain invariant under transformations. This is not a problem for the hypothesis.
+
+The hypothesis does not say invariants are impossible. It says that total dynamic identity of distinguishable factors is stronger than preservation of a selected invariant.
+
+Therefore:
+
+[quote]
+Invariant preservation is compatible with dynamic non-identity.
+
+Two factors may share an invariant while differing in context, trajectory, exposure, or relation.
+
+== Relation to Equivalence Classes
+
+A useful mathematical framing is equivalence class membership.
+
+A and B may belong to the same equivalence class under E at time t.
+
+But under a stronger relation E_strong, or at a later time, they may not.
+
+This suggests a hierarchy:
+
+* equality of one value;
+* equivalence under a relation;
+* equivalence under a class of transformations;
+* preservation of equivalence under time evolution;
+* total dynamic identity.
+
+The hypothesis mainly concerns the final levels of this hierarchy.
+
+== What Must Be Developed Next
+
+A complete formalization would require:
+
+. a defined class of systems;
+. a definition of driving factor;
+. a state representation;
+. a distinction between weak and strong equivalence;
+. a definition of openness;
+. a definition of relevant perturbation;
+. a preservation condition;
+. a theorem, proposition, or conditional argument;
+. examples and counterexamples.
+
+== Candidate Proposition
+
+A candidate proposition for future work:
+
+[quote]
+Given two distinguishable dynamic factors A and B in an open system S, if A and B are equal under E at t0 but are subject to non-equivalent relevant conditions C_A and C_B over interval I, then E_strong(A, B) over I cannot be assumed without an explicit preservation mechanism.
+
+This is intentionally modest.
+
+It is a bridge toward rigor, not a final law.
+
+== Candidate Research Question
+
+The main research question becomes:
+
+[quote]
+Under what conditions can initially equal dynamic factors preserve strong identity over time, and when does openness make that preservation impossible, unstable, or only idealized?
+
+This question can be investigated philosophically, mathematically, and through examples from dynamic systems.
+
+== Closing Statement
+
+The formal heart of dynamic non-identity is not the denial of equality.
+
+It is the distinction between equality at a moment and identity over time.
+
+Equality is parameter-bound. Identity over time is condition-bound. In open systems, conditions are exposed to difference.
+
+Therefore, the burden of proof belongs to any claim of absolute dynamic identity, not to the ordinary expectation of divergence, asymmetry, or contextual difference.
