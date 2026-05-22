@@ -1,0 +1,95 @@
+= Abstract: The Hypothesis of Dynamic Non-Absoluteness
+:page-slug: abstract-hypothesis-of-dynamic-non-absoluteness
+:page-published: 2026-05-21
+:page-author: Oleksandr Tishchenko
+:description: A short public abstract introducing the hypothesis of dynamic non-absoluteness and dynamic non-identity.
+:page-tags: abstract, hypothesis, philosophy-of-physics, dynamic-systems, open-systems
+:lang: en
+
+== Abstract
+
+The hypothesis of dynamic non-absoluteness proposes that observable reality should not be understood as a system of absolute forces, but as a field of relative, interacting, and dynamically non-identical factors.
+
+The hypothesis has two central claims.
+
+First, no single driving force should be treated as absolute, isolated, constant, and fully dominant within ordinary observable dynamics. Such a force would no longer be one participant among others. It would become a final background before which other finite influences lose independent dynamic significance.
+
+Second, two distinct driving factors may be equal at a moment or under selected parameters, but they do not thereby preserve absolute dynamic identity over time. Long-term identity requires preservation of the conditions that make identity meaningful: context, relations, perturbation exposure, boundary conditions, histories, and transition rules.
+
+In an open system, those conditions are not automatically preserved. They are exposed to asymmetry, disturbance, fluctuation, and unequal relation. Therefore, absolute dynamic identity is better treated as a limiting abstraction than as an ordinary stable feature of open reality.
+
+== What the Hypothesis Is Not
+
+This hypothesis is not a new fundamental force.
+
+It is not a replacement for physics.
+
+It is not a rejection of symmetry, invariants, conservation laws, stability, or mathematical modeling.
+
+It is also not the simple claim that everything changes.
+
+The hypothesis is more specific. It asks what must be true for a driving factor to be absolute, or for two distinct driving factors to remain dynamically identical over time.
+
+== Core Formula
+
+The hypothesis may be compressed into one formula-like statement:
+
+[quote]
+Equality at a moment is not identity over time; identity over time requires preserved conditions; open systems do not automatically preserve those conditions.
+
+== Possible Niche
+
+The possible niche of the hypothesis lies at the intersection of:
+
+* philosophy of physics;
+* dynamic systems;
+* symmetry and symmetry breaking;
+* open systems;
+* process philosophy;
+* identity and difference.
+
+Its originality is not in the isolated ingredients. Change, perturbation, symmetry, openness, and identity have long histories.
+
+The possible originality lies in the synthesis:
+
+[quote]
+The hypothesis connects the impossibility of one absolute driving force with the impossibility of eternal dynamic identity between two driving factors in open systems.
+
+== Why It Matters
+
+The hypothesis shifts attention from absolute forces to relational dynamics.
+
+It treats force, influence, or causation not as fully self-contained, but as meaningful only within systems of relation, constraint, opposition, duration, and exposure.
+
+It also sharpens the distinction between equality and identity. Two things may be equal according to one measurement and still not be dynamically identical. Two processes may begin similarly and still diverge if their conditions diverge.
+
+This distinction may be useful for philosophical analysis, formal modeling, and broader reflection on how reality should be described.
+
+== Research Direction
+
+The next stage is to define the hypothesis more rigorously.
+
+Key terms requiring development include:
+
+* driving factor;
+* absolute;
+* dynamic identity;
+* open system;
+* equality relation;
+* preservation condition;
+* perturbation;
+* symmetry of conditions.
+
+The hypothesis should be developed as a careful research program, not as a premature theory of everything.
+
+== Short Statement
+
+Real dynamics is not made of absolutes.
+
+It is made of relations, constraints, asymmetries, interactions, perturbations, and transformations.
+
+A single absolute force would erase the independent significance of finite influences. Two absolutely identical dynamic factors could remain identical over time only under absolute preservation of their conditions. In open reality, that preservation is not the ordinary case.
+
+This is the principle of dynamic non-absoluteness.
+
+This is the hypothesis of dynamic non-identity.
