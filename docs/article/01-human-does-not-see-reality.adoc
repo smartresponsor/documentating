@@ -1,6 +1,10 @@
 = A Human Being Does Not See Reality. A Human Being Sees a Survival Task
 :doctype: article
 :lang: en
+:page-slug: 01-human-does-not-see-reality
+:page-published: 2026-06-04
+:page-author: Oleksandr Tishchenko
+:page-tags: new paradigm, human behavior, truth, survival mode, AI, society
 :description: The first article in the New Paradigm media set.
 
 == Why a new paradigm needs more than giving people more information
