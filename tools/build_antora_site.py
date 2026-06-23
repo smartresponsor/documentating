@@ -135,7 +135,7 @@ def normalize_asset_image_paths(text: str) -> str:
 
 
 def normalize_adoc_includes(text: str) -> str:
-    return ADOC_INCLUDE_RE.sub(r'include::\1[]', text)
+    return ADOC_INCLUDE_RE.sub(r'include::partial$article/\1[]', text)
 
 
 def derive_slug(explicit: str, title: str, path: Path) -> str:
@@ -348,6 +348,9 @@ def generate_articles(articles: list[Article]) -> None:
         '',
     ]
     for article in articles:
+        if article.include_only:
+            write(OUT_DIR / 'modules' / 'ROOT' / 'partials' / 'article' / f'{article.slug}.adoc', article.body_adoc)
+            continue
         write(PAGES_DIR / 'article' / f'{article.slug}.adoc', article.body_adoc)
         if article.include_only:
             continue
