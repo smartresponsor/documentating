@@ -355,7 +355,6 @@ def generate_articles(articles: list[Article]) -> None:
         if article.include_only:
             continue
         meta = [article.date] if article.date else []
-        meta.append(article.source_kind.upper())
         if article.description:
             meta.append(article.description)
         suffix = f" — {' — '.join(meta)}" if meta else ''
