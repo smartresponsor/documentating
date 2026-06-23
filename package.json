@@ -2,7 +2,7 @@
   "name": "documentating-antora-site",
   "private": true,
   "scripts": {
-    "build:content": "python3 tools/build_antora_site.py",
+    "build:content": "node tools/run_python.mjs tools/build_antora_site.py",
     "build": "npm run build:content && node tools/run_antora.mjs"
   },
   "dependencies": {

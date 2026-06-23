@@ -13,6 +13,7 @@ Quality Atlas.
 import re
 import shutil
 import subprocess
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -29,6 +30,7 @@ ARTICLE_DIRS = [DOCS_DIR / 'article']
 DATE_PREFIX_RE = re.compile(r'^\d{4}-\d{2}-\d{2}--?')
 ATTR_RE = re.compile(r'^:([^:]+):\s*(.*)$')
 ASSET_IMAGE_RE = re.compile(r'image::/assets/([^\[]+)\[')
+ADOC_INCLUDE_RE = re.compile(r'include::([^\[]+\.adoc)\[\]')
 SKIP_RELS = {
     'docs/article/2026-03-29-ai-is-not-just-chatgpt-five-layer-stack.adoc',
     'docs/article/2026-03-29-ai-ne-zamenyaet-myshlenie-obnazhaet-kachestvo.adoc',
@@ -49,6 +51,7 @@ class Article:
     body_adoc: str
     source_kind: str
     source_rank: int
+    include_only: bool = False
 
 
 def ensure(path: Path) -> None:
@@ -86,17 +89,53 @@ def tags_of(value: object) -> list[str]:
 
 
 def md_to_adoc(text: str) -> str:
-    return subprocess.run(
-        ['pandoc', '--from=gfm', '--to=asciidoc', '--wrap=none'],
-        input=text,
-        text=True,
-        capture_output=True,
-        check=True,
-    ).stdout.strip()
+    try:
+        return subprocess.run(
+            ['pandoc', '--from=gfm', '--to=asciidoc', '--wrap=none'],
+            input=text,
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout.strip()
+    except FileNotFoundError:
+        return fallback_md_to_adoc(text)
+
+
+def fallback_md_to_adoc(text: str) -> str:
+    """Convert simple repository Markdown when Pandoc is unavailable locally."""
+
+    converted: list[str] = []
+    in_fence = False
+
+    for line in text.splitlines():
+        stripped = line.strip()
+
+        if stripped.startswith('```'):
+            converted.append('----')
+            in_fence = not in_fence
+            continue
+
+        if in_fence:
+            converted.append(line)
+            continue
+
+        heading = re.match(r'^(#{1,6})\s+(.+)$', line)
+        if heading:
+            level = len(heading.group(1)) + 1
+            converted.append(f"{'=' * level} {heading.group(2).strip()}")
+            continue
+
+        converted.append(re.sub(r'\[([^\]]+)\]\(([^\)]+)\)', r'\2[\1]', line))
+
+    return '\n'.join(converted).strip()
 
 
 def normalize_asset_image_paths(text: str) -> str:
     return ASSET_IMAGE_RE.sub(r'image::\1[', text)
+
+
+def normalize_adoc_includes(text: str) -> str:
+    return ADOC_INCLUDE_RE.sub(r'include::\1[]', text)
 
 
 def derive_slug(explicit: str, title: str, path: Path) -> str:
@@ -111,7 +150,7 @@ def derive_slug(explicit: str, title: str, path: Path) -> str:
     return path_slug if title_slug == 'page' and path_slug != 'page' else title_slug
 
 
-def parse_adoc(raw: str, path: Path) -> Article:
+def parse_adoc(raw: str, path: Path, include_only: bool = False) -> Article:
     lines = raw.splitlines()
     i = 0
     while i < len(lines) and not lines[i].strip():
@@ -130,7 +169,7 @@ def parse_adoc(raw: str, path: Path) -> Article:
         if i < len(lines) and not lines[i].strip():
             i += 1
             break
-    body = normalize_asset_image_paths('\n'.join(lines[i:]).lstrip())
+    body = normalize_adoc_includes(normalize_asset_image_paths('\n'.join(lines[i:]).lstrip()))
     title = title or attrs.get('title', '') or path.stem
     slug = derive_slug(attrs.get('page-slug', '') or attrs.get('slug', ''), title, path)
     date = attrs.get('page-published') or attrs.get('date') or ''
@@ -147,6 +186,9 @@ def parse_adoc(raw: str, path: Path) -> Article:
     if tags:
         head.append(f":page-tags: {', '.join(tags)}")
     head.extend(['', f"_Source asciidoc: `{path.relative_to(ROOT).as_posix()}`_", ''])
+    body_adoc = body + '\n' if include_only else '\n'.join(head) + body + '\n'
+    if include_only:
+        return Article(title, slug, date, desc, author, tags, path.relative_to(ROOT).as_posix(), body_adoc, 'adoc', 2, True)
     return Article(title, slug, date, desc, author, tags, path.relative_to(ROOT).as_posix(), '\n'.join(head) + body + '\n', 'adoc', 2)
 
 
@@ -219,7 +261,8 @@ def collect_articles() -> list[Article]:
         for path in sorted(directory.iterdir()):
             if not path.is_file() or skip(path) or path.suffix.lower() != '.adoc':
                 continue
-            article = parse_adoc(path.read_text(encoding='utf-8'), path)
+            include_only = bool(re.search(r'-\d{2}$', path.stem))
+            article = parse_adoc(path.read_text(encoding='utf-8'), path, include_only)
             if article.slug in SKIP_SLUGS or norm(article.title) == 'tesr':
                 continue
             found[article.slug] = choose(found.get(article.slug), article)
@@ -306,6 +349,8 @@ def generate_articles(articles: list[Article]) -> None:
     ]
     for article in articles:
         write(PAGES_DIR / 'article' / f'{article.slug}.adoc', article.body_adoc)
+        if article.include_only:
+            continue
         meta = [article.date] if article.date else []
         meta.append(article.source_kind.upper())
         if article.description:
@@ -557,12 +602,12 @@ def main() -> None:
     write_owner_support_pages()
     write_owner_assets()
     restore_component_pages(preserved_component_pages)
-    subprocess.run(['python3', str(ROOT / 'tools' / 'generate_quality_baseline_section.py')], check=True)
-    subprocess.run(['python3', str(ROOT / 'tools' / 'generate_pre_rc_quality_atlas.py')], check=True)
-    subprocess.run(['python3', str(ROOT / 'tools' / 'seed_quality_atlas_snapshots.py')], check=True)
-    subprocess.run(['python3', str(ROOT / 'tools' / 'generate_quality_atlas_portfolio.py')], check=True)
-    subprocess.run(['python3', str(ROOT / 'tools' / 'generate_quality_atlas_internal.py')], check=True)
-    subprocess.run(['python3', str(ROOT / 'tools' / 'generate_quality_atlas_schedule.py')], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'tools' / 'generate_quality_baseline_section.py')], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'tools' / 'generate_pre_rc_quality_atlas.py')], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'tools' / 'seed_quality_atlas_snapshots.py')], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'tools' / 'generate_quality_atlas_portfolio.py')], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'tools' / 'generate_quality_atlas_internal.py')], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'tools' / 'generate_quality_atlas_schedule.py')], check=True)
 
 
 if __name__ == '__main__':

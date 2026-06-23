@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const root = path.resolve(__dirname, '..')
-const antoraBin = path.join(root, 'node_modules', '@antora', 'cli', 'bin', 'antora.js')
+const antoraBin = path.join(root, 'node_modules', '@antora', 'cli', 'bin', 'antora')
 
 if (!fs.existsSync(antoraBin)) {
   console.error('[documentating] Local Antora CLI is not installed.')
