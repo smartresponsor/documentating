@@ -17,6 +17,8 @@ The cycle will develop one central idea: the modern crisis is not only a crisis 
 
 The first article begins at the foundation: a human being is not tuned directly to truth. A human being is tuned to action, survival, threat, resource, status, and belonging.
 
+This opening article names several later layers of the cycle only as orientation. The following articles will separate them more carefully: reward, group belonging, post-factum justification, technological scale, resource pressure, trust, and the architecture of a truth-oriented environment.
+
 == We are used to thinking that we see the world
 
 A person usually experiences themselves as an observer of reality. It seems that the eyes show us the world, the ears transmit sounds, memory stores facts, and reason then makes a decision.
@@ -143,6 +145,8 @@ This is a cultural rewiring not of the brain, but of the environment.
 
 == From perception interface to economic interface
 
+This point will become more important later, when the cycle turns to resources and coordination. For now, it is enough to notice that perception is not the only interface shaping behavior.
+
 If perception works as an interface for action, then modern economic systems are also interfaces for behavior.
 
 A price, a score, a penalty, a debt notice, a ranking, a late fee, a badge, a limit, or a rejection is not only information. It tells a person what kind of world they are inside: a world of threat, scarcity, punishment, access, status, reward, or possibility.
@@ -177,4 +181,4 @@ This feature helped humans live in the old world. But in the new world, it has b
 
 If human perception works as an interface for action, the next question becomes unavoidable: what happens when this interface enters a technological environment that amplifies fear, anger, scarcity, status, and reaction?
 
-The next article will address the crisis of scale: why the old survival model has become dangerous not because the human being has changed, but because the world humans created has become too fast, too powerful, and too interconnected.
+The next article will remain inside the biological foundation and ask a sharper question: can we build the future on an ancient reward system?
