@@ -4,7 +4,7 @@
 :page-slug: 04-before-truth-the-mind-asks-are-you-one-of-us
 :page-published: 2026-06-26
 :page-author: Oleksandr Tishchenko
-:page-tags: new paradigm, belonging, in-group out-group, trust, verification, human behavior, social cognition
+:page-tags: new paradigm, belonging, in-group out-group, trust, verification, human behavior, social cognition, decision trace
 :description: The fourth article in the New Paradigm media set: why the human mind often evaluates belonging before it evaluates truth.
 
 == Why belonging often arrives before verification
@@ -224,6 +224,22 @@ A society cannot rely only on charismatic messengers, emotional belonging, insti
 Trust should not be built by asking people to believe promises.
 
 Trust should be built by making verification possible.
+
+== From belonging to decision trace
+
+This is the bridge to the next layer of the cycle.
+
+If belonging can shape which facts are heard, then a mature truth-oriented environment cannot rely only on the declared sincerity of the person or group. It must preserve the path by which a position was formed.
+
+A person may say: I believe this because it is true. A group may say: we chose this because it was necessary. An institution may say: this decision followed the rules. Sometimes these statements are accurate. But sometimes they are stories built after belonging, fear, reward, or status have already selected the direction.
+
+That does not mean every explanation is false. It means every important explanation should remain inspectable.
+
+Shared verification therefore needs a decision trace: what was known, what was assumed, what source was trusted, what alternative was rejected, what uncertainty remained, and what would change the conclusion.
+
+Belonging asks: are you one of us?
+
+Truth mode asks another question: can the path of this belief be checked even by someone who is not one of us?
 
 == From tribal filter to truth-oriented belonging
 
