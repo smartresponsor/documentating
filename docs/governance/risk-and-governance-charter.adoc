@@ -1,0 +1,198 @@
+= Risk and Governance Charter
+:doctype: article
+:lang: en
+:page-slug: risk-and-governance-charter
+:page-published: 2026-06-26
+:page-author: Oleksandr Tishchenko
+:page-tags: draft, governance, risk, fairness, privacy, dispute, contribution ledger
+:description: Draft governance charter for contribution-oriented trust and reputation systems.
+
+== Draft status
+
+This is an unpublished governance source draft.
+
+It is stored to preserve the risk model and future review path. It is not yet part of the public Antora navigation.
+
+This document is not legal advice and does not establish compliance status for any live product.
+
+== Purpose
+
+The Risk and Governance Charter defines minimum governance expectations for any contribution-oriented trust, reputation, ledger, or scoring system.
+
+The goal is to prevent a positive contribution system from becoming a punishment system, hidden blacklist, social credit mechanism, or unreviewable AI judgment layer.
+
+== Governance principles
+
+The system should be governed by these principles:
+
+* human dignity;
+* contextuality;
+* explainability;
+* proportionality;
+* correction;
+* dispute access;
+* privacy by design;
+* human review;
+* auditability;
+* anti-abuse controls;
+* separation from high-impact eligibility decisions.
+
+== Contextuality
+
+Signals must remain tied to their context.
+
+A contribution event in one campaign, project, or community should not automatically become a universal label about the person.
+
+The system must avoid uncontrolled context collapse.
+
+== Explainability
+
+Any meaningful signal should be explainable.
+
+A person or organization should be able to see:
+
+* what event created the signal;
+* what evidence supports it;
+* what interpretation was applied;
+* what uncertainty remains;
+* what source was used;
+* what correction path exists.
+
+Opaque reputation is unsafe reputation.
+
+== Dispute and correction
+
+A governance system must provide a path to dispute and correction.
+
+At minimum, it should support:
+
+* disputed status;
+* evidence submission;
+* human review;
+* correction record;
+* repair record;
+* appeal path;
+* time-based review where appropriate.
+
+The system should remember repair, not only failure.
+
+== Privacy boundaries
+
+Contribution memory must not become surveillance.
+
+The system should avoid unnecessary collection and should prefer limited, purpose-bound records.
+
+Preferred patterns:
+
+* contextual receipts over total profiles;
+* purpose limitation over indefinite reuse;
+* visible records over hidden inference;
+* consent where practical;
+* minimum necessary data;
+* deletion or archival rules where appropriate.
+
+== AI governance
+
+AI may support evidence organization, summarization, risk detection, classification, and explanation.
+
+AI must not become the sole final authority in disputed or high-impact cases.
+
+AI outputs should preserve:
+
+* source references;
+* uncertainty;
+* assumptions;
+* alternative interpretations;
+* human decision point;
+* revision condition.
+
+Fluent explanation is not verified judgment.
+
+== Fairness and bias
+
+A contribution system must avoid turning historical disadvantage into permanent exclusion.
+
+The system should be reviewed for:
+
+* unequal data availability;
+* cultural or language bias;
+* economic access bias;
+* over-weighting of negative records;
+* hidden proxy variables;
+* inability to repair reputation;
+* unfair treatment of newcomers.
+
+== High-impact boundaries
+
+The system must not be used as a standalone basis for decisions about:
+
+* housing;
+* employment;
+* credit;
+* insurance;
+* healthcare;
+* immigration;
+* education access;
+* legal status;
+* basic public services.
+
+Any future high-impact use would require separate legal, ethical, procedural, and compliance review.
+
+== Audit trail
+
+Every meaningful system event should be auditable.
+
+The audit trail should show:
+
+* event type;
+* timestamp;
+* actor or system source;
+* evidence reference;
+* decision trace;
+* dispute status;
+* correction history;
+* review outcome.
+
+Auditability is essential for trust.
+
+== Anti-abuse controls
+
+The governance model must anticipate abuse.
+
+Risks include:
+
+* fake contributions;
+* coordinated manipulation;
+* retaliatory disputes;
+* inflated fulfillment claims;
+* hidden discrimination;
+* reputation laundering;
+* harassment through public records;
+* capture by powerful participants;
+* AI-generated false confidence.
+
+Controls must be designed before scale.
+
+== Publication boundary
+
+Public communication about the system must avoid overclaiming.
+
+It should not promise:
+
+* guaranteed income;
+* investment return;
+* credit improvement;
+* universal reputation;
+* eligibility for rights;
+* automatic fairness;
+* AI objectivity.
+
+The safe claim is narrower: contextual contribution records can support better verification, accountability, and coordination.
+
+== Current conclusion
+
+A contribution-oriented system is only legitimate if it remains explainable, correctable, contextual, and bounded.
+
+The governance goal is not to create a perfect score.
+
+The governance goal is to prevent contribution memory from becoming another architecture of fear.
