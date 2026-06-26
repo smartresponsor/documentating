@@ -1,0 +1,148 @@
+= What This System Must Never Become
+:doctype: article
+:lang: en
+:page-slug: what-this-system-must-never-become
+:page-published: 2026-06-26
+:page-author: Oleksandr Tishchenko
+:page-tags: new paradigm, safety, governance, social credit boundary, human dignity
+:description: A public boundary statement defining what a contribution-oriented system must never become.
+
+== Purpose
+
+This document is a boundary statement.
+
+It exists because any system that speaks about trust, reputation, contribution, reward, verification, or economic participation can be misunderstood or misused.
+
+The goal of a contribution-oriented economic layer is not to measure the worth of a human being. It is not to create a second credit score, a social credit system, or an instrument of punishment.
+
+The goal is narrower and safer: to make positive, verifiable contribution more visible, more explainable, and more useful for coordination.
+
+== Core boundary
+
+This system must never become:
+
+* a social credit system;
+* a replacement for human rights;
+* a punishment engine;
+* a mechanism for denying basic dignity;
+* a hidden blacklist;
+* an AI judge over a person's life;
+* a credit score under another name;
+* a caste system based on data;
+* a tool for excluding people from basic access;
+* a speculative promise of income, wealth, or entitlement.
+
+A contribution signal should open additional upside. It should not become a weapon that closes ordinary life.
+
+== What the score must not decide
+
+A contribution-oriented score or ledger must not be used as a standalone basis for decisions about:
+
+* housing;
+* employment;
+* credit;
+* insurance;
+* healthcare;
+* immigration status;
+* education access;
+* basic public services;
+* emergency support;
+* legal status or legal rights.
+
+If a future system ever touches regulated or high-impact decisions, it must be governed by a separate legal, ethical, and procedural framework before use.
+
+== Positive signal, not human value
+
+A person is not their score.
+
+A score, receipt, trace, or ledger event can only describe a limited record inside a defined context. It cannot describe the value of a human life.
+
+The system must therefore avoid language that suggests moral ranking, permanent worth, purity, superiority, or inferiority.
+
+The better language is:
+
+* contribution;
+* participation;
+* fulfillment;
+* verification;
+* repair;
+* coordination;
+* trace;
+* receipt;
+* accountability.
+
+The dangerous language is:
+
+* human value;
+* social worth;
+* moral rank;
+* deserving class;
+* permanent trust class;
+* good person / bad person as a data category.
+
+== No permanent stain
+
+A mature system must allow correction.
+
+Human beings make mistakes. Projects fail. Promises may be delayed. Context changes. Records can be incomplete. A system that remembers only failure becomes another punishment environment.
+
+Therefore, any negative or disputed record must be bounded by:
+
+* context;
+* timestamp;
+* explanation;
+* appeal;
+* correction;
+* dispute status;
+* proportionality;
+* expiration or review where appropriate.
+
+A contribution-oriented system should remember repair, not only failure.
+
+== Explainability and dispute
+
+Every meaningful signal must be explainable.
+
+A person or organization affected by a signal should be able to ask:
+
+* what event created this signal;
+* what evidence supports it;
+* what interpretation was applied;
+* what uncertainty remains;
+* how to correct an error;
+* how to challenge a disputed record;
+* how long the record remains relevant.
+
+A system that cannot explain itself should not govern trust.
+
+== Human review
+
+AI can help structure evidence, detect inconsistency, summarize history, and show possible risk.
+
+AI must not become the final authority over human dignity.
+
+For important or disputed outcomes, the system must preserve a path for human review. Automated fluency must not be confused with verified judgment.
+
+== Privacy by design
+
+Contribution does not require total exposure.
+
+A contribution-oriented system should collect the minimum data required for a defined purpose. It should avoid unnecessary surveillance, hidden profiling, or indefinite accumulation of personal data.
+
+Where possible, the system should prefer:
+
+* contextual records over universal profiles;
+* receipts over surveillance;
+* consent over extraction;
+* explainable use over hidden inference;
+* limited scope over total identity capture.
+
+== Public promise
+
+The public promise is simple:
+
+This system is meant to help society remember contribution, not to rank human beings.
+
+It is meant to make reward, verification, and coordination more visible, not to create a new architecture of fear.
+
+It is meant to help people move from survival mode toward truth mode, not to punish them for being human.
