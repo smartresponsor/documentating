@@ -4,7 +4,7 @@
 :page-slug: 01-human-does-not-see-reality
 :page-published: 2026-06-04
 :page-author: Oleksandr Tishchenko
-:page-tags: new paradigm, human behavior, truth, survival mode, AI, society
+:page-tags: new paradigm, human behavior, truth, survival mode, AI, society, economic interface
 :description: The first article in the New Paradigm media set.
 
 == Why a new paradigm needs more than giving people more information
@@ -140,6 +140,18 @@ A new paradigm is needed precisely here: as a transition from a reactive environ
 It does not require us to rewire the brain. It requires us to create norms, procedures, technologies, and institutions that limit the power of ancient reaction where verification, coordination, and fairness are required.
 
 This is a cultural rewiring not of the brain, but of the environment.
+
+== From perception interface to economic interface
+
+If perception works as an interface for action, then modern economic systems are also interfaces for behavior.
+
+A price, a score, a penalty, a debt notice, a ranking, a late fee, a badge, a limit, or a rejection is not only information. It tells a person what kind of world they are inside: a world of threat, scarcity, punishment, access, status, reward, or possibility.
+
+This is why the new paradigm cannot stop at better explanations. It must ask what the environment makes easier to do. Does it make verification easier, or reaction easier? Does it reward contribution, or only punish failure? Does it create a path from uncertainty to action, or does it push a person deeper into survival mode?
+
+The economic interface matters because human beings do not meet institutions as abstract diagrams. They meet them as signals that touch safety, dignity, resources, belonging, and future access.
+
+This cycle will later return to this point: a new paradigm requires not only a different theory of truth, but a different structure of reward.
 
 == What this cycle is for
 
