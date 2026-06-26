@@ -4,7 +4,7 @@
 :page-slug: 03-when-fear-becomes-the-interface
 :page-published: 2026-06-04
 :page-author: Oleksandr Tishchenko
-:page-tags: new paradigm, survival mode, truth mode, fear, human behavior, society
+:page-tags: new paradigm, survival mode, truth mode, fear, human behavior, society, decision architecture
 :description: The third article in the New Paradigm media set: why truth often loses when the human mind enters threat mode.
 
 == In threat mode, a human being does not look for truth first. A human being looks for a way out.
@@ -190,6 +190,30 @@ This is a practical movement from survival mode toward truth mode.
 Not through the denial of fear.
 
 Through the structuring of fear.
+
+== From threat interface to decision interface
+
+This sequence is not only a psychological tool. It is also a design principle.
+
+A society that wants truth mode cannot merely publish more information. It must build interfaces, procedures, and institutions that help a person move through information without being captured by panic.
+
+A mature decision interface should therefore ask, in order:
+
+What is known?
+
+What is uncertain?
+
+What is the risk?
+
+What can be verified?
+
+What options exist?
+
+What action reduces uncertainty without humiliating the person or hiding the fact?
+
+This matters for education, law, healthcare, public institutions, media, and economic systems. It also matters for AI tools. An AI system that only produces confident answers can become another amplifier of reaction. An AI system that structures facts, risks, options, and actions can become part of the architecture of exit.
+
+This is where the new paradigm becomes operational. It is not enough to say that truth matters. The environment must make the path to truth usable under pressure.
 
 == Truth as a process, not a blow
 
