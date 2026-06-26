@@ -15,6 +15,8 @@ The first two articles addressed the biological foundation: human beings do not 
 
 Now the central conflict begins.
 
+This is still part of the biological foundation of the cycle. Before we discuss technology, resources, and institutions, we need to understand why truth loses so quickly when the organism reads reality as threat.
+
 What happens when this system comes under pressure?
 
 What happens when a person is frightened, overloaded, humiliated, pushed into scarcity, or placed in a situation where control seems to disappear?
@@ -193,6 +195,8 @@ Through the structuring of fear.
 
 == From threat interface to decision interface
 
+This is not yet a technical product claim. It is a social design principle.
+
 This sequence is not only a psychological tool. It is also a design principle.
 
 A society that wants truth mode cannot merely publish more information. It must build interfaces, procedures, and institutions that help a person move through information without being captured by panic.
@@ -328,3 +332,5 @@ Survival mode is necessary for threat.
 Truth mode is necessary for the future.
 
 The central question of the new paradigm is whether humanity can build environments in which fear is no longer the first and final editor of reality.
+
+The next article will stay with the biological foundation, but move from threat to belonging: why the human mind often asks “are you one of us?” before it asks whether an argument is true.
