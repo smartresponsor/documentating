@@ -197,8 +197,6 @@ Through the structuring of fear.
 
 This is not yet a technical product claim. It is a social design principle.
 
-This sequence is not only a psychological tool. It is also a design principle.
-
 A society that wants truth mode cannot merely publish more information. It must build interfaces, procedures, and institutions that help a person move through information without being captured by panic.
 
 A mature decision interface should therefore ask, in order:
