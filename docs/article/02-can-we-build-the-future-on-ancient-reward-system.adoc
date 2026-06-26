@@ -4,7 +4,7 @@
 :page-slug: 02-can-we-build-the-future-on-ancient-reward-system
 :page-published: 2026-06-04
 :page-author: Oleksandr Tishchenko
-:page-tags: new paradigm, human behavior, reward system, survival mode, truth, society
+:page-tags: new paradigm, human behavior, reward system, survival mode, truth, society, contribution signals
 :description: The second article in the New Paradigm media set: why ancient reward mechanisms cannot remain the main navigator of the human future.
 
 == Why human beings often choose what feels useful, safe, and familiar before what is true
@@ -163,6 +163,32 @@ But: uncertainty is a normal stage in the search for a more accurate decision.
 
 This is one of the first steps toward truth mode.
 
+== When economic systems reward survival mode
+
+The same logic applies to economic life.
+
+An economy is not only a mechanism for prices, contracts, payments, and ownership. It is also a reward environment. It tells people what kinds of behavior become safe, profitable, visible, respected, punishable, or invisible.
+
+When an economic system rewards only speed, extraction, debt discipline, short-term conversion, attention capture, and the avoidance of penalty, it quietly trains survival behavior. People learn to protect themselves, hide weakness, optimize for immediate relief, and interpret institutions as threat rather than coordination.
+
+This does not mean that risk control, repayment, fraud prevention, or accountability are unnecessary. They are necessary. But if the main measurable signals of a person are failure, default, delay, noncompliance, and risk, then the system has a very poor memory of contribution.
+
+A mature reward environment must be able to remember not only what a person failed to do, but also what the person helped create, support, verify, deliver, repair, coordinate, and sustain.
+
+== From punishment signals to contribution signals
+
+This cycle will later return to the question of economic reputation.
+
+The point here is narrower: a new paradigm cannot be built only by reducing negative incentives. It must create positive, verifiable signals of participation and contribution.
+
+A punishment signal says: this person is risky, late, noncompliant, or insufficient.
+
+A contribution signal says: this person supported something, completed something, helped something become real, resolved a dispute, fulfilled an obligation, verified information, or participated in a shared outcome.
+
+The difference matters. Punishment signals can protect systems from loss, but they cannot by themselves build an economy of trust. Contribution signals can help society see forms of value that are currently scattered, informal, invisible, or quickly forgotten.
+
+This is not yet a product specification. It is a direction for social architecture: if the environment wants people to move toward verification, responsibility, and coordination, it must reward those behaviors in ways that can be remembered.
+
 == The new paradigm does not cancel desire, status, or belonging
 
 A discussion of the new paradigm can easily be misunderstood, as if the goal were to create a human being without desire, without group identity, without emotion, without status, and without personal interest.
@@ -203,4 +229,4 @@ A new paradigm is not needed to cancel human nature.
 
 It is needed so that human nature is no longer held hostage by the most primitive reward environment.
 
-The next article will continue the biological foundation of the cycle and turn to the question of insiders and outsiders: why the human mind so easily divides the world into groups, and why this ancient mechanism becomes one of the main obstacles to a new paradigm in a global technological world.
+The next article will continue the biological foundation of the cycle and turn to the question of threat mode: why fear can become the interface through which truth is filtered, narrowed, rejected, or delayed.
