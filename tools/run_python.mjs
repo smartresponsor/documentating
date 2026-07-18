@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 import { spawnSync } from 'node:child_process'
+import fs from 'node:fs'
+import os from 'node:os'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const root = path.resolve(__dirname, '..')
+const requirementsPath = path.join(root, 'requirements.txt')
+const dependencyDir = process.env.DOCUMENTATING_PYTHON_DEPS || path.join(os.tmpdir(), 'documentating-python-deps')
 
 const script = process.argv[2]
 const scriptArgs = process.argv.slice(3)
@@ -46,10 +50,45 @@ for (const candidate of candidates) {
     continue
   }
 
+  const pythonEnv = {
+    ...process.env,
+    PYTHONPATH: [dependencyDir, process.env.PYTHONPATH].filter(Boolean).join(path.delimiter),
+  }
+
+  const dependencyProbe = spawnSync(candidate.command, [...candidate.args, '-c', 'import yaml'], {
+    cwd: root,
+    encoding: 'utf8',
+    env: pythonEnv,
+  })
+
+  if (dependencyProbe.error || dependencyProbe.status !== 0) {
+    if (!fs.existsSync(requirementsPath)) {
+      failures.push(`${candidate.command}: missing requirements.txt for Python dependency bootstrap`)
+      continue
+    }
+
+    fs.mkdirSync(dependencyDir, { recursive: true })
+    console.error(`[documentating] Installing pinned Python build dependencies into ${dependencyDir}`)
+    const install = spawnSync(
+      candidate.command,
+      [...candidate.args, '-m', 'pip', 'install', '--disable-pip-version-check', '--no-warn-script-location', '--target', dependencyDir, '--requirement', requirementsPath],
+      {
+        cwd: root,
+        stdio: 'inherit',
+        env: process.env,
+      },
+    )
+
+    if (install.error || install.status !== 0) {
+      failures.push(formatFailure(candidate.command, candidate.args, install))
+      continue
+    }
+  }
+
   const result = spawnSync(candidate.command, [...candidate.args, scriptPath, ...scriptArgs], {
     cwd: root,
     stdio: 'inherit',
-    env: process.env,
+    env: pythonEnv,
   })
 
   if (result.error) {
