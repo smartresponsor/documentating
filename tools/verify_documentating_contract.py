@@ -21,6 +21,7 @@ REQUIRED_FILES = (
     '.github/workflows/gh-pages.yml',
     '.sync/manifest/component-list.yml',
     'docs/component/documentating/index.md',
+    'supplemental-ui/img/marketing-america-corp-mark.svg',
 )
 FORBIDDEN_COMPONENT_MARKERS = ('TODO', 'FIXME', 'PLACEHOLDER', '**stub**')
 FORBIDDEN_RUNTIME_PATHS = ('src/Controller', 'config/routes.yaml', 'config/routes')
@@ -55,6 +56,17 @@ def main() -> None:
     manifest = (ROOT / '.sync/manifest/component-list.yml').read_text(encoding='utf-8')
     if not any(line.strip() == '- Documentating' for line in manifest.splitlines()):
         fail('component registry does not contain Documentating')
+
+    header = (ROOT / 'supplemental-ui/partials/header-content.hbs').read_text(encoding='utf-8')
+    footer = (ROOT / 'supplemental-ui/partials/footer.hbs').read_text(encoding='utf-8')
+    for required_brand_token in (
+        'marketing-america-corp-mark.svg',
+        'Marketing America Corp',
+        'High Hopes',
+        'Alexander Tischenko',
+    ):
+        if required_brand_token not in header and required_brand_token not in footer:
+            fail(f'missing required branding token: {required_brand_token}')
 
     component_page = (ROOT / 'docs/component/documentating/index.md').read_text(encoding='utf-8')
     for marker in FORBIDDEN_COMPONENT_MARKERS:
