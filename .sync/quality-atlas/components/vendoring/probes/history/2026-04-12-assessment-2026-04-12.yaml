@@ -1,0 +1,312 @@
+component: vendoring
+title: Vendoring
+snapshot:
+  date: '2026-04-12'
+  label: assessment-2026-04-12
+  origin: quality-atlas deterministic probes
+  generated_at: '2026-04-12T19:24:00.495977+00:00'
+repo_target:
+  github_repository: smartresponsor/vendoring
+  local_path: ''
+  default_branch: master
+families:
+  canon_structure:
+    title: Canon & Structure
+    status: warn
+    score: 8.0
+    summary: 0 fail, 2 warn, 0 info findings detected.
+    blockers:
+    - PHP namespace does not use the default App\ root.
+    - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly
+      separated.
+    findings:
+    - severity: warn
+      id: namespace_drift
+      detail: PHP namespace does not use the default App\ root.
+      path: src/Kernel.php
+    - severity: warn
+      id: dialect_mixing
+      detail: Both MySQL and PostgreSQL dialect markers are present; keep dialect
+        trees clearly separated.
+      path: config/reference.php
+    evidence:
+    - README.md
+    - config/reference.php
+    - src/Kernel.php
+  architecture_boundaries:
+    title: Architecture & Boundaries
+    status: warn
+    score: 5.0
+    summary: 0 fail, 5 warn, 0 info findings detected.
+    blockers:
+    - No obvious boundary descriptor files were detected.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    findings:
+    - severity: warn
+      id: boundary_descriptors_missing
+      detail: No obvious boundary descriptor files were detected.
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/ServiceInterface/VendorPassportServiceInterface.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/ServiceInterface/VendorMediaServiceInterface.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/ServiceInterface/VendorBillingServiceInterface.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/ServiceInterface/VendorDocumentServiceInterface.php
+    evidence:
+    - src/ServiceInterface/VendorBillingServiceInterface.php
+    - src/ServiceInterface/VendorDocumentServiceInterface.php
+    - src/ServiceInterface/VendorMediaServiceInterface.php
+    - src/ServiceInterface/VendorPassportServiceInterface.php
+  runtime_surface:
+    title: Runtime & Application Surface
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - .commanding/docker/compose.yml
+    - .commanding/docker/php/Dockerfile
+    - compose.yaml
+    - composer.json
+    - deploy/docker/Dockerfile
+    - deploy/docker/compose.yaml
+    - docs/ARCHITECTURE_REVIEW_120_CHECKLIST.md
+    - docs/PHASE59_SYNTHETIC_RUNTIME_PROBES.md
+  qa_behavior:
+    title: QA & Behavioral Assurance
+    status: warn
+    score: 9.0
+    summary: 0 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - No fixtures directories were detected.
+    findings:
+    - severity: warn
+      id: fixtures_missing
+      detail: No fixtures directories were detected.
+    evidence:
+    - composer.json
+    - package-lock.json
+    - package.json
+    - tests/
+    - tests/README.adoc
+  documentation_suite:
+    title: Documentation & GitHub Suite
+    status: warn
+    score: 8.0
+    summary: 0 fail, 2 warn, 0 info findings detected.
+    blockers:
+    - 'Missing expected documentation asset: CHANGELOG.md.'
+    - Public/protected docblock coverage is 183/1231 (15%).
+    findings:
+    - severity: warn
+      id: missing_doc_asset
+      detail: 'Missing expected documentation asset: CHANGELOG.md.'
+    - severity: warn
+      id: docblock_coverage_low
+      detail: Public/protected docblock coverage is 183/1231 (15%).
+    evidence:
+    - .github/workflows
+    - README.md
+    - bin/generate-openapi.php
+    - bin/generate-phpdocumentor-site.php
+    - composer.json
+    - docs/ARCHITECTURE_REVIEW_120_CHECKLIST.md
+    - php-docblock-ratio:183/1231
+  delivery_observability:
+    title: Delivery & Observability
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - .github/workflows/canon-scan.yml
+    - .github/workflows/consuming.yml
+    - .github/workflows/docs.yml
+    - .github/workflows/gate.yml
+    - .github/workflows/intelligence-codex-pr.yml
+    - .github/workflows/intelligence-dispatch.yml
+    - .github/workflows/quality.yml
+    - .github/workflows/release-candidate.yml
+    - .github/workflows/runtime.yml
+    - .github/workflows/vendor-canon.yml
+    - README.md
+    - VENDORING_PROTOCOL_ANALYSIS.md
+    - compose.yaml
+    - composer.json
+    - docs/GITHUB_ISSUES_ARCHITECTURE_REVIEW_V2.md
+    - docs/PHASE56_OBSERVABILITY_POLICY_SUPPORT_PUBLIC_SURFACE.md
+    - docs/PHASE66_REAL_OBSERVABILITY_BACKEND_SEAM.md
+    - qodana.yaml
+    - src/Observability/Service/FileObservabilityRecordExporter.php
+  solid_refactoring:
+    title: SOLID & Refactoring Pressure
+    status: fail
+    score: 0.0
+    summary: 3 fail, 9 warn, 1 info findings detected.
+    blockers:
+    - PHP file is very large (460 lines); review SRP and refactoring pressure.
+    - PHP file is very large (543 lines); review SRP and refactoring pressure.
+    - PHP file is very large (1076 lines); review SRP and refactoring pressure.
+    - Class exposes 14 public methods; review interface segregation and SRP.
+    - Constructor injects 7 parameters; review dependency inversion and class responsibilities.
+    findings:
+    - severity: fail
+      id: large_class
+      detail: PHP file is very large (460 lines); review SRP and refactoring pressure.
+      path: tools/vendoring-missing-class-scan-v3.php
+    - severity: fail
+      id: large_class
+      detail: PHP file is very large (543 lines); review SRP and refactoring pressure.
+      path: tools/vendoring-missing-class-scan-v2.php
+    - severity: fail
+      id: large_class
+      detail: PHP file is very large (1076 lines); review SRP and refactoring pressure.
+      path: config/reference.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 14 public methods; review interface segregation and SRP.
+      path: src/Entity/VendorUserAssignment.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 7 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/Entity/VendorUserAssignment.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 18 public methods; review interface segregation and SRP.
+      path: src/Entity/VendorProfile.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 14 public methods; review interface segregation and SRP.
+      path: src/ValueObject/CategorySyndicationGovernanceTrailReport.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 13 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/ValueObject/CategorySyndicationGovernanceTrailReport.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 11 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/ValueObject/CategorySyndicationPolicyAwarePackageGateReport.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 9 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/ValueObject/CategorySyndicationFallbackAwarePackageGateReport.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 8 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/ValueObject/CategorySyndicationPublishPackage.php
+    - severity: warn
+      id: constructor_injection_pressure
+      detail: Constructor injects 8 parameters; review dependency inversion and class
+        responsibilities.
+      path: src/DTO/VendorProfileDTO.php
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: config/reference.php
+    evidence:
+    - config/reference.php
+    - src/DTO/VendorProfileDTO.php
+    - src/Entity/VendorProfile.php
+    - src/Entity/VendorUserAssignment.php
+    - src/ValueObject/CategorySyndicationFallbackAwarePackageGateReport.php
+    - src/ValueObject/CategorySyndicationGovernanceTrailReport.php
+    - src/ValueObject/CategorySyndicationPolicyAwarePackageGateReport.php
+    - src/ValueObject/CategorySyndicationPublishPackage.php
+    - tools/vendoring-missing-class-scan-v2.php
+    - tools/vendoring-missing-class-scan-v3.php
+summary:
+  overall_status: fail
+  average_score: 7.14
+  status_counts:
+    pass: 2
+    warn: 4
+    fail: 1
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — PHP namespace does not use the default App\ root.
+  - Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep
+    dialect trees clearly separated.
+  - Architecture & Boundaries — No obvious boundary descriptor files were detected.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 183/1231
+    (15%).
+  - SOLID & Refactoring Pressure — PHP file is very large (460 lines); review SRP
+    and refactoring pressure.
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - PHP namespace does not use the default App\ root.
+      - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees
+        clearly separated.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 5.0
+      summary: 0 fail, 5 warn, 0 info findings detected.
+      blockers:
+      - No obvious boundary descriptor files were detected.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - No fixtures directories were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - 'Missing expected documentation asset: CHANGELOG.md.'
+      - Public/protected docblock coverage is 183/1231 (15%).
+    delivery_observability:
+      title: Delivery & Observability
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: fail
+      score: 0.0
+      summary: 3 fail, 9 warn, 1 info findings detected.
+      blockers:
+      - PHP file is very large (460 lines); review SRP and refactoring pressure.
+      - PHP file is very large (543 lines); review SRP and refactoring pressure.
+      - PHP file is very large (1076 lines); review SRP and refactoring pressure.

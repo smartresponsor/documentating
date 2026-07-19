@@ -1,0 +1,218 @@
+= When Power Disguises Itself as Passion
+:page-slug: when-power-disguises-itself-as-passion
+:page-published: 2026-03-29
+:page-author: Oleksandr
+:description: A long-form essay on workplace hierarchy, dependency, distorted perception, and why power can masquerade as intimacy.
+:page-tags: psychology, workplace, power, ethics, relationships, biology
+
+== Rethinking the Classic Boss and Assistant Story Through Power, Psychology, and Biology
+
+image::/assets/when-power-disguises-itself-as-passion-hero.svg[Illustrative office scene symbolizing hierarchy, dependency, and workplace power asymmetry]
+
+_Illustration used as a visual metaphor for hierarchy, dependency, and workplace power asymmetry in office relationships._
+
+There are relationship plots that culture keeps selling as romance long after they should have been retired.
+
+One of the most durable is the story of the powerful executive and the young, attractive assistant. It is usually packaged as chemistry, destiny, tension, temptation, or a forbidden but extraordinary bond. The visual grammar is familiar: the corner office, the controlled voice, the access to resources, the long hours, the private calendar, the emotional dependency hidden inside professional routine.
+
+Popular culture often frames this as a story of mutual magnetism. Biology is sometimes invoked to make it sound inevitable: status on one side, youth and beauty on the other, and ancient instincts doing the rest.
+
+That explanation is seductive. It is also too simple.
+
+A more serious interpretation begins somewhere else: with *asymmetry of power*.
+
+This does not mean sincere feeling can never exist between people who work together. Of course it can. But when one person controls access to opportunity, reputation, income, evaluation, visibility, or daily safety inside an organization, attraction no longer develops in a neutral environment. The relationship is no longer only interpersonal. It is structural.
+
+That difference matters.
+
+The real question is not whether desire can exist inside a hierarchy. It can. The real question is what hierarchy does to perception, consent, emotional interpretation, and long-term stability.
+
+That is where the story becomes more interesting than the cliché. It is not simply about romance. It is about how power reshapes the meaning of romance.
+
+== The First Distortion: Power Changes Perception
+
+One of the strongest findings from social psychology is that power alters how people read other people.
+
+People in high-power roles often become more goal-directed, less inhibited, and less attentive to the inner states of others. Research on power and perspective-taking has repeatedly shown that power can reduce the tendency to accurately infer what other people think and feel. This does not automatically turn powerful people into villains. It does, however, make misreading more likely.
+
+That matters enormously in workplace intimacy.
+
+In a hierarchy, a subordinate’s smile may be professionalism. Their responsiveness may be job survival. Their warmth may be role competence. Their emotional attentiveness may simply reflect the reality that lower-power people must constantly monitor higher-power people in order to function safely and effectively.
+
+From below, this is adaptation.
+
+From above, it can be misread as desire.
+
+This is one reason the classic she clearly wanted it too narrative is so unreliable in organizational settings. A person in power is often standing inside a perceptual distortion field built by their own role. The higher the power differential, the easier it becomes to interpret compliance, civility, or admiration as mutual attraction.
+
+Research specifically examining sexual-interest perception has found that positional power can increase perceived sexual interest from the other person. In other words, rank itself can distort what someone thinks they are seeing.
+
+That is a much better explanation than the lazy fantasy that powerful men are automatically more desirable because status reveals some timeless biological truth. Sometimes what status really does is reduce friction, increase deference, and create conditions in which ordinary professional behavior gets misinterpreted as emotional or sexual reciprocity.
+
+== The Second Distortion: Dependency Can Feel Like Closeness
+
+If power distorts perception from above, dependency distorts perception from below.
+
+A subordinate in a high-pressure relationship with a boss is rarely just navigating attraction. They are also navigating consequences: career risk, economic vulnerability, reputation management, access to work, the emotional climate of each day, and whether saying no is truly safe.
+
+That produces a specific kind of vigilance.
+
+Humans are highly responsive to environments where another person has the capacity to reward, protect, punish, or destabilize them. Over time, intense attention to such a person can begin to feel like emotional importance. Proximity feels charged. Their mood matters too much. Their approval feels calming. Their disappointment feels dangerous.
+
+At that point, the body is no longer responding only to affection. It is responding to *salience*.
+
+And salience is often mistaken for love.
+
+This is one reason workplace power relationships can feel so emotionally overwhelming even when they are unhealthy. The person with less power may experience the bond as profound not because it is deeply mutual, but because the nervous system has learned that this person matters for survival inside the local environment.
+
+That does not make the feelings fake. It makes them entangled.
+
+== Why Chemistry Feels Stronger in Unequal Relationships
+
+People often defend these relationships by saying some version of: whatever the structure was, the chemistry was real.
+
+Perhaps. But chemistry is not a morally neutral word. And it is not a scientifically precise one either.
+
+Part of what people call chemistry is often an interaction between attraction and arousal. Stress can intensify attention. Secrecy increases anticipation. Uncertainty heightens focus. Risk sharpens memory. Repetition inside a restricted environment strengthens familiarity. The mind begins to organize around the relationship because the relationship has become a high-salience event stream.
+
+This is one reason forbidden dynamics can feel bigger than life.
+
+Not because they are necessarily deeper, but because they are often more neurochemically noisy.
+
+High emotion, fear of exposure, role ambiguity, irregular reward, and intermittent reinforcement are a powerful mix. The relationship can begin to feel uniquely meaningful when in fact it is uniquely stimulating.
+
+Intensity, however, is not the same thing as depth.
+
+A connection can be vivid and still be structurally distorted.
+
+== What Biology Can Explain and What It Cannot
+
+This is where discussions often go off the rails.
+
+There is a strong temptation to tell a dramatic evolutionary story: the powerful man is driven by status competition and reproductive display, the younger woman is driven by ancient attraction to dominance and resource access, and the office merely becomes a modern stage for a prehistoric script.
+
+There are fragments of truth around the edges of that story, but the full version is usually overstated.
+
+Yes, status matters in human social life. Yes, competition and dominance can interact with hormones such as testosterone. Yes, social neurochemistry influences attachment, approach, vigilance, bonding, and threat processing. But none of that supports the simplistic conclusion that high organizational status automatically creates a biologically natural romantic match with a subordinate.
+
+That is where pop-neurobiology becomes ideology.
+
+Take testosterone. The evidence is much more nuanced than higher status produces higher testosterone, which produces trophy-seeking behavior. Testosterone responses are context-sensitive. They vary with competition, outcomes, instability, and social meaning. In some settings testosterone appears to support status-seeking broadly, which can include assertive, dominant, or even prosocial behavior depending on what the local status game rewards.
+
+Take oxytocin. It is often described lazily as the bonding hormone, as if its role were simply to create warmth and attachment. But the literature is more complex. Oxytocin is better understood as a modulator of social salience and context-sensitive social behavior, not a magical molecule that reveals authentic love. In unequal settings, increased bonding feelings do not prove relational health. They may simply reflect heightened significance within a constrained social environment.
+
+And take the common claim that women, at certain points in the menstrual cycle, become more attracted to dominant or masculine men in a way that would explain workplace attraction to powerful bosses. This literature is mixed and contested. Some early findings suggested cyclic shifts in preference. Larger and more rigorous work has often failed to find compelling support for strong hormonal tracking of such preferences. It is not a solid foundation for sweeping claims about why women are wired to want powerful men at work.
+
+So biology can help explain why hierarchy, uncertainty, reward, and attachment processes feel so powerful. But it does not justify the conclusion that these relationships are naturally healthy, inevitable, or immune to ethical scrutiny.
+
+Biology explains mechanism. It does not settle meaning.
+
+== The Office Is Not a Neutral Mating Environment
+
+An office is not just a place where two individuals happen to meet. It is an artificial social environment with rules, dependencies, incentives, reputational consequences, and unequal access to resources. It is not a forest. It is not a village. It is not even a normal peer group. It is a managed hierarchy.
+
+That matters because environment shapes behavior.
+
+In a healthy social environment, distance is available. Ambiguity can be reduced. Rejection can be navigated with less structural damage. In a workplace hierarchy, those options are often constrained. The lower-power person may not be free to withdraw without professional cost. Colleagues become involuntary witnesses. Favoritism becomes organizationally relevant. Silence becomes strategic. What would be merely awkward in ordinary life can become coercive, career-shaping, or institutionally corrosive at work.
+
+This is why power imbalance is not just a private issue between two adults.
+
+It changes the ecology for everyone.
+
+Colleagues begin to read decisions through the lens of favoritism. Team trust degrades. Psychological safety declines. Gossip becomes governance by other means. The manager’s credibility is weakened even when formal decisions remain defensible. And if the relationship ends badly, the probability of spillover harm increases sharply.
+
+The issue is not prudishness. The issue is systemic contamination.
+
+== Why These Relationships Often Collapse Outside the Hierarchy
+
+One of the most revealing moments in these relationships comes later: when the structure changes.
+
+The executive leaves. The assistant transfers. The company restructures. The office disappears. The status asymmetry weakens. External secrecy fades. Professional dependency declines.
+
+And suddenly the relationship feels different.
+
+Because some of what had been experienced as attraction was never purely interpersonal. It was partly environmental.
+
+Remove the hierarchy, and certain forms of intensity vanish with it. The high-status partner may feel less compelling because the entire field of deference, scarcity, and prestige has weakened. The lower-status partner may begin to reinterpret the emotional history once pressure and dependence recede. What once felt like magnetic inevitability may now look more like adaptation under asymmetrical conditions.
+
+This is where many people encounter a painful form of disillusionment.
+
+Sometimes there was affection. Sometimes even tenderness. But unequal structures can wrap genuine feeling inside distorted conditions, and when those conditions disappear, both people are forced to discover what, if anything, remains.
+
+== The Most Important Ethical Question
+
+The usual public debate about these relationships is shallow.
+
+People ask whether the feelings were real.
+
+That is not the best question.
+
+Feelings can be real inside manipulative systems. Desire can be real inside asymmetrical systems. Even attachment can be real inside systems that fundamentally distort choice.
+
+The better question is this:
+
+*Would this relationship have developed in the same way if both people had equal status, equal freedom, and no professional dependency?*
+
+That question does more analytical work than almost any evolutionary monologue.
+
+If the answer is clearly yes, then perhaps what existed was robust enough to survive outside the hierarchy.
+
+If the answer is no, or if the answer becomes evasive, then power was not incidental. It was part of the engine.
+
+And when power is part of the engine, romantic language becomes morally unreliable.
+
+== What Mature Organizations Understand
+
+Serious organizations do not worry about boss-subordinate romance because they are anti-love. They worry because they understand incentives, liability, bias, morale, and asymmetric risk.
+
+A relationship between peers may still create complications, but a relationship between supervisor and subordinate changes the meaning of evaluation, promotion, workload, boundaries, and perceived fairness. It can expose the organization to harassment claims. It can damage teams even in the absence of a formal complaint. It can make genuine consent difficult to assess. It can also leave both parties vulnerable, especially when the relationship ends and one person still holds institutional power.
+
+This is why mature workplace ethics treat power differential as more than a footnote. It is not just one variable among many. It is the organizing condition.
+
+== The Deeper Lesson
+
+The enduring appeal of the boss and assistant story tells us something unsettling about culture.
+
+We are still too willing to confuse intensity with meaning, authority with desirability, and submission with closeness. We still romanticize environments in which one person can shape another person’s emotional reality simply because they sit above them in a system.
+
+But adulthood should require a more disciplined reading.
+
+Not every intense connection is profound. Not every profound feeling is free. Not every mutual narrative is structurally mutual.
+
+The point is not to deny biology. The point is to stop using biology as a decorative excuse for asymmetry.
+
+Human beings are not blank slates. Status matters. Attachment matters. Hormones matter. Stress matters. Reward circuits matter. But the meaning of a relationship cannot be read from chemistry alone, and certainly not from simplified pop-science stories about alpha males, hypergamy, or natural feminine attraction to power.
+
+In modern institutions, power does not merely intensify attraction.
+
+It can counterfeit it.
+
+And that may be the most important thing to understand.
+
+A relationship born inside hierarchy might still become real, but it only proves itself when it can survive the loss of hierarchy.
+
+Until then, what looks like passion may be something more unstable: a mix of desire, adaptation, fear, prestige, projection, and unequal freedom.
+
+That is the difference between intimacy and structurally induced illusion.
+
+== Final Thought
+
+The old cliché asks whether we believe in the love story.
+
+A better question is whether we are willing to see what the setting does to the story before we call it love.
+
+Because once power enters the room, romance is no longer just romance.
+
+It becomes an interpretive problem.
+
+== Notes for Readers
+
+This essay uses biology and psychology as explanatory tools, not as moral absolution. It also deliberately avoids overclaiming from contested literatures. The strongest explanatory frame here is not ancient instincts made them do it, but the interaction of hierarchy, dependency, stress, distorted perception, and organizational context.
+
+== Suggested Reading
+
+* Goh, P. H., Hall, J. A., and Rosip, J. C. (2022). Positional Power as a Better Predictor of Sexual Interest Perceptions Than Dispositional Power in a Military Context.
+* Galinsky, A. D., Magee, J. C., Inesi, M. E., and Gruenfeld, D. H. (2006). Power and Perspectives Not Taken.
+* Chory, R. M., et al. (2023). Personal Workplace Relationships: Unifying an Understudied Phenomenon at Work.
+* La France, B. H., et al. (2022). Beliefs and Advice about Workplace Romance.
+* National Academies of Sciences, Engineering, and Medicine. (2018). Sexual Harassment of Women: Climate, Culture, and Consequences in Academic Sciences, Engineering, and Medicine.

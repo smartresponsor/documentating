@@ -1,0 +1,102 @@
+= Decision Trace
+:doctype: article
+:lang: en
+:page-slug: decision-trace
+:page-published: 2026-06-26
+:page-author: Oleksandr Tishchenko
+:page-tags: new paradigm, principle, decision trace, accountability, verification, AI
+:description: A reusable principle for connecting explanation with accountability.
+
+== Purpose
+
+Decision Trace is a principle for making important decisions inspectable.
+
+A decision trace does not assume that human beings are perfectly rational. It starts from the opposite premise: fear, reward, belonging, scarcity, status, fatigue, and hidden incentives may shape a decision before the explanation appears.
+
+The trace exists so that a decision does not disappear inside a confident story.
+
+== Minimum trace
+
+A minimum decision trace should preserve:
+
+* fact;
+* reason;
+* alternative;
+* doubt;
+* verification.
+
+For institutional or AI-assisted decisions, the trace may also preserve:
+
+* source;
+* assumption;
+* incentive;
+* uncertainty;
+* review condition;
+* revision condition;
+* harm if wrong.
+
+== Fact
+
+The fact layer records the known basis of the decision.
+
+It should distinguish what was known from what was believed, inferred, assumed, predicted, or feared.
+
+== Reason
+
+The reason layer records why the chosen path was selected.
+
+A reason should not only sound coherent. It should show its connection to evidence, purpose, constraint, and expected consequence.
+
+== Alternative
+
+The alternative layer records what other paths were considered.
+
+Without alternatives, a decision can pretend to have been inevitable. A trace should preserve the roads not taken, at least in summary form.
+
+== Doubt
+
+The doubt layer records what remained uncertain.
+
+Doubt is not weakness. It is the preservation of contact with reality.
+
+A mature decision can act while still admitting what it does not know.
+
+== Verification
+
+The verification layer records what could later confirm, challenge, or revise the decision.
+
+A decision that cannot be checked becomes a story. A decision that can be checked can become accountable.
+
+== Why this matters for AI
+
+AI systems can produce fluent explanations quickly.
+
+This is useful when the goal is to organize thought. It is dangerous when fluency is mistaken for truth.
+
+A truth-oriented AI system should therefore help preserve the decision trace:
+
+* what is known;
+* what is assumed;
+* what source supports the claim;
+* what alternative explanations exist;
+* what uncertainty remains;
+* what would change the conclusion;
+* what human decision is still required.
+
+AI should belong to the architecture of trace, not only to the architecture of answer.
+
+== Why this matters for contribution systems
+
+A contribution-oriented system cannot rely only on final labels.
+
+It must preserve why a contribution was recognized, why a record was disputed, why a fulfillment was accepted, why a signal changed, and what evidence supports the change.
+
+Without trace, reputation becomes opaque.
+
+With trace, reputation can remain contextual, explainable, and correctable.
+
+== Boundary
+
+Decision Trace is not bureaucracy for its own sake.
+
+It is a way to protect truth, dignity, correction, and accountability when explanations arrive after the decision has already been shaped by hidden forces.

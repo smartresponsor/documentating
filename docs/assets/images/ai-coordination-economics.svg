@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="white"/>
+  <text x="70" y="72" font-size="34" font-family="Arial" font-weight="bold">Where Delivery Drag Lives</text>
+  <text x="70" y="108" font-size="20" font-family="Arial" fill="#4b5563">When implementation gets cheaper, coordination overhead stops hiding in the background.</text>
+  <text x="120" y="190" font-size="28" font-family="Arial" font-weight="bold">Pre-AI default</text>
+  <rect x="120" y="230" width="820" height="88" rx="18" fill="#f9fafb" stroke="#d1d5db" stroke-width="2"/>
+  <rect x="120" y="230" width="180" height="88" rx="18" fill="#ede9fe"/>
+  <rect x="300" y="230" width="520" height="88" fill="#dbeafe"/>
+  <rect x="820" y="230" width="120" height="88" rx="18" fill="#dcfce7"/>
+  <text x="165" y="282" font-size="22" font-family="Arial" font-weight="bold">Scoping</text>
+  <text x="470" y="282" font-size="22" font-family="Arial" font-weight="bold">Implementation effort</text>
+  <text x="846" y="282" font-size="22" font-family="Arial" font-weight="bold">QA</text>
+  <text x="120" y="400" font-size="28" font-family="Arial" font-weight="bold">AI-first delivery</text>
+  <rect x="120" y="440" width="820" height="88" rx="18" fill="#f9fafb" stroke="#d1d5db" stroke-width="2"/>
+  <rect x="120" y="440" width="360" height="88" rx="18" fill="#fde68a"/>
+  <rect x="480" y="440" width="220" height="88" fill="#bfdbfe"/>
+  <rect x="700" y="440" width="240" height="88" rx="18" fill="#86efac"/>
+  <text x="170" y="492" font-size="22" font-family="Arial" font-weight="bold">Coordination &amp; approvals</text>
+  <text x="520" y="492" font-size="22" font-family="Arial" font-weight="bold">Implementation</text>
+  <text x="742" y="492" font-size="22" font-family="Arial" font-weight="bold">Validation &amp; release</text>
+  <path d="M860 250 C980 260, 1040 320, 1040 470" fill="none" stroke="#f59e0b" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="990" y="360" font-size="20" font-family="Arial" font-weight="bold" fill="#92400e">Drag migrates</text>
+  <text x="985" y="388" font-size="18" font-family="Arial" fill="#92400e">from code-writing</text>
+  <text x="998" y="414" font-size="18" font-family="Arial" fill="#92400e">to coordination</text>
+  <rect x="120" y="610" width="300" height="80" rx="14" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="162" y="648" font-size="20" font-family="Arial" font-weight="bold">Implementation is cheaper</text>
+  <text x="166" y="675" font-size="17" font-family="Arial">Agents compress the build loop</text>
+  <rect x="450" y="610" width="300" height="80" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+  <text x="507" y="648" font-size="20" font-family="Arial" font-weight="bold">Coordination is visible</text>
+  <text x="488" y="675" font-size="17" font-family="Arial">Ownership and approvals dominate</text>
+  <rect x="780" y="610" width="300" height="80" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="844" y="648" font-size="20" font-family="Arial" font-weight="bold">Control becomes the moat</text>
+  <text x="835" y="675" font-size="17" font-family="Arial">Short loops outperform more seats</text>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#f59e0b"/></marker></defs>
+</svg>

@@ -1,0 +1,296 @@
+component: tagging
+title: Tagging
+snapshot:
+  date: '2026-04-08'
+  label: assessment-2026-04-08
+  origin: quality-atlas deterministic probes
+  generated_at: '2026-04-08T05:45:57.718906+00:00'
+repo_target:
+  github_repository: smartresponsor/tagging
+  local_path: ''
+  default_branch: master
+families:
+  canon_structure:
+    title: Canon & Structure
+    status: warn
+    score: 8.0
+    summary: 0 fail, 2 warn, 0 info findings detected.
+    blockers:
+    - PHP namespace does not use the default App\ root.
+    - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees clearly
+      separated.
+    findings:
+    - severity: warn
+      id: namespace_drift
+      detail: PHP namespace does not use the default App\ root.
+      path: tests/TagSmokeOpsScriptsTest.php
+    - severity: warn
+      id: dialect_mixing
+      detail: Both MySQL and PostgreSQL dialect markers are present; keep dialect
+        trees clearly separated.
+      path: docs/acceptance/e14.md
+    evidence:
+    - docs/acceptance/e14.md
+    - repo-map.md
+    - tests/TagSmokeOpsScriptsTest.php
+  architecture_boundaries:
+    title: Architecture & Boundaries
+    status: warn
+    score: 5.0
+    summary: 0 fail, 5 warn, 0 info findings detected.
+    blockers:
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    findings:
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: tests/TagGraphTest.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/Infrastructure/Persistence/Tag/PdoTagRepository.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/Service/Core/Tag/TagRepositoryAdapter.php
+    - severity: warn
+      id: entity_leakage_signal
+      detail: Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      path: src/Service/Core/Tag/TagRepositoryInterface.php
+    evidence:
+    - docs/architecture/decisions/adr-0001-tenancy-boundary.md
+    - docs/architecture/decisions/adr-host-minimal-runtime-boundary.md
+    - docs/architecture/tag-core-boundary.md
+    - src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php
+    - src/Infrastructure/Persistence/Tag/PdoTagRepository.php
+    - src/Service/Core/Tag/TagRepositoryAdapter.php
+    - src/Service/Core/Tag/TagRepositoryInterface.php
+    - tests/CoreBoundaryAuditTest.php
+    - tests/TagGraphTest.php
+    - tools/audit/tag-core-boundary-audit.php
+  runtime_surface:
+    title: Runtime & Application Surface
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - CHANGELOG.md
+    - MANIFEST.json
+    - deploy/docker/Dockerfile
+    - docker-compose.yml
+    - host-minimal/smoke-health.php
+    - host/Dockerfile
+    - tools/test-db/docker-compose.yml
+  qa_behavior:
+    title: QA & Behavioral Assurance
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - composer.json
+    - docker-compose.yml
+    - docs/fixtures
+    - fixtures
+    - tests/
+  documentation_suite:
+    title: Documentation & GitHub Suite
+    status: warn
+    score: 9.0
+    summary: 0 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - Public/protected docblock coverage is 181/780 (23%).
+    findings:
+    - severity: warn
+      id: docblock_coverage_low
+      detail: Public/protected docblock coverage is 181/780 (23%).
+    evidence:
+    - .github/workflows
+    - CHANGELOG.md
+    - README.md
+    - RELEASE_NOTES.md
+    - composer.json
+    - php-docblock-ratio:181/780
+    - tests/TagGeneratedOpenApiSurfaceTest.php
+  delivery_observability:
+    title: Delivery & Observability
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - .github/workflows/ci.yml
+    - .github/workflows/release-rc.yml
+    - MANIFEST.json
+    - RELEASE_NOTES.md
+    - composer.json
+    - docker-compose.yml
+    - release/tag-rc5/RC5-E5-MANIFEST.json
+    - repo-map.md
+    - src/Ops/Metrics/PrometheusExporter.php
+    - src/Ops/Metrics/TagMetrics.php
+    - src/Service/Core/Tag/Metric/TagMetrics.php
+    - tests/TagObservabilityDocsTruthTest.php
+  solid_refactoring:
+    title: SOLID & Refactoring Pressure
+    status: fail
+    score: 0.0
+    summary: 1 fail, 11 warn, 1 info findings detected.
+    blockers:
+    - Class exposes 13 public methods; review interface segregation and SRP.
+    - Class exposes 18 public methods; review interface segregation and SRP.
+    - Class exposes 18 public methods; review interface segregation and SRP.
+    - Class exposes 18 public methods; review interface segregation and SRP.
+    - Class exposes 14 public methods; review interface segregation and SRP.
+    findings:
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 13 public methods; review interface segregation and SRP.
+      path: tests/SearchSuggestCleanupTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 18 public methods; review interface segregation and SRP.
+      path: tests/SearchSuggestControllerContractTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 18 public methods; review interface segregation and SRP.
+      path: tests/TagWriteUseCaseTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 18 public methods; review interface segregation and SRP.
+      path: tests/TagRouteCatalogTruthTest.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 14 public methods; review interface segregation and SRP.
+      path: sdk/php/tag/Client.php
+    - severity: warn
+      id: class_size_pressure
+      detail: PHP file is large (342 lines); review SRP pressure.
+      path: tools/cli/tag.php
+    - severity: warn
+      id: class_size_pressure
+      detail: PHP file is large (345 lines); review SRP pressure.
+      path: src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 33 public methods; review interface segregation and SRP.
+      path: src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php
+    - severity: fail
+      id: large_class
+      detail: PHP file is very large (554 lines); review SRP and refactoring pressure.
+      path: src/Infrastructure/Persistence/Tag/PdoTagRepository.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 34 public methods; review interface segregation and SRP.
+      path: src/Infrastructure/Persistence/Tag/PdoTagRepository.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 34 public methods; review interface segregation and SRP.
+      path: src/Service/Core/Tag/TagRepositoryAdapter.php
+    - severity: warn
+      id: public_api_pressure
+      detail: Class exposes 33 public methods; review interface segregation and SRP.
+      path: src/Service/Core/Tag/TagRepositoryInterface.php
+    - severity: info
+      id: copy_paste_origin_marker
+      detail: Possible copy-paste provenance marker detected; review SOLID and ownership
+        fit.
+      path: .github/workflows/ci.yml
+    evidence:
+    - .github/workflows/ci.yml
+    - sdk/php/tag/Client.php
+    - src/Infrastructure/Persistence/Tag/InMemoryTagRepository.php
+    - src/Infrastructure/Persistence/Tag/PdoTagRepository.php
+    - src/Service/Core/Tag/TagRepositoryAdapter.php
+    - src/Service/Core/Tag/TagRepositoryInterface.php
+    - tests/SearchSuggestCleanupTest.php
+    - tests/SearchSuggestControllerContractTest.php
+    - tests/TagRouteCatalogTruthTest.php
+    - tests/TagWriteUseCaseTest.php
+    - tools/cli/tag.php
+summary:
+  overall_status: fail
+  average_score: 7.43
+  status_counts:
+    pass: 3
+    warn: 3
+    fail: 1
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — PHP namespace does not use the default App\ root.
+  - Canon & Structure — Both MySQL and PostgreSQL dialect markers are present; keep
+    dialect trees clearly separated.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - Architecture & Boundaries — Non-entity PHP file imports App\Entity directly; review
+    vertical leakage.
+  - Documentation & GitHub Suite — Public/protected docblock coverage is 181/780 (23%).
+  - SOLID & Refactoring Pressure — Class exposes 13 public methods; review interface
+    segregation and SRP.
+  - SOLID & Refactoring Pressure — Class exposes 18 public methods; review interface
+    segregation and SRP.
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: warn
+      score: 8.0
+      summary: 0 fail, 2 warn, 0 info findings detected.
+      blockers:
+      - PHP namespace does not use the default App\ root.
+      - Both MySQL and PostgreSQL dialect markers are present; keep dialect trees
+        clearly separated.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: warn
+      score: 5.0
+      summary: 0 fail, 5 warn, 0 info findings detected.
+      blockers:
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+      - Non-entity PHP file imports App\Entity directly; review vertical leakage.
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - Public/protected docblock coverage is 181/780 (23%).
+    delivery_observability:
+      title: Delivery & Observability
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: fail
+      score: 0.0
+      summary: 1 fail, 11 warn, 1 info findings detected.
+      blockers:
+      - Class exposes 13 public methods; review interface segregation and SRP.
+      - Class exposes 18 public methods; review interface segregation and SRP.
+      - Class exposes 18 public methods; review interface segregation and SRP.

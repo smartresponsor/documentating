@@ -1,0 +1,202 @@
+component: billing
+title: Billing
+snapshot:
+  date: '2026-04-11'
+  label: assessment-2026-04-11
+  origin: quality-atlas deterministic probes
+  generated_at: '2026-04-11T03:11:49.393606+00:00'
+repo_target:
+  github_repository: smartresponsor/billing
+  local_path: ''
+  default_branch: master
+families:
+  canon_structure:
+    title: Canon & Structure
+    status: fail
+    score: 2.5
+    summary: 3 fail, 0 warn, 0 info findings detected.
+    blockers:
+    - Repository/domain-named directory is too close to root for owner canon.
+    - Repository/domain-named directory is too close to root for owner canon.
+    - Repository/domain-named directory is too close to root for owner canon.
+    findings:
+    - severity: fail
+      id: forbidden_domain_depth
+      detail: Repository/domain-named directory is too close to root for owner canon.
+      path: src/Http/Billing
+    - severity: fail
+      id: forbidden_domain_depth
+      detail: Repository/domain-named directory is too close to root for owner canon.
+      path: src/ServiceInterface/Billing
+    - severity: fail
+      id: forbidden_domain_depth
+      detail: Repository/domain-named directory is too close to root for owner canon.
+      path: src/Service/Billing
+    evidence:
+    - src/Http/Billing
+    - src/Service/Billing
+    - src/ServiceInterface/Billing
+  architecture_boundaries:
+    title: Architecture & Boundaries
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence:
+    - docs/billing-boundary.md
+  runtime_surface:
+    title: Runtime & Application Surface
+    status: warn
+    score: 9.0
+    summary: 0 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - No Docker or compose files were detected.
+    findings:
+    - severity: warn
+      id: docker_surface_missing
+      detail: No Docker or compose files were detected.
+    evidence:
+    - docs/architecture/pre-subscription-hardening.md
+  qa_behavior:
+    title: QA & Behavioral Assurance
+    status: warn
+    score: 9.0
+    summary: 0 fail, 1 warn, 0 info findings detected.
+    blockers:
+    - No fixtures directories were detected.
+    findings:
+    - severity: warn
+      id: fixtures_missing
+      detail: No fixtures directories were detected.
+    evidence:
+    - docs/architecture/billing-platform-overview.md
+    - docs/testing-strategy.md
+    - tests/
+    - tests/e2e/panther/BillingSmokeTest.php
+  documentation_suite:
+    title: Documentation & GitHub Suite
+    status: warn
+    score: 6.0
+    summary: 0 fail, 4 warn, 0 info findings detected.
+    blockers:
+    - 'Missing expected documentation asset: README.md.'
+    - 'Missing expected documentation asset: CHANGELOG.md.'
+    - Public/protected docblock coverage is 6/72 (8%).
+    - GitHub Suite support files appear sparse.
+    findings:
+    - severity: warn
+      id: missing_doc_asset
+      detail: 'Missing expected documentation asset: README.md.'
+    - severity: warn
+      id: missing_doc_asset
+      detail: 'Missing expected documentation asset: CHANGELOG.md.'
+    - severity: warn
+      id: docblock_coverage_low
+      detail: Public/protected docblock coverage is 6/72 (8%).
+    - severity: warn
+      id: github_suite_sparse
+      detail: GitHub Suite support files appear sparse.
+    evidence:
+    - docs/architecture/pre-subscription-hardening.md
+    - docs/documentation-guidelines.md
+    - php-docblock-ratio:6/72
+  delivery_observability:
+    title: Delivery & Observability
+    status: warn
+    score: 7.75
+    summary: 0 fail, 2 warn, 1 info findings detected.
+    blockers:
+    - No GitHub workflow files were detected.
+    - Deploy or packaging markers appear sparse.
+    findings:
+    - severity: warn
+      id: workflows_missing
+      detail: No GitHub workflow files were detected.
+    - severity: info
+      id: observability_markers_missing
+      detail: No Prometheus/Grafana markers were detected.
+    - severity: warn
+      id: deploy_markers_sparse
+      detail: Deploy or packaging markers appear sparse.
+    evidence: []
+  solid_refactoring:
+    title: SOLID & Refactoring Pressure
+    status: pass
+    score: 10.0
+    summary: No material probe findings detected in this family.
+    blockers: []
+    findings: []
+    evidence: []
+summary:
+  overall_status: fail
+  average_score: 7.75
+  status_counts:
+    pass: 2
+    warn: 4
+    fail: 1
+    not_applicable: 0
+  top_blockers:
+  - Canon & Structure — Repository/domain-named directory is too close to root for
+    owner canon.
+  - Canon & Structure — Repository/domain-named directory is too close to root for
+    owner canon.
+  - Runtime & Application Surface — No Docker or compose files were detected.
+  - QA & Behavioral Assurance — No fixtures directories were detected.
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: README.md.'
+  - 'Documentation & GitHub Suite — Missing expected documentation asset: CHANGELOG.md.'
+  - Delivery & Observability — No GitHub workflow files were detected.
+  - Delivery & Observability — Deploy or packaging markers appear sparse.
+  families:
+    canon_structure:
+      title: Canon & Structure
+      status: fail
+      score: 2.5
+      summary: 3 fail, 0 warn, 0 info findings detected.
+      blockers:
+      - Repository/domain-named directory is too close to root for owner canon.
+      - Repository/domain-named directory is too close to root for owner canon.
+      - Repository/domain-named directory is too close to root for owner canon.
+    architecture_boundaries:
+      title: Architecture & Boundaries
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []
+    runtime_surface:
+      title: Runtime & Application Surface
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - No Docker or compose files were detected.
+    qa_behavior:
+      title: QA & Behavioral Assurance
+      status: warn
+      score: 9.0
+      summary: 0 fail, 1 warn, 0 info findings detected.
+      blockers:
+      - No fixtures directories were detected.
+    documentation_suite:
+      title: Documentation & GitHub Suite
+      status: warn
+      score: 6.0
+      summary: 0 fail, 4 warn, 0 info findings detected.
+      blockers:
+      - 'Missing expected documentation asset: README.md.'
+      - 'Missing expected documentation asset: CHANGELOG.md.'
+      - Public/protected docblock coverage is 6/72 (8%).
+    delivery_observability:
+      title: Delivery & Observability
+      status: warn
+      score: 7.75
+      summary: 0 fail, 2 warn, 1 info findings detected.
+      blockers:
+      - No GitHub workflow files were detected.
+      - Deploy or packaging markers appear sparse.
+    solid_refactoring:
+      title: SOLID & Refactoring Pressure
+      status: pass
+      score: 10.0
+      summary: No material probe findings detected in this family.
+      blockers: []

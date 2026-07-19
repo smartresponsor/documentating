@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="white"/>
+  <text x="70" y="72" font-size="34" font-family="Arial" font-weight="bold">Compact AI-Native Operating Model</text>
+  <text x="70" y="108" font-size="20" font-family="Arial" fill="#4b5563">A smaller team works only if governance gets stronger rather than weaker.</text>
+  <rect x="120" y="190" width="260" height="150" rx="18" fill="#eef2ff" stroke="#4f46e5" stroke-width="3"/>
+  <text x="182" y="238" font-size="28" font-family="Arial" font-weight="bold">Founder / CEO</text>
+  <text x="176" y="276" font-size="18" font-family="Arial">Owns product truth,</text>
+  <text x="165" y="304" font-size="18" font-family="Arial">priorities, and business intent</text>
+  <rect x="470" y="190" width="260" height="150" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="3"/>
+  <text x="520" y="238" font-size="28" font-family="Arial" font-weight="bold">Fractional CTO</text>
+  <text x="522" y="276" font-size="18" font-family="Arial">Owns architecture,</text>
+  <text x="510" y="304" font-size="18" font-family="Arial">quality bar, and execution rules</text>
+  <rect x="820" y="190" width="260" height="150" rx="18" fill="#f0fdf4" stroke="#16a34a" stroke-width="3"/>
+  <text x="903" y="238" font-size="28" font-family="Arial" font-weight="bold">Engineer</text>
+  <text x="866" y="276" font-size="18" font-family="Arial">Implements, orchestrates</text>
+  <text x="873" y="304" font-size="18" font-family="Arial">agents, validates changes</text>
+  <line x1="380" y1="265" x2="470" y2="265" stroke="#6b7280" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="730" y1="265" x2="820" y2="265" stroke="#6b7280" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="140" y="430" width="920" height="180" rx="24" fill="#f9fafb" stroke="#111827" stroke-width="3"/>
+  <text x="458" y="474" font-size="28" font-family="Arial" font-weight="bold">Non-Negotiable Guardrails</text>
+  <rect x="180" y="510" width="180" height="68" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="236" y="552" font-size="22" font-family="Arial" font-weight="bold">Tests</text>
+  <rect x="390" y="510" width="180" height="68" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="449" y="552" font-size="22" font-family="Arial" font-weight="bold">CI / CD</text>
+  <rect x="600" y="510" width="180" height="68" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="621" y="552" font-size="22" font-family="Arial" font-weight="bold">Observability</text>
+  <rect x="810" y="510" width="210" height="68" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="838" y="552" font-size="22" font-family="Arial" font-weight="bold">Architecture Fitness</text>
+  <text x="220" y="660" font-size="22" font-family="Arial" font-weight="bold">Small team ≠ weak governance</text>
+  <text x="220" y="694" font-size="18" font-family="Arial" fill="#374151">AI compresses execution, so management quality, validation, and boundary discipline matter more.</text>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#6b7280"/></marker></defs>
+</svg>

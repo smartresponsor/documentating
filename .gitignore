@@ -67,6 +67,7 @@ Thumbs.db
 /docs/releases/
 /tmp/
 /cache/
+/.site_build/
 /artifacts/
 
 # ──────────────────────────────────────────────
@@ -128,6 +129,7 @@ Thumbs.db
 !/.php-cs-fixer.cache
 !/var/metrics/
 /.codex-tmp/
+/.codebase-memory/
 /var/phpunit/
 /var/report/local/
 /var/report/inspection/

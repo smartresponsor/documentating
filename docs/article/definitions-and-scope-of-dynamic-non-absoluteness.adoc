@@ -1,0 +1,211 @@
+= Definitions and Scope of Dynamic Non-Absoluteness
+:page-slug: definitions-and-scope-of-dynamic-non-absoluteness
+:page-published: 2026-05-21
+:page-author: Oleksandr Tishchenko
+:description: A definitions and scope note for the hypothesis of dynamic non-absoluteness and dynamic non-identity of driving factors.
+:page-tags: philosophy-of-physics, dynamic-systems, definitions, hypothesis, open-systems
+:lang: en
+
+== Purpose
+
+This note defines the working vocabulary of the hypothesis of dynamic non-absoluteness.
+
+The manifesto states the principle. This document narrows the language so that the hypothesis can be developed without confusing physics, mathematics, and philosophy.
+
+The central danger is excessive looseness. Words such as force, identity, equality, system, and absolute are powerful but ambiguous. If they are not defined, the hypothesis can sound larger than it is. If they are defined carefully, the hypothesis can become a disciplined research program.
+
+== Core Principle
+
+The working principle is:
+
+[quote]
+No observable driving factor is absolutely isolated, and no two distinct driving factors preserve absolute dynamic identity over time in an open system unless the conditions preserving that identity remain absolutely symmetrical.
+
+This statement should be read as a research principle, not as a finished physical law.
+
+== Driving Force and Driving Factor
+
+The phrase "driving force" is intuitive but risky.
+
+In physics, force can mean a mathematically defined quantity, a result of an interaction, or a term within a specific formal theory. For that reason, the broader phrase "driving factor" is often safer.
+
+In this hypothesis, a driving factor means:
+
+[quote]
+Any influence, interaction, constraint, gradient, field condition, instability, asymmetry, or causal structure that contributes to a change of state or to the direction of a dynamic process.
+
+A driving factor may include a force in the strict physical sense. But the hypothesis should not assume that every driving factor is a Newtonian force.
+
+== Absolute
+
+The word "absolute" has several possible meanings.
+
+In this hypothesis, a factor is called absolute only if it is treated as:
+
+* fully isolated from other influences;
+* constant across the relevant interval;
+* fully dominant over finite counter-influences;
+* not meaningfully modified by context;
+* not dependent on relations for its observable effect.
+
+The hypothesis does not deny that stable quantities, invariants, or conservation laws exist. It rejects the elevation of a driving factor into a completely isolated and fully dominant reality that would make all finite relations dynamically irrelevant.
+
+== Equality
+
+Equality is parameter-dependent.
+
+Two factors may be equal in magnitude, direction, measured value, energy contribution, intensity, or another selected parameter. Such equality can be meaningful and measurable.
+
+However, equality under one parameter is not total identity.
+
+The hypothesis distinguishes:
+
+* local equality;
+* momentary equality;
+* equality under a selected parameter;
+* equality inside an idealized model;
+* full dynamic identity across time.
+
+Only the last one is the strong target of the hypothesis.
+
+== Dynamic Identity
+
+Dynamic identity means more than equality at one instant.
+
+A strong version of dynamic identity would require that two factors preserve equivalence across:
+
+* measurable parameters;
+* relations to surrounding factors;
+* histories of interaction;
+* exposure to perturbations;
+* future state evolution;
+* contextual role inside the system.
+
+The hypothesis claims that this strong version is not normally preserved in open systems unless the symmetry of conditions is also preserved.
+
+== Open System
+
+An open system is a system that is not sealed from relevant external influence.
+
+Depending on context, openness may include exchange of:
+
+* energy;
+* matter;
+* information;
+* constraints;
+* disturbances;
+* boundary conditions;
+* causal effects.
+
+The hypothesis does not require every system to be maximally open. It requires only that the relevant factors are not perfectly isolated from asymmetric influence over the interval being considered.
+
+== Time Interval
+
+The hypothesis is weak if it speaks only about a single instant.
+
+At a single moment, equality can be defined by measurement or model. The stronger claim concerns persistence across an interval.
+
+Therefore, the relevant question is:
+
+[quote]
+What must remain preserved for two initially equal driving factors to remain dynamically identical over time?
+
+The answer is not merely equality of magnitude. It is preservation of the conditions that make their equivalence valid.
+
+== Symmetry of Conditions
+
+The hypothesis depends on symmetry.
+
+If two factors remain under perfectly symmetrical conditions, then strong equivalence may be preserved in a model. But if their contexts diverge, their dynamic identity becomes unstable.
+
+Symmetry of conditions includes:
+
+* equal boundary conditions;
+* equal exposure to perturbations;
+* equal relations to other factors;
+* equal constraints;
+* equal state-transition rules;
+* equal histories where history matters.
+
+The hypothesis does not deny symmetry. It treats symmetry as the condition under which identity can be preserved.
+
+== Physical Scope
+
+Physically, the hypothesis should be modest.
+
+It should not claim that modern physics is wrong because it recognizes fundamental interactions. It should not claim that force always means the same thing across classical mechanics, relativity, quantum theory, or field theory.
+
+The physical version should say only this:
+
+[quote]
+In observable dynamic reality, a driving influence becomes meaningful through relations, interactions, constraints, and system conditions; therefore absolute isolation and absolute long-term dynamic identity should be treated as idealizations unless a theory specifies how they are preserved.
+
+== Mathematical Scope
+
+Mathematically, the hypothesis can be developed through equivalence relations and time evolution.
+
+A factor A and a factor B may be equal under an equivalence relation E at time t. The stronger question is whether E(A_t, B_t) remains true over an interval.
+
+The mathematical layer should study:
+
+* which equivalence relation is used;
+* which state variables are included;
+* which perturbations are allowed;
+* whether the system is closed, isolated, or open;
+* whether the state evolution preserves equivalence;
+* whether divergence is necessary, probable, or only possible.
+
+== Philosophical Scope
+
+Philosophically, the hypothesis concerns the status of absolutes.
+
+It asks whether absolute force and eternal dynamic identity are features of reality or limiting concepts used by thought, language, and modeling.
+
+Its philosophical claim is:
+
+[quote]
+Dynamic reality is encountered through relations, limits, differences, and change. The absolute may be useful as a boundary concept, but it should not be mistaken for the ordinary texture of observable dynamics.
+
+== What the Hypothesis Does Not Claim
+
+The hypothesis does not claim:
+
+* that measured equality is impossible;
+* that stable systems do not exist;
+* that conservation laws are false;
+* that all systems are chaotic;
+* that symmetry is unreal;
+* that physics has missed one simple law;
+* that every difference immediately grows without bound;
+* that philosophy alone can replace mathematical modeling.
+
+== What the Hypothesis Does Claim
+
+The hypothesis claims:
+
+* that absolute isolation is not the ordinary condition of observable dynamics;
+* that equality must be tied to explicit parameters;
+* that dynamic identity over time is stronger than momentary equality;
+* that open systems expose factors to asymmetric influence;
+* that preservation of strong identity requires preservation of the conditions that define it;
+* that absoluteness and total identity should be treated as limiting abstractions unless their preservation is specified.
+
+== Research Use
+
+This definitions document should be used as the vocabulary baseline for future work.
+
+Before expanding the hypothesis, each new text should specify:
+
+* which meaning of force or driving factor is being used;
+* whether the claim is physical, mathematical, or philosophical;
+* what kind of system is being discussed;
+* what kind of equality is being asserted;
+* what time interval is relevant;
+* what symmetry or preservation condition is assumed.
+
+== Closing Formulation
+
+The hypothesis becomes strongest when it is stated carefully:
+
+[quote]
+Two dynamic factors may be equal under selected parameters at a moment of observation. But strong dynamic identity over time requires preservation of the conditions that make that identity meaningful. In open systems, such preservation is not automatic. Therefore, absolute dynamic identity is better treated as a limiting abstraction than as an ordinary feature of observable reality.

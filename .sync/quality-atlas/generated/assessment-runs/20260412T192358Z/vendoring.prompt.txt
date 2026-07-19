@@ -1,0 +1,2052 @@
+You are updating a Smartresponsor Quality Atlas snapshot. Use only the provided repository facts and current snapshot. Do not invent tests, tools, or repo structure that are not evidenced. Keep scores within 0.0..10.0 and only override base metrics when the facts justify it. Return complete metric_updates for all base metrics. If evidence is insufficient for a metric, preserve the previous narrative in a minimally refreshed form rather than inventing new facts.
+
+Component registry entry:
+{
+  "component_id": "vendoring",
+  "component_title": "Vendoring",
+  "github_repository": "smartresponsor/vendoring",
+  "default_branch": "master",
+  "enabled": true,
+  "report_path": ".antora-src/modules/ROOT/pages/component/vendoring/report/index.adoc",
+  "notes": "Set enabled=true and github_repository once this component is connected to the scheduled assessment runner."
+}
+
+Assessment cards:
+[
+  {
+    "id": "repo_facts",
+    "title": "Repository Facts",
+    "purpose": "Collect deterministic repository facts before AI scoring.",
+    "required_inputs": [
+      "repository manifest",
+      "component report path",
+      "git metadata",
+      "quality tool outputs"
+    ],
+    "required_outputs": [
+      "facts bundle",
+      "repo summary",
+      "tool results"
+    ]
+  },
+  {
+    "id": "development_driving_probes",
+    "title": "Development-driving probes",
+    "purpose": "Collect deterministic owner/internal probes that feed the internal cockpit, RC blockers, SOLID refactoring pressure, and canon drift detection.",
+    "required_inputs": [
+      "repository tree",
+      "probe family contract",
+      "component registry entry",
+      "current snapshot if any"
+    ],
+    "required_outputs": [
+      "probe snapshot",
+      "family summaries",
+      "top blockers",
+      "probe evidence"
+    ]
+  },
+  {
+    "id": "engineering_assessment",
+    "title": "Engineering Assessment",
+    "purpose": "Score the canonical engineering profile and capture narrative risks/improvements.",
+    "required_inputs": [
+      "metric catalog",
+      "view profile engineering",
+      "facts bundle",
+      "previous snapshot if any"
+    ],
+    "required_outputs": [
+      "per-axis scores",
+      "metric deltas",
+      "risks",
+      "improvements",
+      "tradeoffs"
+    ]
+  },
+  {
+    "id": "owner_assessment",
+    "title": "Owner Assessment",
+    "purpose": "Score ecosystem fit, RC momentum, and owner-facing summary.",
+    "required_inputs": [
+      "metric catalog",
+      "view profile owner",
+      "facts bundle",
+      "previous snapshot if any"
+    ],
+    "required_outputs": [
+      "owner summary",
+      "top risks",
+      "next actions",
+      "overall RC verdict"
+    ]
+  },
+  {
+    "id": "adoc_render",
+    "title": "Narrative Report Render",
+    "purpose": "Render or refresh component adoc report from the structured snapshot.",
+    "required_inputs": [
+      "current snapshot",
+      "component title",
+      "report template context"
+    ],
+    "required_outputs": [
+      "adoc rc summary",
+      "scorecard block",
+      "recommended next actions"
+    ]
+  }
+]
+
+Metric catalog summary:
+[
+  {
+    "id": "product_identity",
+    "title": "Product identity",
+    "group": "product_market",
+    "audiences": [
+      "investor",
+      "owner",
+      "engineering"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "market_alignment",
+    "title": "Market alignment",
+    "group": "product_market",
+    "audiences": [
+      "investor",
+      "owner",
+      "engineering"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "client_server",
+    "title": "Client-Server",
+    "group": "product_market",
+    "audiences": [
+      "investor",
+      "owner",
+      "engineering"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "documentation_quality",
+    "title": "Documentation quality",
+    "group": "product_market",
+    "audiences": [
+      "investor",
+      "owner",
+      "engineering"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "operational_clarity",
+    "title": "Operational clarity",
+    "group": "product_market",
+    "audiences": [
+      "investor",
+      "owner",
+      "engineering"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "domain_boundaries",
+    "title": "Domain boundaries",
+    "group": "domain_architecture",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "bounded_contexts",
+    "title": "Bounded Contexts",
+    "group": "domain_architecture",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "architectural_consistency",
+    "title": "Architectural consistency",
+    "group": "domain_architecture",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "technical_debt_level",
+    "title": "Technical debt level",
+    "group": "domain_architecture",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "monolith",
+    "title": "Monolith",
+    "group": "domain_architecture",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "microservices",
+    "title": "Microservices",
+    "group": "domain_architecture",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "strangler_pattern",
+    "title": "Strangler Pattern",
+    "group": "domain_architecture",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "bff",
+    "title": "BFF",
+    "group": "domain_architecture",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "database",
+    "title": "Database",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "sql_vs_nosql",
+    "title": "SQL vs NoSQL",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "replication",
+    "title": "Replication",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "partitioning",
+    "title": "Partitioning",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "sharding",
+    "title": "Sharding",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "indexing",
+    "title": "Indexing",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "denormalization",
+    "title": "Denormalization",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "acid",
+    "title": "ACID",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "base",
+    "title": "BASE",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "full_text_search",
+    "title": "Full-Text Search",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "time_series",
+    "title": "Time Series",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "vector_db",
+    "title": "Vector DB",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "materialized_view",
+    "title": "Materialized View",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "query_optimization",
+    "title": "Query Optimization",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "lsm_trees",
+    "title": "LSM Trees",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "b_trees",
+    "title": "B-Trees",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "merkle_trees",
+    "title": "Merkle Trees",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "bloom_filter",
+    "title": "Bloom Filter",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "hyperloglog",
+    "title": "HyperLogLog",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "data_lake",
+    "title": "Data Lake",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "data_warehouse",
+    "title": "Data Warehouse",
+    "group": "data_persistence",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "api_design",
+    "title": "API Design",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "rest",
+    "title": "REST",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "graphql",
+    "title": "GraphQL",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "grpc",
+    "title": "gRPC",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "dto_design",
+    "title": "DTO design",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "contract_design",
+    "title": "Contract design",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "api_versioning",
+    "title": "API versioning",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "schema_evolution",
+    "title": "Schema evolution",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "serialization",
+    "title": "Serialization",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "deserialization",
+    "title": "Deserialization",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "websockets",
+    "title": "WebSockets",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "webrtc",
+    "title": "WebRTC",
+    "group": "api_contracts",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "scalability",
+    "title": "Scalability",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "latency",
+    "title": "Latency",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "throughput",
+    "title": "Throughput",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "capacity",
+    "title": "Capacity",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "load_balancing",
+    "title": "Load Balancing",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "caching",
+    "title": "Caching",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "cache_invalidation",
+    "title": "Cache Invalidation",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "cdn",
+    "title": "CDN",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "dns",
+    "title": "DNS",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "connection_pooling",
+    "title": "Connection Pooling",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "cache_stampede",
+    "title": "Cache Stampede",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "cache_warming",
+    "title": "Cache Warming",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "cdn_caching",
+    "title": "CDN Caching",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "data_compression",
+    "title": "Data Compression",
+    "group": "runtime_performance",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "availability",
+    "title": "Availability",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "reliability",
+    "title": "Reliability",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "fault_tolerance",
+    "title": "Fault Tolerance",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "high_availability",
+    "title": "High Availability",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "cap_theorem",
+    "title": "CAP Theorem",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "consistency_models",
+    "title": "Consistency Models",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "sync_vs_async",
+    "title": "Sync vs Async",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "idempotency",
+    "title": "Idempotency",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "backpressure",
+    "title": "Backpressure",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "circuit_breaker",
+    "title": "Circuit Breaker",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "bulkhead",
+    "title": "Bulkhead",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "retry_logic",
+    "title": "Retry Logic",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "timeout",
+    "title": "Timeout",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "load_shedding",
+    "title": "Load Shedding",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "zero_downtime_migration_readiness",
+    "title": "Zero-downtime migration readiness",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "rollback_strategy",
+    "title": "Rollback strategy",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "checksum",
+    "title": "Checksum",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "erasure_coding",
+    "title": "Erasure Coding",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "consensus",
+    "title": "Consensus",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "leader_election",
+    "title": "Leader Election",
+    "group": "reliability_resilience",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "service_discovery",
+    "title": "Service Discovery",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "api_gateway",
+    "title": "API Gateway",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "autoscaling",
+    "title": "Autoscaling",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "blue_green_deployment",
+    "title": "Blue-Green Deployment",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "canary_release",
+    "title": "Canary Release",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "feature_flags",
+    "title": "Feature Flags",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "observability",
+    "title": "Observability",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "logging",
+    "title": "Logging",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "metrics",
+    "title": "Metrics",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "tracing",
+    "title": "Tracing",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "correlation_id",
+    "title": "Correlation ID",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "monitoring",
+    "title": "Monitoring",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "alerting",
+    "title": "Alerting",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "cicd_readiness",
+    "title": "CI/CD readiness",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "kubernetes_readiness",
+    "title": "Kubernetes readiness",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "traffic_cohort_strategy",
+    "title": "Traffic cohort strategy",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "synthetic_canary_users",
+    "title": "Synthetic / canary users",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "service_mesh",
+    "title": "Service Mesh",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "sidecar",
+    "title": "Sidecar",
+    "group": "delivery_operations",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "event_driven_architecture",
+    "title": "Event-Driven Architecture",
+    "group": "event_data_flow",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "message_queue",
+    "title": "Message Queue",
+    "group": "event_data_flow",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "pub_sub",
+    "title": "Pub/Sub",
+    "group": "event_data_flow",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "cqrs",
+    "title": "CQRS",
+    "group": "event_data_flow",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "event_sourcing",
+    "title": "Event Sourcing",
+    "group": "event_data_flow",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "mapreduce",
+    "title": "MapReduce",
+    "group": "event_data_flow",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "batch_processing",
+    "title": "Batch Processing",
+    "group": "event_data_flow",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "stream_processing",
+    "title": "Stream Processing",
+    "group": "event_data_flow",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "etl",
+    "title": "ETL",
+    "group": "event_data_flow",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "data_pipeline",
+    "title": "Data Pipeline",
+    "group": "event_data_flow",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "authentication",
+    "title": "Authentication",
+    "group": "security_governance",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "authorization",
+    "title": "Authorization",
+    "group": "security_governance",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "rate_limiting",
+    "title": "Rate Limiting",
+    "group": "security_governance",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "secrets_management",
+    "title": "Secrets Management",
+    "group": "security_governance",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "rbac",
+    "title": "RBAC",
+    "group": "security_governance",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "sso",
+    "title": "SSO",
+    "group": "security_governance",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "encryption",
+    "title": "Encryption",
+    "group": "security_governance",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "security_posture",
+    "title": "Security posture",
+    "group": "security_governance",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "threat_modeling",
+    "title": "Threat modeling",
+    "group": "security_governance",
+    "audiences": [
+      "engineering",
+      "operations",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "testing_strategy",
+    "title": "Testing strategy",
+    "group": "quality_testing",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "contract_testing",
+    "title": "Contract testing",
+    "group": "quality_testing",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "e2e_testing",
+    "title": "E2E testing",
+    "group": "quality_testing",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  },
+  {
+    "id": "behavioral_testing",
+    "title": "Behavioral testing",
+    "group": "quality_testing",
+    "audiences": [
+      "engineering",
+      "owner"
+    ],
+    "default_relevance": "conditional"
+  }
+]
+
+View profiles:
+{
+  "version": "1.0",
+  "description": "Audience-specific Quality Atlas views built from the canonical metric catalog.",
+  "profiles": [
+    {
+      "id": "investor",
+      "title": "Investor",
+      "description": "Low-noise readiness view for portfolio and confidence conversations.",
+      "axes": [
+        {
+          "id": "product",
+          "title": "Product & Market",
+          "groups": [
+            "product_market"
+          ]
+        },
+        {
+          "id": "architecture",
+          "title": "Architecture Stability",
+          "groups": [
+            "domain_architecture"
+          ]
+        },
+        {
+          "id": "delivery",
+          "title": "Delivery Readiness",
+          "groups": [
+            "delivery_operations",
+            "quality_testing"
+          ]
+        },
+        {
+          "id": "reliability",
+          "title": "Reliability",
+          "groups": [
+            "reliability_resilience"
+          ]
+        },
+        {
+          "id": "governance",
+          "title": "Security & Governance",
+          "groups": [
+            "security_governance"
+          ]
+        },
+        {
+          "id": "clarity",
+          "title": "Operational Clarity",
+          "groups": [
+            "product_market",
+            "delivery_operations"
+          ]
+        },
+        {
+          "id": "overall",
+          "title": "Overall RC",
+          "groups": [
+            "product_market",
+            "domain_architecture",
+            "reliability_resilience",
+            "delivery_operations",
+            "security_governance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engineering",
+      "title": "Engineering",
+      "description": "Primary architecture and implementation view for component leads.",
+      "axes": [
+        {
+          "id": "product",
+          "title": "Product",
+          "groups": [
+            "product_market"
+          ]
+        },
+        {
+          "id": "architecture",
+          "title": "Architecture",
+          "groups": [
+            "domain_architecture"
+          ]
+        },
+        {
+          "id": "data",
+          "title": "Data",
+          "groups": [
+            "data_persistence"
+          ]
+        },
+        {
+          "id": "api",
+          "title": "API & Contracts",
+          "groups": [
+            "api_contracts"
+          ]
+        },
+        {
+          "id": "runtime",
+          "title": "Runtime",
+          "groups": [
+            "runtime_performance"
+          ]
+        },
+        {
+          "id": "reliability",
+          "title": "Reliability",
+          "groups": [
+            "reliability_resilience"
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "groups": [
+            "security_governance"
+          ]
+        },
+        {
+          "id": "delivery",
+          "title": "Delivery",
+          "groups": [
+            "delivery_operations"
+          ]
+        },
+        {
+          "id": "quality",
+          "title": "Quality",
+          "groups": [
+            "quality_testing"
+          ]
+        },
+        {
+          "id": "overall",
+          "title": "Overall RC",
+          "groups": [
+            "domain_architecture",
+            "runtime_performance",
+            "reliability_resilience",
+            "delivery_operations",
+            "quality_testing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Operations",
+      "description": "Operations and runtime sustainability view.",
+      "axes": [
+        {
+          "id": "runtime",
+          "title": "Runtime Ops",
+          "groups": [
+            "runtime_performance"
+          ]
+        },
+        {
+          "id": "reliability",
+          "title": "Reliability",
+          "groups": [
+            "reliability_resilience"
+          ]
+        },
+        {
+          "id": "observability",
+          "title": "Observability",
+          "groups": [
+            "delivery_operations"
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "groups": [
+            "security_governance"
+          ]
+        },
+        {
+          "id": "traffic",
+          "title": "Traffic Strategy",
+          "groups": [
+            "delivery_operations",
+            "runtime_performance"
+          ]
+        },
+        {
+          "id": "delivery",
+          "title": "Delivery Automation",
+          "groups": [
+            "delivery_operations"
+          ]
+        },
+        {
+          "id": "recovery",
+          "title": "Recovery",
+          "groups": [
+            "reliability_resilience"
+          ]
+        },
+        {
+          "id": "overall",
+          "title": "Overall RC",
+          "groups": [
+            "runtime_performance",
+            "reliability_resilience",
+            "delivery_operations",
+            "security_governance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "owner",
+      "title": "Owner / Portfolio",
+      "description": "Cross-ecosystem portfolio view tuned for Smartresponsor owner decisions.",
+      "axes": [
+        {
+          "id": "identity",
+          "title": "Product Identity",
+          "groups": [
+            "product_market"
+          ]
+        },
+        {
+          "id": "consistency",
+          "title": "Architecture Consistency",
+          "groups": [
+            "domain_architecture"
+          ]
+        },
+        {
+          "id": "delivery",
+          "title": "Delivery Maturity",
+          "groups": [
+            "delivery_operations"
+          ]
+        },
+        {
+          "id": "quality",
+          "title": "Quality Depth",
+          "groups": [
+            "quality_testing"
+          ]
+        },
+        {
+          "id": "governance",
+          "title": "Governance",
+          "groups": [
+            "security_governance"
+          ]
+        },
+        {
+          "id": "fit",
+          "title": "Ecosystem Fit",
+          "groups": [
+            "product_market",
+            "domain_architecture"
+          ]
+        },
+        {
+          "id": "debt",
+          "title": "Technical Debt",
+          "groups": [
+            "domain_architecture"
+          ]
+        },
+        {
+          "id": "overall",
+          "title": "Overall RC",
+          "groups": [
+            "product_market",
+            "domain_architecture",
+            "quality_testing",
+            "delivery_operations",
+            "security_governance"
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+Scoring model:
+{
+  "version": "1.0",
+  "description": "Scoring and aggregation rules for Smartresponsor Quality Atlas.",
+  "score_scale": {
+    "min": 0.0,
+    "max": 10.0,
+    "display_min": 6.5,
+    "display_max": 9.5
+  },
+  "maturity_scale": [
+    {
+      "id": "missing",
+      "min_score": 0.0,
+      "max_score": 2.49
+    },
+    {
+      "id": "weak",
+      "min_score": 2.5,
+      "max_score": 4.99
+    },
+    {
+      "id": "partial",
+      "min_score": 5.0,
+      "max_score": 7.49
+    },
+    {
+      "id": "solid",
+      "min_score": 7.5,
+      "max_score": 8.74
+    },
+    {
+      "id": "strong",
+      "min_score": 8.75,
+      "max_score": 10.0
+    }
+  ],
+  "rules": {
+    "irrelevant_metrics": "exclude_from_group_average",
+    "group_aggregation": "weighted_average",
+    "axis_aggregation": "weighted_average",
+    "overall_aggregation": "profile_axis_average",
+    "history_policy": "append_immutable_snapshot_then_refresh_current"
+  }
+}
+
+Current snapshot metric context:
+{
+  "product": {
+    "score": 8.5,
+    "summary": "Component identity and market-facing shape are materially present.",
+    "risks": [
+      "Assessment seeded from current pre-RC atlas and should be enriched by regular repository scans."
+    ],
+    "improvements": [
+      "Refresh this metric from a scheduled repository assessment run."
+    ]
+  },
+  "architecture": {
+    "score": 8.6,
+    "summary": "Symfony-oriented architecture shape is materially present.",
+    "risks": [
+      "Assessment seeded from current pre-RC atlas and should be enriched by regular repository scans."
+    ],
+    "improvements": [
+      "Refresh this metric from a scheduled repository assessment run."
+    ]
+  },
+  "runtime": {
+    "score": 8.4,
+    "summary": "Runtime and application surface are materially present.",
+    "risks": [
+      "Assessment seeded from current pre-RC atlas and should be enriched by regular repository scans."
+    ],
+    "improvements": [
+      "Refresh this metric from a scheduled repository assessment run."
+    ]
+  },
+  "qa": {
+    "score": 9.2,
+    "summary": "Testing and QA posture are materially present but remain pre-RC.",
+    "risks": [
+      "Assessment seeded from current pre-RC atlas and should be enriched by regular repository scans."
+    ],
+    "improvements": [
+      "Refresh this metric from a scheduled repository assessment run."
+    ]
+  },
+  "ops": {
+    "score": 9.1,
+    "summary": "Operational, governance, and security posture are materially present but remain pre-RC.",
+    "risks": [
+      "Assessment seeded from current pre-RC atlas and should be enriched by regular repository scans."
+    ],
+    "improvements": [
+      "Refresh this metric from a scheduled repository assessment run."
+    ]
+  },
+  "market": {
+    "score": 8.2,
+    "summary": "Business-facing and portfolio-facing alignment is materially present.",
+    "risks": [
+      "Assessment seeded from current pre-RC atlas and should be enriched by regular repository scans."
+    ],
+    "improvements": [
+      "Refresh this metric from a scheduled repository assessment run."
+    ]
+  },
+  "overall": {
+    "score": 8.8,
+    "summary": "Overall release-candidate direction is visible, but the component remains in pre-RC life.",
+    "risks": [
+      "Assessment seeded from current pre-RC atlas and should be enriched by regular repository scans."
+    ],
+    "improvements": [
+      "Refresh this metric from a scheduled repository assessment run."
+    ]
+  }
+}
+
+Deterministic repository facts:
+{
+  "repo_root": "/tmp/quality-atlas-vendoring-assessment-2026-04-12-7kdmwh90/vendoring",
+  "timestamp_utc": "2026-04-12T19:23:59.575227+00:00",
+  "exists": true,
+  "git_branch": {
+    "exit_code": 0,
+    "output": "master"
+  },
+  "git_commit": {
+    "exit_code": 0,
+    "output": "915e662bf29bb76015e5fa365f10f30b257150d5"
+  },
+  "git_exact_tag": {
+    "exit_code": 0,
+    "output": "v1.0.0-RC1"
+  },
+  "has_composer_json": true,
+  "has_package_json": true,
+  "has_phpstan_neon": true,
+  "has_phpstan_neon_dist": true,
+  "has_phpunit_xml": false,
+  "has_phpunit_xml_dist": true,
+  "has__github_workflows": true,
+  "has__antora-src_modules_ROOT_nav_adoc": false,
+  "has__antora-src_modules_ROOT_pages_index_adoc": false,
+  "git_status": {
+    "exit_code": 0,
+    "output": ""
+  },
+  "git_recent_commits": {
+    "exit_code": 0,
+    "output": "915e662 ets"
+  },
+  "top_level_tree": {
+    "exit_code": 0,
+    "output": "./.commanding\n./.commanding/commanding.cmd\n./.commanding/commanding.lnk\n./.commanding/commanding.ps1\n./.commanding/commanding.sh\n./.commanding/docker\n./.commanding/git\n./.commanding/lib\n./.commanding/ps1\n./.commanding/run.sh\n./.commanding/sh\n./.deploy\n./.deploy/MANIFEST.md\n./.deploy/_template\n./.deploy/cloudflare\n./.deploy/docker\n./.deploy/helm\n./.deploy/systemd\n./.editorconfig\n./.env.example\n./.gate\n./.gate/.github\n./.gate/.gitignore\n./.gate/MANIFEST.json\n./.gate/README.md\n./.gate/contract\n./.gate/gate.ps1\n./.gate/gate.sh\n./.gate/linting\n./.gate/policy\n./.gate/quality\n./.gate/run.ps1\n./.gate/run.sh\n./.git\n./.git/HEAD\n./.git/config\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/packed-refs\n./.git/refs\n./.git/shallow\n./.gitattributes\n./.github\n./.github/prompts\n./.github/workflows\n./.gitignore\n./.gitleaks.toml\n./.ide\n./.ide/sr_default_inspector.xml\n./.intelligence\n./.intelligence/.github\n./.intelligence/.gitignore\n./.intelligence/intelligence-engine.ps1\n./.intelligence/intelligence-install.ps1\n./.intelligence/intelligence-run.ps1\n./.intelligence/intelligence.json\n./.php-cs-fixer.dist.php\n./.php-cs-fixer.php\n./.release\n./.release/publish\n./.release/sign\n./.release/tag\n./.smoke\n./.smoke/compose\n./.smoke/k6\n./.smoke/probe\n./.yamllint.yml\n./README.md\n./RELEASE_NOTES.md\n./VENDORING_PROTOCOL_ANALYSIS.md\n./bin\n./bin/console\n./bin/generate-openapi.php\n./bin/generate-phpdocumentor-site.php\n./bin/generate-rc-evidence.php\n./bin/generate-release-manifest.php\n./compose.yaml\n./composer.json\n./composer.lock\n./config\n./config/bundles.php\n./config/packages\n./config/packages_runtime.php\n./config/reference.php\n./config/routes\n./config/routes_runtime.php\n./config/services_runtime.php\n./config/vendor_routes.yaml\n./config/vendor_services.yaml\n./config/vendor_services_transactions.yaml\n./delivery\n./delivery/01-change-manifest.json\n./delivery/01-touched-paths.txt\n./delivery/02-change-manifest.json\n./delivery/02-removed-paths.txt\n./delivery/02-touched-paths.txt\n./delivery/03-change-manifest.json\n./delivery/03-removed-paths.txt\n./delivery/03-touched-paths.txt\n./delivery/04-change-manifest.json\n./delivery/04-removed-paths.txt\n./delivery/04-touched-paths.txt\n./delivery/05-change-manifest.json\n./delivery/05-removed-paths.txt\n./delivery/05-touched-paths.txt\n./delivery/06-change-manifest.json\n./delivery/06-removed-paths.txt\n./delivery/06-touched-paths.txt\n./delivery/07-change-manifest.json\n./delivery/07-removed-paths.txt\n./delivery/07-touched-paths.txt\n./delivery/08-change-manifest.json\n./delivery/08-removed-paths.txt\n./delivery/08-touched-paths.txt\n./delivery/09-change-manifest.json\n./delivery/09-removed-paths.txt"
+  },
+  "php_version": {
+    "exit_code": 0,
+    "output": "PHP 8.3.6 (cli) (built: Mar 20 2026 02:32:55) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n    with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans"
+  },
+  "python_version": {
+    "exit_code": 0,
+    "output": "Python 3.12.13"
+  },
+  "repo_file_count": {
+    "exit_code": 0,
+    "output": "1161"
+  },
+  "report_excerpt": "= Vendoring Report :description: Current owner-oriented maturity report for the Vendoring component. :page-slug: vendoring-report This page is the current owner-oriented maturity report for *Vendoring*. It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward. == Component Portrait Vendoring is not shaped as a simple supplier directory or a lightweight vendor CRUD layer. It reads as a Symfony-oriented vendor operations component: a system intended to manage vendor transaction runtime slices, statements, payouts, persistence contracts, and vendor-facing operational flows with release-candidate quality discipline. The component already shows signs of being treated as a governed subsystem rather than as a convenience feature. Its current shape suggests an internal vendor operations and transaction-governance platform layer designed for durability, structured evolution, and integration into a wider ecosystem. == Ecosystem Role Within the broader Smartresponsor direction, Vendoring appears to occupy the role of a vendor operations and supplier-runtime component. Its ecosystem role can be understood across several functions: * as a vendor transaction surface, * as a statement and payout operations layer, * as a persistence and runtime-governance surface, * as a release-candidate evidence and quality discipline surface, * and as a reusable vendor-facing capability for broader transactional systems. This makes Vendoring strategically more important than a typical supplier registry. It points toward a reusable internal vendor capability that other components can depend on. == Current Maturity Vendoring already presents several strong signals of maturity: * a clear vendor-operations product identity, * explicit Symfony 8 and PHP 8.4 targeting, * unusually deep release-candidate quality and canon scripting, * multiple test bands, * vendor transaction, statement, and payout surfaces, * and a headless/backend-first posture with release-facing evidence artifacts. In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity. == RC Scorecard [cols=\"2,1,4\",options=\"header\"] |=== | Layer | Score to RC | Reading | Product identity | 8.5 / 10 | The component is already clearly framed around vendor-facing operational flows rather than a generic supplier data helper. | Architecture and domain shape | 8.6 / 10 | Vendor transactions, statements, payouts, persistence contracts, and backend runtime posture already form a coherent operating surface. | Runtime and application surface | 8.4 / 10 | Symfony runtime, forms, routing, mailer, CSRF, OpenAPI, and operator-facing minimal surfaces already establish a real vendor application layer. | QA maturity | 9.2 / 10 | The quality contour is exceptionally strong, including release-candidate lanes, contract tests, smoke surfaces, persistence tests, docs evidence, and canon reports. | Governance and operational readiness | 9.1 / 10 | Canon checks, config drift reports, mirror enforcement, RC evidence generation, and runtime smoke surfaces form one of the strongest governance postures among the components. | Vendor transaction and payout posture | 8.5 / 10 | Vendor transaction runtime slices, statement flows, payout surfaces, and transaction persistence signals are already concrete and substantial. | Market-facing alignment | 8.2 / 10 | The component already aligns well with enterprise vendor-management and supplier-operations classes, though it still reads more as a governed platform layer than a finished public procurement shell. | Overall readiness to RC | 8.8 / 10 | Vendoring is already a very strong pre-RC component with unusually mature internal quality and operational signals. |=== == Leader Line Vendoring should not be measured against basic supplier lists or simple payment helper modules. Its natural comparison line is closer to the enterprise-class supplier management, vendor operations, and supplier-runtime category, including the kind of capability bands represented by: * supplier information and vendor operations management, * statement and payout workflows, * transaction discipline and persistence integrity, * supplier runtime oversight and quality governance, * and governed operational handling of vendor-facing processes. This means the component is better understood as targeting the same strategic class of problem addressed by stronger supplier-management and vendor-operations leaders, while expressing that class through a Symfony-native internal component. In that sense, the leader line is not another supplier directory. It is closer to: * enterprise vendor operations class, * enterprise supplier-management class, * enterprise transaction-and-payout governance class, * reinterpreted as an internal ecosystem …",
+  "report_excerpt_source": ".antora-src/modules/ROOT/pages/component/vendoring/report/index.adoc",
+  "key_file_excerpts": {
+    "composer.json": "{\n    \"name\": \"vendoring/vendor\",\n    \"description\": \"Vendoring component\",\n    \"type\": \"project\",\n    \"license\": \"proprietary\",\n    \"require\": {\n        \"php\": \"^8.4\",\n        \"ext-json\": \"*\",\n        \"doctrine/dbal\": \"^4.2\",\n        \"doctrine/doctrine-bundle\": \"^3.2\",\n        \"doctrine/orm\": \"^3.3\",\n        \"doctrine/persistence\": \"^4.0\",\n        \"symfony/console\": \"^8.0\",\n        \"symfony/event-dispatcher-contracts\": \"^3.6\",\n        \"symfony/framework-bundle\": \"^8.0\",\n        \"symfony/http-foundation\": \"^8.0\",\n        \"symfony/mailer\": \"^8.0\",\n        \"symfony/mime\": \"^8.0\",\n        \"symfony/routing\": \"^8.0\",\n        \"symfony/uid\": \"^8.0\",\n        \"symfony/var-exporter\": \"^8.0\",\n        \"twig/twig\": \"^3.15\",\n        \"symfony/twig-bundle\": \"^8.0\",\n        \"symfony/form\": \"^8.0\",\n        \"symfony/validator\": \"^8.0\",\n        \"symfony/security-csrf\": \"^8.0\",\n        \"nelmio/api-doc-bundle\": \"^5.3\",\n        \"ext-pdo\": \"*\"\n    },\n    \"require-dev\": {\n        \"doctrine/doctrine-fixtures-bundle\": \"^4.2\",\n        \"fakerphp/faker\": \"^1.24\",\n        \"friendsofphp/php-cs-fixer\": \"^3.66\",\n        \"phpstan/phpstan\": \"^1.12\",\n        \"phpunit/phpunit\": \"^11.5\",\n        \"symfony/panther\": \"^2.2\"\n    },\n    \"autoload\": {\n        \"psr-4\": {\n            \"App\\\\\": \"src/\"\n        }\n    },\n    \"autoload-dev\": {\n        \"psr-4\": {\n            \"App\\\\Tests\\\\\": \"tests/\",\n            \"Doctrine\\\\Bundle\\\\FixturesBundle\\\\\": \"stubs/Doctrine/Bundle/FixturesBundle/\",\n            \"Faker\\\\\": \"stubs/Faker/\",\n            \"Symfony\\\\Component\\\\Panther\\\\\": \"stubs/Symfony/Component/Panther/\"\n        }\n    },\n    \"config\": {\n        \"sort-packages\": true,\n        \"allow-plugins\": {\n            \"php-http/discovery\": true\n        }\n    },\n    \"scripts\": {\n        \"cs:check\": \"@php tools/php/php84.php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --dry-run --diff\",\n        \"cs:check-quiet\": \"@php tools/php/php84.php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --dry-run\",\n        \"cs:fix\": \"@php tools/php/php84.php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php\",\n        \"docs:rc-evidence\": \"@php bin/generate-rc-evidence.php\",\n        \"lint\": \"@php tools/php/php84.php tools/qa/VendoringPhpLint.php\",\n        \"lint:php\": \"@php tools/php/php84.php tools/qa/VendoringPhpLint.php\",\n        \"md\": \"@php tools/php/php84.php vendor/bin/phpmd src text phpmd.xml.dist\",\n        \"md:tests\": \"@php tools/php/php84.php vendor/bin/phpmd tests text phpmd.xml.dist\",\n        \"phpstan\": \"@php tools/php/php84.php vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=1G\",\n        \"pipeline:local\": \"powershell -ExecutionPolicy Bypass -File tools/ci/run-vendor-local-pipeline.ps1\",\n        \"pipeline:local:full\": \"powershell -ExecutionPolicy Bypass -File tools/ci/run-vendor-local-pipeline.ps1 -IncludeSmokes -IncludeReports\",\n        \"pipeline:local:strict\": \"powershell -ExecutionPolicy Bypass -File tools/ci/run-vendor-local-pipeline.ps1 -FailOnErrors\",\n        \"qa:canon\": [\n            \"@report:canonical-structure\",\n            \"@report:mirror-enforcer\",\n            \"@report:config-guard\",\n            \"@report:config-drift\",\n            \"@report:php-surface\"\n        ],\n        \"qa:full\": [\n            \"@qa:style\",\n            \"@qa:static\",\n            \"@qa:smell\",\n            \"@qa:test\",\n            \"@qa:canon\"\n        ],\n        \"qa:smell\": [\n            \"@md\",\n            \"@md:tests\"\n        ],\n        \"qa:static\": [\n            \"@stan\"\n        ],\n        \"qa:style\": [\n            \"@lint\",\n            \"@cs:check\"\n        ],\n        \"qa:test\": [\n            \"@test\"\n        ],\n        \"quality\": [\n            \"@test:symfony-stack\",\n            \"@test:di\",\n            \"@test:entrypoint\",\n            \"@lint:php\",\n            \"@test:compat\",\n            \"@test:smoke\",\n            \"@phpstan\",\n            \"@test:mail\",\n            \"@test:statement-command\",\n            \"@test:statement\",\n            \"@test:payout\",\n            \"@test:repository\",\n            \"@test:fixtu",
+    "package.json": "{\n    \"name\": \"vendoring-local-qa\",\n    \"private\": true,\n    \"scripts\": {\n        \"test:e2e\": \"playwright test\"\n    },\n    \"devDependencies\": {\n        \"@playwright/test\": \"^1.58.2\"\n    }\n}\n"
+  }
+}
+
+Response contract description:
+{
+  "version": "1.4",
+  "description": "Strict response contract for AI-backed Quality Atlas assessment runs in Responses API structured-output mode.",
+  "mode": "responses_json_schema",
+  "base_metrics": [
+    "product",
+    "architecture",
+    "runtime",
+    "qa",
+    "ops",
+    "market",
+    "overall"
+  ],
+  "response": {
+    "component": {
+      "type": "string",
+      "required": true
+    },
+    "summary": {
+      "type": "string",
+      "required": true
+    },
+    "strengths": {
+      "type": "string_array",
+      "required": true
+    },
+    "risks": {
+      "type": "string_array",
+      "required": true
+    },
+    "next_actions": {
+      "type": "string_array",
+      "required": true
+    },
+    "notes": {
+      "type": "string_array",
+      "required": true
+    },
+    "confidence": {
+      "type": "enum",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "required": true
+    },
+    "evidence_paths": {
+      "type": "string_array",
+      "required": true
+    },
+    "suggested_score_overrides": {
+      "type": "object",
+      "key_space": "fixed_base_metrics",
+      "allowed_keys": [
+        "product",
+        "architecture",
+        "runtime",
+        "qa",
+        "ops",
+        "market",
+        "overall"
+      ],
+      "required": true,
+      "required_keys": [
+        "product",
+        "architecture",
+        "runtime",
+        "qa",
+        "ops",
+        "market",
+        "overall"
+      ],
+      "values": "float_0_to_10_or_null"
+    },
+    "metric_updates": {
+      "type": "object",
+      "allowed_keys": [
+        "product",
+        "architecture",
+        "runtime",
+        "qa",
+        "ops",
+        "market",
+        "overall"
+      ],
+      "required": true,
+      "required_keys": [
+        "product",
+        "architecture",
+        "runtime",
+        "qa",
+        "ops",
+        "market",
+        "overall"
+      ],
+      "value_shape": {
+        "summary": {
+          "type": "string",
+          "required": true
+        },
+        "risks": {
+          "type": "string_array",
+          "required": true
+        },
+        "improvements": {
+          "type": "string_array",
+          "required": true
+        },
+        "evidence": {
+          "type": "string_array",
+          "required": true
+        }
+      }
+    }
+  }
+}
+
+Return strict JSON following this shape:
+{
+  "component": "vendoring",
+  "summary": "Short owner-facing summary.",
+  "strengths": [
+    "list of strengths"
+  ],
+  "risks": [
+    "list of risks"
+  ],
+  "next_actions": [
+    "list of concrete next actions"
+  ],
+  "notes": [
+    "optional notes"
+  ],
+  "confidence": "medium",
+  "evidence_paths": [
+    "repo-relative/path.ext"
+  ],
+  "suggested_score_overrides": {
+    "product": 8.4,
+    "overall": 8.2
+  },
+  "metric_updates": {
+    "product": {
+      "summary": "Updated one-sentence assessment for product.",
+      "risks": [
+        "product specific risk"
+      ],
+      "improvements": [
+        "product specific improvement"
+      ],
+      "evidence": [
+        "repo-relative/path.ext"
+      ]
+    },
+    "architecture": {
+      "summary": "Updated one-sentence assessment for architecture.",
+      "risks": [
+        "architecture specific risk"
+      ],
+      "improvements": [
+        "architecture specific improvement"
+      ],
+      "evidence": [
+        "repo-relative/path.ext"
+      ]
+    },
+    "runtime": {
+      "summary": "Updated one-sentence assessment for runtime.",
+      "risks": [
+        "runtime specific risk"
+      ],
+      "improvements": [
+        "runtime specific improvement"
+      ],
+      "evidence": [
+        "repo-relative/path.ext"
+      ]
+    },
+    "qa": {
+      "summary": "Updated one-sentence assessment for qa.",
+      "risks": [
+        "qa specific risk"
+      ],
+      "improvements": [
+        "qa specific improvement"
+      ],
+      "evidence": [
+        "repo-relative/path.ext"
+      ]
+    },
+    "ops": {
+      "summary": "Updated one-sentence assessment for ops.",
+      "risks": [
+        "ops specific risk"
+      ],
+      "improvements": [
+        "ops specific improvement"
+      ],
+      "evidence": [
+        "repo-relative/path.ext"
+      ]
+    },
+    "market": {
+      "summary": "Updated one-sentence assessment for market.",
+      "risks": [
+        "market specific risk"
+      ],
+      "improvements": [
+        "market specific improvement"
+      ],
+      "evidence": [
+        "repo-relative/path.ext"
+      ]
+    },
+    "overall": {
+      "summary": "Updated one-sentence assessment for overall.",
+      "risks": [
+        "overall specific risk"
+      ],
+      "improvements": [
+        "overall specific improvement"
+      ],
+      "evidence": [
+        "repo-relative/path.ext"
+      ]
+    }
+  }
+}
+Rules: risks/next_actions/strengths must be concise arrays of strings. metric_updates keys must be exactly product, architecture, runtime, qa, ops, market, overall. suggested_score_overrides may only include those keys. Every metric update must stay grounded in provided facts or current snapshot. Do not return markdown.

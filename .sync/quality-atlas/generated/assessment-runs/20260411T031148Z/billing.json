@@ -1,0 +1,261 @@
+{
+  "status": "ok",
+  "registry_entry": {
+    "component_id": "billing",
+    "component_title": "Billing",
+    "github_repository": "smartresponsor/billing",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/billing/report/index.adoc",
+    "notes": "Set enabled=true and github_repository once this component is connected to the scheduled assessment runner."
+  },
+  "facts": {
+    "repo_root": "/tmp/quality-atlas-billing-assessment-2026-04-11-k30ec_rd/billing",
+    "timestamp_utc": "2026-04-11T03:11:48.508286+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "e84a33b0fc1495e23c81c2d7489eb7e81bc7d5ac"
+    },
+    "git_exact_tag": {
+      "exit_code": 128,
+      "output": "fatal: No names found, cannot describe anything."
+    },
+    "has_composer_json": false,
+    "has_package_json": false,
+    "has_phpstan_neon": false,
+    "has_phpstan_neon_dist": false,
+    "has_phpunit_xml": false,
+    "has_phpunit_xml_dist": false,
+    "has__github_workflows": false,
+    "has__antora-src_modules_ROOT_nav_adoc": false,
+    "has__antora-src_modules_ROOT_pages_index_adoc": false,
+    "git_status": {
+      "exit_code": 0,
+      "output": ""
+    },
+    "git_recent_commits": {
+      "exit_code": 0,
+      "output": "e84a33b Normalize billing formatting"
+    },
+    "top_level_tree": {
+      "exit_code": 0,
+      "output": "./.git\n./.git/HEAD\n./.git/config\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/packed-refs\n./.git/refs\n./.git/shallow\n./.gitignore\n./config\n./config/services.yaml\n./deptrac.yaml\n./docs\n./docs/architecture\n./docs/billing-boundary.md\n./docs/documentation-guidelines.md\n./docs/testing-strategy.md\n./migrations\n./migrations/001_create_invoices.sql\n./migrations/002_create_ledger.sql\n./migrations/003_create_billing_idempotency.sql\n./phpdoc.xml.dist\n./src\n./src/Http\n./src/Infrastructure\n./src/Service\n./src/ServiceInterface\n./tests\n./tests/e2e\n./tests/playwright\n./tests/unit"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.3.6 (cli) (built: Mar 20 2026 02:32:55) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n    with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.12.13"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "70"
+    },
+    "report_excerpt": "= Billing Report :description: Current owner-oriented maturity report for the Billing component. :page-slug: billing-report This page is the current owner-oriented maturity report for *Billing*. It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward. == Component Portrait Billing is not shaped as a simple invoice helper or a narrow payment callback adapter. It reads as a Symfony-oriented billing operations and revenue-runtime component: a system intended to manage charge and refund flows, recurring-billing posture, verification-heavy runtime behavior, doctrine-backed persistence, and secure operational billing discipline. The component already shows signs of being treated as a governed subsystem rather than as a convenience utility. Its current shape suggests an internal billing and monetization platform layer designed for durability, structured evolution, and integration into a wider ecosystem. == Ecosystem Role Within the broader Smartresponsor direction, Billing appears to occupy the role of a billing operations, invoicing, and recurring-revenue component. Its ecosystem role can be understood across several functions: * as a charge and refund execution surface, * as a recurring-billing and invoice-runtime layer, * as a monetization correctness and fixtures-validation surface, * as a QA, security, and inspection-heavy operational component, * and as a reusable internal billing capability for broader applications. This makes Billing strategically more important than a typical invoice generator. It points toward a reusable internal billing capability that other components can depend on. == Current Maturity Billing already presents several strong signals of maturity: * a clear billing-and-revenue product identity, * explicit Symfony 8 and PHP 8.2+ targeting, * doctrine-backed application posture, * charge-refund scenario orientation in the repository’s current phase marker, * unit, Panther, and Playwright e2e lanes, * fixtures dry-run validation, * deep QA tooling with phpstan, rector, deptrac, and cs checks, * and a strong security and inspection shell. In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity. == RC Scorecard [cols=\"2,1,4\",options=\"header\"] |=== | Layer | Score to RC | Reading | Product identity | 8.8 / 10 | The component is already clearly framed around billing operations, charge-refund behavior, and recurring monetization rather than a generic helper surface. | Architecture and domain shape | 8.6 / 10 | Controller, Http, Service, Repository, Entity, and Infrastructure layering under deptrac already forms a governed billing-runtime architecture. | Runtime and application surface | 8.5 / 10 | Symfony runtime, docker-compose flows, fixtures dry-run, and explicit server scripts establish a real application surface for billing behavior. | QA maturity | 9.0 / 10 | PHPUnit, Panther, Playwright, phpstan, rector, deptrac, cs checks, and local full pipeline make this one of the strongest verification contours among the components. | Governance and operational readiness | 9.1 / 10 | Inspection shell, baseline/compare flows, and operational scripting form an unusually strong owner-governance and operational-readiness signal. | Security posture | 9.0 / 10 | Composer audit, importmap audit, gitleaks, semgrep, and Symfony security tests show a serious security contour, not an afterthought. | Billing and revenue posture | 8.7 / 10 | The explicit charge-refund scenario marker, fixtures discipline, and recurring-runtime orientation put Billing firmly in a serious monetization class. | Market-facing alignment | 8.7 / 10 | The component already aligns well with recurring billing, subscription lifecycle, and quote-to-cash adjacent classes, though it still reads more as a governed platform layer than a finished public billing suite. | Overall readiness to RC | 8.8 / 10 | Billing is already a very strong pre-RC component with clear enterprise-class internal billing and revenue-runtime signals. |=== == Leader Line Billing should not be measured against simple invoice templates or lightweight payment-form helpers. Its natural comparison line is closer to the enterprise-class recurring billing, usage-based billing, invoicing, and subscription-lifecycle category, including the kind of capability bands represented by: * recurring billing, * usage-based and hybrid billing, * charge and refund lifecycle handling, * invoice automation and billing logic, * and governed operational handling of revenue-facing workflows. This means the component is better understood as targeting the same strategic class of problem addressed by stronger billing and monetization leaders, while expressing that class through a Symfony-native internal component. In that …",
+    "report_excerpt_source": ".antora-src/modules/ROOT/pages/component/billing/report/index.adoc"
+  },
+  "verdict": {
+    "component": "billing",
+    "summary": "Billing shows a clearly bounded billing domain with layered PHP code and domain migrations, but packaging, CI, and runner configs are missing, keeping it pre-RC despite strong internal docs and structure.",
+    "strengths": [
+      "Clear billing boundary and domain artifacts (invoices, ledger, idempotency)",
+      "Layered PHP structure (Http, Service, Infrastructure, ServiceInterface)",
+      "Architectural governance signal via deptrac.yaml",
+      "Documentation present for boundary and testing strategy",
+      "Presence of unit/e2e/Playwright test directories indicating verification intent"
+    ],
+    "risks": [
+      "No composer.json found (packaging/autoload unknown)",
+      "No GitHub Actions workflows present",
+      "phpunit.xml and phpstan config not found",
+      "No release tags in git metadata",
+      "Playwright tests present without package.json"
+    ],
+    "next_actions": [
+      "Add composer.json with PSR-4 autoload and dependencies",
+      "Introduce GitHub Actions to run unit/e2e/static checks on PRs",
+      "Add phpunit.xml and phpstan.neon; wire them in CI",
+      "Add package.json and Playwright config; document e2e run steps",
+      "Provide Dockerfile/docker-compose or runtime bootstrap instructions",
+      "Start semantic versioning and tag an initial release"
+    ],
+    "notes": [
+      "All observations are grounded in the provided repository facts as of 2026-04-11 UTC.",
+      "Report excerpt mentions tooling that is not present in this repo; treat as aspirational until committed.",
+      "Symfony-style structure is inferred from config/services.yaml and Http directory; version is not asserted."
+    ],
+    "suggested_score_overrides": {
+      "product": 8.5,
+      "architecture": 8.4,
+      "runtime": 7.0,
+      "qa": 7.1,
+      "ops": 6.8,
+      "market": 8.3,
+      "overall": 7.7
+    },
+    "metric_updates": {
+      "product": {
+        "summary": "Product identity is clearly expressed via boundary documentation and domain-specific migrations, but lack of packaging and releases keeps it internal-facing.",
+        "risks": [
+          "No release tags reduce external consumption confidence",
+          "Absence of composer.json obscures packaging and dependency model"
+        ],
+        "improvements": [
+          "Add composer.json and a concise README product overview",
+          "Begin semantic versioning and publish tagged releases"
+        ],
+        "evidence": [
+          "docs/billing-boundary.md",
+          "migrations/001_create_invoices.sql",
+          "migrations/002_create_ledger.sql"
+        ]
+      },
+      "architecture": {
+        "summary": "A governed architecture is evident through layered src (Http/Service/Infrastructure/ServiceInterface) and deptrac.yaml, though static-analysis enforcement is not yet wired.",
+        "risks": [
+          "No phpstan config to enforce architectural and type discipline",
+          "Missing composer autoload mapping for namespaces",
+          "No CI to run deptrac and prevent drift"
+        ],
+        "improvements": [
+          "Add PSR-4 autoload in composer.json and align namespaces",
+          "Introduce phpstan.neon and enforce in CI",
+          "Run deptrac in CI and document layer rules in docs/architecture"
+        ],
+        "evidence": [
+          "deptrac.yaml",
+          "src/Http",
+          "src/Service",
+          "src/Infrastructure",
+          "src/ServiceInterface"
+        ]
+      },
+      "runtime": {
+        "summary": "Runtime surface is implied by Symfony-style service configuration and HTTP layer plus SQL migrations, but no containerization, bootstrap scripts, or packaging are present.",
+        "risks": [
+          "No Docker/Kubernetes or run scripts in-repo",
+          "No composer.json to install dependencies and bootstrap the app",
+          "No CI workflow to exercise migrations/runtime paths"
+        ],
+        "improvements": [
+          "Add composer.json and documented bootstrap instructions",
+          "Provide Dockerfile/docker-compose for local/dev runs",
+          "Create CI job that installs deps and validates migrations"
+        ],
+        "evidence": [
+          "config/services.yaml",
+          "migrations/003_create_billing_idempotency.sql",
+          "src/Http"
+        ]
+      },
+      "qa": {
+        "summary": "Testing intent is documented and test directories exist (unit/e2e/Playwright), but runner and static-analysis configs are missing.",
+        "risks": [
+          "phpunit.xml not found to configure unit test runs",
+          "package.json missing for Playwright-based e2e",
+          "phpstan configuration absent and no CI workflows"
+        ],
+        "improvements": [
+          "Add phpunit.xml (and coverage/baseline if needed) and run in CI",
+          "Add package.json and Playwright config with documented scripts",
+          "Introduce phpstan.neon and integrate into CI"
+        ],
+        "evidence": [
+          "docs/testing-strategy.md",
+          "tests/unit",
+          "tests/e2e",
+          "tests/playwright"
+        ]
+      },
+      "ops": {
+        "summary": "Operational and governance automation is thin in-repo; documentation exists but CI/CD, releases, and observability hooks are not committed.",
+        "risks": [
+          ".github/workflows is missing (no automated build/test pipeline)",
+          "No git release tags found",
+          "No observability/monitoring/tracing configuration in repo"
+        ],
+        "improvements": [
+          "Create GitHub Actions workflows for build/test/lint/security scans",
+          "Adopt release tagging and changelog discipline",
+          "Document and add basic operational runbooks and probes where applicable"
+        ],
+        "evidence": [
+          "docs/documentation-guidelines.md",
+          "deptrac.yaml"
+        ]
+      },
+      "market": {
+        "summary": "Artifacts like invoices, ledger, and idempotency tables plus boundary docs align the component with billing/monetization scenarios, though public packaging is not yet available.",
+        "risks": [
+          "Lack of packaged releases limits adoption in the wider ecosystem",
+          "Public-facing docs remain internal markdown without a high-level brief"
+        ],
+        "improvements": [
+          "Publish a concise capability overview and usage guide in README/docs",
+          "Add versioned migration notes aligned with releases"
+        ],
+        "evidence": [
+          "docs/billing-boundary.md",
+          "migrations/001_create_invoices.sql",
+          "migrations/002_create_ledger.sql",
+          "migrations/003_create_billing_idempotency.sql"
+        ]
+      },
+      "overall": {
+        "summary": "Strong domain and architectural signals are present, but missing packaging, CI, and release discipline keep Billing solidly pre-RC.",
+        "risks": [
+          "No composer.json or CI workflows committed",
+          "No release tags or standardized test/static configs"
+        ],
+        "improvements": [
+          "Add packaging (composer.json), CI pipelines, and release tagging",
+          "Wire unit/e2e/static analysis and document run/deploy paths"
+        ],
+        "evidence": [
+          "deptrac.yaml",
+          "docs/testing-strategy.md",
+          "config/services.yaml",
+          "migrations/001_create_invoices.sql"
+        ]
+      }
+    },
+    "confidence": "medium",
+    "evidence_paths": [
+      "config/services.yaml",
+      "deptrac.yaml",
+      "docs/billing-boundary.md",
+      "docs/testing-strategy.md",
+      "docs/documentation-guidelines.md",
+      "migrations/001_create_invoices.sql",
+      "migrations/002_create_ledger.sql",
+      "migrations/003_create_billing_idempotency.sql",
+      "phpdoc.xml.dist",
+      "src/Http",
+      "src/Infrastructure",
+      "src/Service",
+      "src/ServiceInterface",
+      "tests/unit",
+      "tests/e2e",
+      "tests/playwright"
+    ]
+  },
+  "snapshot_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/billing/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/billing/history/2026-04-11-assessment-2026-04-11.yaml"
+  },
+  "probe_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/billing/probes/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/billing/probes/history/2026-04-11-assessment-2026-04-11.yaml"
+  },
+  "ai_io": {
+    "request_file": "billing.request.json",
+    "response_file": "billing.response.json"
+  }
+}

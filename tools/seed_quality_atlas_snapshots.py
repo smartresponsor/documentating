@@ -53,6 +53,8 @@ def maturity_for(score: float) -> str:
 
 
 def load_dataset() -> list[dict[str, object]]:
+    if not DATASET_FILE.exists():
+        return []
     return json.loads(DATASET_FILE.read_text(encoding='utf-8'))
 
 

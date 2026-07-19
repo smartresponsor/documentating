@@ -1,0 +1,166 @@
+= Evidence Map and Research Questions
+:doctype: article
+:lang: en
+:page-slug: evidence-map
+:page-published: 2026-06-26
+:page-author: Oleksandr Tishchenko
+:page-tags: draft, research, evidence map, credit score, crowdfunding, UBI, AI, governance
+:description: Draft research map for the contribution ledger and new paradigm documentation track.
+
+== Draft status
+
+This is an unpublished research source draft.
+
+It is stored to preserve the research structure behind the public article cycle and future white paper. It is not yet part of the public Antora navigation.
+
+This document is a research map, not a final literature review.
+
+== Purpose
+
+The Evidence Map collects the major research and source categories needed to support the contribution-oriented economic narrative.
+
+The goal is to prevent the project from becoming only a philosophical statement. The public narrative should be supported by history, regulation, behavioral science, technical architecture, and governance constraints.
+
+== Research areas
+
+The current evidence map is organized into these areas:
+
+* human perception and action;
+* reward systems and motivation;
+* threat mode and uncertainty;
+* belonging and social cognition;
+* post-factum explanation and decision trace;
+* credit bureaus and credit scoring history;
+* crowdfunding and reward obligations;
+* basic income and community dividend models;
+* AI decision support and explainability;
+* ledger integrity and auditability;
+* governance, privacy, and fairness;
+* anti-social-credit boundaries.
+
+== Historical analogy: credit bureaus
+
+Research questions:
+
+* How did credit reporting agencies become trusted decision infrastructure?
+* What was the original small responsibility they solved?
+* How did local reporting become standardized national infrastructure?
+* Which parts of this history are useful as analogy?
+* Which parts must not be copied because they created exclusion, opacity, or harm?
+
+Working conclusion:
+
+Credit bureaus show how a decision market can form around standardized trust signals. But contribution-oriented reputation must not become a second credit score.
+
+== Crowdfunding
+
+Research questions:
+
+* What trust problems appear in reward-based crowdfunding?
+* What happens when rewards are delayed, changed, or never fulfilled?
+* What evidence do supporters need before and after contributing?
+* What do creators need to demonstrate good faith and fulfillment?
+* How can disputes and repairs be recorded without creating permanent punishment?
+
+Working conclusion:
+
+Crowdfunding is a strong first wedge because it begins with trust before completion and naturally creates promises, rewards, receipts, fulfillment, disputes, and impact records.
+
+== Reward-commerce
+
+Research questions:
+
+* When is a reward just a product?
+* When does a reward become a participation receipt?
+* How can a physical or digital souvenir preserve a record of contribution?
+* How can reward-commerce avoid becoming merely another store?
+
+Working conclusion:
+
+Reward-commerce can connect emotional participation, economic transaction, and contribution memory.
+
+== Basic income and community dividend
+
+Research questions:
+
+* What is the difference between universal basic income, community dividend, and platform-based redistribution?
+* What models have been proposed or tested?
+* Which claims are too risky for early publication?
+* How can a community dividend be discussed without promising income, yield, or entitlement?
+
+Working conclusion:
+
+Community dividend should remain a long-horizon research concept until there is a clear legal, economic, and governance structure.
+
+== AI and explanation
+
+Research questions:
+
+* How can AI help structure facts, risks, options, and actions?
+* How can AI preserve decision trace instead of producing fluent justification?
+* How can AI explanations avoid becoming external inner narrators for institutions?
+* What human review boundaries are necessary?
+
+Working conclusion:
+
+AI should belong to the architecture of trace, not only the architecture of answer.
+
+== Ledger and auditability
+
+Research questions:
+
+* What records require append-only audit trail?
+* Which records can remain private, contextual, or temporary?
+* When is conventional audit logging enough?
+* When might cryptographic receipts or blockchain become useful?
+* How can corrections and disputes be preserved without erasing history or creating permanent stigma?
+
+Working conclusion:
+
+The first version should not depend on blockchain. It should begin with a pragmatic, inspectable audit trail.
+
+== Governance and safety
+
+Research questions:
+
+* How can the system avoid becoming social credit?
+* What high-impact decisions must be excluded?
+* What rights to explanation, dispute, and correction are required?
+* How can negative records be bounded and proportional?
+* How can privacy be protected while preserving verification?
+
+Working conclusion:
+
+Governance is not an appendix. It is part of the core architecture.
+
+== Evidence needed before public white paper maturity
+
+Before the full white paper becomes public-facing, the project should collect stronger sources for:
+
+* history of credit reporting;
+* credit score regulation and consumer reporting boundaries;
+* crowdfunding risk and reward fulfillment;
+* behavioral science of threat, belonging, and post-factum explanation;
+* AI explainability and decision support;
+* privacy and data minimization;
+* fairness and high-impact automated decision risks;
+* UBI and community dividend experiments;
+* ledger/audit trail patterns.
+
+== Open questions
+
+Open questions include:
+
+* Should the first public product object be called Trust Passport, Contribution Passport, or Campaign Trust Record?
+* Should Contribution Score be avoided as a public term until governance is mature?
+* How much of the system should be visible to users versus auditors?
+* What correction and dispute process is proportionate for early pilots?
+* What event types are safe to record?
+* Which event types should never be part of a score?
+* What is the smallest pilot that tests trust without creating regulated risk?
+
+== Current conclusion
+
+The Evidence Map is the parking place for research discipline.
+
+It should grow behind the article cycle and support later publication of the white paper, governance charter, and product wedge.

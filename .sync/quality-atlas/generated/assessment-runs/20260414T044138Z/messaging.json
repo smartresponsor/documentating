@@ -1,0 +1,258 @@
+{
+  "status": "ok",
+  "registry_entry": {
+    "component_id": "messaging",
+    "component_title": "Messaging",
+    "github_repository": "smartresponsor/messaging",
+    "default_branch": "master",
+    "enabled": true,
+    "report_path": ".antora-src/modules/ROOT/pages/component/messaging/report/index.adoc",
+    "notes": "Connected to the scheduled assessment runner."
+  },
+  "facts": {
+    "repo_root": "/tmp/quality-atlas-messaging-assessment-2026-04-14-9rh3uilh/messaging",
+    "timestamp_utc": "2026-04-14T04:41:39.024737+00:00",
+    "exists": true,
+    "git_branch": {
+      "exit_code": 0,
+      "output": "master"
+    },
+    "git_commit": {
+      "exit_code": 0,
+      "output": "12a67d6a40e39b3f526c33c048e19402e4bbbd78"
+    },
+    "git_exact_tag": {
+      "exit_code": 128,
+      "output": "fatal: No names found, cannot describe anything."
+    },
+    "has_composer_json": true,
+    "has_package_json": true,
+    "has_phpstan_neon": true,
+    "has_phpstan_neon_dist": false,
+    "has_phpunit_xml": true,
+    "has_phpunit_xml_dist": true,
+    "has__github_workflows": true,
+    "has__antora-src_modules_ROOT_nav_adoc": false,
+    "has__antora-src_modules_ROOT_pages_index_adoc": false,
+    "git_status": {
+      "exit_code": 0,
+      "output": ""
+    },
+    "git_recent_commits": {
+      "exit_code": 0,
+      "output": "12a67d6 ets"
+    },
+    "top_level_tree": {
+      "exit_code": 0,
+      "output": "./.dockerignore\n./.editorconfig\n./.env\n./.env.example\n./.env.example.append\n./.git\n./.git/HEAD\n./.git/config\n./.git/description\n./.git/hooks\n./.git/index\n./.git/info\n./.git/logs\n./.git/objects\n./.git/packed-refs\n./.git/refs\n./.git/shallow\n./.gitattributes\n./.github\n./.github/CODEOWNERS\n./.github/ISSUE_TEMPLATE\n./.github/PULL_REQUEST_TEMPLATE.md\n./.github/dependabot.yml\n./.github/release.yml\n./.github/workflows\n./.gitignore\n./.php-cs-fixer.php\n./.phpunit.result.cache\n./CHANGELOG.md\n./CODE_OF_CONDUCT.md\n./CONTRIBUTING.md\n./Makefile\n./README.md\n./ROADMAP.md\n./SECURITY.md\n./VERSION\n./alerts\n./alerts/prometheus_rules.yaml\n./api\n./api/openapi.yaml\n./apply_patch.py\n./bin\n./bin/about-runtime.sh\n./bin/boot-ledger-summary.sh\n./bin/boot-ledger.sh\n./bin/build-api-reference.sh\n./bin/console\n./bin/install-runtime.sh\n./bin/lint_archives.sh\n./bin/manifest_validate.php\n./bin/php-lint-all.php\n./bin/preflight.php\n./bin/report-config-interface-alias-lines.php\n./bin/report-controller-ownership-split.php\n./bin/report-empty-interface-shells.php\n./bin/report-identity-markers.php\n./bin/report-interface-dependency-usage.php\n./bin/report-legacy-api-inventory.php\n./bin/report-legacy-route-surface.php\n./bin/report-message-bridge-response-markers.php\n./bin/report-message-constructor-width.php\n./bin/report-message-controller-analyzer.php\n./bin/report-message-controller-dependencies.php\n./bin/report-message-controller-topology.php\n./bin/report-message-cutover-risk.php\n./bin/report-message-first-cut-set.php\n./bin/report-message-first-cut-touch-map.php\n./bin/report-message-migration-map.php\n./bin/report-message-rewrite-checklist.php\n./bin/report-message-rewrite-manifest.php\n./bin/report-message-rewrite-order.php\n./bin/report-message-route-method-matrix.php\n./bin/report-message-route-surface.php\n./bin/report-message-trait-usage.php\n./bin/report-service-alias-touch-map.php\n./bin/report-service-duplicate-families.php\n./bin/runtime-install.sh\n./bin/schema-export.sh\n./bin/schema-publish.sh\n./bin/schema-refresh.sh\n./bin/schema-release.sh\n./bin/schema-validate.sh\n./bin/test-runtime.sh\n./bin/ws-gateway.php\n./composer.json\n./composer.lock\n./config\n./config/bootstrap.php\n./config/bundles.php\n./config/packages\n./config/reference.php\n./config/routes\n./config/routes.yaml\n./config/services.php\n./config/services.yaml\n./config/services_acl.yaml\n./config/services_ai_enrichment_v1.yaml\n./config/services_ai_enrichment_v2.yaml\n./config/services_attachment_core.yaml\n./config/services_attachment_core_v2.yaml\n./config/services_attachments.yaml\n./config/services_attachments_v2.yaml\n./config/services_attachments_v21.yaml\n./config/services_audit_otel_v1.yaml\n./config/services_audit_tracing_v1.yaml\n./config/services_cache.yaml\n./config/services_delivery.yaml\n./config/services_delivery_qos.yaml\n./config/services_delivery_security.yaml\n./config/services_edit.yaml\n./config/services_eventbus.yaml\n./config/services_export.yaml\n./config/services_mercure.yaml\n./config/services_moderation_retention.yaml\n./config/services_moderation_v3.yaml\n./config/services_moderation_v31.yaml\n./config/services_observability.yaml\n./config/services_outbox.yaml\n./config/services_partitions.yaml\n./config/services_presence.yaml"
+    },
+    "php_version": {
+      "exit_code": 0,
+      "output": "PHP 8.3.6 (cli) (built: Mar 20 2026 02:32:55) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies\n    with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies\n    with Xdebug v3.2.0, Copyright (c) 2002-2022, by Derick Rethans"
+    },
+    "python_version": {
+      "exit_code": 0,
+      "output": "Python 3.12.13"
+    },
+    "repo_file_count": {
+      "exit_code": 0,
+      "output": "2122"
+    },
+    "report_excerpt": "= Messaging Report :description: Current owner-oriented maturity report for the Messaging component. :page-slug: messaging-report This page is the current owner-oriented maturity report for *Messaging*. It is written not as a defect log, but as a public-facing readiness portrait: what the component already demonstrates, what maturity band it currently occupies, and which leader-class direction it is converging toward. == Component Portrait Messaging is not shaped as a simple chat widget layer or a narrow transport helper. It reads as a Symfony-oriented message runtime and realtime messaging component: a system intended to manage message application runtime, API and GraphQL exposure, event publication, Redis-backed coordination, realtime delivery, and governed operational boot discipline. The component already shows signs of being treated as a governed subsystem rather than as a convenience feature. Its current shape suggests an internal conversation and realtime-delivery platform layer designed for durability, structured evolution, and integration into a wider ecosystem. == Ecosystem Role Within the broader Smartresponsor direction, Messaging appears to occupy the role of a conversation runtime and realtime message-delivery component. Its ecosystem role can be understood across several functions: * as a message and conversation surface, * as an API and GraphQL exposure layer, * as a realtime event-distribution surface, * as a Redis-backed coordination and rate-control layer, * and as a reusable messaging runtime capability for broader systems. This makes Messaging strategically more important than a typical chat feature. It points toward a reusable internal messaging capability that other components can depend on. == Current Maturity Messaging already presents several strong signals of maturity: * a clear message-centric product identity, * explicit PHP 8.4 targeting and Symfony 7.4/8.0 compatibility, * API Platform, GraphQL, Mercure, Messenger, Redis, and React Socket breadth, * multiple runtime bootstrap and diagnostic scripts, * a boot-ledger operating surface, * and a governed runtime around Docker, preflight, install, about, and test checks. In its current public reading, the component is no longer in a prototype-only band. It already behaves like a structured component moving toward release-candidate maturity. == RC Scorecard [cols=\"2,1,4\",options=\"header\"] |=== | Layer | Score to RC | Reading | Product identity | 8.6 / 10 | The component is already clearly framed around Message as a Symfony application rather than a generic communication helper. | Architecture and domain shape | 8.3 / 10 | The repository shape points toward a coherent conversation runtime and event-delivery surface, even where the visible domain sample is still runtime-heavy rather than entity-heavy. | Runtime and application surface | 8.9 / 10 | API Platform, GraphQL, Mercure, Redis, Messenger, React Socket, HTTP runtime, and Docker bootstrap posture already establish a serious messaging application layer. | QA maturity | 8.3 / 10 | The quality contour is solid across PHPUnit, Panther, linting, cs, phpstan, and runtime test helpers. | Governance and operational readiness | 9.0 / 10 | Preflight, install-runtime, about-runtime, test-runtime, and boot-ledger flows form one of the strongest runtime-governance surfaces among the components. | Realtime posture | 8.8 / 10 | Redis, Mercure, React Socket, GraphQL, and runtime orchestration signal a genuine realtime and event-oriented direction. | Market-facing alignment | 8.4 / 10 | The component already aligns well with enterprise conversation platform and realtime messaging infrastructure classes, though it still reads more as a governed platform core than a finished public messaging product shell. | Overall readiness to RC | 8.6 / 10 | Messaging is already a strong pre-RC component with clear enterprise-class internal conversation and realtime-runtime signals. |=== == Leader Line Messaging should not be measured against simple contact forms, email helpers, or lightweight chat widgets. Its natural comparison line is closer to the enterprise-class conversation platform and realtime messaging infrastructure category, including the kind of capability bands represented by: * conversation and channel-based message handling, * API and GraphQL message exposure, * realtime publish-subscribe delivery, * presence-adjacent runtime coordination, * and governed operational handling of messaging infrastructure. This means the component is better understood as targeting the same strategic class of problem addressed by stronger messaging and realtime leaders, while expressing that class through a Symfony-native internal component. In that sense, the leader line is not another chat add-on. It is closer to: * enterprise conversation-platform class, * enterprise realtime messaging class, * enterprise messaging-runtime and event-distribution class, * reinterpreted as an internal ecosystem component. == …",
+    "report_excerpt_source": ".antora-src/modules/ROOT/pages/component/messaging/report/index.adoc",
+    "key_file_excerpts": {
+      "composer.json": "{\n  \"name\": \"messaging/message\",\n  \"description\": \"Messaging process app\",\n  \"type\": \"project\",\n  \"license\": \"proprietary\",\n  \"require\": {\n    \"php\": \"^8.4\",\n    \"ext-curl\": \"*\",\n    \"ext-fileinfo\": \"*\",\n    \"ext-gd\": \"*\",\n    \"ext-openssl\": \"*\",\n    \"ext-pdo\": \"*\",\n    \"ext-redis\": \"*\",\n    \"ext-zip\": \"*\",\n    \"ext-zlib\": \"*\",\n    \"api-platform/doctrine-orm\": \"^4.3\",\n    \"api-platform/graphql\": \"^4.3\",\n    \"api-platform/symfony\": \"^4.3\",\n    \"doctrine/dbal\": \"^4.0\",\n    \"doctrine/doctrine-bundle\": \"^3.2\",\n    \"doctrine/doctrine-migrations-bundle\": \"^4.0\",\n    \"doctrine/orm\": \"^3.2\",\n    \"doctrine/persistence\": \"^4.0\",\n    \"predis/predis\": \"^2.2\",\n    \"ramsey/uuid\": \"^4.8\",\n    \"react/socket\": \"^1.15\",\n    \"symfony/cache\": \"^8.0\",\n    \"symfony/config\": \"^8.0\",\n    \"symfony/console\": \"^8.0\",\n    \"symfony/contracts\": \"^3.5\",\n    \"symfony/dependency-injection\": \"^8.0\",\n    \"symfony/dotenv\": \"^8.0\",\n    \"symfony/error-handler\": \"^8.0\",\n    \"symfony/event-dispatcher\": \"^8.0\",\n    \"symfony/framework-bundle\": \"^8.0\",\n    \"symfony/http-client\": \"^8.0\",\n    \"symfony/http-foundation\": \"^8.0\",\n    \"symfony/http-kernel\": \"^8.0\",\n    \"symfony/mercure\": \"^0.7\",\n    \"symfony/mercure-bundle\": \"^0.4\",\n    \"symfony/messenger\": \"^8.0\",\n    \"symfony/monolog-bundle\": \"^4.0\",\n    \"symfony/process\": \"^8.0\",\n    \"symfony/rate-limiter\": \"^8.0\",\n    \"symfony/routing\": \"^8.0\",\n    \"symfony/security-bundle\": \"^8.0\",\n    \"symfony/serializer\": \"^8.0\",\n    \"symfony/validator\": \"^8.0\",\n    \"symfony/yaml\": \"^8.0\"\n  },\n  \"require-dev\": {\n    \"doctrine/doctrine-fixtures-bundle\": \"^4.1\",\n    \"friendsofphp/php-cs-fixer\": \"^3.65\",\n    \"nelmio/api-doc-bundle\": \"^5.1\",\n    \"phpstan/phpstan\": \"^2.1\",\n    \"phpunit/phpunit\": \"^11.5\",\n    \"symfony/browser-kit\": \"^8.0\",\n    \"symfony/css-selector\": \"^8.0\",\n    \"symfony/panther\": \"^2.2\"\n  },\n  \"autoload\": {\n    \"psr-4\": {\n      \"App\\\\\": \"src/\"\n    }\n  },\n  \"autoload-dev\": {\n    \"psr-4\": {\n      \"App\\\\Tests\\\\\": \"tests/\"\n    }\n  },\n  \"config\": {\n    \"sort-packages\": true,\n    \"allow-plugins\": {\n      \"php-http/discovery\": true\n    }\n  },\n  \"scripts\": {\n    \"test\": \"@php vendor/bin/phpunit --configuration phpunit.xml.dist\",\n    \"console\": \"@php bin/console\",\n    \"check\": [\n      \"@preflight\",\n      \"@app:about\",\n      \"@test\"\n    ],\n    \"preflight\": \"@php bin/preflight.php\",\n    \"lint:php\": \"@php bin/php-lint-all.php\",\n    \"app:about\": \"@php bin/console about\",\n    \"about:runtime\": \"sh bin/about-runtime.sh\",\n    \"about:runtime:test\": \"sh bin/about-runtime.sh test\",\n    \"install:runtime\": \"sh bin/install-runtime.sh\",\n    \"runtime:check\": [\n      \"@preflight\",\n      \"@app:about\"\n    ],\n    \"test:runtime\": \"sh bin/test-runtime.sh\",\n    \"serve\": \"APP_ENV=dev APP_DEBUG=1 php -S 127.0.0.1:8000 -t public public/router.php\",\n    \"server:start\": \"@serve\",\n    \"server:start:test\": \"APP_ENV=test APP_DEBUG=1 php -S 127.0.0.1:8000 -t public public/router.php\",\n    \"lint\": [\n      \"@lint:php\",\n      \"@cs:check\"\n    ],\n    \"stan\": \"@php vendor/bin/phpstan analyse --memory-limit=1G\",\n    \"cs:check\": \"@php vendor/bin/php-cs-fixer fix --dry-run --diff\",\n    \"cs:fix\": \"@php vendor/bin/php-cs-fixer fix\",\n    \"fixtures:dry-run\": \"@php bin/console doctrine:fixtures:load --dry-run --no-interaction --env=test\",\n    \"panther\": \"@php vendor/bin/phpunit --configuration phpunit.xml.dist --testsuite Panther\",\n    \"boot:ledger\": \"sh bin/boot-ledger.sh\",\n    \"boot:ledger:quick\": \"SKIP_TEST_RUNTIME=1 sh bin/boot-ledger.sh\",\n    \"boot:ledger:continue\": \"STOP_ON_FAILURE=0 sh bin/boot-ledger.sh\",\n    \"boot:ledger:summary\": \"sh bin/boot-ledger-summary.sh\",\n    \"boot:ledger:summary:compact\": \"FORMAT=compact sh bin/boot-ledger-summary.sh\",\n    \"boot:ledger:summary:json\": \"FORMAT=json sh bin/boot-ledger-summary.sh\",\n    \"boot:ledger:summary:latest-dir\": \"FORMAT=latest-dir sh bin/boot-ledger-summary.sh\",\n    \"boot:ledger:summary:oneline\": \"FORMAT=oneline sh bin/boot-ledger-summary.sh\",\n    \"boot:ledger:summary:failed\": \"FORMAT=failed sh bin/boot-ledger-summary.sh\",",
+      "package.json": "{\n  \"name\": \"smartresponse-messaging\",\n  \"private\": true,\n  \"scripts\": {\n    \"playwright:install\": \"playwright install --with-deps chromium\",\n    \"e2e\": \"playwright test\"\n  },\n  \"devDependencies\": {\n    \"@playwright/test\": \"^1.54.2\"\n  }\n}\n"
+    }
+  },
+  "verdict": {
+    "component": "messaging",
+    "summary": "Messaging presents a governed Symfony 8/PHP 8.4 messaging runtime with strong realtime, observability, and operational posture; it remains pre-RC primarily due to missing release tags and incomplete Antora navigation wiring.",
+    "strengths": [
+      "Clear PHP 8.4 and Symfony 8 targeting with rich runtime stack (API Platform, GraphQL, Mercure, Messenger, Redis, React Socket)",
+      "Operational discipline via boot-ledger and runtime scripts",
+      "Observability and alerting presence (OTel/tracing configs, Prometheus rules)",
+      "Quality toolchain present (PHPUnit, PHPStan, CS Fixer, Panther; Playwright harness)",
+      "API contract present (OpenAPI) and strong repo hygiene (CODEOWNERS, SECURITY, Dependabot, workflows)"
+    ],
+    "risks": [
+      "No git tags detected; component remains pre-RC",
+      "Antora navigation/index not present, reducing discoverability of the report in docs site",
+      "Local scan environment shows PHP 8.3 while composer targets ^8.4 (potential CI/runtime mismatch)",
+      "Proprietary license may limit external ecosystem adoption"
+    ],
+    "next_actions": [
+      "Create and push a pre-release tag and wire it into the existing release workflow",
+      "Pin CI runtime to PHP 8.4 to match composer constraints",
+      "Add Antora nav.adoc and index page to surface the report in the docs site",
+      "Integrate Playwright e2e into CI and publish artifacts",
+      "Publish boot-ledger summaries in CI artifacts for operational traceability"
+    ],
+    "notes": [
+      "Scores preserved from prior snapshot; refreshed with concrete repository evidence.",
+      "Owner-facing posture is strong; remaining work is packaging and documentation surfacing."
+    ],
+    "suggested_score_overrides": {},
+    "metric_updates": {
+      "product": {
+        "summary": "Product identity is clear and documented (Symfony-native messaging runtime with API/GraphQL exposure), supported by an OpenAPI contract and roadmap, but still pre-RC.",
+        "risks": [
+          "Docs site integration is incomplete (missing Antora nav/index), reducing product discoverability",
+          "No release tags; versioning remains implicit"
+        ],
+        "improvements": [
+          "Add Antora nav.adoc and a landing index to surface the report and API docs",
+          "Cut a pre-release tag and update CHANGELOG to align with tagging cadence"
+        ],
+        "evidence": [
+          "README.md",
+          "api/openapi.yaml",
+          "ROADMAP.md",
+          ".antora-src/modules/ROOT/pages/component/messaging/report/index.adoc"
+        ]
+      },
+      "architecture": {
+        "summary": "Architecture reads as a cohesive Symfony messaging/runtime layer with eventing and realtime surfaces (Messenger, Mercure, event bus, outbox) and internal analysis scripts.",
+        "risks": [
+          "Architecture documentation for bounded contexts is not evident in-repo",
+          "Emphasis skews runtime-heavy; domain boundaries could be made more explicit"
+        ],
+        "improvements": [
+          "Add lightweight ADRs describing core boundaries and messaging flows",
+          "Document event bus/outbox patterns and integration points"
+        ],
+        "evidence": [
+          "composer.json",
+          "config/services_eventbus.yaml",
+          "config/services_outbox.yaml",
+          "config/services_mercure.yaml",
+          "bin/report-message-controller-topology.php"
+        ]
+      },
+      "runtime": {
+        "summary": "Runtime posture is strong: install/test/about scripts, realtime delivery (Mercure/React Socket), QoS and observability wiring, and Prometheus rules.",
+        "risks": [
+          "Local scan used PHP 8.3 while the project requires ^8.4, which can mask runtime issues",
+          "No tag-based release channel yet for promoting tested builds"
+        ],
+        "improvements": [
+          "Ensure CI and container images run PHP 8.4+ consistently",
+          "Publish boot-ledger summaries and runtime checks as CI artifacts"
+        ],
+        "evidence": [
+          "bin/install-runtime.sh",
+          "bin/test-runtime.sh",
+          "composer.json",
+          "config/services_observability.yaml",
+          "config/services_delivery_qos.yaml",
+          "alerts/prometheus_rules.yaml"
+        ]
+      },
+      "qa": {
+        "summary": "Quality toolchain is present (PHPUnit 11, PHPStan 2.x, CS Fixer, Panther) with an additional Playwright harness, indicating solid pre-RC QA depth.",
+        "risks": [
+          "Playwright/E2E integration into CI is not explicitly evidenced",
+          "Coverage thresholds and reporting are not visible from the provided facts"
+        ],
+        "improvements": [
+          "Add a CI job to run Playwright and publish reports",
+          "Expose PHPUnit coverage reports in CI artifacts"
+        ],
+        "evidence": [
+          "phpunit.xml.dist",
+          "phpstan.neon",
+          "composer.json",
+          "package.json"
+        ]
+      },
+      "ops": {
+        "summary": "Operational and governance posture is mature: boot-ledger workflows, security policy, Dependabot, CODEOWNERS, tracing/OTel configs, and Prometheus alert rules.",
+        "risks": [
+          "Absence of git tags limits release automation and rollback strategies",
+          "SLO/SLA documentation not observed in-repo"
+        ],
+        "improvements": [
+          "Adopt semantic pre-release tags and wire release.yml to produce artifacts",
+          "Document basic SLOs and alert mappings tied to Prometheus rules"
+        ],
+        "evidence": [
+          "bin/boot-ledger.sh",
+          "SECURITY.md",
+          ".github/dependabot.yml",
+          ".github/workflows",
+          "config/services_audit_otel_v1.yaml",
+          "alerts/prometheus_rules.yaml"
+        ]
+      },
+      "market": {
+        "summary": "Market-facing alignment is credible for an internal conversation/runtime and realtime messaging capability; licensing indicates internal consumption focus.",
+        "risks": [
+          "Proprietary license constrains external adoption and community signals",
+          "Docs surfacing gaps may reduce portfolio discoverability"
+        ],
+        "improvements": [
+          "Clarify intended distribution model in README and VERSION notes",
+          "Surface report and API reference via Antora nav/index"
+        ],
+        "evidence": [
+          "README.md",
+          "api/openapi.yaml",
+          "composer.json",
+          ".antora-src/modules/ROOT/pages/component/messaging/report/index.adoc"
+        ]
+      },
+      "overall": {
+        "summary": "Strong pre-RC posture with governed runtime, observability, and QA; proceed to release hygiene (tags, CI PHP 8.4 pin, docs surfacing) to cross the RC threshold.",
+        "risks": [
+          "No release tags reduce RC clarity and rollback safety",
+          "Environment mismatch (PHP 8.3 vs ^8.4 target) may hide regressions"
+        ],
+        "improvements": [
+          "Introduce tagged pre-releases and ensure CI pins PHP 8.4+",
+          "Wire Antora navigation and publish CI artifacts for boot-ledger and E2E"
+        ],
+        "evidence": [
+          "CHANGELOG.md",
+          "VERSION",
+          "composer.json",
+          ".antora-src/modules/ROOT/pages/component/messaging/report/index.adoc"
+        ]
+      }
+    },
+    "confidence": "medium",
+    "evidence_paths": [
+      "composer.json",
+      "api/openapi.yaml",
+      "bin/boot-ledger.sh",
+      "bin/about-runtime.sh",
+      "bin/install-runtime.sh",
+      "bin/test-runtime.sh",
+      "alerts/prometheus_rules.yaml",
+      "config/services_mercure.yaml",
+      "config/services_audit_otel_v1.yaml",
+      "config/services_audit_tracing_v1.yaml",
+      ".github/workflows",
+      ".github/dependabot.yml",
+      ".github/CODEOWNERS",
+      "README.md",
+      "ROADMAP.md",
+      "SECURITY.md",
+      "phpstan.neon",
+      "phpunit.xml.dist",
+      "package.json",
+      ".antora-src/modules/ROOT/pages/component/messaging/report/index.adoc"
+    ]
+  },
+  "snapshot_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/messaging/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/messaging/history/2026-04-14-assessment-2026-04-14.yaml"
+  },
+  "probe_paths": {
+    "current": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/messaging/probes/current.yaml",
+    "history": "/home/runner/work/documentating/documentating/.sync/quality-atlas/components/messaging/probes/history/2026-04-14-assessment-2026-04-14.yaml"
+  },
+  "ai_io": {
+    "request_file": "messaging.request.json",
+    "response_file": "messaging.response.json"
+  }
+}

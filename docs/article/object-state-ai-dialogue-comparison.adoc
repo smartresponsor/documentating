@@ -1,0 +1,404 @@
+= From Object State to Observable Projection: What Two AI Dialogues Reveal About OOP
+:doctype: article
+:lang: en
+:page-slug: object-state-ai-dialogue-comparison
+:page-published: 2026-06-28
+:page-author: Oleksandr Tishchenko
+:page-tags: OOP, object state, observable projection, AI dialogue, DDD, invariants, software architecture, ontology
+:description: A comparative analysis of two controlled AI dialogues about object state, observation, behavior, and invariants.
+
+== Abstract
+
+This article compares two independently produced AI-assisted essays about a classical object-oriented programming question: does an object simply have state? The same line of inquiry, examples, and conceptual pressure were applied to two leading large language model assistants. Both conversations began from the familiar conference and textbook formula — an object has identity, state, and behavior — but moved beyond it. One result emphasized the philosophical and epistemological problem of state as an observer's illusion. The other emphasized engineering precision: time-bound state, model-bound truth, runtime truth, engine truth, observed truth, and invariants as boundaries of correctness. The comparison suggests that a more useful contemporary vocabulary is emerging: object state should be treated not as an absolute possession of an object, but as an observable projection produced at a boundary of time, model, and observer.
+
+== 1. The Problem: A Formula That Became Too Comfortable
+
+Object-oriented programming is often introduced through a compact formula:
+
+[quote]
+____
+An object has identity, state, and behavior.
+____
+
+This formula is useful. It gives students and engineers a starting point. It has a legitimate lineage in object-oriented analysis, Smalltalk culture, design by contract, design patterns, and domain-driven design.
+
+But a useful formula can become a cultural reflex. At conferences, in tutorials, in documentation, and in architectural discussions, the formula is often repeated without asking what "state" means. Does state mean fields in memory? Database columns? A snapshot inside a Unit of Work? A diagnostic reading? A JSON response? A projection available to a user? A domain-valid condition? A mechanical result of defective code?
+
+Once these questions are asked, the formula becomes unstable. Not false, but compressed. Its weakness is not that it says too little for an introduction. Its weakness is that it is often used as if it said enough for architecture.
+
+The recurring phrase "object state" hides three difficult questions:
+
+* who observes it;
+* at what moment;
+* through which model and measurement boundary.
+
+== 2. Why Use AI Dialogues for This Question?
+
+Large language models are trained on a wide corpus of books, articles, documentation, tutorials, and public technical discourse. For that reason, they are not only answer engines. They are also mirrors of accumulated language.
+
+When an AI assistant answers a question about OOP, it often reproduces the dominant professional vocabulary. This is not a defect by itself. In fact, that makes the answer valuable as a cultural artifact: it shows what the software industry has repeated often enough to become default.
+
+The experiment behind these articles was simple:
+
+* take the same conceptual thread;
+* use the same sequence of questions as closely as possible;
+* preserve the same examples: car, tire tread, order, state, behavior, invariants;
+* ask two leading LLM assistants to reason through the problem;
+* compare the resulting essays not as benchmark outputs, but as structured reflections of software culture.
+
+This was not a scientific benchmark. It was a controlled philosophical and engineering dialogue. The goal was not to decide which model is "better" in the abstract. The goal was to see which conceptual structures remain stable when the same pressure is applied through two AI systems.
+
+== 3. The First Result: State as an Observer's Illusion
+
+The first essay produced a strong philosophical thesis:
+
+[quote]
+____
+Object state is an observer's illusion.
+____
+
+This does not mean that fields, memory, or stored values do not exist. It means that what we call "state" is not the object's full being. It is a slice, a snapshot, a projection captured by an observer at a particular moment.
+
+The first essay used the moving car example as its central metaphor. A car has speed, fuel level, engine temperature, corrosion, and tire tread depth. Some of these can be observed while the car is moving. Others require stopping the car. Tire tread depth is real, but it is not available to every observer in every interaction.
+
+From this, the first essay formulated a sharper idea:
+
+[quote]
+____
+An object does not simply have state. An object produces predictable observable projections.
+____
+
+This is the philosophical center of the first result. It shifts the discussion from possession to interaction. The object does not reveal its totality. It responds to a request, message, diagnostic action, or measurement boundary by producing something observable.
+
+The strength of this version is its clarity. It attacks the industry reflex directly. It turns a familiar technical phrase into an epistemological question:
+
+[quote]
+____
+Not "what is object state?" but "who observes it, when, and why?"
+____
+
+That is a strong public thesis. It is memorable, teachable, and suitable for a conference talk or a manifesto-style essay.
+
+== 4. The Second Result: State as a Time-Bound and Model-Bound Slice
+
+The second essay was less provocative, but more structurally precise. Its central formulation was:
+
+[quote]
+____
+State is an observed, stored, diagnosed, or computed slice of an object within a specific model and at a specific boundary of time.
+____
+
+This is less dramatic than "observer's illusion", but it is more resistant to technical objection. A developer can agree with it without feeling that memory or fields have been denied.
+
+The second essay added several engineering layers that the first essay only implied:
+
+* a program object is not equal to its fields;
+* an ORM entity is a snapshot inside a Unit of Work;
+* an object consumes input and produces output;
+* mechanical predictability is not model correctness;
+* a bug is not absence of truth, but a conflict between kinds of truth;
+* one `status` field often hides multiple behavioral questions;
+* DDD entities, value objects, and aggregates should be understood through time and consistency boundaries.
+
+Its strongest contribution was the separation of four layers:
+
+.Runtime truth
+What actually happened during execution.
+
+.Engine truth
+What logic is actually embedded in the code.
+
+.Model truth
+What rules the object should preserve as a representative of the selected model.
+
+.Observed truth
+What an external observer can infer from responses, events, logs, projections, exceptions, or API output.
+
+This four-layer model makes the philosophical insight operational. It gives architects vocabulary for distinguishing a factual execution from a valid model representation.
+
+== 5. Where Both AI Dialogues Agreed
+
+The agreement is more important than the stylistic difference.
+
+Both dialogues rejected the flat idea that an object is merely a container of fields.
+
+Both accepted the classical formula as useful but incomplete.
+
+Both recognized that state becomes meaningful only under a frame of observation.
+
+Both used the moving car and tire tread example to show that some aspects of an object may be real but not operationally available in every interaction.
+
+Both converged on the idea that external code should not assemble object state manually.
+
+Both treated an object as a behavioral unit that reacts to input and produces observable consequences.
+
+Both challenged the phrase "an object protects its invariants". The first dialogue treated invariants as observer norms embodied in code. The second treated invariants as boundaries beyond which an object stops being a correct representative of the selected model.
+
+That convergence matters. The two outputs were not identical, but the stable conceptual core was the same:
+
+[quote]
+____
+State is not absolute. State is a projection within time, model, and observation.
+____
+
+== 6. Where the First Dialogue Was Stronger
+
+The first dialogue was stronger in philosophical force.
+
+It produced a clean axis:
+
+[source,text]
+----
+object -> observer -> projection -> invariant as observer norm
+----
+
+This axis changes how we speak about objects. Instead of saying "the object has state", it asks what the object makes observable and under which conditions.
+
+The first dialogue also made better use of AI as part of the argument. It noticed that an AI model reproduces the canonical OOP answer because the canonical answer dominates the written discourse. In that sense, AI becomes a mirror of software culture. It repeats the phrase because the industry repeats the phrase.
+
+This is valuable because the article is not only about OOP. It is also about how technical culture reproduces itself:
+
+* through books;
+* through conference language;
+* through tutorials;
+* through interview explanations;
+* through AI training data;
+* through default answers that feel obvious because they have been repeated often enough.
+
+The first dialogue therefore has the better headline and the better final question.
+
+Its weakness is that some claims are too sharp for a skeptical engineering audience. For example, saying that a getter is an explicit violation of the principle may be rhetorically effective, but it needs qualification. A getter is not dangerous merely because it returns information. It becomes dangerous when external code starts making behavioral decisions from internal data that should belong to the object's own model.
+
+== 7. Where the Second Dialogue Was Stronger
+
+The second dialogue was stronger in architectural detail.
+
+It did not stop at observer and projection. It asked what this means for code:
+
+[source,text]
+----
+S1 + Input -> S2 + Output
+----
+
+It made the object a consumer and producer:
+
+* it consumes a command, event, message, DTO, context, or domain fact;
+* it executes embedded behavior;
+* it retains memory between interactions;
+* it produces an observable artifact.
+
+This is immediately useful for enterprise backend architecture.
+
+The second dialogue also introduced a better way to discuss bugs. The first dialogue said that an object with a bug is predictable. That is often useful, but it can be attacked because real systems may include concurrency, timing issues, external dependencies, or nondeterministic behavior.
+
+The second dialogue refined the point:
+
+* a bug may be mechanically predictable;
+* but model-invalid.
+
+That distinction is excellent. It allows us to say that a system can truthfully execute defective logic. The runtime truth is real. The engine truth is real. But the model truth is violated.
+
+The second dialogue also gave a strong business example: a single `status` field. A vendor may be registered, verified, blocked, visible, unable to receive payout, under review, attached to an active contract, or missing a form. Compressing that into `active` creates false simplicity.
+
+Better object questions look like this:
+
+[source,php]
+----
+$vendor->canAcceptOrder();
+$vendor->canReceivePayout();
+$vendor->requiresReview();
+$vendor->isVisibleInCatalog();
+----
+
+These are not merely getters. They are observable projections in response to specific behavioral questions.
+
+== 8. What the Classical Literature Still Contributes
+
+The goal is not to reject the classics.
+
+Booch gives a durable vocabulary for object-oriented analysis and design. The triad of identity, state, and behavior remains useful as a first approximation.
+
+Kay reminds us that the original object-oriented impulse was deeply connected with messages, late binding, and autonomous computational agents, not only with field storage.
+
+Meyer gives a rigorous tradition of contracts and invariants. Even if we reinterpret invariants as model norms, we still need the discipline that design by contract introduced.
+
+Evans gives the language of entities, value objects, aggregates, repositories, services, and bounded contexts. DDD is indispensable for understanding why state is not just memory, but memory under a model.
+
+Fowler gives the practical warning against Anemic Domain Model and the pattern language of enterprise application architecture.
+
+GoF patterns show that object-oriented design is not merely about data and methods, but about roles, collaborations, responsibilities, and substitutable structures.
+
+Vernon shows how DDD ideas become implementation practice.
+
+The problem is not the classical vocabulary. The problem is flattening it into slogans.
+
+Classical terminology is scaffolding. It helps us climb. But it is not the finished building.
+
+== 9. Candidate Terms for a More Precise Industrial Vocabulary
+
+The comparison suggests several terms that deserve to become part of practical architectural language.
+
+=== 9.1 Observable projection
+
+An observable projection is what an object makes visible at a specific boundary of interaction.
+
+This may be a return value, event, exception, DTO, read model, persisted row, log entry, API response, or domain-specific answer.
+
+The phrase is stronger than "state" because it keeps the observer in the sentence.
+
+=== 9.2 Observer-bound state
+
+Observer-bound state is state as seen by a particular observer for a particular purpose.
+
+A driver, mechanic, insurer, database transaction, API client, and auditor do not see the same object. They see different projections.
+
+=== 9.3 Diagnostic state
+
+Diagnostic state is not always available during normal operation. Tire tread depth, deep consistency checks, fraud review, or external provider reconciliation may require diagnostic mode.
+
+This term prevents us from pretending that all truth is available in every call.
+
+=== 9.4 Engine truth
+
+Engine truth is the actual behavior embedded in the code.
+
+It may be correct or defective relative to the model, but it is still the real executable logic.
+
+=== 9.5 Model truth
+
+Model truth is the normative rule set that the object is expected to preserve.
+
+A correct object does not merely execute. It remains a valid representative of its selected model.
+
+=== 9.6 Invariant as model boundary
+
+An invariant is not magic inside an object. It is a boundary beyond which the object no longer represents the model correctly.
+
+This phrasing preserves the practical value of invariants while avoiding mystical language like "the object knows its invariants".
+
+== 10. What Is Stable Across Both Results
+
+The stable result can be stated compactly:
+
+[quote]
+____
+An object is not a bag of fields. It is a behavioral unit through time that consumes external influence, retains memory, executes embedded behavior, and produces observable projections. State is not absolute possession; it is a model-bound and observer-bound slice. Invariants are not metaphysical properties of the object; they are model boundaries that a correct implementation must preserve.
+____
+
+This formulation has a chance to be useful beyond a single article because it resolves several recurring confusions:
+
+* why exposing fields weakens an object model;
+* why a single `status` field often lies;
+* why getters and setters can pull behavior out of objects;
+* why an aggregate is not a magic truth machine;
+* why a bug can be factual execution and still violate the model;
+* why a read model is not the object itself;
+* why state must always be discussed with time, observer, and purpose attached.
+
+== 11. Consequences for Symfony and Enterprise Code
+
+In a Symfony or enterprise PHP application, this distinction is not abstract. It changes how we design entities, services, controllers, handlers, and read models.
+
+A weak model lets external code assemble state:
+
+[source,php]
+----
+$order->setStatus('paid');
+$order->setPaidAt(new DateTimeImmutable());
+$order->setCanBeShipped(true);
+----
+
+This is not object-oriented behavior. It is procedural state assembly through an object-shaped container.
+
+A stronger model asks the object to consume a meaningful influence:
+
+[source,php]
+----
+$order->pay($payment);
+$order->ship($shipment);
+$order->cancel($reason);
+----
+
+But the stronger syntax alone is not enough. The methods must preserve model boundaries. Otherwise the object is only mechanically behavioral, not model-correct.
+
+A projection-oriented model makes the difference explicit:
+
+[source,php]
+----
+$order->canBeShipped();
+$order->requiresManualReview();
+$order->isVisibleToCustomer();
+$order->releasePayment();
+----
+
+These calls should not be random getters over internal fields. They should be domain questions that return a stable, observable answer from inside the model boundary.
+
+== 12. The Quality of the Thought
+
+The thought has quality because it is not merely a style preference.
+
+It is not only "avoid setters".
+
+It is not only "use DDD".
+
+It is not only "objects should have behavior".
+
+The deeper thought is that object-oriented programming is a discipline of modeling behavior through time under partial observation.
+
+That phrase is more precise than the usual slogan. It explains why OOP matters even in systems with databases, queues, ORMs, APIs, events, projections, and read models.
+
+It also explains why the old formula remains useful but insufficient. Identity, state, and behavior are not wrong. They are the beginning of the conversation, not the end.
+
+== 13. Conclusion
+
+Two AI-assisted dialogues, guided through the same conceptual path, converged on the same central insight from different directions.
+
+One produced the stronger philosophical statement:
+
+[quote]
+____
+Object state is an observer's illusion.
+____
+
+The other produced the stronger architectural machinery:
+
+[quote]
+____
+State is an observed, stored, diagnosed, or computed slice of an object within a specific model and at a specific boundary of time.
+____
+
+The synthesis is stronger than either separate result.
+
+The industry can keep the classical formula, but it should stop treating it as final. An object does not simply have state. It passes through time. It consumes influence. It executes behavior. It retains memory. It produces traces and projections. It may be mechanically predictable and model-invalid. Its invariants are not mystical self-knowledge, but model boundaries that correct code must preserve.
+
+The better question is therefore not:
+
+[quote]
+____
+What is the object's state?
+____
+
+The better question is:
+
+[quote]
+____
+Who observes what projection, at what moment, through which model, and for which decision?
+____
+
+That is a more precise industrial vocabulary for object-oriented programming.
+
+== Bibliography
+
+* Andrew P. Black, "Object-oriented Programming: Some History, and Challenges for the Next Fifty Years", 2013.
+* Alan Kay, "The Early History of Smalltalk".
+* Grady Booch, _Object-Oriented Analysis and Design with Applications_, Addison-Wesley.
+* Bertrand Meyer, _Object-Oriented Software Construction_, 2nd ed., Prentice Hall, 1997.
+* Bertrand Meyer, Alisa Arkadova, Alexander Kogtenkov, "The concept of class invariant in object-oriented programming", 2021.
+* Eric Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software_, Addison-Wesley, 2003.
+* Eric Evans, _Domain-Driven Design Reference_, 2015.
+* Martin Fowler, _Patterns of Enterprise Application Architecture_, Addison-Wesley, 2002.
+* Martin Fowler, "Anemic Domain Model".
+* Martin Fowler, "Domain Model", _Catalog of Patterns of Enterprise Application Architecture_.
+* Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides, _Design Patterns: Elements of Reusable Object-Oriented Software_, Addison-Wesley, 1994.
+* Carl Hewitt, Peter Bishop, Richard Steiger, "A Universal Modular ACTOR Formalism for Artificial Intelligence", 1973.
+* Vaughn Vernon, _Implementing Domain-Driven Design_, Addison-Wesley, 2013.

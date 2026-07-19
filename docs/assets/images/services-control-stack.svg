@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="white"/>
+  <text x="60" y="55" font-size="28" font-family="Arial">The Control Stack Behind Credible AI Services</text>
+
+  <rect x="140" y="100" width="920" height="60" rx="14" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="180" y="138" font-size="24" font-family="Arial">Model layer — reasoning, drafting, classification, extraction</text>
+
+  <rect x="140" y="180" width="920" height="60" rx="14" fill="#ecfccb" stroke="#65a30d" stroke-width="2"/>
+  <text x="180" y="218" font-size="24" font-family="Arial">Workflow layer — decomposition, sequencing, retries, handoffs</text>
+
+  <rect x="140" y="260" width="920" height="60" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="180" y="298" font-size="24" font-family="Arial">Policy layer — permissions, thresholds, guardrails, constraints</text>
+
+  <rect x="140" y="340" width="920" height="60" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="180" y="378" font-size="24" font-family="Arial">Human governance — approval, escalation, exception decisions</text>
+
+  <rect x="140" y="420" width="920" height="60" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="180" y="458" font-size="24" font-family="Arial">Audit layer — logs, evidence, traceability, accountability</text>
+
+  <text x="60" y="500" font-size="18" font-family="Arial">Production autonomy is rarely model-only; it is software plus control architecture.</text>
+</svg>

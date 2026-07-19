@@ -1,0 +1,285 @@
+= Literature and Conceptual Overlap Map for Dynamic Non-Absoluteness
+:page-slug: literature-and-conceptual-overlap-map-dynamic-non-absoluteness
+:page-published: 2026-05-21
+:page-author: Oleksandr Tishchenko
+:description: A conceptual map of the hypothesis of dynamic non-absoluteness against physics, dynamic systems, symmetry, process philosophy, and identity theory.
+:page-tags: philosophy-of-physics, literature-map, dynamic-systems, symmetry, originality
+:lang: en
+
+== Purpose
+
+This document maps the hypothesis of dynamic non-absoluteness against neighboring ideas.
+
+It is not a claim of complete originality. It is an originality checkpoint.
+
+The purpose is to identify where the hypothesis overlaps existing traditions, where it must be careful, and where a possible niche remains.
+
+== Working Hypothesis
+
+The hypothesis may be summarized as follows:
+
+[quote]
+No observable driving factor is absolutely isolated, and no two distinct driving factors preserve absolute dynamic identity over time in an open system unless the conditions preserving that identity remain absolutely symmetrical.
+
+The possible niche is not the discovery of a new fundamental interaction. It is a metaprinciple connecting force, relation, equality, openness, and the fragility of dynamic identity.
+
+== Fundamental Interactions
+
+Modern physics does not usually describe nature as the result of one ordinary absolute force. It organizes physical forces through fundamental interactions. NASA presents the known forces as gravity, electromagnetism, the strong nuclear force, and the weak nuclear force.
+
+Reference:
+
+* https://science.nasa.gov/universe/overview/forces/[NASA Science: Forces]
+
+=== Overlap
+
+The hypothesis shares the rejection of a simple one-force picture.
+
+It agrees that observable physics is not normally described through one visible mechanical force that suppresses all others.
+
+=== Difference
+
+The hypothesis does not compete with the classification of fundamental interactions.
+
+It does not say there is a fifth force. It asks whether any driving factor can be treated as absolute, isolated, and fully dominant within observable dynamic reality.
+
+=== Caution
+
+The word "force" must be used carefully. In strict physics, force is theory-dependent. The hypothesis should often use "driving factor" when speaking more broadly.
+
+== Symmetry and Symmetry Breaking
+
+Symmetry and symmetry breaking are central to modern physics and philosophy of physics. The Stanford Encyclopedia of Philosophy treats symmetry breaking as a major topic connecting physical laws, states, and the structure of theories.
+
+Reference:
+
+* https://plato.stanford.edu/entries/symmetry-breaking/[Stanford Encyclopedia of Philosophy: Symmetry Breaking]
+
+=== Overlap
+
+The hypothesis depends heavily on symmetry.
+
+It argues that long-term identity between two dynamic factors requires preservation of symmetry of conditions. If the relevant symmetry is broken, equality becomes local, partial, or temporary rather than absolute.
+
+=== Difference
+
+The hypothesis is not primarily about symmetry of laws. It is about identity of dynamic factors over time under open conditions.
+
+A law may remain symmetrical while a concrete state, trajectory, or relation becomes asymmetrical.
+
+=== Possible Niche
+
+The possible niche is this:
+
+[quote]
+Dynamic identity should be treated as conditional on preserved symmetry of context, relation, and exposure, not merely on initial equality of measured values.
+
+== Noether's Theorem and Conservation Laws
+
+Noether's theorem links symmetries with conservation laws. This area is essential because any hypothesis discussing symmetry must not sound as if it denies the established relation between symmetry and conservation.
+
+Reference direction:
+
+* symmetry and conservation law literature;
+* Noether's theorem in mathematical physics;
+* philosophy of physics work on invariance and symmetry.
+
+=== Overlap
+
+The hypothesis respects the importance of invariants and preservation conditions.
+
+It can be interpreted as asking what must remain invariant for identity to remain meaningful over time.
+
+=== Difference
+
+The hypothesis does not propose a new conservation law.
+
+It uses the broader intuition that preservation requires structure. If the structures preserving equivalence are not maintained, equivalence cannot simply be assumed.
+
+== Dynamic Systems
+
+Dynamic systems theory studies how states evolve over time under rules of evolution.
+
+This is a natural mathematical neighbor of the hypothesis because the hypothesis concerns equality, identity, time intervals, perturbation, and divergence.
+
+=== Overlap
+
+The hypothesis can be translated into state-space language:
+
+[quote]
+If two factors are equivalent at time t, preservation of equivalence over an interval requires that the evolution of the system preserves the equivalence relation.
+
+=== Difference
+
+Dynamic systems theory already has the formal tools. The hypothesis is not new mathematics by itself.
+
+The possible contribution is interpretive and synthetic: connecting these tools to the philosophical idea that absolute dynamic identity is not an ordinary feature of open reality.
+
+== Chaos Theory
+
+Chaos theory studies deterministic systems that may be highly sensitive to initial conditions. The Stanford Encyclopedia of Philosophy describes chaos through deterministic nonlinear systems and sensitivity to initial conditions.
+
+Reference:
+
+* https://plato.stanford.edu/entries/chaos/[Stanford Encyclopedia of Philosophy: Chaos]
+
+=== Overlap
+
+The hypothesis overlaps chaos theory when it says that initially equal or nearly equal dynamic situations may diverge under time evolution, especially when perturbations or small differences matter.
+
+=== Difference
+
+The hypothesis is broader than chaos theory.
+
+It does not claim that all systems are chaotic. It does not require exponential divergence in every case. It says that absolute identity over time in open systems is a stronger condition than local equality and must not be assumed without preservation conditions.
+
+== Open Systems and Nonequilibrium Thinking
+
+The hypothesis depends on the concept of openness.
+
+An open system is exposed to exchange, influence, or perturbation from its environment. In physical, thermodynamic, biological, and informational contexts, openness may involve energy, matter, information, constraints, or causal effects.
+
+=== Overlap
+
+The hypothesis treats openness as the condition under which identity becomes fragile.
+
+If a system is open, two initially equal factors may experience different exposures, relations, disturbances, or boundary effects.
+
+=== Difference
+
+The hypothesis is not a full theory of thermodynamics or nonequilibrium physics.
+
+It borrows the general idea that isolation cannot be assumed in open reality.
+
+== Process Philosophy
+
+Process philosophy treats reality as fundamentally connected with becoming, change, and process rather than only static substance. The Stanford Encyclopedia of Philosophy presents process philosophy as a broad tradition that emphasizes dynamic becoming.
+
+Reference:
+
+* https://plato.stanford.edu/entries/process-philosophy/[Stanford Encyclopedia of Philosophy: Process Philosophy]
+
+=== Overlap
+
+The hypothesis shares the process-oriented intuition that reality is not best understood as a set of static absolutes.
+
+It treats relation, change, and becoming as central to observable dynamics.
+
+=== Difference
+
+The hypothesis is narrower than process philosophy.
+
+It focuses specifically on driving factors, open systems, and the impossibility of absolute dynamic identity over time.
+
+== Heraclitus and the Philosophy of Change
+
+Heraclitus is often associated with the idea that reality is characterized by change and flux.
+
+=== Overlap
+
+The hypothesis clearly shares a family resemblance with the claim that change is fundamental.
+
+=== Difference
+
+The hypothesis should not be reduced to the phrase "everything flows."
+
+It is not merely a poetic doctrine of change. It makes a more specific claim:
+
+[quote]
+Absolute identity between two driving factors over time requires preservation of the conditions that make identity meaningful, and open systems do not normally guarantee such preservation.
+
+== Identity of Indiscernibles
+
+The principle of the identity of indiscernibles is classically associated with Leibniz. The Stanford Encyclopedia of Philosophy treats it as a major topic in metaphysics, concerning whether two distinct things can share all properties.
+
+Reference:
+
+* https://plato.stanford.edu/entries/identity-indiscernible/[Stanford Encyclopedia of Philosophy: The Identity of Indiscernibles]
+
+=== Overlap
+
+The hypothesis asks a related question in dynamic form:
+
+[quote]
+Can two distinct driving factors remain absolutely indistinguishable across time, relation, exposure, and future development?
+
+=== Difference
+
+The hypothesis is not only about static properties.
+
+It concerns trajectories, histories, perturbations, relations, and temporal evolution.
+
+== Philosophy of Laws of Nature
+
+The hypothesis also touches the distinction between law, regularity, model, abstraction, and reality.
+
+Reference direction:
+
+* philosophy of laws of nature;
+* metaphysics of modality and necessity;
+* philosophy of scientific modeling.
+
+=== Overlap
+
+The hypothesis treats absolutes as possible boundary concepts in thought and modeling.
+
+=== Difference
+
+It does not claim that laws of nature are false or merely subjective.
+
+It asks whether absolute force and eternal dynamic identity are better understood as limiting abstractions rather than ordinary observable conditions.
+
+== Originality Assessment
+
+The hypothesis is not original in these isolated ingredients:
+
+* change;
+* force;
+* perturbation;
+* symmetry;
+* symmetry breaking;
+* dynamic systems;
+* sensitivity to initial conditions;
+* open systems;
+* process philosophy;
+* identity and difference.
+
+The possible originality is the synthesis:
+
+[quote]
+The hypothesis connects the impossibility of one absolute driving force with the impossibility of eternal dynamic identity between two driving factors in open systems.
+
+This is a narrow but real conceptual niche.
+
+== Main Risks
+
+The main risks are:
+
+* using "force" too broadly;
+* sounding like a replacement for established physics;
+* confusing equality of one parameter with total identity;
+* treating every system as chaotic;
+* failing to distinguish physical, mathematical, and philosophical claims;
+* presenting an interpretive metaprinciple as if it were already a proved law.
+
+== Safer Development Path
+
+The safer path is:
+
+. Define terms carefully.
+. State the hypothesis conditionally.
+. Treat it as a metaprinciple first.
+. Formalize through equivalence relations and time evolution.
+. Use literature to clarify neighbors rather than deny them.
+. Avoid claims of a new force or a total theory.
+
+== Current Conclusion
+
+The hypothesis is not a direct copy of one known theory.
+
+It lives inside a dense field of existing ideas. Its value depends on discipline: if it remains vague, it becomes a poetic restatement of change; if it becomes precise, it may serve as an authorial principle about absoluteness, identity, and open dynamic reality.
+
+The best current statement is:
+
+[quote]
+Dynamic non-absoluteness is the principle that observable driving factors exist through relations, and that strong identity between distinct dynamic factors over time requires preserved conditions that open systems do not normally guarantee.

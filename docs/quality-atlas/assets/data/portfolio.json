@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "averageScore": "8.1 / 10",
+    "repositoriesTracked": 12,
+    "lastReview": "2026-04-07"
+  },
+  "components": [
+    {"name": "Billing", "score": 8.8},
+    {"name": "Documentating", "score": 8.4},
+    {"name": "Paying", "score": 8.1},
+    {"name": "Shipping", "score": 7.9},
+    {"name": "Ordering", "score": 7.6},
+    {"name": "Messaging", "score": 7.4}
+  ]
+}

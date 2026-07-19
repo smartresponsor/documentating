@@ -1,0 +1,181 @@
+= Crowdfunding Trust Passport
+:doctype: article
+:lang: en
+:page-slug: crowdfunding-trust-passport
+:page-published: 2026-06-26
+:page-author: Oleksandr Tishchenko
+:page-tags: draft, product brief, crowdfunding, trust passport, reward-commerce, contribution ledger
+:description: Draft product brief for the first practical wedge of contribution-based reputation.
+
+== Draft status
+
+This is an unpublished product brief source draft.
+
+It is stored in the repository to preserve product direction, but it is not yet part of the public Antora navigation.
+
+This document does not describe a live financial product, investment opportunity, token, or promise of income.
+
+== Purpose
+
+Crowdfunding Trust Passport is the first practical wedge for testing contribution-based reputation without attempting to build a universal economic system.
+
+The goal is narrow: create an inspectable trust and fulfillment record around crowdfunding-like campaigns and reward-commerce flows.
+
+== Why crowdfunding
+
+Crowdfunding is a trust event before completion.
+
+A supporter gives value before the final result exists. A creator makes a promise. A community forms around uncertainty. A reward may later become both a product and a participation receipt.
+
+That makes crowdfunding a strong starting point for a contribution ledger.
+
+== Core problem
+
+Crowdfunding environments often lack a strong memory of:
+
+* what was promised;
+* what was funded;
+* what was delivered;
+* what was delayed;
+* what was disputed;
+* what was repaired;
+* what contribution helped make possible.
+
+Supporters need trust. Creators need a way to demonstrate fulfillment. Sponsors need a way to inspect impact. Communities need a way to remember participation.
+
+== Product object
+
+A Trust Passport is not a universal score of a person.
+
+It is a contextual record around a campaign, creator, supporter, reward, and fulfillment history.
+
+It should answer:
+
+* What campaign was supported?
+* What was promised?
+* What was the support event?
+* What reward or receipt was attached?
+* What was fulfilled?
+* What was disputed?
+* What was repaired?
+* What evidence supports the status?
+
+== Core flow
+
+The first flow is:
+
+* campaign created;
+* promise declared;
+* supporter participates;
+* reward promise is recorded;
+* contribution receipt is issued;
+* fulfillment is tracked;
+* dispute or delay is recorded if needed;
+* repair or resolution is recorded;
+* trust passport is updated.
+
+== Main entities
+
+The first version may use these entities:
+
+* Campaign;
+* Creator;
+* Supporter;
+* Contribution;
+* Reward;
+* Promise;
+* Fulfillment;
+* Dispute;
+* Repair;
+* Impact Receipt;
+* Trust Passport;
+* Decision Trace.
+
+== What the passport can show
+
+The passport can show contextual indicators such as:
+
+* campaign status;
+* promise clarity;
+* support volume;
+* fulfillment status;
+* unresolved disputes;
+* repair history;
+* evidence completeness;
+* participation receipts;
+* creator fulfillment pattern;
+* supporter participation history inside the same context.
+
+These indicators should remain explainable and contextual.
+
+== What it must not become
+
+The Trust Passport must not become:
+
+* a hidden blacklist;
+* a universal person score;
+* a credit score;
+* a social credit system;
+* a tool for denying basic rights;
+* a permanent stain for failed projects;
+* an AI-only judgment system.
+
+Failure, delay, and dispute must be contextual and correctable.
+
+== MVP boundary
+
+The MVP should avoid:
+
+* tokens;
+* dividends;
+* securities-like language;
+* automated universal scoring;
+* permanent reputation labels;
+* high-impact eligibility decisions.
+
+The MVP should focus on records, receipts, status, evidence, and explanation.
+
+== Initial screens or outputs
+
+A minimal product may expose:
+
+* campaign trust summary;
+* promise and reward table;
+* fulfillment timeline;
+* dispute and repair log;
+* supporter participation receipt;
+* creator fulfillment record;
+* decision trace panel;
+* exportable campaign evidence pack.
+
+== AI assistance
+
+AI can help summarize and structure:
+
+* campaign promises;
+* reward obligations;
+* fulfillment updates;
+* dispute messages;
+* missing evidence;
+* inconsistency between promise and delivery;
+* decision trace explanations.
+
+AI should not decide final trust status without human review in disputed cases.
+
+== First success criteria
+
+A first pilot should test whether the passport improves:
+
+* supporter understanding;
+* creator accountability;
+* sponsor confidence;
+* dispute clarity;
+* evidence completeness;
+* fulfillment transparency;
+* trust without overclaiming.
+
+== Current conclusion
+
+Crowdfunding Trust Passport is the safest first wedge because it tests contribution memory in a bounded context.
+
+It connects crowdfunding, reward-commerce, decision trace, and contribution ledger without immediately claiming to build a universal score or income system.

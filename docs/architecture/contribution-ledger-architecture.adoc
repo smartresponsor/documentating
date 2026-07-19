@@ -1,0 +1,289 @@
+= Contribution Ledger Architecture
+:doctype: article
+:lang: en
+:page-slug: contribution-ledger-architecture
+:page-published: 2026-06-26
+:page-author: Oleksandr Tishchenko
+:page-tags: draft, architecture, contribution ledger, event model, audit trace, trust passport
+:description: Draft architecture note for the contribution ledger, trust passport, and participation receipt model.
+
+== Draft status
+
+This is an unpublished architecture source draft.
+
+It is stored to preserve the technical contour of the contribution ledger direction. It is not yet part of the public Antora navigation.
+
+This document is conceptual architecture, not a production API contract.
+
+== Purpose
+
+The Contribution Ledger Architecture defines the first technical shape of a system that records contribution, promise, fulfillment, dispute, repair, and impact.
+
+The goal is to keep the idea grounded in concrete entities and event flows without prematurely committing to a full product, token system, or universal score.
+
+== Architectural principles
+
+The architecture should follow these principles:
+
+* contextual records before universal profiles;
+* receipts before surveillance;
+* audit trace before opaque scoring;
+* explanation before automation;
+* correction before permanent judgment;
+* event history before summary labels;
+* bounded trust signals before global reputation.
+
+== Core entities
+
+The first conceptual model includes:
+
+* Person;
+* Organization;
+* Campaign;
+* Promise;
+* Contribution;
+* Reward;
+* Participation Receipt;
+* Fulfillment;
+* Dispute;
+* Repair;
+* Impact Record;
+* Trust Passport;
+* Ledger Event;
+* Score Event;
+* Decision Trace;
+* Audit Record.
+
+== Person
+
+A Person is an actor who may support, create, verify, dispute, fulfill, repair, or review an event.
+
+A person must not be reduced to a global score.
+
+Person-level signals should remain contextual and explainable.
+
+== Organization
+
+An Organization may create campaigns, sponsor projects, verify records, fulfill obligations, or provide governance review.
+
+Organization records should also be contextual and auditable.
+
+== Campaign
+
+A Campaign is a bounded initiative that makes a public or private promise and receives support before or during fulfillment.
+
+Campaign should preserve:
+
+* title;
+* description;
+* creator;
+* promise set;
+* reward set;
+* evidence set;
+* status;
+* decision trace;
+* audit trail.
+
+== Promise
+
+A Promise records what the creator says will happen.
+
+Promise should be explicit enough to support later fulfillment review.
+
+Promise types may include:
+
+* delivery promise;
+* reward promise;
+* impact promise;
+* timeline promise;
+* communication promise;
+* repair promise.
+
+== Contribution
+
+A Contribution records participation.
+
+Contribution may be financial, operational, informational, social, creative, technical, or verification-related.
+
+A contribution record should preserve context and evidence without implying a universal human ranking.
+
+== Reward
+
+A Reward is an item, service, recognition, access right, souvenir, or symbolic return attached to participation.
+
+In this model, a reward may also become a participation receipt.
+
+== Participation Receipt
+
+A Participation Receipt records that a person or organization participated in a defined campaign, project, or shared outcome.
+
+It should preserve:
+
+* campaign reference;
+* contribution reference;
+* reward reference where applicable;
+* timestamp;
+* evidence;
+* visibility scope;
+* correction path.
+
+== Fulfillment
+
+Fulfillment records whether a promise or reward was delivered.
+
+Fulfillment statuses may include:
+
+* pending;
+* partially fulfilled;
+* fulfilled;
+* delayed;
+* disputed;
+* repaired;
+* cancelled with explanation.
+
+The status should never be a bare label without trace.
+
+== Dispute
+
+A Dispute records disagreement about promise, delivery, evidence, timing, quality, or interpretation.
+
+A dispute should include:
+
+* disputed object;
+* claimant;
+* response;
+* evidence;
+* current status;
+* review path;
+* resolution or repair record.
+
+== Repair
+
+Repair records an action taken after failure, delay, dispute, or harm.
+
+A mature system should remember repair because contribution-oriented reputation must not preserve only negative events.
+
+== Impact Record
+
+An Impact Record describes what changed because of a campaign or contribution.
+
+Impact should be careful and evidence-bound. It must not overclaim.
+
+== Trust Passport
+
+A Trust Passport is a contextual summary around a campaign, creator, supporter, or organization.
+
+It should be built from ledger events and decision traces, not from hidden assumptions.
+
+A Trust Passport should show enough evidence for inspection and correction.
+
+== Ledger Event
+
+A Ledger Event is the basic event in the system.
+
+It should include:
+
+* event id;
+* event type;
+* actor;
+* subject;
+* object;
+* timestamp;
+* evidence reference;
+* visibility scope;
+* decision trace reference;
+* audit metadata.
+
+== Score Event
+
+A Score Event records a change in a computed contextual signal.
+
+Score events are higher risk than ledger events. They require stronger governance.
+
+Any score event should preserve:
+
+* input events;
+* calculation rule;
+* reason;
+* uncertainty;
+* correction path;
+* affected context.
+
+== Decision Trace
+
+A Decision Trace records how a decision was formed.
+
+Minimum trace:
+
+* fact;
+* reason;
+* alternative;
+* doubt;
+* verification.
+
+Decision Trace connects architecture to accountability.
+
+== Audit Record
+
+An Audit Record preserves system-level integrity.
+
+It should capture:
+
+* who changed what;
+* when it changed;
+* why it changed;
+* what evidence was attached;
+* whether the change was automated or human-reviewed;
+* what previous state existed.
+
+== First event flow
+
+The first flow should be narrow:
+
+* campaign is created;
+* promise is recorded;
+* supporter contributes;
+* participation receipt is created;
+* reward promise is attached;
+* fulfillment update is recorded;
+* dispute is opened if needed;
+* repair is recorded if needed;
+* trust passport is updated;
+* audit trail preserves every change.
+
+== Storage model
+
+The first implementation can use conventional storage:
+
+* relational tables for entities;
+* append-only event table for ledger events;
+* audit table for mutations;
+* evidence references for files or external records;
+* derived read models for passport summaries.
+
+Blockchain is not required for the first implementation.
+
+== API model
+
+The first API should expose contextual records, not universal judgment.
+
+Possible read models:
+
+* campaign trust summary;
+* promise list;
+* reward list;
+* fulfillment timeline;
+* dispute timeline;
+* participation receipt;
+* decision trace;
+* audit summary.
+
+== Boundary
+
+This architecture must not become a universal person-scoring system.
+
+It must remain contextual, explainable, correctable, and governed.
+
+The first technical responsibility is not to compute a grand score.
+
+The first responsibility is to preserve trustworthy contribution memory.

@@ -1,0 +1,430 @@
+= An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants
+:doctype: article
+:lang: en
+:page-slug: object-state-observation-and-invariants
+:page-published: 2026-06-28
+:page-author: Oleksandr Tishchenko
+:page-tags: OOP, object state, observation, invariants, DDD, aggregate, entity, value object, AI
+:description: A technical reflection on why object state is time-bound, model-bound, and observer-bound.
+
+== Abstract
+
+Object-oriented programming is often introduced through a compact formula: an object has identity, state, and behavior. The formula is useful, but it is also dangerously compressed. In real systems, state is not the complete truth about an object. State is a time-bound, model-bound, and observer-bound slice of what can be stored, inferred, diagnosed, or projected. This article revisits the classical definition of an object through a moving car, tire tread measurement, business orders, wallets, vendors, observable projections, and model invariants.
+
+== 1. The Default Definition Is Useful, But Not Final
+
+At conferences and in engineering conversations, we often hear a simple definition:
+
+[quote]
+____
+An object is an entity that has properties, state, and behavior.
+____
+
+This is not wrong. Many classical explanations describe an object through identity, state, and behavior. That vocabulary has a legitimate history: Simula, Smalltalk, Booch, Meyer, Evans, Fowler, GoF, and later DDD practice all contributed to the way we talk about objects.
+
+I deliberately started this discussion with an incomplete question: is an object simply something that has properties and state? The first default AI answer was almost canonical:
+
+[quote]
+____
+Object = identity + state + behavior.
+____
+
+That answer is useful, but it is also a symptom. AI tends to reproduce the layer of knowledge that has been repeated in books, articles, documentation, tutorials, and conference language. A model inherits the dominant formulations in its training material. That does not make those formulations false, but it also does not make them untouchable.
+
+Sometimes the real engineering work starts after the canonical answer.
+
+The hidden word here is _state_.
+
+== 2. State Is Not the Whole Truth About an Object
+
+When we say that an object "has state", we may unconsciously imagine it as a bag of fields:
+
+[source,php]
+----
+Car {
+    speed
+    fuelLevel
+    tireTreadDepth
+    corrosionLevel
+    batteryVoltage
+}
+----
+
+But a real car does not exist as a list of fields. A car exists in time. It moves, heats up, vibrates, consumes energy, wears its tires, reacts to the road, and continuously changes even when we are not observing every detail.
+
+To say "the car has state" only becomes meaningful after we specify the observation frame:
+
+* which state we mean;
+* at what moment in time;
+* for which observer;
+* through which measurement method;
+* for which decision.
+
+A moving car gives us some observable signs. We can see its speed. We may hear the engine. We may notice corrosion. We may read telemetry. But we cannot reliably measure tire tread depth while the car is moving at speed. To measure the tread, we normally have to stop the car and inspect it.
+
+The tire tread depth may be a real property of the car, but it is not operationally available in every interaction. It requires a diagnostic mode.
+
+Therefore:
+
+[quote]
+____
+State is not the complete truth about an object. State is an observed, stored, diagnosed, or computed slice of an object within a specific model and at a specific boundary of time.
+____
+
+The same car has different projections for different observers: the driver, mechanic, insurer, manufacturer, and inspector do not see the same "state". The object is one. The projections are many.
+
+== 3. A Program Object Is Not Equal to Its Fields
+
+In software, code gives us an illusion of fixation:
+
+[source,php]
+----
+final class Order
+{
+    private string $status;
+    private int $total;
+}
+----
+
+It is tempting to say: this is the state of the order. But this is only the memory held by one model. A real order may involve payment attempts, review processes, shipment state, partial fulfillment, refunds, external provider state, audit events, and customer support history.
+
+Some of that may live in other objects. Some of it may live in events. Some of it may live in logs. Some of it may be unavailable inside the current transaction.
+
+Even if an `Order` entity is hydrated from a database by an ORM, it is not the living order in its totality. It is a snapshot inside a current Unit of Work.
+
+A better formulation is:
+
+[quote]
+____
+State is retained object memory that influences future reactions.
+____
+
+This definition is still not enough, because reactions can be mechanically predictable while still being wrong relative to the domain model.
+
+== 4. Object as a Consumer and Producer
+
+The Smalltalk tradition often says that objects receive messages. That is historically important. But in modern enterprise backend systems we can phrase it more broadly:
+
+[quote]
+____
+An object consumes an external influence.
+____
+
+That influence may be a message, command, event, DTO, value object, request context, domain fact, or result produced by another operation.
+
+An object consumes input, executes embedded behavior, retains memory between interactions, and produces observable results.
+
+[source,text]
+----
+old state + external influence
+-> object behavior
+-> new state + observable output
+----
+
+Or more compactly:
+
+[source,text]
+----
+S1 + Input -> S2 + Output
+----
+
+In procedural style we may pass state explicitly:
+
+[source,text]
+----
+handle(input, oldState) -> [newState, output]
+----
+
+In object-oriented programming, state is hidden inside the object:
+
+[source,php]
+----
+$order->pay($payment);
+----
+
+From outside, we see a behavioral call. Inside, a transition may happen:
+
+[source,text]
+----
+Pending -> Paid
+----
+
+And the object may produce an observable artifact:
+
+[source,text]
+----
+OrderPaid
+----
+
+That artifact may be a JSON response, domain event, DTO, read model, log entry, exception, changed entity, persisted row, or emitted message.
+
+An object does not have to expose itself completely. It produces predictable observable projections.
+
+== 5. Predictability Does Not Mean Correctness
+
+Another slippery phrase is this:
+
+[quote]
+____
+An object protects its invariants.
+____
+
+This is useful as a design requirement, but dangerous as an absolute statement.
+
+If a programmer writes defective code, the object will behave according to that defective code. Its behavior is still its behavior. Its engine still produces a result. That result can be observed, reproduced, and predicted.
+
+Consider a wallet:
+
+[source,php]
+----
+final class Wallet
+{
+    private int $balance = 0;
+
+    public function withdraw(int $amount): void
+    {
+        $this->balance -= $amount;
+    }
+}
+----
+
+This object is mechanically predictable. Call `withdraw(100)`, and the balance decreases by 100.
+
+But if the domain model says that the balance must never become negative, this object violates the model invariant.
+
+We need two kinds of predictability:
+
+.Mechanical predictability
+The code reliably does what is embedded in it.
+
+.Model predictability
+The code does what the selected model considers correct.
+
+A bug may be mechanically predictable and model-invalid.
+
+A more precise statement is:
+
+[quote]
+____
+An invariant is not a fact of every execution. An invariant is the boundary beyond which an object stops being a correct representative of the selected model.
+____
+
+If an object violates an invariant, it does not stop being an object. It becomes a defective object relative to its model.
+
+== 6. Four Layers of Truth
+
+To avoid mixing factual behavior and model correctness, we can separate four layers.
+
+=== 6.1 Runtime truth
+
+What actually happened during execution.
+
+[source,text]
+----
+balance = -100
+----
+
+=== 6.2 Engine truth
+
+What logic is actually embedded in the code.
+
+[source,text]
+----
+withdraw() always subtracts the amount without checking a limit
+----
+
+=== 6.3 Model truth
+
+What rules the object should preserve as a representative of the model.
+
+[source,text]
+----
+balance must not be negative
+----
+
+=== 6.4 Observed truth
+
+What an external observer can infer from JSON, events, logs, projections, exceptions, or API responses.
+
+[source,json]
+----
+{
+  "balance": -100
+}
+----
+
+A bug is not the absence of truth. A bug is a conflict between engine truth and model truth.
+
+Therefore, "protects invariants" should be phrased as a requirement for correct implementation:
+
+[quote]
+____
+In a correct implementation, an object should localize and execute the rules that the model treats as invariants.
+____
+
+== 7. Why a Single status Field Is Often Suspicious
+
+Business systems often reduce state to one field:
+
+[source,php]
+----
+$status = 'active';
+----
+
+This often creates false simplicity.
+
+For example, what is the state of a Vendor?
+
+A vendor may be registered, verified, blocked, waiting for documents, visible in the catalog, unable to accept orders, able to accept orders but unable to receive payout, under review, attached to an active contract, or missing a required form.
+
+One universal status field quickly becomes a weak model.
+
+It is often better to ask behavioral questions:
+
+[source,php]
+----
+$vendor->canAcceptOrder();
+$vendor->canReceivePayout();
+$vendor->requiresReview();
+$vendor->isVisibleInCatalog();
+----
+
+These are not merely getters. They are observable projections. The outside world does not receive the whole truth about the vendor. It receives a predictable answer to a specific question.
+
+The same is true of the car. The driver does not receive the car's complete state. The driver receives speed, fuel level, warnings, and other limited projections.
+
+== 8. Entity, Value Object, and Time
+
+DDD adds an important distinction: not every object is an entity.
+
+An Entity is important because of identity through time. Order `#123` remains the same order even if its status, address, or amount changes.
+
+A Value Object is different. `Money(100, USD)` or `EmailAddress('a@example.com')` is not important as a "who". It is important as a "what".
+
+This distinction helps explain why flat state is especially dangerous for entities. Entities live through time. They pass through transitions.
+
+[source,text]
+----
+Draft -> PendingPayment -> Paid -> Shipped -> Completed
+----
+
+But even this transition diagram is a model, not reality. Reality may include refunds, provider delays, partial shipments, manual corrections, and support interventions.
+
+A good model does not pretend to be a complete map of the world. It is precise enough for the decisions it must make.
+
+== 9. Aggregate as a Consistency Boundary
+
+DDD aggregates are often explained as groups of related objects with a root entity. That explanation is useful but incomplete.
+
+The deeper point is that an aggregate is a consistency boundary.
+
+If a business rule requires that an order must never become both cancelled and shipped after any operation, that rule needs to live where it can be checked and preserved.
+
+But the aggregate does not magically guarantee truth. It provides the place where a correct implementation should preserve model consistency.
+
+If the code is wrong, the aggregate can still produce invalid state. Runtime truth exists, but model truth is violated.
+
+== 10. Why the Classical Definitions Still Matter
+
+The classical formula — identity, state, behavior — remains useful.
+
+Booch gives us vocabulary for object-oriented analysis and design. Meyer gives us contracts and invariants. Evans gives us Entities, Value Objects, Services, Aggregates, and Bounded Contexts. Fowler reminds us that a Domain Model is an object model that incorporates both behavior and data. GoF patterns gave generations of engineers a language of roles, collaborations, and responsibility distribution between objects rather than just fields and methods.
+
+The point is not to reject the classics. The point is to avoid flattening them.
+
+Classical vocabulary is scaffolding. It helps us climb. But we should not confuse scaffolding with the finished building.
+
+== 11. A More Precise Definition
+
+After this discussion, I would define an object this way:
+
+[quote]
+____
+An object is an identifiable unit of a model that consumes external influence — data, message, command, event, or context — executes embedded behavior, retains internal memory between interactions, and produces predictable observable projections; in a correct implementation, that behavior should preserve the invariants of the selected model.
+____
+
+This definition is longer than a conference slide because the short formula hides too much:
+
+* an object exists through time;
+* state is not absolute;
+* the observer sees only projections;
+* behavior may be factual and still model-invalid;
+* an invariant is not magic inside an object;
+* a bug is reality of execution, but not necessarily truth of the model.
+
+== 12. Practical Consequence for Code
+
+A weak object model often looks like this:
+
+[source,php]
+----
+$order->setStatus('paid');
+$order->setPaidAt(new DateTimeImmutable());
+$order->setCanBeShipped(true);
+----
+
+Here the external code manually assembles state. The object becomes a container.
+
+A stronger model looks like this:
+
+[source,php]
+----
+$order->pay($payment);
+$order->ship($shipment);
+$order->cancel($reason);
+----
+
+Here the object consumes an external influence and decides whether the transition is valid inside the selected model.
+
+But even this does not guarantee correctness. If `pay()` is written incorrectly, the object will reliably produce incorrect behavior.
+
+Object-orientation begins when we design a behavioral unit through time:
+
+[source,text]
+----
+identity
++ memory
++ input consumption
++ behavior engine
++ observable projections
++ model invariants
++ lifecycle
+----
+
+== 13. Conclusion
+
+An object does not simply "have state".
+
+An object passes through time. It consumes influences, executes embedded behavior, retains memory, and produces observable traces. State is not the whole truth of the object. State is a selected slice available to a particular observer in a particular frame.
+
+An invariant is not what the object factually always preserves. An invariant is what a correct object must preserve to remain a valid representative of its model.
+
+Real architecture lives between two planes:
+
+* as a factual executable system;
+* and as a normative representative of a model.
+
+Not in the formula "properties + methods". Not in a status field. Not in the slogan "encapsulation".
+
+But in the question:
+
+[quote]
+____
+What does this object consume, what does it remember, how does it pass through time, what traces does it produce, and where is the boundary between its factual behavior and the correctness of the model?
+____
+
+That is where object-oriented programming becomes alive again.
+
+== Bibliography
+
+* Andrew P. Black, "Object-oriented Programming: Some History, and Challenges for the Next Fifty Years", 2013.
+* Alan Kay, "The Early History of Smalltalk".
+* Grady Booch, _Object-Oriented Analysis and Design with Applications_, 3rd ed., Addison-Wesley, 2007.
+* Bertrand Meyer, _Object-Oriented Software Construction_, 2nd ed., Prentice Hall, 1997.
+* Bertrand Meyer, Alisa Arkadova, Alexander Kogtenkov, "The concept of class invariant in object-oriented programming", 2021.
+* Eric Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software_, Addison-Wesley, 2003.
+* Eric Evans, _Domain-Driven Design Reference_, 2015.
+* Martin Fowler, _Patterns of Enterprise Application Architecture_, Addison-Wesley, 2002.
+* Martin Fowler, "Domain Model", _Catalog of Patterns of Enterprise Application Architecture_.
+* Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides, _Design Patterns: Elements of Reusable Object-Oriented Software_, Addison-Wesley, 1994.
+* Vaughn Vernon, _Implementing Domain-Driven Design_, Addison-Wesley, 2013.

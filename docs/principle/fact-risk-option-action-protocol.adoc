@@ -1,0 +1,119 @@
+= Fact, Risk, Option, Action
+:doctype: article
+:lang: en
+:page-slug: fact-risk-option-action-protocol
+:page-published: 2026-06-26
+:page-author: Oleksandr Tishchenko
+:page-tags: new paradigm, principle, decision interface, truth mode, verification
+:description: A reusable decision-interface pattern for translating threat into structure.
+
+== Purpose
+
+Fact, Risk, Option, Action is a decision-interface pattern.
+
+It exists because human beings under pressure often move from uncertainty directly into reaction. Fear asks for exit. Status asks for defense. Belonging asks for loyalty. The inner narrator may later explain the reaction as if it had been the result of calm analysis.
+
+The pattern creates a bridge from survival mode toward truth mode.
+
+It does not remove fear. It structures it.
+
+== The sequence
+
+The sequence is simple:
+
+* Fact: what is known?
+* Risk: what may happen, and how verifiable is it?
+* Option: what paths are available?
+* Action: what next step reduces uncertainty?
+
+This sequence prevents a decision environment from collapsing into panic, accusation, avoidance, or false certainty.
+
+== Fact
+
+The fact layer asks what is actually known.
+
+It separates observation from interpretation, evidence from assumption, and record from emotion.
+
+Useful questions:
+
+* What is directly known?
+* What is documented?
+* What is observed but not yet explained?
+* What source supports the claim?
+* What is still unknown?
+
+== Risk
+
+The risk layer asks what may happen.
+
+It does not treat every fear as truth, but it also does not ignore danger. The goal is to make risk inspectable.
+
+Useful questions:
+
+* What could go wrong?
+* What is the probability or uncertainty?
+* What is the harm if the risk is real?
+* What evidence would reduce uncertainty?
+* What is imagined but not yet supported?
+
+== Option
+
+The option layer asks what paths exist.
+
+A threatened mind often sees only fight, flight, or freeze. A mature interface should expand the available field of action.
+
+Useful questions:
+
+* What can be done now?
+* What can be verified before action?
+* What can be delayed safely?
+* What can be repaired?
+* What path preserves dignity and accountability?
+
+== Action
+
+The action layer asks what next step reduces uncertainty instead of merely releasing anxiety.
+
+A good action is not always large. Often it is the next verifiable move.
+
+Useful questions:
+
+* What is the smallest responsible next step?
+* What record should be created?
+* Who needs to be informed?
+* What should be checked later?
+* What would trigger revision?
+
+== What the pattern prevents
+
+The pattern helps prevent:
+
+* panic without evidence;
+* accusation without trace;
+* certainty without verification;
+* delay without reason;
+* action without accountability;
+* AI-generated confidence without source discipline;
+* institutional explanation without a decision path.
+
+== Where it applies
+
+The pattern can apply to:
+
+* public communication;
+* AI-assisted decision support;
+* dispute handling;
+* campaign verification;
+* fulfillment review;
+* governance review;
+* product risk review;
+* institutional decision records;
+* documentation workflows.
+
+== Boundary
+
+This is not a claim that every situation can be reduced to four words.
+
+It is a minimum structure for keeping the path from uncertainty to action inspectable.
+
+The purpose is to make truth usable under pressure.

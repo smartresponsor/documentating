@@ -1,0 +1,107 @@
+= New Paradigm Glossary
+:doctype: article
+:lang: en
+:page-slug: new-paradigm-glossary
+:page-published: 2026-06-26
+:page-author: Oleksandr Tishchenko
+:page-tags: new paradigm, glossary, contribution, truth mode, survival mode
+:description: Shared terminology for the New Paradigm article cycle and public canon documents.
+
+== Purpose
+
+This glossary defines working terms used across the New Paradigm cycle and the public canon documents.
+
+The definitions are not final academic definitions. They are working language for a developing documentation system.
+
+== Survival mode
+
+A state or environment in which threat, scarcity, status defense, urgent resource protection, or group loyalty becomes the main editor of perception and action.
+
+Survival mode is not bad in itself. It is necessary for real danger. The problem begins when it becomes the default architecture of culture, economy, media, or technology.
+
+== Truth mode
+
+A way of organizing decisions in which verification matters more than reaction, procedure matters more than shouting, evidence matters more than belonging, and long-term sustainability matters more than immediate victory.
+
+Truth mode does not require perfect certainty. It requires a usable path toward correction.
+
+== Threat interface
+
+A behavioral interface in which reality is primarily experienced through danger, urgency, escape, defense, accusation, or control.
+
+In threat interface, the mind often asks: how do I reduce danger now?
+
+== Decision interface
+
+A structured environment that helps a person or institution move from uncertainty to action through fact, risk, option, and action.
+
+A good decision interface reduces panic without hiding reality.
+
+== Fact, Risk, Option, Action
+
+A minimum decision pattern:
+
+* Fact: what is known?
+* Risk: what may happen?
+* Option: what paths are available?
+* Action: what next step reduces uncertainty?
+
+== Belonging filter
+
+The social filter through which a person evaluates whether a source is safe, familiar, loyal, hostile, foreign, authoritative, or threatening before fully evaluating the claim itself.
+
+== Truth-oriented belonging
+
+A form of belonging in which identity does not require the rejection of verification.
+
+It allows a person or group to say: we remain connected, and we can still correct ourselves.
+
+== Inner narrator
+
+The part of personal or collective cognition that creates a coherent explanation after a decision, reaction, or position has already been shaped by hidden motives, pressure, fear, reward, status, or belonging.
+
+The inner narrator is not useless. It creates continuity. But without verification, it can protect error.
+
+== Decision trace
+
+An inspectable record of how a decision was formed.
+
+A minimum decision trace preserves fact, reason, alternative, doubt, and verification.
+
+== Punishment signal
+
+A signal that mainly records failure, delay, default, noncompliance, risk, penalty, or exclusion.
+
+Punishment signals may be necessary for accountability, but they cannot by themselves build a mature economy of trust.
+
+== Contribution signal
+
+A positive, contextual, verifiable signal that records participation, support, fulfillment, repair, coordination, verification, or shared value creation.
+
+A contribution signal should open upside. It must not become a hidden punishment mechanism.
+
+== Contribution ledger
+
+A contextual record of contribution-related events: support, promise, fulfillment, dispute, repair, receipt, verification, and impact.
+
+A contribution ledger should not be treated as a universal moral ranking of people.
+
+== Contribution score
+
+A possible computed signal derived from contribution records inside a defined context.
+
+It must not be used as a credit score, social credit score, hidden blacklist, or standalone basis for high-impact decisions.
+
+== Impact receipt
+
+A record showing that a person, group, or organization participated in an event that created, supported, repaired, verified, or delivered value.
+
+== Community dividend
+
+A long-horizon concept in which a portion of value created by a community, platform, treasury, or contribution network may be distributed back to participants.
+
+This is a conceptual term, not a promise of income, entitlement, yield, or investment return.
+
+== Public canon
+
+The public documentation layer that records principles, boundaries, vocabulary, architectural intent, and responsible interpretation of the project direction.
