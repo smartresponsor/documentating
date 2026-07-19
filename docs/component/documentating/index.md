@@ -1,13 +1,34 @@
 # Documentating
 
-Эта страница — точка входа в документацию компонента **Documentating**.
+Documentating is the public documentation portal and publication pipeline for the Smart Responsor ecosystem.
 
-Контент сюда попадает через сборщик документации (`.sync`) из репозитория компонента (обычно `docs/`).
-Пока это **stub**: можно хранить краткое описание/ссылки, а основной контент будет импортироваться автоматически.
+## Responsibility boundary
 
----
+Documentating owns:
 
-## Quick links
+- canonical Antora source generation from repository documentation;
+- public article and component entry-point publication;
+- search-index generation through the Antora Lunr extension;
+- documentation quality-atlas and QA/RC publication surfaces;
+- GitHub Pages build and deployment orchestration;
+- factual documentation diagnostics and release gates.
 
-- Repository: TODO
-- Docs source path: TODO
+Documentating does not own business entities, Doctrine mappings, CRUD controllers or routes, application navigation, or presentation runtime components. Those responsibilities remain in Objecting, Cruding, Navigating, Viewing, Interfacing, and the relevant business repositories.
+
+## Canonical build
+
+```bash
+npm test
+npm run build
+```
+
+The build generates `.antora-src/` from `docs/` and publishes the rendered site into `.site_build/`.
+
+## Canonical inputs
+
+- Playbook: `antora-playbook.yml`
+- Content builder: `tools/build_antora_site.py`
+- Component registry: `.sync/manifest/component-list.yml`
+- Public content: `docs/`
+- Static assets: `assets/`
+- Publish workflow: `.github/workflows/gh-pages.yml`

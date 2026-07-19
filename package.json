@@ -2,8 +2,10 @@
   "name": "documentating-antora-site",
   "private": true,
   "scripts": {
+    "verify:content": "node tools/run_python.mjs tools/verify_documentating_contract.py",
+    "test": "npm run verify:content",
     "build:content": "node tools/run_python.mjs tools/build_antora_site.py",
-    "build": "npm run build:content && node tools/run_antora.mjs"
+    "build": "npm run verify:content && npm run build:content && node tools/run_antora.mjs"
   },
   "dependencies": {
     "antora": "3.1.12",
