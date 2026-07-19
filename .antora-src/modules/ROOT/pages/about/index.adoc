@@ -6,7 +6,9 @@ This portal publishes owner-oriented documentation, essays, and ecosystem contex
 It is designed as a public knowledge layer with practical navigation:
 
 * xref:article/index.adoc[Articles] for long-form essays and technical thinking.
+* xref:manifest/index.adoc[Manifests] for public manifest-style documents and boundary statements.
+* xref:principle/index.adoc[Principles] for reusable decision-interface patterns.
+* xref:glossary/index.adoc[Glossary] for shared terminology.
 * xref:component/index.adoc[Components] for ecosystem structure.
-* xref:manifest/index.adoc[Manifests] for canon and principles.
 
 For authorship context, see xref:owner/index.adoc[Owner].

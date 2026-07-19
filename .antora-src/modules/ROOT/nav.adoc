@@ -1,5 +1,8 @@
 * xref:index.adoc[Home]
 * xref:article/index.adoc[Articles]
+* xref:manifest/index.adoc[Manifests]
+* xref:principle/index.adoc[Principles]
+* xref:glossary/index.adoc[Glossary]
 * xref:component/index.adoc[Components]
 * xref:quality-atlas/index.adoc[Quality Atlas]
 ** xref:quality-atlas/schedule.adoc[Schedule]
@@ -13,4 +16,3 @@
 ** xref:quality-atlas/evaluation.adoc[Evaluation]
 ** xref:quality-atlas/glossary.adoc[Glossary]
 ** xref:quality-atlas/explorer.adoc[Explorer]
-* xref:manifest/index.adoc[Manifests]

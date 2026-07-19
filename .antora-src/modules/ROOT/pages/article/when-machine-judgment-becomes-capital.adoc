@@ -1,0 +1,17 @@
+= When Machine Judgment Becomes Capital
+:page-slug: when-machine-judgment-becomes-capital
+:page-published: 2026-04-07
+:description: An analytical article on why the next durable advantage in AI may come not from access to a frontier model, but from a system that compounds verified judgment over time.
+:page-tags: AI, agents, memory, machine judgment, Bayesian confidence, organizational memory
+
+_Source asciidoc: `docs/article/when-machine-judgment-becomes-capital.adoc`_
+include::partial$article/when-machine-judgment-becomes-capital-01.adoc[]
+include::partial$article/when-machine-judgment-becomes-capital-02.adoc[]
+include::partial$article/when-machine-judgment-becomes-capital-03.adoc[]
+include::partial$article/when-machine-judgment-becomes-capital-04.adoc[]
+include::partial$article/when-machine-judgment-becomes-capital-05.adoc[]
+include::partial$article/when-machine-judgment-becomes-capital-06.adoc[]
+include::partial$article/when-machine-judgment-becomes-capital-07.adoc[]
+include::partial$article/when-machine-judgment-becomes-capital-08.adoc[]
+include::partial$article/when-machine-judgment-becomes-capital-09.adoc[]
+include::partial$article/when-machine-judgment-becomes-capital-10.adoc[]

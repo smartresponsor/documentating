@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="white"/>
+  <text x="70" y="72" font-size="34" font-family="Arial" font-weight="bold">The Geometry of Control</text>
+  <text x="70" y="108" font-size="20" font-family="Arial" fill="#4b5563">AI-first teams gain leverage by tightening the loop between intent, decision, and release.</text>
+  <circle cx="600" cy="380" r="96" fill="#f9fafb" stroke="#111827" stroke-width="3"/>
+  <text x="545" y="370" font-size="24" font-family="Arial" font-weight="bold">Control</text>
+  <text x="520" y="402" font-size="18" font-family="Arial" fill="#374151">Minimal distortion</text>
+  <circle cx="300" cy="220" r="115" fill="#eef2ff" stroke="#4f46e5" stroke-width="3"/>
+  <text x="220" y="205" font-size="26" font-family="Arial" font-weight="bold">Product Intent</text>
+  <text x="214" y="238" font-size="18" font-family="Arial">What should happen</text>
+  <text x="232" y="264" font-size="18" font-family="Arial">and why it matters</text>
+  <circle cx="900" cy="220" r="115" fill="#ecfeff" stroke="#0891b2" stroke-width="3"/>
+  <text x="793" y="205" font-size="26" font-family="Arial" font-weight="bold">Technical Decision</text>
+  <text x="817" y="238" font-size="18" font-family="Arial">Architecture, scope,</text>
+  <text x="826" y="264" font-size="18" font-family="Arial">contracts, risk</text>
+  <circle cx="600" cy="560" r="115" fill="#f0fdf4" stroke="#16a34a" stroke-width="3"/>
+  <text x="490" y="545" font-size="26" font-family="Arial" font-weight="bold">Production Release</text>
+  <text x="500" y="578" font-size="18" font-family="Arial">Validated change in</text>
+  <text x="538" y="604" font-size="18" font-family="Arial">the real system</text>
+  <path d="M390 260 C480 300, 510 320, 540 340" fill="none" stroke="#6b7280" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M840 300 C770 380, 720 450, 660 500" fill="none" stroke="#6b7280" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M520 500 C430 450, 360 380, 330 310" fill="none" stroke="#6b7280" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="120" y="430" width="250" height="84" rx="14" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
+  <text x="158" y="467" font-size="20" font-family="Arial" font-weight="bold">Fewer handoffs</text>
+  <text x="147" y="494" font-size="17" font-family="Arial">Less context loss across roles</text>
+  <rect x="830" y="430" width="250" height="84" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="870" y="467" font-size="20" font-family="Arial" font-weight="bold">Faster validation</text>
+  <text x="854" y="494" font-size="17" font-family="Arial">Shorter path to proof or rollback</text>
+  <rect x="450" y="140" width="300" height="70" rx="14" fill="#f9fafb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="495" y="182" font-size="20" font-family="Arial">Tight loop beats raw velocity</text>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#6b7280"/></marker></defs>
+</svg>

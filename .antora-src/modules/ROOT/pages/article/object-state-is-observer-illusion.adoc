@@ -1,0 +1,170 @@
+= Object State Is an Observer's Illusion
+:page-slug: object-state-is-observer-illusion
+:page-published: 2026-06-28
+:page-author: Oleksandr Tishchenko
+:description: On what the OOP classics left unsaid, and what AI reproduced as truth.
+:page-tags: OOP, object-oriented programming, object state, observer, projection, DDD, domain model, AI
+
+_Source asciidoc: `docs/article/object-state-is-observer-illusion.adoc`_
+_On what the OOP classics left unsaid, and what AI reproduced as truth._
+
+[quote, Grady Booch, Object-Oriented Analysis and Design with Applications]
+____
+An object has state, behavior, and identity.
+____
+
+footnote:[Booch G. _Object-Oriented Analysis and Design with Applications_. 2nd ed. Addison-Wesley, 1994. P. 41-44.]
+
+== 1. How the conversation about objects usually begins
+
+If you have ever been to software development conferences, you have probably heard this formulation: an object is an entity that has properties and states. Sometimes behavior is added to that definition. Less often, identity.
+
+This phrase migrates from talk to talk, from textbook to textbook, and eventually into the training datasets of artificial intelligence. And when I asked a modern language model what an object is in OOP, it answered exactly this way.
+
+Here is the answer verbatim:
+
+[quote]
+____
+A real object is encapsulated behavior that hides its state and interacts with the world only through messages. [...] An object knows its invariants, protects its state, and expresses intention through methods, not getters and setters.
+____
+
+The answer is technically competent. But it became the starting point for this article precisely because it contains a word that deserves a separate discussion: state.
+
+== 2. What the classics meant by state
+
+The classical object-oriented tradition describes an object through a triad: state, behavior, and identity. At first glance, this looks like a coherent system. But it contains a hidden assumption that is rarely stated explicitly.
+
+In that formulation, state sounds as if it were something an object simply _has_. As if we could open the object at any moment, look inside, and see its true condition.
+
+The problem is that this does not describe an object as a living unit of a model. It describes an object from the position of an observer who has already stopped time and taken a snapshot.
+
+== 3. The problem: state assumes frozen time
+
+Imagine a car moving along a highway. It has speed, fuel level, engine temperature, and tire tread wear. All of these are attributes from which "state" is assembled in the classical sense.
+
+Now the question: can you measure the tread depth of a tire on a moving car?
+
+No. You may visually estimate body corrosion while the car is moving. You may read fuel-sensor data through telemetry. But some characteristics of an object are fundamentally unavailable to observation unless the object is stopped. The object has to be taken out of the flow and fixed in place so it can be measured.
+
+Here is the central thesis: state is always a time slice, an artifact of observation, not an ontological property of the object itself.
+
+The object lives in a flow. It changes continuously — even if, from the perspective of program code, "nothing happens" between two method calls. At the level of physics, at the level of electrical impulses, at the level of time, the object is already different. The state we record is not what the object "has." It is what the observer manages to see.
+
+== 4. The observer and the projection
+
+Alan Kay, who coined the term "object-oriented" and created Smalltalk, did not speak primarily about state. He spoke about messages.footnote:[Kay A. _The Early History of Smalltalk_. ACM SIGPLAN Notices. 1993. Vol. 28, No. 3. P. 69-75.] An object is an autonomous agent that responds to messages. What happens inside it is not the caller's business.
+
+From this follows a more precise formulation of what an object does from the outside:
+
+[quote]
+____
+An object produces predictable observable projections — what it decides to show the world at the moment of interaction.
+____
+
+Not "has state." Rather, "produces a projection of state" in response to a request, at the moment of observation. This distinction is subtle, but fundamental.
+
+=== Example: an order in an online store
+
+Classical OOP thinking:
+
+[source,php]
+----
+$order->status = 'paid'; // external code controls state
+$order->total = 0;       // external code knows how to calculate
+----
+
+Object thinking in terms of projections:
+
+[source,php]
+----
+$order->pay($amount); // the object manages the transition itself
+$order->cancel();     // the object knows whether cancellation is allowed
+----
+
+In the first case, we read state and control it from the outside. In the second, we send a message and receive a projection of the result. The internal remains hidden. This is exactly how the Anemic Domain Model emerges as an antipattern in Fowler's sense: entities become bags of data, and logic leaks into services.footnote:[Fowler M. _Anemic Domain Model_. martinfowler.com, 2003.]
+
+== 5. Invariants are not a property of the object. They are an observer's norm
+
+Let us return to what the AI said in its first answer: "an object protects its invariants." This is a normative statement, not a descriptive one.
+
+Consider the car again. The car is moving. The tire tread depth is 3 mm. The legal invariant says the tread must be no less than 1.6 mm. Has the invariant been violated?
+
+From the car's own point of view, no. The car does not know traffic regulations. It simply drives. The tire is simply worn down to 3 mm. That is its current characteristic; its "engine" operates exactly this way.
+
+The invariant exists only in the observer's mind: the inspector, the system architect, the test author. It is a norm against which the object's projection is compared.
+
+From this comes an important practical conclusion: an object with a bug is absolutely predictable. It reproduces its bug every time. That is its nature at that moment. Unpredictability is not a property of a defective object. It is the gap between the observer's expected model and the object's real projection.
+
+== 6. Rethinking what an object really is
+
+I propose a formulation that more honestly reflects the nature of an object:
+
+[quote]
+____
+An object is an identical unit of a model that:
+
+* consumes something from the outside: data, messages, events;
+* performs behavior embedded in its engine;
+* retains internal memory between interactions;
+* produces predictable observable projections.
+____
+
+The word "predictable" matters more here than "valid." An object is always predictable to the extent permitted by the quality of its engine. Whether its projections conform to an external model is a question of architectural design, not of the object's ontology.
+
+== 7. Why AI reproduced it this way
+
+Language models are trained on texts. Most texts about OOP reproduce Booch's formulation: state, behavior, identity. This triad appears in thousands of books, articles, and courses. It has become canon.
+
+When I asked AI about an object, it gave me that canon, supplemented with more modern language about encapsulation and invariants. Technically accurate. Ontologically shallow.
+
+This is not AI's fault. It is a reflection of the state of the discourse. AI reproduces what it was taught, and it was taught what the majority has written.
+
+The majority, in turn, reproduces Booch without asking the question: what is "state" in itself?
+
+That is why conference speakers confidently say "an object has state," and nobody asks: state at what moment? Observed by whom? Measured how?
+
+The answers to these questions change the way we think about code.
+
+== 8. Practical consequences for architecture
+
+=== 8.1. Invariants belong to the architect, not to the object
+
+Invariants matter. But it is important not to mystify them. An invariant is not an object's "knowledge about itself." It is a rule of the model that the architect decided to embody in code.
+
+In this sense, Meyer's Design by Contract, Evans's aggregates, and the practical DDD tradition are not speaking about the metaphysics of the object. They are speaking about the boundaries of an admissible projection.footnote:[Meyer B. _Object-Oriented Software Construction_. 2nd ed. Prentice Hall, 1997. P. 331-370.] footnote:[Evans E. _Domain-Driven Design: Tackling Complexity in the Heart of Software_. Addison-Wesley, 2003. P. 89-110.]
+
+=== 8.2. State should not be read directly
+
+If state is a projection, architecture must be built around messages, not around direct reading of attributes. A getter is an explicit violation of this principle. Not because "getters are bad" as a rule, but because they assume that someone outside the object knows how to interpret the object's internal data.
+
+=== 8.3. Predictability matters more than correctness
+
+A well-designed object is not one that is "always correct." It is one whose projections are predictable under all conditions. Predictability is an observable property. Correctness is an evaluative judgment made by an observer.
+
+== 9. What to read to understand this more deeply
+
+Grady Booch, _Object-Oriented Analysis and Design_ — the canonical source of the "state — behavior — identity" triad. Essential reading if you want to understand where the terminology came from.
+
+Bertrand Meyer, _Object-Oriented Software Construction_ — the most detailed exposition of Design by Contract. Read it to understand how invariants are embedded in code, and then ask where the boundary lies between an object and its specification.
+
+Eric Evans, _Domain-Driven Design_ — aggregates, invariants, boundary protection. A powerful practical instrument, but ontologically it still rests on the same Booch-style triad.
+
+Alan Kay, _The Early History of Smalltalk_ — a primary source for the idea of messages and autonomous agents. To understand what Kay actually meant is to see how far mainstream OOP has moved away from the original idea.
+
+Carl Hewitt et al., _A Universal Modular ACTOR Formalism_ — the theoretical foundation of the actor model. A parallel branch of object thinking that survived in Erlang, Akka, and modern reactive systems.footnote:[Hewitt C., Bishop P., Steiger R. _A Universal Modular ACTOR Formalism for Artificial Intelligence_. Proceedings of the 3rd International Joint Conference on Artificial Intelligence, 1973.]
+
+Martin Fowler, _Anemic Domain Model_ — a short but precise article about what happens when an object degenerates into a data structure.
+
+Vaughn Vernon, _Implementing Domain-Driven Design_ — a practical implementation of DDD aggregates. It is useful to read it alongside Evans in order to see how theory becomes code.footnote:[Vernon V. _Implementing Domain-Driven Design_. Addison-Wesley, 2013.]
+
+== 10. Conclusion
+
+The triad "state — behavior — identity" is not wrong. It is simplified. It hides an epistemological problem: the state of an object is unavailable to observation in most practical situations, just as the tread depth of a tire cannot be measured while the car is moving.
+
+What we call "state" is a snapshot, a slice, a projection. It exists only at the moment of observation and only for the observer. The object, meanwhile, simply works.
+
+Invariants are an observer's norm embodied in code, not an ontological property of the object. An object with a bug is predictable. An object without an assertion does not violate an invariant; it simply does not know about it.
+
+When AI answers the question "what is an object?" it reproduces canon. Canon is useful as an introduction. But to deeply understand why systems degrade into anemic models, why getters capture the codebase, and why logic leaks out of objects into services, we need to ask a sharper question.
+
+Not "what is object state?" but: "who observes it, when, and why?"

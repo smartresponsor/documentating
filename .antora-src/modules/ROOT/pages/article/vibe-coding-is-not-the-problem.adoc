@@ -2,7 +2,7 @@
 :page-slug: vibe-coding-is-not-the-problem
 :page-tags: ai, software-engineering, architecture, vibe-coding, context-engineering, product-development
 
-_Source asciidoc: `docs/article/2026-03-29--vibe-coding-is-not-the-problem.adoc`_
+_Source asciidoc: `docs/article/vibe-coding-is-not-the-problem.adoc`_
 The current debate around AI-generated software is still too binary.
 
 One side says AI should only be used for tiny, isolated tasks: a helper for boilerplate, a faster autocomplete, a utility for refactoring, nothing more.

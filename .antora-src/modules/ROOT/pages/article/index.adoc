@@ -1,9 +1,18 @@
 = Articles
 :description: Public articles and position papers from Smart Responsor.
 
-== Latest
+Public articles and position papers from Smart Responsor.
 
+== Index
+
+* xref:article/06-when-the-ancient-brain-receives-modern-technologies.adoc[When the Ancient Brain Receives Modern Technologies] — 2026-07-18 — The sixth article in the New Paradigm media set: why ancient human reactions become dangerous when they receive modern technological scale.
 * xref:article/ai-development-without-the-black-box-console-mcp.adoc[AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP] — 2026-07-18 — A founder's account of why Marketing America Corp built Console MCP: an evidence-bound, budget-aware execution harness connecting interactive ChatGPT sessions to real local engineering environments.
+* xref:article/the-second-layer-objects-ai-operational-truth.adoc[The Second Layer: Objects, AI, and Operational Truth] — 2026-06-28 — A wrapper article for the object-state cycle: from a correct canonical answer toward observation, diagnostics, AI-assisted engineering, and authorial responsibility.
+* xref:article/object-state-is-observer-illusion.adoc[Object State Is an Observer's Illusion] — 2026-06-28 — On what the OOP classics left unsaid, and what AI reproduced as truth.
+* xref:article/object-state-ai-dialogue-comparison.adoc[From Object State to Observable Projection: What Two AI Dialogues Reveal About OOP] — 2026-06-28 — A comparative analysis of two controlled AI dialogues about object state, observation, behavior, and invariants.
+* xref:article/object-state-observation-and-invariants.adoc[An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants] — 2026-06-28 — A technical reflection on why object state is time-bound, model-bound, and observer-bound.
+* xref:article/05-the-inner-narrator-why-we-explain-decisions-after-they-are-made.adoc[The Inner Narrator: Why We Explain Decisions After They Are Made] — 2026-06-26 — The fifth article in the New Paradigm media set: why human beings often explain decisions after hidden motives, fear, reward, and belonging have already shaped them.
+* xref:article/04-before-truth-the-mind-asks-are-you-one-of-us.adoc[Before Truth, the Mind Asks: Are You One of Us?] — 2026-06-26 — The fourth article in the New Paradigm media set: why the human mind often evaluates belonging before it evaluates truth.
 * xref:article/03-when-fear-becomes-the-interface.adoc[When Fear Becomes the Interface: Why Truth Loses in Threat Mode] — 2026-06-04 — The third article in the New Paradigm media set: why truth often loses when the human mind enters threat mode.
 * xref:article/02-can-we-build-the-future-on-ancient-reward-system.adoc[Can We Build the Future on an Ancient Reward System?] — 2026-06-04 — The second article in the New Paradigm media set: why ancient reward mechanisms cannot remain the main navigator of the human future.
 * xref:article/01-human-does-not-see-reality.adoc[A Human Being Does Not See Reality. A Human Being Sees a Survival Task] — 2026-06-04 — The first article in the New Paradigm media set.
