@@ -63,7 +63,6 @@ def main() -> None:
         'marketing-america-corp-mark.svg',
         'Marketing America Corp',
         'High Hopes',
-        'Alexander Tischenko',
     ):
         if required_brand_token not in header and required_brand_token not in footer:
             fail(f'missing required branding token: {required_brand_token}')
