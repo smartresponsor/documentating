@@ -1,29 +1,41 @@
 = Articles
 :description: Public articles and position papers from Smart Responsor.
 
-This section is the public article stream for Smart Responsor.
-
-[NOTE]
-====
-AsciiDoc is the canonical article source format. Legacy duplicates and noisy source artifacts are filtered out during publication.
-====
-
 == Latest
 
-* xref:article/principle-dynamic-non-absoluteness.adoc[Principle of Dynamic Non-Absoluteness] — 2026-05-21 — ADOC — A working scientific-philosophical checkpoint on dynamic non-absoluteness, dynamic non-identity of driving forces, open systems, symmetry, and originality.
-* xref:article/spacex-confidential-ipo-return-of-the-mega-listing.adoc[SpaceX, Confidential IPO Filing, and the Return of the Mega-Listing] — 2026-04-01 — ADOC — Why a potential SpaceX IPO matters far beyond one issuer and what it signals about the return of mega-listings, infrastructure capital, and the changing logic of public markets.
-* xref:article/why-the-next-e-commerce-will-not-be-a-store-with-ai.adoc[Why the Next E-Commerce Will Not Be a Store with AI] — 2026-03-29 — ADOC — Why the next wave of commerce will not be built as an AI layer on top of a store, but as an agent-ready, protocol-ready, governed commerce system.
-* xref:article/when-power-disguises-itself-as-passion.adoc[When Power Disguises Itself as Passion] — 2026-03-29 — ADOC — A long-form essay on workplace hierarchy, dependency, distorted perception, and why power can masquerade as intimacy.
-* xref:article/the-first-great-war-between-platforms-and-protocols.adoc[The First Great War Between Platforms and Protocols] — 2026-03-29 — ADOC — A long-form article on the structural conflict between closed platforms and open agent-mediated commerce protocols.
-* xref:article/technological-inequality-2-0-cognitive-divide.adoc[Technological Inequality 2.0: Are We Building a World Where the Cognitive Divide Becomes Almost Biological?] — 2026-03-29 — ADOC — A long-form article on AI as a multiplier of cognitive inequality, digital neo-feudalism, and the emerging divide between agency and algorithmic management.
-* xref:article/odyssey-execution-control-plane.adoc[Odyssey: The Execution Control Plane for AI] — 2026-03-29 — ADOC — Why Odyssey should be understood as an execution control plane for AI agents and AI processes, built around policy, routing, receipts, and evidence.
-* xref:article/do-not-scale-the-imitation-of-a-human.adoc[Do Not Scale the Imitation of a Human] — 2026-03-29 — ADOC — Why the future of AI automation belongs to orchestration, deterministic execution, and reproducible protocol, not to scaling browser-level imitation of a person.
-* xref:article/ai-is-not-just-chatgpt-five-layer-stack.adoc[AI Is Not Just ChatGPT: Why the Conversation About Models Is Too Narrow] — 2026-03-29 — ADOC — A balanced explanation of AI as an industrial stack, from energy and chips to models, infrastructure, and applications.
-* xref:article/ai-does-not-replace-thinking-it-reveals-its-quality.adoc[AI Does Not Replace Thinking. It Reveals Its Quality.] — 2026-03-29 — ADOC — Why the main bottleneck in working with AI is not the model itself, but the quality of goals, decomposition, verification, and systems thinking.
-* xref:article/vibe-coding-is-not-the-problem.adoc[Vibe Coding Is Not the Problem] — ADOC
-* xref:article/the-hardest-interview-question-is-not-the-algorithm.adoc[The Hardest Interview Question Is Not the Algorithm] — ADOC
-* xref:article/llm-research-operator-knuth-claude-cycles.adoc[From “Shock! Shock!” to a Repeatable Research Workflow] — ADOC
-* xref:article/from-ai-coding-to-semi-automated-science.adoc[From AI Coding to Semi-Automated Science] — ADOC
-* xref:article/ai-will-not-automatically-improve-your-company.adoc[AI Will Not Automatically Improve Your Company] — ADOC
-* xref:article/ai-raised-the-pace-of-knowledge-work-who-will-slow-the-brain-down.adoc[AI Raised the Pace of Knowledge Work. Who Will Slow the Brain Down?] — ADOC
-* xref:article/a-proper-memory-stack-for-ai-assisted-engineering.adoc[A Proper Memory Stack for AI-Assisted Engineering] — ADOC
+* xref:article/ai-development-without-the-black-box-console-mcp.adoc[AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP] — 2026-07-18 — A founder's account of why Marketing America Corp built Console MCP: an evidence-bound, budget-aware execution harness connecting interactive ChatGPT sessions to real local engineering environments.
+* xref:article/03-when-fear-becomes-the-interface.adoc[When Fear Becomes the Interface: Why Truth Loses in Threat Mode] — 2026-06-04 — The third article in the New Paradigm media set: why truth often loses when the human mind enters threat mode.
+* xref:article/02-can-we-build-the-future-on-ancient-reward-system.adoc[Can We Build the Future on an Ancient Reward System?] — 2026-06-04 — The second article in the New Paradigm media set: why ancient reward mechanisms cannot remain the main navigator of the human future.
+* xref:article/01-human-does-not-see-reality.adoc[A Human Being Does Not See Reality. A Human Being Sees a Survival Task] — 2026-06-04 — The first article in the New Paradigm media set.
+* xref:article/toward-a-formal-statement-of-dynamic-non-identity.adoc[Toward a Formal Statement of Dynamic Non-Identity] — 2026-05-21 — A first formalization draft for the hypothesis of dynamic non-identity in open systems.
+* xref:article/principle-dynamic-non-absoluteness.adoc[Principle of Dynamic Non-Absoluteness] — 2026-05-21 — A working scientific-philosophical checkpoint on dynamic non-absoluteness, dynamic non-identity of driving forces, open systems, symmetry, and originality.
+* xref:article/manifesto-of-dynamic-non-absoluteness.adoc[Manifesto of Dynamic Non-Absoluteness] — 2026-05-21 — A first manifesto version of the hypothesis of dynamic non-absoluteness and dynamic non-identity of driving forces.
+* xref:article/literature-and-conceptual-overlap-map-dynamic-non-absoluteness.adoc[Literature and Conceptual Overlap Map for Dynamic Non-Absoluteness] — 2026-05-21 — A conceptual map of the hypothesis of dynamic non-absoluteness against physics, dynamic systems, symmetry, process philosophy, and identity theory.
+* xref:article/glossary-of-dynamic-non-absoluteness.adoc[Glossary of Dynamic Non-Absoluteness] — 2026-05-21 — A controlled glossary for the hypothesis of dynamic non-absoluteness and dynamic non-identity.
+* xref:article/dynamic-non-absoluteness-research-program.adoc[Dynamic Non-Absoluteness Research Program] — 2026-05-21 — A series index and reading map for the hypothesis of dynamic non-absoluteness and dynamic non-identity.
+* xref:article/definitions-and-scope-of-dynamic-non-absoluteness.adoc[Definitions and Scope of Dynamic Non-Absoluteness] — 2026-05-21 — A definitions and scope note for the hypothesis of dynamic non-absoluteness and dynamic non-identity of driving factors.
+* xref:article/abstract-hypothesis-of-dynamic-non-absoluteness.adoc[Abstract: The Hypothesis of Dynamic Non-Absoluteness] — 2026-05-21 — A short public abstract introducing the hypothesis of dynamic non-absoluteness and dynamic non-identity.
+* xref:article/when-machine-judgment-becomes-capital.adoc[When Machine Judgment Becomes Capital] — 2026-04-07 — An analytical article on why the next durable advantage in AI may come not from access to a frontier model, but from a system that compounds verified judgment over time.
+* xref:article/ai-first-software-delivery-and-the-new-geometry-of-control.adoc[AI-First Software Delivery and the New Geometry of Control] — 2026-04-07 — Why AI-first engineering changes not only productivity, but the management architecture and controllability of software delivery.
+* xref:article/anthropic-openclaw-move-is-a-preview-of-the-ai-economy.adoc[Anthropic's OpenClaw Move Is Not a Footnote. It Is a Preview of the AI Economy] — 2026-04-05 — A predictive analysis of Anthropic’s OpenClaw cutoff, the economics of agentic AI, interoperability, model commoditization, and where durable value may migrate next.
+* xref:article/spacex-confidential-ipo-return-of-the-mega-listing.adoc[SpaceX, Confidential IPO Filing, and the Return of the Mega-Listing] — 2026-04-01 — Why a potential SpaceX IPO matters far beyond one issuer and what it signals about the return of mega-listings, infrastructure capital, and the changing logic of public markets.
+* xref:article/why-the-next-e-commerce-will-not-be-a-store-with-ai.adoc[Why the Next E-Commerce Will Not Be a Store with AI] — 2026-03-29 — Why the next wave of commerce will not be built as an AI layer on top of a store, but as an agent-ready, protocol-ready, governed commerce system.
+* xref:article/when-power-disguises-itself-as-passion.adoc[When Power Disguises Itself as Passion] — 2026-03-29 — A long-form essay on workplace hierarchy, dependency, distorted perception, and why power can masquerade as intimacy.
+* xref:article/the-first-great-war-between-platforms-and-protocols.adoc[The First Great War Between Platforms and Protocols] — 2026-03-29 — A long-form article on the structural conflict between closed platforms and open agent-mediated commerce protocols.
+* xref:article/technological-inequality-2-0-cognitive-divide.adoc[Technological Inequality 2.0: Are We Building a World Where the Cognitive Divide Becomes Almost Biological?] — 2026-03-29 — A long-form article on AI as a multiplier of cognitive inequality, digital neo-feudalism, and the emerging divide between agency and algorithmic management.
+* xref:article/odyssey-execution-control-plane.adoc[Odyssey: The Execution Control Plane for AI] — 2026-03-29 — Why Odyssey should be understood as an execution control plane for AI agents and AI processes, built around policy, routing, receipts, and evidence.
+* xref:article/do-not-scale-the-imitation-of-a-human.adoc[Do Not Scale the Imitation of a Human] — 2026-03-29 — Why the future of AI automation belongs to orchestration, deterministic execution, and reproducible protocol, not to scaling browser-level imitation of a person.
+* xref:article/ai-is-not-just-chatgpt-five-layer-stack.adoc[AI Is Not Just ChatGPT: Why the Conversation About Models Is Too Narrow] — 2026-03-29 — A balanced explanation of AI as an industrial stack, from energy and chips to models, infrastructure, and applications.
+* xref:article/ai-does-not-replace-thinking-it-reveals-its-quality.adoc[AI Does Not Replace Thinking. It Reveals Its Quality.] — 2026-03-29 — Why the main bottleneck in working with AI is not the model itself, but the quality of goals, decomposition, verification, and systems thinking.
+* xref:article/rethinking-software-architect-profile-ai-era.adoc[Переосмысление профиля software-архитектора в эпоху AI]
+* xref:article/vibe-coding-is-not-the-problem.adoc[Vibe Coding Is Not the Problem]
+* xref:article/the-hardest-interview-question-is-not-the-algorithm.adoc[The Hardest Interview Question Is Not the Algorithm]
+* xref:article/the-anthropic-effect-how-one-ai-release-shook-cybersecurity-cloud-infrastructure-and-market-psychology.adoc[The Anthropic Effect: How One AI Release Shook Cybersecurity, Cloud Infrastructure, and Market Psychology]
+* xref:article/anthropic-effect-cloudflare.adoc[The Anthropic Effect: How One AI Release Shook Cybersecurity, Cloud Infrastructure, and Market Psychology]
+* xref:article/services-the-new-software.adoc[Services Are the New Software — but Only If You Can Own the Exceptions]
+* xref:article/services-are-the-new-software-but-only-if-you-can-own-the-exceptions.adoc[Services Are the New Software — but Only If You Can Own the Exceptions]
+* xref:article/llm-research-operator-knuth-claude-cycles.adoc[From “Shock! Shock!” to a Repeatable Research Workflow]
+* xref:article/from-ai-coding-to-semi-automated-science.adoc[From AI Coding to Semi-Automated Science]
+* xref:article/ai-will-not-automatically-improve-your-company.adoc[AI Will Not Automatically Improve Your Company]
+* xref:article/ai-raised-the-pace-of-knowledge-work-who-will-slow-the-brain-down.adoc[AI Raised the Pace of Knowledge Work. Who Will Slow the Brain Down?]
+* xref:article/a-proper-memory-stack-for-ai-assisted-engineering.adoc[A Proper Memory Stack for AI-Assisted Engineering]
