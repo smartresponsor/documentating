@@ -1,0 +1,631 @@
+= When AI Empties the Queue: Cognitive Queue Depletion in AI-Augmented Knowledge Work
+:page-slug: when-ai-empties-the-queue-cognitive-queue-depletion
+:page-published: 2026-09-01
+:page-author: Oleksandr Tishchenko
+:description: A first-person, research-grounded hypothesis about what happens when AI-assisted execution clears a person's active cognitive task queue faster than new meaningful work is generated.
+:page-tags: ai, cognition, knowledge-work, cognitive-offloading, productivity, burnout, incubation, human-ai-collaboration
+:lang: en
+
+Artificial intelligence is usually discussed as a way to reduce workload, increase productivity, or intensify work.
+
+All three descriptions can be true.
+
+But after working intensively with generative AI, I began noticing a different state that does not fit neatly into any of them.
+
+It does not feel like conventional burnout.
+It does not feel like ordinary fatigue.
+And it is not simply the satisfaction of finishing a task.
+
+The subjective experience is closer to this: the active queue in the mind becomes empty.
+
+Problems that previously would have remained mentally open for days or weeks are rapidly materialized into chats, documents, decisions, code changes, emails, research threads, delegated actions, and external processes.
+
+Then, suddenly, there is no obvious next thing to execute.
+
+The impulse is not necessarily to sleep or recover from exhaustion.
+It may be to lie down, watch something, walk, or do something cognitively undemanding -- almost as if the mind is waiting for a new meaningful queue to form.
+
+This article proposes a working term for that state:
+
+[quote]
+____
+*Cognitive Queue Depletion* -- a transient state in which AI-assisted execution clears a person's internally maintained queue of actionable problems faster than new meaningful problems are generated, producing a subjective sense of cognitive emptiness without requiring conventional exhaustion or burnout.
+____
+
+This is not an established clinical or cognitive-science diagnosis.
+It is a hypothesis derived from first-person observation and assembled from several research traditions that already describe important parts of the mechanism.
+
+The interesting question is whether generative AI is now combining those known mechanisms into a new temporal pattern of knowledge work.
+
+== Before the Hypothesis: What Research Already Tells Us
+
+The proposed phenomenon does not emerge from nowhere.
+Several mature areas of cognitive and organizational research already describe pieces of it.
+
+None of them, by itself, describes the whole experience.
+Together, however, they provide a surprisingly coherent foundation.
+
+=== Cognitive offloading already explains the externalization of mental work
+
+In 2016, Evan Risko and Sam Gilbert described *cognitive offloading* as the use of external action to reduce the internal information-processing demands of a task.
+
+The idea is older than generative AI in practice.
+People have always externalized cognition.
+
+We write lists so that we do not have to remember.
+We use calendars so that we do not have to maintain future intentions continuously.
+We sketch diagrams so that relationships become visible outside working memory.
+We use calculators, search engines, databases, and navigation systems to move parts of thinking into the environment.
+
+Generative AI changes the scale of this behavior.
+
+A notebook can externalize a reminder:
+
+[source,text]
+----
+write the letter
+----
+
+An AI system can help externalize much more of the executable chain:
+
+[source,text]
+----
+understand the problem
+→ identify missing information
+→ formulate the letter
+→ compare possible strategies
+→ edit the final version
+→ prepare the follow-up
+→ turn the unresolved part into the next task
+----
+
+This suggests a shift from simple *memory offloading* toward something closer to *execution offloading*.
+
+The person is no longer merely storing an intention outside the brain.
+The person is converting an internal unresolved structure into external artifacts at unusually high speed.
+
+=== Unfinished tasks occupy psychological space
+
+Research on unfinished work provides another important part of the picture.
+
+The popular version is usually associated with the Zeigarnik effect: incomplete tasks remain cognitively salient.
+Modern organizational research is more nuanced, but the basic relationship remains important.
+
+A 2026 meta-analysis by Johannes Wendsche, Oliver Weigelt, and Christine Syrek synthesized studies of unfinished work tasks and work-related thought during off-job time.
+Across both between-person and within-person analyses, unfinished tasks were positively associated with continued work-related thoughts, with particularly strong links to affective rumination.
+
+This matters because a personal backlog is not only a project-management object.
+Part of it may exist as ongoing cognitive occupation.
+
+An unresolved email, architecture problem, legal question, design decision, research idea, or conversation can remain mentally active even when it is not being consciously processed every minute.
+
+The queue has psychological weight.
+
+If AI greatly increases the rate at which those unfinished loops are converted into completed actions or explicit external waiting states, then the subjective structure of the workday may change even before total workload changes.
+
+=== Attention residue explains why unfinished switching is expensive
+
+Sophie Leroy's work on *attention residue* adds another useful mechanism.
+
+Her experiments showed that when people move from one task to another, attention does not always move cleanly with them.
+Part of it remains attached to the previous task, especially when that task is unfinished, and subsequent performance can suffer.
+
+This gives us two competing possibilities for AI-intensive work.
+
+AI can increase fragmentation because it makes it possible to open, touch, and partially advance many tasks in a short period.
+
+But AI can also do the opposite: it can help move a task more rapidly from an ambiguous internal state into a defined external state such as:
+
+[source,text]
+----
+done
+sent
+scheduled
+delegated
+documented
+blocked on external input
+waiting for response
+----
+
+That distinction may be important.
+
+Ten partially touched tasks may create more attention residue than ten tasks that have been decisively moved into explicit external states.
+
+The relevant variable may therefore not be simply the number of tasks touched.
+It may be the *closure quality* of the transition.
+
+=== Incubation shows that low-demand periods are not necessarily wasted periods
+
+The strange pause after an intense AI-assisted burst can look unproductive from the outside.
+
+Psychological research on incubation suggests that this interpretation may be too simplistic.
+
+In a meta-analysis of problem-solving studies, Ut Na Sio and Thomas Ormerod found an overall positive incubation effect, especially for divergent-thinking tasks.
+They also found that highly demanding activity during an incubation period could reduce the benefit, while lower-demand activity could sometimes be more useful.
+
+This does not prove that watching a video after an AI sprint is cognitively optimal.
+It does establish something more modest and important: stepping away from explicit problem solving can be part of the problem-solving process itself.
+
+The apparently empty interval may be a period in which new associations, priorities, unresolved tensions, and next questions begin to reorganize.
+
+=== AI research already shows that the bottleneck is moving
+
+Recent work on generative AI in knowledge work describes a shift that is highly relevant to this hypothesis.
+
+At CHI 2025, Microsoft Research and collaborators reported a survey of 319 knowledge workers who provided 936 first-hand examples of using generative AI in real work.
+The researchers found that higher confidence in AI was associated with less reported critical-thinking effort, while the nature of critical thinking shifted toward information verification, response integration, and what they called *task stewardship*.
+
+That phrase is revealing.
+
+The human role is increasingly moving from direct production toward supervision, integration, verification, and management of machine-produced work.
+
+Microsoft Research has since framed part of this agenda as *Tools for Thought*: the question is not only whether AI gets the task done, but whether it preserves and augments the human processes of judgment, metacognition, creativity, and understanding.
+
+The productivity evidence also points toward a changing bottleneck.
+
+In a six-month randomized field experiment involving roughly 6,000 knowledge workers, access to generative AI reduced time spent on email and appeared to speed document work, while meeting time -- an activity dependent on coordination with other people -- did not significantly change.
+
+This is a critical asymmetry.
+
+AI can accelerate the work that an individual controls much more easily than it can accelerate the external world.
+
+An email can be drafted in seconds.
+The recipient still answers on their own schedule.
+
+A technical proposal can be generated and analyzed quickly.
+The deployment window, review process, customer response, procurement cycle, legal deadline, or human decision may remain unchanged.
+
+Anthropic's internal study of AI use among its engineers and researchers reported a similar direction: faster iteration, broader task coverage, more work outside previous specialization, and progress on tasks that had previously been neglected.
+
+Randomized field experiments with software developers also show that AI coding assistance can materially increase completed-task throughput in some environments, although other studies show important counterexamples and verification costs.
+
+The universal claim should therefore not be "AI always makes work faster."
+
+The more defensible claim is:
+
+[quote]
+____
+AI can dramatically increase the rate at which some classes of individually controllable cognitive work move from intention to artifact.
+____
+
+Once that rate changes, the shape of the queue may change with it.
+
+== The Observation: Fatigue No Longer Arrives First
+
+For much of my working life, fatigue usually arrived before I ran out of things to think about.
+
+There was always another unresolved structure somewhere in working memory:
+
+* a message that still had to be written,
+* an architectural decision that had not yet been formalized,
+* a document to prepare,
+* a problem to research,
+* a person to contact,
+* a technical contradiction to resolve,
+* or an idea that had not yet become an artifact.
+
+The queue could remain populated for days or weeks.
+
+Execution contained friction.
+
+Research took time.
+Writing took time.
+Comparison took time.
+Code changes took time.
+Translation between thought and artifact took time.
+
+That friction unintentionally acted as a pacing mechanism.
+
+With generative AI, the relation can reverse.
+
+A problem enters awareness and is immediately expanded in dialogue.
+The dialogue produces options.
+Options become a decision.
+The decision becomes a document, a patch, a message, a task, or a process.
+
+Several such loops can close in parallel.
+
+What once constituted a week's worth of mentally active unresolved work can sometimes be pushed into explicit external states within hours.
+
+Then a peculiar moment appears:
+
+[quote]
+____
+I am not necessarily exhausted. I simply do not have another sufficiently formed problem ready to execute.
+____
+
+That state feels different from burnout.
+
+Burnout is commonly associated with chronic unmanaged occupational stress, exhaustion, detachment or cynicism, and reduced professional efficacy.
+
+The state described here can occur while motivation remains intact.
+Professional efficacy may feel high rather than low.
+There may even be satisfaction with the amount of progress made.
+
+The missing element is not energy.
+It is the next sufficiently meaningful unit of cognitive work.
+
+== A Simple Queue Model
+
+The hypothesis can be expressed with a deliberately simple model.
+
+Let:
+
+* `Q` = the current queue of cognitively active actionable problems,
+* `G` = the rate at which new meaningful problems or next actions are generated,
+* `E` = the rate at which those problems are externalized, executed, delegated, or moved into explicit waiting states.
+
+Then, conceptually:
+
+[source,text]
+----
+Q(t+1) = Q(t) + G - E
+----
+
+In traditional knowledge work, execution friction often keeps `E` limited.
+
+[source,text]
+----
+E ≲ G
+----
+
+The queue therefore remains populated.
+
+In strongly AI-augmented work, some periods may look different:
+
+[source,text]
+----
+E >> G
+----
+
+The active queue then approaches a temporary floor:
+
+[source,text]
+----
+Q → 0
+----
+
+The person has not necessarily "run out of work" in the organizational sense.
+
+There may be hundreds of possible future tasks.
+
+But the *cognitively mature* queue -- tasks that are meaningful, timely, sufficiently understood, and currently actionable -- can temporarily empty.
+
+That distinction is central.
+
+An infinite backlog does not imply an infinite supply of good next actions.
+
+== Closure Velocity May Matter More Than Raw Productivity
+
+Productivity discussions usually ask how many tasks AI helps a person complete per hour.
+
+That may be the wrong unit for this phenomenon.
+
+A more useful variable could be *closure velocity*:
+
+[quote]
+____
+How quickly can an unresolved internal loop be converted into a stable external state that no longer requires continuous active maintenance?
+____
+
+AI can increase closure velocity even when it does not fully automate the task.
+
+For example, a complex issue may move from:
+
+[source,text]
+----
+I need to figure out what to do about this
+----
+
+to:
+
+[source,text]
+----
+the options are known
+the decision is documented
+the email is sent
+the next dependency is external
+----
+
+The final business outcome may still be weeks away.
+
+But the internal cognitive loop has changed state.
+
+This may explain why AI can create a sense of extraordinary progress even when the external world has barely moved.
+
+The human system has cleared internal ambiguity faster than the environment can return new information.
+
+== The Bottleneck Moves from CPU to I/O
+
+The easiest engineering analogy is a computer system whose processor has been accelerated until another subsystem becomes limiting.
+
+Before AI, the bottleneck in many personal workflows was execution capacity.
+
+[source,text]
+----
+idea
+→ research
+→ synthesis
+→ drafting
+→ revision
+→ implementation
+→ communication
+----
+
+Each stage consumed human time.
+
+AI compresses several of these stages.
+
+The bottleneck can then move outward:
+
+* waiting for another person,
+* waiting for a legal or administrative process,
+* waiting for test results,
+* waiting for real-world feedback,
+* waiting for a customer,
+* waiting for an event,
+* waiting for new evidence,
+* or waiting for the mind itself to identify what deserves attention next.
+
+In engineering language, execution begins to resemble a fast CPU waiting on I/O.
+
+This is not idleness in the ordinary sense.
+It is a system whose limiting resource has changed.
+
+== The New Work Cycle May Be Burst-Shaped
+
+The classical productivity model assumes a relatively continuous workday.
+
+Tasks arrive.
+The worker executes them.
+Fatigue gradually accumulates.
+Rest comes afterward.
+
+AI-intensive knowledge work may increasingly produce another rhythm:
+
+[source,text]
+----
+accumulation
+→ high-density AI-assisted burst
+→ rapid closure
+→ queue depletion
+→ low-demand incubation
+→ emergence of new meaningful problems
+→ next burst
+----
+
+The pause in this cycle is easy to misclassify.
+
+Organizations may call it unproductive time.
+The worker may call it laziness.
+A conventional time-management system may try to fill it immediately with another task.
+
+But if the limiting factor is no longer execution energy and is instead meaningful task generation, immediately refilling every pause with low-value work may be counterproductive.
+
+The system may need cognitive replenishment, not additional throughput.
+
+== Why This Is Different from the "Overclocked Brain" Problem
+
+There is another AI-work problem that deserves to remain conceptually separate.
+
+AI can increase work intensity.
+It can eliminate natural pauses, increase decision density, accelerate task switching, and turn saved time into higher expectations.
+That can create overload, cognitive agitation, and eventually exhaustion.
+
+I have described that problem elsewhere as the danger of an AI-accelerated knowledge worker becoming permanently overclocked.
+
+Cognitive Queue Depletion is almost the mirror image.
+
+The overclocking problem is:
+
+[source,text]
+----
+too much cognitively dense work arrives too continuously
+----
+
+The queue-depletion problem is:
+
+[source,text]
+----
+meaningful actionable work is resolved or externalized faster than the next high-quality queue forms
+----
+
+The two states may alternate in the same person on the same day.
+
+An intense two-hour burst can be cognitively dense and demanding.
+Immediately afterward, however, the person may encounter not exhaustion but emptiness.
+
+This distinction matters because the interventions are different.
+
+Overload calls for reducing demand.
+
+Queue depletion may call for allowing incubation, observation, and task regeneration instead of manufacturing artificial busyness.
+
+== The Strategic Implication: Task Generation Becomes a Bottleneck
+
+The industrial promise of AI often assumes that if execution becomes five times faster, the organization can simply produce five times as much.
+
+That assumption may fail in judgment-heavy work.
+
+High-quality tasks are not manufactured infinitely on demand.
+
+Someone must notice the right problem.
+Someone must understand why it matters.
+Someone must connect it to context.
+Someone must decide whether it is timely.
+Someone must distinguish a meaningful problem from noise.
+
+If AI makes execution dramatically cheaper, then the scarce capability may move upstream.
+
+[source,text]
+----
+execution
+→ problem formulation
+→ problem selection
+→ generation of meaningful problems
+----
+
+This may become one of the defining bottlenecks of AI-augmented knowledge work.
+
+The most valuable professional may not be the person who can process the largest queue.
+
+It may be the person who can repeatedly generate the *right next queue*.
+
+== A Research Program Hidden Inside a Personal Observation
+
+The hypothesis is testable.
+
+Future work could distinguish Cognitive Queue Depletion from fatigue, boredom, disengagement, and burnout by tracking several variables simultaneously:
+
+* subjective energy,
+* number of mentally active unfinished tasks,
+* number of tasks externalized into explicit systems,
+* task-switching frequency,
+* perceived attention residue,
+* time to generation of the next self-initiated meaningful task,
+* AI usage intensity,
+* closure velocity,
+* external waiting dependencies,
+* and subsequent creative or strategic output after low-demand periods.
+
+A simple experience-sampling study could compare AI-intensive and non-AI work periods.
+
+One prediction would be that some high-AI periods produce a combination that conventional burnout models would not expect:
+
+[source,text]
+----
+high recent output
++ preserved motivation
++ moderate or high subjective energy
++ low number of internally active actionable tasks
++ increased desire for low-demand activity
++ later spontaneous generation of new tasks or connections
+----
+
+If that pattern exists reliably, it deserves to be separated from exhaustion.
+
+Another research question concerns unfinished-task effects.
+
+Does AI reduce rumination when it helps convert ambiguous unfinished work into explicit external states?
+
+Or does it increase rumination by multiplying the number of partially opened threads?
+
+The answer may depend on whether AI is used for *closure* or merely for *task proliferation*.
+
+That distinction could matter more than raw AI usage time.
+
+== The Practical Risk: Replacing an Empty Queue with Noise
+
+Modern productivity culture treats an empty queue as a defect.
+
+If nothing urgent is present, another dashboard can always be opened.
+Another feed can be checked.
+Another message can be answered.
+Another low-value task can be manufactured.
+
+AI makes this temptation stronger because it can generate work as easily as it can resolve it.
+
+An assistant can always produce ten more ideas, twenty more optimizations, fifty more possible projects.
+
+But a generated task is not necessarily a meaningful task.
+
+The dangerous response to Cognitive Queue Depletion may therefore be to use AI to refill the queue mechanically.
+
+That would convert a potentially useful incubation interval into artificial cognitive occupation.
+
+The better question may be:
+
+[quote]
+____
+Is the queue empty because the system is failing -- or because the current meaningful work has genuinely been externalized and the next layer has not yet matured?
+____
+
+Those are very different conditions.
+
+== Toward Cognitive Replenishment
+
+If this hypothesis is correct, the next frontier of AI productivity is not only automation.
+
+It is *cognitive replenishment*.
+
+AI systems are becoming very good at helping people empty queues.
+
+The next generation of tools may need to help people regenerate them intelligently without creating noise.
+
+That could mean helping users:
+
+* revisit goals rather than merely generate tasks,
+* identify unresolved contradictions across completed work,
+* surface dependencies that have become actionable,
+* notice patterns across previously separate projects,
+* distinguish waiting from forgetting,
+* preserve incubation instead of interrupting it,
+* and recognize when no immediate action is actually the correct state.
+
+This is close to the direction suggested by research on AI as a *tool for thought* rather than simply an assistant for output.
+
+The system should not always answer the question, "What else can I do?"
+
+Sometimes it should help answer a harder one:
+
+[quote]
+____
+What has become worth thinking about next?
+____
+
+== Conclusion
+
+For most of the history of knowledge work, unfinished work was abundant and execution was expensive.
+
+The mind could remain continuously populated with unresolved intentions because translating thought into artifacts took time.
+
+Generative AI is changing that ratio.
+
+It can turn thought into artifact, ambiguity into options, options into decisions, and decisions into external processes at a speed that previous personal productivity tools could not approach.
+
+The immediate effect looks like acceleration.
+
+The deeper effect may be temporal.
+
+AI may be changing the rhythm by which meaningful work accumulates, becomes actionable, gets externalized, and must be regenerated.
+
+That creates a state that deserves investigation separately from burnout and overload.
+
+The important problem of the AI workplace may eventually stop being only cognitive overload.
+
+It may also become cognitive replenishment.
+
+[quote]
+____
+AI may empty our task queues faster than our minds can meaningfully refill them.
+____
+
+If that is true, then the future of productivity will not be determined only by how quickly humans and machines execute work.
+
+It will also depend on whether we learn to protect the strange, quiet interval in which the next worthwhile problem becomes visible.
+
+== Selected References
+
+. Evan F. Risko and Sam J. Gilbert, "Cognitive Offloading," _Trends in Cognitive Sciences_, 20(9), 676-688, 2016. DOI: https://doi.org/10.1016/j.tics.2016.07.002
+. Sophie Leroy, "Why Is It So Hard to Do My Work? The Challenge of Attention Residue When Switching Between Work Tasks," _Organizational Behavior and Human Decision Processes_, 109(2), 168-181, 2009. DOI: https://doi.org/10.1016/j.obhdp.2009.04.002
+. Ut Na Sio and Thomas C. Ormerod, "Does Incubation Enhance Problem Solving? A Meta-Analytic Review," _Psychological Bulletin_, 135(1), 94-120, 2009. DOI: https://doi.org/10.1037/a0014212
+. Johannes Wendsche, Oliver Weigelt, and Christine J. Syrek, "Unfinished Work Tasks and Work-Related Thoughts During Off-Job Time: Meta-Analysis of the Zeigarnik Effect in a Work-Recovery Context," _Anxiety, Stress, & Coping_, 39(4), 385-407, 2026. DOI: https://doi.org/10.1080/10615806.2026.2616302
+. Hao-Ping Lee, Advait Sarkar, Lev Tankelevitch, Ian Drosos, Sean Rintel, Richard Banks, and Nicholas Wilson, "The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers," _CHI 2025_, 2025. DOI: https://doi.org/10.1145/3706598.3713778
+. Eleanor Dillon, Sonia Jaffe, Nicole Immorlica, and Christopher Stanton, "Shifting Work Patterns with Generative AI," Microsoft Research, April 2025. https://www.microsoft.com/en-us/research/publication/shifting-work-patterns-with-generative-ai/
+. Zheyuan (Kevin) Cui, Mert Demirer, Sonia Jaffe, Leon Musolff, Sida Peng, and Tobias Salz, "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers," Microsoft Research, June 2025. https://www.microsoft.com/en-us/research/publication/the-effects-of-generative-ai-on-high-skilled-work-evidence-from-three-field-experiments-with-software-developers/
+. Anthropic, "How AI Is Transforming Work at Anthropic," December 2, 2025. https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic
+. Advait Sarkar et al., "Rethinking AI in Knowledge Work: From Assistant to Tool for Thought," Microsoft Research, September 24, 2025. https://www.microsoft.com/en-us/research/articles/rethinking-ai-in-knowledge-work-from-assistant-to-tool-for-thought/
+
+== Authorship and Status of the Hypothesis
+
+This article originates from a first-person observation by *Oleksandr Tishchenko* during intensive AI-assisted knowledge work and engineering activity.
+
+Generative AI was used as a research, structuring, comparison, and editorial instrument in developing the article.
+
+The term *Cognitive Queue Depletion* is proposed here as a working hypothesis and descriptive construct.
+It should not be represented as an established scientific diagnosis, validated psychological scale, or settled result in cognitive science.
+
+The scientific claims in the article are limited to the cited research areas and findings.
+The synthesis connecting cognitive offloading, unfinished-task effects, attention residue, incubation, AI-assisted task stewardship, closure velocity, and queue depletion is an interpretive model proposed for discussion and future testing.
+
+Copyright © 2026 Oleksandr Tishchenko.
