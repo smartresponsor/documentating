@@ -31,11 +31,11 @@ ____
 
 This wrapper connects the object-state cycle with several already published articles in the Documentation repository:
 
-* xref:object-state-observation-and-invariants.adoc[An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants]
-* xref:object-state-ai-dialogue-comparison.adoc[From Object State to Observable Projection: What Two AI Dialogues Reveal About OOP]
-* xref:ai-does-not-replace-thinking-it-reveals-its-quality.adoc[AI Does Not Replace Thinking. It Reveals Its Quality.]
-* xref:vibe-coding-is-not-the-problem.adoc[Vibe Coding Is Not the Problem]
-* xref:ai-first-software-delivery-and-the-new-geometry-of-control.adoc[AI-First Software Delivery and the New Geometry of Control]
+* xref:article/object-state-observation-and-invariants.adoc[An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants]
+* xref:article/object-state-ai-dialogue-comparison.adoc[From Object State to Observable Projection: What Two AI Dialogues Reveal About OOP]
+* xref:article/ai-does-not-replace-thinking-it-reveals-its-quality.adoc[AI Does Not Replace Thinking. It Reveals Its Quality.]
+* xref:article/vibe-coding-is-not-the-problem.adoc[Vibe Coding Is Not the Problem]
+* xref:article/ai-first-software-delivery-and-the-new-geometry-of-control.adoc[AI-First Software Delivery and the New Geometry of Control]
 
 == Why This Cycle Exists
 
@@ -85,7 +85,7 @@ It is a rejection of the idea that state is the whole object.
 
 == The Core Article: Object, State, Observation, and Invariants
 
-* xref:object-state-observation-and-invariants.adoc[An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants]
+* xref:article/object-state-observation-and-invariants.adoc[An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants]
 
 This is the center of the cycle.
 
@@ -139,7 +139,7 @@ _Start here._
 
 == The Meta-Article: When AI Answers Correctly, But Not Completely
 
-* xref:object-state-ai-dialogue-comparison.adoc[From Object State to Observable Projection: What Two AI Dialogues Reveal About OOP]
+* xref:article/object-state-ai-dialogue-comparison.adoc[From Object State to Observable Projection: What Two AI Dialogues Reveal About OOP]
 
 This article explains the experiment itself and compares the two AI-assisted branches of the object-state discussion.
 
@@ -194,7 +194,7 @@ The meta-article is not a ranking exercise. Its value is that two AI-assisted br
 
 * _Fail-Fast Is Not Enough: Why Symfony Needs Runtime DI Harvesting in the Age of AI Agents_
 
-Related published context: xref:vibe-coding-is-not-the-problem.adoc[Vibe Coding Is Not the Problem] and xref:ai-first-software-delivery-and-the-new-geometry-of-control.adoc[AI-First Software Delivery and the New Geometry of Control].
+Related published context: xref:article/vibe-coding-is-not-the-problem.adoc[Vibe Coding Is Not the Problem] and xref:article/ai-first-software-delivery-and-the-new-geometry-of-control.adoc[AI-First Software Delivery and the New Geometry of Control].
 
 At first glance, this article looks separate from the object-state thesis.
 
@@ -251,7 +251,7 @@ Once that boundary is explicit, the article becomes the most technically concret
 
 == The Editorial Consequence: Why People Do Not Read AI Content
 
-* xref:ai-does-not-replace-thinking-it-reveals-its-quality.adoc[AI Does Not Replace Thinking. It Reveals Its Quality.]
+* xref:article/ai-does-not-replace-thinking-it-reveals-its-quality.adoc[AI Does Not Replace Thinking. It Reveals Its Quality.]
 
 This article is not about OOP directly.
 
@@ -287,8 +287,8 @@ There is also an interesting structural tension worth noting. The article critic
 
 == The Contextual Consequence: Developer Tools After AI
 
-* xref:ai-first-software-delivery-and-the-new-geometry-of-control.adoc[AI-First Software Delivery and the New Geometry of Control]
-* xref:vibe-coding-is-not-the-problem.adoc[Vibe Coding Is Not the Problem]
+* xref:article/ai-first-software-delivery-and-the-new-geometry-of-control.adoc[AI-First Software Delivery and the New Geometry of Control]
+* xref:article/vibe-coding-is-not-the-problem.adoc[Vibe Coding Is Not the Problem]
 
 This is the most contextual article in the cycle.
 
