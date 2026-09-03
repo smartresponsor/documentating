@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/object-state-observation-and-invariants/">
+    <meta name="description" content="A technical reflection on why object state is time-bound, model-bound, and observer-bound.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/object-state-observation-and-invariants/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/object-state-observation-and-invariants/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants">
+<meta name="twitter:title" content="An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants</a></li>
+    <li><span>An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">An Object Does Not Simply Have State: Time, Observation, Behavior, and Invariants</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/object-state-observation-and-invariants.adoc`</em>
+== Abstract</p>
+</div>
+<div class="paragraph">
+<p>Object-oriented programming is often introduced through a compact formula: an object has identity, state, and behavior. The formula is useful, but it is also dangerously compressed. In real systems, state is not the complete truth about an object. State is a time-bound, model-bound, and observer-bound slice of what can be stored, inferred, diagnosed, or projected. This article revisits the classical definition of an object through a moving car, tire tread measurement, business orders, wallets, vendors, observable projections, and model invariants.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_the_default_definition_is_useful_but_not_final"><a class="anchor" href="#_1_the_default_definition_is_useful_but_not_final"></a>1. The Default Definition Is Useful, But Not Final</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At conferences and in engineering conversations, we often hear a simple definition:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>An object is an entity that has properties, state, and behavior.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is not wrong. Many classical explanations describe an object through identity, state, and behavior. That vocabulary has a legitimate history: Simula, Smalltalk, Booch, Meyer, Evans, Fowler, GoF, and later DDD practice all contributed to the way we talk about objects.</p>
+</div>
+<div class="paragraph">
+<p>I deliberately started this discussion with an incomplete question: is an object simply something that has properties and state? The first default AI answer was almost canonical:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Object = identity + state + behavior.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That answer is useful, but it is also a symptom. AI tends to reproduce the layer of knowledge that has been repeated in books, articles, documentation, tutorials, and conference language. A model inherits the dominant formulations in its training material. That does not make those formulations false, but it also does not make them untouchable.</p>
+</div>
+<div class="paragraph">
+<p>Sometimes the real engineering work starts after the canonical answer.</p>
+</div>
+<div class="paragraph">
+<p>The hidden word here is <em>state</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_state_is_not_the_whole_truth_about_an_object"><a class="anchor" href="#_2_state_is_not_the_whole_truth_about_an_object"></a>2. State Is Not the Whole Truth About an Object</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When we say that an object "has state", we may unconsciously imagine it as a bag of fields:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php hljs" data-lang="php">Car {
+    speed
+    fuelLevel
+    tireTreadDepth
+    corrosionLevel
+    batteryVoltage
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But a real car does not exist as a list of fields. A car exists in time. It moves, heats up, vibrates, consumes energy, wears its tires, reacts to the road, and continuously changes even when we are not observing every detail.</p>
+</div>
+<div class="paragraph">
+<p>To say "the car has state" only becomes meaningful after we specify the observation frame:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>which state we mean;</p>
+</li>
+<li>
+<p>at what moment in time;</p>
+</li>
+<li>
+<p>for which observer;</p>
+</li>
+<li>
+<p>through which measurement method;</p>
+</li>
+<li>
+<p>for which decision.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A moving car gives us some observable signs. We can see its speed. We may hear the engine. We may notice corrosion. We may read telemetry. But we cannot reliably measure tire tread depth while the car is moving at speed. To measure the tread, we normally have to stop the car and inspect it.</p>
+</div>
+<div class="paragraph">
+<p>The tire tread depth may be a real property of the car, but it is not operationally available in every interaction. It requires a diagnostic mode.</p>
+</div>
+<div class="paragraph">
+<p>Therefore:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>State is not the complete truth about an object. State is an observed, stored, diagnosed, or computed slice of an object within a specific model and at a specific boundary of time.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The same car has different projections for different observers: the driver, mechanic, insurer, manufacturer, and inspector do not see the same "state". The object is one. The projections are many.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_a_program_object_is_not_equal_to_its_fields"><a class="anchor" href="#_3_a_program_object_is_not_equal_to_its_fields"></a>3. A Program Object Is Not Equal to Its Fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In software, code gives us an illusion of fixation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php hljs" data-lang="php">final class Order
+{
+    private string $status;
+    private int $total;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is tempting to say: this is the state of the order. But this is only the memory held by one model. A real order may involve payment attempts, review processes, shipment state, partial fulfillment, refunds, external provider state, audit events, and customer support history.</p>
+</div>
+<div class="paragraph">
+<p>Some of that may live in other objects. Some of it may live in events. Some of it may live in logs. Some of it may be unavailable inside the current transaction.</p>
+</div>
+<div class="paragraph">
+<p>Even if an <code>Order</code> entity is hydrated from a database by an ORM, it is not the living order in its totality. It is a snapshot inside a current Unit of Work.</p>
+</div>
+<div class="paragraph">
+<p>A better formulation is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>State is retained object memory that influences future reactions.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This definition is still not enough, because reactions can be mechanically predictable while still being wrong relative to the domain model.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_object_as_a_consumer_and_producer"><a class="anchor" href="#_4_object_as_a_consumer_and_producer"></a>4. Object as a Consumer and Producer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Smalltalk tradition often says that objects receive messages. That is historically important. But in modern enterprise backend systems we can phrase it more broadly:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>An object consumes an external influence.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That influence may be a message, command, event, DTO, value object, request context, domain fact, or result produced by another operation.</p>
+</div>
+<div class="paragraph">
+<p>An object consumes input, executes embedded behavior, retains memory between interactions, and produces observable results.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">old state + external influence
+-&gt; object behavior
+-&gt; new state + observable output</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or more compactly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">S1 + Input -&gt; S2 + Output</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In procedural style we may pass state explicitly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">handle(input, oldState) -&gt; [newState, output]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In object-oriented programming, state is hidden inside the object:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php hljs" data-lang="php">$order-&gt;pay($payment);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From outside, we see a behavioral call. Inside, a transition may happen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Pending -&gt; Paid</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And the object may produce an observable artifact:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">OrderPaid</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That artifact may be a JSON response, domain event, DTO, read model, log entry, exception, changed entity, persisted row, or emitted message.</p>
+</div>
+<div class="paragraph">
+<p>An object does not have to expose itself completely. It produces predictable observable projections.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_predictability_does_not_mean_correctness"><a class="anchor" href="#_5_predictability_does_not_mean_correctness"></a>5. Predictability Does Not Mean Correctness</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Another slippery phrase is this:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>An object protects its invariants.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is useful as a design requirement, but dangerous as an absolute statement.</p>
+</div>
+<div class="paragraph">
+<p>If a programmer writes defective code, the object will behave according to that defective code. Its behavior is still its behavior. Its engine still produces a result. That result can be observed, reproduced, and predicted.</p>
+</div>
+<div class="paragraph">
+<p>Consider a wallet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php hljs" data-lang="php">final class Wallet
+{
+    private int $balance = 0;
+
+    public function withdraw(int $amount): void
+    {
+        $this-&gt;balance -= $amount;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This object is mechanically predictable. Call <code>withdraw(100)</code>, and the balance decreases by 100.</p>
+</div>
+<div class="paragraph">
+<p>But if the domain model says that the balance must never become negative, this object violates the model invariant.</p>
+</div>
+<div class="paragraph">
+<p>We need two kinds of predictability:</p>
+</div>
+<div class="paragraph">
+<div class="title">Mechanical predictability</div>
+<p>The code reliably does what is embedded in it.</p>
+</div>
+<div class="paragraph">
+<div class="title">Model predictability</div>
+<p>The code does what the selected model considers correct.</p>
+</div>
+<div class="paragraph">
+<p>A bug may be mechanically predictable and model-invalid.</p>
+</div>
+<div class="paragraph">
+<p>A more precise statement is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>An invariant is not a fact of every execution. An invariant is the boundary beyond which an object stops being a correct representative of the selected model.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>If an object violates an invariant, it does not stop being an object. It becomes a defective object relative to its model.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_6_four_layers_of_truth"><a class="anchor" href="#_6_four_layers_of_truth"></a>6. Four Layers of Truth</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To avoid mixing factual behavior and model correctness, we can separate four layers.</p>
+</div>
+<div class="sect2">
+<h3 id="_6_1_runtime_truth"><a class="anchor" href="#_6_1_runtime_truth"></a>6.1 Runtime truth</h3>
+<div class="paragraph">
+<p>What actually happened during execution.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">balance = -100</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_2_engine_truth"><a class="anchor" href="#_6_2_engine_truth"></a>6.2 Engine truth</h3>
+<div class="paragraph">
+<p>What logic is actually embedded in the code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">withdraw() always subtracts the amount without checking a limit</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_3_model_truth"><a class="anchor" href="#_6_3_model_truth"></a>6.3 Model truth</h3>
+<div class="paragraph">
+<p>What rules the object should preserve as a representative of the model.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">balance must not be negative</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_4_observed_truth"><a class="anchor" href="#_6_4_observed_truth"></a>6.4 Observed truth</h3>
+<div class="paragraph">
+<p>What an external observer can infer from JSON, events, logs, projections, exceptions, or API responses.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "balance": -100
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A bug is not the absence of truth. A bug is a conflict between engine truth and model truth.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, "protects invariants" should be phrased as a requirement for correct implementation:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>In a correct implementation, an object should localize and execute the rules that the model treats as invariants.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_7_why_a_single_status_field_is_often_suspicious"><a class="anchor" href="#_7_why_a_single_status_field_is_often_suspicious"></a>7. Why a Single status Field Is Often Suspicious</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Business systems often reduce state to one field:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php hljs" data-lang="php">$status = 'active';</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This often creates false simplicity.</p>
+</div>
+<div class="paragraph">
+<p>For example, what is the state of a Vendor?</p>
+</div>
+<div class="paragraph">
+<p>A vendor may be registered, verified, blocked, waiting for documents, visible in the catalog, unable to accept orders, able to accept orders but unable to receive payout, under review, attached to an active contract, or missing a required form.</p>
+</div>
+<div class="paragraph">
+<p>One universal status field quickly becomes a weak model.</p>
+</div>
+<div class="paragraph">
+<p>It is often better to ask behavioral questions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php hljs" data-lang="php">$vendor-&gt;canAcceptOrder();
+$vendor-&gt;canReceivePayout();
+$vendor-&gt;requiresReview();
+$vendor-&gt;isVisibleInCatalog();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These are not merely getters. They are observable projections. The outside world does not receive the whole truth about the vendor. It receives a predictable answer to a specific question.</p>
+</div>
+<div class="paragraph">
+<p>The same is true of the car. The driver does not receive the car&#8217;s complete state. The driver receives speed, fuel level, warnings, and other limited projections.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_8_entity_value_object_and_time"><a class="anchor" href="#_8_entity_value_object_and_time"></a>8. Entity, Value Object, and Time</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>DDD adds an important distinction: not every object is an entity.</p>
+</div>
+<div class="paragraph">
+<p>An Entity is important because of identity through time. Order <code>#123</code> remains the same order even if its status, address, or amount changes.</p>
+</div>
+<div class="paragraph">
+<p>A Value Object is different. <code>Money(100, USD)</code> or <code>EmailAddress('<a href="mailto:a@example.com">a@example.com</a>')</code> is not important as a "who". It is important as a "what".</p>
+</div>
+<div class="paragraph">
+<p>This distinction helps explain why flat state is especially dangerous for entities. Entities live through time. They pass through transitions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Draft -&gt; PendingPayment -&gt; Paid -&gt; Shipped -&gt; Completed</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But even this transition diagram is a model, not reality. Reality may include refunds, provider delays, partial shipments, manual corrections, and support interventions.</p>
+</div>
+<div class="paragraph">
+<p>A good model does not pretend to be a complete map of the world. It is precise enough for the decisions it must make.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_9_aggregate_as_a_consistency_boundary"><a class="anchor" href="#_9_aggregate_as_a_consistency_boundary"></a>9. Aggregate as a Consistency Boundary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>DDD aggregates are often explained as groups of related objects with a root entity. That explanation is useful but incomplete.</p>
+</div>
+<div class="paragraph">
+<p>The deeper point is that an aggregate is a consistency boundary.</p>
+</div>
+<div class="paragraph">
+<p>If a business rule requires that an order must never become both cancelled and shipped after any operation, that rule needs to live where it can be checked and preserved.</p>
+</div>
+<div class="paragraph">
+<p>But the aggregate does not magically guarantee truth. It provides the place where a correct implementation should preserve model consistency.</p>
+</div>
+<div class="paragraph">
+<p>If the code is wrong, the aggregate can still produce invalid state. Runtime truth exists, but model truth is violated.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_10_why_the_classical_definitions_still_matter"><a class="anchor" href="#_10_why_the_classical_definitions_still_matter"></a>10. Why the Classical Definitions Still Matter</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The classical formula — identity, state, behavior — remains useful.</p>
+</div>
+<div class="paragraph">
+<p>Booch gives us vocabulary for object-oriented analysis and design. Meyer gives us contracts and invariants. Evans gives us Entities, Value Objects, Services, Aggregates, and Bounded Contexts. Fowler reminds us that a Domain Model is an object model that incorporates both behavior and data. GoF patterns gave generations of engineers a language of roles, collaborations, and responsibility distribution between objects rather than just fields and methods.</p>
+</div>
+<div class="paragraph">
+<p>The point is not to reject the classics. The point is to avoid flattening them.</p>
+</div>
+<div class="paragraph">
+<p>Classical vocabulary is scaffolding. It helps us climb. But we should not confuse scaffolding with the finished building.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_11_a_more_precise_definition"><a class="anchor" href="#_11_a_more_precise_definition"></a>11. A More Precise Definition</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After this discussion, I would define an object this way:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>An object is an identifiable unit of a model that consumes external influence — data, message, command, event, or context — executes embedded behavior, retains internal memory between interactions, and produces predictable observable projections; in a correct implementation, that behavior should preserve the invariants of the selected model.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This definition is longer than a conference slide because the short formula hides too much:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>an object exists through time;</p>
+</li>
+<li>
+<p>state is not absolute;</p>
+</li>
+<li>
+<p>the observer sees only projections;</p>
+</li>
+<li>
+<p>behavior may be factual and still model-invalid;</p>
+</li>
+<li>
+<p>an invariant is not magic inside an object;</p>
+</li>
+<li>
+<p>a bug is reality of execution, but not necessarily truth of the model.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_12_practical_consequence_for_code"><a class="anchor" href="#_12_practical_consequence_for_code"></a>12. Practical Consequence for Code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A weak object model often looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php hljs" data-lang="php">$order-&gt;setStatus('paid');
+$order-&gt;setPaidAt(new DateTimeImmutable());
+$order-&gt;setCanBeShipped(true);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the external code manually assembles state. The object becomes a container.</p>
+</div>
+<div class="paragraph">
+<p>A stronger model looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php hljs" data-lang="php">$order-&gt;pay($payment);
+$order-&gt;ship($shipment);
+$order-&gt;cancel($reason);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the object consumes an external influence and decides whether the transition is valid inside the selected model.</p>
+</div>
+<div class="paragraph">
+<p>But even this does not guarantee correctness. If <code>pay()</code> is written incorrectly, the object will reliably produce incorrect behavior.</p>
+</div>
+<div class="paragraph">
+<p>Object-orientation begins when we design a behavioral unit through time:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">identity
++ memory
++ input consumption
++ behavior engine
++ observable projections
++ model invariants
++ lifecycle</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_13_conclusion"><a class="anchor" href="#_13_conclusion"></a>13. Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An object does not simply "have state".</p>
+</div>
+<div class="paragraph">
+<p>An object passes through time. It consumes influences, executes embedded behavior, retains memory, and produces observable traces. State is not the whole truth of the object. State is a selected slice available to a particular observer in a particular frame.</p>
+</div>
+<div class="paragraph">
+<p>An invariant is not what the object factually always preserves. An invariant is what a correct object must preserve to remain a valid representative of its model.</p>
+</div>
+<div class="paragraph">
+<p>Real architecture lives between two planes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>as a factual executable system;</p>
+</li>
+<li>
+<p>and as a normative representative of a model.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Not in the formula "properties + methods". Not in a status field. Not in the slogan "encapsulation".</p>
+</div>
+<div class="paragraph">
+<p>But in the question:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>What does this object consume, what does it remember, how does it pass through time, what traces does it produce, and where is the boundary between its factual behavior and the correctness of the model?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That is where object-oriented programming becomes alive again.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bibliography"><a class="anchor" href="#_bibliography"></a>Bibliography</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Andrew P. Black, "Object-oriented Programming: Some History, and Challenges for the Next Fifty Years", 2013.</p>
+</li>
+<li>
+<p>Alan Kay, "The Early History of Smalltalk".</p>
+</li>
+<li>
+<p>Grady Booch, <em>Object-Oriented Analysis and Design with Applications</em>, 3rd ed., Addison-Wesley, 2007.</p>
+</li>
+<li>
+<p>Bertrand Meyer, <em>Object-Oriented Software Construction</em>, 2nd ed., Prentice Hall, 1997.</p>
+</li>
+<li>
+<p>Bertrand Meyer, Alisa Arkadova, Alexander Kogtenkov, "The concept of class invariant in object-oriented programming", 2021.</p>
+</li>
+<li>
+<p>Eric Evans, <em>Domain-Driven Design: Tackling Complexity in the Heart of Software</em>, Addison-Wesley, 2003.</p>
+</li>
+<li>
+<p>Eric Evans, <em>Domain-Driven Design Reference</em>, 2015.</p>
+</li>
+<li>
+<p>Martin Fowler, <em>Patterns of Enterprise Application Architecture</em>, Addison-Wesley, 2002.</p>
+</li>
+<li>
+<p>Martin Fowler, "Domain Model", <em>Catalog of Patterns of Enterprise Application Architecture</em>.</p>
+</li>
+<li>
+<p>Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides, <em>Design Patterns: Elements of Reusable Object-Oriented Software</em>, Addison-Wesley, 1994.</p>
+</li>
+<li>
+<p>Vaughn Vernon, <em>Implementing Domain-Driven Design</em>, Addison-Wesley, 2013.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>

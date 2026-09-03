@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Decision Trace :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/principle/decision-trace/">
+    <meta name="description" content="A reusable principle for connecting explanation with accountability.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/principle/decision-trace/">
+<meta property="og:url" content="https://docs.smartresponsor.com/principle/decision-trace/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Decision Trace">
+<meta name="twitter:title" content="Decision Trace">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../article/">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">Decision Trace</a></li>
+    <li><span>Decision Trace</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Decision Trace</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/principle/decision-trace.adoc`</em>
+== Purpose</p>
+</div>
+<div class="paragraph">
+<p>Decision Trace is a principle for making important decisions inspectable.</p>
+</div>
+<div class="paragraph">
+<p>A decision trace does not assume that human beings are perfectly rational. It starts from the opposite premise: fear, reward, belonging, scarcity, status, fatigue, and hidden incentives may shape a decision before the explanation appears.</p>
+</div>
+<div class="paragraph">
+<p>The trace exists so that a decision does not disappear inside a confident story.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_minimum_trace"><a class="anchor" href="#_minimum_trace"></a>Minimum trace</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A minimum decision trace should preserve:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>fact;</p>
+</li>
+<li>
+<p>reason;</p>
+</li>
+<li>
+<p>alternative;</p>
+</li>
+<li>
+<p>doubt;</p>
+</li>
+<li>
+<p>verification.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For institutional or AI-assisted decisions, the trace may also preserve:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>source;</p>
+</li>
+<li>
+<p>assumption;</p>
+</li>
+<li>
+<p>incentive;</p>
+</li>
+<li>
+<p>uncertainty;</p>
+</li>
+<li>
+<p>review condition;</p>
+</li>
+<li>
+<p>revision condition;</p>
+</li>
+<li>
+<p>harm if wrong.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fact"><a class="anchor" href="#_fact"></a>Fact</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The fact layer records the known basis of the decision.</p>
+</div>
+<div class="paragraph">
+<p>It should distinguish what was known from what was believed, inferred, assumed, predicted, or feared.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reason"><a class="anchor" href="#_reason"></a>Reason</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The reason layer records why the chosen path was selected.</p>
+</div>
+<div class="paragraph">
+<p>A reason should not only sound coherent. It should show its connection to evidence, purpose, constraint, and expected consequence.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_alternative"><a class="anchor" href="#_alternative"></a>Alternative</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The alternative layer records what other paths were considered.</p>
+</div>
+<div class="paragraph">
+<p>Without alternatives, a decision can pretend to have been inevitable. A trace should preserve the roads not taken, at least in summary form.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_doubt"><a class="anchor" href="#_doubt"></a>Doubt</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The doubt layer records what remained uncertain.</p>
+</div>
+<div class="paragraph">
+<p>Doubt is not weakness. It is the preservation of contact with reality.</p>
+</div>
+<div class="paragraph">
+<p>A mature decision can act while still admitting what it does not know.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_verification"><a class="anchor" href="#_verification"></a>Verification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The verification layer records what could later confirm, challenge, or revise the decision.</p>
+</div>
+<div class="paragraph">
+<p>A decision that cannot be checked becomes a story. A decision that can be checked can become accountable.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_this_matters_for_ai"><a class="anchor" href="#_why_this_matters_for_ai"></a>Why this matters for AI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AI systems can produce fluent explanations quickly.</p>
+</div>
+<div class="paragraph">
+<p>This is useful when the goal is to organize thought. It is dangerous when fluency is mistaken for truth.</p>
+</div>
+<div class="paragraph">
+<p>A truth-oriented AI system should therefore help preserve the decision trace:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>what is known;</p>
+</li>
+<li>
+<p>what is assumed;</p>
+</li>
+<li>
+<p>what source supports the claim;</p>
+</li>
+<li>
+<p>what alternative explanations exist;</p>
+</li>
+<li>
+<p>what uncertainty remains;</p>
+</li>
+<li>
+<p>what would change the conclusion;</p>
+</li>
+<li>
+<p>what human decision is still required.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>AI should belong to the architecture of trace, not only to the architecture of answer.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_this_matters_for_contribution_systems"><a class="anchor" href="#_why_this_matters_for_contribution_systems"></a>Why this matters for contribution systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A contribution-oriented system cannot rely only on final labels.</p>
+</div>
+<div class="paragraph">
+<p>It must preserve why a contribution was recognized, why a record was disputed, why a fulfillment was accepted, why a signal changed, and what evidence supports the change.</p>
+</div>
+<div class="paragraph">
+<p>Without trace, reputation becomes opaque.</p>
+</div>
+<div class="paragraph">
+<p>With trace, reputation can remain contextual, explainable, and correctable.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_boundary"><a class="anchor" href="#_boundary"></a>Boundary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Decision Trace is not bureaucracy for its own sake.</p>
+</div>
+<div class="paragraph">
+<p>It is a way to protect truth, dignity, correction, and accountability when explanations arrive after the decision has already been shaped by hidden forces.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>

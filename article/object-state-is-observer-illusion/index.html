@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Object State Is an Observer&#8217;s Illusion :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/object-state-is-observer-illusion/">
+    <meta name="description" content="On what the OOP classics left unsaid, and what AI reproduced as truth.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/object-state-is-observer-illusion/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/object-state-is-observer-illusion/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Object State Is an Observer&amp;#8217;s Illusion">
+<meta name="twitter:title" content="Object State Is an Observer&amp;#8217;s Illusion">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">Object State Is an Observer&amp;#8217;s Illusion</a></li>
+    <li><span>Object State Is an Observer&amp;#8217;s Illusion</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Object State Is an Observer&#8217;s Illusion</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/object-state-is-observer-illusion.adoc`</em>
+<em>On what the OOP classics left unsaid, and what AI reproduced as truth.</em></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>An object has state, behavior, and identity.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Grady Booch<br>
+<cite>Object-Oriented Analysis and Design with Applications</cite>
+</div>
+</div>
+<div class="paragraph">
+<p><sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_how_the_conversation_about_objects_usually_begins"><a class="anchor" href="#_1_how_the_conversation_about_objects_usually_begins"></a>1. How the conversation about objects usually begins</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have ever been to software development conferences, you have probably heard this formulation: an object is an entity that has properties and states. Sometimes behavior is added to that definition. Less often, identity.</p>
+</div>
+<div class="paragraph">
+<p>This phrase migrates from talk to talk, from textbook to textbook, and eventually into the training datasets of artificial intelligence. And when I asked a modern language model what an object is in OOP, it answered exactly this way.</p>
+</div>
+<div class="paragraph">
+<p>Here is the answer verbatim:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A real object is encapsulated behavior that hides its state and interacts with the world only through messages. [&#8230;&#8203;] An object knows its invariants, protects its state, and expresses intention through methods, not getters and setters.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The answer is technically competent. But it became the starting point for this article precisely because it contains a word that deserves a separate discussion: state.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_what_the_classics_meant_by_state"><a class="anchor" href="#_2_what_the_classics_meant_by_state"></a>2. What the classics meant by state</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The classical object-oriented tradition describes an object through a triad: state, behavior, and identity. At first glance, this looks like a coherent system. But it contains a hidden assumption that is rarely stated explicitly.</p>
+</div>
+<div class="paragraph">
+<p>In that formulation, state sounds as if it were something an object simply <em>has</em>. As if we could open the object at any moment, look inside, and see its true condition.</p>
+</div>
+<div class="paragraph">
+<p>The problem is that this does not describe an object as a living unit of a model. It describes an object from the position of an observer who has already stopped time and taken a snapshot.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_the_problem_state_assumes_frozen_time"><a class="anchor" href="#_3_the_problem_state_assumes_frozen_time"></a>3. The problem: state assumes frozen time</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Imagine a car moving along a highway. It has speed, fuel level, engine temperature, and tire tread wear. All of these are attributes from which "state" is assembled in the classical sense.</p>
+</div>
+<div class="paragraph">
+<p>Now the question: can you measure the tread depth of a tire on a moving car?</p>
+</div>
+<div class="paragraph">
+<p>No. You may visually estimate body corrosion while the car is moving. You may read fuel-sensor data through telemetry. But some characteristics of an object are fundamentally unavailable to observation unless the object is stopped. The object has to be taken out of the flow and fixed in place so it can be measured.</p>
+</div>
+<div class="paragraph">
+<p>Here is the central thesis: state is always a time slice, an artifact of observation, not an ontological property of the object itself.</p>
+</div>
+<div class="paragraph">
+<p>The object lives in a flow. It changes continuously — even if, from the perspective of program code, "nothing happens" between two method calls. At the level of physics, at the level of electrical impulses, at the level of time, the object is already different. The state we record is not what the object "has." It is what the observer manages to see.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_the_observer_and_the_projection"><a class="anchor" href="#_4_the_observer_and_the_projection"></a>4. The observer and the projection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Alan Kay, who coined the term "object-oriented" and created Smalltalk, did not speak primarily about state. He spoke about messages.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> An object is an autonomous agent that responds to messages. What happens inside it is not the caller&#8217;s business.</p>
+</div>
+<div class="paragraph">
+<p>From this follows a more precise formulation of what an object does from the outside:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>An object produces predictable observable projections — what it decides to show the world at the moment of interaction.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Not "has state." Rather, "produces a projection of state" in response to a request, at the moment of observation. This distinction is subtle, but fundamental.</p>
+</div>
+<div class="sect2">
+<h3 id="_example_an_order_in_an_online_store"><a class="anchor" href="#_example_an_order_in_an_online_store"></a>Example: an order in an online store</h3>
+<div class="paragraph">
+<p>Classical OOP thinking:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php hljs" data-lang="php">$order-&gt;status = 'paid'; // external code controls state
+$order-&gt;total = 0;       // external code knows how to calculate</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Object thinking in terms of projections:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-php hljs" data-lang="php">$order-&gt;pay($amount); // the object manages the transition itself
+$order-&gt;cancel();     // the object knows whether cancellation is allowed</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the first case, we read state and control it from the outside. In the second, we send a message and receive a projection of the result. The internal remains hidden. This is exactly how the Anemic Domain Model emerges as an antipattern in Fowler&#8217;s sense: entities become bags of data, and logic leaks into services.<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_invariants_are_not_a_property_of_the_object_they_are_an_observers_norm"><a class="anchor" href="#_5_invariants_are_not_a_property_of_the_object_they_are_an_observers_norm"></a>5. Invariants are not a property of the object. They are an observer&#8217;s norm</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let us return to what the AI said in its first answer: "an object protects its invariants." This is a normative statement, not a descriptive one.</p>
+</div>
+<div class="paragraph">
+<p>Consider the car again. The car is moving. The tire tread depth is 3 mm. The legal invariant says the tread must be no less than 1.6 mm. Has the invariant been violated?</p>
+</div>
+<div class="paragraph">
+<p>From the car&#8217;s own point of view, no. The car does not know traffic regulations. It simply drives. The tire is simply worn down to 3 mm. That is its current characteristic; its "engine" operates exactly this way.</p>
+</div>
+<div class="paragraph">
+<p>The invariant exists only in the observer&#8217;s mind: the inspector, the system architect, the test author. It is a norm against which the object&#8217;s projection is compared.</p>
+</div>
+<div class="paragraph">
+<p>From this comes an important practical conclusion: an object with a bug is absolutely predictable. It reproduces its bug every time. That is its nature at that moment. Unpredictability is not a property of a defective object. It is the gap between the observer&#8217;s expected model and the object&#8217;s real projection.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_6_rethinking_what_an_object_really_is"><a class="anchor" href="#_6_rethinking_what_an_object_really_is"></a>6. Rethinking what an object really is</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I propose a formulation that more honestly reflects the nature of an object:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>An object is an identical unit of a model that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>consumes something from the outside: data, messages, events;</p>
+</li>
+<li>
+<p>performs behavior embedded in its engine;</p>
+</li>
+<li>
+<p>retains internal memory between interactions;</p>
+</li>
+<li>
+<p>produces predictable observable projections.</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The word "predictable" matters more here than "valid." An object is always predictable to the extent permitted by the quality of its engine. Whether its projections conform to an external model is a question of architectural design, not of the object&#8217;s ontology.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_7_why_ai_reproduced_it_this_way"><a class="anchor" href="#_7_why_ai_reproduced_it_this_way"></a>7. Why AI reproduced it this way</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Language models are trained on texts. Most texts about OOP reproduce Booch&#8217;s formulation: state, behavior, identity. This triad appears in thousands of books, articles, and courses. It has become canon.</p>
+</div>
+<div class="paragraph">
+<p>When I asked AI about an object, it gave me that canon, supplemented with more modern language about encapsulation and invariants. Technically accurate. Ontologically shallow.</p>
+</div>
+<div class="paragraph">
+<p>This is not AI&#8217;s fault. It is a reflection of the state of the discourse. AI reproduces what it was taught, and it was taught what the majority has written.</p>
+</div>
+<div class="paragraph">
+<p>The majority, in turn, reproduces Booch without asking the question: what is "state" in itself?</p>
+</div>
+<div class="paragraph">
+<p>That is why conference speakers confidently say "an object has state," and nobody asks: state at what moment? Observed by whom? Measured how?</p>
+</div>
+<div class="paragraph">
+<p>The answers to these questions change the way we think about code.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_8_practical_consequences_for_architecture"><a class="anchor" href="#_8_practical_consequences_for_architecture"></a>8. Practical consequences for architecture</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_8_1_invariants_belong_to_the_architect_not_to_the_object"><a class="anchor" href="#_8_1_invariants_belong_to_the_architect_not_to_the_object"></a>8.1. Invariants belong to the architect, not to the object</h3>
+<div class="paragraph">
+<p>Invariants matter. But it is important not to mystify them. An invariant is not an object&#8217;s "knowledge about itself." It is a rule of the model that the architect decided to embody in code.</p>
+</div>
+<div class="paragraph">
+<p>In this sense, Meyer&#8217;s Design by Contract, Evans&#8217;s aggregates, and the practical DDD tradition are not speaking about the metaphysics of the object. They are speaking about the boundaries of an admissible projection.<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_8_2_state_should_not_be_read_directly"><a class="anchor" href="#_8_2_state_should_not_be_read_directly"></a>8.2. State should not be read directly</h3>
+<div class="paragraph">
+<p>If state is a projection, architecture must be built around messages, not around direct reading of attributes. A getter is an explicit violation of this principle. Not because "getters are bad" as a rule, but because they assume that someone outside the object knows how to interpret the object&#8217;s internal data.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_8_3_predictability_matters_more_than_correctness"><a class="anchor" href="#_8_3_predictability_matters_more_than_correctness"></a>8.3. Predictability matters more than correctness</h3>
+<div class="paragraph">
+<p>A well-designed object is not one that is "always correct." It is one whose projections are predictable under all conditions. Predictability is an observable property. Correctness is an evaluative judgment made by an observer.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_9_what_to_read_to_understand_this_more_deeply"><a class="anchor" href="#_9_what_to_read_to_understand_this_more_deeply"></a>9. What to read to understand this more deeply</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grady Booch, <em>Object-Oriented Analysis and Design</em> — the canonical source of the "state — behavior — identity" triad. Essential reading if you want to understand where the terminology came from.</p>
+</div>
+<div class="paragraph">
+<p>Bertrand Meyer, <em>Object-Oriented Software Construction</em> — the most detailed exposition of Design by Contract. Read it to understand how invariants are embedded in code, and then ask where the boundary lies between an object and its specification.</p>
+</div>
+<div class="paragraph">
+<p>Eric Evans, <em>Domain-Driven Design</em> — aggregates, invariants, boundary protection. A powerful practical instrument, but ontologically it still rests on the same Booch-style triad.</p>
+</div>
+<div class="paragraph">
+<p>Alan Kay, <em>The Early History of Smalltalk</em> — a primary source for the idea of messages and autonomous agents. To understand what Kay actually meant is to see how far mainstream OOP has moved away from the original idea.</p>
+</div>
+<div class="paragraph">
+<p>Carl Hewitt et al., <em>A Universal Modular ACTOR Formalism</em> — the theoretical foundation of the actor model. A parallel branch of object thinking that survived in Erlang, Akka, and modern reactive systems.<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>Martin Fowler, <em>Anemic Domain Model</em> — a short but precise article about what happens when an object degenerates into a data structure.</p>
+</div>
+<div class="paragraph">
+<p>Vaughn Vernon, <em>Implementing Domain-Driven Design</em> — a practical implementation of DDD aggregates. It is useful to read it alongside Evans in order to see how theory becomes code.<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_10_conclusion"><a class="anchor" href="#_10_conclusion"></a>10. Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The triad "state — behavior — identity" is not wrong. It is simplified. It hides an epistemological problem: the state of an object is unavailable to observation in most practical situations, just as the tread depth of a tire cannot be measured while the car is moving.</p>
+</div>
+<div class="paragraph">
+<p>What we call "state" is a snapshot, a slice, a projection. It exists only at the moment of observation and only for the observer. The object, meanwhile, simply works.</p>
+</div>
+<div class="paragraph">
+<p>Invariants are an observer&#8217;s norm embodied in code, not an ontological property of the object. An object with a bug is predictable. An object without an assertion does not violate an invariant; it simply does not know about it.</p>
+</div>
+<div class="paragraph">
+<p>When AI answers the question "what is an object?" it reproduces canon. Canon is useful as an introduction. But to deeply understand why systems degrade into anemic models, why getters capture the codebase, and why logic leaks out of objects into services, we need to ask a sharper question.</p>
+</div>
+<div class="paragraph">
+<p>Not "what is object state?" but: "who observes it, when, and why?"</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Booch G. <em>Object-Oriented Analysis and Design with Applications</em>. 2nd ed. Addison-Wesley, 1994. P. 41-44.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Kay A. <em>The Early History of Smalltalk</em>. ACM SIGPLAN Notices. 1993. Vol. 28, No. 3. P. 69-75.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. Fowler M. <em>Anemic Domain Model</em>. martinfowler.com, 2003.
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. Meyer B. <em>Object-Oriented Software Construction</em>. 2nd ed. Prentice Hall, 1997. P. 331-370.
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. Evans E. <em>Domain-Driven Design: Tackling Complexity in the Heart of Software</em>. Addison-Wesley, 2003. P. 89-110.
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. Hewitt C., Bishop P., Steiger R. <em>A Universal Modular ACTOR Formalism for Artificial Intelligence</em>. Proceedings of the 3rd International Joint Conference on Artificial Intelligence, 1973.
+</div>
+<div class="footnote" id="_footnotedef_7">
+<a href="#_footnoteref_7">7</a>. Vernon V. <em>Implementing Domain-Driven Design</em>. Addison-Wesley, 2013.
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>

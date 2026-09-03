@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fact, Risk, Option, Action :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/principle/fact-risk-option-action-protocol/">
+    <meta name="description" content="A reusable decision-interface pattern for translating threat into structure.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/principle/fact-risk-option-action-protocol/">
+<meta property="og:url" content="https://docs.smartresponsor.com/principle/fact-risk-option-action-protocol/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fact, Risk, Option, Action">
+<meta name="twitter:title" content="Fact, Risk, Option, Action">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../article/">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">Fact, Risk, Option, Action</a></li>
+    <li><span>Fact, Risk, Option, Action</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Fact, Risk, Option, Action</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/principle/fact-risk-option-action-protocol.adoc`</em>
+== Purpose</p>
+</div>
+<div class="paragraph">
+<p>Fact, Risk, Option, Action is a decision-interface pattern.</p>
+</div>
+<div class="paragraph">
+<p>It exists because human beings under pressure often move from uncertainty directly into reaction. Fear asks for exit. Status asks for defense. Belonging asks for loyalty. The inner narrator may later explain the reaction as if it had been the result of calm analysis.</p>
+</div>
+<div class="paragraph">
+<p>The pattern creates a bridge from survival mode toward truth mode.</p>
+</div>
+<div class="paragraph">
+<p>It does not remove fear. It structures it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_sequence"><a class="anchor" href="#_the_sequence"></a>The sequence</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The sequence is simple:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fact: what is known?</p>
+</li>
+<li>
+<p>Risk: what may happen, and how verifiable is it?</p>
+</li>
+<li>
+<p>Option: what paths are available?</p>
+</li>
+<li>
+<p>Action: what next step reduces uncertainty?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This sequence prevents a decision environment from collapsing into panic, accusation, avoidance, or false certainty.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fact"><a class="anchor" href="#_fact"></a>Fact</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The fact layer asks what is actually known.</p>
+</div>
+<div class="paragraph">
+<p>It separates observation from interpretation, evidence from assumption, and record from emotion.</p>
+</div>
+<div class="paragraph">
+<p>Useful questions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is directly known?</p>
+</li>
+<li>
+<p>What is documented?</p>
+</li>
+<li>
+<p>What is observed but not yet explained?</p>
+</li>
+<li>
+<p>What source supports the claim?</p>
+</li>
+<li>
+<p>What is still unknown?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_risk"><a class="anchor" href="#_risk"></a>Risk</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The risk layer asks what may happen.</p>
+</div>
+<div class="paragraph">
+<p>It does not treat every fear as truth, but it also does not ignore danger. The goal is to make risk inspectable.</p>
+</div>
+<div class="paragraph">
+<p>Useful questions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What could go wrong?</p>
+</li>
+<li>
+<p>What is the probability or uncertainty?</p>
+</li>
+<li>
+<p>What is the harm if the risk is real?</p>
+</li>
+<li>
+<p>What evidence would reduce uncertainty?</p>
+</li>
+<li>
+<p>What is imagined but not yet supported?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_option"><a class="anchor" href="#_option"></a>Option</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The option layer asks what paths exist.</p>
+</div>
+<div class="paragraph">
+<p>A threatened mind often sees only fight, flight, or freeze. A mature interface should expand the available field of action.</p>
+</div>
+<div class="paragraph">
+<p>Useful questions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What can be done now?</p>
+</li>
+<li>
+<p>What can be verified before action?</p>
+</li>
+<li>
+<p>What can be delayed safely?</p>
+</li>
+<li>
+<p>What can be repaired?</p>
+</li>
+<li>
+<p>What path preserves dignity and accountability?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_action"><a class="anchor" href="#_action"></a>Action</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The action layer asks what next step reduces uncertainty instead of merely releasing anxiety.</p>
+</div>
+<div class="paragraph">
+<p>A good action is not always large. Often it is the next verifiable move.</p>
+</div>
+<div class="paragraph">
+<p>Useful questions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is the smallest responsible next step?</p>
+</li>
+<li>
+<p>What record should be created?</p>
+</li>
+<li>
+<p>Who needs to be informed?</p>
+</li>
+<li>
+<p>What should be checked later?</p>
+</li>
+<li>
+<p>What would trigger revision?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_the_pattern_prevents"><a class="anchor" href="#_what_the_pattern_prevents"></a>What the pattern prevents</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The pattern helps prevent:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>panic without evidence;</p>
+</li>
+<li>
+<p>accusation without trace;</p>
+</li>
+<li>
+<p>certainty without verification;</p>
+</li>
+<li>
+<p>delay without reason;</p>
+</li>
+<li>
+<p>action without accountability;</p>
+</li>
+<li>
+<p>AI-generated confidence without source discipline;</p>
+</li>
+<li>
+<p>institutional explanation without a decision path.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_where_it_applies"><a class="anchor" href="#_where_it_applies"></a>Where it applies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The pattern can apply to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>public communication;</p>
+</li>
+<li>
+<p>AI-assisted decision support;</p>
+</li>
+<li>
+<p>dispute handling;</p>
+</li>
+<li>
+<p>campaign verification;</p>
+</li>
+<li>
+<p>fulfillment review;</p>
+</li>
+<li>
+<p>governance review;</p>
+</li>
+<li>
+<p>product risk review;</p>
+</li>
+<li>
+<p>institutional decision records;</p>
+</li>
+<li>
+<p>documentation workflows.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_boundary"><a class="anchor" href="#_boundary"></a>Boundary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is not a claim that every situation can be reduced to four words.</p>
+</div>
+<div class="paragraph">
+<p>It is a minimum structure for keeping the path from uncertainty to action inspectable.</p>
+</div>
+<div class="paragraph">
+<p>The purpose is to make truth usable under pressure.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>

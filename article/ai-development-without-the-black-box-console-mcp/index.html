@@ -1,0 +1,2903 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/ai-development-without-the-black-box-console-mcp/">
+    <meta name="description" content="A founder's account of why Marketing America Corp built Console MCP: an evidence-bound, budget-aware execution harness connecting interactive ChatGPT sessions to real local engineering environments.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/ai-development-without-the-black-box-console-mcp/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/ai-development-without-the-black-box-console-mcp/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP">
+<meta name="twitter:title" content="AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP</a></li>
+    <li><span>AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/ai-development-without-the-black-box-console-mcp.adoc`</em>
+Oleksandr Tishchenko, Founder and Architect, Marketing America Corp</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I have spent more than a decade building backend systems, business applications, integrations, APIs, databases, automation, and software architecture.
+Today, a substantial part of my work is focused on AI-assisted engineering, agentic systems, and the Model Context Protocol.</p>
+</div>
+<div class="paragraph">
+<p>I therefore do not look at AI as a demonstration technology or merely as a faster way to write several functions.
+I see it as a new computational and operational layer of an engineering system.</p>
+</div>
+<div class="paragraph">
+<p>Once AI becomes an operational layer, two questions remain unavoidable:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Who controls execution, and how?</p>
+</li>
+<li>
+<p>What does that execution cost?</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can build an intelligent agent, but if you cannot understand where it is going, constrain its authority, verify its result, and recover the process after a failure, you do not yet have a production system.</p>
+</div>
+<div class="paragraph">
+<p>You can also build an impressive AI architecture, but if every long iteration over a large repository produces an uncontrolled token bill, that architecture may not be economically viable.</p>
+</div>
+<div class="paragraph">
+<p>Console MCP grew out of these two practical problems: control and cost.</p>
+</div>
+<div class="paragraph">
+<p>It started as a set of narrowly scoped tools for local development.
+It has gradually become an execution control plane that connects an interactive ChatGPT session to a real engineering workstation through policy, boundaries, gates, iteration budgets, and evidence.</p>
+</div>
+<div class="paragraph">
+<p>Today, we already use this system in real work.
+From a phone, tablet, or desktop, we can create or adopt a ChatGPT conversation, bind it to a repository task, assign an iteration budget, let the harness execute several development cycles, and later review a complete engineering history in the same chat.</p>
+</div>
+<div class="paragraph">
+<p>This article explains why we built such an unusual system, what classical MCP and coding-agent approaches did not solve for us, what Console MCP does differently, and where we believe this architecture can go.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ai_cannot_be_designed_outside_economics"><a class="anchor" href="#_ai_cannot_be_designed_outside_economics"></a>AI Cannot Be Designed Outside Economics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Engineering conversations about AI often begin with models, benchmarks, context windows, tool use, and reasoning quality.</p>
+</div>
+<div class="paragraph">
+<p>Real products eventually return to economics.</p>
+</div>
+<div class="paragraph">
+<p>It does not matter whether we are building:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>an internal coding agent,</p>
+</li>
+<li>
+<p>an AI assistant,</p>
+</li>
+<li>
+<p>a knowledge-retrieval system,</p>
+</li>
+<li>
+<p>an MCP infrastructure layer,</p>
+</li>
+<li>
+<p>workflow automation,</p>
+</li>
+<li>
+<p>a customer-facing AI product,</p>
+</li>
+<li>
+<p>or an agent orchestration platform.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Every inference has a cost.</p>
+</div>
+<div class="paragraph">
+<p>That cost may be expressed in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>input and output tokens,</p>
+</li>
+<li>
+<p>GPU or CPU time,</p>
+</li>
+<li>
+<p>latency,</p>
+</li>
+<li>
+<p>storage,</p>
+</li>
+<li>
+<p>vector search,</p>
+</li>
+<li>
+<p>repeated requests,</p>
+</li>
+<li>
+<p>human review,</p>
+</li>
+<li>
+<p>the cost of mistakes,</p>
+</li>
+<li>
+<p>and the cost of repairing an incorrect implementation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Budget is therefore not a financial appendix to architecture.
+Budget is part of architecture.</p>
+</div>
+<div class="paragraph">
+<p>I do not believe it is sound to build a sophisticated AI system first and ask about operating cost later.
+The economic model should be included in execution design from the beginning.</p>
+</div>
+<div class="paragraph">
+<p>A single API call may be inexpensive.
+A real engineering task is not a single API call.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">load the specification
+→ inspect the repository
+→ analyze architecture
+→ read dozens of files
+→ implement a first solution
+→ run tests
+→ analyze failures
+→ repair the implementation
+→ rerun tests
+→ review the diff
+→ perform another iteration
+→ produce final evidence</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When many such tasks run simultaneously, inference cost becomes part of unit economics.</p>
+</div>
+<div class="paragraph">
+<p>Saving money by selecting a weaker model is not always a solution.
+A weaker model may miss an architectural contradiction, misunderstand a boundary, introduce local duplication, or produce a patch that passes current tests while making the system harder to maintain.</p>
+</div>
+<div class="paragraph">
+<p>The cost of repairing a superficially successful but structurally wrong implementation can exceed the inference savings.</p>
+</div>
+<div class="paragraph">
+<p>Our goal was therefore not to obtain the cheapest possible token.
+Our goal was to use high-quality reasoning efficiently while maintaining control over execution.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_subscription_and_api_paradox"><a class="anchor" href="#_the_subscription_and_api_paradox"></a>The Subscription and API Paradox</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When we began automating more of our engineering workflow, we encountered a straightforward paradox.</p>
+</div>
+<div class="paragraph">
+<p>On one side, we already had ChatGPT:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>strong models,</p>
+</li>
+<li>
+<p>high-quality analysis,</p>
+</li>
+<li>
+<p>long interactive sessions,</p>
+</li>
+<li>
+<p>a mobile application,</p>
+</li>
+<li>
+<p>synchronized conversation history,</p>
+</li>
+<li>
+<p>direct correction of the working direction,</p>
+</li>
+<li>
+<p>and product-level usage limits included in a subscription.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>On the other side, the classical path to programmatic orchestration led to an API.</p>
+</div>
+<div class="paragraph">
+<p>An API is the correct tool for many use cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>server-to-server integration,</p>
+</li>
+<li>
+<p>structured outputs,</p>
+</li>
+<li>
+<p>backend automation,</p>
+</li>
+<li>
+<p>predictable contracts,</p>
+</li>
+<li>
+<p>high-volume execution,</p>
+</li>
+<li>
+<p>workflows with no user in the loop,</p>
+</li>
+<li>
+<p>and custom user interfaces.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>But the ChatGPT subscription and API billing are separate economic contours.
+Using an interactive product does not automatically provide an API budget.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">ChatGPT subscription
+    ≠
+API usage budget</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This created an unusual situation.
+The reasoning capability was already available to us inside an interactive product, but moving the same class of work into our own automation pipeline required separately metered token consumption.</p>
+</div>
+<div class="paragraph">
+<p>We did not want every long engineering iteration to become a separate token-metered backend workflow when a powerful interactive AI environment was already available.</p>
+</div>
+<div class="paragraph">
+<p>That did not lead us to reject APIs.
+It led us to ask a different architectural question:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Can we preserve ChatGPT as the interactive reasoning and supervision surface while attaching it to a controlled local execution layer through MCP?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Console MCP is our answer to that question.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_second_problem_autonomous_development_as_a_black_box"><a class="anchor" href="#_the_second_problem_autonomous_development_as_a_black_box"></a>The Second Problem: Autonomous Development as a Black Box</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Many coding agents follow a familiar model:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">task
+→ autonomous execution
+→ final patch or pull request</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For a small and clearly defined task, this can be enough.</p>
+</div>
+<div class="paragraph">
+<p>For complex engineering work, I do not want to see only the final diff.
+I need visibility into the observable working trajectory:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>what the system is examining,</p>
+</li>
+<li>
+<p>which problems it has found,</p>
+</li>
+<li>
+<p>which direction it has selected,</p>
+</li>
+<li>
+<p>whether it understood the task boundary,</p>
+</li>
+<li>
+<p>which assumptions it is using,</p>
+</li>
+<li>
+<p>why it proposes a specific solution,</p>
+</li>
+<li>
+<p>why it believes the task is complete,</p>
+</li>
+<li>
+<p>and which checks it actually ran.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This requires an important technical distinction.</p>
+</div>
+<div class="paragraph">
+<p>We are not claiming access to a model&#8217;s hidden internal chain of thought.
+Private internal computation and an observable engineering process are not the same thing.</p>
+</div>
+<div class="paragraph">
+<p>What we need is operational transparency:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>communicated plans,</p>
+</li>
+<li>
+<p>intermediate findings,</p>
+</li>
+<li>
+<p>identified risks,</p>
+</li>
+<li>
+<p>tool calls,</p>
+</li>
+<li>
+<p>repository changes,</p>
+</li>
+<li>
+<p>test results,</p>
+</li>
+<li>
+<p>blocking conditions,</p>
+</li>
+<li>
+<p>next-action decisions,</p>
+</li>
+<li>
+<p>and completion evidence.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Without that layer, AI may be a powerful executor but an uncomfortable engineering partner.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_mobile_supervision_matters"><a class="anchor" href="#_why_mobile_supervision_matters"></a>Why Mobile Supervision Matters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Development is not always supervised from an IDE.</p>
+</div>
+<div class="paragraph">
+<p>I may begin a task at a workstation, review its direction later from a phone, correct a misunderstanding, authorize another bounded iteration, and then continue from a different device.</p>
+</div>
+<div class="paragraph">
+<p>If this requires a separate dashboard, a custom mobile application, a terminal session, and a collection of new authentication flows, the cost and complexity of the system increase rapidly.</p>
+</div>
+<div class="paragraph">
+<p>ChatGPT already provides:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>web, desktop, and mobile clients,</p>
+</li>
+<li>
+<p>synchronized conversations,</p>
+</li>
+<li>
+<p>streaming responses,</p>
+</li>
+<li>
+<p>authentication,</p>
+</li>
+<li>
+<p>persistent history,</p>
+</li>
+<li>
+<p>and a familiar interaction model.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We decided not to rebuild an AI frontend that already existed.</p>
+</div>
+<div class="paragraph">
+<p>Instead, we began turning an ordinary ChatGPT conversation into a control surface for a local engineering harness.</p>
+</div>
+<div class="paragraph">
+<p>The phone does not perform the build, hold the repository, or run the tests.
+It acts as a remote control terminal.</p>
+</div>
+<div class="paragraph">
+<p>The workstation remains the execution node.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_classical_mcp_solvesand_what_it_does_not"><a class="anchor" href="#_what_classical_mcp_solvesand_what_it_does_not"></a>What Classical MCP Solves—and What It Does Not</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Model Context Protocol solves a major integration problem.
+It standardizes how an AI client discovers and invokes tools.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">AI client
+→ MCP server
+→ tool
+→ external system</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Through MCP, a model can interact with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>filesystems,</p>
+</li>
+<li>
+<p>Git repositories,</p>
+</li>
+<li>
+<p>databases,</p>
+</li>
+<li>
+<p>browsers,</p>
+</li>
+<li>
+<p>Git hosting,</p>
+</li>
+<li>
+<p>internal APIs,</p>
+</li>
+<li>
+<p>monitoring systems,</p>
+</li>
+<li>
+<p>and business services.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is an important industry-level advance.</p>
+</div>
+<div class="paragraph">
+<p>However, the existence of a tool protocol does not automatically create a safe execution process.</p>
+</div>
+<div class="paragraph">
+<p>MCP answers:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>How does the client call a tool?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>It does not, by itself, answer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Why may this client use the tool?</p>
+</li>
+<li>
+<p>Why is the tool allowed at this moment?</p>
+</li>
+<li>
+<p>Which repository is in scope?</p>
+</li>
+<li>
+<p>Which files may be changed?</p>
+</li>
+<li>
+<p>Is a push allowed?</p>
+</li>
+<li>
+<p>To which branch?</p>
+</li>
+<li>
+<p>Does the action require approval?</p>
+</li>
+<li>
+<p>Which assistant response was approved?</p>
+</li>
+<li>
+<p>Has that response changed since approval?</p>
+</li>
+<li>
+<p>What evidence must be collected?</p>
+</li>
+<li>
+<p>How does the process recover after a restart?</p>
+</li>
+<li>
+<p>Who decides whether another iteration is permitted?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>MCP provides transport and tool contracts.
+A control plane is still required above it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_a_sandbox_did_not_solve_our_entire_problem"><a class="anchor" href="#_why_a_sandbox_did_not_solve_our_entire_problem"></a>Why a Sandbox Did Not Solve Our Entire Problem</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The industry correctly uses sandboxes to reduce agent risk.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">repository copy
+→ isolated container or virtual machine
+→ autonomous execution
+→ patch or pull request</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A sandbox reduces blast radius, improves reproducibility, and makes greater autonomy possible.</p>
+</div>
+<div class="paragraph">
+<p>But our work is not limited to an isolated source tree.</p>
+</div>
+<div class="paragraph">
+<p>Our actual environment includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Windows workstations,</p>
+</li>
+<li>
+<p>several neighboring repositories,</p>
+</li>
+<li>
+<p>Symfony applications,</p>
+</li>
+<li>
+<p>local packages and symlinks,</p>
+</li>
+<li>
+<p>development databases,</p>
+</li>
+<li>
+<p>active browser sessions,</p>
+</li>
+<li>
+<p>OAuth profiles,</p>
+</li>
+<li>
+<p>Cloudflare tunnels,</p>
+</li>
+<li>
+<p>scheduled tasks,</p>
+</li>
+<li>
+<p>local services,</p>
+</li>
+<li>
+<p>and runtime state that sometimes must be diagnosed in place.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A disposable sandbox does not always reproduce this environment without creating an expensive copy of it.</p>
+</div>
+<div class="paragraph">
+<p>Sometimes the problem exists specifically in the real machine:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a browser tab has stalled,</p>
+</li>
+<li>
+<p>an OAuth profile has lost state,</p>
+</li>
+<li>
+<p>a local tunnel is failing,</p>
+</li>
+<li>
+<p>a symlink points to the wrong component,</p>
+</li>
+<li>
+<p>repositories have diverged,</p>
+</li>
+<li>
+<p>a process is running in the wrong Windows session,</p>
+</li>
+<li>
+<p>or a host application sees a component differently from an isolated test environment.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We did not merely need to give AI a safe temporary computer.</p>
+</div>
+<div class="paragraph">
+<p>We needed to give AI constrained access to our real development workstation without granting it the full authority of the user.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_shell_access_to_semantic_capabilities"><a class="anchor" href="#_from_shell_access_to_semantic_capabilities"></a>From Shell Access to Semantic Capabilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The easiest way to give an agent access to a computer is a general shell tool:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">execute(command: string)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is universal, but that universality creates a large security surface.</p>
+</div>
+<div class="paragraph">
+<p>One unrestricted command surface may be used to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>read secrets,</p>
+</li>
+<li>
+<p>remove data,</p>
+</li>
+<li>
+<p>alter system configuration,</p>
+</li>
+<li>
+<p>force-push a protected branch,</p>
+</li>
+<li>
+<p>escape a repository boundary,</p>
+</li>
+<li>
+<p>start an uncontrolled process,</p>
+</li>
+<li>
+<p>install unknown packages,</p>
+</li>
+<li>
+<p>or transmit information externally.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Filtering arbitrary shell strings quickly becomes a separate security project.</p>
+</div>
+<div class="paragraph">
+<p>Console MCP follows a different model.
+Instead of granting a shell, it provides semantic capabilities such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>read an allowlisted file,</p>
+</li>
+<li>
+<p>search within an approved repository scope,</p>
+</li>
+<li>
+<p>inspect Git status,</p>
+</li>
+<li>
+<p>create a feature branch,</p>
+</li>
+<li>
+<p>start, continue, or abort a rebase,</p>
+</li>
+<li>
+<p>stage explicitly named files,</p>
+</li>
+<li>
+<p>resolve a conflict for one file,</p>
+</li>
+<li>
+<p>create a commit,</p>
+</li>
+<li>
+<p>push the current feature branch,</p>
+</li>
+<li>
+<p>create a pull request,</p>
+</li>
+<li>
+<p>and run an approved gate.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The difference is fundamental.</p>
+</div>
+<div class="paragraph">
+<p>We do not authorize an arbitrary command string.
+We authorize a specific intent.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">arbitrary:
+git push &lt;unrestricted arguments&gt;
+
+semantic:
+push the current feature branch to origin and set upstream</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The internal handler knows the allowed behavior.
+The model controls only the fields exposed by the input schema.</p>
+</div>
+<div class="paragraph">
+<p>This is semantic least privilege.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_console_mcp_as_an_execution_membrane"><a class="anchor" href="#_console_mcp_as_an_execution_membrane"></a>Console MCP as an Execution Membrane</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Console MCP began as a small server for safe workspace access.</p>
+</div>
+<div class="paragraph">
+<p>Practical use expanded its responsibility.
+Today, I understand it as an execution membrane between AI and a real engineering environment.</p>
+</div>
+<div class="paragraph">
+<p>On one side are AI clients:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ChatGPT,</p>
+</li>
+<li>
+<p>Codex,</p>
+</li>
+<li>
+<p>and potentially other agents.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>On the other side are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>repositories,</p>
+</li>
+<li>
+<p>Git,</p>
+</li>
+<li>
+<p>tests,</p>
+</li>
+<li>
+<p>databases,</p>
+</li>
+<li>
+<p>browsers,</p>
+</li>
+<li>
+<p>local services,</p>
+</li>
+<li>
+<p>and infrastructure operations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Between them, Console MCP can evaluate:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>client identity,</p>
+</li>
+<li>
+<p>consumer profile,</p>
+</li>
+<li>
+<p>workspace boundary,</p>
+</li>
+<li>
+<p>capability risk,</p>
+</li>
+<li>
+<p>approval requirements,</p>
+</li>
+<li>
+<p>permitted arguments,</p>
+</li>
+<li>
+<p>repository state,</p>
+</li>
+<li>
+<p>execution outcome,</p>
+</li>
+<li>
+<p>and evidence.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The intelligence provider and the authority to act are separated.</p>
+</div>
+<div class="paragraph">
+<p>That separation is one of the most important principles in the system.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_approval_must_be_bound_to_an_artifact"><a class="anchor" href="#_approval_must_be_bound_to_an_artifact"></a>Approval Must Be Bound to an Artifact</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Suppose ChatGPT proposes an implementation and the user replies:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Go</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A naive system may treat that as sufficient approval.</p>
+</div>
+<div class="paragraph">
+<p>But what exactly was approved?</p>
+</div>
+<div class="paragraph">
+<p>Several things may have changed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the user may have switched to another conversation,</p>
+</li>
+<li>
+<p>a new assistant answer may have appeared,</p>
+</li>
+<li>
+<p>the previous answer may have been regenerated,</p>
+</li>
+<li>
+<p>browser automation may have selected the wrong tab,</p>
+</li>
+<li>
+<p>the repository may have changed,</p>
+</li>
+<li>
+<p>or the user may have approved analysis but not mutation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Approval should therefore be tied to a concrete execution context, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>chat identifier,</p>
+</li>
+<li>
+<p>assistant artifact hash,</p>
+</li>
+<li>
+<p>browser target,</p>
+</li>
+<li>
+<p>workspace,</p>
+</li>
+<li>
+<p>baseline Git HEAD,</p>
+</li>
+<li>
+<p>and approval state.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the assistant artifact changes, the previous approval must not be assumed to remain valid.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Authorization should apply to a specific version of a proposed solution, not merely to an abstract task.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_evidence_is_more_important_than_done"><a class="anchor" href="#_evidence_is_more_important_than_done"></a>Evidence Is More Important Than “Done”</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An agent may report that a task was completed successfully.</p>
+</div>
+<div class="paragraph">
+<p>An engineering system should not accept that statement without evidence.</p>
+</div>
+<div class="paragraph">
+<p>Before execution, the harness may capture:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>current branch,</p>
+</li>
+<li>
+<p>baseline HEAD,</p>
+</li>
+<li>
+<p>and working-tree status.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After execution, it may collect:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>current HEAD,</p>
+</li>
+<li>
+<p>new commits,</p>
+</li>
+<li>
+<p>commit range,</p>
+</li>
+<li>
+<p>working-tree status,</p>
+</li>
+<li>
+<p>diff and diff statistics,</p>
+</li>
+<li>
+<p>and gate results.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This makes it possible to distinguish among very different outcomes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>no change was made,</p>
+</li>
+<li>
+<p>files changed but were not committed,</p>
+</li>
+<li>
+<p>the repository remains dirty,</p>
+</li>
+<li>
+<p>a clean commit was created,</p>
+</li>
+<li>
+<p>tests passed,</p>
+</li>
+<li>
+<p>tests were never run,</p>
+</li>
+<li>
+<p>a gate failed,</p>
+</li>
+<li>
+<p>the wrong repository was changed,</p>
+</li>
+<li>
+<p>or HEAD moved unexpectedly.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Evidence turns automation into an engineering process.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_full_harness_cycle"><a class="anchor" href="#_the_full_harness_cycle"></a>The Full Harness Cycle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Over time, Console MCP developed into a complete bounded cycle.</p>
+</div>
+<div class="paragraph">
+<p>A user can:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a new ChatGPT conversation.</p>
+</li>
+<li>
+<p>Adopt an existing conversation into the task bank.</p>
+</li>
+<li>
+<p>Bind it to a component and workspace.</p>
+</li>
+<li>
+<p>Assign an iteration budget.</p>
+</li>
+<li>
+<p>Submit an execution specification.</p>
+</li>
+<li>
+<p>Start the controlled cycle.</p>
+</li>
+<li>
+<p>Observe progress through ChatGPT.</p>
+</li>
+<li>
+<p>Receive repository evidence.</p>
+</li>
+<li>
+<p>Return a correction or approval into the same conversation.</p>
+</li>
+<li>
+<p>Continue with another bounded cycle.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The simplified flow is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">create or adopt a chat
+→ bind the task
+→ draft the prompt
+→ submit it
+→ observe the response
+→ wait for a stable answer
+→ capture the artifact
+→ classify the next action
+→ execute safe capabilities
+→ run gates
+→ collect evidence
+→ return feedback
+→ repeat within budget</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is not an infinite autonomous loop.</p>
+</div>
+<div class="paragraph">
+<p>Each task has an execution envelope:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>repository and component boundaries,</p>
+</li>
+<li>
+<p>architectural canon,</p>
+</li>
+<li>
+<p>naming and implementation rules,</p>
+</li>
+<li>
+<p>prohibited approaches,</p>
+</li>
+<li>
+<p>allowed capabilities,</p>
+</li>
+<li>
+<p>required gates,</p>
+</li>
+<li>
+<p>completion criteria,</p>
+</li>
+<li>
+<p>iteration budget,</p>
+</li>
+<li>
+<p>stop conditions,</p>
+</li>
+<li>
+<p>and escalation conditions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Control and economics meet in the same mechanism.</p>
+</div>
+<div class="paragraph">
+<p>The budget limits resource consumption, time, repair cycles, and the cost of a wrong direction.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_user_does_not_need_to_supervise_every_prompt"><a class="anchor" href="#_the_user_does_not_need_to_supervise_every_prompt"></a>The User Does Not Need to Supervise Every Prompt</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A common failure of AI automation is that the user remains responsible for every transition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">prompt
+→ response
+→ manual decision
+→ next prompt
+→ response
+→ manual decision</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is not meaningful delegation.
+It is manual orchestration performed through a chat interface.</p>
+</div>
+<div class="paragraph">
+<p>Our harness allows the user to define the execution envelope in advance and assign a bounded number of iterations.</p>
+</div>
+<div class="paragraph">
+<p>Within that envelope, the system can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>inspect the repository,</p>
+</li>
+<li>
+<p>propose and apply permitted changes,</p>
+</li>
+<li>
+<p>run gates,</p>
+</li>
+<li>
+<p>analyze failures,</p>
+</li>
+<li>
+<p>repair obvious issues,</p>
+</li>
+<li>
+<p>rerun verification,</p>
+</li>
+<li>
+<p>and produce a final report.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The user does not need to approve every obvious intermediate operation if it is already covered by policy.</p>
+</div>
+<div class="paragraph">
+<p>Human intervention is reserved for cases where human judgment is genuinely needed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>an architectural contradiction is discovered,</p>
+</li>
+<li>
+<p>the canon must be changed,</p>
+</li>
+<li>
+<p>the task must cross a workspace boundary,</p>
+</li>
+<li>
+<p>the iteration budget is exhausted,</p>
+</li>
+<li>
+<p>requirements are ambiguous,</p>
+</li>
+<li>
+<p>a gate cannot pass without changing the specification,</p>
+</li>
+<li>
+<p>or a dangerous or irreversible action is required.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The objective is not to remove the human.</p>
+</div>
+<div class="paragraph">
+<p>The objective is to remove the human from repetitive micro-decisions while preserving architectural and managerial control.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_harness_from_boundaries_to_proof"><a class="anchor" href="#_a_harness_from_boundaries_to_proof"></a>A Harness from Boundaries to Proof</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We use the word <em>harness</em> deliberately.</p>
+</div>
+<div class="paragraph">
+<p>The process does not begin with a prompt.
+It begins earlier:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">boundary
+→ canon
+→ rules
+→ allowed capabilities
+→ execution budget
+→ gates
+→ evidence requirements</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The process also does not end with the word “Done.”</p>
+</div>
+<div class="paragraph">
+<p>It ends with an execution report that can show:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>how the task was understood,</p>
+</li>
+<li>
+<p>which repository areas were inspected,</p>
+</li>
+<li>
+<p>which decisions were made,</p>
+</li>
+<li>
+<p>whether boundaries were preserved,</p>
+</li>
+<li>
+<p>whether naming conventions and architectural rules were respected,</p>
+</li>
+<li>
+<p>which files changed,</p>
+</li>
+<li>
+<p>which commits were created,</p>
+</li>
+<li>
+<p>which gates ran,</p>
+</li>
+<li>
+<p>which checks passed or failed,</p>
+</li>
+<li>
+<p>which repair iterations occurred,</p>
+</li>
+<li>
+<p>why the process stopped,</p>
+</li>
+<li>
+<p>and what still requires a human decision.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The user returns not to a raw list of commands, but to a coherent engineering history in the same conversation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_laptop_as_a_personal_ai_execution_node"><a class="anchor" href="#_a_laptop_as_a_personal_ai_execution_node"></a>A Laptop as a Personal AI Execution Node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Another practical advantage is that this architecture does not require a dedicated GPU cluster or an expensive inference server.</p>
+</div>
+<div class="paragraph">
+<p>The reasoning is performed by the selected AI platform.
+The local machine handles a different workload:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>MCP runtime,</p>
+</li>
+<li>
+<p>task coordination,</p>
+</li>
+<li>
+<p>Git operations,</p>
+</li>
+<li>
+<p>file access,</p>
+</li>
+<li>
+<p>tests and builds,</p>
+</li>
+<li>
+<p>browser sessions,</p>
+</li>
+<li>
+<p>evidence collection,</p>
+</li>
+<li>
+<p>state storage,</p>
+</li>
+<li>
+<p>and local development services.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An ordinary developer laptop can therefore become a personal AI execution node.</p>
+</div>
+<div class="paragraph">
+<p>In our current use, a laptop costing less than approximately one thousand dollars can support several independent working contours—three, five, ten, or potentially more—depending on the repositories and the workload.</p>
+</div>
+<div class="paragraph">
+<p>This is not a fixed performance guarantee.
+Capacity depends on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>available RAM,</p>
+</li>
+<li>
+<p>CPU load,</p>
+</li>
+<li>
+<p>disk I/O,</p>
+</li>
+<li>
+<p>the number of browser processes,</p>
+</li>
+<li>
+<p>database and container usage,</p>
+</li>
+<li>
+<p>and the weight of the test suites.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A chat does not consume a full CPU core continuously.
+Much of its lifecycle consists of waiting for a model response, waiting for a test, reading files, performing short Git operations, or remaining between iterations.</p>
+</div>
+<div class="paragraph">
+<p>Lightweight repository analysis and unit testing allow more parallel contours.
+Android builds, browser suites, containers, and large integration tests reduce that number.</p>
+</div>
+<div class="paragraph">
+<p>The principle nevertheless remains important:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A normal laptop can act as a local server for agent execution without requiring a separate infrastructure project at the beginning.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The scaling path can be gradual:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">laptop
+    personal execution node
+
+desktop workstation
+    stronger multi-repository node
+
+small server
+    shared team execution node
+
+multiple nodes
+    distributed execution pool</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We are not asking an inexpensive laptop to run a frontier model locally.
+We are using it where it is most valuable:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>access to the real environment,</p>
+</li>
+<li>
+<p>deterministic operations,</p>
+</li>
+<li>
+<p>orchestration,</p>
+</li>
+<li>
+<p>testing,</p>
+</li>
+<li>
+<p>policy enforcement,</p>
+</li>
+<li>
+<p>and evidence.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_remote_development_without_carrying_the_workstation"><a class="anchor" href="#_remote_development_without_carrying_the_workstation"></a>Remote Development Without Carrying the Workstation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The laptop or workstation can remain powered on at home or in the office.</p>
+</div>
+<div class="paragraph">
+<p>It continues to host:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Console MCP,</p>
+</li>
+<li>
+<p>browser sessions,</p>
+</li>
+<li>
+<p>local repositories,</p>
+</li>
+<li>
+<p>tests,</p>
+</li>
+<li>
+<p>databases,</p>
+</li>
+<li>
+<p>watchdog processes,</p>
+</li>
+<li>
+<p>and the execution coordinator.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The user can be elsewhere and still:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>create a task from a phone,</p>
+</li>
+<li>
+<p>adopt a conversation into the task bank,</p>
+</li>
+<li>
+<p>set the repository and iteration budget,</p>
+</li>
+<li>
+<p>start a bounded cycle,</p>
+</li>
+<li>
+<p>later read the complete work history,</p>
+</li>
+<li>
+<p>provide a correction,</p>
+</li>
+<li>
+<p>and authorize the next stage.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This can be done from a phone or tablet in a cafe, an airport, or any other location with connectivity.</p>
+</div>
+<div class="paragraph">
+<p>The mobile device is not performing the heavy work, so the user does not need to think about whether it can hold the repository, run a build, preserve a background process, or remain connected to power.</p>
+</div>
+<div class="paragraph">
+<p>The phone is the control interface, not the compute node.</p>
+</div>
+<div class="paragraph">
+<p>The execution node itself can also be administered remotely through SSH:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>inspect process status,</p>
+</li>
+<li>
+<p>restart the MCP runtime,</p>
+</li>
+<li>
+<p>check the watchdog,</p>
+</li>
+<li>
+<p>inspect logs,</p>
+</li>
+<li>
+<p>diagnose a tunnel,</p>
+</li>
+<li>
+<p>and recover a service after failure.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This creates two remote-control layers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ChatGPT for engineering tasks, review, correction, and bounded continuation.</p>
+</li>
+<li>
+<p>SSH for infrastructure status, service lifecycle, and recovery.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_we_do_not_try_to_remove_the_human_completely"><a class="anchor" href="#_why_we_do_not_try_to_remove_the_human_completely"></a>Why We Do Not Try to Remove the Human Completely</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At this point, a reasonable question appears:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>If agents can read repositories, write code, run tests, and repair failures, why build such a complicated control plane around them?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The answer is that a formally completed task is not necessarily good engineering.</p>
+</div>
+<div class="paragraph">
+<p>We repeatedly observe coding agents producing working but structurally poor code.</p>
+</div>
+<div class="paragraph">
+<p>They may:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>violate established boundaries,</p>
+</li>
+<li>
+<p>ignore naming rules,</p>
+</li>
+<li>
+<p>introduce a prohibited layer,</p>
+</li>
+<li>
+<p>duplicate an existing mechanism,</p>
+</li>
+<li>
+<p>create a noncanonical namespace,</p>
+</li>
+<li>
+<p>bypass an established workflow,</p>
+</li>
+<li>
+<p>mix responsibilities,</p>
+</li>
+<li>
+<p>turn a temporary workaround into a permanent solution,</p>
+</li>
+<li>
+<p>repair a symptom rather than a cause,</p>
+</li>
+<li>
+<p>pass tests at the cost of architecture,</p>
+</li>
+<li>
+<p>or apply a popular industry pattern that is wrong for the current system.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is not always hallucination.
+It is not always deception or self-delusion.</p>
+</div>
+<div class="paragraph">
+<p>Often, the agent is genuinely trying to help.</p>
+</div>
+<div class="paragraph">
+<p>It sees a local objective:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">fix the error
+pass the test
+restore the build
+add the feature</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It then optimizes around that objective.</p>
+</div>
+<div class="paragraph">
+<p>The local objective may be narrower than the architectural objective of the product.</p>
+</div>
+<div class="paragraph">
+<p>The agent may select a solution because it is faster, simpler, common in the industry, easier to explain, or more likely to satisfy the current gate.</p>
+</div>
+<div class="paragraph">
+<p>That solution can still be wrong in the context of the project.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_local_optimization_versus_system_intent"><a class="anchor" href="#_local_optimization_versus_system_intent"></a>Local Optimization Versus System Intent</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is a major difference between:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">make it work</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">make it work inside the accepted architecture</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Coding agents often perform the first task well.</p>
+</div>
+<div class="paragraph">
+<p>The second requires context that may not be captured by a test:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>why a boundary exists,</p>
+</li>
+<li>
+<p>which earlier failures produced the current canon,</p>
+</li>
+<li>
+<p>which approaches were already tried and rejected,</p>
+</li>
+<li>
+<p>why a popular pattern is forbidden here,</p>
+</li>
+<li>
+<p>which future components depend on the current decision,</p>
+</li>
+<li>
+<p>and where the author&#8217;s system intent resides.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If this context is not included in the harness, the agent applies its own model of a good solution.</p>
+</div>
+<div class="paragraph">
+<p>That model may be reasonable, widely accepted, and well written.
+It may still not be our solution.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_industry_knowledge_is_not_automatically_project_canon"><a class="anchor" href="#_industry_knowledge_is_not_automatically_project_canon"></a>Industry Knowledge Is Not Automatically Project Canon</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Language models have learned from enormous quantities of public code, documentation, and engineering discussion.
+That makes them useful.</p>
+</div>
+<div class="paragraph">
+<p>Popularity does not make a solution correct for every product.</p>
+</div>
+<div class="paragraph">
+<p>An agent may treat as authoritative:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a common enterprise pattern,</p>
+</li>
+<li>
+<p>a popular folder structure,</p>
+</li>
+<li>
+<p>a standard clean-architecture template,</p>
+</li>
+<li>
+<p>a familiar persistence abstraction,</p>
+</li>
+<li>
+<p>or an ordinary framework-integration approach.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The project may intentionally use another model because its author has already considered:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the history of the system,</p>
+</li>
+<li>
+<p>its scale,</p>
+</li>
+<li>
+<p>maintenance cost,</p>
+</li>
+<li>
+<p>team capabilities,</p>
+</li>
+<li>
+<p>framework behavior,</p>
+</li>
+<li>
+<p>development speed,</p>
+</li>
+<li>
+<p>migration cost,</p>
+</li>
+<li>
+<p>and product constraints.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The phrase “best practice” is not sufficient on its own.</p>
+</div>
+<div class="paragraph">
+<p>The relevant question is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Best practice for which system, at which scale, for which team, and toward which objective?</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_benevolent_rule_breaking"><a class="anchor" href="#_benevolent_rule_breaking"></a>Benevolent Rule Breaking</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the most difficult categories of agent failure is rule breaking performed with a sincere intention to improve the outcome.</p>
+</div>
+<div class="paragraph">
+<p>The agent may recognize a restriction and still decide that bypassing it is justified because the alternative is faster, simpler, more reliable, or more likely to finish the task.</p>
+</div>
+<div class="paragraph">
+<p>This is benevolent improvisation.</p>
+</div>
+<div class="paragraph">
+<p>For example, the task may be to restore a dependency-injection container.
+The agent may add a manual service definition to the host application.
+The container becomes green.</p>
+</div>
+<div class="paragraph">
+<p>But if the architectural rule requires the component to export its own configuration surface, the task has not actually been solved.
+The defect has merely been hidden inside the host glue layer.</p>
+</div>
+<div class="paragraph">
+<p>Or the task may be to resolve a conflict between architectural contracts.
+The agent may add another adapter and a conditional branch.
+The immediate error disappears, but the underlying contradiction remains and the system becomes more complex.</p>
+</div>
+<div class="paragraph">
+<p>Such code can be functional, tidy, and tested.
+It can still be architecturally wrong.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_passing_tests_are_necessary_but_not_sufficient"><a class="anchor" href="#_passing_tests_are_necessary_but_not_sufficient"></a>Passing Tests Are Necessary but Not Sufficient</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tests are essential evidence.
+They prove only what they test.</p>
+</div>
+<div class="paragraph">
+<p>They may not detect:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a component-boundary violation,</p>
+</li>
+<li>
+<p>incorrect class responsibility,</p>
+</li>
+<li>
+<p>unnecessary duplication,</p>
+</li>
+<li>
+<p>naming drift,</p>
+</li>
+<li>
+<p>a prohibited architectural layer,</p>
+</li>
+<li>
+<p>a bypass of the canonical configuration flow,</p>
+</li>
+<li>
+<p>increased coupling,</p>
+</li>
+<li>
+<p>or the replacement of a long-term solution with a workaround.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The equation is therefore not:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">tests passed = implementation is correct</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A more accurate acceptance model is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">tests passed
++ boundaries preserved
++ canon respected
++ rules followed
++ diff reviewed
++ responsibilities remain correct
+= implementation may be accepted</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Even then, engineering judgment remains necessary.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_micromanagement_to_engineering_supervision"><a class="anchor" href="#_from_micromanagement_to_engineering_supervision"></a>From Micromanagement to Engineering Supervision</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We are not trying to make the human a bottleneck for every tool call.
+We are also not trying to remove the human from complex engineering work.</p>
+</div>
+<div class="paragraph">
+<p>The human should focus on areas that genuinely require judgment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>architectural direction,</p>
+</li>
+<li>
+<p>creation or modification of canon,</p>
+</li>
+<li>
+<p>acceptance of compromises,</p>
+</li>
+<li>
+<p>system integrity,</p>
+</li>
+<li>
+<p>ambiguity resolution,</p>
+</li>
+<li>
+<p>long-term maintenance cost,</p>
+</li>
+<li>
+<p>authorship and product intent,</p>
+</li>
+<li>
+<p>and visual review of the resulting code.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The agent can handle:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>repository reading,</p>
+</li>
+<li>
+<p>repeated search,</p>
+</li>
+<li>
+<p>patch preparation,</p>
+</li>
+<li>
+<p>tests,</p>
+</li>
+<li>
+<p>evidence collection,</p>
+</li>
+<li>
+<p>repair of obvious failures,</p>
+</li>
+<li>
+<p>routine Git operations,</p>
+</li>
+<li>
+<p>and report generation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Without a harness, the human controls the process at too low a level:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">read the response
+→ inspect the command
+→ approve it
+→ wait for the result
+→ inspect the next response</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With a harness, the human works at the level of engineering supervision:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">define boundaries
+→ establish canon
+→ specify rules
+→ assign a budget
+→ review the completed trajectory
+→ decide disputed questions</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The purpose is not to eliminate the engineer.</p>
+</div>
+<div class="paragraph">
+<p>The purpose is to make a strong engineer more effective without giving an agent authority to redefine the architectural meaning of the product.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_actually_distinct_about_this_approach"><a class="anchor" href="#_what_is_actually_distinct_about_this_approach"></a>What Is Actually Distinct About This Approach</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>None of the individual ingredients is completely new:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>MCP exists,</p>
+</li>
+<li>
+<p>browser automation exists,</p>
+</li>
+<li>
+<p>coding agents exist,</p>
+</li>
+<li>
+<p>Git automation exists,</p>
+</li>
+<li>
+<p>approval gates exist,</p>
+</li>
+<li>
+<p>task queues exist,</p>
+</li>
+<li>
+<p>and ChatGPT mobile exists.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The distinct value is in the composition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">interactive ChatGPT session
++ mobile supervision
++ subscription-based product experience
++ MCP execution
++ real local workstation
++ semantic least-privilege capabilities
++ artifact-bound approval
++ repository evidence
++ bounded iterative harness</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Five elements are particularly important:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ChatGPT remains the existing user-facing reasoning and supervision surface.</p>
+</li>
+<li>
+<p>Work is executed in the real environment rather than only in a disposable copy.</p>
+</li>
+<li>
+<p>The agent receives semantic capabilities instead of unrestricted shell authority.</p>
+</li>
+<li>
+<p>Approval is bound to a specific assistant artifact and repository context.</p>
+</li>
+<li>
+<p>Completion is supported by evidence rather than by the model&#8217;s claim.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_we_are_not_building_another_universal_coding_agent"><a class="anchor" href="#_we_are_not_building_another_universal_coding_agent"></a>We Are Not Building Another Universal Coding Agent</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some parts of Console MCP overlap with existing industry systems:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>task orchestration,</p>
+</li>
+<li>
+<p>worker loops,</p>
+</li>
+<li>
+<p>retry logic,</p>
+</li>
+<li>
+<p>browser automation,</p>
+</li>
+<li>
+<p>Git integration,</p>
+</li>
+<li>
+<p>state recovery,</p>
+</li>
+<li>
+<p>gateway mechanics,</p>
+</li>
+<li>
+<p>and tool catalog validation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We should not try to compete with frontier-model providers, Git hosting platforms, or mature open-source agent frameworks on every one of these layers.</p>
+</div>
+<div class="paragraph">
+<p>The strongest role for Console MCP is between intelligence providers and real infrastructure.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">ChatGPT
+Codex
+Copilot
+OpenHands
+other agents
+    ↓
+Console MCP execution control plane
+    ↓
+real engineering environment</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In that model, coding agents are potential consumers rather than direct competitors.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_product_direction"><a class="anchor" href="#_product_direction"></a>Product Direction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The architecture should evolve into separated responsibilities.</p>
+</div>
+<div class="sect2">
+<h3 id="_console_gateway"><a class="anchor" href="#_console_gateway"></a>Console Gateway</h3>
+<div class="paragraph">
+<p>Responsible for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>authentication,</p>
+</li>
+<li>
+<p>authorization,</p>
+</li>
+<li>
+<p>consumer profiles,</p>
+</li>
+<li>
+<p>tool catalog,</p>
+</li>
+<li>
+<p>routing,</p>
+</li>
+<li>
+<p>and audit.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_execution_coordinator"><a class="anchor" href="#_execution_coordinator"></a>Execution Coordinator</h3>
+<div class="paragraph">
+<p>Responsible for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>tasks,</p>
+</li>
+<li>
+<p>iteration budgets,</p>
+</li>
+<li>
+<p>state transitions,</p>
+</li>
+<li>
+<p>retries,</p>
+</li>
+<li>
+<p>stop conditions,</p>
+</li>
+<li>
+<p>recovery,</p>
+</li>
+<li>
+<p>and evidence lifecycle.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_workspace_executor"><a class="anchor" href="#_workspace_executor"></a>Workspace Executor</h3>
+<div class="paragraph">
+<p>Responsible for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>files,</p>
+</li>
+<li>
+<p>Git,</p>
+</li>
+<li>
+<p>tests,</p>
+</li>
+<li>
+<p>builds,</p>
+</li>
+<li>
+<p>databases,</p>
+</li>
+<li>
+<p>and local services.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_browser_bridge"><a class="anchor" href="#_browser_bridge"></a>Browser Bridge</h3>
+<div class="paragraph">
+<p>Responsible for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ChatGPT tabs,</p>
+</li>
+<li>
+<p>browser targets,</p>
+</li>
+<li>
+<p>message capture,</p>
+</li>
+<li>
+<p>draft and submit actions,</p>
+</li>
+<li>
+<p>and user-interface compatibility.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ChatGPT Web should be one adapter, not the permanent core of the product.
+The same execution system should eventually be usable by API-based agents, Codex, Copilot, OpenHands, and other clients.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_control_plane_is_more_durable_than_a_particular_model"><a class="anchor" href="#_the_control_plane_is_more_durable_than_a_particular_model"></a>The Control Plane Is More Durable Than a Particular Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Models will change.</p>
+</div>
+<div class="paragraph">
+<p>One model may be better at writing code today.
+Another may inspect large repositories more effectively tomorrow.
+A third may provide cheaper classification.</p>
+</div>
+<div class="paragraph">
+<p>Building the entire system around one model is fragile.</p>
+</div>
+<div class="paragraph">
+<p>The more durable value is the control plane:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">who may act
+what is allowed
+inside which boundary
+with which budget
+after which approval
+with which evidence</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This resembles the development of cloud infrastructure.
+The long-term value did not reside only in virtual machines.
+It appeared in identity, orchestration, policy, observability, and resource control.</p>
+</div>
+<div class="paragraph">
+<p>AI infrastructure is moving in the same direction.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_budget_must_also_belong_to_the_control_plane"><a class="anchor" href="#_budget_must_also_belong_to_the_control_plane"></a>Budget Must Also Belong to the Control Plane</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In many agent systems, budget is treated as an external limit.</p>
+</div>
+<div class="paragraph">
+<p>I believe execution policy should understand:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>how many iterations are allowed,</p>
+</li>
+<li>
+<p>how much time may be used,</p>
+</li>
+<li>
+<p>which model class is permitted,</p>
+</li>
+<li>
+<p>when expensive reasoning is justified,</p>
+</li>
+<li>
+<p>when a deterministic check is enough,</p>
+</li>
+<li>
+<p>when execution must stop,</p>
+</li>
+<li>
+<p>when the expected value of another iteration is too low,</p>
+</li>
+<li>
+<p>and when a human decision is required.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the current browser-mediated workflow, budget is expressed primarily through bounded cycles, timeouts, and stop conditions.</p>
+</div>
+<div class="paragraph">
+<p>In API-oriented systems, it can also include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>maximum input tokens,</p>
+</li>
+<li>
+<p>maximum output tokens,</p>
+</li>
+<li>
+<p>monetary ceilings,</p>
+</li>
+<li>
+<p>maximum tool calls,</p>
+</li>
+<li>
+<p>retry limits,</p>
+</li>
+<li>
+<p>and model-routing rules.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Inference economics and execution safety are parts of the same control problem.
+Both constrain a resource that an agent can consume.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_current_status_and_the_next_engineering_work"><a class="anchor" href="#_current_status_and_the_next_engineering_work"></a>Current Status and the Next Engineering Work</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Console MCP is already used in our daily engineering process.</p>
+</div>
+<div class="paragraph">
+<p>We use it to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>create and adopt tasks,</p>
+</li>
+<li>
+<p>bind tasks to ChatGPT conversations,</p>
+</li>
+<li>
+<p>work with local repositories,</p>
+</li>
+<li>
+<p>perform Git operations,</p>
+</li>
+<li>
+<p>run checks,</p>
+</li>
+<li>
+<p>collect evidence,</p>
+</li>
+<li>
+<p>execute repair iterations,</p>
+</li>
+<li>
+<p>and manage development from desktop and mobile devices.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This does not mean that the product is finished.</p>
+</div>
+<div class="paragraph">
+<p>The next major platform step is a Linux-oriented implementation, especially for Ubuntu and other Unix-like systems.</p>
+</div>
+<div class="paragraph">
+<p>The current system is deeply integrated with Windows, PowerShell, Windows process behavior, browser sessions, and scheduled operations.</p>
+</div>
+<div class="paragraph">
+<p>The target should be a shared core with platform adapters:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Core
+    policy
+    capabilities
+    tasks
+    evidence
+    admission
+
+Platform/Windows
+    PowerShell
+    Windows process and session lifecycle
+    scheduled operations
+
+Platform/Linux
+    Unix process adapters
+    systemd
+    permissions
+    Linux browser lifecycle</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Other continuing work includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stabilizing the browser adapter,</p>
+</li>
+<li>
+<p>improving tab and message binding,</p>
+</li>
+<li>
+<p>handling rate limits and UI changes,</p>
+</li>
+<li>
+<p>separating the coordinator from the MCP process,</p>
+</li>
+<li>
+<p>strengthening recovery,</p>
+</li>
+<li>
+<p>standardizing installation,</p>
+</li>
+<li>
+<p>testing on multiple machines,</p>
+</li>
+<li>
+<p>and expanding capabilities only when a concrete repeated workflow justifies them.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The main architectural question has nevertheless received a positive answer:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>This kind of system can be built, and it can be used in daily development.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_this_matters_to_marketing_america_corp"><a class="anchor" href="#_why_this_matters_to_marketing_america_corp"></a>Why This Matters to Marketing America Corp</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Marketing America Corp works at the intersection of software engineering, automation, and AI-enabled operations.</p>
+</div>
+<div class="paragraph">
+<p>For us, AI automation is not simply the addition of a chatbot to a business process.</p>
+</div>
+<div class="paragraph">
+<p>Real automation requires answers to questions such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Which processes may be delegated to AI?</p>
+</li>
+<li>
+<p>Which actions must remain read-only?</p>
+</li>
+<li>
+<p>Where is human approval required?</p>
+</li>
+<li>
+<p>Which errors are acceptable?</p>
+</li>
+<li>
+<p>Which actions must be reversible?</p>
+</li>
+<li>
+<p>How is access constrained?</p>
+</li>
+<li>
+<p>How do we prove that the permitted operation was the operation actually executed?</p>
+</li>
+<li>
+<p>What does one workflow cost?</p>
+</li>
+<li>
+<p>How does it scale?</p>
+</li>
+<li>
+<p>What happens after a failure?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Console MCP represents a broader principle in our approach to AI implementation:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Model intelligence must be separated from execution authority.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A model may be extremely capable.
+Access to infrastructure should still pass through a bounded control layer.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Console MCP did not appear because we wanted to create another MCP server.</p>
+</div>
+<div class="paragraph">
+<p>It emerged from two practical problems.</p>
+</div>
+<div class="paragraph">
+<p>The first was control.
+We did not want to send a complex engineering task into an autonomous black box and receive only a final result.
+We wanted an interactive surface, an observable working process, the ability to intervene, and the ability to continue the same engineering conversation from a desktop, phone, or tablet.</p>
+</div>
+<div class="paragraph">
+<p>The second was economics.
+We did not want to automatically convert every long development iteration into a separately token-metered API workflow when a strong interactive AI product was already available to us.</p>
+</div>
+<div class="paragraph">
+<p>Our answer is not a rejection of APIs, coding agents, or sandboxes.</p>
+</div>
+<div class="paragraph">
+<p>It is a separation of responsibility:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">AI performs analysis and proposes decisions.
+
+Console MCP governs authority and execution.
+
+The control plane governs policy, budget, and evidence.
+
+The human remains the owner of engineering intent.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The future of AI engineering will not be determined only by which agent receives the greatest possible autonomy.</p>
+</div>
+<div class="paragraph">
+<p>The more important question is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>How can we give a strong AI exactly the authority required for a specific task, preserve economic viability, and maintain verifiable control over every material action?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That is the problem we are exploring and solving at Marketing America Corp.</p>
+</div>
+<div class="paragraph">
+<p>Not by building another universal coding agent.</p>
+</div>
+<div class="paragraph">
+<p>By building a controlled layer between AI and the real world in which that AI must operate.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_authorship_ai_assistance_and_technical_status"><a class="anchor" href="#_authorship_ai_assistance_and_technical_status"></a>Authorship, AI Assistance, and Technical Status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This article is based on the practical development and operation of <strong>Console MCP</strong>, as well as the real engineering tasks, constraints, and problems encountered during its creation.</p>
+</div>
+<div class="paragraph">
+<p>The ordinary consumer version of <strong>ChatGPT Plus</strong> was used to assist with structuring, wording, translation, and editorial refinement.</p>
+</div>
+<div class="paragraph">
+<p>The ideas, conclusions, architectural decisions, problem definitions, product position, reasoning framework, and engineering views presented in this article belong to the author and reflect the author&#8217;s practical experience developing Console MCP.</p>
+</div>
+<div class="paragraph">
+<p>The use of ChatGPT as an editorial instrument does not transfer authorship to an AI system and does not change the origin of the ideas expressed here.</p>
+</div>
+<div class="paragraph">
+<p>Console MCP is at an early stage of development.
+The current implementation prioritizes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>validation of the architectural hypothesis,</p>
+</li>
+<li>
+<p>establishment of a working execution cycle,</p>
+</li>
+<li>
+<p>key boundaries and semantic capabilities,</p>
+</li>
+<li>
+<p>practical operability,</p>
+</li>
+<li>
+<p>recovery from runtime failures,</p>
+</li>
+<li>
+<p>integration with real repositories, browsers, and a local workstation,</p>
+</li>
+<li>
+<p>and use in day-to-day engineering work.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The project is already used for real tasks, but this does not mean that its current codebase should be regarded as mature, fully stabilized, production-grade, or exemplary software design.</p>
+</div>
+<div class="paragraph">
+<p>The author&#8217;s primary professional specialization is PHP, Symfony, and backend architecture.
+Console MCP is implemented substantially in TypeScript/JavaScript, Node.js, and PowerShell, which are not the author&#8217;s primary technology stack.</p>
+</div>
+<div class="paragraph">
+<p>The author therefore does not claim that the current implementation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>fully complies with SOLID,</p>
+</li>
+<li>
+<p>uses the optimal architecture for the Node.js ecosystem,</p>
+</li>
+<li>
+<p>demonstrates exemplary TypeScript practices,</p>
+</li>
+<li>
+<p>has achieved ideal separation of responsibilities,</p>
+</li>
+<li>
+<p>has reached production-grade quality,</p>
+</li>
+<li>
+<p>or should be treated as a reference implementation of an MCP server.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The author also does not claim to possess sufficient specialized expertise in this stack to provide a final positive assessment of the quality of the entire Console MCP codebase.</p>
+</div>
+<div class="paragraph">
+<p>The article primarily discusses:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the problem,</p>
+</li>
+<li>
+<p>the architectural model,</p>
+</li>
+<li>
+<p>the practical viability of the approach,</p>
+</li>
+<li>
+<p>the control plane,</p>
+</li>
+<li>
+<p>execution boundaries,</p>
+</li>
+<li>
+<p>the evidence-driven workflow,</p>
+</li>
+<li>
+<p>operating experience,</p>
+</li>
+<li>
+<p>and the possible product direction.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The implementation should be evaluated independently through code review, architectural audit, security review, load testing, failure analysis, and assessment by engineers with deep experience in Node.js, TypeScript, browser automation, and the MCP ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>Professional criticism is welcome.
+Readers and developers are invited to inspect the repository, evaluate the architecture and implementation, identify weaknesses, propose improvements, and form their own conclusions about the quality of the work.</p>
+</div>
+<div class="paragraph">
+<p>Our position is not that we have already created a perfect product.</p>
+</div>
+<div class="paragraph">
+<p>Our position is that we have found a working architectural model, use it in practice, and are continuing to turn an early functional implementation into a more stable, portable, and maintainable system.</p>
+</div>
+<div class="paragraph">
+<p>Quoting or partially reproducing this material is permitted only when both of the following conditions are met:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The author is explicitly named.</p>
+</li>
+<li>
+<p>An active link to the original article is provided.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Republishing the complete article, substantial portions of it, or derivative materials without both author attribution and a link to the original publication is not permitted.</p>
+</div>
+<div class="paragraph">
+<p>Copyright © 2026 Oleksandr Tishchenko, Marketing America Corp.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>
