@@ -15,7 +15,13 @@ if (!fs.existsSync(antoraBin)) {
   process.exit(1)
 }
 
-const result = spawnSync(process.execPath, [antoraBin, 'antora-playbook.yml', '--fetch'], {
+const result = spawnSync(process.execPath, [
+  antoraBin,
+  'antora-playbook.yml',
+  '--fetch',
+  '--log-failure-level',
+  'error',
+], {
   cwd: root,
   stdio: 'inherit',
   env: process.env,
