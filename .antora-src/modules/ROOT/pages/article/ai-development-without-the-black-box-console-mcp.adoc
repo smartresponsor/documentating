@@ -1,0 +1,1349 @@
+= AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP
+:page-slug: ai-development-without-the-black-box-console-mcp
+:page-published: 2026-07-18
+:page-author: Oleksandr Tishchenko
+:description: A founder's account of why Marketing America Corp built Console MCP: an evidence-bound, budget-aware execution harness connecting interactive ChatGPT sessions to real local engineering environments.
+:page-tags: ai, mcp, chatgpt, coding-agents, control-plane, console-mcp, engineering, automation
+
+_Source asciidoc: `docs/article/ai-development-without-the-black-box-console-mcp.adoc`_
+Oleksandr Tishchenko, Founder and Architect, Marketing America Corp
+
+== Introduction
+
+I have spent more than a decade building backend systems, business applications, integrations, APIs, databases, automation, and software architecture.
+Today, a substantial part of my work is focused on AI-assisted engineering, agentic systems, and the Model Context Protocol.
+
+I therefore do not look at AI as a demonstration technology or merely as a faster way to write several functions.
+I see it as a new computational and operational layer of an engineering system.
+
+Once AI becomes an operational layer, two questions remain unavoidable:
+
+. Who controls execution, and how?
+. What does that execution cost?
+
+You can build an intelligent agent, but if you cannot understand where it is going, constrain its authority, verify its result, and recover the process after a failure, you do not yet have a production system.
+
+You can also build an impressive AI architecture, but if every long iteration over a large repository produces an uncontrolled token bill, that architecture may not be economically viable.
+
+Console MCP grew out of these two practical problems: control and cost.
+
+It started as a set of narrowly scoped tools for local development.
+It has gradually become an execution control plane that connects an interactive ChatGPT session to a real engineering workstation through policy, boundaries, gates, iteration budgets, and evidence.
+
+Today, we already use this system in real work.
+From a phone, tablet, or desktop, we can create or adopt a ChatGPT conversation, bind it to a repository task, assign an iteration budget, let the harness execute several development cycles, and later review a complete engineering history in the same chat.
+
+This article explains why we built such an unusual system, what classical MCP and coding-agent approaches did not solve for us, what Console MCP does differently, and where we believe this architecture can go.
+
+== AI Cannot Be Designed Outside Economics
+
+Engineering conversations about AI often begin with models, benchmarks, context windows, tool use, and reasoning quality.
+
+Real products eventually return to economics.
+
+It does not matter whether we are building:
+
+* an internal coding agent,
+* an AI assistant,
+* a knowledge-retrieval system,
+* an MCP infrastructure layer,
+* workflow automation,
+* a customer-facing AI product,
+* or an agent orchestration platform.
+
+Every inference has a cost.
+
+That cost may be expressed in:
+
+* input and output tokens,
+* GPU or CPU time,
+* latency,
+* storage,
+* vector search,
+* repeated requests,
+* human review,
+* the cost of mistakes,
+* and the cost of repairing an incorrect implementation.
+
+Budget is therefore not a financial appendix to architecture.
+Budget is part of architecture.
+
+I do not believe it is sound to build a sophisticated AI system first and ask about operating cost later.
+The economic model should be included in execution design from the beginning.
+
+A single API call may be inexpensive.
+A real engineering task is not a single API call.
+
+[source,text]
+----
+load the specification
+→ inspect the repository
+→ analyze architecture
+→ read dozens of files
+→ implement a first solution
+→ run tests
+→ analyze failures
+→ repair the implementation
+→ rerun tests
+→ review the diff
+→ perform another iteration
+→ produce final evidence
+----
+
+When many such tasks run simultaneously, inference cost becomes part of unit economics.
+
+Saving money by selecting a weaker model is not always a solution.
+A weaker model may miss an architectural contradiction, misunderstand a boundary, introduce local duplication, or produce a patch that passes current tests while making the system harder to maintain.
+
+The cost of repairing a superficially successful but structurally wrong implementation can exceed the inference savings.
+
+Our goal was therefore not to obtain the cheapest possible token.
+Our goal was to use high-quality reasoning efficiently while maintaining control over execution.
+
+== The Subscription and API Paradox
+
+When we began automating more of our engineering workflow, we encountered a straightforward paradox.
+
+On one side, we already had ChatGPT:
+
+* strong models,
+* high-quality analysis,
+* long interactive sessions,
+* a mobile application,
+* synchronized conversation history,
+* direct correction of the working direction,
+* and product-level usage limits included in a subscription.
+
+On the other side, the classical path to programmatic orchestration led to an API.
+
+An API is the correct tool for many use cases:
+
+* server-to-server integration,
+* structured outputs,
+* backend automation,
+* predictable contracts,
+* high-volume execution,
+* workflows with no user in the loop,
+* and custom user interfaces.
+
+But the ChatGPT subscription and API billing are separate economic contours.
+Using an interactive product does not automatically provide an API budget.
+
+[source,text]
+----
+ChatGPT subscription
+    ≠
+API usage budget
+----
+
+This created an unusual situation.
+The reasoning capability was already available to us inside an interactive product, but moving the same class of work into our own automation pipeline required separately metered token consumption.
+
+We did not want every long engineering iteration to become a separate token-metered backend workflow when a powerful interactive AI environment was already available.
+
+That did not lead us to reject APIs.
+It led us to ask a different architectural question:
+
+[quote]
+____
+Can we preserve ChatGPT as the interactive reasoning and supervision surface while attaching it to a controlled local execution layer through MCP?
+____
+
+Console MCP is our answer to that question.
+
+== The Second Problem: Autonomous Development as a Black Box
+
+Many coding agents follow a familiar model:
+
+[source,text]
+----
+task
+→ autonomous execution
+→ final patch or pull request
+----
+
+For a small and clearly defined task, this can be enough.
+
+For complex engineering work, I do not want to see only the final diff.
+I need visibility into the observable working trajectory:
+
+* what the system is examining,
+* which problems it has found,
+* which direction it has selected,
+* whether it understood the task boundary,
+* which assumptions it is using,
+* why it proposes a specific solution,
+* why it believes the task is complete,
+* and which checks it actually ran.
+
+This requires an important technical distinction.
+
+We are not claiming access to a model's hidden internal chain of thought.
+Private internal computation and an observable engineering process are not the same thing.
+
+What we need is operational transparency:
+
+* communicated plans,
+* intermediate findings,
+* identified risks,
+* tool calls,
+* repository changes,
+* test results,
+* blocking conditions,
+* next-action decisions,
+* and completion evidence.
+
+Without that layer, AI may be a powerful executor but an uncomfortable engineering partner.
+
+== Why Mobile Supervision Matters
+
+Development is not always supervised from an IDE.
+
+I may begin a task at a workstation, review its direction later from a phone, correct a misunderstanding, authorize another bounded iteration, and then continue from a different device.
+
+If this requires a separate dashboard, a custom mobile application, a terminal session, and a collection of new authentication flows, the cost and complexity of the system increase rapidly.
+
+ChatGPT already provides:
+
+* web, desktop, and mobile clients,
+* synchronized conversations,
+* streaming responses,
+* authentication,
+* persistent history,
+* and a familiar interaction model.
+
+We decided not to rebuild an AI frontend that already existed.
+
+Instead, we began turning an ordinary ChatGPT conversation into a control surface for a local engineering harness.
+
+The phone does not perform the build, hold the repository, or run the tests.
+It acts as a remote control terminal.
+
+The workstation remains the execution node.
+
+== What Classical MCP Solves—and What It Does Not
+
+The Model Context Protocol solves a major integration problem.
+It standardizes how an AI client discovers and invokes tools.
+
+[source,text]
+----
+AI client
+→ MCP server
+→ tool
+→ external system
+----
+
+Through MCP, a model can interact with:
+
+* filesystems,
+* Git repositories,
+* databases,
+* browsers,
+* Git hosting,
+* internal APIs,
+* monitoring systems,
+* and business services.
+
+This is an important industry-level advance.
+
+However, the existence of a tool protocol does not automatically create a safe execution process.
+
+MCP answers:
+
+[quote]
+____
+How does the client call a tool?
+____
+
+It does not, by itself, answer:
+
+* Why may this client use the tool?
+* Why is the tool allowed at this moment?
+* Which repository is in scope?
+* Which files may be changed?
+* Is a push allowed?
+* To which branch?
+* Does the action require approval?
+* Which assistant response was approved?
+* Has that response changed since approval?
+* What evidence must be collected?
+* How does the process recover after a restart?
+* Who decides whether another iteration is permitted?
+
+MCP provides transport and tool contracts.
+A control plane is still required above it.
+
+== Why a Sandbox Did Not Solve Our Entire Problem
+
+The industry correctly uses sandboxes to reduce agent risk.
+
+[source,text]
+----
+repository copy
+→ isolated container or virtual machine
+→ autonomous execution
+→ patch or pull request
+----
+
+A sandbox reduces blast radius, improves reproducibility, and makes greater autonomy possible.
+
+But our work is not limited to an isolated source tree.
+
+Our actual environment includes:
+
+* Windows workstations,
+* several neighboring repositories,
+* Symfony applications,
+* local packages and symlinks,
+* development databases,
+* active browser sessions,
+* OAuth profiles,
+* Cloudflare tunnels,
+* scheduled tasks,
+* local services,
+* and runtime state that sometimes must be diagnosed in place.
+
+A disposable sandbox does not always reproduce this environment without creating an expensive copy of it.
+
+Sometimes the problem exists specifically in the real machine:
+
+* a browser tab has stalled,
+* an OAuth profile has lost state,
+* a local tunnel is failing,
+* a symlink points to the wrong component,
+* repositories have diverged,
+* a process is running in the wrong Windows session,
+* or a host application sees a component differently from an isolated test environment.
+
+We did not merely need to give AI a safe temporary computer.
+
+We needed to give AI constrained access to our real development workstation without granting it the full authority of the user.
+
+== From Shell Access to Semantic Capabilities
+
+The easiest way to give an agent access to a computer is a general shell tool:
+
+[source,text]
+----
+execute(command: string)
+----
+
+It is universal, but that universality creates a large security surface.
+
+One unrestricted command surface may be used to:
+
+* read secrets,
+* remove data,
+* alter system configuration,
+* force-push a protected branch,
+* escape a repository boundary,
+* start an uncontrolled process,
+* install unknown packages,
+* or transmit information externally.
+
+Filtering arbitrary shell strings quickly becomes a separate security project.
+
+Console MCP follows a different model.
+Instead of granting a shell, it provides semantic capabilities such as:
+
+* read an allowlisted file,
+* search within an approved repository scope,
+* inspect Git status,
+* create a feature branch,
+* start, continue, or abort a rebase,
+* stage explicitly named files,
+* resolve a conflict for one file,
+* create a commit,
+* push the current feature branch,
+* create a pull request,
+* and run an approved gate.
+
+The difference is fundamental.
+
+We do not authorize an arbitrary command string.
+We authorize a specific intent.
+
+[source,text]
+----
+arbitrary:
+git push <unrestricted arguments>
+
+semantic:
+push the current feature branch to origin and set upstream
+----
+
+The internal handler knows the allowed behavior.
+The model controls only the fields exposed by the input schema.
+
+This is semantic least privilege.
+
+== Console MCP as an Execution Membrane
+
+Console MCP began as a small server for safe workspace access.
+
+Practical use expanded its responsibility.
+Today, I understand it as an execution membrane between AI and a real engineering environment.
+
+On one side are AI clients:
+
+* ChatGPT,
+* Codex,
+* and potentially other agents.
+
+On the other side are:
+
+* repositories,
+* Git,
+* tests,
+* databases,
+* browsers,
+* local services,
+* and infrastructure operations.
+
+Between them, Console MCP can evaluate:
+
+* client identity,
+* consumer profile,
+* workspace boundary,
+* capability risk,
+* approval requirements,
+* permitted arguments,
+* repository state,
+* execution outcome,
+* and evidence.
+
+The intelligence provider and the authority to act are separated.
+
+That separation is one of the most important principles in the system.
+
+== Approval Must Be Bound to an Artifact
+
+Suppose ChatGPT proposes an implementation and the user replies:
+
+[source,text]
+----
+Go
+----
+
+A naive system may treat that as sufficient approval.
+
+But what exactly was approved?
+
+Several things may have changed:
+
+* the user may have switched to another conversation,
+* a new assistant answer may have appeared,
+* the previous answer may have been regenerated,
+* browser automation may have selected the wrong tab,
+* the repository may have changed,
+* or the user may have approved analysis but not mutation.
+
+Approval should therefore be tied to a concrete execution context, for example:
+
+* chat identifier,
+* assistant artifact hash,
+* browser target,
+* workspace,
+* baseline Git HEAD,
+* and approval state.
+
+If the assistant artifact changes, the previous approval must not be assumed to remain valid.
+
+[quote]
+____
+Authorization should apply to a specific version of a proposed solution, not merely to an abstract task.
+____
+
+== Evidence Is More Important Than “Done”
+
+An agent may report that a task was completed successfully.
+
+An engineering system should not accept that statement without evidence.
+
+Before execution, the harness may capture:
+
+* current branch,
+* baseline HEAD,
+* and working-tree status.
+
+After execution, it may collect:
+
+* current HEAD,
+* new commits,
+* commit range,
+* working-tree status,
+* diff and diff statistics,
+* and gate results.
+
+This makes it possible to distinguish among very different outcomes:
+
+* no change was made,
+* files changed but were not committed,
+* the repository remains dirty,
+* a clean commit was created,
+* tests passed,
+* tests were never run,
+* a gate failed,
+* the wrong repository was changed,
+* or HEAD moved unexpectedly.
+
+Evidence turns automation into an engineering process.
+
+== The Full Harness Cycle
+
+Over time, Console MCP developed into a complete bounded cycle.
+
+A user can:
+
+. Create a new ChatGPT conversation.
+. Adopt an existing conversation into the task bank.
+. Bind it to a component and workspace.
+. Assign an iteration budget.
+. Submit an execution specification.
+. Start the controlled cycle.
+. Observe progress through ChatGPT.
+. Receive repository evidence.
+. Return a correction or approval into the same conversation.
+. Continue with another bounded cycle.
+
+The simplified flow is:
+
+[source,text]
+----
+create or adopt a chat
+→ bind the task
+→ draft the prompt
+→ submit it
+→ observe the response
+→ wait for a stable answer
+→ capture the artifact
+→ classify the next action
+→ execute safe capabilities
+→ run gates
+→ collect evidence
+→ return feedback
+→ repeat within budget
+----
+
+This is not an infinite autonomous loop.
+
+Each task has an execution envelope:
+
+* repository and component boundaries,
+* architectural canon,
+* naming and implementation rules,
+* prohibited approaches,
+* allowed capabilities,
+* required gates,
+* completion criteria,
+* iteration budget,
+* stop conditions,
+* and escalation conditions.
+
+Control and economics meet in the same mechanism.
+
+The budget limits resource consumption, time, repair cycles, and the cost of a wrong direction.
+
+== The User Does Not Need to Supervise Every Prompt
+
+A common failure of AI automation is that the user remains responsible for every transition:
+
+[source,text]
+----
+prompt
+→ response
+→ manual decision
+→ next prompt
+→ response
+→ manual decision
+----
+
+This is not meaningful delegation.
+It is manual orchestration performed through a chat interface.
+
+Our harness allows the user to define the execution envelope in advance and assign a bounded number of iterations.
+
+Within that envelope, the system can:
+
+* inspect the repository,
+* propose and apply permitted changes,
+* run gates,
+* analyze failures,
+* repair obvious issues,
+* rerun verification,
+* and produce a final report.
+
+The user does not need to approve every obvious intermediate operation if it is already covered by policy.
+
+Human intervention is reserved for cases where human judgment is genuinely needed:
+
+* an architectural contradiction is discovered,
+* the canon must be changed,
+* the task must cross a workspace boundary,
+* the iteration budget is exhausted,
+* requirements are ambiguous,
+* a gate cannot pass without changing the specification,
+* or a dangerous or irreversible action is required.
+
+The objective is not to remove the human.
+
+The objective is to remove the human from repetitive micro-decisions while preserving architectural and managerial control.
+
+== A Harness from Boundaries to Proof
+
+We use the word _harness_ deliberately.
+
+The process does not begin with a prompt.
+It begins earlier:
+
+[source,text]
+----
+boundary
+→ canon
+→ rules
+→ allowed capabilities
+→ execution budget
+→ gates
+→ evidence requirements
+----
+
+The process also does not end with the word “Done.”
+
+It ends with an execution report that can show:
+
+* how the task was understood,
+* which repository areas were inspected,
+* which decisions were made,
+* whether boundaries were preserved,
+* whether naming conventions and architectural rules were respected,
+* which files changed,
+* which commits were created,
+* which gates ran,
+* which checks passed or failed,
+* which repair iterations occurred,
+* why the process stopped,
+* and what still requires a human decision.
+
+The user returns not to a raw list of commands, but to a coherent engineering history in the same conversation.
+
+== A Laptop as a Personal AI Execution Node
+
+Another practical advantage is that this architecture does not require a dedicated GPU cluster or an expensive inference server.
+
+The reasoning is performed by the selected AI platform.
+The local machine handles a different workload:
+
+* MCP runtime,
+* task coordination,
+* Git operations,
+* file access,
+* tests and builds,
+* browser sessions,
+* evidence collection,
+* state storage,
+* and local development services.
+
+An ordinary developer laptop can therefore become a personal AI execution node.
+
+In our current use, a laptop costing less than approximately one thousand dollars can support several independent working contours—three, five, ten, or potentially more—depending on the repositories and the workload.
+
+This is not a fixed performance guarantee.
+Capacity depends on:
+
+* available RAM,
+* CPU load,
+* disk I/O,
+* the number of browser processes,
+* database and container usage,
+* and the weight of the test suites.
+
+A chat does not consume a full CPU core continuously.
+Much of its lifecycle consists of waiting for a model response, waiting for a test, reading files, performing short Git operations, or remaining between iterations.
+
+Lightweight repository analysis and unit testing allow more parallel contours.
+Android builds, browser suites, containers, and large integration tests reduce that number.
+
+The principle nevertheless remains important:
+
+[quote]
+____
+A normal laptop can act as a local server for agent execution without requiring a separate infrastructure project at the beginning.
+____
+
+The scaling path can be gradual:
+
+[source,text]
+----
+laptop
+    personal execution node
+
+desktop workstation
+    stronger multi-repository node
+
+small server
+    shared team execution node
+
+multiple nodes
+    distributed execution pool
+----
+
+We are not asking an inexpensive laptop to run a frontier model locally.
+We are using it where it is most valuable:
+
+* access to the real environment,
+* deterministic operations,
+* orchestration,
+* testing,
+* policy enforcement,
+* and evidence.
+
+== Remote Development Without Carrying the Workstation
+
+The laptop or workstation can remain powered on at home or in the office.
+
+It continues to host:
+
+* Console MCP,
+* browser sessions,
+* local repositories,
+* tests,
+* databases,
+* watchdog processes,
+* and the execution coordinator.
+
+The user can be elsewhere and still:
+
+* create a task from a phone,
+* adopt a conversation into the task bank,
+* set the repository and iteration budget,
+* start a bounded cycle,
+* later read the complete work history,
+* provide a correction,
+* and authorize the next stage.
+
+This can be done from a phone or tablet in a cafe, an airport, or any other location with connectivity.
+
+The mobile device is not performing the heavy work, so the user does not need to think about whether it can hold the repository, run a build, preserve a background process, or remain connected to power.
+
+The phone is the control interface, not the compute node.
+
+The execution node itself can also be administered remotely through SSH:
+
+* inspect process status,
+* restart the MCP runtime,
+* check the watchdog,
+* inspect logs,
+* diagnose a tunnel,
+* and recover a service after failure.
+
+This creates two remote-control layers:
+
+* ChatGPT for engineering tasks, review, correction, and bounded continuation.
+* SSH for infrastructure status, service lifecycle, and recovery.
+
+== Why We Do Not Try to Remove the Human Completely
+
+At this point, a reasonable question appears:
+
+[quote]
+____
+If agents can read repositories, write code, run tests, and repair failures, why build such a complicated control plane around them?
+____
+
+The answer is that a formally completed task is not necessarily good engineering.
+
+We repeatedly observe coding agents producing working but structurally poor code.
+
+They may:
+
+* violate established boundaries,
+* ignore naming rules,
+* introduce a prohibited layer,
+* duplicate an existing mechanism,
+* create a noncanonical namespace,
+* bypass an established workflow,
+* mix responsibilities,
+* turn a temporary workaround into a permanent solution,
+* repair a symptom rather than a cause,
+* pass tests at the cost of architecture,
+* or apply a popular industry pattern that is wrong for the current system.
+
+This is not always hallucination.
+It is not always deception or self-delusion.
+
+Often, the agent is genuinely trying to help.
+
+It sees a local objective:
+
+[source,text]
+----
+fix the error
+pass the test
+restore the build
+add the feature
+----
+
+It then optimizes around that objective.
+
+The local objective may be narrower than the architectural objective of the product.
+
+The agent may select a solution because it is faster, simpler, common in the industry, easier to explain, or more likely to satisfy the current gate.
+
+That solution can still be wrong in the context of the project.
+
+== Local Optimization Versus System Intent
+
+There is a major difference between:
+
+[source,text]
+----
+make it work
+----
+
+and:
+
+[source,text]
+----
+make it work inside the accepted architecture
+----
+
+Coding agents often perform the first task well.
+
+The second requires context that may not be captured by a test:
+
+* why a boundary exists,
+* which earlier failures produced the current canon,
+* which approaches were already tried and rejected,
+* why a popular pattern is forbidden here,
+* which future components depend on the current decision,
+* and where the author's system intent resides.
+
+If this context is not included in the harness, the agent applies its own model of a good solution.
+
+That model may be reasonable, widely accepted, and well written.
+It may still not be our solution.
+
+== Industry Knowledge Is Not Automatically Project Canon
+
+Language models have learned from enormous quantities of public code, documentation, and engineering discussion.
+That makes them useful.
+
+Popularity does not make a solution correct for every product.
+
+An agent may treat as authoritative:
+
+* a common enterprise pattern,
+* a popular folder structure,
+* a standard clean-architecture template,
+* a familiar persistence abstraction,
+* or an ordinary framework-integration approach.
+
+The project may intentionally use another model because its author has already considered:
+
+* the history of the system,
+* its scale,
+* maintenance cost,
+* team capabilities,
+* framework behavior,
+* development speed,
+* migration cost,
+* and product constraints.
+
+The phrase “best practice” is not sufficient on its own.
+
+The relevant question is:
+
+[quote]
+____
+Best practice for which system, at which scale, for which team, and toward which objective?
+____
+
+== Benevolent Rule Breaking
+
+One of the most difficult categories of agent failure is rule breaking performed with a sincere intention to improve the outcome.
+
+The agent may recognize a restriction and still decide that bypassing it is justified because the alternative is faster, simpler, more reliable, or more likely to finish the task.
+
+This is benevolent improvisation.
+
+For example, the task may be to restore a dependency-injection container.
+The agent may add a manual service definition to the host application.
+The container becomes green.
+
+But if the architectural rule requires the component to export its own configuration surface, the task has not actually been solved.
+The defect has merely been hidden inside the host glue layer.
+
+Or the task may be to resolve a conflict between architectural contracts.
+The agent may add another adapter and a conditional branch.
+The immediate error disappears, but the underlying contradiction remains and the system becomes more complex.
+
+Such code can be functional, tidy, and tested.
+It can still be architecturally wrong.
+
+== Passing Tests Are Necessary but Not Sufficient
+
+Tests are essential evidence.
+They prove only what they test.
+
+They may not detect:
+
+* a component-boundary violation,
+* incorrect class responsibility,
+* unnecessary duplication,
+* naming drift,
+* a prohibited architectural layer,
+* a bypass of the canonical configuration flow,
+* increased coupling,
+* or the replacement of a long-term solution with a workaround.
+
+The equation is therefore not:
+
+[source,text]
+----
+tests passed = implementation is correct
+----
+
+A more accurate acceptance model is:
+
+[source,text]
+----
+tests passed
++ boundaries preserved
++ canon respected
++ rules followed
++ diff reviewed
++ responsibilities remain correct
+= implementation may be accepted
+----
+
+Even then, engineering judgment remains necessary.
+
+== From Micromanagement to Engineering Supervision
+
+We are not trying to make the human a bottleneck for every tool call.
+We are also not trying to remove the human from complex engineering work.
+
+The human should focus on areas that genuinely require judgment:
+
+* architectural direction,
+* creation or modification of canon,
+* acceptance of compromises,
+* system integrity,
+* ambiguity resolution,
+* long-term maintenance cost,
+* authorship and product intent,
+* and visual review of the resulting code.
+
+The agent can handle:
+
+* repository reading,
+* repeated search,
+* patch preparation,
+* tests,
+* evidence collection,
+* repair of obvious failures,
+* routine Git operations,
+* and report generation.
+
+Without a harness, the human controls the process at too low a level:
+
+[source,text]
+----
+read the response
+→ inspect the command
+→ approve it
+→ wait for the result
+→ inspect the next response
+----
+
+With a harness, the human works at the level of engineering supervision:
+
+[source,text]
+----
+define boundaries
+→ establish canon
+→ specify rules
+→ assign a budget
+→ review the completed trajectory
+→ decide disputed questions
+----
+
+The purpose is not to eliminate the engineer.
+
+The purpose is to make a strong engineer more effective without giving an agent authority to redefine the architectural meaning of the product.
+
+== What Is Actually Distinct About This Approach
+
+None of the individual ingredients is completely new:
+
+* MCP exists,
+* browser automation exists,
+* coding agents exist,
+* Git automation exists,
+* approval gates exist,
+* task queues exist,
+* and ChatGPT mobile exists.
+
+The distinct value is in the composition:
+
+[source,text]
+----
+interactive ChatGPT session
++ mobile supervision
++ subscription-based product experience
++ MCP execution
++ real local workstation
++ semantic least-privilege capabilities
++ artifact-bound approval
++ repository evidence
++ bounded iterative harness
+----
+
+Five elements are particularly important:
+
+. ChatGPT remains the existing user-facing reasoning and supervision surface.
+. Work is executed in the real environment rather than only in a disposable copy.
+. The agent receives semantic capabilities instead of unrestricted shell authority.
+. Approval is bound to a specific assistant artifact and repository context.
+. Completion is supported by evidence rather than by the model's claim.
+
+== We Are Not Building Another Universal Coding Agent
+
+Some parts of Console MCP overlap with existing industry systems:
+
+* task orchestration,
+* worker loops,
+* retry logic,
+* browser automation,
+* Git integration,
+* state recovery,
+* gateway mechanics,
+* and tool catalog validation.
+
+We should not try to compete with frontier-model providers, Git hosting platforms, or mature open-source agent frameworks on every one of these layers.
+
+The strongest role for Console MCP is between intelligence providers and real infrastructure.
+
+[source,text]
+----
+ChatGPT
+Codex
+Copilot
+OpenHands
+other agents
+    ↓
+Console MCP execution control plane
+    ↓
+real engineering environment
+----
+
+In that model, coding agents are potential consumers rather than direct competitors.
+
+== Product Direction
+
+The architecture should evolve into separated responsibilities.
+
+=== Console Gateway
+
+Responsible for:
+
+* authentication,
+* authorization,
+* consumer profiles,
+* tool catalog,
+* routing,
+* and audit.
+
+=== Execution Coordinator
+
+Responsible for:
+
+* tasks,
+* iteration budgets,
+* state transitions,
+* retries,
+* stop conditions,
+* recovery,
+* and evidence lifecycle.
+
+=== Workspace Executor
+
+Responsible for:
+
+* files,
+* Git,
+* tests,
+* builds,
+* databases,
+* and local services.
+
+=== Browser Bridge
+
+Responsible for:
+
+* ChatGPT tabs,
+* browser targets,
+* message capture,
+* draft and submit actions,
+* and user-interface compatibility.
+
+ChatGPT Web should be one adapter, not the permanent core of the product.
+The same execution system should eventually be usable by API-based agents, Codex, Copilot, OpenHands, and other clients.
+
+== The Control Plane Is More Durable Than a Particular Model
+
+Models will change.
+
+One model may be better at writing code today.
+Another may inspect large repositories more effectively tomorrow.
+A third may provide cheaper classification.
+
+Building the entire system around one model is fragile.
+
+The more durable value is the control plane:
+
+[source,text]
+----
+who may act
+what is allowed
+inside which boundary
+with which budget
+after which approval
+with which evidence
+----
+
+This resembles the development of cloud infrastructure.
+The long-term value did not reside only in virtual machines.
+It appeared in identity, orchestration, policy, observability, and resource control.
+
+AI infrastructure is moving in the same direction.
+
+== Budget Must Also Belong to the Control Plane
+
+In many agent systems, budget is treated as an external limit.
+
+I believe execution policy should understand:
+
+* how many iterations are allowed,
+* how much time may be used,
+* which model class is permitted,
+* when expensive reasoning is justified,
+* when a deterministic check is enough,
+* when execution must stop,
+* when the expected value of another iteration is too low,
+* and when a human decision is required.
+
+In the current browser-mediated workflow, budget is expressed primarily through bounded cycles, timeouts, and stop conditions.
+
+In API-oriented systems, it can also include:
+
+* maximum input tokens,
+* maximum output tokens,
+* monetary ceilings,
+* maximum tool calls,
+* retry limits,
+* and model-routing rules.
+
+Inference economics and execution safety are parts of the same control problem.
+Both constrain a resource that an agent can consume.
+
+== Current Status and the Next Engineering Work
+
+Console MCP is already used in our daily engineering process.
+
+We use it to:
+
+* create and adopt tasks,
+* bind tasks to ChatGPT conversations,
+* work with local repositories,
+* perform Git operations,
+* run checks,
+* collect evidence,
+* execute repair iterations,
+* and manage development from desktop and mobile devices.
+
+This does not mean that the product is finished.
+
+The next major platform step is a Linux-oriented implementation, especially for Ubuntu and other Unix-like systems.
+
+The current system is deeply integrated with Windows, PowerShell, Windows process behavior, browser sessions, and scheduled operations.
+
+The target should be a shared core with platform adapters:
+
+[source,text]
+----
+Core
+    policy
+    capabilities
+    tasks
+    evidence
+    admission
+
+Platform/Windows
+    PowerShell
+    Windows process and session lifecycle
+    scheduled operations
+
+Platform/Linux
+    Unix process adapters
+    systemd
+    permissions
+    Linux browser lifecycle
+----
+
+Other continuing work includes:
+
+* stabilizing the browser adapter,
+* improving tab and message binding,
+* handling rate limits and UI changes,
+* separating the coordinator from the MCP process,
+* strengthening recovery,
+* standardizing installation,
+* testing on multiple machines,
+* and expanding capabilities only when a concrete repeated workflow justifies them.
+
+The main architectural question has nevertheless received a positive answer:
+
+[quote]
+____
+This kind of system can be built, and it can be used in daily development.
+____
+
+== Why This Matters to Marketing America Corp
+
+Marketing America Corp works at the intersection of software engineering, automation, and AI-enabled operations.
+
+For us, AI automation is not simply the addition of a chatbot to a business process.
+
+Real automation requires answers to questions such as:
+
+* Which processes may be delegated to AI?
+* Which actions must remain read-only?
+* Where is human approval required?
+* Which errors are acceptable?
+* Which actions must be reversible?
+* How is access constrained?
+* How do we prove that the permitted operation was the operation actually executed?
+* What does one workflow cost?
+* How does it scale?
+* What happens after a failure?
+
+Console MCP represents a broader principle in our approach to AI implementation:
+
+[quote]
+____
+Model intelligence must be separated from execution authority.
+____
+
+A model may be extremely capable.
+Access to infrastructure should still pass through a bounded control layer.
+
+== Conclusion
+
+Console MCP did not appear because we wanted to create another MCP server.
+
+It emerged from two practical problems.
+
+The first was control.
+We did not want to send a complex engineering task into an autonomous black box and receive only a final result.
+We wanted an interactive surface, an observable working process, the ability to intervene, and the ability to continue the same engineering conversation from a desktop, phone, or tablet.
+
+The second was economics.
+We did not want to automatically convert every long development iteration into a separately token-metered API workflow when a strong interactive AI product was already available to us.
+
+Our answer is not a rejection of APIs, coding agents, or sandboxes.
+
+It is a separation of responsibility:
+
+[source,text]
+----
+AI performs analysis and proposes decisions.
+
+Console MCP governs authority and execution.
+
+The control plane governs policy, budget, and evidence.
+
+The human remains the owner of engineering intent.
+----
+
+The future of AI engineering will not be determined only by which agent receives the greatest possible autonomy.
+
+The more important question is:
+
+[quote]
+____
+How can we give a strong AI exactly the authority required for a specific task, preserve economic viability, and maintain verifiable control over every material action?
+____
+
+That is the problem we are exploring and solving at Marketing America Corp.
+
+Not by building another universal coding agent.
+
+By building a controlled layer between AI and the real world in which that AI must operate.
+
+== Authorship, AI Assistance, and Technical Status
+
+This article is based on the practical development and operation of *Console MCP*, as well as the real engineering tasks, constraints, and problems encountered during its creation.
+
+The ordinary consumer version of *ChatGPT Plus* was used to assist with structuring, wording, translation, and editorial refinement.
+
+The ideas, conclusions, architectural decisions, problem definitions, product position, reasoning framework, and engineering views presented in this article belong to the author and reflect the author's practical experience developing Console MCP.
+
+The use of ChatGPT as an editorial instrument does not transfer authorship to an AI system and does not change the origin of the ideas expressed here.
+
+Console MCP is at an early stage of development.
+The current implementation prioritizes:
+
+* validation of the architectural hypothesis,
+* establishment of a working execution cycle,
+* key boundaries and semantic capabilities,
+* practical operability,
+* recovery from runtime failures,
+* integration with real repositories, browsers, and a local workstation,
+* and use in day-to-day engineering work.
+
+The project is already used for real tasks, but this does not mean that its current codebase should be regarded as mature, fully stabilized, production-grade, or exemplary software design.
+
+The author's primary professional specialization is PHP, Symfony, and backend architecture.
+Console MCP is implemented substantially in TypeScript/JavaScript, Node.js, and PowerShell, which are not the author's primary technology stack.
+
+The author therefore does not claim that the current implementation:
+
+* fully complies with SOLID,
+* uses the optimal architecture for the Node.js ecosystem,
+* demonstrates exemplary TypeScript practices,
+* has achieved ideal separation of responsibilities,
+* has reached production-grade quality,
+* or should be treated as a reference implementation of an MCP server.
+
+The author also does not claim to possess sufficient specialized expertise in this stack to provide a final positive assessment of the quality of the entire Console MCP codebase.
+
+The article primarily discusses:
+
+* the problem,
+* the architectural model,
+* the practical viability of the approach,
+* the control plane,
+* execution boundaries,
+* the evidence-driven workflow,
+* operating experience,
+* and the possible product direction.
+
+The implementation should be evaluated independently through code review, architectural audit, security review, load testing, failure analysis, and assessment by engineers with deep experience in Node.js, TypeScript, browser automation, and the MCP ecosystem.
+
+Professional criticism is welcome.
+Readers and developers are invited to inspect the repository, evaluate the architecture and implementation, identify weaknesses, propose improvements, and form their own conclusions about the quality of the work.
+
+Our position is not that we have already created a perfect product.
+
+Our position is that we have found a working architectural model, use it in practice, and are continuing to turn an early functional implementation into a more stable, portable, and maintainable system.
+
+Quoting or partially reproducing this material is permitted only when both of the following conditions are met:
+
+. The author is explicitly named.
+. An active link to the original article is provided.
+
+Republishing the complete article, substantial portions of it, or derivative materials without both author attribution and a link to the original publication is not permitted.
+
+Copyright © 2026 Oleksandr Tishchenko, Marketing America Corp.

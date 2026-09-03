@@ -33,34 +33,23 @@ The position reflected on this portal can be summarized in several core beliefs:
 == What This Portal Covers
 
 * xref:article/index.adoc[Articles] — essays, strategic notes, technical positioning, and public reflections.
+* xref:manifest/index.adoc[Manifests] — public manifest-style documents, boundary statements, and owner-level positions.
+* xref:principle/index.adoc[Principles] — reusable principles and decision-interface patterns.
+* xref:glossary/index.adoc[Glossary] — shared terminology for the public documentation layer.
 * xref:component/index.adoc[Components] — entry points for ecosystem components and directions.
 * xref:quality-atlas/index.adoc[Quality Atlas] — engineering baseline, readiness model, evaluation layer, and comparative pre-RC atlas.
-* xref:manifest/index.adoc[Manifests] — canon, principles, and owner-level statements.
 * xref:about/index.adoc[About] — what this portal is and how it should be read.
 * xref:owner/index.adoc[Owner] — authorship and public context.
 * xref:support/index.adoc[Support] — owner-oriented support and sponsorship for documentation continuity.
 * xref:contact/index.adoc[Contact] — direct owner and organizational contact page.
 
-== Why These Articles Matter
+== Public Canon Entry Points
 
-Not every article on this portal is narrowly about Smartresponsor itself. Some are wider essays about AI, engineering, labor, cognition, systems, and platform dynamics.
-
-But together they reveal the same center of gravity:
-
-* a preference for systems over noise,
-* a preference for architecture over hype,
-* a preference for durable structure over disposable acceleration,
-* and a preference for responsible execution over performative automation.
-
-That is why this portal should be read not only as a blog, but as a public map of intent.
-
-== Selected Themes
-
-* AI as industrial and infrastructural stack rather than surface-level conversation.
-* Cognition, decomposition, and verification as the real bottlenecks of productive AI use.
-* Execution control, evidence, and accountability in agent-oriented systems.
-* Protocol-first commerce and machine-readable system design.
-* Public documentation as part of long-term technical continuity, not as afterthought.
+* xref:manifest/what-this-system-must-never-become.adoc[What This System Must Never Become]
+* xref:manifest/from-punishment-to-reward.adoc[From Punishment to Reward]
+* xref:principle/fact-risk-option-action-protocol.adoc[Fact, Risk, Option, Action]
+* xref:principle/decision-trace.adoc[Decision Trace]
+* xref:glossary/new-paradigm-glossary.adoc[New Paradigm Glossary]
 
 
 == Pre-RC Quality Atlas
@@ -101,16 +90,18 @@ image::quality-atlas/ecosystem-average.svg[width=240]
 
 == Selected Reads
 
-* xref:article/ai-is-not-just-chatgpt-five-layer-stack.adoc[AI Is Not Just ChatGPT]
-* xref:article/ai-does-not-replace-thinking-it-reveals-its-quality.adoc[AI Does Not Replace Thinking. It Reveals Its Quality.]
-* xref:article/do-not-scale-the-imitation-of-a-human.adoc[Do Not Scale the Imitation of a Human]
+* xref:article/01-human-does-not-see-reality.adoc[A Human Being Does Not See Reality. A Human Being Sees a Survival Task]
+* xref:article/02-can-we-build-the-future-on-ancient-reward-system.adoc[Can We Build the Future on an Ancient Reward System?]
+* xref:article/03-when-fear-becomes-the-interface.adoc[When Fear Becomes the Interface]
+* xref:article/04-before-truth-the-mind-asks-are-you-one-of-us.adoc[Before Truth, the Mind Asks: Are You One of Us?]
+* xref:article/05-the-inner-narrator-why-we-explain-decisions-after-they-are-made.adoc[The Inner Narrator]
 * xref:article/why-the-next-e-commerce-will-not-be-a-store-with-ai.adoc[Why the Next E-Commerce Will Not Be a Store with AI]
 * xref:article/odyssey-execution-control-plane.adoc[Odyssey: The Execution Control Plane for AI]
 * xref:article/the-first-great-war-between-platforms-and-protocols.adoc[The First Great War Between Platforms and Protocols]
 
 == Owner and Public Context
 
-This site is currently maintained in an owner-oriented mode.
+This site is currently maintained in owner-oriented mode.
 
 Owner:
 *Oleksandr Tishchenko*

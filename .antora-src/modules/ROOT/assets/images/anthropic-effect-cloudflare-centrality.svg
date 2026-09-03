@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <style>
+    .t{font:700 34px Arial,sans-serif;fill:#111}
+    .h{font:700 24px Arial,sans-serif;fill:#111}
+    .s{font:20px Arial,sans-serif;fill:#111}
+    .b{fill:#fff;stroke:#111;stroke-width:3}
+    .n{fill:#fff;stroke:#111;stroke-width:2.5}
+    .l{stroke:#111;stroke-width:3;fill:none}
+  </style>
+  <text x="800" y="60" text-anchor="middle" class="t">Why Cloudflare Became a Market Proxy</text>
+
+  <circle cx="800" cy="430" r="150" class="b"/>
+  <text x="800" y="410" text-anchor="middle" class="h">Cloudflare</text>
+  <text x="800" y="448" text-anchor="middle" class="s">edge, traffic mediation,</text>
+  <text x="800" y="478" text-anchor="middle" class="s">application delivery, security</text>
+
+  <rect x="180" y="180" rx="16" ry="16" width="260" height="95" class="n"/>
+  <text x="310" y="235" text-anchor="middle" class="h">internet-facing traffic</text>
+
+  <rect x="1180" y="180" rx="16" ry="16" width="240" height="95" class="n"/>
+  <text x="1300" y="235" text-anchor="middle" class="h">application perimeter</text>
+
+  <rect x="180" y="610" rx="16" ry="16" width="260" height="95" class="n"/>
+  <text x="310" y="665" text-anchor="middle" class="h">network protection layer</text>
+
+  <rect x="1180" y="610" rx="16" ry="16" width="240" height="95" class="n"/>
+  <text x="1300" y="665" text-anchor="middle" class="h">developer and AI platform</text>
+
+  <rect x="650" y="720" rx="16" ry="16" width="300" height="95" class="n"/>
+  <text x="800" y="775" text-anchor="middle" class="h">market interpretation</text>
+  <text x="800" y="805" text-anchor="middle" class="s">infrastructure stress symbol</text>
+
+  <path d="M440 230 C560 250, 620 290, 680 340" class="l"/>
+  <path d="M1180 230 C1080 255, 1020 295, 930 340" class="l"/>
+  <path d="M440 655 C560 615, 625 565, 680 520" class="l"/>
+  <path d="M1180 655 C1070 615, 1010 565, 930 520" class="l"/>
+  <path d="M800 580 L800 720" class="l"/>
+
+  <text x="120" y="860" class="s">The point is not that Cloudflare was uniquely exposed. The point is that investors used a visible internet infrastructure node as a proxy for system-wide repricing.</text>
+</svg>

@@ -1,0 +1,9 @@
+= Principles
+:description: Reusable public principles and decision-interface patterns.
+
+Reusable public principles and decision-interface patterns.
+
+== Index
+
+* xref:principle/fact-risk-option-action-protocol.adoc[Fact, Risk, Option, Action] — 2026-06-26 — A reusable decision-interface pattern for translating threat into structure.
+* xref:principle/decision-trace.adoc[Decision Trace] — 2026-06-26 — A reusable principle for connecting explanation with accountability.

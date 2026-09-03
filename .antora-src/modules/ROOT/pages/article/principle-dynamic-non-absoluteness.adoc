@@ -6,7 +6,6 @@
 :page-tags: physics, philosophy-of-physics, dynamic-systems, symmetry, hypothesis
 
 _Source asciidoc: `docs/article/principle_dynamic_non_absoluteness.adoc`_
-
 == Working Status
 
 This document is a working scientific-philosophical checkpoint.

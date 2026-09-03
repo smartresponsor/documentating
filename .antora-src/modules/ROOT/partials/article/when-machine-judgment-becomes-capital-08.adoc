@@ -1,0 +1,18 @@
+== The Risks: Local Maxima, Bias, and False Confidence
+
+This idea becomes dangerous if it is oversold.
+
+Not every workflow yields clean feedback. Not every success should be credited to the last action taken. Not every environment is stable enough for confident priors. A system can easily overfit to a local pattern, inherit the blind spots of a star employee, or become too certain in a regime that has already changed.
+
+That is why a serious judgment layer needs more than persistence. It needs governance.
+
+At minimum, that means:
+
+* explicit confidence tracking;
+* decay or forgetting rules for stale judgments;
+* environment tagging so lessons are not applied outside their valid context;
+* human override for high-risk decisions;
+* auditability of which evidence shaped which recommendation;
+* exploration budgets so the system does not collapse into one narrow local optimum.
+
+Without those controls, “accumulated intelligence” can become accumulated bias with a dashboard.

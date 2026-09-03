@@ -5,7 +5,7 @@
 :description: A long-form essay on workplace hierarchy, dependency, distorted perception, and why power can masquerade as intimacy.
 :page-tags: psychology, workplace, power, ethics, relationships, biology
 
-_Source asciidoc: `docs/article/when-power-disguises-itself-as-passion.adoc`_
+_Source asciidoc: `docs/article/zz-when-power-disguises-itself-as-passion.adoc`_
 == Rethinking the Classic Boss and Assistant Story Through Power, Psychology, and Biology
 
 image::when-power-disguises-itself-as-passion-hero.svg[Illustrative office scene symbolizing hierarchy, dependency, and workplace power asymmetry]

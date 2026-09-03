@@ -1,0 +1,8 @@
+= Glossary
+:description: Shared terms used by the New Paradigm and Smartresponsor documentation.
+
+Shared terms used by the New Paradigm and Smartresponsor documentation.
+
+== Index
+
+* xref:glossary/new-paradigm-glossary.adoc[New Paradigm Glossary] — 2026-06-26 — Shared terminology for the New Paradigm article cycle and public canon documents.

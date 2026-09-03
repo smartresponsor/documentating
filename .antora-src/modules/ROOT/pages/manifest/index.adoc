@@ -1,4 +1,9 @@
 = Manifests
-:description: Canonical public manifest space for Smart Responsor.
+:description: Public manifest-style documents, boundary statements, and owner-level positions.
 
-This section is reserved for manifest-style public documents, canon notes, and owner-level statements.
+Public manifest-style documents, boundary statements, and owner-level positions.
+
+== Index
+
+* xref:manifest/what-this-system-must-never-become.adoc[What This System Must Never Become] — 2026-06-26 — A public boundary statement defining what a contribution-oriented system must never become.
+* xref:manifest/from-punishment-to-reward.adoc[From Punishment to Reward] — 2026-06-26 — A public manifesto for moving from punishment-centered systems toward an economy of proven contribution.

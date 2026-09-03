@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <style>
+    .t{font:700 30px Arial,sans-serif;fill:#111}.a{stroke:#111;stroke-width:2}.g{stroke:#bbb;stroke-width:1;opacity:.6}
+    .l{font:20px Arial,sans-serif;fill:#111}.p{stroke:#111;stroke-width:4;fill:none}.d{fill:#111}.m{font:16px Arial,sans-serif;fill:#111;text-anchor:middle}
+  </style>
+  <text x="600" y="48" class="t" text-anchor="middle">Confidence compounds through repeated verified outcomes</text>
+  <line x1="110" y1="610" x2="1110" y2="610" class="a"/>
+  <line x1="110" y1="100" x2="110" y2="610" class="a"/>
+  <line x1="110" y1="508" x2="1110" y2="508" class="g"/>
+  <line x1="110" y1="406" x2="1110" y2="406" class="g"/>
+  <line x1="110" y1="304" x2="1110" y2="304" class="g"/>
+  <line x1="110" y1="202" x2="1110" y2="202" class="g"/>
+  <path class="p" d="M150 350 L250 300 L350 270 L450 290 L550 250 L650 235 L750 245 L850 220 L950 210 L1050 200"/>
+  <circle cx="150" cy="350" r="5" class="d"/><text x="150" y="332" class="m">L</text>
+  <circle cx="250" cy="300" r="5" class="d"/><text x="250" y="282" class="m">W</text>
+  <circle cx="350" cy="270" r="5" class="d"/><text x="350" y="252" class="m">W</text>
+  <circle cx="450" cy="290" r="5" class="d"/><text x="450" y="272" class="m">L</text>
+  <circle cx="550" cy="250" r="5" class="d"/><text x="550" y="232" class="m">W</text>
+  <circle cx="650" cy="235" r="5" class="d"/><text x="650" y="217" class="m">W</text>
+  <circle cx="750" cy="245" r="5" class="d"/><text x="750" y="227" class="m">L</text>
+  <circle cx="850" cy="220" r="5" class="d"/><text x="850" y="202" class="m">W</text>
+  <circle cx="950" cy="210" r="5" class="d"/><text x="950" y="192" class="m">W</text>
+  <circle cx="1050" cy="200" r="5" class="d"/><text x="1050" y="182" class="m">W</text>
+  <text x="600" y="660" class="l" text-anchor="middle">Evaluation cycle</text>
+  <text x="42" y="360" class="l" transform="rotate(-90 42 360)" text-anchor="middle">Posterior confidence</text>
+</svg>
