@@ -5,13 +5,13 @@
 :page-published: 2026-09-03
 :page-author: Oleksandr Tishchenko
 :page-tags: migration policy, law and order, humanitarian status, USCIS fees, public benefits, lawful compliance, systemic risk
-:description: Консервативный системный аудит о том, как immigration fees, USCIS delays, benefit exclusions, housing instability и enforcement costs могут вместе производить нелегальность внутри страны.
+:description: Консервативный системный аудит о том, как immigration fees, USCIS delays, benefit exclusions, housing instability, benefit-duration design и enforcement costs могут вместе производить нелегальность внутри страны.
 
 Спойлер: эта статья не о том, чтобы открыть границы, и не о том, чтобы раздать всем больше benefits.
 Она о другой, более опасной проблеме: что происходит, когда государство уже допустило или удерживает людей внутри humanitarian/protection procedures, запрещает им работать без разрешения, долго и дорого выдаёт это разрешение, закрывает food/housing bridge, отправляет семьи к nonprofit-сети без capacity, а потом тратит деньги налогоплательщиков на enforcement против нарушений, которые такая конструкция сама сделала предсказуемыми.
 
 Это не спор только про SNAP, не спор только про USCIS fees и не спор только про одну семью.
-Это intersection problem: immigration status, work authorization delays, U.S.-priced filing fees, fee waivers, public-benefit exclusions, unstable housing, nonprofit capacity, school disruption and enforcement economics.
+Это intersection problem: immigration status, work authorization delays, U.S.-priced filing fees, fee waivers, public-benefit exclusions, benefit certification periods, unstable housing, nonprofit capacity, school disruption and enforcement economics.
 
 Главный вопрос статьи простой: если Америка хочет меньше нелегальной работы, меньше fraud, меньше homelessness, меньше missed notices и меньше расходов на enforcement, оставила ли система людям реальный lawful path to compliance?
 Если законный путь стал слишком медленным, слишком дорогим и практически недоступным, государство может не предотвращать нелегальность, а производить её внутри страны.
@@ -137,6 +137,19 @@ Public benefits в таком контексте не всегда являют�
 . homelessness и разрушение семьи;
 . уход в невидимость, пропуск notices, потеря процедур и дальнейшие санкции.
 
+Но benefits design не является бинарным переключателем «дать всё» или «отрезать всех».
+У государства есть как минимум три рычага управления риском: eligibility, amount and duration.
+Если государство боится dependency, fraud или слишком дешёвого доступа к деньгам, оно может не только уменьшать размер помощи, но и сокращать certification period: например, использовать короткий трёхмесячный bridge вместо обычного более длинного цикла, требуя повторного подтверждения income, housing and work-authorization status.
+
+Такой инструмент особенно логичен там, где agencies и так часто смотрят recent income, recent bank records and recent proof за последние месяцы.
+Если administrative system уже просит доказательства за короткий recent period, государство может использовать short certification as a control valve instead of categorical exclusion.
+
+Но у этого рычага есть цена.
+Каждый renewal, upload, call, notice, interview, proof request and delay создаёт transaction cost для бедной семьи.
+Бюрократический барьер сам становится частью себестоимости benefit: человек тратит время, почту, транспорт, связь, нервы, перевод, документы и риск missed notice.
+Поэтому short certification period может быть разумным control tool только тогда, когда процедура быстрая, понятная и реально доступная.
+Иначе государство вроде бы экономит на benefit, но создаёт новую себестоимость compliance.
+
 После H.R.1/OBBB федеральная SNAP eligibility для многих non-citizens была сужена, а USCIS fees по отдельным immigration-related forms, наоборот, были увеличены.footnote:[USDA Food and Nutrition Service, _One Big Beautiful Bill Act_, https://www.fns.usda.gov/obbb]
 Даже если такие решения формально находятся в полномочиях Конгресса, системный вопрос остаётся: что происходит с людьми, которых та же государственная система допускает или удерживает в humanitarian/protection process, но лишает lawful survival bridge?
 
@@ -187,6 +200,7 @@ Communication with agencies must be easier than losing the case because the noti
 . expedited EAD для семей с несовершеннолетними детьми;
 . automatic extension of useful document validity when delay is agency-caused;
 . temporary food bridge до EAD или first paycheck;
+. shorter benefit certification periods when the government wants more frequent review instead of full exclusion;
 . child-centered subsistence protection;
 . reliable notice system for unstable housing;
 . no punitive consequence where violation was foreseeably caused by government delay and lack of lawful survival path.
@@ -204,7 +218,7 @@ Communication with agencies must be easier than losing the case because the noti
 
 Проблема в совокупности.
 
-Система допускает humanitarian and protection-seeking pathways; запрещает unauthorized work; задерживает или усложняет access to work authorization; взимает U.S.-priced fees до того, как человек вошёл в U.S. labor market; делает fee waiver отдельной бюрократической процедурой; сужает subsistence benefits; отправляет людей к nonprofits, у которых часто нет housing/cash capacity; затем может санкционировать человека за нарушения, к которым сама система его предсказуемо подтолкнула.
+Система допускает humanitarian and protection-seeking pathways; запрещает unauthorized work; задерживает или усложняет access to work authorization; взимает U.S.-priced fees до того, как человек вошёл в U.S. labor market; делает fee waiver отдельной бюрократической процедурой; сужает subsistence benefits instead of using narrower tools such as amount limits or shorter certification periods; отправляет людей к nonprofits, у которых часто нет housing/cash capacity; затем может санкционировать человека за нарушения, к которым сама система его предсказуемо подтолкнула.
 
 Это не просто policy gap.
 Это архитектура вынужденной уязвимости.
