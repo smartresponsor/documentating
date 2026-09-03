@@ -5,13 +5,13 @@
 :page-published: 2026-09-03
 :page-author: Oleksandr Tishchenko
 :page-tags: migration policy, law and order, humanitarian status, USCIS fees, public benefits, lawful compliance, taxpayer cost, bad governance
-:description: A conservative systems-audit argument about how immigration fees, USCIS delays, benefit exclusions, housing instability, nonprofit capacity, and enforcement costs can jointly manufacture illegality inside the country.
+:description: A conservative systems-audit argument about how immigration fees, USCIS delays, benefit exclusions, housing instability, benefit-duration design, nonprofit capacity, and enforcement costs can jointly manufacture illegality inside the country.
 
 Spoiler: this is not an article about open borders, and it is not an argument for unlimited benefits.
 It is about a more dangerous systems problem: what happens when a government already allows or requires people to remain inside humanitarian or protection procedures, forbids work without authorization, delays or prices that authorization out of reach, removes food and housing bridges, refers families to nonprofits with no real capacity, and later spends taxpayer money enforcing against violations that this structure made predictable.
 
 This is not only a SNAP issue, not only a USCIS fee issue, and not only one family's hardship.
-It is an intersection problem: immigration status, work-authorization delays, U.S.-priced filing fees, fee waivers, public-benefit exclusions, unstable housing, nonprofit capacity, school disruption, and enforcement economics.
+It is an intersection problem: immigration status, work-authorization delays, U.S.-priced filing fees, fee waivers, public-benefit exclusions, benefit certification periods, unstable housing, nonprofit capacity, school disruption, and enforcement economics.
 
 The core question is simple: if America wants less illegal work, less fraud, less homelessness, fewer missed notices, and lower enforcement costs, did the system leave people a realistic lawful path to compliance?
 If the lawful path becomes too slow, too expensive, and practically unreachable, the state may not be preventing illegality.
@@ -138,6 +138,19 @@ Without such a bridge, the system pressures people toward three bad outcomes:
 . homelessness and family breakdown;
 . disappearance from the visible system, missed notices, lost procedures, and further sanctions.
 
+But benefit design is not a binary switch between give everyone everything and cut everyone off.
+The government has at least three risk-control levers: eligibility, amount, and duration.
+If the state worries about dependency, fraud, or overly cheap access to cash or food support, it can reduce the amount or shorten the certification period: for example, use a three-month bridge instead of a longer cycle, with renewed review of income, housing, and work-authorization status.
+
+This is especially logical where agencies already ask for recent income records, recent bank records, and proof from the last few months.
+If the administrative system already evaluates a short recent period, short certification can operate as a control valve instead of categorical exclusion.
+
+But that lever has a cost.
+Every renewal, upload, phone call, notice, interview, proof request, and delay creates a transaction cost for a poor family.
+The bureaucratic barrier becomes part of the price of the benefit: time, postage, transportation, phone access, translation, documents, stress, and the risk of a missed notice.
+A shorter certification period can be a rational control tool only if the process is fast, clear, and actually accessible.
+Otherwise the state may appear to save money on the benefit while creating a new cost of compliance.
+
 After H.R. 1 / OBBB, federal SNAP eligibility for many noncitizens was narrowed while certain immigration-related filing fees were increased.footnote:[USDA Food and Nutrition Service, _One Big Beautiful Bill Act_, https://www.fns.usda.gov/obbb; USCIS, _USCIS Announces FY 2026 Inflation Increase for Certain Immigration-Related Fees_, https://content.govdelivery.com/accounts/USDHSCIS/bulletins/3fc4a19]
 Even if such decisions are within Congress's power, the systems question remains: what happens to people whom the same government allows or requires to remain in humanitarian or protection procedures but leaves without a lawful survival bridge?
 
@@ -185,6 +198,7 @@ For example:
 * expedited EAD processing for households with minor children;
 * automatic extension of useful document validity when delay is agency-caused;
 * temporary food bridge until EAD approval or first paycheck;
+* shorter benefit certification periods when the government wants more frequent review instead of full exclusion;
 * child-centered subsistence protection;
 * reliable notice systems for unstable housing;
 * no punitive consequence where the violation was foreseeably caused by government delay and lack of a lawful survival path.
@@ -204,7 +218,7 @@ It is not only about one state, one agency, or one caseworker.
 
 The problem is cumulative.
 
-The system recognizes humanitarian and protection-seeking pathways; forbids unauthorized work; delays or complicates access to work authorization; charges U.S.-priced fees before the applicant has reliable access to the U.S. labor market; turns fee waivers into a separate bureaucratic process; narrows subsistence benefits; refers families to nonprofits that often have no housing or cash capacity; and then may punish people for the violations this structure predictably pressured them to commit.
+The system recognizes humanitarian and protection-seeking pathways; forbids unauthorized work; delays or complicates access to work authorization; charges U.S.-priced fees before the applicant has reliable access to the U.S. labor market; turns fee waivers into a separate bureaucratic process; narrows subsistence benefits instead of using narrower tools such as amount limits or shorter certification periods; refers families to nonprofits that often have no housing or cash capacity; and then may punish people for the violations this structure predictably pressured them to commit.
 
 That is not merely a policy gap.
 It is an architecture of forced vulnerability.
