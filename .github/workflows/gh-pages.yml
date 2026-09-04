@@ -40,8 +40,7 @@ jobs:
           sudo apt-get install -y pandoc
           python -m pip install --upgrade pip
           python -m pip install pyyaml
-          npm ci
-
+          npm install
       - name: Verify Documentating contract
         run: npm test
 
