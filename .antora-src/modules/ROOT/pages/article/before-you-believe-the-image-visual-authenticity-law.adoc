@@ -1,0 +1,435 @@
+= Before You Believe the Image: Why AI-Era Media Needs Temporal and Visual Authenticity Law
+:page-slug: before-you-believe-the-image-visual-authenticity-law
+:page-published: 2026-09-05
+:page-author: Oleksandr Tishchenko
+:page-tags: AI, synthetic media, deepfakes, image authenticity, provenance, C2PA, First Amendment, media law, platform regulation, visual evidence, temporal disclosure
+
+_Source asciidoc: `docs/article/before-you-believe-the-image-visual-authenticity-law.adoc`_
+[abstract]
+Modern media law still assumes that the dangerous lie is primarily verbal. That assumption is becoming obsolete. A photograph can be perfectly authentic and still be materially misleading because it was taken years before the event it is used to illustrate. A second image can be captured today yet become misleading because generative software changes a face, expression, body, background, object, or circumstance. In both cases, the audience may receive the false proposition before reading a single sentence.
+
+This article proposes a _Visual Authenticity and Temporal Disclosure Act_: a legal framework built around two independent dimensions of visual truth -- temporal authenticity and visual authenticity -- together with a platform duty to disclose synthetic or materially altered imagery *before* exposure. The proposal does not ban archives, journalism, satire, ordinary image processing, denoising, compression, color correction, or non-generative restoration. It instead targets the presentation of visual material as factual evidence of a person's present appearance, condition, conduct, presence, or circumstances when that representation is temporally false or materially reconstructed.
+
+== The problem is no longer simply "fake images"
+
+The traditional deepfake debate asks whether an image is real or fake. That binary is already too crude.
+
+Consider two photographs.
+
+The first is a genuine photograph of a politician taken in 2019. In 2026 the politician is hospitalized, and a publication places the 2019 portrait at the top of an article about the hospitalization without identifying it as archival. Nothing in the pixels is fake. Yet the image may communicate a proposition the photograph cannot support: _this is what the person looks like now_.
+
+The second photograph was captured today. But software removes bruising, changes an expression, reconstructs an eye, replaces clothing, alters the background, or inserts an object. The timestamp may be accurate while the visual evidence is not.
+
+These are different failures and should be regulated differently.
+
+The first is a failure of *temporal authenticity*.
+
+The second is a failure of *visual authenticity*.
+
+A serious legal framework should recognize both.
+
+== Images are evidence before they are captions
+
+A recurring weakness in current disclosure rules is their assumption that a caption can repair an image after the audience has already seen it.
+
+That sequence matters.
+
+A user scrolling a feed does not first inspect provenance metadata, then read a legal disclaimer, and only then form an impression. The image normally arrives first. It creates the initial belief, emotional reaction, or contextual inference. A label placed beneath the image may correct that inference later, but it cannot guarantee that the original impression was never formed.
+
+That leads to a central principle for synthetic visual media:
+
+[quote]
+____
+Disclosure after exposure is not disclosure before belief formation.
+____
+
+For materially AI-generated or AI-altered images of identifiable real people, the platform should therefore disclose the nature of the image *before* rendering the unobscured visual content.
+
+The practical mechanism is simple: blur or otherwise obscure the image and display a prominent notice such as _AI-GENERATED IMAGE_, _AI-ALTERED IMAGE_, or _MATERIALLY ALTERED IMAGE_. The user may reveal the underlying image through an affirmative action.
+
+The objective is not censorship. The image remains available. What changes is the order in which information reaches the viewer: provenance first, image second.
+
+== The law is already moving toward provenance and disclosure
+
+The proposal does not start from a blank page.
+
+=== Texas: deepfakes as deceptive election conduct
+
+Texas Election Code Section 255.004 makes it an offense, when accompanied by the specified intent, to create and distribute a "deep fake video" within 30 days of an election. The statute defines such a video as one created with intent to deceive that appears to depict a real person performing an action that did not occur.footnote:[Texas Election Code § 255.004, https://statutes.capitol.texas.gov/?artSec=255.003&chapter=EL.255&code=EL&tab=1]
+
+The Texas rule is narrow. It is election-specific, video-specific, time-limited, and intent-based. But it demonstrates an important legislative recognition: synthetic visual representation can function as deceptive conduct with real-world consequences.
+
+=== New York: disclosure rather than categorical prohibition
+
+New York Election Law Section 14-106 requires disclosure for certain political communications containing materially deceptive media when the publisher has actual knowledge of the deception. The prescribed disclosure for visual media states that the image, video, or audio "has been manipulated."footnote:[New York Election Law § 14-106, https://law.justia.com/codes/new-york/eln/article-14/title-1/14-106/]
+
+New York legislators have also continued considering broader AI-disclaimer and provenance proposals, including measures directed specifically at synthetic media in political communication.footnote:[New York Senate Bill S2414, 2025-2026 Session, https://www.nysenate.gov/legislation/bills/2025/S2414] footnote:[New York Senate Bill S7963, 2025-2026 Session, https://www.nysenate.gov/legislation/bills/2025/S7963]
+
+This is closer to the model proposed here because it regulates the relationship between the media and the disclosure rather than attempting to make synthetic media unlawful merely because it is synthetic.
+
+=== TAKE IT DOWN Act: federal platform duties are no longer hypothetical
+
+The federal TAKE IT DOWN Act became Public Law 119-12 on May 19, 2025. It addresses nonconsensual intimate visual depictions, including covered digital forgeries, and establishes duties affecting covered online platforms.footnote:[TAKE IT DOWN Act, Pub. L. No. 119-12, May 19, 2025, https://www.govinfo.gov/app/details/PLAW-119publ12]
+
+The Federal Trade Commission began enforcement of the Act's platform requirements in May 2026.footnote:[Federal Trade Commission, "FTC Begins Enforcing the TAKE IT DOWN Act," May 2026, https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act]
+
+The Act is not a general visual-authenticity statute and should not be represented as one. Its subject is much narrower and more serious: nonconsensual intimate imagery. But its structure establishes a significant precedent for the broader policy debate. Congress has already accepted that a category of harmful synthetic imagery can justify direct operational duties for covered platforms rather than relying exclusively on claims against the original uploader.
+
+=== C2PA: provenance is technically implementable
+
+The Coalition for Content Provenance and Authenticity has developed the C2PA Content Credentials standard to record media provenance and authenticity information. The current C2PA specifications include mechanisms for identifying AI-generated output and preserving signed provenance data about digital assets.footnote:[C2PA Specifications 2.4, https://spec.c2pa.org/specifications/] footnote:[C2PA, Guidance for Artificial Intelligence and Machine Learning, https://spec.c2pa.org/specifications/specifications/2.3/ai-ml/ai_ml.html]
+
+In July 2026, C2PA also published implementation guidance specifically addressing the use of Content Credentials to identify synthetic and non-synthetic content.footnote:[C2PA, "A New Implementation Guide for Content Credentials," July 31, 2026, https://c2pa.org/a-new-implementation-guide-for-content-credentials/]
+
+This matters because a provenance mandate need not require platforms to invent a new technical ecosystem from zero. A legal rule can be standards-neutral while recognizing cryptographically signed provenance, capture information, editing history, publisher declarations, and future interoperable credentials as evidence.
+
+== The constitutional warning: Kohls v. Bonta
+
+Any American proposal in this field has to confront the First Amendment directly rather than treating it as an afterthought.
+
+California's AB 2839 attempted to regulate materially deceptive election-related content. In _Kohls v. Bonta_, a federal district court granted a preliminary injunction against much of the law in October 2024. The court concluded that the plaintiff had shown a likelihood of success on First Amendment claims and emphasized the particular constitutional protection afforded to political and electoral speech.footnote:[_Kohls v. Bonta_, Order Granting Preliminary Injunction, E.D. Cal., Oct. 2, 2024, https://docs.justia.com/cases/federal/district-courts/california/caedce/2%3A2024cv02527/453046/14]
+
+The litigation continued, and the court later reiterated concerns that the law was insufficiently narrowly tailored and implicated compelled speech.footnote:[_Kohls v. Bonta_, E.D. Cal., Aug. 29, 2025, https://docs.justia.com/cases/federal/district-courts/california/caedce/2%3A2024cv02527/453046/101]
+
+That case is not an argument for doing nothing. It is an instruction about how not to draft the next law.
+
+A visual-authenticity statute should avoid becoming a government truth tribunal deciding whether a political idea, parody, criticism, or inference is "false." It should instead regulate objectively ascertainable attributes of a visual representation:
+
+* when the source image was captured;
+* whether it is archival relative to the event being represented;
+* whether material visual content was generated, removed, substituted, or reconstructed;
+* whether reliable provenance information exists;
+* whether that provenance was disclosed before the audience was exposed to the altered image.
+
+The narrower the statute remains around these verifiable facts, the stronger its constitutional position should be.
+
+== A current signal: courts are distinguishing synthetic-media harms by category
+
+The constitutional analysis is also becoming more granular.
+
+In September 2026, a federal judge declined xAI's request for a preliminary injunction against a Minnesota law targeting AI-generated fake nude imagery of identifiable people. The dispute remains active, and the ruling does not establish that broad synthetic-media restrictions are automatically constitutional. But it illustrates an important direction: courts may evaluate synthetic-media regulation very differently where the regulated harm is tightly defined and the law is closely connected to a concrete injury rather than generalized control of political or expressive content.footnote:[Reuters, "Musk's xAI loses court bid to block Minnesota's AI 'nudification' ban," Sept. 4, 2026, https://www.reuters.com/legal/litigation/musks-xai-loses-court-bid-block-minnesotas-ai-nudification-ban-2026-09-04/]
+
+The lesson for visual-authenticity legislation is again narrowness. Do not regulate "AI speech" as a category. Regulate specific deceptive presentation practices and the platform mechanics that allow a synthetic representation to be encountered as though it were an unmodified factual record.
+
+== Why the archive problem deserves its own rule
+
+Most AI regulation focuses on generated or altered content. That leaves a separate and much older form of visual misrepresentation largely untouched: the truthful photograph used in a false temporal context.
+
+A publication can manipulate perception without altering a single pixel.
+
+A photograph from ten years ago may be used beside a story about a person's current health. A photograph from a peaceful event may be paired with a report about unrest. A portrait taken before an injury, illness, arrest, resignation, protest, or disaster may visually imply a present condition that it cannot establish.
+
+The relevant question should therefore be:
+
+[quote]
+____
+Is this image being presented as evidence of the person's appearance, condition, conduct, presence, or circumstances at a time the image did not actually capture?
+____
+
+If yes, the publication should disclose the capture date or clearly identify the image as archival before a reasonable viewer can mistake it for current evidence.
+
+This does not mean every family photograph, encyclopedia image, historical essay, obituary, profile, or documentary frame requires a warning. The trigger is contextual misrepresentation: the use of an older image in a way that reasonably implies contemporaneity with the event being described.
+
+== Why "ban Photoshop" is the wrong legal abstraction
+
+A statute should never depend on the brand of software used.
+
+Photoshop can crop an image, correct exposure, remove sensor dust, generate a missing background, reconstruct a face, or fabricate an entire scene. Modern phones perform computational photography automatically. Cameras combine frames, reduce noise, sharpen details, balance highlights, and infer missing information before a user ever opens an editing application.
+
+The relevant legal distinction is therefore not _edited versus unedited_. It is:
+
+*technical processing* versus *material factual alteration*.
+
+=== Technical processing
+
+The following should ordinarily remain outside mandatory synthetic-media warnings when they do not materially change factual visual information:
+
+* sensor-noise reduction and denoising;
+* compression-artifact reduction;
+* ordinary sharpening;
+* exposure and white-balance correction;
+* color correction that does not materially change factual content;
+* resizing and resolution scaling;
+* lens correction;
+* dust and sensor-spot removal;
+* crop and rotation;
+* non-generative restoration of scratches or physical deterioration in archival material.
+
+=== Material factual alteration
+
+Mandatory disclosure should attach when processing creates, removes, substitutes, or materially changes information capable of affecting a reasonable viewer's understanding of the depicted facts, including:
+
+* facial features;
+* expression;
+* age;
+* physical condition;
+* body shape;
+* clothing;
+* gestures or body position;
+* objects;
+* other people;
+* background or location;
+* signs or text;
+* evidence of injury, illness, restraint, intoxication, damage, or other condition.
+
+The difficult boundary is generative reconstruction.
+
+Denoising an eye is technical processing. Generating a plausible new eye because the original pixels do not contain enough information is reconstruction. Removing compression noise from a license plate is enhancement. Generating characters that were not reliably present in the source is fabrication of evidence.
+
+That boundary should be written into the statute explicitly.
+
+== The proposed Visual Authenticity and Temporal Disclosure Act
+
+The following is a policy draft rather than enacted law. Its purpose is to express the operative rules in sufficiently concrete language to expose the constitutional and technical tradeoffs.
+
+=== 1. Core rule: visual representation as evidence
+
+A visual representation must not be presented as evidence of an identifiable person's appearance, condition, conduct, presence, or circumstances at a particular time unless the representation accurately depicts that person at that time, or its different date or material alteration is clearly disclosed.
+
+=== 2. Temporal disclosure
+
+When a photograph or video of an identifiable person is used in connection with a current event, statement, condition, office, location, or circumstance, and the visual was captured at an earlier materially different time, the publisher shall clearly disclose the capture date.
+
+Where the exact date is known, the disclosure should state:
+
+[quote]
+____
+ARCHIVE IMAGE -- CAPTURED [DATE].
+____
+
+Where only the year or approximate period is reliably known, the publisher may disclose that period.
+
+Where the capture date cannot reasonably be established:
+
+[quote]
+____
+ARCHIVE IMAGE -- CAPTURE DATE UNKNOWN.
+____
+
+The rule should apply when omission of the temporal information would cause a reasonable viewer to understand the image as contemporaneous evidence.
+
+=== 3. Prohibition on false visual contemporaneity
+
+A person shall not knowingly present an archival visual representation in a manner that materially causes a reasonable viewer to believe that it depicts:
+
+* the person's current physical condition;
+* the person's appearance on the date of the reported event;
+* the person's presence at a particular location;
+* participation in a particular event;
+* a reaction to an event occurring after the image was captured;
+* conduct that the image predates.
+
+The prohibition concerns the deceptive temporal proposition, not the possession or publication of archival material itself.
+
+=== 4. Material alteration disclosure
+
+A materially altered visual representation of an identifiable real person shall carry a clear disclosure when software, artificial intelligence, compositing, or another process materially generates, removes, substitutes, or changes factual visual information.
+
+Applicable labels may include:
+
+[quote]
+____
+DIGITALLY ALTERED IMAGE
+____
+
+[quote]
+____
+AI-ALTERED IMAGE
+____
+
+[quote]
+____
+AI-GENERATED IMAGE
+____
+
+The terminology should distinguish an entirely generated scene from an authentic capture containing material synthetic alterations.
+
+=== 5. Pre-exposure platform disclosure
+
+A covered platform displaying a materially AI-generated or materially AI-altered image of an identifiable real person shall obscure the image before first exposure to the viewer.
+
+The obscured visual shall contain a prominent disclosure identifying the applicable category of alteration.
+
+The underlying image may be displayed after an affirmative user action such as:
+
+[quote]
+____
+VIEW ALTERED IMAGE
+____
+
+A disclosure located solely in metadata, alt text, a caption beneath an already visible image, an expandable information panel, or another location visible only after exposure does not satisfy the pre-exposure requirement.
+
+=== 6. Platform provenance duty
+
+Covered platforms shall implement reasonable mechanisms to ingest, preserve, validate, and display technically reliable provenance information associated with visual media.
+
+Relevant provenance mechanisms may include:
+
+* C2PA Content Credentials;
+* cryptographically signed capture or editing history;
+* camera-origin attestations;
+* publisher declarations;
+* reliable embedded timestamps;
+* editing-history attestations;
+* future interoperable provenance standards.
+
+A platform shall not knowingly remove or conceal valid provenance information for the purpose of defeating disclosure requirements.
+
+The statute should remain technologically neutral: C2PA may satisfy or help satisfy the requirement, but no single private standard should permanently become the statutory definition of authenticity.
+
+=== 7. Technical-processing safe harbor
+
+An image is not materially altered solely because software or artificial intelligence was used for processing.
+
+The following operations qualify for a safe harbor when they do not create or materially change factual visual information:
+
+* denoising;
+* compression-artifact reduction;
+* exposure correction;
+* white-balance correction;
+* ordinary sharpening;
+* resizing;
+* lens correction;
+* dust removal;
+* crop and rotation;
+* technical restoration of damaged archival media.
+
+=== 8. Reconstruction boundary
+
+A technical enhancement becomes a material alteration when it generates or reconstructs information not reliably present in the source and that information could materially influence a reasonable viewer's understanding of the depicted person, event, location, object, condition, or circumstance.
+
+This rule applies regardless of whether the reconstruction was performed by generative AI, a conventional editing program, a phone application, a neural-network enhancement tool, or another technology.
+
+=== 9. No software-name loophole
+
+The statute shall not use "Photoshop" or any other commercial product as a legal category.
+
+Liability shall turn on what the process did to factual visual information, not which product performed the operation.
+
+=== 10. Archive and documentary safe harbor
+
+Historical, educational, documentary, biographical, scientific, artistic, and journalistic use of archival imagery remains lawful.
+
+Temporal disclosure is required only when the context would reasonably cause the audience to understand an archival image as contemporaneous evidence of a current or specifically dated event or condition.
+
+=== 11. Satire, parody, and obvious fiction
+
+The statute should contain a narrowly drafted safe harbor for satire, parody, fiction, and artistic expression where a reasonable viewer would not understand the visual as an authentic factual record.
+
+Where a synthetic image is sufficiently realistic that a reasonable viewer could instead understand it as factual, pre-exposure provenance disclosure should remain available as a less restrictive alternative to prohibition.
+
+=== 12. Remedies
+
+An identifiable person materially affected by a violation should have access to proportionate remedies, potentially including:
+
+* correction of missing or false provenance information;
+* correction of temporal labeling;
+* removal of a materially deceptive presentation;
+* publication of a correction where appropriate;
+* actual damages for proven economic or reputational harm;
+* narrowly calibrated statutory damages for knowing or repeated violations;
+* injunctive relief.
+
+Good-faith publishers and platforms should receive a reasonable cure period for ordinary labeling errors unless the violation is knowing, malicious, repeated, or creates imminent material harm.
+
+=== 13. Platform reporting and auditability
+
+Large covered platforms should maintain auditable records sufficient to show whether provenance signals were present, whether they were preserved, whether the platform classified the image as synthetic or altered, and what disclosure was presented to the viewer.
+
+The law should not require public disclosure of private user data merely to create auditability.
+
+=== 14. Enforcement standard
+
+To reduce constitutional overbreadth, heightened penalties should generally require knowledge, recklessness, or repeated failure after notice rather than imposing severe liability for every automated classification mistake.
+
+The statute should distinguish:
+
+* the original creator of a deceptive visual;
+* a publisher knowingly presenting it as factual;
+* a platform receiving or displaying it;
+* a platform that has preserved provenance and applied a reasonable disclosure process.
+
+These actors do not occupy the same position and should not automatically bear identical liability.
+
+== Risks and objections
+
+A proposal of this kind has real risks. They should be confronted in the statute rather than left for courts to discover later.
+
+=== First Amendment overbreadth
+
+A law that attempts to prohibit every false or altered image involving politics would be constitutionally vulnerable. _Kohls_ demonstrates the danger. The safer design is disclosure of objectively ascertainable provenance facts, narrow definitions of material alteration, safe harbors, and remedies tied to deceptive factual presentation rather than disagreement with a message.
+
+=== Compelled speech
+
+Mandatory labels themselves are compelled speech. Their wording and scope therefore matter. The strongest case for compelled disclosure is likely where the label communicates a short factual statement about provenance -- for example, _AI-ALTERED IMAGE_ -- rather than forcing a speaker to adopt the government's characterization of an opinion or political message.
+
+=== False positives
+
+AI detectors are probabilistic and can be wrong. A statute should not make an opaque classifier the final legal authority on whether an image is synthetic.
+
+Platform decisions should combine available provenance credentials, publisher declarations, editing metadata, technical analysis, and contestability. A creator should have a process to challenge an incorrect synthetic-media label.
+
+=== Metadata stripping
+
+Metadata can be lost through screenshots, recompression, messaging applications, export pipelines, and malicious removal. The law should therefore reward preserved signed provenance but should not assume absence of provenance is proof of fabrication.
+
+=== Small publishers and infrastructure burden
+
+A global social platform and a personal blog should not necessarily carry identical infrastructure obligations. Platform duties can scale with audience size, revenue, technical control, or distribution reach while the substantive prohibition on knowingly deceptive presentation remains generally applicable.
+
+=== Journalism and public-interest reporting
+
+News organizations frequently use file photographs because current photographs do not exist or cannot safely be obtained. The proposed rule deliberately preserves this practice. It requires temporal honesty, not contemporaneous photography in every article.
+
+A clearly marked 2019 image used in a 2026 story remains lawful. The point is that the reader should not be left to infer that 2019 is 2026.
+
+=== Accessibility
+
+Pre-exposure disclosure must not depend only on blur or color. Screen readers and other accessibility tools should receive the same provenance information semantically. A visual warning, accessible text, and machine-readable provenance state should express the same classification.
+
+== Why this becomes more important as AI improves
+
+The paradox of generative media is that regulation becomes harder precisely as the technology becomes better.
+
+Early deepfakes often contained visible artifacts. Future systems need not. Photorealism is not an edge case anymore. Generative fill, face replacement, relighting, expression transfer, inpainting, scene reconstruction, super-resolution, and multimodal generation increasingly collapse the distance between "photograph" and "rendered proposition."
+
+At the same time, authentic photography is becoming more computational. A legal regime that simply asks whether AI touched the file will therefore fail in both directions: it will over-label ordinary camera processing and under-regulate meaningful reconstruction.
+
+The durable abstraction is provenance plus materiality.
+
+What was captured?
+
+When was it captured?
+
+What changed?
+
+Was new factual information generated?
+
+Could that change alter a reasonable viewer's understanding of the represented facts?
+
+And did the viewer receive that provenance before being exposed to a potentially deceptive synthetic representation?
+
+Those questions remain useful regardless of which model, camera, editor, or platform dominates the next decade.
+
+== The deeper principle
+
+Photography acquired evidentiary power because society developed a practical presumption that a photograph had some causal relationship to a scene that existed in front of a camera.
+
+Generative AI does not merely make fake photographs cheaper. It weakens that presumption itself.
+
+The answer should not be to declare every image untrustworthy. Nor should the answer be a government authority deciding which images citizens are allowed to see.
+
+A more defensible response is to restore information that the digital pipeline increasingly removes: provenance, time, and the boundary between observation and reconstruction.
+
+That produces a simple ordering rule:
+
+[quote]
+____
+First tell me what kind of evidence I am about to see. Then show it to me.
+____
+
+That is the central argument for a Visual Authenticity and Temporal Disclosure Act.
+
+It does not ask the state to decide what people must believe.
+
+It asks publishers and platforms not to disguise when the visual evidence itself was captured, reconstructed, or generated.
