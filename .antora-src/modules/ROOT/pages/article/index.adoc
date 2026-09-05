@@ -5,6 +5,8 @@ Public articles and position papers from Smart Responsor.
 
 == Index
 
+* xref:article/legalnost-kak-platnaya-podpiska.adoc[Мы целились в нелегальную миграцию, а выстрелили себе в пятку] — 2026-09-03 — Аналитическая статья о том, как политика, которая повышает цену законности, задерживает разрешение на работу и убирает мосты выживания, может производить вынужденные нарушения вместо порядка.
+* xref:article/when-ai-empties-the-queue-cognitive-queue-depletion.adoc[When AI Empties the Queue: Cognitive Queue Depletion in AI-Augmented Knowledge Work] — 2026-09-01 — A first-person, research-grounded hypothesis about what happens when AI-assisted execution clears a person's active cognitive task queue faster than new meaningful work is generated.
 * xref:article/06-when-the-ancient-brain-receives-modern-technologies.adoc[When the Ancient Brain Receives Modern Technologies] — 2026-07-18 — The sixth article in the New Paradigm media set: why ancient human reactions become dangerous when they receive modern technological scale.
 * xref:article/ai-development-without-the-black-box-console-mcp.adoc[AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP] — 2026-07-18 — A founder's account of why Marketing America Corp built Console MCP: an evidence-bound, budget-aware execution harness connecting interactive ChatGPT sessions to real local engineering environments.
 * xref:article/the-second-layer-objects-ai-operational-truth.adoc[The Second Layer: Objects, AI, and Operational Truth] — 2026-06-28 — A wrapper article for the object-state cycle: from a correct canonical answer toward observation, diagnostics, AI-assisted engineering, and authorial responsibility.
