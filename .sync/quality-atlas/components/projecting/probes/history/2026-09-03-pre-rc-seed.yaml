@@ -4,7 +4,7 @@ snapshot:
   date: '2026-09-03'
   label: pre-rc-seed
   origin: quality-atlas probe seed
-  generated_at: '2026-09-03T17:12:54.616965+00:00'
+  generated_at: '2026-09-03T15:14:56.616482+00:00'
 repo_target:
   github_repository: ''
   local_path: ''
