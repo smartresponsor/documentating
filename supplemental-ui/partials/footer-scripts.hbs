@@ -1,1 +1,25 @@
-{{! intentionally empty: no owner-specific runtime footer script }}
+<script>
+(function () {
+  const normalizeStemBlocks = function () {
+    document.querySelectorAll('.stemblock .content').forEach(function (node) {
+      const text = node.textContent.trim();
+      if (text.startsWith('\\$') && text.endsWith('\\$')) {
+        node.textContent = '\\[' + text.slice(2, -2).trim() + '\\]';
+      }
+    });
+  };
+
+  normalizeStemBlocks();
+
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+})();
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
