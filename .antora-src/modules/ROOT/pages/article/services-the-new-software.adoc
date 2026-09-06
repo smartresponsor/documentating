@@ -2,6 +2,7 @@
 :page-slug: services-the-new-software
 
 _Source asciidoc: `docs/article/services-the-new-software.adoc`_
+
 [abstract]
 Sequoia’s March 2026 thesis, _Services: The New Software_, argues that the next trillion-dollar company will not sell a better tool, but a better outcome: software that performs service work end to end rather than merely assisting a human operator. That framing is directionally right and strategically important. Yet it becomes truly useful only when tested against independent data on enterprise adoption, labor effects, workflow redesign, governance, and professional-services economics. The real prize is not “AI that does tasks.” It is operational software that can absorb outsourced work, escalate judgment, survive exceptions, and accept accountability.
 

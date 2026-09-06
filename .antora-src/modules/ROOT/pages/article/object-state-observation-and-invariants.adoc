@@ -6,6 +6,7 @@
 :page-tags: OOP, object state, observation, invariants, DDD, aggregate, entity, value object, AI
 
 _Source asciidoc: `docs/article/object-state-observation-and-invariants.adoc`_
+
 == Abstract
 
 Object-oriented programming is often introduced through a compact formula: an object has identity, state, and behavior. The formula is useful, but it is also dangerously compressed. In real systems, state is not the complete truth about an object. State is a time-bound, model-bound, and observer-bound slice of what can be stored, inferred, diagnosed, or projected. This article revisits the classical definition of an object through a moving car, tire tread measurement, business orders, wallets, vendors, observable projections, and model invariants.

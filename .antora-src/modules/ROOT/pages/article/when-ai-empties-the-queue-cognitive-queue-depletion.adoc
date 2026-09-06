@@ -6,6 +6,7 @@
 :page-tags: ai, cognition, knowledge-work, cognitive-offloading, productivity, burnout, incubation, human-ai-collaboration
 
 _Source asciidoc: `docs/article/when-ai-empties-the-queue-cognitive-queue-depletion.adoc`_
+
 Artificial intelligence is usually discussed as a way to reduce workload, increase productivity, or intensify work.
 
 All three descriptions can be true.

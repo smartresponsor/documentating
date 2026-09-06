@@ -6,6 +6,7 @@
 :page-tags: glossary, dynamic-non-absoluteness, philosophy-of-physics, dynamic-systems, hypothesis
 
 _Source asciidoc: `docs/article/glossary-of-dynamic-non-absoluteness.adoc`_
+
 == Purpose
 
 This glossary defines the controlled vocabulary of the *Dynamic Non-Absoluteness* research program.

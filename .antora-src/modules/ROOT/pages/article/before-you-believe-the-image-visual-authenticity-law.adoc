@@ -5,6 +5,7 @@
 :page-tags: AI, synthetic media, deepfakes, image authenticity, provenance, C2PA, First Amendment, media law, platform regulation, visual evidence, temporal disclosure
 
 _Source asciidoc: `docs/article/before-you-believe-the-image-visual-authenticity-law.adoc`_
+
 [abstract]
 Modern media law still assumes that the dangerous lie is primarily verbal. That assumption is becoming obsolete. A photograph can be perfectly authentic and still be materially misleading because it was taken years before the event it is used to illustrate. A second image can be captured today yet become misleading because generative software changes a face, expression, body, background, object, or circumstance. In both cases, the audience may receive the false proposition before reading a single sentence.
 

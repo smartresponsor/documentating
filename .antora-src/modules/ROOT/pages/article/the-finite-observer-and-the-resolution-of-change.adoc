@@ -6,6 +6,7 @@
 :page-tags: system-tempo, dynamic-non-absoluteness, observer, resolution, philosophy-of-physics, epistemology, open-systems
 
 _Source asciidoc: `docs/article/the-finite-observer-and-the-resolution-of-change.adoc`_
+
 == Position in the Series
 
 This essay continues two earlier lines of thought:

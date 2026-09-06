@@ -6,6 +6,7 @@
 :page-tags: new paradigm, manifesto, contribution, reward, verification, dignity
 
 _Source asciidoc: `docs/manifest/from-punishment-to-reward.adoc`_
+
 == Why this manifesto exists
 
 Modern systems are very good at remembering failure.

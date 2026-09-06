@@ -6,6 +6,7 @@
 :page-tags: new paradigm, safety, governance, social credit boundary, human dignity
 
 _Source asciidoc: `docs/manifest/what-this-system-must-never-become.adoc`_
+
 == Purpose
 
 This document is a boundary statement.

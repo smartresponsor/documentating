@@ -6,6 +6,7 @@
 :page-tags: ai, chatgpt, infrastructure, strategy, labor, models
 
 _Source asciidoc: `docs/article/ai-is-not-just-chatgpt-five-layer-stack.adoc`_
+
 When most people say "AI," they usually mean an interface: a chat that answers questions, writes code, or summarizes documents. That creates a convenient but false picture, as if AI were just a successful application floating on top of the internet.
 
 In reality, the industry has already moved to a different scale. We are no longer talking about one product, or even one model. We are looking at a full production stack in which every upper layer depends on the layers below it.

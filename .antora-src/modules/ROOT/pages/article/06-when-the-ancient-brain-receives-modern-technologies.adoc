@@ -6,6 +6,7 @@
 :page-tags: new paradigm, technological acceleration, evolutionary mismatch, AI, automation, survival mode, social coordination
 
 _Source asciidoc: `docs/article/06-when-the-ancient-brain-receives-modern-technologies.adoc`_
+
 == The problem is not instinct. The problem is scale.
 
 This is the sixth article in the cycle on the new paradigm.

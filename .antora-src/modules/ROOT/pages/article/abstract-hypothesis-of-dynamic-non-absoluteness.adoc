@@ -6,6 +6,7 @@
 :page-tags: abstract, hypothesis, philosophy-of-physics, dynamic-systems, open-systems
 
 _Source asciidoc: `docs/article/abstract-hypothesis-of-dynamic-non-absoluteness.adoc`_
+
 == Abstract
 
 The hypothesis of dynamic non-absoluteness proposes that observable reality should not be understood as a system of absolute forces, but as a field of relative, interacting, and dynamically non-identical factors.

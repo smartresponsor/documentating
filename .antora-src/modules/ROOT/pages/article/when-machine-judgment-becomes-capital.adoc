@@ -5,6 +5,7 @@
 :page-tags: AI, agents, memory, machine judgment, Bayesian confidence, organizational memory
 
 _Source asciidoc: `docs/article/when-machine-judgment-becomes-capital.adoc`_
+
 include::partial$article/when-machine-judgment-becomes-capital-01.adoc[]
 include::partial$article/when-machine-judgment-becomes-capital-02.adoc[]
 include::partial$article/when-machine-judgment-becomes-capital-03.adoc[]

@@ -5,6 +5,7 @@
 :page-tags: ai, software-delivery, management, fractional-cto, engineering, delivery-governance
 
 _Source asciidoc: `docs/article/zz-ai-first-software-delivery-and-the-new-geometry-of-control.adoc`_
+
 [abstract]
 AI-first delivery changes more than developer productivity. As implementation becomes cheaper, the hidden cost of coordination becomes easier to see. That shifts competitive advantage away from raw coding capacity and toward controllability: the ability to translate product intent into reliable production change with minimal distortion.
 

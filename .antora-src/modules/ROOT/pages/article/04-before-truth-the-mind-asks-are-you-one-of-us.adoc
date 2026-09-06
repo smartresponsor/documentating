@@ -6,6 +6,7 @@
 :page-tags: new paradigm, belonging, in-group out-group, trust, verification, human behavior, social cognition, decision trace
 
 _Source asciidoc: `docs/article/04-before-truth-the-mind-asks-are-you-one-of-us.adoc`_
+
 == Why belonging often arrives before verification
 
 This is the fourth article in the cycle on the new paradigm.

@@ -6,6 +6,7 @@
 :page-tags: OOP, object state, observable projection, AI, Claude, ChatGPT, Symfony, operational truth, authorship, developer tools
 
 _Source asciidoc: `docs/article/the-second-layer-objects-ai-operational-truth.adoc`_
+
 (C) 2026 Oleksandr Tishchenko / Marketing America Corp LLC. Distribution is permitted only with reference to the author and the original source.
 
 toc::[]

@@ -6,6 +6,7 @@
 :page-tags: physics, philosophy-of-physics, dynamic-systems, open-systems, manifesto, hypothesis
 
 _Source asciidoc: `docs/article/manifesto-of-dynamic-non-absoluteness.adoc`_
+
 == Opening Statement
 
 Real dynamics begins where absolute identity fails.

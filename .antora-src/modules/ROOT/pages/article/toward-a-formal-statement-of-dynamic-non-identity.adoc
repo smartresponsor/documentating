@@ -6,6 +6,7 @@
 :page-tags: dynamic-systems, formalization, philosophy-of-physics, open-systems, hypothesis
 
 _Source asciidoc: `docs/article/toward-a-formal-statement-of-dynamic-non-identity.adoc`_
+
 == Purpose
 
 This note translates the hypothesis of dynamic non-identity into a preliminary formal vocabulary.

@@ -6,6 +6,7 @@
 :page-tags: new paradigm, glossary, contribution, truth mode, survival mode
 
 _Source asciidoc: `docs/glossary/new-paradigm-glossary.adoc`_
+
 == Purpose
 
 This glossary defines working terms used across the New Paradigm cycle and the public canon documents.

@@ -6,6 +6,7 @@
 :page-tags: ai, ecommerce, protocols, platforms, agentic-commerce, amazon
 
 _Source asciidoc: `docs/article/the-first-great-war-between-platforms-and-protocols.adoc`_
+
 The news did not get the attention it deserved.
 
 A U.S. federal judge temporarily blocked Perplexity’s Comet shopping agent from using Amazon in the way Amazon says it had been operating: accessing protected parts of customer accounts and automating purchases through them. The injunction was granted on March 10, 2026, and the judge briefly stayed enforcement so Perplexity could appeal. Amazon’s lawsuit itself dates back to November 2025.

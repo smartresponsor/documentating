@@ -6,6 +6,7 @@
 :page-tags: spacex, ipo, capital-markets, ai, infrastructure, wall-street, strategy
 
 _Source asciidoc: `docs/article/zz-spacex-confidential-ipo-return-of-the-mega-listing.adoc`_
+
 image::spacex-mega-ipo-scale.svg[Mega IPO as a market-depth test,align=center,width=100%]
 
 [.text-center]

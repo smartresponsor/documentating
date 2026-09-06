@@ -2,6 +2,7 @@
 :page-slug: llm-research-operator-knuth-claude-cycles
 
 _Source asciidoc: `docs/article/llm-research-operator-knuth-claude-cycles.adoc`_
+
 Donald Knuth’s recent note about Claude solving a graph-theoretic problem is interesting for a reason that goes well beyond the headline.
 
 Yes, the headline matters. One of the most respected algorithmists in history described the event with the words “Shock! Shock!” after learning that an open problem he had worked on for weeks had been cracked by an LLM-driven exploration process. But the deeper signal is not simply that a model produced a useful construction. The real signal is methodological: we are watching a workable pattern emerge for how frontier models can participate in mathematical and algorithmic discovery.

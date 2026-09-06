@@ -6,6 +6,7 @@
 :page-tags: new paradigm, human behavior, truth, survival mode, AI, society, economic interface
 
 _Source asciidoc: `docs/article/01-human-does-not-see-reality.adoc`_
+
 == Why a new paradigm needs more than giving people more information
 
 This article opens a cycle on why humanity may need a new paradigm of existence.

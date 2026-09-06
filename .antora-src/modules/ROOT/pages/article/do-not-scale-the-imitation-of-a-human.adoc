@@ -6,6 +6,7 @@
 :page-tags: ai, agents, automation, architecture, engineering, protocol
 
 _Source asciidoc: `docs/article/do-not-scale-the-imitation-of-a-human.adoc`_
+
 There is a seductive illusion at the center of the current AI wave.
 
 A model opens a browser. It clicks a button. It expands a hidden panel. It copies text. It downloads a file. It navigates to the next page. It looks, at first glance, like intelligence. It looks like autonomy. It looks like the machine has learned to use a computer the way a person does.

@@ -6,6 +6,7 @@
 :page-tags: OOP, object-oriented programming, object state, observer, projection, DDD, domain model, AI
 
 _Source asciidoc: `docs/article/object-state-is-observer-illusion.adoc`_
+
 _On what the OOP classics left unsaid, and what AI reproduced as truth._
 
 [quote, Grady Booch, Object-Oriented Analysis and Design with Applications]

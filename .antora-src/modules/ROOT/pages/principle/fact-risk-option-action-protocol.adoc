@@ -6,6 +6,7 @@
 :page-tags: new paradigm, principle, decision interface, truth mode, verification
 
 _Source asciidoc: `docs/principle/fact-risk-option-action-protocol.adoc`_
+
 == Purpose
 
 Fact, Risk, Option, Action is a decision-interface pattern.

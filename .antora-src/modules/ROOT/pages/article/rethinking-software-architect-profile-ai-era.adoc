@@ -2,6 +2,7 @@
 :page-slug: rethinking-software-architect-profile-ai-era
 
 _Source asciidoc: `docs/article/rethinking_software_architect_profile_ai_era.adoc`_
+
 Oleksandr
 :doctype: article
 :toc: macro

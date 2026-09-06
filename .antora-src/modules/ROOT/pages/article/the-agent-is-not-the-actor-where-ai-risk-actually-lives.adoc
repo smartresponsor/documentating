@@ -6,6 +6,7 @@
 :page-tags: AI agents, AI safety, agentic systems, cybersecurity, OpenAI, Hugging Face, METR, risk architecture, delegated authority, experimental methodology, Congress, regulation, liability, AI Kill Switch Act, Stop Rogue AI Act
 
 _Source asciidoc: `docs/article/the-agent-is-not-the-actor-where-ai-risk-actually-lives.adoc`_
+
 (C) 2026 Oleksandr Tishchenko / Marketing America Corp LLC. Distribution is permitted only with reference to the author and the original source.
 
 toc::[]

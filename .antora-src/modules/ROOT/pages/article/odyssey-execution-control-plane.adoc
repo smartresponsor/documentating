@@ -6,6 +6,7 @@
 :page-tags: odyssey, ai, execution, control-plane, enterprise, receipts
 
 _Source asciidoc: `docs/article/odyssey-execution-control-plane.adoc`_
+
 == The Short Statement
 
 *Odyssey is an execution control plane for AI agents and AI processes.*

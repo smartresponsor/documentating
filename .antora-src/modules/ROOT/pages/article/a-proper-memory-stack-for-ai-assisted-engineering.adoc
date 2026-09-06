@@ -2,6 +2,7 @@
 :page-slug: a-proper-memory-stack-for-ai-assisted-engineering
 
 _Source asciidoc: `docs/article/proper-memory-stack-triad.adoc`_
+
 Modern engineering teams keep trying to build a single giant “knowledge repository” and then wonder why it turns into a blur of scripts, notes, prompts, articles, and half-finished decisions. The problem is not lack of storage. The problem is category collapse.
 
 A healthy memory architecture does not force every kind of knowledge into one container. It separates knowledge by *how it is used*, *how authoritative it is*, and *who or what consumes it*.

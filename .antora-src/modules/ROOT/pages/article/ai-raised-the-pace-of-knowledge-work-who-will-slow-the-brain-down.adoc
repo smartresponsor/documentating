@@ -2,6 +2,7 @@
 :page-slug: ai-raised-the-pace-of-knowledge-work-who-will-slow-the-brain-down
 
 _Source asciidoc: `docs/article/ai-raised-the-pace-of-knowledge-work-who-will-slow-the-brain-down.adoc`_
+
 Artificial intelligence was supposed to remove friction from knowledge work.
 
 In one sense, it did. Drafting became faster. Summaries became instant. Research started with synthesis instead of blank-page searching. Code scaffolding, comparison, decomposition, and first-pass analysis all became dramatically cheaper.

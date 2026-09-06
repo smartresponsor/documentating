@@ -5,6 +5,7 @@
 :page-tags: ai, anthropic, openclaw, claude, mcp, interoperability, ai-economics, agents
 
 _Source asciidoc: `docs/article/anthropic-openclaw-move-is-a-preview-of-the-ai-economy.adoc`_
+
 [abstract]
 Anthropic’s decision to stop letting third-party tools such as OpenClaw consume Claude subscription limits looks, on the surface, like a tactical pricing change. It is more than that. It is a visible correction in the economics of agentic AI.
 

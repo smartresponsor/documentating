@@ -3,6 +3,7 @@
 :page-tags: AI, Anthropic, Cloudflare, cybersecurity, software, markets
 
 _Source asciidoc: `docs/article/zz-anthropic-effect-cloudflare.adoc`_
+
 [.lead]
 The sharp market reaction that followed Anthropic's Glasswing announcement was not just another episode of hype around a new model. It was a glimpse of how frontier AI is starting to alter the economic logic of software, cybersecurity, and digital infrastructure. Cloudflare became one of the most visible casualties of that re-pricing, but the real story is broader. What moved markets was not a single stock, nor even a single product announcement. It was the sudden realization that AI may be collapsing the time gap between discovering a software weakness and turning that discovery into strategic pressure on the broader software stack.
 

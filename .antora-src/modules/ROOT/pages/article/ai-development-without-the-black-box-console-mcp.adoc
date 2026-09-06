@@ -6,6 +6,7 @@
 :page-tags: ai, mcp, chatgpt, coding-agents, control-plane, console-mcp, engineering, automation
 
 _Source asciidoc: `docs/article/ai-development-without-the-black-box-console-mcp.adoc`_
+
 Oleksandr Tishchenko, Founder and Architect, Marketing America Corp
 
 == Introduction

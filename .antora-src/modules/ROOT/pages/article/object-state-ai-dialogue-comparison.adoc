@@ -6,6 +6,7 @@
 :page-tags: OOP, object state, observable projection, AI dialogue, DDD, invariants, software architecture, ontology
 
 _Source asciidoc: `docs/article/object-state-ai-dialogue-comparison.adoc`_
+
 == Abstract
 
 This article compares two independently produced AI-assisted essays about a classical object-oriented programming question: does an object simply have state? The same line of inquiry, examples, and conceptual pressure were applied to two leading large language model assistants. Both conversations began from the familiar conference and textbook formula — an object has identity, state, and behavior — but moved beyond it. One result emphasized the philosophical and epistemological problem of state as an observer's illusion. The other emphasized engineering precision: time-bound state, model-bound truth, runtime truth, engine truth, observed truth, and invariants as boundaries of correctness. The comparison suggests that a more useful contemporary vocabulary is emerging: object state should be treated not as an absolute possession of an object, but as an observable projection produced at a boundary of time, model, and observer.

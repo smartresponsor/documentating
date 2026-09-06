@@ -6,6 +6,7 @@
 :page-tags: migration policy, law and order, humanitarian status, USCIS fees, public benefits, lawful compliance, taxpayer cost, bad governance
 
 _Source asciidoc: `docs/article/we-aimed-at-illegal-immigration-and-shot-ourselves-in-the-foot.adoc`_
+
 Spoiler: this is not an article about open borders, and it is not an argument for unlimited benefits.
 It is about a more dangerous systems problem: what happens when a government already allows or requires people to remain inside humanitarian or protection procedures, forbids work without authorization, delays or prices that authorization out of reach, removes food and housing bridges, refers families to nonprofits with no real capacity, and later spends taxpayer money enforcing against violations that this structure made predictable.
 

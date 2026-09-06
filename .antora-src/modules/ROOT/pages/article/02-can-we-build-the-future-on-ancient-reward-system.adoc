@@ -6,6 +6,7 @@
 :page-tags: new paradigm, human behavior, reward system, survival mode, truth, society, contribution signals
 
 _Source asciidoc: `docs/article/02-can-we-build-the-future-on-ancient-reward-system.adoc`_
+
 == Why human beings often choose what feels useful, safe, and familiar before what is true
 
 This is the second article in the cycle on the new paradigm.

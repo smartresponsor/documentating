@@ -6,6 +6,7 @@
 :page-tags: new paradigm, principle, decision trace, accountability, verification, AI
 
 _Source asciidoc: `docs/principle/decision-trace.adoc`_
+
 == Purpose
 
 Decision Trace is a principle for making important decisions inspectable.

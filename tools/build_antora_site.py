@@ -171,7 +171,7 @@ def parse_adoc(raw: str, path: Path, include_only: bool = False) -> Page:
     if tags:
         head.append(f":page-tags: {', '.join(tags)}")
     head.extend(['', f"_Source asciidoc: `{source_rel}`_", ''])
-    return Page(title, slug, date, desc, author, tags, source_rel, '\n'.join(head) + body + '\n', 2)
+    return Page(title, slug, date, desc, author, tags, source_rel, '\n'.join(head) + '\n' + body + '\n', 2)
 
 
 def parse_md(raw: str, path: Path) -> Page:
@@ -208,7 +208,7 @@ def parse_md(raw: str, path: Path) -> Page:
     if tags:
         head.append(f":page-tags: {', '.join(tags)}")
     head.extend(['', f"_Source markdown: `{source_rel}`_", ''])
-    return Page(title, slug, date, desc, author, tags, source_rel, '\n'.join(head) + md_to_adoc(body) + '\n', 1)
+    return Page(title, slug, date, desc, author, tags, source_rel, '\n'.join(head) + '\n' + md_to_adoc(body) + '\n', 1)
 
 
 def skip(path: Path) -> bool:

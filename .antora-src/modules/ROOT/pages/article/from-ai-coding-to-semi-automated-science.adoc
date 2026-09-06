@@ -2,6 +2,7 @@
 :page-slug: from-ai-coding-to-semi-automated-science
 
 _Source asciidoc: `docs/article/from-ai-coding-to-semi-automated-science.adoc`_
+
 Artificial intelligence is now moving beyond the familiar role of a coding assistant. The more consequential shift is that AI systems are starting to participate in the research loop itself: proposing modifications, editing code, running experiments, evaluating outcomes, and preserving only the changes that improve results. That is not the same thing as autonomous science in the strong sense, and it is certainly not proof of runaway self-improvement. But it is a meaningful change in the mechanics of progress.
 
 This distinction matters. For the last two years, public discussion has focused on productivity at the level of the individual developer: faster coding, faster debugging, faster prototyping. Those gains are real, but they are not the deepest story. The deeper story is that parts of scientific and engineering iteration are becoming machine-executable. Once that happens, the bottleneck begins to move. The scarce resource is no longer only implementation time. It becomes the quality of the search space, the quality of the evaluator, the cost of experimentation, and the discipline with which successful steps are retained.

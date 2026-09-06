@@ -6,6 +6,7 @@
 :page-tags: new paradigm, inner narrator, decision trace, confabulation, verification, human behavior, truth mode
 
 _Source asciidoc: `docs/article/05-the-inner-narrator-why-we-explain-decisions-after-they-are-made.adoc`_
+
 == Why the story after the decision matters
 
 This is the fifth article in the cycle on the new paradigm.

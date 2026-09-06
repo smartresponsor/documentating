@@ -6,6 +6,7 @@
 :page-tags: ecommerce, ai, agentic-commerce, catalog, protocols
 
 _Source asciidoc: `docs/article/why-the-next-e-commerce-will-not-be-a-store-with-ai.adoc`_
+
 The market is spending too much time on the wrong question.
 
 Not how do we add AI to a store.

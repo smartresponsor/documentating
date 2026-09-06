@@ -6,6 +6,7 @@
 :page-tags: dynamic-non-absoluteness, research-program, philosophy-of-physics, dynamic-systems, hypothesis
 
 _Source asciidoc: `docs/article/dynamic-non-absoluteness-research-program.adoc`_
+
 == Purpose
 
 This page is the public entry point for the *Dynamic Non-Absoluteness* research program.

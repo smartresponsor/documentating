@@ -6,6 +6,7 @@
 :page-tags: ai, inequality, cognition, future-of-work, strategy
 
 _Source asciidoc: `docs/article/technological-inequality-2-0-cognitive-divide.adoc`_
+
 For most of modern history, we have told ourselves a hopeful story about technology.
 
 The printing press widened access to knowledge.

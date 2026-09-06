@@ -3,6 +3,7 @@
 :page-tags: hiring, interviews, engineering, problem-framing, communication
 
 _Source asciidoc: `docs/article/the-hardest-interview-question-is-not-the-algorithm.adoc`_
+
 One interview problem recently made the rounds online as “the hardest phone screen question.” The setup looks deceptively simple: all numbers from 1 to N, except one, are shuffled, concatenated into a single string with no separators, and the candidate has to determine which number is missing.
 
 This kind of problem predictably triggers two reactions. One camp treats it as a clever algorithmic challenge. The other sees it as a brutal and unrealistic filter. Both reactions miss the more interesting point.
