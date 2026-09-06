@@ -150,6 +150,32 @@ Therefore:
 [quote]
 Observed stability may arise either from weak change or from change that is too rapid, too small, too dense, or otherwise inaccessible to the observer's resolution.
 
+=== Thought Experiment: An Approaching Distant Object
+
+Consider a very distant astronomical object whose present image reaches us only through light emitted long ago.
+
+Now imagine, purely as a thought experiment, that the object is moving directly toward the observer at a sufficiently high speed. Successive signals emitted later in the object's history have progressively less distance to travel before reaching the observer. The arrival intervals between portions of that history can therefore become compressed.
+
+The important point here is not to claim that time itself runs backward or that the object's causal order is reversed. Its states still occur in the same order:
+
+[source,text]
+----
+S1 -> S2 -> S3 -> S4 -> ...
+----
+
+What changes is the rate at which information about those successive states arrives at the observer.
+
+If a sufficiently rich portion of the object's history were compressed into an interval shorter than the observer's effective temporal resolution, then many real transitions could arrive without remaining individually distinguishable.
+
+For that observer, a long causal sequence could be received as a much poorer observational sequence.
+
+The thought experiment illustrates the distinction this article needs:
+
+[quote]
+A rich causal history can become a shallow distinguishable history without ceasing to have been a rich causal history.
+
+It is therefore an example of observational compression, not an argument that the past literally happened in reverse or that ordinary relativistic physics is being replaced.
+
 == 4. The Window of Distinguishable Change
 
 The usual intuition is that an observer fails only when a process is too fast or too small.
@@ -217,6 +243,30 @@ There is no justification for assuming that the best resolution currently availa
 We know the boundary of our present method.
 
 We do not automatically know the boundary of nature.
+
+=== Thought Experiment: A Human, a Cat, a Fly, and an Instrument
+
+A familiar biological comparison makes the point intuitive.
+
+A human, a cat, and a fly do not possess identical sensory architectures. Their visual systems differ in temporal integration, sensitivity, neural processing, and the kinds of change they can behaviorally discriminate. It would therefore be misleading to imagine that there is one biologically privileged sampling rate called "what the world really looks like."
+
+Now place an instrument into the same sequence.
+
+[source,text]
+----
+Human -> Cat -> Fly -> Fast detector -> Faster detector -> ?
+----
+
+This is not intended as a literal ranking of those organisms. Different species outperform one another along different sensory dimensions. The diagram represents only the possibility of extending observational resolution beyond any one biological observer.
+
+It then produces a deliberately provocative question:
+
+[quote]
+If a cat or a fly possessed human-level technological intelligence, would the instruments it designed begin from the same observational assumptions and converge on exactly the same resolution frontier as ours?
+
+We do not know the answer, and the biology itself is not the thesis.
+
+The point is that the instrument is created by an observer whose native access to change is already selective. Humans demonstrably build beyond their unaided senses, so biology is not destiny. Yet the open-ended sequence of progressively finer detectors reminds us that today's instrumental limit is a historical technological limit, not automatically a demonstrated limit of physical structure.
 
 == 6. Can an Observer Build Beyond Its Own Native Resolution?
 
