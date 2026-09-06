@@ -82,6 +82,10 @@ The originality checkpoint. It maps the hypothesis against symmetry, dynamic sys
 +
 The first bridge toward formalization. It introduces equivalence relations, time intervals, perturbations, preservation conditions, and weak/medium/strong versions of the claim.
 
+. xref:article/system-tempo-and-dynamic-non-identity.adoc[System Tempo and Dynamic Non-Identity]
++
+The bridge essay connecting the tempo-regime hypothesis with dynamic non-identity. It treats system tempo and resistance-to-change as preservation conditions for identity across regimes.
+
 == Document Roles
 
 === Abstract
@@ -177,6 +181,20 @@ It introduces the idea that two factors may be equivalent under a selected relat
 
 This is the path from manifesto to disciplined formulation.
 
+=== System Tempo Bridge
+
+The system tempo bridge connects this research program with xref:article/the-tempo-of-the-system.adoc[The Tempo of the System].
+
+Its central claim is:
+
+[quote]
+System tempo is a preservation condition for dynamic identity.
+
+It reframes dynamic non-identity across regimes:
+
+[quote]
+Equality inside one tempo-regime is not identity across changing system regimes.
+
 == Current Development Status
 
 The program currently has the following status:
@@ -187,6 +205,7 @@ The program currently has the following status:
 * *Glossary:* first version published.
 * *Overlap map:* first version published.
 * *Formalization:* first draft published.
+* *System tempo bridge:* first bridge version published.
 * *Originality check:* preliminary, not final.
 * *Mathematical proof:* not yet attempted.
 * *Scientific claim level:* metaprinciple / research hypothesis, not established physical law.
@@ -216,6 +235,7 @@ The next useful tasks are:
 . Draft a formal proposition with assumptions.
 . Identify which parts are physical, mathematical, philosophical, or metaphorical.
 . Test the hypothesis against simple dynamic-system examples.
+. Develop the tempo-regime bridge through examples and falsifiability criteria.
 
 == Possible Future Documents
 
@@ -227,6 +247,7 @@ Future documents may include:
 * Dynamic Identity and Equivalence Relations;
 * Open Systems and the Fragility of Equality;
 * Symmetry Preservation and Identity Over Time;
+* Tempo-Bound Identity Across System Regimes;
 * Research Notes on Dynamic Non-Identity.
 
 == Closing Statement
