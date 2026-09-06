@@ -183,7 +183,7 @@ This is the path from manifesto to disciplined formulation.
 
 === System Tempo Bridge
 
-The system tempo bridge connects this research program with xref:article/the-tempo-of-the-system.adoc[The Tempo of the System].
+The system tempo bridge connects this research program with https://docs.smartresponsor.com/article/the-tempo-of-the-system/[The Tempo of the System].
 
 Its central claim is:
 

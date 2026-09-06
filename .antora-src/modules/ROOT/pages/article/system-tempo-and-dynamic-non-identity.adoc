@@ -4,8 +4,8 @@
 :page-author: Oleksandr Tishchenko
 :description: A bridge essay connecting The Tempo of the System with the principle of dynamic non-absoluteness and dynamic non-identity.
 :page-tags: dynamic-non-absoluteness, system-tempo, dynamic-non-identity, philosophy-of-physics, open-systems
-:lang: en
 
+_Source asciidoc: `docs/article/system-tempo-and-dynamic-non-identity.adoc`_
 == Source Articles
 
 This bridge essay connects two earlier texts:
