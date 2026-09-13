@@ -1,0 +1,880 @@
+= Metric Time Is Good for Machines. Is It Good for Intelligence?
+:page-slug: metric-time-is-good-for-machines-is-it-good-for-intelligence
+:page-published: 2026-09-12
+:page-author: Oleksandr Tishchenko
+:description: A fourth bridge essay on metric time, historical knowledge, cultural inheritance, epistemic status, and the training of artificial intelligence.
+:page-tags: system-tempo, finite-observer, artificial-intelligence, epistemology, temporal-reasoning, historical-bias, cultural-bias, continual-learning
+:lang: en
+
+[abstract]
+Metric time is extraordinarily useful for machines. It gives computation order, synchronization, reproducibility, scheduling, versioning, and a common coordinate for events. But intelligence requires more than knowing when something happened. An intelligent system must also distinguish what was culturally accepted from what was evidentially supported, what was historically persistent from what remained rationally defensible, and what belonged to one regime from what generalized beyond it.
+
+This essay asks whether metric chronology, although indispensable for computation, is sufficient as an organizing coordinate for machine understanding. It argues that artificial intelligence is trained not directly on reality but largely on records produced, selected, preserved, classified, and interpreted by earlier human observers. Chronology therefore enters AI together with cultural inheritance, institutional persistence, uneven preservation, historical bias, and changing standards of evidence.
+
+The proposal is not to remove dates from machine learning. It is the opposite: preserve metric time precisely, but stop asking one temporal coordinate to carry epistemic meanings it cannot contain. Historical position, cultural prevalence, provenance, evidence, regime-dependence, and current validity should remain distinguishable dimensions of knowledge.
+
+== Position in the Series
+
+This essay follows three earlier steps:
+
+* https://docs.smartresponsor.com/article/the-tempo-of-the-system/[The Tempo of the System]
+* https://docs.smartresponsor.com/article/system-tempo-and-dynamic-non-identity/[System Tempo and Dynamic Non-Identity]
+* https://docs.smartresponsor.com/article/the-finite-observer-and-the-resolution-of-change/[The Finite Observer and the Resolution of Change]
+
+The previous step introduced a distinction between the history a system undergoes and the history a finite observer can distinguish. A useful schematic form was:
+
+[stem]
+++++
+H_O(S)=\mathcal O_{\rho_O}(H(S))
+++++
+
+where the observer does not receive the complete history of a system directly, but an observational projection conditioned by resolution, channel, preservation, and comparison.
+
+Artificial intelligence introduces a peculiar extension of that problem.
+
+A contemporary AI system is usually not an observer confronting the original world directly. Much of what it learns arrives through records created by earlier observers.
+
+The chain is therefore closer to:
+
+[source,text]
+----
+World
+-> Human observation
+-> Human record
+-> Cultural selection
+-> Training corpus
+-> AI representation
+----
+
+The AI is a finite observer of an archive that has already passed through finite observers.
+
+This makes the representation of history an engineering problem and an epistemological problem at the same time.
+
+== 1. Metric Time Is an Exceptional Machine Coordinate
+
+There is a good reason computer systems rely heavily on metric time.
+
+Machines need to answer questions such as:
+
+* Which operation happened first?
+* How long did a process take?
+* When should a task execute?
+* Is this cache entry still valid?
+* Which event belongs to which version?
+* Can an experiment be reproduced?
+* Which state existed at a specified moment?
+* How should distributed observations be ordered?
+
+For these purposes, a metric coordinate is extremely powerful.
+
+A timestamp provides compact representation, comparison, indexing, sorting, and synchronization.
+
+The point of this essay is therefore not that metric time is somehow a mistake.
+
+Quite the opposite:
+
+[quote]
+Metric time may be one of the most successful operational abstractions ever given to machines.
+
+But successful execution and adequate understanding are not the same problem.
+
+AI research recognized this distinction in another form long before modern language models. James F. Allen's classic work on temporal intervals showed that temporal knowledge can require relations such as before, after, during, overlapping, beginning, and ending rather than merely numerical timestamps. His interval logic was explicitly designed for reasoning about temporal knowledge in information systems, processes, and changing states.
+
+Christian Freksa subsequently showed that useful temporal reasoning can operate on qualitative and even incomplete temporal information. His semi-interval framework demonstrated that coarse relations between events can be represented and reasoned over directly, sometimes more naturally than through a fully metric treatment.
+
+This does not make metric time unnecessary.
+
+It establishes something narrower but important:
+
+[quote]
+Artificial reasoning about temporal structure has never required every meaningful temporal relation to collapse into a single numerical coordinate.
+
+That distinction becomes more important when the machine is asked not merely to schedule events but to learn from history.
+
+== 2. Training Is Not Merely Execution
+
+Consider two statements:
+
+[stem]
+++++
+A:\quad \text{Statement X was written in 1650.}
+++++
+
+[stem]
+++++
+B:\quad \text{Statement X was well justified.}
+++++
+
+The first is chronological.
+
+The second is epistemic.
+
+There is no valid general transformation:
+
+[stem]
+++++
+t(X)\rightarrow validity(X)
+++++
+
+The age of a claim does not establish its truth.
+
+Nor does recency.
+
+The same applies to persistence:
+
+[stem]
+++++
+historical\ persistence \not\Rightarrow rational\ validity
+++++
+
+A proposition can survive for centuries because it is correct.
+
+It can also survive because it is institutionally protected, culturally useful, repeatedly copied, politically enforced, religiously embedded, educationally standardized, linguistically convenient, or simply never seriously tested.
+
+Conversely, a rationally powerful idea can be recent, rare, weakly represented, difficult to communicate, or historically suppressed.
+
+An intelligent representation of history should therefore be able to distinguish at least:
+
+* when a claim existed;
+* where it existed;
+* who accepted it;
+* how widely it circulated;
+* what evidence supported it;
+* what alternatives were available;
+* what institutional conditions preserved it;
+* whether later evidence altered its status.
+
+A timestamp alone cannot encode these distinctions.
+
+== 3. The Historical Record Is Not the Historical World
+
+A machine trained on text is not trained on history itself.
+
+It is trained on surviving representations of history.
+
+That difference is fundamental.
+
+For an event or idea to enter a modern corpus, several stages may have occurred:
+
+[source,text]
+----
+Event
+-> Perception
+-> Interpretation
+-> Record
+-> Preservation
+-> Selection
+-> Digitization
+-> Dataset
+----
+
+Every arrow can remove information.
+
+Every arrow can introduce structure.
+
+The resulting archive reflects not only what happened, but also:
+
+* who was able to record it;
+* whose language became canonical;
+* which institutions preserved records;
+* which records were destroyed;
+* which populations were represented;
+* which categories were used;
+* which documents were digitized;
+* which sources were accessible to dataset builders.
+
+This concern is well established in responsible machine learning.
+
+Harini Suresh and John Guttag distinguish several sources of harm across the machine-learning lifecycle, including historical bias: undesirable patterns may already be present in the world from which apparently accurate data is collected. A dataset can therefore faithfully represent an existing historical state and nevertheless transmit problematic assumptions into a model.
+
+Emily M. Bender and Batya Friedman approached a related problem through dataset documentation. Their proposal for data statements was motivated by the observation that language data comes from particular populations and contexts, and that systems trained on those data may not generalize neutrally to populations or contexts that were not represented.
+
+The implication for historical learning is broader than fairness alone:
+
+[quote]
+A corpus is not merely information with dates attached. It is an artifact with a provenance.
+
+== 4. Cultural Prevalence Is Not Epistemic Weight
+
+Large language models encounter a particularly difficult version of this problem.
+
+Language is both an information channel and a cultural product.
+
+A highly represented proposition may be highly represented because humans had strong evidence for it.
+
+But representation frequency may also be produced by repetition.
+
+Therefore:
+
+[stem]
+++++
+frequency(X)\not\equiv epistemic\ support(X)
+++++
+
+This sounds obvious when stated explicitly.
+
+It becomes less obvious when billions or trillions of textual observations are compressed into learned statistical representations.
+
+Bender, Gebru, McMillan-Major, and Mitchell's _On the Dangers of Stochastic Parrots_ warned against treating scale and indiscriminate ingestion of web text as substitutes for careful attention to data curation and documentation. Their critique was not that language models can do nothing useful, but that large corpora carry social, environmental, and representational consequences that do not disappear merely because a model becomes larger.
+
+The stronger epistemic question is therefore not:
+
+[quote]
+Does AI contain cultural bias?
+
+We already know that models can.
+
+The more general question is:
+
+[quote]
+Can an AI distinguish a representation that is common because it is well supported from a representation that is common because a culture repeatedly reproduced it?
+
+That problem cannot be solved by chronology alone.
+
+== 5. Later Does Not Mean More Rational
+
+There is another possible collapse:
+
+[stem]
+++++
+later \Rightarrow better
+++++
+
+Technological history often encourages this intuition.
+
+A newer processor is usually expected to outperform an older processor.
+
+A current software version is normally intended to supersede an earlier version.
+
+A modern scientific instrument can often resolve phenomena inaccessible to older instruments.
+
+But knowledge does not obey software versioning so cleanly.
+
+A later culture can preserve an old error.
+
+It can rediscover an earlier insight.
+
+It can replace one approximation with another.
+
+It can improve measurement while worsening interpretation.
+
+It can inherit a category that no longer fits the phenomenon being classified.
+
+Chronology remains essential for reconstructing this development, but chronology cannot adjudicate it.
+
+A useful AI representation should therefore resist both:
+
+[stem]
+++++
+old\Rightarrow false
+++++
+
+and
+
+[stem]
+++++
+new\Rightarrow true
+++++
+
+The question is not where an idea sits on the timeline.
+
+The question is what happened to its evidential status across that timeline.
+
+== 6. The Double Observer Problem
+
+The finite-observer argument now produces a particularly important structure.
+
+Let the human observer be \(O_H\).
+
+Let an AI system be \(O_A\).
+
+The human first observes some system \(S\):
+
+[stem]
+++++
+H_{O_H}(S)=\mathcal O_{\rho_H}(H(S))
+++++
+
+The human then records only part of that observation:
+
+[stem]
+++++
+R_H=P(H_{O_H}(S))
+++++
+
+where \(P\) includes selection, language, memory, recording technology, institutional preservation, and cultural convention.
+
+The AI subsequently learns from some subset of those records:
+
+[stem]
+++++
+M_A=L(D(R_H))
+++++
+
+where \(D\) represents dataset construction and \(L\) represents learning.
+
+The AI's representation is therefore not simply:
+
+[source,text]
+----
+AI <- World
+----
+
+but approximately:
+
+[source,text]
+----
+AI
+<- Dataset
+<- Preserved records
+<- Human observations
+<- World
+----
+
+This is not an argument that AI is uniquely unreliable.
+
+Human scholarship faces the same archival problem.
+
+The important point is structural:
+
+[quote]
+Machine intelligence inherits not only human knowledge, but also the historical conditions under which that knowledge became recordable and preservable.
+
+== 7. Metric Time Should Remain — But as One Coordinate
+
+The obvious solution would be the wrong one.
+
+We should not remove metric dates.
+
+That would destroy valuable information.
+
+Instead, chronology should be prevented from silently carrying meanings that belong to other dimensions.
+
+A knowledge item \(K\) might be represented conceptually as:
+
+[stem]
+++++
+K=(t,r,c,e,p,v,u)
+++++
+
+where:
+
+* \(t\) = metric temporal position;
+* \(r\) = regime or historical context;
+* \(c\) = cultural context and prevalence;
+* \(e\) = evidence state;
+* \(p\) = provenance;
+* \(v\) = current validity or confidence state;
+* \(u\) = uncertainty.
+
+This is not proposed here as a finished machine-learning architecture.
+
+It is a conceptual separation.
+
+The essential requirement is:
+
+[stem]
+++++
+t\neq r\neq c\neq e\neq p\neq v
+++++
+
+A statement's date is not its evidence.
+
+Its popularity is not its validity.
+
+Its provenance is not its truth.
+
+Its cultural context is not an error, but neither is it a universal law.
+
+Its current acceptance is not automatically its final epistemic status.
+
+== 8. An Example
+
+Suppose an AI encounters a medical proposition appearing across three centuries.
+
+In 1800 it occurs frequently.
+
+In 1900 it remains institutionalized.
+
+In 2000 it is rejected after stronger empirical evidence appears.
+
+A chronology-aware model can learn:
+
+[stem]
+++++
+1800<1900<2000
+++++
+
+But an epistemically structured model should learn something richer:
+
+[stem]
+++++
+K_{1800}=(t_1,r_1,c_{high},e_{weak},p_1,v_{historical})
+++++
+
+[stem]
+++++
+K_{1900}=(t_2,r_2,c_{high},e_{contested},p_2,v_{contested})
+++++
+
+[stem]
+++++
+K_{2000}=(t_3,r_3,c_{low},e_{strong\ contrary},p_3,v_{rejected})
+++++
+
+The important change is not simply that time passed.
+
+The relation between evidence and belief changed.
+
+A system capable of reconstructing that difference possesses something more useful than chronological recall.
+
+It has the beginnings of historical epistemic reasoning.
+
+== 9. Rationality Under Resource Constraints
+
+There is another reason this matters for AI design.
+
+An intelligent system does not possess infinite resources.
+
+Herbert Simon's tradition of bounded rationality rejected the assumption that real agents can always perform ideal optimization. Stuart Russell later developed the relationship between rationality, computation, and intelligence through ideas such as bounded optimality: the quality of an agent must be considered relative to the computational architecture and resources available to it.
+
+The historical-representation problem therefore has a practical side.
+
+An AI cannot independently re-derive every fact in its training data.
+
+It must use compressed representations, inherited records, authorities, retrieval mechanisms, and heuristics.
+
+The relevant question becomes:
+
+[quote]
+Which distinctions are important enough to preserve before compression makes them expensive to recover?
+
+Chronology is one such distinction.
+
+Provenance may be another.
+
+Evidence state may be another.
+
+Cultural context may be another.
+
+Once collapsed, some distinctions may be difficult to reconstruct later.
+
+== 10. Epistemic Training Debt
+
+Software engineering has a familiar concept: technical debt.
+
+A shortcut taken early may make a system cheaper today and expensive to change later.
+
+There may be an analogous phenomenon in machine learning that this essay will call, provisionally, _epistemic training debt_.
+
+This is not an established technical term and should not be confused with an experimentally demonstrated law.
+
+The proposed idea is narrower:
+
+[quote]
+If historically contingent associations become deeply entangled with broadly useful model representations, correcting those associations later may require substantially more intervention than preserving the distinction earlier.
+
+This possibility has a technical parallel in continual learning.
+
+Modern neural systems do not always acquire new knowledge without disturbing old knowledge. Continual-learning research studies precisely the difficulty of adapting models to new tasks and new distributions while retaining previously acquired capabilities. Catastrophic forgetting remains a central problem, including for large language models.
+
+The claim here must remain careful.
+
+We do _not_ yet know a universal function such as:
+
+[stem]
+++++
+C_{correction}(t)\uparrow
+++++
+
+Nor is there evidence that every cultural assumption becomes progressively harder to remove.
+
+The defensible proposition is weaker:
+
+[quote]
+Late epistemic correction can be nontrivial because learned representations are distributed and because adaptation can interfere with previously acquired knowledge.
+
+That is sufficient to motivate the design question.
+
+== 11. What Should an AI Learn About a Historical Claim?
+
+Consider the difference between these two learning objectives.
+
+The first:
+
+[quote]
+Learn that proposition X appears frequently in texts from period T.
+
+The second:
+
+[quote]
+Learn why proposition X was accepted in period T, what evidence was available, which alternatives existed, which institutions preserved it, what later observations challenged it, and which parts of X remain defensible.
+
+The first is corpus modeling.
+
+The second begins to resemble historical understanding.
+
+An advanced intelligence may need both.
+
+For each important proposition, the system would ideally be able to separate:
+
+=== Descriptive prevalence
+
+What did people say?
+
+=== Institutional prevalence
+
+What did authoritative institutions teach or enforce?
+
+=== Evidential support
+
+What observations or arguments supported the proposition?
+
+=== Counterevidence
+
+What observations contradicted it?
+
+=== Regime dependence
+
+Under which material, conceptual, technological, or social conditions did it make sense?
+
+=== Provenance
+
+Where did the claim come from, and through which transformations did it reach the model?
+
+=== Current epistemic status
+
+What does the available evidence support now?
+
+This architecture would not require the AI to reject culture.
+
+Culture itself is evidence about human history.
+
+The requirement is simply that:
+
+[stem]
+++++
+cultural\ significance\neq empirical\ validity
+++++
+
+Both dimensions can be preserved without confusing them.
+
+== 12. Can AI Distinguish Inheritance From Justification?
+
+This leads to what may be the central question of the essay.
+
+[quote]
+Can an artificial intelligence form an epistemic position that is not merely proportional to the historical prevalence of the representations on which it was trained?
+
+The phrase _epistemic position_ is deliberate.
+
+This essay does not need to claim that an AI possesses consciousness, subjective experience, beliefs in the human sense, or an independent point of view.
+
+A weaker capability is sufficient.
+
+A system can maintain:
+
+* competing hypotheses;
+* evidence weights;
+* provenance;
+* uncertainty;
+* contradiction relations;
+* changing confidence;
+* distinctions between descriptive consensus and evidential support.
+
+Suppose a corpus strongly favors proposition \(X\).
+
+The system obtains independent evidence \(E\).
+
+If:
+
+[stem]
+++++
+E\Rightarrow \neg X
+++++
+
+the interesting capability is not whether the machine emotionally “disagrees” with its training.
+
+It is whether its architecture allows:
+
+[stem]
+++++
+corpus\ prevalence(X)
+++++
+
+and
+
+[stem]
+++++
+evidence(\neg X)
+++++
+
+to remain separately represented long enough for rational comparison.
+
+That is an engineering formulation of a philosophical problem.
+
+== 13. The Observer Cannot Simply Inherit Its Measuring System
+
+There is also a direct connection to the finite-observer problem.
+
+Every observer begins with a comparison architecture.
+
+Humans inherit biological senses and later construct instruments.
+
+An AI inherits:
+
+* tokenization;
+* training objectives;
+* dataset boundaries;
+* ontologies;
+* labels;
+* architectures;
+* benchmarks;
+* retrieval systems;
+* human-designed evaluation criteria.
+
+These are not neutral windows.
+
+They are the machinery through which differences become observable.
+
+Scientific philosophy has long struggled with the ideal of a completely perspective-free description. Discussions around Thomas Nagel's “view from nowhere,” measurement, and scientific objectivity emphasize both the attraction of escaping local perspective and the difficulty of producing knowledge entirely unmediated by instruments, concepts, values, and observers.
+
+Artificial intelligence does not escape that problem by being artificial.
+
+It receives a different perspective.
+
+Potentially a very powerful one.
+
+But still a perspective.
+
+== 14. Metric Precision Can Coexist With Epistemic Poverty
+
+This produces a useful paradox.
+
+A machine may know the exact timestamp of every document in a dataset and still misunderstand the historical development represented by those documents.
+
+Metric precision can approach perfection while epistemic interpretation remains weak.
+
+For example:
+
+[stem]
+++++
+t_1<t_2<t_3<t_4
+++++
+
+may be known exactly.
+
+But the meaningful historical structure could be:
+
+[source,text]
+----
+hypothesis
+-> institutionalization
+-> anomaly
+-> revision
+----
+
+or:
+
+[source,text]
+----
+minority insight
+-> suppression
+-> rediscovery
+-> acceptance
+----
+
+or:
+
+[source,text]
+----
+useful approximation
+-> overgeneralization
+-> failure
+-> restricted validity
+----
+
+Metric time orders the states.
+
+It does not identify the transformation.
+
+== 15. What Metric Time Should Continue to Do
+
+The argument therefore does not oppose metric time.
+
+Metric time should continue to provide:
+
+* event ordering;
+* duration;
+* timestamping;
+* synchronization;
+* temporal search;
+* version history;
+* training checkpoints;
+* reproducibility;
+* temporal validity windows;
+* change detection.
+
+The proposal is simply:
+
+[quote]
+Do not ask metric time to perform epistemology.
+
+A date tells the machine _when_.
+
+Additional structure is required to understand _why_, _under what conditions_, _according to whom_, _with what evidence_, and _with what remaining uncertainty_.
+
+== 16. What This Essay Does Not Claim
+
+This essay does not claim that metric time is false.
+
+It does not claim that chronological history should be abandoned.
+
+It does not claim that culture is irrational.
+
+It does not claim that a minority belief is superior to a majority belief.
+
+It does not claim that newer knowledge is generally worse than older knowledge.
+
+It does not claim that large language models merely retrieve stored sentences.
+
+It does not claim that current AI has consciousness or an independent point of view.
+
+It does not claim that historical bias explains every model error.
+
+It does not claim that epistemic training debt is already an established quantitative phenomenon.
+
+It does not propose a finished alternative training architecture.
+
+The narrower claim is:
+
+[quote]
+Chronological position and epistemic status are different variables, and AI systems designed to reason over historical knowledge may benefit from representing them as different variables.
+
+== 17. A Compact Model
+
+The argument can be compressed into the following chain:
+
+[source,text]
+----
+Physical world
+-> Finite human observer
+-> Cultural record
+-> Historical preservation
+-> Dataset selection
+-> AI observer
+-> Internal representation
+----
+
+Metric time can annotate this entire chain.
+
+But meaningful understanding additionally requires:
+
+[source,text]
+----
+chronology
++ provenance
++ context
++ evidence
++ uncertainty
++ regime
+----
+
+Thus:
+
+[stem]
+++++
+Machine\ understanding\neq Chronological\ indexing
+++++
+
+and:
+
+[stem]
+++++
+Historical\ persistence\neq Epistemic\ validity
+++++
+
+== 18. Research Questions
+
+Several concrete research questions follow.
+
+. How should historical knowledge be represented so that chronological persistence, cultural prevalence, and epistemic validity remain distinguishable?
+. Can models explicitly learn the difference between “widely believed at time t” and “well supported at time t”?
+. Can provenance-aware training improve a model's ability to revise inherited assumptions?
+. How should evidence available to historical actors be separated from evidence available to a present observer?
+. Can an AI identify when a supposedly universal claim was actually regime-dependent?
+. What information must be preserved during training to make later epistemic correction inexpensive?
+. Can continual-learning systems revise deeply distributed assumptions without destructive forgetting?
+. How should uncertainty be represented when the surviving historical record itself is incomplete?
+. Can multiple culturally different corpora be used not merely to average perspectives, but to identify which claims remain invariant across perspectives?
+. At what point does an inference become an AI system's own internally maintained epistemic position rather than a direct reflection of corpus prevalence?
+
+The last question leads beyond this essay.
+
+It approaches the separate problem of whether artificial intelligence can possess something meaningfully analogous to a point of view.
+
+== 19. The Strongest Careful Formulation
+
+The strongest formulation that appears defensible at this stage is:
+
+[quote]
+Metric time is an exceptionally effective operational coordinate for artificial systems, but chronological position alone is not an adequate epistemic representation of historical knowledge. Artificial intelligence learns largely from human-produced and historically preserved records whose prevalence, cultural authority, and survival do not necessarily track evidential validity. A more mature machine understanding of history may therefore require metric chronology to remain explicitly distinct from provenance, cultural context, evidence state, uncertainty, regime-dependence, and current epistemic status.
+
+Or more compactly:
+
+[quote]
+A machine may need metric time to execute while requiring more than metric time to understand.
+
+== Closing Statement
+
+Machines are unusually good at knowing when.
+
+They can order billions of events, compare timestamps with extraordinary precision, reproduce states, synchronize processes, and preserve histories far beyond unaided human memory.
+
+The harder problem begins after chronology has been established.
+
+What did an event mean to the observers who recorded it?
+
+Why did one belief survive while another disappeared?
+
+Was a proposition repeated because it was true, because it was useful, because it was enforced, or because alternatives were never preserved?
+
+Which assumptions belonged to a historical regime?
+
+Which conclusions survived because evidence continued to support them?
+
+Artificial intelligence inherits an enormous human archive, but that archive is not reality in raw form.
+
+It is reality after observation.
+
+After language.
+
+After selection.
+
+After institutions.
+
+After preservation.
+
+After forgetting.
+
+If future AI is expected not merely to reproduce civilization's records but to reason about them, then the distinction becomes fundamental:
+
+[stem]
+++++
+what\ humanity\ preserved\neq what\ reality\ justified
+++++
+
+Metric time can tell an intelligence where a record belongs.
+
+It cannot, by itself, tell the intelligence what that record deserves to mean.
+
+== References
+
+* Allen, James F. “Maintaining Knowledge about Temporal Intervals.” _Communications of the ACM_ 26, no. 11 (1983): 832–843. https://doi.org/10.1145/182.358434
+* Freksa, Christian. “Temporal Reasoning Based on Semi-Intervals.” _Artificial Intelligence_ 54, no. 1–2 (1992): 199–227. https://doi.org/10.1016/0004-3702(92)90090-K
+* Bender, Emily M., and Batya Friedman. “Data Statements for Natural Language Processing: Toward Mitigating System Bias and Enabling Better Science.” _Transactions of the Association for Computational Linguistics_ 6 (2018): 587–604. https://doi.org/10.1162/tacl_a_00041
+* Suresh, Harini, and John Guttag. “A Framework for Understanding Sources of Harm throughout the Machine Learning Life Cycle.” _Proceedings of the 1st ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization_ (2021). https://doi.org/10.1145/3465416.3483305
+* Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. “On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?” _Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency_ (2021): 610–623. https://doi.org/10.1145/3442188.3445922
+* Russell, Stuart. “Rationality and Intelligence.” _Artificial Intelligence_ 94, no. 1–2 (1997): 57–77. https://doi.org/10.1016/S0004-3702(97)00026-X
+* Shi, Haizhou, et al. “Continual Learning of Large Language Models: A Comprehensive Survey.” _ACM Computing Surveys_ (2025). https://doi.org/10.1145/3735633
+* Stanford Encyclopedia of Philosophy. “Scientific Objectivity.” https://plato.stanford.edu/entries/scientific-objectivity/
