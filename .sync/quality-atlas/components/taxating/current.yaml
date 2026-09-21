@@ -1,7 +1,7 @@
 component: taxating
 title: Taxating
 snapshot:
-  date: '2026-09-05'
+  date: '2026-09-21'
   label: pre-rc-seed
   ref: master
   origin: quality-atlas seed
