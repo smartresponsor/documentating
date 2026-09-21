@@ -90,7 +90,7 @@ Let the observer's relevant resolution be represented abstractly by:
 \rho_O
 ++++
 
-This symbol is not intended as one universal physical unit. It represents the minimum separation, contrast, duration, or difference required for observer O to distinguish two states under a specified observational channel.
+This symbol is not intended as one universal physical unit. It represents the minimum separation, contrast, metric duration where a clock is part of the channel, or other difference required for observer O to distinguish two states under a specified observational channel.
 
 Let S_i and S_j be two genuinely different states of a system.
 
@@ -339,7 +339,7 @@ This gives a new concept:
 [quote]
 Distinguishable historical depth is the amount of causal structure that remains separable into distinct states for a specified observer and observational channel.
 
-Metric age and distinguishable historical depth are therefore not identical concepts.
+Metric age, expressed in local metrological time `\tau`, and distinguishable historical depth are therefore not identical concepts.
 
 A large metric duration does not automatically imply a proportionally large number of distinguishable states for every observer.
 
@@ -455,7 +455,7 @@ It makes access to history conditional.
 
 == 11. Relation to System Tempo
 
-The connection with system tempo is now clearer.
+The connection with system tempo is now clearer. In this research program `q` denotes the System Tempo regime coordinate, while `\tau` denotes metric clock time. This discussion does not assume `q=f(\tau)`.
 
 Earlier work introduced a regime-dependent tempo:
 

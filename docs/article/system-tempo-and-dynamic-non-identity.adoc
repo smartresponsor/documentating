@@ -60,7 +60,7 @@ and an internal tempo of processes:
 \Gamma(q)
 ++++
 
-The speculative question is whether the system may move through regimes in which internal tempo changes relative to the deeper trajectory of the system itself.
+The speculative question is whether the system may progress through regimes in which internal tempo changes relative to the deeper trajectory of the system itself. This progression is ordered by `q`, not assumed to be measured by metric time `\tau`.
 
 This does not reject local clocks. It asks whether local clocks exhaust the ontology of the changing system.
 
@@ -152,7 +152,9 @@ Without such a mechanism, equality becomes regime-bound.
 This creates a sharper formula:
 
 [quote]
-Equality is parameter-bound. Identity over time is condition-bound. Identity across regimes is tempo-bound.
+Equality is parameter-bound. Identity across an ordered evolution is condition-bound. Identity across regimes may be tempo-bound.
+
+Here the distinction is deliberate: generic evolution may be parameterized by `\lambda`, the System Tempo regime coordinate is `q`, and metric clock time is `\tau`. No mapping `q=f(\tau)`, linear or otherwise, is assumed by the hypothesis.
 
 == Why This Matters
 

@@ -19,7 +19,7 @@ The purpose is to identify where the hypothesis overlaps existing traditions, wh
 The hypothesis may be summarized as follows:
 
 [quote]
-No observable driving factor is absolutely isolated, and no two distinct driving factors preserve absolute dynamic identity over time in an open system unless the conditions preserving that identity remain absolutely symmetrical.
+No observable driving factor is absolutely isolated, and no two distinct driving factors preserve absolute dynamic identity across an ordered evolution in an open system unless the conditions preserving that identity remain absolutely symmetrical.
 
 The possible niche is not the discovery of a new fundamental interaction. It is a metaprinciple connecting force, relation, equality, openness, and the fragility of dynamic identity.
 
@@ -63,7 +63,7 @@ It argues that long-term identity between two dynamic factors requires preservat
 
 === Difference
 
-The hypothesis is not primarily about symmetry of laws. It is about identity of dynamic factors over time under open conditions.
+The hypothesis is not primarily about symmetry of laws. It is about identity of dynamic factors across an ordered evolution under open conditions.
 
 A law may remain symmetrical while a concrete state, trajectory, or relation becomes asymmetrical.
 
@@ -88,7 +88,7 @@ Reference direction:
 
 The hypothesis respects the importance of invariants and preservation conditions.
 
-It can be interpreted as asking what must remain invariant for identity to remain meaningful over time.
+It can be interpreted as asking what must remain invariant for identity to remain meaningful across an ordered evolution.
 
 === Difference
 
@@ -98,7 +98,7 @@ It uses the broader intuition that preservation requires structure. If the struc
 
 == Dynamic Systems
 
-Dynamic systems theory studies how states evolve over time under rules of evolution.
+Dynamic systems theory studies how states evolve across an ordered evolution under rules of evolution.
 
 This is a natural mathematical neighbor of the hypothesis because the hypothesis concerns equality, identity, time intervals, perturbation, and divergence.
 
@@ -107,7 +107,7 @@ This is a natural mathematical neighbor of the hypothesis because the hypothesis
 The hypothesis can be translated into state-space language:
 
 [quote]
-If two factors are equivalent at time t, preservation of equivalence over an interval requires that the evolution of the system preserves the equivalence relation.
+If two factors are equivalent at ordering position `\lambda`, preservation of equivalence over an ordered interval requires that the evolution of the system preserves the equivalence relation.
 
 === Difference
 
@@ -125,13 +125,13 @@ Reference:
 
 === Overlap
 
-The hypothesis overlaps chaos theory when it says that initially equal or nearly equal dynamic situations may diverge under time evolution, especially when perturbations or small differences matter.
+The hypothesis overlaps chaos theory when it says that initially equal or nearly equal dynamic situations may diverge under ordered evolution, especially when perturbations or small differences matter.
 
 === Difference
 
 The hypothesis is broader than chaos theory.
 
-It does not claim that all systems are chaotic. It does not require exponential divergence in every case. It says that absolute identity over time in open systems is a stronger condition than local equality and must not be assumed without preservation conditions.
+It does not claim that all systems are chaotic. It does not require exponential divergence in every case. It says that absolute identity across an ordered evolution in open systems is a stronger condition than local equality and must not be assumed without preservation conditions.
 
 == Open Systems and Nonequilibrium Thinking
 
@@ -169,7 +169,7 @@ It treats relation, change, and becoming as central to observable dynamics.
 
 The hypothesis is narrower than process philosophy.
 
-It focuses specifically on driving factors, open systems, and the impossibility of absolute dynamic identity over time.
+It focuses specifically on driving factors, open systems, and the impossibility of absolute dynamic identity across an ordered evolution.
 
 == Heraclitus and the Philosophy of Change
 
@@ -186,7 +186,7 @@ The hypothesis should not be reduced to the phrase "everything flows."
 It is not merely a poetic doctrine of change. It makes a more specific claim:
 
 [quote]
-Absolute identity between two driving factors over time requires preservation of the conditions that make identity meaningful, and open systems do not normally guarantee such preservation.
+Absolute identity between two driving factors across an ordered evolution requires preservation of the conditions that make identity meaningful, and open systems do not normally guarantee such preservation.
 
 == Identity of Indiscernibles
 
@@ -201,7 +201,7 @@ Reference:
 The hypothesis asks a related question in dynamic form:
 
 [quote]
-Can two distinct driving factors remain absolutely indistinguishable across time, relation, exposure, and future development?
+Can two distinct driving factors remain absolutely indistinguishable across ordered evolution, relation, exposure, and subsequent development?
 
 === Difference
 
@@ -269,7 +269,7 @@ The safer path is:
 . Define terms carefully.
 . State the hypothesis conditionally.
 . Treat it as a metaprinciple first.
-. Formalize through equivalence relations and time evolution.
+. Formalize through equivalence relations and ordered evolution, introducing metric time only when a clock-based model requires it.
 . Use literature to clarify neighbors rather than deny them.
 . Avoid claims of a new force or a total theory.
 
@@ -282,4 +282,4 @@ It lives inside a dense field of existing ideas. Its value depends on discipline
 The best current statement is:
 
 [quote]
-Dynamic non-absoluteness is the principle that observable driving factors exist through relations, and that strong identity between distinct dynamic factors over time requires preserved conditions that open systems do not normally guarantee.
+Dynamic non-absoluteness is the principle that observable driving factors exist through relations, and that strong identity between distinct dynamic factors across an ordered evolution requires preserved conditions that open systems do not normally guarantee.

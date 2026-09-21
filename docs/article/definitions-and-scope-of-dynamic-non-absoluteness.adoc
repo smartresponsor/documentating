@@ -19,7 +19,7 @@ The central danger is excessive looseness. Words such as force, identity, equali
 The working principle is:
 
 [quote]
-No observable driving factor is absolutely isolated, and no two distinct driving factors preserve absolute dynamic identity over time in an open system unless the conditions preserving that identity remain absolutely symmetrical.
+No observable driving factor is absolutely isolated, and no two distinct driving factors preserve absolute dynamic identity across an ordered evolution in an open system unless the conditions preserving that identity remain absolutely symmetrical.
 
 This statement should be read as a research principle, not as a finished physical law.
 
@@ -64,7 +64,7 @@ The hypothesis distinguishes:
 * momentary equality;
 * equality under a selected parameter;
 * equality inside an idealized model;
-* full dynamic identity across time.
+* full dynamic identity across an ordered evolution.
 
 Only the last one is the strong target of the hypothesis.
 
@@ -99,18 +99,20 @@ Depending on context, openness may include exchange of:
 
 The hypothesis does not require every system to be maximally open. It requires only that the relevant factors are not perfectly isolated from asymmetric influence over the interval being considered.
 
-== Time Interval
+== Ordered Interval and Metric Time
 
-The hypothesis is weak if it speaks only about a single instant.
+The hypothesis is weak if it speaks only about a single observation position.
 
-At a single moment, equality can be defined by measurement or model. The stronger claim concerns persistence across an interval.
+At one observation position, equality can be defined by measurement or model. The stronger claim concerns persistence across an ordered interval.
 
 Therefore, the relevant question is:
 
 [quote]
-What must remain preserved for two initially equal driving factors to remain dynamically identical over time?
+What must remain preserved for two initially equal driving factors to remain dynamically identical across an ordered evolution?
 
 The answer is not merely equality of magnitude. It is preservation of the conditions that make their equivalence valid.
+
+For generic formalization, this program uses `\lambda` as an ordering/evolution parameter. It need not be metric time. Where an experiment or standard chronology explicitly uses a clock, `\tau` denotes metric time. In System Tempo work, `q` denotes a candidate regime coordinate. The program does not assume `q=f(\tau)` unless such a relation is separately derived.
 
 == Symmetry of Conditions
 
@@ -142,9 +144,9 @@ In observable dynamic reality, a driving influence becomes meaningful through re
 
 == Mathematical Scope
 
-Mathematically, the hypothesis can be developed through equivalence relations and time evolution.
+Mathematically, the hypothesis can be developed through equivalence relations and ordered evolution.
 
-A factor A and a factor B may be equal under an equivalence relation E at time t. The stronger question is whether E(A_t, B_t) remains true over an interval.
+A factor A and a factor B may be equal under an equivalence relation E at ordering position `\lambda`. The stronger question is whether `E(A_\lambda, B_\lambda)` remains true over an ordered interval.
 
 The mathematical layer should study:
 
@@ -185,7 +187,7 @@ The hypothesis claims:
 
 * that absolute isolation is not the ordinary condition of observable dynamics;
 * that equality must be tied to explicit parameters;
-* that dynamic identity over time is stronger than momentary equality;
+* that dynamic identity across an ordered evolution is stronger than momentary equality;
 * that open systems expose factors to asymmetric influence;
 * that preservation of strong identity requires preservation of the conditions that define it;
 * that absoluteness and total identity should be treated as limiting abstractions unless their preservation is specified.
@@ -200,7 +202,7 @@ Before expanding the hypothesis, each new text should specify:
 * whether the claim is physical, mathematical, or philosophical;
 * what kind of system is being discussed;
 * what kind of equality is being asserted;
-* what time interval is relevant;
+* what ordered interval is relevant and whether metric time `\tau` is actually part of the claim;
 * what symmetry or preservation condition is assumed.
 
 == Closing Formulation
@@ -208,4 +210,4 @@ Before expanding the hypothesis, each new text should specify:
 The hypothesis becomes strongest when it is stated carefully:
 
 [quote]
-Two dynamic factors may be equal under selected parameters at a moment of observation. But strong dynamic identity over time requires preservation of the conditions that make that identity meaningful. In open systems, such preservation is not automatic. Therefore, absolute dynamic identity is better treated as a limiting abstraction than as an ordinary feature of observable reality.
+Two dynamic factors may be equal under selected parameters at a moment of observation. But strong dynamic identity across an ordered evolution requires preservation of the conditions that make that identity meaningful. In open systems, such preservation is not automatic. Therefore, absolute dynamic identity is better treated as a limiting abstraction than as an ordinary feature of observable reality.
