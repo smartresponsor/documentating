@@ -1,0 +1,143 @@
+= Product Capability Portfolio Audit
+:revdate: 2026-09-20
+
+== Scope
+
+This portfolio audit covers customer/business-facing platform components:
+
+Cataloging, Retailing, Carting, Ordering, Pricing, Promoting, Paying, Billing, Taxating, Stocking, Shipping, Vendoring, Commissioning, Subscripting, Rewarding, Walleting, Exchanging, Currencing, Tagging, Faceting, Indexing, Searching, Locating, Addressing, Relating, and Messaging.
+
+Technical enablers such as Objecting, Cruding, Collectioning, Tabling, Viewing, Interfacing, Administering, Bridging, Gating, Canonization, and Documentating are intentionally excluded from commerce-feature ranking. Their concern is architecture/platform support rather than merchant/customer business capability.
+
+== Benchmark basis
+
+The external baseline is the current public capability surface of Medusa v2, Vendure, and Sylius as of 2026-09-20. The comparison uses AHEAD, PARITY, PARTIAL, MISSING, and NOT_APPLICABLE conservatively. AHEAD is used only where the local repository exposes a materially stronger modeled or operational capability than the ordinary commerce-core baseline.
+
+== Portfolio summary
+
+[cols="2,1,1,5",options="header"]
+|===
+|Component |Business completeness |Boundary |Portfolio finding
+|Cataloging |PARTIAL |WATCH |Strong taxonomy/syndication work, but Category -> Catalog convergence and product/variant/attribute completeness remain.
+|Retailing |PARTIAL |WATCH |Good sellable projection; tenantId compatibility and publication/channel semantics need closure.
+|Carting |PARITY |GOOD |Mature mutable-intent boundary and checkout handoff; close merge/saved-cart/integration gaps.
+|Ordering |PARITY |GOOD |Strong lifecycle and operational resilience; draft/modification/returns/exchanges need completion.
+|Pricing |MISSING |GOOD |Modern boundary, no business engine yet.
+|Promoting |MISSING |GOOD |Modern boundary, no rule/action/coupon/redemption engine yet.
+|Paying |AHEAD |GOOD |Strong idempotency, provider-event, outbox and failure/reconciliation maturity.
+|Billing |PARTIAL |GOOD |Invoice lifecycle exists; credit/debit notes, partial invoicing and recurring integration need depth.
+|Taxating |PARITY |GOOD |Provider and resilience model strong; exemptions, inclusion semantics and audit explanation need completion.
+|Stocking |MISSING |GOOD |Modern inventory boundary, no stock/reservation/movement engine yet.
+|Shipping |PARITY |GOOD |Strong shipment execution and analytics; reverse logistics/split shipment/claims remain.
+|Vendoring |PARITY |GOOD |Vendor business identity/lifecycle exists; onboarding/KYC and marketplace association flows need depth.
+|Commissioning |PARITY |GOOD |Broad commission domain; versioned rules, tiers and reversal/adjustment should be strengthened.
+|Subscripting |PARTIAL |GOOD |Lifecycle/entitlement split is strong; proration, dunning and usage-based models remain.
+|Rewarding |MISSING |GOOD |Correct loyalty/store-credit boundary, no points ledger/rules engine yet.
+|Walleting |AHEAD |GOOD |Double-entry, reservations, reconciliation and idempotency are stronger than basic store-credit models.
+|Exchanging |PARITY |GOOD |Good rate/quote/freshness/provenance boundary; failover/triangulation/manual rate remain.
+|Currencing |PARITY |GOOD |Strong currency metadata/rounding boundary; enabled-currency and cash-rounding policy need closure.
+|Tagging |PARITY |GOOD |Mature generic tag assignment/governance; namespaces/aliases/bulk workflows can improve.
+|Faceting |PARTIAL |GOOD |Correct semantic owner; range facets, aggregation contracts and localization need depth.
+|Indexing |AHEAD |GOOD |Strong asynchronous index lifecycle, pointers, outbox and diagnostics.
+|Searching |PARITY |GOOD |Strong search runtime/tuning ownership; synonyms/fuzzy/boosting/zero-result policies need completion.
+|Locating |PARITY |GOOD |Correct stateless computation/provider boundary; confidence/provenance/geospatial contracts can deepen.
+|Addressing |PARTIAL |WATCH |Durable/evidence model strong; recent Objecting field overlap proves boundary cleanup is still active.
+|Relating |AHEAD |GOOD |CRM relationship lifecycle/scoring/timeline exceeds typical commerce-core capability.
+|Messaging |PARITY |GOOD |Strong reliability model; moderation, retention, attachments and search integration need depth.
+|===
+
+== Highest-priority business gaps
+
+=== Tier 0: missing commerce engines
+
+. Pricing: deterministic price-set/list/rule/tier selection with history/explanation.
+. Stocking: per-location levels, ATP, reservations, movement ledger, idempotency and concurrency.
+. Promoting: condition/action engine, coupons, stacking, campaign budget and redemption ledger.
+. Rewarding: immutable points ledger, earn/redeem/expire/reverse, tiers and benefits.
+
+These four are foundational. They should be built before adding adjacent new repositories.
+
+=== Tier 1: cross-component transaction flows
+
+. Cart -> Pricing/Promoting/Taxating/Stocking -> Ordering deterministic checkout.
+. Ordering cancellation/return/exchange -> Stocking + Shipping + Paying + Billing reconciliation.
+. Paying + Walleting split tender and refund-to-wallet.
+. Shipping reverse logistics and multi-shipment/multi-location flows.
+. Subscription plan change/proration/dunning across Subscripting + Pricing + Billing + Paying.
+
+=== Tier 2: catalog/discovery completeness
+
+. Finish Cataloging Product/Variant/Option/Attribute vocabulary and retire Category compatibility.
+. Complete Faceting range/multi-select/aggregation semantics.
+. Complete Searching synonyms, typo tolerance, boosting/pinning and zero-result behavior.
+. Stabilize Retailing channel/store assortment and scheduled publication.
+
+=== Tier 3: marketplace and retention
+
+. Vendoring onboarding/KYC and seller-order/listing references.
+. Commissioning versioned rules, reversals, disputes and settlement reconciliation.
+. Rewarding tiers/benefits after ledger correctness.
+. Messaging moderation/retention and commerce-aware notification/thread references where justified.
+
+== Coverage gaps that require ownership verification before creating anything
+
+The competitor baselines expose several first-class domains that are not named as standalone repositories in this audited business portfolio. This is not an instruction to create repositories. First locate existing owners and prove a real gap:
+
+* customer/account identity and customer groups;
+* authentication/user/role/access policy;
+* store/sales-channel configuration;
+* region/market configuration;
+* translation/localization master policy;
+* gift-card lifecycle;
+* returns/exchanges orchestration;
+* fulfillment abstraction if Shipping does not intentionally own the full fulfillment boundary;
+* product reviews/ratings if they are in product scope.
+
+Some of these may already belong to components outside this business-audit set. Ownership must be resolved against live Canonization before materialization.
+
+== Boundary watch list
+
+Cataloging::
+Legacy Category terminology and compatibility APIs can obscure the actual Product/Catalog boundary.
+
+Retailing::
+Legacy tenantId transport compatibility must converge to canonical owner/vendor identity; Retailing must not become a tenancy subsystem.
+
+Addressing::
+Objecting owns reusable system fields. Duplicate state/audit mappings must be removed rather than normalized as Addressing business data.
+
+Subscripting::
+Legacy Couponing/Discounting wording must converge to Promoting.
+
+Carting/Ordering::
+Keep the commitment boundary explicit: mutable intent in Carting; committed order facts in Ordering.
+
+Pricing/Promoting/Taxating/Stocking::
+These are independent engines. Carting/Ordering consume their immutable results/snapshots instead of reimplementing their logic.
+
+Rewarding/Walleting::
+Points and status are non-monetary Rewarding concerns. Store credit and money-like balances belong to Walleting.
+
+Locating/Addressing::
+Locating computes and orchestrates providers; Addressing persists durable address truth/evidence.
+
+Indexing/Searching/Faceting::
+Indexing owns index lifecycle; Searching owns query/ranking/tuning; Faceting owns filter semantics.
+
+== Recommended milestone sequence
+
+. Pricing M1-M2.
+. Stocking M1-M2.
+. Promoting M1-M2.
+. Checkout integration slice: Carting + the three engines + Taxating -> Ordering.
+. Rewarding M1-M2 and Walleting store-credit profile.
+. Ordering returns/exchanges + Shipping reverse logistics + Paying/Billing reconciliation.
+. Cataloging/Retailing/Faceting/Searching completeness.
+. Subscripting proration/dunning.
+. Marketplace depth: Vendoring + Commissioning.
+. Secondary experience capabilities: Messaging, Relating and discovery refinements.
+
+== Audit-file contract
+
+Each audited business repository owns a root PRODUCT_CAPABILITY_AUDIT.adoc. Future implementation waves should update that file when a capability moves between MISSING, PARTIAL, PARITY or AHEAD, and must record any ownership transfer rather than silently duplicating behavior.
+
