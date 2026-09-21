@@ -13,7 +13,7 @@ Real dynamics begins where absolute identity fails.
 
 If a force were absolute, isolated, constant, and fully dominant, it would no longer be one participant in the movement of reality. It would become a final background before which every other finite influence would lose independent dynamic significance.
 
-If two driving forces were absolutely identical over time, their identity would require more than equality of magnitude. It would require equality of context, relation, perturbation, history, and future exposure. In an open universe, such equality is not a stable observable reality. It is a limiting abstraction.
+If two driving forces were absolutely identical across an ordered evolution, their identity would require more than equality of magnitude. It would require equality of context, relation, perturbation, history, and future exposure. In an open universe, such equality is not a stable observable reality. It is a limiting abstraction.
 
 Therefore, the observable universe should not be understood as a field of absolute forces. It should be understood as a field of relative, interacting, and dynamically non-identical factors.
 
@@ -32,7 +32,7 @@ It proposes a philosophical-scientific principle for thinking about motion, forc
 The principle may be stated as follows:
 
 [quote]
-A driving force can be observed only as part of a field of relations. It is never absolutely isolated. Equality between driving forces can exist locally, momentarily, or inside an idealized model, but absolute dynamic identity over time is not a stable feature of open systems.
+A driving force can be observed only as part of a field of relations. It is never absolutely isolated. Equality between driving forces can exist locally, momentarily, or inside an idealized model, but absolute dynamic identity across an ordered evolution is not a stable feature of open systems.
 
 This is why I call the principle *dynamic non-absoluteness*.
 
@@ -48,7 +48,7 @@ There is no single absolute, constant, fully dominant driving force as an ordina
 Second:
 
 [quote]
-There are no two absolutely identical driving forces that can preserve total dynamic identity over time in an open system.
+There are no two absolutely identical driving forces that can preserve total dynamic identity across an ordered evolution in an open system.
 
 The two claims belong together.
 
@@ -59,7 +59,7 @@ Together, they point toward one broader thesis:
 [quote]
 Observable dynamics requires relation, difference, interaction, and the possibility of perturbation.
 
-A reality without difference would not be a dynamic reality in the ordinary observable sense. A reality governed by one absolute force would not contain meaningful independent dynamics among finite influences. A reality containing two perfectly identical dynamic factors over time would require an impossible preservation of total symmetry across context, relation, perturbation, and exposure.
+A reality without difference would not be a dynamic reality in the ordinary observable sense. A reality governed by one absolute force would not contain meaningful independent dynamics among finite influences. A reality containing two perfectly identical dynamic factors across an ordered evolution would require an impossible preservation of total symmetry across context, relation, perturbation, and exposure.
 
 == Against the Myth of the Absolute Force
 
@@ -97,7 +97,7 @@ The second part of the principle concerns equality.
 
 Two forces may be equal in magnitude. Two impulses may be measured as equivalent. Two processes may begin from the same model state. Two trajectories may appear indistinguishable at a single moment of observation.
 
-But absolute dynamic identity over time is much stronger than local equality.
+But absolute dynamic identity across an ordered evolution is much stronger than local equality.
 
 It would require not only equal values, but equal conditions.
 
@@ -112,7 +112,7 @@ In an open system, this is not a normal reality. It is an idealization.
 Therefore, the principle does not say that equality is impossible. It says something narrower and stronger:
 
 [quote]
-Equality may exist locally, momentarily, or parametrically, but absolute dynamic identity over time requires an absolute symmetry of conditions that open systems do not normally preserve.
+Equality may exist locally, momentarily, or parametrically, but absolute dynamic identity across an ordered evolution requires an absolute symmetry of conditions that open systems do not normally preserve.
 
 == Open Systems and the Fragility of Equality
 
@@ -126,7 +126,7 @@ Two initially equal factors may remain equal only if the conditions around them 
 
 This does not require a mystical principle. It is enough that the system is open and that the factors are not literally the same factor in the same position, same relation, same environment, and same future.
 
-The more time passes, the greater the burden placed on the claim of absolute identity.
+The longer the relevant ordered evolution extends, the greater the burden placed on the claim of absolute identity.
 
 Momentary equality is easy to imagine.
 
@@ -182,7 +182,7 @@ It always appears within a system of relations.
 
 Its effect depends on context, structure, constraints, opposition, scale, duration, and interaction.
 
-It also claims that two driving factors can be called equal only relative to selected parameters. Equality of magnitude is not equality of total dynamic identity. Equality at a moment is not equality across time. Equality inside a model is not necessarily equality in open reality.
+It also claims that two driving factors can be called equal only relative to selected parameters. Equality of magnitude is not equality of total dynamic identity. Equality at one observation position is not equality across an ordered evolution. Equality inside a model is not necessarily equality in open reality.
 
 Therefore:
 
@@ -227,12 +227,12 @@ Possible concepts include:
 * equivalence classes;
 * invariants;
 * boundary conditions;
-* time evolution.
+* ordered evolution, with metric time used only where physically intended.
 
 A possible formal direction is this:
 
 [quote]
-Two dynamic factors may be equal under a defined equivalence relation at time t, but preservation of stronger equivalence over an interval requires preservation of the symmetries and constraints that make the equivalence valid.
+Two dynamic factors may be equal under a defined equivalence relation at ordering position `\lambda`, but preservation of stronger equivalence over an ordered interval requires preservation of the symmetries and constraints that make the equivalence valid.
 
 This does not prove the whole hypothesis. But it gives a mathematical path for developing it responsibly.
 
@@ -282,8 +282,8 @@ The manifesto may be condensed into the following principles.
 . No finite influence is meaningful outside a field of relations.
 . Absolute dominance would erase the independent dynamic significance of other finite influences.
 . Equality between driving factors is always relative to selected parameters.
-. Momentary equality is not the same as identity over time.
-. Identity over time requires preservation of conditions.
+. Momentary equality is not the same as identity across an ordered evolution.
+. Identity across an ordered evolution requires preservation of conditions.
 . In open systems, conditions are exposed to perturbation and asymmetry.
 . Therefore, absolute dynamic identity is a limiting abstraction rather than a stable ordinary reality.
 . Real dynamics requires relation, difference, interaction, and the possibility of change.
@@ -299,7 +299,7 @@ The following definitions must be developed:
 * what “absolute” means in physical, mathematical, and philosophical contexts;
 * what “identity” means for dynamic factors;
 * what “open system” means in the scope of the hypothesis;
-* what counts as preservation of equality over time;
+* what counts as preservation of equality across an ordered evolution;
 * what kinds of perturbation matter;
 * whether the hypothesis is universal, statistical, conditional, or only interpretive;
 * where the boundary lies between scientific hypothesis and philosophical principle.
@@ -316,7 +316,7 @@ It is made of relations, constraints, asymmetries, interactions, perturbations, 
 
 A single absolute force would no longer be one force among others. It would become a final background before which other finite influences lose independent significance.
 
-Two absolutely identical driving forces could remain identical over time only if their conditions, relations, histories, perturbations, and future exposures remained absolutely identical. In an open system, such total identity is not a stable ordinary reality.
+Two absolutely identical driving forces could remain identical across an ordered evolution only if their conditions, relations, histories, perturbations, and future exposures remained absolutely identical. In an open system, such total identity is not a stable ordinary reality.
 
 Therefore, the observable universe should be approached not as a system of absolute forces, but as a system of relative, interacting, dynamically non-identical factors.
 

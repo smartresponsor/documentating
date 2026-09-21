@@ -33,7 +33,7 @@ It does not reject invariants, conservation laws, stable structures, or useful i
 
 == Absolute Dynamic Identity
 
-*Absolute dynamic identity* means total identity of two dynamic factors over time.
+*Absolute dynamic identity* means total identity of two dynamic factors across an ordered evolution.
 
 It would require more than equality of magnitude or equality at one moment. It would require preserved identity of:
 
@@ -84,7 +84,7 @@ This matters because absolute identity between distinguishable factors is strong
 The hypothesis asks:
 
 [quote]
-Can two distinguishable dynamic factors preserve total identity over time under open conditions?
+Can two distinguishable dynamic factors preserve total identity across an ordered evolution under open conditions?
 
 == Driving Factor
 
@@ -116,13 +116,13 @@ The program prefers *driving factor* when speaking across physics, mathematics, 
 
 == Dynamic Factor
 
-A *dynamic factor* is a factor whose state, influence, role, or relation is considered across time or state evolution.
+A *dynamic factor* is a factor whose state, influence, role, or relation is considered across an ordered evolution.
 
 A dynamic factor is not merely a static object. It is examined through change, persistence, relation, and possible divergence.
 
 == Dynamic Identity
 
-*Dynamic identity* means identity considered across time or state evolution.
+*Dynamic identity* means identity considered across an ordered evolution.
 
 It is stronger than equality at one moment.
 
@@ -143,14 +143,14 @@ Dynamic non-absoluteness does not deny stability or lawfulness. It denies that d
 
 == Dynamic Non-Identity
 
-*Dynamic non-identity* is the principle that two initially equal or similar dynamic factors do not automatically preserve strong identity over time.
+*Dynamic non-identity* is the principle that two initially equal or similar dynamic factors do not automatically preserve strong identity across an ordered evolution.
 
 The principle states:
 
 [quote]
-Equality at a moment is not identity over time. Identity over time requires preserved conditions. Open systems do not automatically preserve those conditions.
+Equality at a moment is not identity across an ordered evolution. Identity across an ordered evolution requires preserved conditions. Open systems do not automatically preserve those conditions.
 
-Dynamic non-identity is the time-oriented part of dynamic non-absoluteness.
+Dynamic non-identity is the evolution-oriented part of dynamic non-absoluteness. Clock time is only one possible parameterization of that evolution.
 
 == Equality
 
@@ -168,7 +168,7 @@ Equality may refer to:
 
 The hypothesis distinguishes equality from identity.
 
-Equality is usually parameter-bound. Identity over time is condition-bound.
+Equality is usually parameter-bound. Identity across an ordered evolution is condition-bound.
 
 == Equivalence Relation
 
@@ -207,7 +207,7 @@ In this program, identity must always be qualified:
 * identity of relation;
 * identity of role;
 * identity of trajectory;
-* identity over time;
+* identity across an ordered evolution;
 * absolute dynamic identity.
 
 The program rejects vague identity claims. It requires each identity claim to specify what is being preserved.
@@ -252,7 +252,7 @@ Local equality should not be confused with total identity.
 
 == Momentary Equality
 
-*Momentary equality* is equality at a specific moment of observation.
+*Momentary equality* is ordinary measurement language for equality at a specific clock reading or observational instant. In the abstract layer, *local equality at an ordering position* is preferred when no metric clock is required.
 
 It does not imply equality before or after that moment.
 
@@ -280,7 +280,7 @@ This may include exchange of:
 * boundary effects;
 * causal influences.
 
-The hypothesis uses open systems to explain why strong identity over time is not automatically preserved.
+The hypothesis uses open systems to explain why strong identity across an ordered evolution is not automatically preserved.
 
 == Parameter-Bound Equality
 
@@ -300,20 +300,20 @@ The hypothesis does not require every perturbation to produce dramatic divergenc
 
 == Preservation Condition
 
-A *preservation condition* is a condition that must remain in place for equality, equivalence, identity, stability, or invariance to continue over time.
+A *preservation condition* is a condition that must remain in place for equality, equivalence, identity, stability, or invariance to continue across an ordered evolution.
 
 This is one of the core terms of the program.
 
 The central formula is:
 
 [quote]
-Identity over time requires preserved conditions.
+Identity across an ordered evolution requires preserved conditions.
 
 If the preservation condition fails, identity cannot be assumed.
 
 == Preservation Mechanism
 
-A *preservation mechanism* is a structure, rule, constraint, feedback process, symmetry, invariant, or stabilizing feature that maintains equivalence or identity across time.
+A *preservation mechanism* is a structure, rule, constraint, feedback process, symmetry, invariant, or stabilizing feature that maintains equivalence or identity across the relevant ordered evolution.
 
 The hypothesis allows preservation mechanisms.
 
@@ -361,7 +361,7 @@ The stronger the identity claim, the stronger the preservation conditions must b
 
 *Symmetry* means preservation of structure under transformation, comparison, or condition mapping.
 
-In this program, symmetry matters because identity over time depends on preserved relevant symmetry.
+In this program, symmetry matters because identity across an ordered evolution depends on preserved relevant symmetry.
 
 Symmetry is not rejected. It is treated as a condition of identity.
 
@@ -381,17 +381,21 @@ This may include equivalent:
 
 If symmetry of conditions is broken, strong dynamic identity becomes unstable or unsupported.
 
-== Time Interval
+== Ordering Parameter, Regime Coordinate, and Metric Time
 
-A *time interval* is the duration over which equality or identity is being evaluated.
+This research corpus distinguishes three coordinates.
 
-The hypothesis is most meaningful across intervals, not instants.
+* `\lambda` is a generic ordering or evolution parameter. It need not carry units of duration.
+* `q` is the candidate system-regime coordinate used in System Tempo work.
+* `\tau` is metric time: clock readings, seconds, years, laboratory intervals, dating systems, and standard chronology.
 
-At one instant, equality may be easy to define. Across time, identity becomes a preservation problem.
+An actual *time interval* is a difference in `\tau` when a clock-based duration is intended. The abstract Dynamic Non-Identity claim, however, is most meaningful across ordered intervals and does not require a clock by definition.
+
+No relation `q=f(\tau)` is assumed merely because both variables can label progression.
 
 == Trajectory
 
-A *trajectory* is the path of a factor or system through state space, time, or modeled evolution.
+A *trajectory* is the path of a factor or system through state space or modeled evolution. It may be parameterized by `\lambda`, by metric time `\tau`, or, in System Tempo research, by regime coordinate `q`, depending on the model.
 
 Two factors may have equal values at one moment but different trajectories.
 
@@ -404,12 +408,12 @@ The hypothesis should be separated into claim levels.
 === Weak Claim
 
 [quote]
-Equality at a moment does not imply identity over time.
+Equality at a moment does not imply identity across an ordered evolution.
 
 === Medium Claim
 
 [quote]
-Identity over time requires preservation of relevant conditions.
+Identity across an ordered evolution requires preservation of relevant conditions.
 
 === Strong Claim
 
@@ -430,4 +434,4 @@ This rule protects the research program from ambiguity.
 The controlled vocabulary of this program can be reduced to one chain:
 
 [quote]
-Driving factors exist through relations. Equality is parameter-bound. Identity over time is condition-bound. Open systems expose conditions to difference. Therefore, absolute dynamic identity is not automatic and should be treated as a limiting abstraction unless its preservation mechanism is defined.
+Driving factors exist through relations. Equality is parameter-bound. Identity across an ordered evolution is condition-bound. Open systems expose conditions to difference. Therefore, absolute dynamic identity is not automatic and should be treated as a limiting abstraction unless its preservation mechanism is defined.

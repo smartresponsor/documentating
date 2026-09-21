@@ -32,12 +32,12 @@ No single driving force should be treated as absolute, isolated, constant, and f
 Second:
 
 [quote]
-Two distinct driving factors may be equal at a moment or under selected parameters, but they do not thereby preserve absolute dynamic identity over time in an open system.
+Two distinct driving factors may be equal at a moment or under selected parameters, but they do not thereby preserve absolute dynamic identity across an ordered evolution in an open system.
 
 Together, these claims form the principle of dynamic non-absoluteness:
 
 [quote]
-Real dynamics requires relation, difference, interaction, and the possibility of perturbation. Equality at a moment is not identity over time; identity over time requires preserved conditions; open systems do not automatically preserve those conditions.
+Real dynamics requires relation, difference, interaction, and the possibility of perturbation. Equality at a moment is not identity across an ordered evolution; identity across an ordered evolution requires preserved conditions; open systems do not automatically preserve those conditions.
 
 == What This Program Is Not
 
@@ -81,11 +81,19 @@ The originality checkpoint. It maps the hypothesis against symmetry, dynamic sys
 
 . xref:article/toward-a-formal-statement-of-dynamic-non-identity.adoc[Toward a Formal Statement of Dynamic Non-Identity]
 +
-The first bridge toward formalization. It introduces equivalence relations, time intervals, perturbations, preservation conditions, and weak/medium/strong versions of the claim.
+The first bridge toward formalization. It introduces equivalence relations, ordered intervals, the generic parameter `\lambda`, perturbations, preservation conditions, and weak/medium/strong versions of the claim.
 
 . xref:article/system-tempo-and-dynamic-non-identity.adoc[System Tempo and Dynamic Non-Identity]
 +
 The bridge essay connecting the tempo-regime hypothesis with dynamic non-identity. It treats system tempo and resistance-to-change as preservation conditions for identity across regimes.
+
+. xref:article/the-finite-observer-and-the-resolution-of-change.adoc[The Finite Observer and the Resolution of Change]
++
+The observer layer. It keeps the observer inside the containing system and distinguishes causal history, metric chronology, and distinguishable historical depth.
+
+. xref:article/from-irreversibility-to-metric-time.adoc[From Irreversibility to Metric Time]
++
+The irreversibility bridge. It separates regime coordinate `q`, generic ordering parameter `\lambda`, and metric time `\tau`, and asks how record-forming asymmetry can support clock metrology for an internal observer.
 
 == Document Roles
 
@@ -131,7 +139,7 @@ It prevents the hypothesis from becoming vague by requiring every future text to
 * what kind of force or driving factor is meant;
 * what kind of equality is being discussed;
 * what system is being considered;
-* what time interval matters;
+* what ordered interval matters and whether metric time `\tau` is actually required;
 * whether the claim is physical, mathematical, or philosophical.
 
 === Glossary
@@ -263,4 +271,4 @@ But that intuition is not enough by itself. It must be disciplined by definition
 The goal of this series is to turn the intuition into a responsible scientific-philosophical hypothesis:
 
 [quote]
-No observable driving factor is absolutely isolated, and no two distinct driving factors preserve absolute dynamic identity over time in an open system unless the conditions preserving that identity remain absolutely symmetrical.
+No observable driving factor is absolutely isolated, and no two distinct driving factors preserve absolute dynamic identity across an ordered evolution in an open system unless the conditions preserving that identity remain absolutely symmetrical.
