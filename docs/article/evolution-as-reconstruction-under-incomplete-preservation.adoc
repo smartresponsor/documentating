@@ -1,0 +1,1568 @@
+= Evolution as Reconstruction Under Incomplete Preservation: A Restorative Evolution Hypothesis
+:page-slug: evolution-as-reconstruction-under-incomplete-preservation
+:page-published: 2026-09-21
+:page-author: Oleksandr Tishchenko
+:description: A disciplined speculative hypothesis asking whether some evolutionary, cognitive, and technological trajectories may be interpretable as reconstruction toward structurally privileged or previously instantiated states under incomplete preservation.
+:page-tags: evolution, restorative-evolution, convergence, self-organization, system-tempo, dynamic-non-absoluteness, philosophy-of-biology, information
+:lang: en
+
+== Position in the Series
+
+This essay extends the research line developed in:
+
+* xref:article/system-tempo-and-dynamic-non-identity.adoc[System Tempo and Dynamic Non-Identity];
+* xref:article/from-irreversibility-to-metric-time.adoc[From Irreversibility to Metric Time: How an Internal Observer Builds the Clock];
+* xref:article/definitions-and-scope-of-dynamic-non-absoluteness.adoc[Definitions and Scope of Dynamic Non-Absoluteness];
+* xref:article/glossary-of-dynamic-non-absoluteness.adoc[Glossary of Dynamic Non-Absoluteness];
+* xref:article/toward-a-formal-statement-of-dynamic-non-identity.adoc[Toward a Formal Statement of Dynamic Non-Identity];
+* xref:article/principle-dynamic-non-absoluteness.adoc[Principle of Dynamic Non-Absoluteness];
+* xref:article/abstract-hypothesis-of-dynamic-non-absoluteness.adoc[Abstract: The Hypothesis of Dynamic Non-Absoluteness];
+* xref:article/the-finite-observer-and-the-resolution-of-change.adoc[The Finite Observer and the Resolution of Change];
+* xref:article/dynamic-non-absoluteness-research-program.adoc[Dynamic Non-Absoluteness Research Program];
+* xref:article/literature-and-conceptual-overlap-map-dynamic-non-absoluteness.adoc[Literature and Conceptual Overlap Map for Dynamic Non-Absoluteness].
+
+The present article does not propose a new law of biology or physics. It develops a speculative scientific-philosophical research hypothesis and keeps its claim levels explicit.
+
+Its central question is:
+
+[quote]
+What if some processes that internal observers describe as evolution, discovery, and progress are not purely movements into unprecedented state space, but are partly reconstructions of structurally privileged or previously instantiated configurations under incomplete preservation?
+
+The hypothesis will be called the *Restorative Evolution Hypothesis*.
+
+The word _restorative_ is deliberately restricted. It does not imply that evolution has a conscious goal, that DNA hides a complete blueprint of a previous organism, that the universe literally remembers, or that a lost civilization must have existed. Those stronger ideas require evidence that this article does not possess.
+
+The working thesis is narrower:
+
+[quote]
+Evolution may be interpreted not only as adaptation into an unknown future, but, under a stronger speculative hypothesis, as partial reconstruction of structurally privileged or previously instantiated states under incomplete preservation.
+
+== The Intuition: Progress or Reconstruction?
+
+Ordinary evolutionary biology explains biological change through mechanisms such as heritable variation, natural selection, drift, mutation, recombination, migration, developmental constraint, and interactions between organisms and environments. Nothing in this article replaces those mechanisms.
+
+Yet several classes of observation motivate a more abstract question.
+
+Different lineages sometimes arrive independently at similar phenotypes. Developmental systems generate some forms more readily than others. Physical and geometrical constraints repeatedly narrow the set of viable solutions. Engineers working independently often converge on related architectures. Scientific results are sometimes discovered independently. Cultural systems repeatedly rediscover abstractions such as modularity, hierarchy, feedback, representation, compression, and layered control.
+
+None of this demonstrates restoration. Convergent evolution already shows that similar solutions can emerge independently, and contemporary work documents convergence at phenotypic and genetic levels. <<allard-kumar>> Developmental bias likewise shows that variation is not distributed uniformly over phenotypic space; developmental organization can make some outcomes substantially more accessible than others. <<uller-developmental-bias>>
+
+The philosophical question begins only after that baseline is accepted:
+
+[quote]
+When a system repeatedly enters similar regions of state space, how should one distinguish ordinary convergence from return toward a privileged structure, and how should one distinguish both of those from reconstruction of a structure that was previously instantiated?
+
+This distinction is the burden of the hypothesis.
+
+== What “Restoration” Means
+
+The word _restoration_ is dangerous if it is left undefined.
+
+In this article, restoration does *not* mean automatic recovery of strict identity. A reconstructed configuration may differ materially, historically, dynamically, and relationally from the configuration from which it is hypothesized to derive.
+
+Let a prior or more complete configuration be denoted:
+
+[stem]
+++++
+C_0
+++++
+
+Suppose that transmission into a later system is incomplete, lossy, transformed, or structurally constrained:
+
+[stem]
+++++
+C_0
+\rightarrow
+\text{incomplete preservation}
+\rightarrow
+C_1
+\rightarrow
+C_2
+\rightarrow
+\cdots
+\rightarrow
+C^{*}
+++++
+
+The sequence does not imply that the original physical substrate survives.
+
+The state \(C^{*}\) may qualify as restorative only relative to an explicitly selected equivalence relation.
+
+Possible restoration levels include:
+
+* *functional restoration* — a later configuration performs a relevant function also performed by the reference configuration;
+* *informational restoration* — selected informational relations are recovered;
+* *relational restoration* — a pattern of relations among components is recovered;
+* *dynamical restoration* — selected transition behavior or response structure is recovered;
+* *morphological restoration* — selected form or geometry is recovered;
+* *architectural restoration* — organization across modules or levels is recovered;
+* *partial structural equivalence* — the later configuration enters the same equivalence class under a declared relation \(E\).
+
+Thus a rigorous restoration claim must specify the reference configuration or class, the candidate preservation mechanism, the reconstruction process, the equivalence relation, the permitted differences, and the observation that would distinguish restoration from ordinary convergence.
+
+Without those elements, “restoration” is only metaphor.
+
+== Adaptation Is Not Restoration
+
+Adaptation and restoration must not be collapsed.
+
+An adaptive change increases fit, persistence, reproduction, function, or performance under some environment or objective. It need not resemble any prior configuration.
+
+A restorative change, in the stronger sense investigated here, moves a system toward a configuration related to a specified earlier or privileged structure.
+
+Conceptually one might write:
+
+[stem]
+++++
+\Delta C
+=
+\Delta C_{adaptation}
++
+\Delta C_{restoration}
+++++
+
+This notation is not yet a physical decomposition. The two terms may not be independent, additive, measurable, or uniquely identifiable. The expression is only a reminder that the concepts differ.
+
+[quote]
+The same transition can be adaptive without being restorative, restorative without being currently adaptive, both, or neither.
+
+Convergence of body form under similar hydrodynamic constraints, for example, can be explained through adaptation and physical constraint. No previous shared target needs to be invoked.
+
+Conversely, if a system were shown to reconstruct a complex relational pattern that was not favored by the current environment and was not generated by known developmental or physical biases, a restorative interpretation would become more interesting. Even then, alternative explanations would have to be eliminated first.
+
+== Evolutionary Direction Does Not Exclude Restoration
+
+A further distinction is important.
+
+An evolutionary arrow, vector, or persistent direction of change does not by itself contradict restoration.
+
+The common opposition between “forward evolution” and “return” is too crude. A trajectory can move irreversibly through new states while at the same time approaching a structural class that resembles, reconstructs, or partially recovers an earlier configuration.
+
+In generic ordered form:
+
+[stem]
+++++
+C_0 \prec C_1 \prec C_2 \prec \cdots \prec C_n
+++++
+
+may describe an irreversible sequence under the ordering parameter \(\lambda\), while some selected structural distance to a reference class decreases:
+
+[stem]
+++++
+d_E(C_n,C_0) < d_E(C_{n-1},C_0)
+++++
+
+for an explicitly defined relation or metric \(E\).
+
+This does not imply reversal of the ordered evolutionary trajectory, nor movement toward an earlier value of metric time \(\tau\).
+
+It means that *direction in ordered evolution* and *distance from a reference structural class* are different concepts. A trajectory may remain directed under \(\lambda\), or pass through successive regimes \(q\), while structural distance to a reference class decreases. No backward motion in metric time is required or implied.
+
+The same distinction can be expressed qualitatively:
+
+[quote]
+A system may move forward in its history while moving closer to a previously instantiated structural equivalence class.
+
+Under the weak form, this may happen because constraints repeatedly channel the system toward similar solutions.
+
+Under the medium form, it may happen because an attractor or privileged region makes certain structures repeatedly accessible.
+
+Under the strong speculative form, it may happen because incomplete preservation biases later evolution toward reconstruction of some properties of a preceding configuration.
+
+The word “remember” is therefore permissible only as metaphor unless a preservation mechanism is identified.
+
+A more disciplined formulation is:
+
+[quote]
+Evolutionary direction may coexist with restorative tendency when the system's ordered trajectory remains irreversible while selected structural relations converge toward a previously instantiated or structurally privileged configuration.
+
+This also prevents an important teleological mistake. A directional evolutionary vector does not require a conscious goal, a future cause, or a pre-written endpoint. Direction may emerge from asymmetric transition rules, selection, constraints, attractors, preservation structures, or combinations of them.
+
+In the canonical terminology of this series, the direction may be expressed along \(\lambda\) or across regimes \(q\), while metric duration remains \(\tau\). No identification of direction with elapsed metric time, and no relation \(q=f(\tau)\), is implied.
+
+== Replication, Expansion, and the Limits of a Single-Objective Model
+
+A second philosophical intuition concerns the language of replication itself.
+
+It is tempting to describe evolution as if replicators had one simple objective:
+
+[quote]
+Make as many copies as possible and expand as far as possible.
+
+That description is useful only as a rough metaphor.
+
+Established evolutionary biology does not assign organisms or genes a single conscious goal. More importantly, even as an optimization analogy, unrestricted short-term copying is too simple to capture the observed dynamics.
+
+Inbreeding illustrates the problem.
+
+Close relatives are more likely to share deleterious recessive variants inherited from common ancestors. Increased homozygosity can therefore expose variants that remain masked in heterozygous individuals, producing inbreeding depression in survival, fertility, or other components of fitness. <<charlesworth-willis>>
+
+This creates a tension with any naive “copy at maximum local rate” model.
+
+A small expanding group may gain an immediate demographic advantage from reproducing with the nearest available partners, including relatives. Yet repeated close inbreeding can reduce descendant fitness and erode genetic diversity. Conversely, dispersal and gene flow can impose short-term costs while reducing kin competition or inbreeding risk and reconnecting genetic variation across populations. <<ronce-dispersal>>
+
+The important point is not that organisms universally avoid relatives.
+
+They do not.
+
+A large meta-analysis of experimental studies in diploid animals found little support for universal kin avoidance and showed that unbiased mating with respect to relatedness is common; under some conditions, mating with kin may even carry inclusive-fitness benefits. <<deboer-inbreeding>>
+
+The stronger observation is therefore:
+
+[quote]
+Expansion and reproductive success are governed by trade-offs, not by an unconstrained command to maximize immediate copying.
+
+Colonization makes this especially visible.
+
+New populations commonly pass through founder events in which only a subset of the source population's genetic diversity establishes the new population. Successful colonization can therefore coexist with reduced diversity, bottlenecks, inbreeding, purging, later gene flow, and expansion load. <<founder-effects>><<invasion-dynamics>>
+
+Human global expansion itself has been modeled as a sequence of founder events accompanied by a decline in heterozygosity with geographic distance, although demographic history is more complex than any single model. <<human-expansion>>
+
+Thus colony formation does not imply indefinite mating within a genetically closed local cluster.
+
+A colony may be spatially cohesive while remaining genetically dynamic through:
+
+* dispersal;
+* immigration;
+* exogamy or outcrossing;
+* recombination;
+* mutation;
+* population fusion;
+* asymmetric sex-biased movement;
+* episodic gene flow.
+
+This suggests a more careful philosophical question:
+
+[quote]
+If evolutionary dynamics were reducible to the single objective of maximizing immediate replication, why do mechanisms and trade-offs repeatedly appear that sacrifice local reproductive opportunity, local cohesion, or short-term efficiency in ways that preserve or increase longer-horizon lineage viability?
+
+Established evolutionary theory already offers answers: selection acts through differential reproductive success across generations; deleterious load matters; kin competition matters; dispersal has both costs and benefits; and fitness is context-dependent.
+
+Therefore this observation is *not* evidence by itself for restorative evolution.
+
+Its value for the present hypothesis is different.
+
+It warns against reducing the evolutionary vector to one scalar objective such as “more copies.”
+
+A lineage can expand geographically while preserving diversity through movement and mixing.
+
+It can increase short-term copy number while decreasing long-term viability.
+
+It can accept local reproductive cost to reduce inbreeding risk.
+
+It can also tolerate substantial inbreeding when ecological or demographic conditions make that strategy favorable.
+
+The relevant evolutionary dynamics are therefore multi-constraint and history-dependent.
+
+This creates room for a stronger speculative question:
+
+[quote]
+Could some of the apparent “restraints” on unrestricted replication be interpreted, under the strong restorative hypothesis, as preservation of a wider structural capacity rather than optimization of immediate copy count alone?
+
+That question must remain conditional.
+
+The ordinary explanation is already powerful: natural selection can favor traits that increase long-run reproductive success even when they reduce some immediate opportunities.
+
+A restorative account would add explanatory value only if it identified a preserved structural target or equivalence class that predicts such trade-offs more specifically than ordinary population genetics and life-history theory do.
+
+In that sense, inbreeding is not a contradiction of evolutionary expansion.
+
+It is a useful example of why *expansion*, *replication*, *local reproductive rate*, *genetic diversity*, and *lineage persistence* must not be treated as the same variable.
+
+=== Mate Choice as Indirect Biological and Cultural Filtering
+
+Human mating makes the same point from another direction.
+
+People do not choose partners randomly. Human populations show assortative mating across multiple traits, and genomic studies can sometimes detect correlations consistent with phenotype-mediated mate choice. <<yengo-mate-choice>>
+
+It would nevertheless be misleading to say that an organism visually “reads another organism's DNA.”
+
+Mate choice acts on observable or otherwise detectable cues: morphology, behavior, odor, health-related signals, age, status, familiarity, similarity, social compatibility, and culturally mediated traits. Those cues may correlate partly with genotype, but they also reflect development, environment, learning, social structure, and culture.
+
+The philosophically relevant fact is therefore not direct genetic decoding.
+
+It is that reproduction is filtered through a multilayer evaluation system rather than occurring indiscriminately whenever reproduction is physically possible.
+
+If the only effective objective were immediate expansion, indiscriminate mating could look superficially sufficient.
+
+Observed biology is more structured.
+
+Sexual selection, mate competition, mate preference, compatibility, kin structure, developmental history, and social rules all influence which potential reproductive pairings actually occur.
+
+In humans, culture can amplify, redirect, or suppress biologically available pairings. Models of gene–culture coevolution have shown that avoidance of close-kin mating can in principle emerge through interactions between inbreeding depression, inherited predispositions, and culturally transmitted rules rather than requiring conscious genetic reasoning. <<durham-incest>>
+
+This matters because a prohibition or preference does not have to be purely “biological” or purely “cultural.”
+
+The relevant system can be coupled:
+
+[stem]
+++++
+\text{biological predispositions}
+\leftrightarrow
+\text{development}
+\leftrightarrow
+\text{social learning}
+\leftrightarrow
+\text{cultural norms}
+\leftrightarrow
+\text{reproductive outcomes}
+++++
+
+Such coupling is already compatible with ordinary gene–culture coevolution.
+
+It does not establish a restorative mechanism.
+
+But it weakens any model that treats replication as a context-free scalar command.
+
+=== The Environment Is Not an Agent, and Biology Need Not Mirror Its Harshness
+
+A related intuition concerns the apparent contrast between environmental filtering and biological care.
+
+The phrase “the environment is cruel” is understandable phenomenologically but should not be literalized.
+
+An environment does not possess a moral character or intention. It imposes conditions under which some organisms survive and reproduce and others do not.
+
+Likewise, natural selection is not an agent that seeks to eliminate every damaged, atypical, or low-fitness individual.
+
+Selection changes frequencies through differential survival and reproduction. It does not logically require organisms to reproduce that filtering process behaviorally by killing or abandoning every vulnerable member.
+
+This distinction becomes especially important in social species.
+
+Humans and other social organisms can construct protected local environments through parental care, food sharing, coalition formation, reciprocal assistance, medical behavior, shelter, and institutions.
+
+Human cooperation is extensively documented, and evolutionary explanations include kin selection, direct and indirect reciprocity, mutual dependence, multilevel processes, and cultural evolution. <<burtsev-turchin>><<hilbe-reciprocity>><<aktipis-interdependence>>
+
+Therefore compassion, protection, and maintenance of vulnerable individuals do not place biology “outside” nature.
+
+They are themselves biological and cultural processes occurring within nature.
+
+But they have a consequence relevant to the present argument:
+
+[quote]
+Living systems can locally reduce the severity of external filtering by constructing conditions in which states that would otherwise be eliminated remain viable.
+
+That is a preservation phenomenon in the broad sense.
+
+A social system can preserve individuals, phenotypes, knowledge, and relationships that a harsher local environment might otherwise remove.
+
+This should not be confused with evidence for the strong Restorative Evolution Hypothesis.
+
+Ordinary evolutionary theory can explain why cooperation and care may increase inclusive fitness, reciprocity, group persistence, offspring survival, reputation, or mutual dependence.
+
+Yet conceptually it reveals something important.
+
+Evolution does not merely expose organisms to selection.
+
+Organisms also modify the effective selection environment around themselves.
+
+They build nests, regulate temperature, store food, protect offspring, cooperate, transmit knowledge, construct institutions, and eventually build medicine and technology.
+
+The resulting trajectory is therefore not simply:
+
+[stem]
+++++
+\text{environment}
+\rightarrow
+\text{selection}
+\rightarrow
+\text{replication}
+++++
+
+but can include feedback:
+
+[stem]
+++++
+\text{organism}
+\rightarrow
+\text{environment modification}
+\rightarrow
+\text{changed preservation conditions}
+\rightarrow
+\text{changed evolutionary possibilities}
+++++
+
+For the restorative hypothesis, this suggests a sharper speculative question:
+
+[quote]
+Could increasing biological and cultural capacity to preserve vulnerable, rare, or otherwise transient states be part of a broader tendency toward preservation of structural possibility rather than merely elimination of locally inferior variants?
+
+Again, the established null explanations come first.
+
+A restorative interpretation would become scientifically distinctive only if it predicted which structures are preferentially preserved, reconstructed, or recovered beyond what cooperation theory, kin selection, cultural transmission, and niche construction already predict.
+
+== Observation, Tension, Intuition, and Speculation
+
+The preceding examples should not be presented as anomalies merely because they resist an intuitive story.
+
+A disciplined version of the argument must separate four epistemic layers.
+
+=== Observation
+
+An observation is something the system actually presents to us: mate choice is structured rather than universally random; inbreeding can impose fitness costs; populations retain variation; organisms alter their environments; social systems protect some individuals and states that would otherwise be more exposed to environmental filtering; biological and cultural inheritance interact.
+
+These observations belong to ordinary science.
+
+=== Tension with a Simplified Model
+
+The observations may fit poorly with an intentionally simplified model such as:
+
+[quote]
+Evolution is nothing more than immediate maximization of copy number and territorial expansion.
+
+The failure of that simplified model is not evidence that established evolutionary theory fails.
+
+Established evolutionary theory is already richer than that model.
+
+It includes frequency-dependent effects, trade-offs, sexual selection, kin selection, drift, population structure, recombination, developmental constraints, ecological feedback, niche construction, and multigenerational fitness consequences.
+
+Therefore the intellectually legitimate tension is not:
+
+[quote]
+Biology contradicts evolution.
+
+It is:
+
+[quote]
+Some common intuitive descriptions of evolution are much poorer than the biological dynamics they attempt to summarize.
+
+=== Intuition
+
+The restorative intuition begins only after this correction.
+
+One may notice that several biological processes can be described as preserving possibility, reassembling dispersed variation, recovering function after perturbation, or maintaining structures that immediate local filtering might otherwise remove.
+
+That resemblance motivates a question.
+
+It does not establish an answer.
+
+=== Strong Speculation
+
+The strong hypothesis asks whether some of those preservation and recombination processes are not only adaptive but also biased toward reconstruction of a prior or structurally privileged class.
+
+This is where evidence is currently absent.
+
+The role of the hypothesis is therefore to generate discriminating questions rather than to convert intuition into fact.
+
+== Distributed Restorative Information
+
+The strongest extension considered in this article is that the information relevant to restoration might not be contained in any single individual genome.
+
+Let a candidate restorative reference be denoted by:
+
+[stem]
+++++
+C^{*}
+++++
+
+This object should not initially be identified with one nucleotide sequence.
+
+It may instead denote a structural equivalence class: a developmental organization, regulatory architecture, functional configuration, or higher-order biological state.
+
+A population may then contain a distributed set of heritable configurations:
+
+[stem]
+++++
+P = \{G_1,G_2,\ldots,G_n\}
+++++
+
+Ordinary population genetics interprets this as genetic variation distributed across individuals and lineages.
+
+The speculative extension asks whether:
+
+[quote]
+the population could also function as a distributed reservoir of reconstructive possibility relative to a reference class \(C^{*}\).
+
+This possibility must be distinguished from the trivial claim that genetic diversity increases the range of available future combinations.
+
+The strong claim would require evidence that recombination, mate choice, developmental dynamics, or another mechanism produces movement toward a specified reference structure more often than expected from known selection, compatibility, demographic history, and recombination alone.
+
+The phrase “God genome” may be used as a philosophical metaphor for such a reference only with extreme caution.
+
+It does not denote a theological entity, a perfect individual genome, or an established ancestral sequence.
+
+A safer technical expression is:
+
+[quote]
+distributed restorative information
+
+or, where the genetic carrier is specifically under discussion:
+
+[quote]
+distributed restorative genomic capacity.
+
+The distinction matters because the target of restoration may reside above the sequence level.
+
+Different genomes may produce states that are non-identical at the nucleotide level while remaining equivalent under a selected structural relation:
+
+[stem]
+++++
+G_A \neq G_B,
+\qquad
+E_R(C(G_A),C(G_B)) = \mathrm{true}
+++++
+
+This is consistent with Dynamic Non-Identity.
+
+Restoration need not mean literal sequence recovery.
+
+== The Embedded-Biology Thought Experiment
+
+A stronger philosophical thought experiment can now be stated.
+
+Suppose a containing system \(S\) undergoes an experiment or structured process in which biological material becomes part of the system.
+
+At least two distinct branches must remain open.
+
+In one branch, biology is intentionally included because the experiment itself concerns biological combinations, reconstruction, preservation, or the search for viable configurations.
+
+In another branch, biology enters contingently and becomes coupled to a process that was not designed around it.
+
+The hypothesis does not currently privilege either branch.
+
+This is not proposed as cosmology.
+
+It is a boundary-case thought experiment designed to clarify what the Restorative Evolution Hypothesis would have to explain.
+
+The biological subsystem can be denoted:
+
+[stem]
+++++
+B \subset S
+++++
+
+The key question is then not merely whether \(B\) adapts to \(S\).
+
+It is whether \(B\), after damage, fragmentation, or incomplete transmission, could retain enough distributed structure to reconstruct some relation to a prior biological configuration \(C^{*}\).
+
+This immediately generates two sharply different scenarios.
+
+=== Scenario A: A Biological Population or Mass Was Introduced
+
+Suppose the introduced material already contained substantial biological diversity:
+
+[stem]
+++++
+\{G_1,G_2,\ldots,G_k\}_{source}
+\rightarrow
+S
+++++
+
+In that case, distributed restorative information could in principle be inherited from the source population itself.
+
+Later recombination and selection would operate on a reservoir that was already plural.
+
+The strong restorative hypothesis would then ask whether some apparently novel configurations are reconstructions assembled from fragments, alleles, regulatory structures, or higher-order biological capacities already distributed across that source reservoir.
+
+This scenario is conceptually compatible with distributed preservation.
+
+It is still speculative because no such external introduction has been established.
+
+=== Scenario B: A Single Minimal Seed Was Introduced
+
+Now suppose instead that only one minimal biological seed entered the containing system:
+
+[stem]
+++++
+G_0 \rightarrow S
+++++
+
+This is a much harder case for the distributed-memory hypothesis.
+
+If all later diversity descends from a genuinely minimal initial genome, then present distributed variation cannot simply be treated as fragments of many distinct source genomes.
+
+The hypothesis would need one or more additional mechanisms:
+
+* substantial information already encoded redundantly or implicitly in \(G_0\);
+* variation generated after introduction by mutation, duplication, recombination within available variation, mobile elements, or other ordinary mechanisms;
+* a developmental state space whose structure allows recovery of forms not explicitly enumerated in sequence;
+* an additional preservation channel outside the individual genome;
+* or a stronger and presently unsupported source of inherited information.
+
+This distinction is important because it prevents the hypothesis from moving information into the past without accounting for its carrier.
+
+[quote]
+A restoration hypothesis must explain not only what is reconstructed, but where the reconstructive information survived.
+
+== The External Observer as a Separate Extension
+
+The canonical observer model in this research program is deliberately internal:
+
+[stem]
+++++
+O \subset S
+++++
+
+The observer, clock, records, memory, and measuring apparatus all belong to the containing system.
+
+The finite-observer article explicitly avoids requiring a perfect observer outside the system.
+
+That baseline should remain intact.
+
+However, the contaminated-system thought experiment permits a separate extension.
+
+If \(S\) were itself embedded in a larger system \(S_{ext}\), then one may define only hypothetically:
+
+[stem]
+++++
+S \subset S_{ext},
+\qquad
+O_{ext} \subset S_{ext},
+\qquad
+O_{ext} \not\subset S
+++++
+
+An external observer in this sense would not be a metaphysical viewpoint outside all reality.
+
+It would simply be an observer external to the subsystem \(S\) while remaining internal to some larger containing reality.
+
+This distinction is essential.
+
+The existence of \(O_{ext}\) does not follow from the existence of internal observers.
+
+Nor does the Restorative Evolution Hypothesis require \(O_{ext}\).
+
+But if the biological material entering \(S\) originated in \(S_{ext}\), then a biological external observer or source population becomes one logically possible branch of the thought experiment.
+
+Two causal possibilities should remain distinct.
+
+First, the biological subsystem may have been intentionally introduced because the external system was itself investigating preservation, reconstruction, or biological combinatorics.
+
+Second, biological material may have entered contingently and only later become coupled to the internal process.
+
+If the introduced biology already carries inherited constraints, search biases, or unresolved restorative problems, the intentional branch becomes especially interesting: the experiment could represent a continuation of a problem already present in the external biological lineage rather than the accidental appearance of a wholly new problem inside \(S\).
+
+That possibility remains speculative and does not eliminate the contingent branch.
+
+The branch structure raises questions rather than answers:
+
+* Was biological material introduced intentionally, contingently, or through a process in which that distinction is itself incomplete?
+* Was a population introduced, or a single seed?
+* Did the source biological system already contain the reference structure?
+* Is the later biological trajectory inside \(S\) adaptation to a new environment, reconstruction after damage, or both?
+* Would an external observer classify changes differently from an observer embedded in \(B\)?
+* What information could remain inaccessible to internal observers because all their records and comparison procedures are themselves products of \(S\)?
+
+No empirical evidence is presently supplied for such an external observer.
+
+The scenario therefore remains philosophical.
+
+== Relation to System Tempo and Metric Time
+
+The thought experiment becomes especially delicate when connected to System Tempo.
+
+The canonical distinctions remain:
+
+[stem]
+++++
+\lambda = \text{generic ordering parameter}
+++++
+
+[stem]
+++++
+q = \text{System Tempo regime coordinate}
+++++
+
+[stem]
+++++
+\Gamma(q) = \text{internal tempo associated with regime }q
+++++
+
+[stem]
+++++
+\tau = \text{metric clock time}
+++++
+
+and no relation
+
+[stem]
+++++
+q=f(\tau)
+++++
+
+is assumed.
+
+If biological restoration occurs inside \(S\), an internal biological observer measures history through the clocks, records, signals, and resolution available inside the same containing reality.
+
+The observer therefore cannot simply compare its own metric time with a hypothetical external master clock.
+
+That would recreate the error already excluded by the System Tempo framework.
+
+An external observer \(O_{ext}\), if one existed, might possess access to relations unavailable to \(O\), but this does not automatically make \(O_{ext}\)'s clock ontologically fundamental.
+
+It only changes the observational relation.
+
+The careful question is therefore:
+
+[quote]
+Could a biological subsystem appear to an internal observer as slowly accumulating novelty through metric time \(\tau\), while a description based on structural ordering \(\lambda\), system regime \(q\), or an external relation reveals a different organization of the same transitions?
+
+This question does not assert that the answer is yes.
+
+It connects the restorative hypothesis to the existing distinction between causal history, metric chronology, system regime, and observer-relative distinguishability.
+
+The finite-observer framework supplies an additional warning.
+
+Present observers do not possess direct access to the whole past.
+
+They possess present records of prior states.
+
+Therefore a claim that a biological system is “remembering” a source configuration cannot be justified merely because current structures can be narratively connected to a hypothetical origin.
+
+The preservation channel must be identified.
+
+== Cultural Memory and the Ark Motif
+
+The restorative hypothesis also suggests a cautious way to read certain cultural narratives.
+
+One example is the flood-and-ark motif.
+
+The biblical story of Noah preserves a striking image: a bounded vessel carries a selected scope of living diversity across a catastrophic discontinuity, after which life is re-established under changed conditions.
+
+Comparable flood-preservation narratives also appear in earlier Mesopotamian traditions, including the Eridu Genesis, Atrahasis, and the flood account associated with Utnapishtim in the Epic of Gilgamesh. This makes it methodologically unsafe to treat the Noah narrative as unique evidence for a hidden scientific event or a literal record of biological engineering.
+
+Its value here is different.
+
+It can be examined as a cultural artifact that compresses a recurring structural intuition:
+
+[source,text]
+----
+catastrophic transition
+        |
+        v
+bounded preservation vessel
+        |
+        v
+selected biological scope
+        |
+        v
+transfer across discontinuity
+        |
+        v
+re-establishment under altered conditions
+----
+
+The important term is not necessarily “species.”
+
+The preserved scope could be interpreted, purely philosophically, as:
+
+* organisms;
+* reproductive pairs;
+* lineages;
+* biological diversity;
+* combinatorial potential;
+* inherited information;
+* or a symbolic minimum sufficient for reconstruction after transition.
+
+This does not imply that the ancient narrative encoded genetics, state-space theory, System Tempo, or a literal transfer between physical regimes.
+
+Those would be retrospective projections unless independently supported.
+
+The narrower question is whether stories of this kind may preserve, in symbolic form, an intuition that survival through catastrophic transition requires preserving not merely biomass, but a sufficiently rich scope of biological possibility.
+
+Under that reading, the ark is not primarily a vehicle moving through metric time.
+
+It is a preservation boundary.
+
+Its abstract function is:
+
+[stem]
+++++
+\mathcal{A}: P_{before} \rightarrow P_{after}
+++++
+
+where \(P\) denotes a selected preserved scope and the transition need not initially be parameterized by metric time \(\tau\).
+
+The relevant change may instead be described as movement between system states, regimes, or conditions:
+
+[stem]
+++++
+q_a \rightarrow q_b
+++++
+
+or more generically:
+
+[stem]
+++++
+S_a \prec S_b
+++++
+
+under an ordering parameter \(\lambda\).
+
+This formulation avoids saying that the vessel “travels to another time.”
+
+The claim is only that a preserved scope crosses a system discontinuity and becomes available under another state of the containing system.
+
+This connects naturally to the Restorative Evolution Hypothesis.
+
+If a destructive transition removes most accessible biological structure but preserves a bounded subset, then later history may combine two processes:
+
+[stem]
+++++
+\text{adaptation to }S_b
++
+\text{reconstruction from preserved }P
+++++
+
+The cultural narrative cannot tell us whether such a physical process actually occurred.
+
+But it can serve as a comparative artifact for a broader philosophical question:
+
+[quote]
+Do different symbolic traditions sometimes encode the same structural intuition — that continuity across a destructive transition depends on preserving a sufficiently rich set of relations, combinations, or living possibilities?
+
+The answer may be entirely cultural.
+
+Flood narratives can arise through historical flooding, oral transmission, theological interpretation, narrative convergence, and ordinary human concern with catastrophic survival.
+
+Therefore similarity among narratives is not evidence of a common hidden physical mechanism.
+
+Yet the motif is useful precisely because it separates two ideas often conflated in literal readings:
+
+* preservation of current organisms;
+* preservation of the possibility of reconstruction after the transition.
+
+The second is the concept relevant to this research program.
+
+== A Hierarchy of Questions
+
+The full speculative chain can now be ordered without treating all claims as equally credible:
+
+[source,text]
+----
+Observed biological structure
+        |
+        v
+Known evolutionary explanation
+        |
+        v
+Residual tension, if any
+        |
+        v
+Preservation / reconstruction interpretation
+        |
+        v
+Distributed restorative information?
+        |
+        v
+Prior biological source?
+        |
+        v
+Population seed or single seed?
+        |
+        v
+Intentional biological experiment or contingent inclusion?
+        |
+        v
+Containing system inside a larger system?
+        |
+        v
+External biological observer or source?
+----
+
+Each downward step adds assumptions.
+
+None should be inferred merely because the previous step is conceivable.
+
+This hierarchy is useful precisely because intuition can otherwise collapse all levels into one story.
+
+The research discipline should move in the opposite direction:
+
+[quote]
+Start from observations, exhaust ordinary explanations, identify the remaining structural question, and only then introduce the minimum additional hypothesis required.
+
+== Weak, Medium, and Strong Forms
+
+The Restorative Evolution Hypothesis must be separated into claim levels.
+
+=== Weak Form: Constraint-Driven Recurrence
+
+The weak form states:
+
+[quote]
+Similar constraints, objective functions, developmental architectures, and physical laws can repeatedly generate similar solutions without inherited memory of a prior instance.
+
+This form is already close to established science.
+
+Convergent evolution demonstrates repeated acquisition of similar traits in separate lineages. <<allard-kumar>> Developmental bias shows that some phenotypic variants arise more readily because of the architecture of development. <<uller-developmental-bias>> Morphogenesis can arise through combinations of genetic instruction, mechanics, geometry, local interaction, and self-organization rather than from a literal complete blueprint. <<collinet-lecuit>>
+
+The same logic applies outside biology. If a problem has a narrow feasible solution set, independent engineers may repeatedly discover similar designs. If a mathematical structure has objective internal constraints, independent researchers may derive the same theorem without sharing memories.
+
+Under the weak form, “restoration” is mostly an interpretive analogy. It adds little unless it sharpens the description of recurrence.
+
+=== Medium Form: Structurally Privileged State-Space Regions
+
+The medium form states:
+
+[quote]
+The accessible state space may contain attractors, robust manifolds, developmental biases, or preservation structures that make certain configurations disproportionately recoverable after perturbation or partial loss.
+
+Here restoration does not require literal memory of a previous organism, civilization, or system.
+
+The relevant bias may be distributed across interaction rules, boundary conditions, network topology, geometry, material properties, conserved developmental pathways, environmental regularities, feedback loops, or attractor structure.
+
+A system can then “return” toward a configuration because its dynamics make that region stable or repeatedly accessible.
+
+This is familiar in dynamical-systems language. An attractor does not need to remember a previous trajectory. Multiple initial conditions may converge toward the same recurrent region because of the system's transition structure.
+
+Likewise, modern developmental biology combines instructed and self-organized pattern formation. Morphogenesis can arise through localized cues together with reaction-diffusion, mechanical feedback, collective cellular interaction, and other self-organizing processes. <<bruckner-patterning>><<collinet-lecuit>>
+
+In this medium form, “restoration” means return toward a structurally privileged region, not recovery of a historically prior token.
+
+=== Strong Speculative Form: Reconstruction from Inherited Prior Structure
+
+The strong form states:
+
+[quote]
+A system may inherit incomplete information, constraints, boundary conditions, or structural bias from a preceding or parent system, such that later evolution partly reconstructs structural features that were previously instantiated.
+
+This claim is speculative.
+
+It requires more than recurrence.
+
+It requires evidence that some relevant structure is transmitted or preserved across the transition in a way not adequately explained by ordinary heredity, known developmental constraints, physical convergence, cultural transmission, or optimization.
+
+The preserved element need not be molecular DNA. In principle it could be a boundary condition, persistent relational architecture, non-genetic inheritance channel, environmental structure, constrained transition grammar, stable informational relation, or higher-level organization inherited by a successor system.
+
+But naming such possibilities is not evidence that they exist.
+
+The strong form therefore carries the highest burden of proof.
+
+== State-Space and Attractor Interpretation
+
+A disciplined formulation begins with state space rather than with memory.
+
+Let the accessible configuration space of a system be:
+
+[stem]
+++++
+\mathcal{C}
+++++
+
+and let \(C(\lambda) \in \mathcal{C}\) represent a configuration along a generic ordered evolution parameter \(\lambda\).
+
+Some regions of \(\mathcal{C}\) may be easier to reach than others. Some may be dynamically stable. Some may be unreachable because of physical, developmental, or historical constraints.
+
+Suppose a region \(A \subset \mathcal{C}\) attracts a nontrivial set of trajectories:
+
+[stem]
+++++
+C(\lambda_0) \in B(A)
+\Rightarrow
+C(\lambda) \rightarrow A
+++++
+
+where \(B(A)\) is a basin of attraction in an appropriate model.
+
+Nothing here implies historical restoration. This is ordinary dynamical-systems language.
+
+The restorative interpretation begins only if a configuration class associated with \(C_0\) is also represented by \(A\), and if there is a reason to believe that the relation is historically inherited rather than merely generated by the same laws and constraints.
+
+This yields three distinct cases:
+
+[source,text]
+----
+same constraints
+    -> similar solution
+    -> ordinary convergence
+
+state-space attractor
+    -> repeated return to privileged region
+    -> attractor-driven recurrence
+
+preserved prior structure
+    -> biased reconstruction of prior equivalence class
+    -> strong restorative hypothesis
+----
+
+The third case must never be inferred merely because the first two are visually impressive.
+
+== Replicators, DNA, and the Limits of Literal Memory
+
+DNA is established biological replication machinery. It carries heritable sequence information, participates in development through regulatory systems, and changes through known evolutionary processes.
+
+The Restorative Evolution Hypothesis does not require DNA to contain a hidden complete description of an external or ancestral ideal organism.
+
+Contemporary developmental biology also argues against simplistic blueprint language. Morphogenesis depends on gene regulation, biochemical signaling, mechanics, geometry, cell interactions, feedback, and self-organization. <<collinet-lecuit>>
+
+Four possibilities must therefore be kept separate.
+
+=== DNA as Ordinary Biological Replication Machinery
+
+This is established science. Sequence inheritance, variation, development, and selection are sufficient to explain a vast range of evolutionary phenomena.
+
+=== Replication as a Local Implementation of Deeper State-Space Bias
+
+This is an interpretive possibility.
+
+One may ask whether replicating systems exploit regularities that make some complex configurations more stable or generable than others. But such regularities could be entirely physical and need no hidden memory.
+
+=== Attractors Encoded by Physical and Chemical Constraints
+
+This is compatible with ordinary science.
+
+Reaction kinetics, mechanics, geometry, membrane properties, gene-regulatory networks, and feedback can create stable patterns and recurrent developmental outcomes.
+
+Bioelectric signaling is one scientifically active example of non-genetic pattern regulation. It should be discussed in concrete mechanistic terms — membrane potentials, ionic currents, tissue signaling, and morphogenesis — rather than as an undefined “morphogenetic field.” <<nunes-barriga>>
+
+=== Hypothetical Inherited Information Beyond DNA
+
+This is the speculative branch.
+
+Any claim of an additional inheritance channel must identify a carrier, preservation mechanism, measurable consequences, and a reason the effect is not already explained by known genetic, epigenetic, ecological, cultural, or developmental inheritance.
+
+Without that, “hidden memory” is an empty label.
+
+== Discovery as Recognition
+
+There is a phenomenological intuition worth separating from a scientific claim:
+
+[quote]
+Discovery can feel like recognition.
+
+Mathematical relations often present themselves as if they were “already there.” Independent researchers may discover the same structure. Engineers may converge on similar decompositions. Biological lineages may independently evolve similar functions.
+
+Plato's doctrine of anamnesis provides an old philosophical analogy: learning as recollection. It belongs here only as analogy, not as biological evidence. <<plato-anamnesis>>
+
+Three explanations must again be distinguished.
+
+. *Ordinary convergence:* the problem and constraints are similar, so independent search finds similar answers.
+. *Attractor-driven convergence:* the search landscape strongly channels trajectories into particular structural regions.
+. *Actual restoration:* some relevant information about a prior configuration is preserved and causally contributes to reconstruction.
+
+The first is common. The second is plausible in many formal and physical systems. The third requires specific evidence.
+
+Independent discovery in mathematics is therefore not evidence by itself that mathematicians share inherited memories. It is consistent with the simpler explanation that mathematical objects and proof constraints sharply restrict successful solutions.
+
+The same caution applies to recurring abstraction layers in computation. Hierarchy, modularity, interfaces, redundancy, caching, representation, and feedback may recur because they solve recurring optimization and coordination problems.
+
+== Technology as Reconstruction of Capability
+
+Under ordinary cultural-evolution accounts, technology accumulates through transmission, modification, recombination, selection, loss, and rediscovery. Human cumulative culture preserves and transforms know-how across generations, while path dependence makes later cultural states depend on earlier ones. Gene–culture coevolution further shows that cultural practices can modify selection pressures without requiring any deeper restorative mechanism. <<andersson-tennie>><<cultural-systems>><<laland-gene-culture>>
+
+The strong restorative hypothesis permits an additional interpretation:
+
+[quote]
+Some technological development could be described as iterative reconstruction of capability rather than only invention of unprecedented capability.
+
+A tempting sequence is:
+
+[source,text]
+----
+matter
+  -> energy
+  -> signal
+  -> information
+  -> computation
+  -> modeling
+  -> autonomous intelligence
+----
+
+This sequence must not be presented as a proven historical law, a necessary ladder, or evidence of cosmic purpose.
+
+It is better treated as a candidate abstraction for asking whether technological systems repeatedly externalize increasingly general control over transformation, representation, prediction, and action.
+
+Under the weak interpretation, the sequence reflects cumulative engineering and cultural evolution.
+
+Under the medium interpretation, optimization landscapes and material constraints may favor recurring architectural principles.
+
+Under the strong interpretation, the sequence could be read as reconstruction of previously instantiated capabilities. That final interpretation adds a historical claim and therefore requires historical or structural evidence not supplied by the sequence itself.
+
+Ancient monumental architecture may be mentioned only in the same disciplined way. Durable monuments show that civilizations externalize knowledge, coordination, geometry, labor organization, and symbolic meaning into persistent artifacts. They do not by themselves demonstrate lost high technology, external knowledge sources, or an inherited technological blueprint.
+
+== System Tempo and Why Metric Duration Is Not Enough
+
+The Restorative Evolution Hypothesis must preserve the canonical distinction among System Tempo, regime coordinate, generic ordering, and metric time.
+
+This corpus uses:
+
+* \(q\) as the system-regime coordinate;
+* \(\Gamma(q)\) as System Tempo within regime \(q\);
+* \(\lambda\) as a generic ordering or evolution parameter when no clock is required;
+* \(\tau\) as metric time: clocks, seconds, years, laboratory durations, radiometric ages, and standard scientific chronology.
+
+No relation
+
+[stem]
+++++
+q=f(\tau)
+++++
+
+is assumed.
+
+System Tempo is not the claim that “time itself runs faster or slower.”
+
+Metric chronology \(\tau\) may remain completely valid as internal metrology while not exhausting the ontology of the containing system.
+
+That distinction changes how reconstruction should be described.
+
+A biological lineage may occupy millions of years in metric chronology. A technological transition may occupy decades. A developmental event may occupy minutes. Those durations are real within metric metrology.
+
+But metric duration alone does not specify structural distance in configuration space.
+
+Two transitions can satisfy:
+
+[stem]
+++++
+\Delta \tau_1 \gg \Delta \tau_2
+++++
+
+while the second traverses a larger structural distance under a chosen state-space metric.
+
+Likewise, an ordered sequence
+
+[stem]
+++++
+C_0 \prec C_1 \prec C_2 \prec \cdots \prec C_n
+++++
+
+does not by itself assign equal durations between states.
+
+Therefore a long interval in \(\tau\) does not determine the ontological “length” of reconstruction along \(q\) or \(\lambda\).
+
+This permits a careful speculative question:
+
+[quote]
+Could a history that appears metrically long under internal chronology correspond, under a different regime description, to a comparatively compact sequence of structural transitions?
+
+The article does not answer yes.
+
+It only notes that the canonical framework forbids identifying metric duration with structural distance by definition.
+
+No mapping between \(q\) and \(\tau\) is introduced here.
+
+== Dynamic Non-Identity and Partial Restoration
+
+Dynamic Non-Absoluteness makes literal restoration especially difficult.
+
+If a configuration passes through different relations, perturbations, boundary conditions, material substrates, and histories, then exact identity cannot simply be assumed.
+
+Let \(E_R\) denote an explicitly selected restoration equivalence relation.
+
+Then the most defensible form of restoration is:
+
+[stem]
+++++
+E_R(C_0,C^{*}) = true
+++++
+
+under specified parameters.
+
+This does not imply:
+
+[stem]
+++++
+C_0 \equiv C^{*}
+++++
+
+in the sense of total dynamic identity.
+
+The distinction follows directly from the controlled vocabulary of Dynamic Non-Absoluteness:
+
+[quote]
+Equality is parameter-bound. Identity across an ordered evolution is condition-bound.
+
+Restoration therefore becomes a preservation problem.
+
+Which features of \(C_0\) survive transmission?
+
+Which features are reconstructed?
+
+Which are new?
+
+Which equivalence relation makes the comparison meaningful?
+
+Which preservation mechanism connects the reference configuration to the reconstructed state?
+
+If no preservation mechanism exists, the strong restoration claim loses its historical content and collapses toward convergence.
+
+This is a useful constraint, not a weakness.
+
+It forces the hypothesis to distinguish resemblance from equivalence, equivalence from identity, and recurrence from historical reconstruction.
+
+== Competing Explanations
+
+The hypothesis should always begin with established or less speculative explanations.
+
+=== Natural Selection and Convergent Evolution
+
+Natural selection can explain repeated adaptive solutions when similar selective pressures favor similar functions. Convergence directly explains independent acquisition of similar traits and can operate at phenotypic, molecular, and genetic levels. <<allard-kumar>>
+
+=== Developmental Bias and Evo-Devo
+
+Developmental systems do not generate all variants equally. Regulatory architectures can bias the directions in which evolution can move and can interact with natural selection rather than oppose it. <<uller-developmental-bias>>
+
+=== Self-Organization and Physical Constraint
+
+Pattern may emerge from local interaction and feedback without a centralized blueprint. Developmental biology explicitly studies the interaction between instructed and self-organized patterning. <<collinet-lecuit>><<bruckner-patterning>>
+
+Material properties and geometry also restrict viable forms and can independently generate similar structures.
+
+=== Optimization
+
+If multiple systems optimize similar objective functions under similar constraints, similar architectures may emerge without inheritance from a common prior configuration.
+
+=== Cultural Transmission
+
+Human technology and knowledge are genuinely inherited through social learning, artifacts, institutions, language, and cumulative culture. That is already a powerful restoration-like mechanism in the ordinary sense: societies can lose and later reconstruct techniques from surviving records.
+
+=== Information and Compression
+
+Algorithmic-information perspectives ask about description length, compressibility, regularity, and shared structure. Kolmogorov complexity and normalized information methods provide rigorous tools for comparing informational structure. <<li-vitanyi>>
+
+But compression does not imply historical memory.
+
+A compact description may reveal regularity or common structure without telling us whether one configuration was reconstructed from another.
+
+=== Teleonomy Rather Than Teleology
+
+Biology often uses function and goal-directed language without requiring future causes or conscious cosmic purpose. Philosophical treatments distinguish naturalized biological function and teleonomy from stronger teleological claims. <<sep-teleology>>
+
+The Restorative Evolution Hypothesis should therefore avoid replacing mechanistic explanations with purpose language.
+
+=== Process Philosophy
+
+Process philosophy is a conceptual neighbor because it treats becoming, change, and dynamic organization as fundamental. <<sep-process>>
+
+But process philosophy does not entail restoration. Many process traditions emphasize novelty.
+
+The present hypothesis asks a narrower question: whether some apparently novel trajectories may preserve or reconstruct structural equivalence classes.
+
+== What Would Count as Evidence?
+
+The weak and medium forms already overlap heavily with existing science. Evidence for convergence, developmental bias, or attractors is not automatically evidence for the strong form.
+
+Evidence for strong restoration would need an additional signature.
+
+Candidate signatures include:
+
+* reconstruction of a complex configuration not favored by current selection or optimization;
+* repeated convergence on high-dimensional relational structure that cannot be plausibly explained by common constraints;
+* recovery of information whose causal source is not present in currently known inheritance channels;
+* cross-domain structural invariants that are quantitatively specified in advance rather than noticed after the fact;
+* measurable preservation of a relation across a destructive or lossy transition where ordinary dynamics predicts its disappearance;
+* nontrivial predictions of future convergences derived from a prior reference structure;
+* informational correlations between purported source and reconstructed states exceeding what shared environment, common ancestry, or known transmission can explain.
+
+One useful direction is to define a restoration score only after a null model has been specified.
+
+For example:
+
+[stem]
+++++
+R_E(C_0,C^{*})
+++++
+
+could denote similarity under a declared equivalence relation \(E\), while
+
+[stem]
+++++
+P\big(R_E \ge r \mid H_0\big)
+++++
+
+would evaluate how surprising that similarity is under a null hypothesis \(H_0\) consisting of ordinary selection, developmental bias, self-organization, shared constraints, and known inheritance.
+
+This is still only a research template.
+
+Its methodological importance is simple:
+
+[quote]
+A restoration claim becomes scientifically interesting only when it predicts structure that the null models do not already predict.
+
+== Falsifiability and Failure Modes
+
+The strongest version fails if every observation can be redescribed as restoration after the fact.
+
+Therefore the hypothesis must expose itself to failure.
+
+Observations that would count against the strong form include:
+
+* apparent restorations disappearing once common constraints are modeled;
+* convergence being fully predicted by selection and developmental accessibility;
+* no identifiable transmission or preservation channel connecting source and reconstruction;
+* alleged invariants depending arbitrarily on the analyst's chosen representation;
+* restoration scores becoming insignificant after controlling for shared ancestry or shared environment;
+* strong prediction failure when the hypothesis is asked to forecast new convergences;
+* evidence that novelty routinely occupies state-space regions with no meaningful relation to any proposed prior configuration.
+
+Several failure modes must also be avoided.
+
+=== Retrofitting
+
+If the target configuration is selected only after observing the result, almost anything can be called reconstruction.
+
+=== Vague Similarity
+
+Visual resemblance is not enough. The relevant equivalence relation must be declared.
+
+=== Hidden Teleology
+
+Calling a later state “more complete” can silently introduce a goal. Completeness must be defined relative to explicit variables or capabilities.
+
+=== Memory Without a Carrier
+
+The phrase “the system remembers” should be treated as metaphor unless a storage or preservation mechanism is specified.
+
+=== Confusing Attractors with Historical Memory
+
+An attractor can generate return without remembering the past.
+
+=== Confusing Internal Chronology with Structural Distance
+
+A long duration in \(\tau\) neither proves nor disproves a compact structural trajectory in another description.
+
+=== Treating Unexplained as Evidence
+
+An unexplained pattern is not evidence for restoration. It is only a candidate anomaly.
+
+== Relation to Existing Literature
+
+The literature review changes the originality claim.
+
+Large parts of the weak and medium forms are already covered by established fields.
+
+Convergent evolution covers repeated independent acquisition of similar traits. <<allard-kumar>>
+
+Evo-devo and developmental-bias research covers unequal accessibility of phenotypes and the way developmental architecture channels evolutionary variation. <<uller-developmental-bias>>
+
+Self-organization and morphogenesis research covers the emergence of robust form from local interactions, mechanics, geometry, signaling, and feedback. <<collinet-lecuit>><<bruckner-patterning>>
+
+Bioelectric morphogenesis supplies one concrete mechanistic literature for tissue-level pattern regulation beyond sequence-level description, without requiring an undefined metaphysical morphogenetic field. <<nunes-barriga>>
+
+Dynamical-systems theory already provides attractors, basins, recurrence, stability, and state-space descriptions.
+
+Information theory and algorithmic-information theory already provide tools for quantifying statistical and descriptional structure. <<li-vitanyi>>
+
+Cultural evolution already explains cumulative transmission, loss, recombination, path dependence, and increasingly open-ended human cultural change. <<andersson-tennie>><<cultural-systems>><<morgan-feldman>>
+
+Philosophy of biology already distinguishes naturalized function and teleonomy from stronger forms of teleology. <<sep-teleology>>
+
+Process philosophy already offers a broad ontology in which becoming and process are primary. <<sep-process>>
+
+Biological structuralism is another close neighbor. Structuralist approaches emphasize developmental organization, generative constraints, bias, and the internal architecture of possible form rather than treating phenotypic diversification as a product of selection alone. Contemporary reviews generally frame structuralist and adaptationist explanations as potentially complementary rather than as mutually exclusive theories. <<brown-structuralism>>
+
+The sociology of scientific discovery supplies a non-mystical precedent for “recognition-like” recurrence. Merton's work on scientific multiples documented independent or near-independent discoveries and argued that accumulated prerequisite knowledge, tools, and focused attention can make some discoveries increasingly likely. Multiple discovery therefore supports a constraint-and-readiness explanation before any inherited-memory explanation. <<merton-multiples>>
+
+Technology and innovation studies likewise use _convergence_ for independently approaching scientific, technological, market, or industry domains. This literature shows that technological convergence is already an empirical research object and does not by itself imply restoration of a prior technological state. <<sick-broring>>
+
+Plato's anamnesis is a philosophical precursor to the intuition that discovery can resemble recollection, but it is not scientific evidence for inherited biological or cosmic memory. <<plato-anamnesis>>
+
+What, then, may remain distinctive?
+
+Not the idea of convergence.
+
+Not the idea of attractors.
+
+Not the idea of developmental constraint.
+
+Not the idea that information can be preserved.
+
+The possible niche is the synthesis:
+
+[quote]
+Treat “restoration” as a formally constrained relation between a hypothesized prior configuration, incomplete preservation, an ordered reconstructive trajectory, and a later state that recovers selected structural equivalence without requiring strict identity.
+
+The connection to Dynamic Non-Absoluteness sharpens this niche because it prevents restoration from meaning literal sameness across changed regimes.
+
+The connection to System Tempo adds a second discipline: metric duration cannot simply be substituted for structural distance, and no external master clock is introduced.
+
+The result is not yet a new scientific theory.
+
+It is a research architecture for asking a question that ordinary convergence language does not by itself settle:
+
+[quote]
+When, if ever, does recurrence contain evidence of historical reconstruction rather than only repeated solution under repeated constraint?
+
+== Research Program
+
+A responsible next stage would proceed in narrow steps.
+
+. *Define restoration relations.* Choose explicit equivalence relations for functional, informational, relational, morphological, architectural, and dynamical restoration.
+. *Build null models.* For each candidate case, model ordinary adaptation, convergent evolution, developmental bias, self-organization, optimization, and known inheritance first.
+. *Measure surprise.* Determine whether the observed reconstruction exceeds the similarity expected under those null models.
+. *Search for preservation channels.* Identify what could physically or informationally connect the hypothesized source configuration to the later state.
+. *Separate recurrence from inheritance.* Develop tests in which an attractor-only model and an inherited-structure model make different predictions.
+. *Use prospective prediction.* Predict convergences or reconstructive features before observing them.
+. *Study information loss.* Formalize which parts of \(C_0\) can survive incomplete transmission and which cannot.
+. *Integrate Dynamic Non-Identity.* Treat restoration as equivalence under selected relations, never as automatic total identity.
+. *Integrate System Tempo cautiously.* Ask whether structural transition counts or state-space distances add explanatory value beyond metric chronology without assuming \(q=f(\tau)\).
+. *Search for dimensionless or representation-robust invariants.* Prefer quantities that survive arbitrary unit choices and do not depend on a convenient narrative representation.
+
+One possible formal target is:
+
+[quote]
+Given a source class \(C_0\), a preservation operator \(P\), an evolution operator \(F\), and an equivalence relation \(E_R\), under what conditions does repeated application of \(F\) to a partially preserved state \(P(C_0)\) produce \(C^{*}\) such that \(E_R(C_0,C^{*})\) holds more often than expected under a convergence-only null model?
+
+This formulation is intentionally demanding.
+
+If the hypothesis cannot answer it in at least one concrete domain, then the strong form should remain philosophical.
+
+== Closing Thesis
+
+The Restorative Evolution Hypothesis begins from an intuition that is easy to overstate:
+
+[quote]
+Perhaps not every appearance of progress is pure novelty.
+
+But disciplined development requires a much narrower conclusion.
+
+Established science already explains extensive recurrence through common ancestry, natural selection, developmental bias, physical constraint, self-organization, attractors, optimization, and cultural transmission.
+
+The hypothesis becomes distinctive only if it identifies something beyond those explanations.
+
+Its strongest careful formulation is:
+
+[quote]
+Evolution may, in some classes of systems, be interpretable as reconstruction under incomplete preservation: not a return to strict identity, but convergence toward structural equivalence with a prior or privileged configuration under explicitly specified preservation conditions.
+
+And the most important epistemic qualification is:
+
+[quote]
+What internal observers call progress may, in some classes of systems, be observationally indistinguishable from reconstruction unless the origin, preservation conditions, accessible state space, and relevant equivalence relation are known.
+
+Within the canonical vocabulary of this research program, that statement has precise limits.
+
+Metric chronology \(\tau\) remains valid internal metrology.
+
+The regime coordinate \(q\) is not assumed to be a function of \(\tau\).
+
+System Tempo \(\Gamma(q)\) is not “time running faster or slower.”
+
+The generic parameter \(\lambda\) orders evolution when no clock is required.
+
+Restoration does not imply dynamic identity.
+
+And resemblance does not establish memory.
+
+The research question that remains is therefore not:
+
+[quote]
+Does the universe remember a lost form?
+
+It is:
+
+[quote]
+Can we identify a class of systems in which reconstruction of a prior structural equivalence class is empirically distinguishable from ordinary convergence, and can we specify the preservation mechanism that makes that distinction real?
+
+Until that question has a positive, testable answer, the Restorative Evolution Hypothesis should remain a disciplined speculative hypothesis rather than a claim of established biology or physics.
+
+== Beyond the Restorative Hypothesis
+
+The present article should stop at this boundary.
+
+The Restorative Evolution Hypothesis concerns reconstruction, preservation, distributed biological possibility, and the conditions under which a later configuration may recover structural equivalence with a prior or privileged class.
+
+It does not require a containing system beyond the presently observed system.
+
+It does not require an external observer.
+
+It does not require that biology was intentionally introduced into an experiment.
+
+Those possibilities appear only as strong speculative branches raised by the hypothesis.
+
+Once those branches are taken seriously, however, the subject changes.
+
+The next questions are no longer primarily about restorative evolution.
+
+They concern the ontology of the containing system itself.
+
+A future article should therefore ask:
+
+* If an observer exists outside the biological subsystem but inside a larger containing reality, what can that observer actually resolve?
+* Does being external to \(S\) imply observational access to the fine-grained states inside \(S\), or only to coarse-grained signals and aggregate transitions?
+* Could internal and external observers coexist while remaining mutually unresolved because each has finite observational channels?
+* If the external observer is itself biological, does it carry its own unresolved preservation and reconstruction problems?
+* Could the experiment involving \(S\) be an intentional continuation of those problems rather than an accidental event?
+* Could some apparent limits of transformation inside \(S\) reflect boundary conditions of the containing process rather than absolute limits of all reality?
+* What would it mean for the containing process to terminate from the perspective of an internal observer whose clocks, records, matter, and causal continuation all belong to that same process?
+* Could increasing resistance to structural transition reflect approach to a constrained region of accessible state space rather than a simple increase in elapsed metric time?
+
+These questions should not be answered here.
+
+They require a separate framework.
+
+A useful starting distinction is:
+
+[quote]
+External does not mean omniscient.
+
+An observer external to one subsystem may still be finite, embedded, historically situated, and dynamically non-absolute inside a larger system.
+
+Likewise:
+
+[quote]
+Termination of a containing process need not correspond to an internally observable event if no later internal state remains from which the termination could be recorded.
+
+And:
+
+[quote]
+A boundary experienced as a fundamental limit from inside a system may, in principle, be a boundary condition of the containing process rather than an absolute boundary of all possible reality.
+
+These statements are not conclusions of the present article.
+
+They define the frontier opened by it.
+
+The next layer of the research program should therefore move from *restorative evolution* to the relation between an internal world, its containing system, and a possible external observer.
+
+One possible title for that continuation is:
+
+[quote]
+Beyond the Internal Observer: Boundaries of the Containing System
+
+The conceptual transition between the two articles can be written as:
+
+[source,text]
+----
+Restorative Evolution
+        |
+        v
+Distributed preservation
+        |
+        v
+Possible external biological source
+        |
+        v
+Containing-system question
+        |
+        v
+External observer / system boundary / termination
+----
+
+This boundary is deliberate.
+
+The current article ends when the preservation problem reaches beyond the biological subsystem.
+
+The next article begins when the question becomes:
+
+[quote]
+What, if anything, can an internal observer infer about the structure, limits, observers, and continuation conditions of the system that contains it?
+
+== References
+
+* [[[allard-kumar]]] John B. Allard and Sudhir Kumar, https://www.nature.com/articles/s41576-026-00933-7[The genetic foundations of convergent traits], _Nature Reviews Genetics_ 27, 563–578 (2026).
+* [[[uller-developmental-bias]]] Tobias Uller et al., https://pmc.ncbi.nlm.nih.gov/articles/PMC6063245/[Developmental Bias and Evolution: A Regulatory Network Perspective], _Genetics_ (2018).
+* [[[collinet-lecuit]]] Claudio Collinet and Thomas Lecuit, https://www.nature.com/articles/s41580-020-00318-6[Programmed and self-organized flow of information during morphogenesis], _Nature Reviews Molecular Cell Biology_ 22, 245–265 (2021).
+* [[[bruckner-patterning]]] David B. Brückner, https://www.nature.com/articles/s41576-025-00925-z[From models to molecules: self-organized and instructed modes of developmental patterning], _Nature Reviews Genetics_ 27 (2026).
+* [[[nunes-barriga]]] Custodio O. Nunes and Elias H. Barriga, https://www.annualreviews.org/content/journals/10.1146/annurev-cellbio-101323-032747[Bioelectricity in Morphogenesis], _Annual Review of Cell and Developmental Biology_ 41, 187–208 (2025).
+* [[[laland-gene-culture]]] Kevin N. Laland, John Odling-Smee, and Sean Myles, https://www.nature.com/articles/nrg2734[How culture shaped the human genome: bringing genetics and the human sciences together], _Nature Reviews Genetics_ 11, 137–148 (2010).
+* [[[andersson-tennie]]] Claes Andersson and Claudio Tennie, https://www.nature.com/articles/s41599-023-01878-6[Zooming out the microscope on cumulative cultural evolution], _Humanities and Social Sciences Communications_ 10, 402 (2023).
+* [[[cultural-systems]]] Andrew Buskell, Magnus Enquist, and Fredrik Jansson, https://www.nature.com/articles/s41599-019-0343-5[A systems approach to cultural evolution], _Palgrave Communications_ 5, 131 (2019).
+* [[[morgan-feldman]]] Thomas J. H. Morgan and Marcus W. Feldman, https://www.nature.com/articles/s41562-024-02035-y[Human culture is uniquely open-ended rather than uniquely cumulative], _Nature Human Behaviour_ 9, 28–42 (2025).
+* [[[li-vitanyi]]] Ming Li and Paul Vitányi, https://link.springer.com/book/10.1007/978-3-030-11298-1[An Introduction to Kolmogorov Complexity and Its Applications], 4th ed., Springer (2019).
+* [[[sep-teleology]]] Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/entries/teleology-biology/[Teleological Notions in Biology].
+* [[[sep-process]]] Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/entries/process-philosophy/[Process Philosophy].
+* [[[brown-structuralism]]] Rachael L. Brown, https://pubmed.ncbi.nlm.nih.gov/35277332/[Structuralism and Adaptationism: Friends? Or foes?], _Seminars in Cell & Developmental Biology_ 145, 13–21 (2023).
+* [[[merton-multiples]]] Robert K. Merton, https://press.uchicago.edu/ucp/books/book/chicago/S/bo28451565.html[The Sociology of Science: Theoretical and Empirical Investigations], sections on “Singletons and Multiples in Science” and “Multiple Discoveries as Strategic Research Site,” University of Chicago Press (1979).
+* [[[sick-broring]]] Nathalie Sick and Stefanie Bröring, https://www.sciencedirect.com/science/article/pii/S0040162521007526[Exploring the research landscape of convergence from a TIM perspective: A review and research agenda], _Technological Forecasting and Social Change_ 175, 121321 (2022).
+* [[[plato-anamnesis]]] Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/entries/plato-ethics/[Plato’s Ethics: An Overview], discussion of recollection in the _Meno_.
+* [[[charlesworth-willis]]] Deborah Charlesworth and John H. Willis, https://www.nature.com/articles/nrg2664[The genetics of inbreeding depression], _Nature Reviews Genetics_ 10, 783–796 (2009).
+* [[[ronce-dispersal]]] Ophélie Ronce, https://www.annualreviews.org/content/journals/10.1146/annurev.ecolsys.38.091206.095611[How Does It Feel to Be Like a Rolling Stone? Ten Questions About Dispersal Evolution], _Annual Review of Ecology, Evolution, and Systematics_ 38, 231–253 (2007).
+* [[[deboer-inbreeding]]] Raïssa A. de Boer et al., https://www.nature.com/articles/s41559-021-01453-9[Meta-analytic evidence that animals rarely avoid inbreeding], _Nature Ecology & Evolution_ 5, 949–964 (2021).
+* [[[founder-effects]]] Katherine K. A. T. Austerlitz et al. discussion summarized in https://pmc.ncbi.nlm.nih.gov/articles/PMC7045715/[Founder effects and species introductions: A host versus parasite perspective], _Evolutionary Applications_ (2020).
+* [[[invasion-dynamics]]] Arnaud Estoup et al., https://pmc.ncbi.nlm.nih.gov/articles/PMC8210789/[The evolutionary dynamics of biological invasions: A multi-approach perspective], _Evolutionary Applications_ (2021).
+* [[[human-expansion]]] Brenna M. Henn, L. Luca Cavalli-Sforza, and Marcus W. Feldman, https://pmc.ncbi.nlm.nih.gov/articles/PMC3497766/[The great human expansion], _Proceedings of the National Academy of Sciences_ 109(44), 17758–17764 (2012).
+* [[[yengo-mate-choice]]] Loic Yengo, https://www.nature.com/articles/s41576-023-00605-w[Mate choice through a genomic lens], _Nature Reviews Genetics_ 24, 664 (2023).
+* [[[durham-incest]]] Marcus W. Feldman and Kevin N. Laland, https://pmc.ncbi.nlm.nih.gov/articles/PMC24260/[A gene–culture coevolutionary model for brother–sister mating], _Proceedings of the National Academy of Sciences_ 94(24), 13064–13069 (1997).
+* [[[burtsev-turchin]]] Mikhail Burtsev and Peter Turchin, https://www.nature.com/articles/nature04470[Evolution of cooperative strategies from first principles], _Nature_ 440, 1041–1044 (2006).
+* [[[hilbe-reciprocity]]] Christian Hilbe, Krishnendu Chatterjee, and Martin A. Nowak, https://www.nature.com/articles/s41562-018-0320-9[Partners and rivals in direct reciprocity], _Nature Human Behaviour_ 2, 469–477 (2018).
+* [[[aktipis-interdependence]]] Athena Aktipis et al., https://www.nature.com/articles/s41562-018-0378-4[Understanding cooperation through fitness interdependence], _Nature Human Behaviour_ 2, 429–431 (2018).
+
