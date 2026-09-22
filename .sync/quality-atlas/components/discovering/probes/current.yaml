@@ -1,10 +1,10 @@
 component: discovering
 title: Discovering
 snapshot:
-  date: '2026-09-21'
+  date: '2026-09-22'
   label: pre-rc-seed
   origin: quality-atlas probe seed
-  generated_at: '2026-09-21T17:04:23.050789+00:00'
+  generated_at: '2026-09-22T17:39:40.406246+00:00'
 repo_target:
   github_repository: ''
   local_path: ''
