@@ -270,6 +270,66 @@ In that sense, inbreeding is not a contradiction of evolutionary expansion.
 
 It is a useful example of why *expansion*, *replication*, *local reproductive rate*, *genetic diversity*, and *lineage persistence* must not be treated as the same variable.
 
+=== Longevity, Turnover, and the Unit of Evolutionary Search
+
+Longevity adds another variable that should not be collapsed into replication or lineage persistence.
+
+A naive search metaphor might suggest:
+
+[quote]
+If evolution is searching a space of biological configurations, then longer-lived organisms should always be favored because each organism has more time to reproduce, learn, accumulate information, and influence descendants.
+
+That conclusion does not follow.
+
+Established evolutionary theories of ageing already explain why maximum individual lifespan need not be the quantity most strongly optimized by selection. The classic families of explanation include mutation accumulation, antagonistic pleiotropy, and disposable-soma or related life-history trade-offs; a common theme is that the force of selection generally declines with age and that benefits to early or reproductive-life fitness can coexist with later-life costs. <<mcauley-aging>>
+
+The philosophical consequence is important:
+
+[quote]
+A hypothetical biological search process does not imply that the individual organism is the unit of search.
+
+At least three abstract search regimes are possible:
+
+* *deep trajectory* — a relatively long-lived individual accumulates repeated interactions, learning, reproductive opportunities, and social influence;
+* *generational turnover* — more rapid succession increases the number of recombination and selection events across lineages;
+* *distributed search* — populations, kin networks, ecological relations, and culturally transmitted information preserve and explore state space across many individuals.
+
+These regimes can trade against one another.
+
+A compact distinction is:
+
+[stem]
+++++
+\text{individual depth}
+\neq
+\text{generational breadth}
+\neq
+\text{lineage persistence}.
+++++
+
+Long life can therefore be valuable without being universally maximal.
+
+In social species, late-life value can also extend beyond an individual's own reproduction. For example, postreproductive killer-whale grandmothers have been associated with increased survival of grandoffspring, illustrating that an older individual's evolutionary contribution may include knowledge, provisioning, or support to kin rather than only additional births. <<nattrass-grandmother>>
+
+This suggests a sharper question for the restorative hypothesis:
+
+[quote]
+If there is any meaningful search or reconstruction process, what is its operative unit: an individual genome, an organism, a lineage, a population, a social-biological network, or a still larger coupled system?
+
+The question is not semantic.
+
+If the unit is the individual organism, death destroys a large amount of accumulated state.
+
+If the unit is a lineage, organismal turnover may be part of the search mechanism.
+
+If the unit is a population, distributed variation can itself function as the maintained search state.
+
+And if biologically relevant information is distributed across genes, development, ecological relations, behavior, and culture, then reducing the process to DNA alone becomes even less adequate.
+
+This does not establish restorative evolution.
+
+It strengthens the methodological requirement already introduced above: before speaking about a biological objective, one must first specify the level at which the objective, persistence, or reconstruction is being attributed.
+
 === Mate Choice as Indirect Biological and Cultural Filtering
 
 Human mating makes the same point from another direction.
@@ -390,6 +450,74 @@ Could increasing biological and cultural capacity to preserve vulnerable, rare, 
 Again, the established null explanations come first.
 
 A restorative interpretation would become scientifically distinctive only if it predicted which structures are preferentially preserved, reconstructed, or recovered beyond what cooperation theory, kin selection, cultural transmission, and niche construction already predict.
+
+=== Environmental Mismatch Is a Testable Question, Not Evidence of External Origin
+
+Another tempting intuition is that an organism that appears poorly matched to its environment may have originated elsewhere or may retain constraints inherited from an earlier environment.
+
+That inference is too strong.
+
+Organisms can be entirely endogenous products of an environment while still experiencing hunger, injury, homeostatic error, reproductive drive, exploration, conflict, and other forms of goal-directed behavior. Disequilibrium within an organism does not imply disequilibrium between the organism and the historical origin of its environment.
+
+Therefore:
+
+[stem]
+++++
+\text{goal-directed behavior}
+\not\Rightarrow
+\text{external origin}.
+++++
+
+Likewise:
+
+[stem]
+++++
+\text{apparent mismatch}
+\not\Rightarrow
+\text{prior environment}.
+++++
+
+A scientifically useful mismatch hypothesis requires competing models.
+
+Let:
+
+[stem]
+++++
+H_0:
+\text{the observed organization is explained by evolution within the current lineage-environment history},
+++++
+
+and:
+
+[stem]
+++++
+H_1:
+\text{the observed organization retains constraints inherited from a materially different prior environment or source condition}.
+++++
+
+The stronger hypothesis becomes interesting only if it predicts observations that are improbable under the first.
+
+In principle, one would need to specify a set of traits or relations (X) in advance and show that:
+
+[stem]
+++++
+P(X \mid H_1) > P(X \mid H_0)
+++++
+
+under explicit models rather than retrospective storytelling.
+
+The burden is therefore not to list imperfections in adaptation.
+
+It is to identify a coherent residual structure that remains after ordinary explanations such as phylogenetic history, changing environments, evolutionary trade-offs, developmental constraints, niche construction, and finite adaptation have been considered.
+
+This distinction protects the restorative hypothesis from a common failure mode:
+
+[quote]
+A system's difficulties inside an environment are not evidence that the system is foreign to that environment.
+
+Only a prospective, model-dependent pattern of mismatch could carry evidential weight.
+
+The deeper philosophical question of why an embedded biological system exhibits search, preference, intention, or reference-state behavior at all is related but broader. It should be developed separately from the present article so that homeostasis, evolutionary teleonomy, cognitive intention, and speculative restorative search are not collapsed into one concept.
 
 == Observation, Tension, Intuition, and Speculation
 
@@ -1466,7 +1594,7 @@ The next questions are no longer primarily about restorative evolution.
 
 They concern the ontology of the containing system itself.
 
-A future article should therefore ask:
+The containing-system continuation should therefore ask:
 
 * If an observer exists outside the biological subsystem but inside a larger containing reality, what can that observer actually resolve?
 * Does being external to \(S\) imply observational access to the fine-grained states inside \(S\), or only to coarse-grained signals and aggregate transitions?
@@ -1504,10 +1632,11 @@ They define the frontier opened by it.
 
 The next layer of the research program should therefore move from *restorative evolution* to the relation between an internal world, its containing system, and a possible external observer.
 
-One possible title for that continuation is:
+That continuation is developed in:
 
-[quote]
-Beyond the Internal Observer: Boundaries of the Containing System
+* xref:article/the-universe-as-a-contained-system.adoc[The Universe as a Contained System: External Origin, Internal Metrology, and the Limits of Observation].
+
+The earlier working title _Beyond the Internal Observer: Boundaries of the Containing System_ described the same conceptual transition; it is retained here only as the frontier that motivated the published continuation.
 
 The conceptual transition between the two articles can be written as:
 
@@ -1532,7 +1661,7 @@ This boundary is deliberate.
 
 The current article ends when the preservation problem reaches beyond the biological subsystem.
 
-The next article begins when the question becomes:
+The containing-system article begins when the question becomes:
 
 [quote]
 What, if anything, can an internal observer infer about the structure, limits, observers, and continuation conditions of the system that contains it?
@@ -1566,3 +1695,5 @@ What, if anything, can an internal observer infer about the structure, limits, o
 * [[[burtsev-turchin]]] Mikhail Burtsev and Peter Turchin, https://www.nature.com/articles/nature04470[Evolution of cooperative strategies from first principles], _Nature_ 440, 1041–1044 (2006).
 * [[[hilbe-reciprocity]]] Christian Hilbe, Krishnendu Chatterjee, and Martin A. Nowak, https://www.nature.com/articles/s41562-018-0320-9[Partners and rivals in direct reciprocity], _Nature Human Behaviour_ 2, 469–477 (2018).
 * [[[aktipis-interdependence]]] Athena Aktipis et al., https://www.nature.com/articles/s41562-018-0378-4[Understanding cooperation through fitness interdependence], _Nature Human Behaviour_ 2, 429–431 (2018).
+* [[[mcauley-aging]]] Mark T. Mc Auley, https://doi.org/10.1007/s10522-024-10143-5[The evolution of ageing: classic theories and emerging ideas], _Biogerontology_ 26, article 6 (2025).
+* [[[nattrass-grandmother]]] Stuart Nattrass et al., https://doi.org/10.1073/pnas.1903844116[Postreproductive killer whale grandmothers improve the survival of their grandoffspring], _Proceedings of the National Academy of Sciences_ 116(52), 26669–26673 (2019).

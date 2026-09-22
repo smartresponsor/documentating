@@ -596,6 +596,8 @@ This chain contains no perfect external observer.
 
 Every stage belongs to the physical description.
 
+This is not a claim that no observer can ever be external to a selected subsystem. It means that an observer external to one subsystem is still a physical process within whatever wider description contains the observational relation. Relative externality must not be confused with a privileged viewpoint outside all reality.
+
 == 16. Research Questions
 
 The framework suggests several questions that can be developed without prematurely claiming a new physical theory.

@@ -1,0 +1,678 @@
+= The Universe as a Contained System: External Origin, Internal Metrology, and the Limits of Observation
+:page-slug: the-universe-as-a-contained-system
+:page-published: 2026-09-21
+:page-author: Oleksandr Tishchenko
+:description: A speculative containing-system hypothesis asking what an internal observer can infer if its observable universe is a child system produced within a wider physical process.
+:page-tags: cosmology, child-universe, baby-universe, system-tempo, internal-observer, multiverse, philosophy-of-physics, dynamic-non-absoluteness
+:lang: en
+
+== Position in the Series
+
+This essay continues the research line developed in:
+
+* xref:article/system-tempo-and-dynamic-non-identity.adoc[System Tempo and Dynamic Non-Identity];
+* xref:article/from-irreversibility-to-metric-time.adoc[From Irreversibility to Metric Time: How an Internal Observer Builds the Clock];
+* xref:article/the-finite-observer-and-the-resolution-of-change.adoc[The Finite Observer and the Resolution of Change];
+* xref:article/evolution-as-reconstruction-under-incomplete-preservation.adoc[Evolution as Reconstruction Under Incomplete Preservation].
+
+The previous article stops when the preservation problem reaches beyond the biological subsystem. The present article begins there.
+
+Its question is not primarily whether many universes exist.
+
+It is narrower:
+
+[quote]
+What, if anything, can an internal observer infer if the reality it observes is itself a contained or child system produced within a wider physical process?
+
+The proposal developed here will be called the *Containing-System Hypothesis*.
+
+It is speculative. It is not a replacement for general relativity, inflationary cosmology, quantum gravity, or standard Big Bang cosmology. It does not claim that our universe was created in a laboratory, that an external biological observer exists, or that any known accelerator can create a universe.
+
+== The Minimal Hypothesis
+
+Let an observed system be denoted by `S_c`, and a hypothetical containing or parent system by `S_p`.
+
+The minimal hypothesis is:
+
+[stem]
+++++
+S_p \rightarrow S_c
+++++
+
+where the arrow means only that the existence or boundary conditions of `S_c` depend on a physical process in `S_p`.
+
+This does not yet imply intentional creation, a laboratory, biological contamination, a conscious external observer, multiple child universes, a shared clock, or information transfer in both directions.
+
+Those are stronger branches and must remain separate.
+
+== Why This Is Not Just the Multiverse
+
+The word _multiverse_ covers a broad family of ideas.
+
+In eternal-inflation models, inflation can continue in some regions while ending in others, producing causally separated pocket universes. Guth's reviews explicitly discuss the production of pocket universes and the measure problems that follow. <<guth-eternal>>
+
+Philosophy-of-cosmology literature treats the multiverse primarily as an ensemble problem: many domains or universes may realize different physical conditions, after which anthropic selection enters the explanation of what an observer is likely to see. <<sep-cosmology>>
+
+That is not the central question here.
+
+The Containing-System Hypothesis does not begin with:
+
+[quote]
+How many universes are there?
+
+It begins with:
+
+[quote]
+Can a universe be physically related to a containing system in a way that is not representable as an ordinary location inside the child universe itself?
+
+The distinction matters.
+
+A multiverse requires plurality. A containing-system hypothesis additionally asks about parent-child dependence, causal boundaries, observer asymmetry, preservation across the boundary, internal versus external descriptions, and the status of metric time inside the child system.
+
+== Child Universes Are Not a New Idea
+
+The possibility that an inflating region might become a separate or child universe has a substantial theoretical history.
+
+Blau, Guendelman, and Guth studied false-vacuum bubbles in general relativity and found solutions in which an exterior observer describes the configuration as a black hole while the interior develops as a closed universe that disconnects from the original spacetime. <<blau-guth>>
+
+Farhi, Guth, and Guven later analyzed whether a universe could in principle be produced through quantum tunneling from a laboratory-accessible configuration. Their proposal is highly speculative and technically difficult, but it establishes an important point for the present article: the phrase _universe created in a laboratory_ belongs to theoretical-physics literature, not only to science fiction. <<fgg>>
+
+Fischler, Morgan, and Polchinski likewise studied quantum nucleation of false-vacuum bubbles leading to a baby-universe geometry. <<fmp>>
+
+Later work has continued to examine false-vacuum bubbles, wormholes, child universes, and obstacles to creating such regions. <<aguirre-johnson>><<rubakov>><<visser>>
+
+None of these papers establishes that our own universe has such an origin.
+
+Their relevance is narrower:
+
+[quote]
+A local process in one spacetime can, in some theoretical models, correspond to a large or autonomous spacetime region for an observer on the other side of a gravitational boundary.
+
+== A Local Parent Event Need Not Produce an Internal Center
+
+An ordinary explosion occurs at a point inside pre-existing space. The standard Big Bang model is not that picture.
+
+The present hypothesis does not challenge this.
+
+Instead, it adds a separate logical possibility.
+
+Suppose a transition is localized relative to the parent system:
+
+[stem]
+++++
+E_p`X_0` \rightarrow S_c.
+++++
+
+If the transition creates or opens a new spacetime region, there is no requirement that the parent coordinate `X_0` map to an ordinary spatial coordinate `x_0` inside the child:
+
+[stem]
+++++
+X_0 \not\Rightarrow x_0.
+++++
+
+The relation may instead be between a parent event and a child boundary condition or initial hypersurface.
+
+Therefore:
+
+[quote]
+A cause may be localized in the containing system without being represented as a spatial center in the contained system.
+
+The child-universe literature makes this possibility physically intelligible because interior and exterior observers need not share one global description of the geometry. <<blau-guth>><<fmp>>
+
+This does not make the absence of a center evidence for external origin. It only means that absence of an internal center does not logically exclude a localized parent-side cause.
+
+== External Does Not Mean Omniscient
+
+An external observer is often imagined as if externality automatically implied complete access.
+
+That is not justified.
+
+Let:
+
+[stem]
+++++
+O_p \subset S_p
+++++
+
+be an observer in the parent system and:
+
+[stem]
+++++
+O_c \subset S_c
+++++
+
+an observer in the child.
+
+Both may be finite. Both may have limited channels, finite memory, finite resolution, and causal horizons.
+
+The relevant question is therefore:
+
+[quote]
+What observables cross the boundary between `S_p` and `S_c`, in which direction, and at what resolution?
+
+In child-universe models the exterior description may be black-hole-like while the interior description contains an expanding universe. The exterior observer does not thereby obtain a complete microscopic view of the interior history. <<blau-guth>>
+
+Cosmological horizon analysis makes the broader point rigorous: causal structure limits what can contribute to observation, and these limits strongly constrain claims about domains beyond our visual horizon. Ellis and Uzan emphasize this problem explicitly in the multiverse context. <<ellis-uzan>>
+
+Therefore:
+
+[quote]
+Externality is a systemic relation, not a synonym for omniscience.
+
+The relation may also be recursive:
+
+[stem]
+++++
+O_c \subset S_c \subset S_p \subset S_{p+1}.
+++++
+
+The hypothesis does not require a final observer outside all systems.
+
+== Relative Externality and the Closure Problem
+
+The word _external_ therefore requires a reference system.
+
+An observer may be external to the child system:
+
+[stem]
+++++
+O_p \not\subset S_c
+++++
+
+while remaining internal to a wider containing system:
+
+[stem]
+++++
+O_p \subset S_p.
+++++
+
+This distinction prevents a category error. _External to_ `S_c` does not mean _external to all physical reality_.
+
+Suppose an observer or process `E` can exchange physically meaningful information, matter, energy, constraints, or causal influence with `S_c`. Once that relation is admitted, both sides can in principle be represented inside a wider description:
+
+[stem]
+++++
+U = S_c \cup B \cup E,
+++++
+
+where `B` denotes the relation or interface through which the two descriptions are connected.
+
+This creates a closure problem for the idea of an _absolutely external physical observer_:
+
+[quote]
+Every physically observable outside can be redescribed as part of a larger inside.
+
+The statement does not prove that reality is an infinite hierarchy of containing systems. A final closure, an infinite nesting, and a description in which system boundaries are fundamentally relational all remain logically distinct possibilities.
+
+It does imply that observation cannot by itself establish absolute externality. If an alleged external observer leaves an observable physical effect, that effect supplies a relation that can be included in a larger model. If it leaves no observable relation at all, an internal observer has no empirical channel by which to distinguish it.
+
+Therefore the framework should reserve two different claims:
+
+* _relative externality_ — external with respect to a specified subsystem boundary;
+* _absolute externality_ — outside every possible containing physical description.
+
+The first is physically intelligible. The second is not established by the existence of the first.
+
+== Internal Metric Time Is Not an External Clock
+
+This article inherits the canonical distinction of the System Tempo corpus.
+
+Metric time is `\\tau`.
+
+The system-regime coordinate is `q`.
+
+System Tempo is `\\Gamma(q)`.
+
+For generic ordered evolution when no clock is required, the corpus uses `\\lambda`.
+
+No relation:
+
+[stem]
+++++
+q=f(\\tau)
+++++
+
+is assumed.
+
+This matters immediately for a containing-system hypothesis.
+
+It is tempting to say:
+
+[quote]
+Billions of years inside the child universe might be one second outside it.
+
+But that sentence silently assumes two metric clocks and a mapping between them:
+
+[stem]
+++++
+\tau_c = F(\tau_p).
+++++
+
+No such mapping has been established.
+
+The disciplined statement is:
+
+[quote]
+The internally reconstructed metric age of a child system does not, by itself, define the metric duration of the containing process.
+
+The approximately 13.8-billion-year cosmological chronology used in contemporary science remains valid internal metrology. The question is whether that internal metric depth exhausts every possible description of the containing relation.
+
+Thus:
+
+[stem]
+++++
+\text{internal metric depth}
+\neq
+\text{automatically known containing-system duration}.
+++++
+
+This is not a claim that everything happened “instantly.” _Instantly_ is itself a metric statement and requires a clock.
+
+A stronger formulation is:
+
+[quote]
+The containing transition may have no presently justified metric comparison with the child's reconstructed chronology.
+
+== Ordering Without a Shared Duration
+
+An internal observer naturally asks what happened “before” its beginning.
+
+But _before_ may already assume too much if no shared metric exists.
+
+The relation may initially be only one of dependence or ordering:
+
+[stem]
+++++
+S_p \prec S_c.
+++++
+
+That does not assign a duration between them.
+
+The same caution applies to scale.
+
+Words such as _larger_, _smaller_, _faster_, and _slower_ require common measures. A child universe can be small relative to an exterior gravitational description while containing a large internal geometry. Child-universe models force precisely this separation between external characterization and internal geometry. <<blau-guth>><<fgg>>
+
+The hypothesis should therefore not say that our universe was literally “shrunk” from a larger biological system.
+
+A more disciplined possibility is that a transition creates a new domain whose internal metrology is not a simple rescaling of the parent's.
+
+== Preservation Across a System Boundary
+
+The previous essay on restorative evolution ends with the preservation problem.
+
+The present article generalizes it.
+
+Suppose:
+
+[stem]
+++++
+S_p \xrightarrow{P} S_c
+++++
+
+where `P` is a hypothetical preservation or transmission operator.
+
+The first question is not whether DNA crosses the boundary.
+
+It is:
+
+[quote]
+Can any nontrivial structure be inherited across the transition?
+
+Possible inheritance targets include physical parameters, symmetry classes, boundary conditions, dimensionless relations, information-bearing correlations, topology, causal structure, or transition rules.
+
+Cosmological natural selection provides an important precedent. Smolin proposed that black-hole singularities might give rise to new expanding regions in which low-energy parameters are inherited with variation, producing a population-level selection process among universes. <<smolin-1994>><<smolin-status>>
+
+The present hypothesis does not adopt Smolin's mechanism.
+
+Its relevance is narrower:
+
+[quote]
+Inheritance between generations of universes is already a recognized speculative research idea.
+
+Later work has even examined fidelity of inheritance laws between hypothetical universe generations. <<altenberg>>
+
+This gives the preservation question a legitimate conceptual neighbor without establishing that biological information, DNA, or cognitive structure can survive such a transition.
+
+== Biological Carryover Is a Stronger Hypothesis
+
+The idea that biological material from a parent system might influence a child system must be stated at several levels.
+
+The weakest statement is that an inherited boundary condition could influence which structures become accessible in the child.
+
+A stronger statement is that some information-bearing structure relevant to later self-organization could survive the transition.
+
+The strongest statement is that a parent biological system could leave a recoverable informational trace that later participates in the emergence of biology in the child.
+
+Nothing in the child-universe literature cited here establishes the strongest version.
+
+Literal molecular DNA transfer would be especially difficult to defend. DNA is a contingent low-energy molecular structure. A high-energy cosmological transition should not be assumed to preserve it.
+
+The disciplined question is therefore:
+
+[quote]
+What classes of information, if any, can remain invariant or partially preserved across a parent-child cosmological transition?
+
+Only after such a channel is specified does a biological interpretation become scientifically meaningful.
+
+== Intentional Creation Is Yet Another Layer
+
+A parent process does not imply an operator.
+
+An operator does not imply a biological operator.
+
+A biological operator does not imply intentional creation of life.
+
+The hierarchy is:
+
+[source,text]
+----
+parent process
+    |
+    +--> spontaneous child system
+    |
+    +--> engineered child system
+             |
+             +--> sterile experiment
+             |
+             +--> accidental informational carryover
+             |
+             +--> intentional inheritance
+----
+
+Farhi-Guth-Guven-style laboratory-universe discussions make engineered creation conceptually legitimate to analyze. <<fgg>>
+
+They do not establish that any actual universe was engineered.
+
+The phrase _non-sterile experiment_ therefore belongs only to the strong speculative branch.
+
+== A Boundary Need Not Be a Wall
+
+The container metaphor is useful only if it is not taken literally.
+
+A system boundary need not be a rigid spatial shell, a glass vessel, or an edge located at some child-system coordinate. In physics and mathematics, a boundary may instead be expressed through causal accessibility, matching conditions, topology, admissible transitions, information flow, or a change in the available degrees of freedom.
+
+The minimal abstraction is therefore not:
+
+[source,text]
+----
+system -> rigid wall
+----
+
+but:
+
+[source,text]
+----
+internal dynamics
+    -> boundary relation B
+    -> wider degrees of freedom
+----
+
+The boundary relation itself may be passive, transmitting, filtering, state-dependent, or dynamically generated. Those cases must not be conflated.
+
+This matters because a dynamically active boundary would be a much stronger hypothesis than simple containment. If some regions, states, or branches were preferentially transmitted or continued, the resulting model would require an explicit selection rule:
+
+[stem]
+++++
+\Sigma(S_i) \rightarrow \{\text{continued},\text{not continued}\}.
+++++
+
+No such operator is established for our universe. The notation only separates the logical possibility from the weaker containing-system claim.
+
+The corresponding methodological rule is:
+
+[quote]
+Selection does not imply a selector.
+
+A differential continuation rule could arise from impersonal dynamics just as biological natural selection does not require a conscious selecting agent. Intentional experimental selection is a still stronger branch and must be argued independently.
+
+This also creates a possible bridge back to the restorative-evolution discussion: generation of alternatives plus differential persistence is a structural pattern that can appear in very different domains without implying that the domains share one mechanism.
+
+== Termination and the Missing Last Record
+
+A containing-system model creates another observer problem.
+
+Suppose continuation of `S_c` depends on a process in `S_p`.
+
+An internal observer may ask what would be observed if the parent process stopped.
+
+Observation requires a later internal state containing a record:
+
+[stem]
+++++
+S_c(\lambda_i)
+\rightarrow
+S_c(\lambda_{i+1})
+\rightarrow
+\text{record}.
+++++
+
+If termination means that no later state of `S_c` exists, there is no internal state from which termination can be retrospectively recorded.
+
+This yields a general epistemic principle:
+
+[quote]
+A terminal boundary of a containing process need not correspond to an internally observable terminal event if observation itself requires continuation beyond the boundary.
+
+This is not evidence that such a boundary exists. It only describes a limit of internal observation.
+
+== What Is Already Known, and What Is Distinctive Here?
+
+The originality claim must be narrow.
+
+This article does not originate the multiverse, eternal inflation, pocket universes, false-vacuum bubbles, baby universes, laboratory-universe thought experiments, universe reproduction, cosmological natural selection, causal horizons, observer limitations, or anthropic selection.
+
+All have substantial prior literature.
+
+The possible contribution is the synthesis:
+
+[quote]
+Treat the child-universe question as an internal-observer problem constrained by System Tempo, local metrology, preservation across system boundaries, and Dynamic Non-Absoluteness.
+
+That changes the emphasis.
+
+Instead of asking only whether another universe exists, it asks four linked questions:
+
+. *Containment:* what relation would make `S_c` dependent on `S_p`?
+. *Observation:* what can finite observers on each side actually resolve?
+. *Metrology:* which measurements are internal to one system and therefore cannot automatically be exported across the boundary?
+. *Preservation:* what, if anything, can cross the parent-child transition while retaining meaningful equivalence?
+
+A compact formulation is:
+
+[quote]
+The Containing-System Hypothesis is not primarily a theory of many universes. It is a research framework about asymmetric access between nested physical descriptions.
+
+== Competing Explanations
+
+Any application to our universe must begin with ordinary cosmology.
+
+The standard cosmological framework already explains a large body of observations without requiring an external operator or parent laboratory.
+
+The absence of an internal spatial center does not itself support a parent system.
+
+Fine-tuning likewise does not uniquely distinguish deeper physical necessity, selection effects, multiverse models, design hypotheses, unknown physics, or chance under a broader distribution. Philosophy-of-cosmology and fine-tuning literature documents how contested those inferences remain. <<sep-cosmology>><<sep-finetuning>>
+
+Therefore an external-origin hypothesis earns explanatory value only if it produces a discriminating consequence.
+
+== What Would Count as Evidence?
+
+The hypothesis becomes scientifically interesting only if at least one observable differs between:
+
+[stem]
+++++
+H_0:
+\text{self-contained cosmological model}
+++++
+
+and:
+
+[stem]
+++++
+H_1:
+\text{child system with a parent-dependent boundary or preservation channel}.
+++++
+
+Candidate research directions include:
+
+* a dimensionless relation predicted by a specific parent-child transition model;
+* a preservation signature not generated by known internal dynamics;
+* a constrained correlation among parameters that follows from an inheritance mechanism;
+* a causal or topological signature predicted by a child-universe formation model;
+* a prospective prediction distinguishing inherited structure from anthropic or inflationary selection;
+* an observable failure of universal internal rescaling that connects System Tempo to measurable non-identity.
+
+The relevant standard is demanding:
+
+[quote]
+The hypothesis must predict structure that its internal-only competitors do not already predict.
+
+Otherwise it remains philosophical.
+
+== Failure Modes
+
+Several errors would make the hypothesis weaker rather than stronger.
+
+=== Treating Absence of a Center as Evidence of External Origin
+
+Standard cosmology does not model the Big Bang as debris exploding from a spatial center.
+
+The containing-system hypothesis may use absence of an internal center only to show compatibility with an external localized cause, not as positive evidence for one.
+
+=== Treating Cosmological Expansion as Motion Toward an Edge
+
+Standard cosmology does not require the universe to expand into an external spatial volume, and it does not supply an observed material edge at which the universe becomes denser.
+
+Therefore the containing-system hypothesis must not treat an imagined outer rim, wall, or accumulation of matter at a boundary as an established cosmological fact.
+
+If a future model introduces a parent-side boundary, that boundary must be defined by the model rather than inferred from ordinary cosmic expansion.
+
+=== Treating Expansion as Loss of an Initial Mechanical Impulse
+
+The observed expansion history is not adequately described as matter coasting outward until an initial push is exhausted. Cosmological expansion is modeled through spacetime dynamics, matter-energy content, and gravity; the present expansion is observed to be accelerating.
+
+The containing-system framework may ask whether a deeper process contributes to that dynamics, but it must not use simple mechanical dissipation as the default explanation.
+
+Any proposal in which a parent process feeds, removes, selects, or transforms child-system degrees of freedom must specify how its predictions differ from standard cosmological evolution.
+
+=== Inventing an External Clock
+
+Statements such as “billions of years inside equal seconds outside” are illustrations, not results.
+
+Without a justified mapping `\\tau_c = F(\\tau_p)`, they should not appear as physical claims.
+
+=== Calling Every Boundary an External Artifact
+
+An unexplained constraint is not evidence of a parent system.
+
+Internal physics is the null model.
+
+=== Confusing Inheritance with DNA
+
+Parameter inheritance, structural preservation, and molecular biological inheritance are different hypotheses.
+
+=== Making the External Observer Omniscient
+
+An observer outside one subsystem may remain finite and causally constrained in the containing system.
+
+=== Using “Experiment” as an Explanation
+
+Calling the universe an experiment explains nothing unless the mechanism, operator, observables, and predictions are specified.
+
+== Weak, Medium, and Strong Forms
+
+=== Weak Form
+
+[quote]
+Some well-studied relativistic and quantum-cosmological models permit child spacetime regions whose internal and external descriptions differ substantially.
+
+This is represented in the literature.
+
+=== Medium Form
+
+[quote]
+Our observable universe may belong to the same broad class of contained systems, in which case some questions about origin, scale, and duration cannot be answered by exporting internal coordinates across the boundary.
+
+This is speculative.
+
+=== Strong Form
+
+[quote]
+Our universe may have been produced by an engineered parent process that preserved nontrivial information across the transition, potentially including structure relevant to later biology or cognition.
+
+This is highly speculative and currently unsupported by direct evidence.
+
+== Research Program
+
+A disciplined continuation would:
+
+. define what mathematical relation between `S_p` and `S_c` counts as containment;
+. classify false-vacuum bubbles, wormhole-connected baby universes, black-hole cosmologies, eternal-inflation pockets, and bouncing cosmologies;
+. separate parent coordinates from child coordinates;
+. model what `O_p` and `O_c` can exchange or infer;
+. distinguish relative externality from the stronger notion of absolute externality;
+. define the boundary as a relation or interface rather than assuming a literal wall;
+. define preservation operators and candidate invariants;
+. keep passive containment, dynamical boundary selection, and intentional selection as separate hypotheses;
+. compare candidate signatures against standard cosmology first;
+. require prospective falsifiable predictions;
+. integrate `q`, `\\Gamma(q)`, `\\lambda`, and `\\tau` without inventing an external master time;
+. apply Dynamic Non-Absoluteness to identity claims across the boundary;
+. keep biological carryover separate until a physical preservation channel exists.
+
+== Closing Thesis
+
+The Containing-System Hypothesis begins from a simple but easily overstated possibility:
+
+[quote]
+Our observable universe may be an internal physical system whose origin depends on a process not representable as an ordinary location within its own spacetime.
+
+Existing theoretical physics already supplies important neighbors: pocket universes, child universes, false-vacuum bubbles, laboratory-universe scenarios, black-hole-generated universes, and cosmological natural selection.
+
+The present proposal does not claim to replace them.
+
+Its distinctive emphasis is epistemic and structural:
+
+[quote]
+If a universe is contained, then its internal observer must distinguish what is measured inside the system from what is merely inferred about the containing relation.
+
+A localized cause in the parent need not become a spatial center in the child.
+
+An external observer need not be omniscient.
+
+An observer external to the child may still be internal to a wider physical description; observable externality is therefore relative to a specified boundary.
+
+An internal metric chronology need not provide a metric clock for the parent process.
+
+Inheritance across the boundary requires an explicit preservation mechanism.
+
+A boundary need not be a spatial wall, and a selective boundary process would not by itself imply a conscious selector.
+
+And termination of the containing process may leave no later internal state from which termination could be observed.
+
+The strongest careful statement is therefore:
+
+[quote]
+A contained universe can possess a complete and valid internal metrology while still leaving the ontology, duration, and observational structure of its containing process underdetermined from within.
+
+The scientific challenge is not to tell a compelling external-origin story.
+
+It is to identify a measurable internal consequence that a self-contained cosmological model would not already predict.
+
+Until such a consequence is found, the Containing-System Hypothesis should remain a disciplined speculative research framework rather than a claim about the actual origin of our universe.
+
+== References
+
+* [[[guth-eternal]]] Alan H. Guth, https://arxiv.org/abs/astro-ph/0002156[Inflation and Eternal Inflation] (2000).
+* [[[sep-cosmology]]] Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/entries/cosmology/[Philosophy of Cosmology].
+* [[[blau-guth]]] Steven K. Blau, E. I. Guendelman, and Alan H. Guth, https://doi.org/10.1103/PhysRevD.35.1747[Dynamics of False-Vacuum Bubbles], _Physical Review D_ 35, 1747 (1987).
+* [[[fgg]]] Edward Farhi, Alan H. Guth, and Jemal Guven, https://doi.org/10.1016/0550-3213(90)90357-J[Is It Possible to Create a Universe in the Laboratory by Quantum Tunneling?], _Nuclear Physics B_ 339, 417–490 (1990).
+* [[[fmp]]] Willy Fischler, Daniel Morgan, and Joseph Polchinski, https://doi.org/10.1103/PhysRevD.41.2638[Quantum Nucleation of False-Vacuum Bubbles], _Physical Review D_ 41, 2638(R) (1990).
+* [[[aguirre-johnson]]] Anthony Aguirre and Matthew C. Johnson, https://doi.org/10.1103/PhysRevD.72.103525[Dynamics and Instability of False Vacuum Bubbles], _Physical Review D_ 72, 103525 (2005).
+* [[[rubakov]]] V. A. Rubakov, https://doi.org/10.1103/PhysRevD.88.044015[Consistent Null-Energy-Condition Violation: Towards Creating a Universe in the Laboratory], _Physical Review D_ 88, 044015 (2013).
+* [[[visser]]] Matt Visser, https://doi.org/10.1103/PhysRevD.41.1116[Wormholes, Baby Universes, and Causality], _Physical Review D_ 41, 1116 (1990).
+* [[[ellis-uzan]]] George F. R. Ellis and Jean-Philippe Uzan, https://arxiv.org/abs/1612.01084[Causal Structures in Cosmology] (2016).
+* [[[smolin-1994]]] Lee Smolin, https://arxiv.org/abs/gr-qc/9404011[The Fate of Black Hole Singularities and the Parameters of the Standard Models of Particle Physics and Cosmology] (1994).
+* [[[smolin-status]]] Lee Smolin, https://arxiv.org/abs/hep-th/0612185[The Status of Cosmological Natural Selection] (2006).
+* [[[altenberg]]] Lee Altenberg, https://arxiv.org/abs/1302.1293[Implications of the Reduction Principle for Cosmological Natural Selection] (2013).
+* [[[sep-finetuning]]] Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/entries/fine-tuning/[Fine-Tuning].
+
