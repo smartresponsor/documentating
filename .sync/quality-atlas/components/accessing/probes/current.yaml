@@ -1,10 +1,10 @@
 component: accessing
 title: Accessing
 snapshot:
-  date: '2026-09-22'
+  date: '2026-09-23'
   label: pre-rc-seed
   origin: quality-atlas probe seed
-  generated_at: '2026-09-22T17:39:39.540590+00:00'
+  generated_at: '2026-09-23T19:38:20.934762+00:00'
 repo_target:
   github_repository: ''
   local_path: ''
