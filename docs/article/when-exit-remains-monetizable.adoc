@@ -1,0 +1,634 @@
+= When Exit Remains Monetizable: Debt, Credit Reporting, and the Erosion of Customer Discipline
+:page-slug: when-exit-remains-monetizable
+:page-published: 2026-09-23
+:page-author: Oleksandr Tishchenko
+:description: A research hypothesis about how monetizable customer exit, debt collection, and credit reporting may weaken service discipline and propagate local billing disputes into broader economic penalties.
+:page-tags: consumer-debt, credit-reporting, credit-score, debt-collection, junk-fees, switching-costs, consumer-protection, economic-incentives
+:lang: en
+
+== Abstract
+
+Modern service markets do not always end when the service relationship ends.
+
+A telecommunications account can be closed while a balance remains. A utility service can be disconnected while a disputed charge survives. A subscription can terminate while fees continue to be asserted. The residual claim can then be collected internally, assigned to a third-party collector, or sold. In some cases it can also enter consumer-reporting systems and affect decisions far beyond the original contract.
+
+This article develops two connected research hypotheses.
+
+The first is *monetizable exit*:
+
+[quote]
+When customer exit itself retains recoverable economic value, the supplier loses part of the ordinary market discipline created by the threat of losing the customer completely.
+
+The second is *penalty propagation*:
+
+[quote]
+When a disputed or unpaid service balance can migrate into consumer-reporting infrastructure, a local billing conflict can create consequences in unrelated markets such as credit, housing, insurance, deposits, or future service access.
+
+The combined hypothesis is not that debt markets cause deceptive billing, nor that credit reporting is inherently harmful. Both debt collection and credit reporting have legitimate economic functions. The narrower claim is that the institutional ability to preserve, transfer, report, and monetize a residual obligation may change incentives at the margin: the expected cost of unresolved disputes can fall for the firm while the expected cost can rise sharply for the consumer.
+
+This article separates established evidence from speculative inference and proposes conditions under which the hypothesis can be tested or falsified.
+
+== Position in a New Research Direction
+
+This article opens a new research direction in this documentation.
+
+It is not part of the *Dynamic Non-Absoluteness* or *System Tempo* research programs, and it should not be read as an application of those frameworks.
+
+The subject here is institutional and economic: how service contracts, billing systems, debt recoverability, collection markets, consumer reporting, credit scoring, switching costs, and finite consumer dispute capacity interact.
+
+The provisional scope of this new direction is:
+
+[source,text]
+----
+service-market incentives
+    + contractual and billing opacity
+    + monetizable residual debt
+    + collection infrastructure
+    + consumer reporting
+    + credit scoring
+    + downstream access and pricing effects
+----
+
+The present article is the first hypothesis paper in that direction. Later work can separate the problem into narrower empirical studies rather than assuming in advance that the full causal chain is established.
+
+== The Ordinary Market-Discipline Model
+
+In the simplest consumer-service model, the firm earns by continuing to provide a service the customer is willing to purchase.
+
+[source,text]
+----
+good service
+    -> customer satisfaction
+    -> continued voluntary purchase
+    -> continued revenue
+----
+
+If the customer leaves, future revenue disappears.
+
+The threat of exit therefore disciplines the supplier. Poor service, hidden charges, weak support, and billing errors create churn. Churn destroys customer lifetime value.
+
+A stylized representation is:
+
+[stem]
+++++
+V_c = \sum_{t=0}^{T} m_t - C_s
+++++
+
+where V_c is expected customer value, m_t is the service margin over time, and C_s is the cost of servicing the relationship.
+
+In this simple model, termination is economically severe because the remaining customer value approaches zero.
+
+== The Residual Claim Survives Exit
+
+Many modern service relationships are structurally different.
+
+The service can end while the claim survives.
+
+[source,text]
+----
+service relationship
+    -> billing balance
+    -> delinquency
+    -> internal collection / third-party collection / debt sale
+    -> possible consumer reporting
+----
+
+The Consumer Financial Protection Bureau explains that unpaid utility bills may appear on nationwide credit reports when they are sent to collection. It also identifies specialty reporting systems such as the National Consumer Telecom & Utilities Exchange, which collects telecommunications and utility account information including delinquencies and charge-offs.
+
+This creates an additional term in the firm's expected customer value:
+
+[stem]
+++++
+V_c = V_s + V_r
+++++
+
+where V_s is the value generated by service and V_r is the expected residual value of unresolved obligations.
+
+The important point is not that V_r must be large. It is that it need not be zero.
+
+If an exited customer still has recoverable value, then the economic penalty associated with losing that customer is smaller than it would be in a pure service-only market.
+
+This is the core of the *monetizable-exit hypothesis*.
+
+== Monetizable Exit Does Not Require Debt Sale
+
+The hypothesis does not depend on a literal sale of debt.
+
+A supplier may:
+
+* collect directly;
+* hire a collector on a contingency basis;
+* assign accounts for collection;
+* sell delinquent receivables;
+* use recurring portfolio-transfer arrangements.
+
+The economic mechanism is broader than debt buying.
+
+What matters is whether a residual obligation can continue to produce expected value after the service relationship has ceased.
+
+Let:
+
+[stem]
+++++
+L = pR - C_r
+++++
+
+where R is the nominal residual balance, p is the expected recovery fraction, and C_r is the expected recovery and administrative cost.
+
+If:
+
+[stem]
+++++
+L > 0
+++++
+
+then exit is not equivalent to total economic loss.
+
+That changes the firm's boundary condition.
+
+== The Stronger Incentive Question
+
+The central research question is not whether firms deliberately create false bills so they can sell them.
+
+That would require evidence of intent and would be far too strong as a general proposition.
+
+The more plausible question is organizational:
+
+[quote]
+Does recoverability reduce the economic value of expensive, individualized dispute resolution?
+
+A large firm does not need to instruct employees to behave unfairly for this effect to appear.
+
+Suppose a company can choose between two systems.
+
+System A invests heavily in human review, gives frontline agents authority to waive disputed charges, permits flexible exits, and resolves ambiguous cases individually.
+
+System B uses standardized billing, narrow escalation rules, automated delinquency states, limited human authority, and an established collections pipeline.
+
+If unresolved balances retain expected recovery value, the cost difference between the two systems may favor System B even when System B produces more disputed accounts.
+
+The resulting organizational behavior may look hostile from the customer's point of view while remaining portfolio-rational from the firm's point of view.
+
+[source,text]
+----
+customer-specific optimization:
+    resolve this disputed bill correctly
+
+portfolio optimization:
+    maximize expected revenue across millions of accounts
+    subject to complaint, churn, legal, and regulatory cost
+----
+
+The hypothesis therefore concerns system incentives, not presumed bad intent.
+
+== Shrouded Pricing, Junk Fees, and Captive Consumers
+
+This hypothesis connects to an established literature on hidden attributes, add-on pricing, switching costs, and captive consumers.
+
+Gabaix and Laibson's work on *shrouded attributes* shows how competitive firms can have incentives to obscure add-on prices when consumers do not fully account for those prices at the initial purchase decision.
+
+The Federal Trade Commission has separately described junk fees as unnecessary, unavoidable, or surprise charges and has highlighted charges imposed on captive consumers, including situations in which a consumer has already incurred sunk costs and cannot easily walk away.
+
+FTC enforcement against Vonage is a concrete telecommunications example. The agency alleged that the company made enrollment comparatively easy while making cancellation difficult, imposed unexpected termination fees, and in some cases continued charging after cancellation requests.
+
+These observations support a broader distinction:
+
+[source,text]
+----
+competition for acquisition
+    !=
+competition for transparency after acquisition
+----
+
+A market can be highly competitive at the point of customer acquisition while providing weak discipline after the customer is contractually or operationally locked in.
+
+The monetizable-exit hypothesis adds one more possible layer:
+
+[source,text]
+----
+acquisition
+    -> lock-in
+    -> add-on extraction
+    -> exit friction
+    -> residual balance
+    -> collection / reporting
+----
+
+The final stages may reduce the supplier's economic loss from a failed relationship.
+
+== From Local Debt to External Penalty
+
+The second hypothesis begins where the first ends.
+
+If an unpaid or disputed balance remained only between the original provider and the consumer, the conflict would remain local.
+
+Consumer reporting changes that topology.
+
+A collection tradeline can become an input into a credit report. Credit-scoring models can use collection information. Consumer reports and scores can then influence decisions outside the original relationship.
+
+The CFPB states that consumer reports are used in decisions involving credit, residential rental housing, insurance, employment, and other contexts. It also explains that credit scores can affect qualification, interest rates, credit limits, tenant screening, and insurance-related decisions.
+
+Thus a debt arising in one market may affect the consumer's terms in another.
+
+[source,text]
+----
+billing dispute in market A
+    -> delinquency / collection
+    -> consumer-report entry
+    -> score or screening effect
+    -> higher cost or exclusion in markets B, C, D...
+----
+
+This is *penalty propagation*.
+
+The consequences can be nonlinear because access decisions frequently use thresholds.
+
+A small change around an underwriting cutoff can matter more than a larger change far from that cutoff.
+
+Federal Reserve Bank of San Francisco research on industry decline illustrates this sensitivity. In communities exposed to coal-industry decline, credit-score reductions were concentrated in the lower-middle part of the distribution and were largest around a subprime boundary where access to credit is especially sensitive to relatively small score movements. The same research reports increased financial distress, including delinquency, collections, and bankruptcy, among more exposed groups.
+
+The lesson is not that every score decline is unfair.
+
+The lesson is that external economic shocks can change measured credit outcomes without requiring a change in some permanent personal trait.
+
+== Credit Score Is a Prediction, Not a Moral Identity
+
+A credit score is often spoken about socially as if it represented a stable property of the person:
+
+[quote]
+reliable or unreliable
+
+But that is stronger than the actual construct.
+
+The CFPB defines a credit score as a prediction of credit behavior based on information in consumer reports. Different models, data sources, products, and dates can produce different scores for the same person.
+
+Therefore:
+
+[quote]
+Credit score is an estimated risk signal conditional on a data-generating environment. It is not a moral rating and it is not an immutable identity.
+
+This distinction becomes especially important during macroeconomic, political, industrial, health, migration, or institutional shocks.
+
+If a large fraction of a population becomes delinquent over a short interval, at least two explanations are possible:
+
+. the underlying individual repayment propensity of a large fraction of people changed independently;
+. the environment changed in a way that caused many previously sustainable obligations to become unsustainable.
+
+The observed score distribution alone cannot identify which explanation dominates.
+
+This produces a broader research problem:
+
+[quote]
+When does a population-wide deterioration in credit scores measure deterioration in individual latent risk, and when does it measure a regime shock imposed on the population?
+
+== The Regime-Dependence Problem
+
+Let an individual's observed credit outcome be:
+
+[stem]
+++++
+Y_i = f(B_i, E, I, D_i)
+++++
+
+where:
+
+* B_i represents individual financial behavior;
+* E represents the economic environment;
+* I represents institutional rules, reporting practices, and enforcement;
+* D_i represents the data visible to the scoring system.
+
+A scoring model attempts to infer future repayment outcomes from observed historical data.
+
+But if E or I changes substantially, the mapping between historical behavior and future risk can change.
+
+This is a standard model-risk problem: prediction depends on the data-generating regime.
+
+A sudden score deterioration across millions of people may therefore contain information not only about individuals but also about unemployment, industry decline, inflation, war or displacement, health shocks, energy shocks, policy changes, reporting-policy changes, debt-servicing rules, collection intensity, or combinations of those factors.
+
+This does not make credit scoring useless. It means that the interpretation of the score must remain conditional.
+
+== Reputational Collateral
+
+The World Bank uses the useful concept of *reputational collateral*.
+
+Credit reporting can benefit consumers by allowing a good payment history to substitute partly for physical collateral. It can reduce information asymmetry, improve credit allocation, discourage strategic default, and make credit available on better terms to consumers whose records indicate lower expected risk.
+
+This is the positive side of the same mechanism.
+
+But reputational collateral has a symmetry:
+
+[source,text]
+----
+positive history
+    -> portable reputation
+    -> broader access
+
+negative history
+    -> portable penalty
+    -> broader restriction
+----
+
+A reporting system therefore converts local contractual behavior into portable economic information.
+
+That portability is precisely what gives the system value to lenders.
+
+It is also what creates the possibility of penalty propagation when the underlying information is disputed, inaccurate, weakly predictive, or heavily shaped by an external shock.
+
+== A Natural Experiment: Medical Debt
+
+Medical debt provides an important empirical warning against treating every negative tradeline as equally informative.
+
+A 2025 NBER working paper examined the removal of medical debts below $500 from consumer credit reports after the nationwide credit bureaus changed their reporting practices.
+
+The researchers report that small medical debts were not meaningfully predictive of default in their analysis.
+
+The significance for the present hypothesis is not that all collection information is uninformative.
+
+It is narrower:
+
+[quote]
+The presence of a negative debt item does not guarantee that the item contributes meaningful incremental information about future repayment risk.
+
+This matters because the social and economic consequences of a negative item can exceed its predictive value.
+
+The correct research question is therefore not merely:
+
+[quote]
+Is the debt real?
+
+It must also include:
+
+[quote]
+How predictive is this class of debt, how contestable is it, how persistent is it, and how large are the downstream consequences of reporting it?
+
+== The Dispute-Asymmetry Problem
+
+Federal law provides consumers with dispute rights.
+
+The CFPB explains that consumers may dispute inaccurate information with both the consumer reporting company and the furnisher. Reporting companies generally must investigate qualifying disputes, and furnishers have investigation obligations as well.
+
+That legal architecture is important.
+
+But it also reveals a structural burden.
+
+A consumer facing one disputed account may have to interact with:
+
+* the original provider;
+* a collector;
+* one or more nationwide reporting companies;
+* a specialty reporting company;
+* a future lender or landlord affected by the record.
+
+The firm, by contrast, can process thousands or millions of accounts through standardized systems.
+
+This creates an asymmetry of scale:
+
+[stem]
+++++
+C_{consumer}(dispute) \gg C_{firm}(account)
+++++
+
+not necessarily in absolute dollars, but in attention, time, documentation, expertise, and opportunity cost relative to the resources available to each side.
+
+The asymmetry becomes stronger when a household simultaneously uses many essential or quasi-essential services:
+
+* electricity;
+* water;
+* internet;
+* mobile service;
+* insurance;
+* housing;
+* vehicle financing;
+* banking;
+* healthcare.
+
+A person can therefore face multiple independent billing systems with multiple opportunities for friction, while possessing only one finite pool of time and attention for dispute resolution.
+
+This is the *finite-dispute-capacity problem*.
+
+== Finite Dispute Capacity
+
+Let a consumer have dispute capacity K, measured in available time, money, legal knowledge, documentation capacity, and attention.
+
+Let each unresolved account require expected effort d_j.
+
+The consumer can fully contest all disputes only if:
+
+[stem]
+++++
+\sum_j d_j \leq K.
+++++
+
+When:
+
+[stem]
+++++
+\sum_j d_j > K,
+++++
+
+the consumer must abandon, defer, settle, or inadequately pursue some claims even if those claims are substantively valid.
+
+This creates an important market asymmetry.
+
+The provider need not prevail on the merits of every disputed balance.
+
+It may be sufficient that the expected cost of contesting the balance exceeds the expected benefit for enough consumers.
+
+The contribution of this hypothesis is to connect that finite-capacity problem specifically to debt recoverability and reputational propagation.
+
+== The Combined Hypothesis
+
+The combined mechanism can now be stated as:
+
+[source,text]
+----
+opaque or contested billing
+    -> unresolved balance
+    -> recoverable residual asset
+    -> reduced value of individualized dispute resolution
+    -> collection infrastructure
+    -> consumer-report propagation
+    -> consequences outside the original market
+    -> increased consumer cost of resistance
+----
+
+This may create a feedback loop.
+
+If the consumer expects that refusing payment may damage future credit or housing access, the consumer may rationally pay even a disputed amount.
+
+Therefore consumer reporting does not merely measure repayment behavior.
+
+It may also change repayment behavior.
+
+This is consistent with the broader economic literature on credit reporting as a mechanism that can reduce moral hazard and increase repayment incentives.
+
+The same disciplinary power that makes reporting valuable to lenders can increase bargaining pressure on consumers in disputed-service relationships.
+
+== A More Precise Incentive Model
+
+Let the provider choose a dispute-resolution quality level q, where higher q means more expensive but more accurate and consumer-responsive resolution.
+
+Let:
+
+* C(q) be the provider's dispute-resolution cost;
+* R(q) be service-retention value;
+* L(q) be recoverable residual value from unresolved balances;
+* P(q) be expected regulatory, litigation, complaint, and reputational cost.
+
+Then expected value is:
+
+[stem]
+++++
+\Pi(q) = R(q) + L(q) - C(q) - P(q).
+++++
+
+A pure service model makes R(q) dominant and L(q) small.
+
+A system with efficient collection and reporting may increase the value associated with L(q) and may increase the consumer's private cost of refusing payment.
+
+The hypothesis predicts that, holding regulation and competition constant, this can reduce the profit-maximizing q.
+
+In plain language:
+
+[quote]
+The easier it is to preserve value after the customer relationship fails, the less economically necessary it may become to resolve every marginal dispute in a customer-preserving way.
+
+This is a testable claim.
+
+== What Would Count as Evidence?
+
+A serious empirical test should not rely on anecdotes.
+
+Possible designs include:
+
+=== Cross-Industry Comparison
+
+Compare industries in which delinquent balances are highly recoverable and reportable with industries in which exit normally ends the economic relationship.
+
+Measure complaint rates, billing reversals, fee intensity, cancellation friction, escalation accessibility, time to resolution, customer-service authority, and frequency of collection placement.
+
+=== Policy Discontinuities
+
+Study regulatory changes that alter reportability, collection rights, debt-sale practices, retention periods, dispute rules, or fee disclosure.
+
+If the hypothesis is correct, reducing residual recoverability should increase the value of pre-collection dispute resolution.
+
+=== Firm-Level Debt-Sale Changes
+
+Observe firms before and after they begin or stop selling receivables, change collection vendors, change furnishing practices, or introduce recurring portfolio sales.
+
+Test whether billing, cancellation, waiver, and escalation behavior changes.
+
+=== Reporting Thresholds
+
+Natural experiments such as medical-debt reporting thresholds can help estimate the downstream value and harm associated with particular categories of negative information.
+
+=== Macro Shocks
+
+During a major economic shock, separate individual behavioral change, environmental shock, and institutional reporting change.
+
+Then test how much of later score deterioration is explained by each.
+
+== Falsification Conditions
+
+The monetizable-exit hypothesis would be weakened if recoverability has no relationship with dispute-resolution investment; firms that cannot monetize residual balances are no more consumer-responsive than firms that can; changes in debt-sale or reporting rules have no measurable effect on billing, dispute, or retention behavior; or collection value is economically trivial relative to retention value in the industries examined.
+
+The penalty-propagation hypothesis would be weakened if service collections rarely enter reporting systems; reported collections have negligible effect on decisions outside the originating market; dispute outcomes are corrected before meaningful downstream effects occur; or scoring models effectively neutralize non-predictive service collections.
+
+The purpose of falsification criteria is to prevent the argument from becoming a narrative that explains every outcome after the fact.
+
+== What This Article Does Not Claim
+
+This article does not claim that:
+
+* debt collection is inherently illegitimate;
+* credit bureaus intentionally create bad credit;
+* service providers generally fabricate debt;
+* every junk fee is fraudulent;
+* every negative tradeline is inaccurate;
+* every credit-score decline is caused by external conditions;
+* credit reporting should be abolished;
+* a low credit score proves nothing about repayment risk.
+
+The article also does not equate correlation with intent.
+
+A system can produce harsh outcomes through incentives, automation, transaction costs, and institutional design without any central actor intending the complete outcome.
+
+That distinction is essential.
+
+== The Measurement Problem at Population Scale
+
+Suppose a country experiences a rapid deterioration in credit records across a very large share of the population.
+
+It is tempting to conclude:
+
+[quote]
+The population became less reliable.
+
+But that statement silently converts a model output into a statement about human character.
+
+A more disciplined interpretation is:
+
+[quote]
+Under the prevailing economic and institutional regime, a larger fraction of the population generated payment histories associated by the model with higher predicted default risk.
+
+That statement preserves the actual epistemic content while leaving the causal question open.
+
+The deterioration may reflect individual over-borrowing, strategic nonpayment, recession, inflation, currency collapse, unemployment, war, forced migration, institutional failure, payment-system disruption, creditor behavior, reporting-policy changes, or combinations of these causes.
+
+When the distribution changes quickly and broadly, the regime itself becomes part of the object being measured.
+
+== Closing Thesis
+
+The first thesis of this article is:
+
+[quote]
+When exit remains monetizable, losing a customer is not equivalent to losing all remaining economic value.
+
+The second thesis is:
+
+[quote]
+When residual debt can enter consumer-reporting infrastructure, a local service dispute can become a portable economic penalty.
+
+The third thesis follows from combining them:
+
+[quote]
+Debt recoverability and reputational propagation may jointly reduce the firm's incentive to resolve marginal disputes while increasing the consumer's cost of resisting disputed charges.
+
+And the final measurement thesis is:
+
+[quote]
+A credit score is a regime-dependent prediction built from observed data, not a permanent identity of the person being scored.
+
+The research program therefore has two directions.
+
+The first is institutional:
+
+[quote]
+Does monetizable exit measurably reduce investment in fair, flexible, individualized dispute resolution?
+
+The second is epistemic:
+
+[quote]
+When a large population's credit scores deteriorate rapidly, how much of the signal belongs to individuals, and how much belongs to the economic and institutional regime through which they are being measured?
+
+Those questions are empirical.
+
+They should be tested rather than assumed.
+
+== Sources and Research Anchors
+
+* Consumer Financial Protection Bureau, “Does my history of paying utility bills, like telephone, cable, electricity, or water, go in my credit report?” (reviewed September 5, 2025): https://www.consumerfinance.gov/ask-cfpb/does-my-history-of-paying-utility-bills-like-telephone-cable-electricity-or-water-go-in-my-credit-report-en-1817/
+* Consumer Financial Protection Bureau, “National Consumer Telecom & Utilities Exchange”: https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/consumer-reporting-companies/companies-list/national-consumer-telecom-utilities-exchange/
+* Consumer Financial Protection Bureau, “When can a debt collector report my debt to a credit reporting company?”: https://www.consumerfinance.gov/ask-cfpb/when-can-a-debt-collector-report-to-a-credit-reporting-agency-en-2111/
+* Consumer Financial Protection Bureau, “Market Snapshot: Trends in Third-Party Debt Collections Tradelines Reporting” (February 14, 2023): https://www.consumerfinance.gov/data-research/research-reports/market-snapshot-trends-in-third-party-debt-collections-tradelines-reporting/
+* Consumer Financial Protection Bureau, “Understand your credit score”: https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/understand-your-credit-score/
+* Consumer Financial Protection Bureau, “Consumer reporting companies”: https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/consumer-reporting-companies/
+* Consumer Financial Protection Bureau, “How do I dispute an error on my credit report?” (reviewed September 2, 2026): https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-an-error-on-my-credit-report-en-314/
+* Federal Trade Commission, “Federal Trade Commission Explores Rule Cracking Down on Junk Fees” (October 20, 2022): https://www.ftc.gov/news-events/news/press-releases/2022/10/federal-trade-commission-explores-rule-cracking-down-junk-fees
+* Federal Trade Commission, “FTC Action Against Vonage Results in $100 Million to Customers Trapped by Illegal Dark Patterns and Junk Fees When Trying to Cancel Service” (November 3, 2022): https://www.ftc.gov/news-events/news/press-releases/2022/11/ftc-action-against-vonage-results-100-million-customers-trapped-illegal-dark-patterns-junk-fees-when-trying-cancel-service
+* Xavier Gabaix and David Laibson, “Shrouded Attributes, Consumer Myopia, and Information Suppression in Competitive Markets,” _Quarterly Journal of Economics_ 121(2), 2006.
+* World Bank, “Credit Bureau” background note: https://www.worldbank.org/en/publication/gfdr/gfdr-2016/background/credit-bureau
+* Christa N. Gibbs et al., “Consumer Credit Reporting Data,” NBER Working Paper 32791 (2024): https://www.nber.org/papers/w32791
+* Victor Duarte et al., “The Effects of Deleting Medical Debt from Consumer Credit Reports,” NBER Working Paper 33644 (2025): https://www.nber.org/papers/w33644
+* Federal Reserve Bank of San Francisco, “Industry Decline and Household Finances” (2025): https://www.frbsf.org/research-and-insights/publications/economic-letter/2025/09/industry-decline-and-household-finances/

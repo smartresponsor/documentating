@@ -37,6 +37,10 @@ The working thesis is narrower:
 [quote]
 Evolution may be interpreted not only as adaptation into an unknown future, but, under a stronger speculative hypothesis, as partial reconstruction of structurally privileged or previously instantiated states under incomplete preservation.
 
+The asymmetry in this sentence is deliberate. *Evolution* names an established class of biological processes and observed historical change. *Restorative interpretation* names an additional hypothesis about whether some trajectories bear a non-accidental relation to an independently specified prior or structurally privileged reference class.
+
+The article therefore does not treat restoration as the geometry of biological state space by default. A privileged region, attractor, preserved reference, or historical reconstruction must be argued for separately. Without such evidence, evolution remains evolution, and apparent return may be ordinary convergence, developmental bias, physical constraint, or selection.
+
 == The Intuition: Progress or Reconstruction?
 
 Ordinary evolutionary biology explains biological change through mechanisms such as heritable variation, natural selection, drift, mutation, recombination, migration, developmental constraint, and interactions between organisms and environments. Nothing in this article replaces those mechanisms.
@@ -329,6 +333,96 @@ This does not establish restorative evolution.
 
 It strengthens the methodological requirement already introduced above: before speaking about a biological objective, one must first specify the level at which the objective, persistence, or reconstruction is being attributed.
 
+=== Reproductive Filtering Before Culture
+
+Human culture is not required for reproductive filtering to exist.
+
+Non-human animals can alter the genetic composition of subsequent generations through mechanisms that include dispersal, kin recognition, active mate choice, social organization, extra-pair mating, and post-copulatory processes.
+
+This does not mean that animals possess a universal prohibition against mating with relatives.
+
+They do not.
+
+A large meta-analysis of experimental studies found little support for universal kin avoidance across diploid animals, while a comparative phylogenetic analysis found that inbreeding-avoidance mechanisms are most expected when two conditions coincide: relatives encounter one another often enough for inbreeding to occur, and inbreeding depression imposes a fitness cost. <<deboer-inbreeding>><<pike-inbreeding>>
+
+The important distinction is therefore between a *cultural rule* and a more general *reproductive filter*.
+
+A reproductive filter need not contain a symbolic norm such as “do not mate with close kin.”
+
+It can instead arise from local biological mechanisms:
+
+* one sex disperses farther from the natal group;
+* individuals recognize or discriminate among kin-associated cues;
+* mating opportunities are structured by territory or social organization;
+* mating preferences correlate with phenotype or genetic compatibility;
+* fertilization or reproductive success differs after mating.
+
+Such mechanisms can alter which combinations of inherited variation actually enter the next generation without any organism representing the population-level consequence.
+
+This makes human culture a possible additional layer rather than a necessary origin of reproductive filtering.
+
+In humans, explicit norms, institutions, kinship categories, and learned prohibitions can amplify, redirect, formalize, or suppress biologically available reproductive patterns.
+
+The existence of pre-cultural reproductive filtering matters for the restorative hypothesis because it removes an unnecessary anthropocentric assumption.
+
+The hypothesis does not need to claim that a cultural prohibition somehow encodes hidden knowledge of a target genome.
+
+But the same observation also blocks an easy restorative inference.
+
+Known evolutionary mechanisms already predict non-random reproductive outcomes whenever different pairings differ in expected fitness, encounter probability, dispersal cost, social accessibility, or genetic compatibility.
+
+Therefore:
+
+[quote]
+Non-random mating is not evidence of restorative search.
+
+A more useful abstraction is to treat reproduction as a distributed population-level filtering process over a space of possible combinations.
+
+Let \(G\) denote a candidate offspring genotype or, more generally, a heritable configuration.
+
+Then ordinary reproductive structure may produce:
+
+[stem]
+++++
+P(G \mid \text{observed reproductive process})
+\neq
+P(G \mid \text{random pairing})
+++++
+
+without implying restoration.
+
+The distribution may differ from random pairing because of selection, demography, population structure, dispersal, phenotype-mediated preference, compatibility effects, or post-mating processes.
+
+Under the strong Restorative Evolution Hypothesis, the question would have to be narrower.
+
+Suppose a reference configuration or reference class \(C_0\) is specified independently of the observed mating outcomes, together with an explicit structural distance \(d_E\).
+
+A restorative anomaly would require evidence of something like:
+
+[stem]
+++++
+\mathbb{E}\!\left[d_E(G_{\mathrm{observed}}, C_0)\right]
+<
+\mathbb{E}\!\left[d_E(G_{\mathrm{null}}, C_0)\right]
+++++
+
+where the null model already includes the known effects of selection, relatedness, population structure, dispersal, compatibility, environment, and developmental constraint.
+
+Even such a result would not by itself establish historical restoration.
+
+It would identify a residual directional structure requiring explanation.
+
+Only if a preservation channel linking the system to \(C_0\) were also identified would the stronger historical interpretation become plausible.
+
+This distinction suggests a disciplined replacement for anthropomorphic language such as “the organism searches for the missing genome.”
+
+A better description is:
+
+[quote]
+Reproductive populations perform distributed combinatorial filtering over heritable state space through many local biological and, in humans, cultural decisions and constraints.
+
+Whether that filtering is merely fitness-structured or contains a statistically distinguishable restorative component is an empirical question.
+
 === Mate Choice as Indirect Biological and Cultural Filtering
 
 Human mating makes the same point from another direction.
@@ -517,6 +611,10 @@ A system's difficulties inside an environment are not evidence that the system i
 Only a prospective, model-dependent pattern of mismatch could carry evidential weight.
 
 The deeper philosophical question of why an embedded biological system exhibits search, preference, intention, or reference-state behavior at all is related but broader. It should be developed separately from the present article so that homeostasis, evolutionary teleonomy, cognitive intention, and speculative restorative search are not collapsed into one concept.
+
+That separation is now treated as a formal boundary of the hypothesis. Goal-directed biological regulation does not by itself imply cognitive intention; cognitive intention does not imply a restorative target; and an organism's attempt to reconstruct its own history or origin does not establish that the history being reconstructed contains a lost reference state.
+
+The companion essay xref:article/the-organism-that-searches-for-its-origin.adoc[The Organism That Searches for Its Origin: From Teleonomy to Recursive Reconstruction] develops that boundary as a separate problem.
 
 == Observation, Tension, Intuition, and Speculation
 
@@ -1686,6 +1784,7 @@ What, if anything, can an internal observer infer about the structure, limits, o
 * [[[charlesworth-willis]]] Deborah Charlesworth and John H. Willis, https://www.nature.com/articles/nrg2664[The genetics of inbreeding depression], _Nature Reviews Genetics_ 10, 783–796 (2009).
 * [[[ronce-dispersal]]] Ophélie Ronce, https://www.annualreviews.org/content/journals/10.1146/annurev.ecolsys.38.091206.095611[How Does It Feel to Be Like a Rolling Stone? Ten Questions About Dispersal Evolution], _Annual Review of Ecology, Evolution, and Systematics_ 38, 231–253 (2007).
 * [[[deboer-inbreeding]]] Raïssa A. de Boer et al., https://www.nature.com/articles/s41559-021-01453-9[Meta-analytic evidence that animals rarely avoid inbreeding], _Nature Ecology & Evolution_ 5, 949–964 (2021).
+* [[[pike-inbreeding]]] Victoria L. Pike, Charlie K. Cornwallis, and Ashleigh S. Griffin, https://pmc.ncbi.nlm.nih.gov/articles/PMC8334842/[Why don't all animals avoid inbreeding?], _Proceedings of the Royal Society B_ 288(1956), 20211045 (2021).
 * [[[founder-effects]]] Katherine K. A. T. Austerlitz et al. discussion summarized in https://pmc.ncbi.nlm.nih.gov/articles/PMC7045715/[Founder effects and species introductions: A host versus parasite perspective], _Evolutionary Applications_ (2020).
 * [[[invasion-dynamics]]] Arnaud Estoup et al., https://pmc.ncbi.nlm.nih.gov/articles/PMC8210789/[The evolutionary dynamics of biological invasions: A multi-approach perspective], _Evolutionary Applications_ (2021).
 * [[[human-expansion]]] Brenna M. Henn, L. Luca Cavalli-Sforza, and Marcus W. Feldman, https://pmc.ncbi.nlm.nih.gov/articles/PMC3497766/[The great human expansion], _Proceedings of the National Academy of Sciences_ 109(44), 17758–17764 (2012).

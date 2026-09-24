@@ -1,0 +1,325 @@
+= Boundaries and Recombination: The Topology of Distributed Search
+:page-slug: boundaries-and-recombination-the-topology-of-distributed-search
+:page-published: 2026-09-22
+:page-author: Oleksandr Tishchenko
+:description: A scientific-philosophical essay on diversity, partial separation, permeability, recombination, and distributed search.
+:page-tags: distributed-search, recombination, diversity, permeability, restorative-evolution, population-structure
+
+_Source asciidoc: `docs/article/boundaries-and-recombination-the-topology-of-distributed-search.adoc`_
+
+== Position in the Series
+
+This essay belongs after xref:article/evolution-as-reconstruction-under-incomplete-preservation.adoc[Evolution as Reconstruction Under Incomplete Preservation: A Restorative Evolution Hypothesis] and before xref:article/the-organism-that-searches-for-its-origin.adoc[The Organism That Searches for Its Origin: From Teleonomy to Recursive Reconstruction].
+
+The previous essay already introduces distributed biological search, recombination, migration, population structure, and the possibility that relevant restorative information is not contained in one genome or one organism.
+
+The present essay asks a narrower question:
+
+[quote]
+What topology of separation and exchange preserves non-redundant exploration while still allowing useful structures to recombine?
+
+This is a systems question, not a migration-policy prescription.
+
+== Separation and Mixing Are Not Opposites
+
+Complete isolation blocks exchange.
+
+Complete homogenization can erase the differences from which new combinations arise.
+
+The relevant variable is therefore not simply whether a boundary exists, but its permeability: what crosses it, at what rate, through which channel, and whether distinct trajectories remain independent long enough to generate non-redundant structure.
+
+[quote]
+A boundary can be treated not only as a wall, but as a parameter of information flow.
+
+== Minimal Model
+
+Let partially distinct populations or clusters be:
+
+[stem]
+++++
+P_1,P_2,\ldots,P_n.
+++++
+
+Let their possible exchange relations form a graph:
+
+[stem]
+++++
+G=(V,E).
+++++
+
+Let (D_{within}) denote diversity maintained inside populations, (D_{between}) differentiation among them, (M) exchange intensity, (T) exchange topology, and (S) filtering or retention conditions.
+
+A schematic combinatorial capacity can then be written:
+
+[stem]
+++++
+\mathcal{C}=F(D_{within},D_{between},M,T,S).
+++++
+
+No monotonic relation is assumed.
+
+Increasing (M) may initially enlarge the accessible combination space and later reduce independent diversity if coupling becomes sufficiently strong.
+
+The optimum, if one exists, is therefore allowed to be regime-dependent.
+
+== The Island-Model Analogy
+
+Distributed evolutionary algorithms provide a useful formal neighbor.
+
+Island models divide a population into subpopulations that explore partly independently and exchange candidate solutions periodically.
+
+Isolation can preserve diverse exploration.
+
+Migration can transmit useful structures.
+
+But exchange is not automatically beneficial at every rate. Very frequent or very large migrations can reduce diversity and make a distributed system behave increasingly like one population, while extremely weak exchange can leave discoveries trapped in isolated islands.
+
+The analogy is therefore:
+
+[source,text]
+----
+too little exchange -> fragmentation
+partial exchange    -> independent exploration + recombination
+too much coupling   -> loss of distinct trajectories / premature convergence
+----
+
+This does not prove an equivalent law for biology or society. It supplies a formal analogy that prevents the simplistic rule "more connectivity is always better."
+
+== Biological Population Structure
+
+Population genetics supplies a second neighboring domain.
+
+Mutation, recombination, drift, selection, dispersal, migration, admixture, and demographic history jointly shape genetic variation.
+
+Gene flow generally tends to reduce differentiation, while barriers, distance, selection, and historical structure can preserve it.
+
+The relevant structural lesson is limited:
+
+[quote]
+Variation can be distributed across partially connected populations, and evolutionary outcomes depend on both local dynamics and the topology and intensity of exchange.
+
+This is not a social prescription.
+
+== Boundaries as Search Partitions
+
+A partition can slow propagation long enough for local trajectories to diverge.
+
+Later exchange can then recombine structures produced under different histories:
+
+[source,text]
+----
+partition
+    -> partially independent exploration
+    -> accumulated difference
+    -> contact
+    -> exchange
+    -> recombination
+    -> higher-order exploration
+----
+
+This does not imply that historical human borders were created for this purpose.
+
+Observed effect is not evidence of purpose.
+
+== Recombination Is Not Homogenization
+
+Recombination requires distinguishable inputs.
+
+If two populations become identical with respect to every relevant structure, exchange between them generates little novelty.
+
+The stronger formulation is therefore:
+
+[quote]
+A combinatorial system may not need difference to disappear. It may need difference to become traversable.
+
+This replaces the crude opposition between "closed boundaries" and "complete mixing" with a question about adaptive permeability.
+
+== Human Societies: Boundary of the Analogy
+
+Human beings are not candidate solutions in an optimization algorithm.
+
+Political communities are not breeding islands.
+
+Religion, ethnicity, nationality, language, culture, and genetic variation are not interchangeable variables.
+
+Any concrete border or migration policy requires separate ethical, legal, economic, demographic, security, institutional, and human-rights analysis.
+
+The present hypothesis does not determine such a policy.
+
+Its defensible social question is narrower:
+
+[quote]
+How does network permeability affect the preservation, transmission, recombination, and loss of heterogeneous information?
+
+That question applies not only to migration, but also to universities, cities, firms, scientific communities, languages, technological ecosystems, and research disciplines.
+
+== Multiple Channels of Exchange
+
+Human systems transmit much more than genes.
+
+They transmit language, techniques, institutions, stories, norms, scientific methods, tools, records, models, and mathematical abstractions.
+
+Therefore exchange should not be represented as one scalar:
+
+[stem]
+++++
+M=(M_g,M_p,M_c,M_i,\ldots),
+++++
+
+where the components can represent genetic, demographic, cultural, informational, and other channels.
+
+These channels must not be collapsed into one another.
+
+== Conflict and War
+
+The search metaphor raises a harder question: can war be treated as part of combinatorial exploration?
+
+Only in a severely restricted descriptive sense.
+
+War can alter population structure, institutions, technologies, borders, and the survival of competing configurations.
+
+But those effects do not show that war occurs in order to improve search.
+
+[quote]
+Selection effect is not purpose.
+
+War also destroys people, information, infrastructure, cultural continuity, trust, and unrealized alternatives.
+
+Therefore the emergence of a later configuration cannot by itself make war an efficient or necessary search operator.
+
+A meaningful comparison requires the counterfactual question:
+
+[quote]
+Could equal or greater informational gain have been achieved through less destructive mechanisms?
+
+Science, experimentation, institutional competition, negotiation, simulation, and computation can compare alternatives without physically realizing every destructive branch.
+
+This suggests a possible transition:
+
+[source,text]
+----
+physical exploration
+    -> representational exploration
+    -> simulated exploration
+----
+
+The development of intelligence may reduce the amount of irreversible physical exploration required to compare alternatives.
+
+That is a philosophical hypothesis, not a demonstrated law of history.
+
+== Relation to Restorative Evolution
+
+Suppose, under the strong Restorative Evolution Hypothesis, that relevant information is distributed:
+
+[stem]
+++++
+I_R=\bigcup_{i=1}^{n}I_i.
+++++
+
+No one population contains all of (I_R).
+
+Reconstruction may then require exchange among populations.
+
+But complete homogenization can also destroy unique fragments before their significance becomes visible.
+
+The system would therefore face two simultaneous requirements:
+
+[source,text]
+----
+preserve distributed fragments
+        +
+permit later recombination
+----
+
+This yields the new bridge:
+
+[quote]
+Restoration under incomplete preservation may depend not only on what survives, but on the topology through which surviving fragments can later meet.
+
+This is speculative and becomes scientific only if the reference information, preservation channels, null models, and expected recombination signatures can be independently specified.
+
+== Relation to Recursive Reconstruction
+
+The next essay asks how an embedded organism becomes capable of modeling its own origin.
+
+The present article supplies an intermediate layer:
+
+[source,text]
+----
+distributed variation
+    -> partial separation
+    -> exchange
+    -> recombination
+    -> cultural memory
+    -> internal modeling
+    -> counterfactual search
+    -> recursive reconstruction
+----
+
+The conceptual sequence is therefore:
+
+[source,text]
+----
+Restorative Evolution
+    -> Boundaries and Recombination
+    -> The Organism That Searches for Its Origin
+    -> The Universe as a Contained System
+----
+
+== What This Article Does Not Claim
+
+This article does not claim that human history has a hidden optimization objective.
+
+It does not claim that wars exist in order to discover better configurations.
+
+It does not claim that states, religions, ethnic groups, or cultures should be demographically redistributed.
+
+It does not claim that more migration is always beneficial.
+
+It does not claim that less migration is always beneficial.
+
+It does not equate genetic diversity with cultural diversity.
+
+It does not equate human populations with artificial evolutionary islands.
+
+It does not prove the Restorative Evolution Hypothesis.
+
+== Research Questions
+
+. Under which search problems does partial partitioning outperform both full isolation and complete mixing?
+. Can combinatorial capacity be formalized using within-group diversity, between-group differentiation, exchange intensity, topology, and retention?
+. When does connectivity preserve useful diversity, and when does it cause premature convergence?
+. How should genetic, demographic, cultural, informational, and technological exchange channels be modeled separately?
+. Can high permeability coexist with durable local differentiation?
+. Can informational exchange substitute for physical population movement in some search domains?
+. Can representational search reduce the amount of irreversible physical exploration required by a system?
+. Under the Restorative Evolution Hypothesis, what observable signature would distinguish recombination of preserved fragments from ordinary convergence?
+
+== Closing Thesis
+
+A distributed search may require both difference and contact.
+
+Isolation can preserve independent exploration but trap discoveries.
+
+Unrestricted coupling can accelerate exchange but erase the differences from which later recombination draws novelty.
+
+The important variable is therefore not the existence or abolition of boundaries in the abstract.
+
+It is permeability: how easily non-redundant structure can cross between partially distinct trajectories without forcing those trajectories to collapse immediately into one.
+
+If the Restorative Evolution Hypothesis has merit, survival of fragments is not enough. The system must also possess a topology through which the fragments can eventually encounter one another.
+
+Once cognition appears, combinations no longer need to be tested only through reproduction, population movement, or material conflict. They can increasingly be tested in language, models, institutions, science, and computation.
+
+The search can move from material collision toward informational recombination.
+
+Whether that transition is merely a property of intelligence or part of a deeper restorative process remains open.
+
+== References
+
+* [[[marcondes-islands]]] Caio E. Marcondes et al., https://link.springer.com/article/10.1007/s12293-026-00527-0[A Robust Experimental Evaluation of the Co-Evolutionary Islands Model], _Memetic Computing_ 18, 44 (2026).
+* [[[diversity-migration]]] https://doi.org/10.1016/j.swevo.2023.101361[A Diversity-Driven Migration Strategy for Distributed Evolutionary Algorithms], _Swarm and Evolutionary Computation_ 82, 101361 (2023).
+* [[[island-topology]]] https://link.springer.com/article/10.1007/s00500-013-0995-9[Matching Island Topologies to Problem Structure in Parallel Evolutionary Algorithms], _Soft Computing_ (2013).
+* [[[holsinger-weir]]] Kent E. Holsinger and Bruce S. Weir, https://www.nature.com/articles/nrg2611[Genetics in Geographically Structured Populations: Defining, Estimating and Interpreting FST], _Nature Reviews Genetics_ 10, 639-650 (2009).
+* [[[sousa-hey]]] Vitor Sousa and Jody Hey, https://www.nature.com/articles/nrg3446[Understanding the Origin of Species with Genome-Scale Data: Modelling Gene Flow], _Nature Reviews Genetics_ 14, 404-414 (2013).
+* [[[nielsen-arg]]] Rasmus Nielsen, Andrew H. Vaughn, and Yun Deng, https://www.nature.com/articles/s41576-024-00772-4[Inference and Applications of Ancestral Recombination Graphs], _Nature Reviews Genetics_ 26, 47-58 (2025).

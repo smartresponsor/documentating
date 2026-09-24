@@ -1,0 +1,624 @@
+= The Organism That Searches for Its Origin: From Teleonomy to Recursive Reconstruction
+:page-slug: the-organism-that-searches-for-its-origin
+:page-published: 2026-09-22
+:page-author: Oleksandr Tishchenko
+:description: A scientific-philosophical essay asking how an embedded biological system can progress from local regulation and goal-directed behavior to metacognition, self-modeling, and explicit reconstruction of its own origin without treating that transition as evidence of external design or restorative evolution.
+:page-tags: cognition, metacognition, teleonomy, self-model, recursive-reconstruction, restorative-evolution, internal-observer, philosophy-of-biology
+:lang: en
+
+== Position in the Series
+
+This essay develops a question deliberately separated from:
+
+* xref:article/evolution-as-reconstruction-under-incomplete-preservation.adoc[Evolution as Reconstruction Under Incomplete Preservation: A Restorative Evolution Hypothesis];
+* xref:article/the-finite-observer-and-the-resolution-of-change.adoc[The Finite Observer and the Resolution of Change];
+* xref:article/from-irreversibility-to-metric-time.adoc[From Irreversibility to Metric Time: How an Internal Observer Builds the Clock];
+* xref:article/the-universe-as-a-contained-system.adoc[The Universe as a Contained System: External Origin, Internal Metrology, and the Limits of Observation].
+
+The problem is not whether biological systems display goal-directed behavior. They do, and biology possesses naturalistic ways to describe and explain such behavior without invoking a conscious external purpose.
+
+The problem begins one level later:
+
+[quote]
+How does a biological system that is itself part of the world become capable of constructing a model of itself, asking how it came to exist, and deliberately reconstructing a history that it cannot directly observe?
+
+This article calls that transition *recursive reconstruction*.
+
+The term is intentionally narrower than *restoration*. Recursive reconstruction means that a system uses present evidence, memory, models, and inference to reconstruct its own prior states or origin. It does not imply that the system is returning to a lost target, that a target was externally imposed, or that the reconstructed history is correct.
+
+== The Initial Intuition
+
+A simple functional component need not represent the containing system in order to participate in it.
+
+A cell can regulate ion concentrations without asking why the organism exists. A feedback controller can correct an error without possessing a theory of the machine in which it operates. An organism can forage, mate, avoid injury, defend territory, or regulate body temperature without representing those activities as answers to an existential question.
+
+Human cognition appears to add another layer.
+
+The organism can ask:
+
+* Why am I here?
+* What produced me?
+* What preceded my present condition?
+* Which parts of my behavior are inherited, learned, or chosen?
+* Is my present form merely adapted to this environment, or does it preserve traces of another state?
+* What, if anything, am I trying to become?
+
+The existence of such questions is not evidence that the organism is foreign to its environment.
+
+That inference would be too strong.
+
+An organism can be entirely endogenous to a system and still develop increasingly rich internal models of that system and of itself.
+
+The scientifically useful question is therefore not:
+
+[quote]
+Does existential questioning prove that the organism does not belong to the system?
+
+It is:
+
+[quote]
+What additional architecture is required for an embedded biological system to turn ordinary regulation and adaptive search into explicit inquiry about its own origin?
+
+== Four Levels That Must Not Be Collapsed
+
+The argument requires a strict distinction among four levels.
+
+=== Regulation
+
+At the first level, a system can maintain variables within viable ranges.
+
+Abstractly:
+
+[stem]
+++++
+e(t)=r(t)-x(t)
+++++
+
+where \(x(t)\) is an observed variable, \(r(t)\) is a locally relevant reference value or range, and \(e(t)\) is a regulatory error.
+
+Feedback can reduce \(e(t)\) without the system possessing a semantic representation of its purpose.
+
+This is not yet intention.
+
+=== Teleonomic or Goal-Directed Behavior
+
+At the second level, behavior can be described as organized toward an outcome: obtaining food, escaping danger, maintaining temperature, reproducing, reaching shelter, or preserving physiological viability.
+
+Biological and philosophical literature has long distinguished such naturalized goal-directedness from a stronger claim that future purposes literally cause present events. <<sep-teleology>>
+
+The organism can therefore behave *as if toward* a goal without requiring an external planner or a consciously represented cosmic objective.
+
+This is still not equivalent to restorative search.
+
+=== Cognitive Intention and Model-Based Search
+
+At the third level, an organism can represent alternatives before acting.
+
+Instead of relying only on realized variation and subsequent selection, it can compare possible actions internally:
+
+[stem]
+++++
+\{a_1,a_2,\ldots,a_n\}
+\rightarrow
+M
+\rightarrow
+\hat{o}_1,\hat{o}_2,\ldots,\hat{o}_n
+\rightarrow
+a^{*}
+++++
+
+where \(M\) denotes an internal model and \(\hat{o}_i\) denotes an anticipated outcome.
+
+The important transition is not that evolution has stopped.
+
+It is that part of the search over possible states can now occur in representation before physical realization.
+
+=== Metacognition and Recursive Reconstruction
+
+At the fourth level, the system can monitor and evaluate aspects of its own cognition.
+
+Metacognitive research describes capacities such as evaluating one's own uncertainty, confidence, performance, reasoning, and beliefs about one's own abilities. <<fleming-metacognition>><<fleur-metacognition>>
+
+Once a self-directed model exists, the same modeling machinery can be applied recursively:
+
+[stem]
+++++
+M(S)
+\rightarrow
+M(O)
+\rightarrow
+M(\text{history of }O)
+\rightarrow
+M(\text{origin of }O).
+++++
+
+Here \(S\) is the containing system and \(O\subset S\) is the observer.
+
+The organism is no longer only acting inside the system.
+
+It is constructing hypotheses about how an organism capable of constructing hypotheses came to exist.
+
+That is the recursive step.
+
+== The Internal Observer Constraint
+
+The observer in this research program remains internal:
+
+[stem]
+++++
+O \subset S.
+++++
+
+This condition prevents a hidden shift to an omniscient viewpoint.
+
+The observer does not directly inspect its own complete causal history. It occupies a present physical state and has access to traces:
+
+* memory;
+* genetic and developmental structure;
+* fossils and material records;
+* cultural archives;
+* observations of other organisms;
+* instruments;
+* models;
+* theories;
+* present correlations carrying information about prior states.
+
+Thus the origin problem is structurally an inverse problem.
+
+Let the present accessible evidence be \(D_O\). Let \(H\) denote a candidate history.
+
+The observer attempts, explicitly or implicitly, to compare:
+
+[stem]
+++++
+P(H \mid D_O).
+++++
+
+This notation does not claim that human cognition performs literal Bayesian inference in every case.
+
+It expresses the epistemic structure: present evidence underdetermines past history, and reconstruction requires inference among alternatives.
+
+The same constraint already appears in the finite-observer framework: the observer encounters present-accessible traces, not the past as a complete external archive.
+
+Recursive reconstruction extends that point from *what history can be observed* to *what history the observer can formulate about itself*.
+
+== Why the Question of Origin Appears
+
+No single mechanism is assumed to explain existential inquiry.
+
+Several established capacities can contribute.
+
+Humans and other animals learn causal relations. Human causal cognition additionally supports theory-like representations, culturally accumulated explanations, diagnosis, prediction, and intervention. <<bender-causal>>
+
+Human autobiographical memory integrates past experience into a representation of a self extended across time. <<fivush-autobiographical>>
+
+Neuroscience also describes systems involved in constructing models of the self in context and integrating information across time and modalities. <<koban-self>>
+
+Metacognition adds monitoring and evaluation of one's own cognitive states. <<fleming-metacognition>>
+
+None of these findings requires a restorative hypothesis.
+
+Together, however, they make a transition intelligible:
+
+[source,text]
+----
+regulation
+    ->
+goal-directed behavior
+    ->
+model-based action
+    ->
+self-model
+    ->
+metacognition
+    ->
+historical self-model
+    ->
+origin reconstruction
+----
+
+The final step may therefore emerge from capacities that were useful for learning, planning, social coordination, prediction, and self-regulation.
+
+An organism capable of asking why an event occurred can eventually apply the same causal operator to itself.
+
+[stem]
+++++
+\text{Why did }X\text{ happen?}
+\rightarrow
+\text{Why did I happen?}
+++++
+
+That transformation requires no external origin.
+
+== Search Changes Its Substrate
+
+The word *search* is dangerous because it can silently introduce intention where none exists.
+
+At the population level, evolutionary change can explore biological state space through variation, inheritance, selection, drift, recombination, migration, and developmental constraint. Calling this process a *search* is an abstraction, not a claim that evolution possesses a mind.
+
+With cognition, however, another kind of search becomes possible.
+
+Possible configurations can be represented before they are physically instantiated.
+
+The contrast can be expressed as:
+
+[source,text]
+----
+population-level exploration:
+variation -> realization -> differential persistence
+
+cognitive exploration:
+representation -> comparison -> selected realization
+----
+
+The second process does not replace the first.
+
+It creates an additional layer in which counterfactual states, hypothetical histories, tools, social structures, experiments, and future designs can be explored symbolically.
+
+Culture and technology then enlarge this representational search beyond one nervous system.
+
+Archives externalize memory.
+
+Language transmits hypotheses.
+
+Mathematics compresses relations.
+
+Science institutionalizes error correction.
+
+Computation expands the number of alternatives that can be modeled.
+
+The biological system thereby acquires mechanisms for exploring configurations that no single organism could physically instantiate and test within one lifetime.
+
+== From Search to Search About Search
+
+Recursive reconstruction begins when the object of search becomes the process that produced the searcher.
+
+Let:
+
+* \(O\) be an internal observer;
+* \(M_O\) be the observer's model-building process;
+* \(D_O\) be present-accessible evidence;
+* \(H\) be a candidate history explaining the observer's current state.
+
+Then ordinary model-based inquiry can be written schematically as:
+
+[stem]
+++++
+M_O(D_O) \rightarrow \hat{H}.
+++++
+
+Recursive inquiry adds a second-order question:
+
+[stem]
+++++
+M_O\!\left(D_O, M_O\right)
+\rightarrow
+\widehat{H(M_O)}.
+++++
+
+The observer now asks not only what happened, but what historical process produced an observer with this particular capacity to model, doubt, infer, and search.
+
+This is not a proof of hidden memory.
+
+It is a change in the depth of self-reference.
+
+== The Restorative Branch
+
+Only after the naturalistic pathway above has been accepted does the Restorative Evolution Hypothesis become relevant.
+
+The ordinary explanation is:
+
+[quote]
+A sufficiently capable cognitive system applies causal modeling, memory, counterfactual reasoning, and metacognition to itself; existential and origin questions emerge as a consequence of that architecture.
+
+The restorative extension asks a narrower additional question:
+
+[quote]
+Could some forms of self-directed search be statistically or structurally biased toward reconstruction of an independently specified prior or privileged reference class?
+
+The distinction is essential.
+
+Let \(C_0\) be a reference configuration selected independently of the observed outcome. Let \(d_E\) be an explicit structural distance under an equivalence relation \(E\).
+
+A restorative interpretation would require more than the existence of curiosity, dissatisfaction, intention, or origin-seeking.
+
+It would require evidence that some realized trajectory \(C_t\) approaches \(C_0\) more strongly than expected under adequate null models:
+
+[stem]
+++++
+\mathbb{E}[d_E(C_{t+1},C_0)]
+<
+\mathbb{E}[d_E(C_t,C_0)]
+++++
+
+in a way not already explained by selection, physical constraint, developmental bias, learning, cultural transmission, optimization, or ordinary convergence.
+
+Historical restoration would require an additional burden:
+
+[stem]
+++++
+C_0
+\rightarrow
+\text{preservation channel}
+\rightarrow
+\text{later causal influence}.
+++++
+
+Without the preservation channel, similarity to \(C_0\) may still be convergence.
+
+Without independent specification of \(C_0\), the target can be chosen after the fact.
+
+Without an adequate null model, apparent direction can be ordinary adaptation.
+
+Therefore existential search is not evidence of restorative evolution.
+
+It is, at most, a phenomenon within which a restorative component could someday be tested.
+
+== Restoration Without a Recoverer
+
+The framework also permits a logically distinct possibility.
+
+A restorative process, if one exists, need not be consciously represented by the organism participating in it.
+
+Local rules can generate global structure without any local component representing the global structure.
+
+Accordingly, three propositions must remain separate:
+
+. a system can move toward a reference class;
+. the system can contain information causally related to that reference class;
+. an organism inside the system can consciously represent the reference class.
+
+None entails the other two by definition.
+
+This matters because phrases such as “we are trying to restore ourselves” combine all three propositions in one sentence.
+
+A more disciplined vocabulary is:
+
+[quote]
+The system may exhibit restorative dynamics; the organism may exhibit cognitive search; and the observer may hypothesize a relation between the two.
+
+Whether those layers are causally connected is an empirical question.
+
+== The Stronger Speculative Possibility
+
+The strongest branch remains open but must be stated conditionally.
+
+Suppose a biological lineage carries incomplete preservation of some earlier configuration, or suppose the containing system constrains later development toward a structurally privileged class.
+
+Then the emergence of cognition could alter the reconstruction process.
+
+Before reflective cognition, any restorative tendency would operate through distributed biological mechanisms:
+
+[source,text]
+----
+variation
+    + inheritance
+    + development
+    + selection
+    + constraint
+    -> population trajectory
+----
+
+After reflective cognition, the system could add:
+
+[source,text]
+----
+memory
+    + explicit models
+    + counterfactual simulation
+    + culture
+    + technology
+    + deliberate experimentation
+    -> representational trajectory
+----
+
+Under the strong hypothesis, cognition would not create restoration from nothing.
+
+It could instead become a new mechanism through which an already existing structural bias is explored, amplified, or redirected.
+
+This possibility is conceptually coherent.
+
+It is not established by present evidence.
+
+== What “We Are Trying to Recover Ourselves” Can Mean
+
+The phrase can be decomposed into three increasingly strong claims.
+
+=== Weak claim: epistemic reconstruction
+
+We reconstruct ourselves because an internal observer knows its past only through incomplete present traces.
+
+This is compatible with ordinary science.
+
+=== Medium claim: recurrent structural search
+
+Biological and cognitive systems repeatedly enter similar regions of state space because constraints, attractors, selection, learning, or optimization make those regions accessible.
+
+This is stronger, but still does not require historical restoration.
+
+=== Strong claim: restorative reconstruction
+
+Some present biological or cognitive trajectories are causally biased toward a prior or independently privileged reference class because relevant information or constraint survived from that class.
+
+This is the Restorative Evolution Hypothesis proper.
+
+The article keeps these claim levels separate.
+
+== Why Existential Dissatisfaction Is Not Evidence
+
+Another tempting argument is:
+
+[quote]
+If humans were naturally part of this system, they would simply perform their function rather than question their existence.
+
+That inference does not hold.
+
+An endogenous organism can experience conflict among regulatory systems, long-term and short-term objectives, social demands, learned models, uncertainty, and counterfactual possibilities.
+
+A self-model can also represent discrepancy between:
+
+[stem]
+++++
+\text{current state}
+\neq
+\text{represented possible state}.
+++++
+
+Such discrepancy can generate dissatisfaction or search without implying memory of another world, another environment, or another biological form.
+
+The same architecture that allows an organism to improve a tool, revise a theory, leave a dangerous environment, or imagine a different social order also allows it to imagine that its present existence is incomplete.
+
+Therefore subjective incompleteness is not evidence of historical incompleteness.
+
+This is one of the central safeguards of the argument.
+
+== A More Precise Research Question
+
+The interesting question is not whether humans feel that something is missing.
+
+It is whether the transition from biological regulation to recursive reconstruction produces measurable structures that cannot be reduced to ordinary adaptive, cognitive, cultural, and social mechanisms.
+
+Candidate questions include:
+
+. At what level does a reference state become explicitly represented rather than merely implemented by feedback?
+. Which forms of metacognition are required before an organism can model its own historical origin?
+. How does autobiographical continuity scale into species-level or cosmological origin models?
+. Which parts of origin-seeking are individually generated and which are culturally inherited?
+. Can cognitive search be formally separated from population-level evolutionary exploration?
+. Can a reference class \(C_0\) be specified independently enough to make restorative predictions non-circular?
+. What preservation channel would be required for historical restoration rather than ordinary convergence?
+. Could technology transform a distributed biological trajectory by making previously implicit state-space exploration explicit?
+. What observation would distinguish restorative bias from optimization toward present goals?
+. Can an internal observer ever reconstruct enough of its own causal ancestry to discriminate among these hypotheses?
+
+== Relation to the Containing-System Hypothesis
+
+The containing-system hypothesis introduces another possibility: the system observed by \(O\) may itself be nested within a wider physical process.
+
+That possibility does not alter the logic above.
+
+Even if:
+
+[stem]
+++++
+S \subset S_{ext},
+++++
+
+the existence of \(S_{ext}\) does not follow from the fact that \(O\) asks about origin.
+
+Nor would an external biological source automatically explain cognition, teleonomy, or restorative behavior.
+
+The correct dependency is one-way:
+
+[source,text]
+----
+evidence for containing relation
+    -> may constrain origin hypotheses
+
+existential questioning
+    -/-> evidence for containing relation
+----
+
+The origin question may motivate investigation.
+
+It cannot substitute for evidence.
+
+== Canonical Vocabulary
+
+For this research line, the following distinctions should remain stable:
+
+* *regulation* — local error correction or maintenance relative to a viable range or reference variable;
+* *teleonomy / goal-directed behavior* — organized biological behavior describable relative to outcomes without requiring conscious cosmic purpose;
+* *cognitive intention* — represented selection among possible actions or states by an agent;
+* *self-model* — a representation that includes properties, states, capacities, or history attributed to the modeling organism itself;
+* *metacognition* — monitoring or evaluation of one's own cognitive processes;
+* *recursive reconstruction* — reconstruction in which an internal observer models the history or origin of the observer/modeling process itself;
+* *reference class* \(C_0\) — an independently specified configuration or equivalence class relative to which restoration is evaluated;
+* *restorative interpretation* — an additional hypothesis that some trajectory is non-accidentally related to such a reference class;
+* *historical restoration* — the stronger claim that preserved information or constraint from an earlier instantiated configuration causally contributes to later reconstruction.
+
+These terms are not interchangeable.
+
+In particular:
+
+[stem]
+++++
+\text{teleonomy}
+\not\Rightarrow
+\text{intention}
+\not\Rightarrow
+\text{restoration}.
+++++
+
+And:
+
+[stem]
+++++
+\text{origin reconstruction}
+\not\Rightarrow
+\text{external origin}.
+++++
+
+== What This Article Does Not Claim
+
+This article does not claim that existential questioning proves external origin.
+
+It does not claim that humans possess hidden memory of a prior biological state.
+
+It does not claim that evolution has a conscious objective.
+
+It does not claim that metacognition evolved in order to recover a lost genome or prior world.
+
+It does not claim that dissatisfaction with current existence is evidence of displacement from another environment.
+
+It does not claim that cognitive search and evolutionary variation are the same mechanism.
+
+It does not claim that a restorative component has been empirically detected.
+
+It does not require a perfect observer outside the containing system.
+
+== Closing Thesis
+
+The strongest defensible statement is not:
+
+[quote]
+Humans ask why they exist because they do not belong to the system.
+
+Nor is it:
+
+[quote]
+Human intention proves that evolution is restoring a lost state.
+
+The narrower thesis is:
+
+[quote]
+An embedded biological system can cross a threshold at which it no longer merely regulates, adapts, and explores through realized variation. It can construct models of possible states, model itself as one object within those states, evaluate its own cognition, and finally attempt to reconstruct the historical process that produced the model-builder itself.
+
+That transition creates *recursive reconstruction*.
+
+It makes the question of origin possible from inside the system.
+
+Whether that inquiry merely reconstructs history epistemically, repeatedly converges on structurally accessible solutions, or participates in a genuine restorative process remains an open empirical and philosophical question.
+
+The important result is the separation itself:
+
+[stem]
+++++
+\text{being able to ask about origin}
+\neq
+\text{evidence of a particular origin}.
+++++
+
+The search is real.
+
+Its target remains to be demonstrated.
+
+== References
+
+* [[[sep-teleology]]] Colin Allen and Jacob Neal, https://plato.stanford.edu/entries/teleology-biology/[Teleological Notions in Biology], _Stanford Encyclopedia of Philosophy_, substantive revision 2026.
+* [[[fleming-metacognition]]] Stephen M. Fleming, https://www.nature.com/articles/s41583-026-01081-x[Towards an integrative neuroscience of metacognition], _Nature Reviews Neuroscience_ (2026).
+* [[[fleur-metacognition]]] Damien S. Fleur, Bert Bredeweg, and Wouter van den Bos, https://www.nature.com/articles/s41539-021-00089-5[Metacognition: ideas and insights from neuro- and educational sciences], _npj Science of Learning_ 6, 13 (2021).
+* [[[bender-causal]]] Andrea Bender, https://pmc.ncbi.nlm.nih.gov/articles/PMC6987253/[What Is Causal Cognition?], _Frontiers in Psychology_ 10, 2921 (2020).
+* [[[fivush-autobiographical]]] Robyn Fivush, https://www.annualreviews.org/content/journals/10.1146/annurev.psych.121208.131702[The Development of Autobiographical Memory], _Annual Review of Psychology_ 62, 559–582 (2011).
+* [[[koban-self]]] Leonie Koban et al., https://www.nature.com/articles/s41583-021-00446-8[The self in context: brain systems linking mental and physical health], _Nature Reviews Neuroscience_ 22, 309–322 (2021).
+
