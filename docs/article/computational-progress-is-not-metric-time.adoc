@@ -1,0 +1,1030 @@
+= Computational Progress Is Not Metric Time: From Asynchronous Circuits to Causal Computation
+:page-slug: computational-progress-is-not-metric-time
+:page-published: 2026-09-24
+:page-author: Oleksandr Tishchenko
+:description: A research essay separating causal computational progress, computational regime, and metric duration, connecting System Tempo with asynchronous circuits, dataflow, logical time, neuromorphic computing, and a proposed executable proof-of-concept.
+:page-tags: system-tempo, computation, asynchronous-circuits, dataflow, causality, logical-time, neuromorphic-computing, computer-architecture
+:lang: en
+
+== Position in the Series
+
+This essay extends the research line developed in:
+
+* xref:article/system-tempo-and-dynamic-non-identity.adoc[System Tempo and Dynamic Non-Identity];
+* xref:article/the-finite-observer-and-the-resolution-of-change.adoc[The Finite Observer and the Resolution of Change];
+* xref:article/from-irreversibility-to-metric-time.adoc[From Irreversibility to Metric Time: How an Internal Observer Builds the Clock].
+
+Those essays distinguish three ideas that are easy to collapse: ordered progression, system regime, and metric time.
+
+The present article asks what happens if that distinction is taken seriously inside a machine we ourselves design.
+
+The motivating question is simple:
+
+[quote]
+If, within the System Tempo hypothesis, metric time is treated as an internal metrology rather than the only possible description of progression, how would we design a computer whose logical execution is organized primarily by causal completion rather than by a shared clocking discipline?
+
+That question immediately encounters a large existing field.
+
+Clockless processors are not new. Asynchronous circuits are not new. Dataflow machines are not new. Logical clocks are not new. Petri nets, event structures, latency-insensitive design, event-driven hardware, and neuromorphic processors already address major parts of this territory.
+
+The purpose of this essay is therefore not to claim invention of asynchronous computing.
+
+Its narrower proposal is:
+
+[quote]
+Computational order, computational regime, and metric duration should be treated as distinct variables. Metric time can remain indispensable for measuring a physical computer without being the primitive organizer of its computational semantics.
+
+The distinction is conceptual first, architectural second, and potentially experimental third.
+
+== The Familiar Computer: Computation Under a Clock
+
+Most contemporary general-purpose processors are predominantly synchronous systems, although modern chips may contain multiple clock domains, asynchronous interfaces, and locally decoupled subsystems.
+
+Within each synchronous domain, a clock coordinates when state is sampled and transferred. Registers capture values at clock edges. Combinational logic is given a bounded interval in which to settle. Setup time, hold time, propagation delay, pipeline stages, timing closure, frequency, latency, and throughput are all expressed through metric duration.
+
+This architecture is extraordinarily successful.
+
+Nothing in this article argues that synchronous digital design was a mistake.
+
+The question is narrower.
+
+Suppose two computational blocks perform different operations under different physical conditions.
+
+One may stabilize quickly.
+
+Another may require more time because of path length, data dependence, voltage, temperature, process variation, memory latency, or the intrinsic complexity of the operation.
+
+A synchronous design still coordinates those blocks through a selected timing discipline.
+
+That discipline is useful precisely because it creates a common metric framework.
+
+But usefulness does not imply ontological identity between the framework and the computation itself.
+
+The first conceptual separation is therefore:
+
+[stem]
+++++
+\text{computational dependency}
+\neq
+\text{metric duration}.
+++++
+
+An instruction may depend on another instruction because it requires its result.
+
+That dependency is logical and causal.
+
+The number of nanoseconds required to realize the dependency is a property of a particular physical implementation.
+
+The two are related.
+
+They are not the same thing.
+
+== The Intuitive Problem
+
+For a non-specialist, the core intuition can be stated without circuit theory.
+
+Different computational blocks naturally work at different speeds.
+
+A multiplication, a cache lookup, a sensor event, a memory transfer, and a simple Boolean operation do not have a metaphysical reason to require equal physical durations.
+
+The engineering question is therefore:
+
+[quote]
+Why should logically different transitions be coordinated primarily through a timing grid if their actual causal dependencies and completion conditions are not themselves defined by equal physical durations?
+
+The synchronous answer is excellent engineering: because a shared timing discipline makes large systems tractable, predictable, verifiable, and manufacturable.
+
+The present article does not dispute that answer.
+
+It asks whether another abstraction can be made primary:
+
+[quote]
+A next transition becomes admissible when its causal prerequisites have completed, not merely because another globally defined metric interval has elapsed.
+
+That shift sounds radical only until one looks at the history of computer science.
+
+Much of it has already been explored.
+
+== Established Neighbor 1: Lamport and Causal Order Without Physical Clocks
+
+Leslie Lamport's 1978 paper _Time, Clocks, and the Ordering of Events in a Distributed System_ is foundational because it separates event order from physical time.
+
+Lamport begins from the problem that distributed processes cannot rely on a perfectly shared physical clock. He therefore defines the "happened-before" relation in terms of observable events and communication.
+
+The resulting structure is a partial order.
+
+If event (a) causally precedes event (b), then:
+
+[stem]
+++++
+a \rightarrow b.
+++++
+
+But two events may be concurrent without a physically meaningful total ordering between them.
+
+The important lesson for this essay is not simply that logical clocks exist.
+
+It is deeper:
+
+[quote]
+A computation can possess an internally meaningful order even when that order is not derived from a single physical timeline shared by all components.
+
+Lamport did not propose System Tempo.
+
+He did not claim that metric time is non-fundamental in physics.
+
+His problem was distributed computation.
+
+But the conceptual separation is directly relevant:
+
+[source,text]
+----
+causal order
+    !=
+physical clock reading
+----
+
+This is one of the strongest reasons the present proposal must not be presented as a discovery that computers can operate without a global notion of physical time.
+
+Computer science has known that for decades.
+
+== Established Neighbor 2: Event Structures, Petri Nets, and True Concurrency
+
+A second mature line of work treats computation through events and causal relations.
+
+Petri nets represent states and transitions without requiring every transition to belong to one universal sequential timeline.
+
+Event structures, developed in the theory of concurrency, make the causal idea especially explicit.
+
+An event structure can represent which events have occurred, which events depend on previous events, which events may occur concurrently, and where nondeterministic choice exists.
+
+The computational structure is therefore not fundamentally:
+
+[source,text]
+----
+step 1
+step 2
+step 3
+step 4
+----
+
+but can instead be:
+
+[source,text]
+----
+        B
+      /   \
+A ->       -> D
+      \   /
+        C
+----
+
+where (B) and (C) depend on (A), may progress independently, and both are required before (D).
+
+The order is partial.
+
+Metric durations can be attached later.
+
+This distinction between causality and elapsed physical time is already formalized by well-established theory.
+
+The present article therefore borrows its language of causal admissibility from a mature intellectual neighborhood rather than inventing it from scratch.
+
+== Established Neighbor 3: Dataflow Machines
+
+The Manchester Dataflow Machine gives a more architectural example.
+
+Its prototype hardware was operational in the early 1980s.
+
+Instead of treating program execution primarily as traversal of a conventional sequential instruction stream, the tagged-token dataflow model enabled instructions when their required operands became available.
+
+In simplified form:
+
+[source,text]
+----
+data available
+    -> operation enabled
+    -> result produced
+    -> dependent operation enabled
+----
+
+This is already remarkably close to the intuitive computer imagined in this essay.
+
+An operation does not need to run because "the next clock slot belongs to it."
+
+It runs because its dependencies are satisfied.
+
+Again, the present proposal cannot claim novelty merely from replacing sequential scheduling with dependency-driven execution.
+
+Dataflow computing has explored this territory extensively.
+
+The interesting remaining question is how to formulate the distinction between dependency progression and metric duration explicitly enough to connect it with the broader System Tempo framework.
+
+== Established Neighbor 4: Asynchronous Circuits and AMULET
+
+Asynchronous circuits remove the requirement for a global clock from the hardware itself.
+
+Instead of assuming that every stage advances according to a common clock edge, neighboring stages can communicate through protocols such as request/acknowledge handshakes.
+
+A simplified exchange is:
+
+[source,text]
+----
+producer: data ready
+consumer: request observed
+consumer: data accepted
+consumer: acknowledge
+producer: release / continue
+----
+
+The physical circuit progresses when local conditions are satisfied.
+
+The University of Manchester's AMULET project is especially important because it demonstrated that this was not limited to toy controllers.
+
+AMULET1 implemented the ARM architecture asynchronously, using a micropipeline-based design, and demonstrated substantial internal asynchronous concurrency in prototype silicon.
+
+The later AMULET family showed that processors, caches, and systems-on-chip could be constructed without a conventional global processor clock and could perform competitively with synchronous designs in their intended domains.
+
+This matters for two reasons.
+
+First, a "clockless CPU" is already an engineering reality, not merely a philosophical possibility.
+
+Second, the AMULET work observed behavior directly relevant to this article: throughput could depend on data and actual completion behavior rather than being described only by one fixed global cycle time.
+
+That is close to the intuition that different parts of a computation can possess different natural completion rates.
+
+But asynchronous hardware also exposes the cost of the idea.
+
+Handshaking, completion detection, hazards, metastability management, verification, synthesis, testing, and tool support are difficult.
+
+Synchronous design did not dominate merely because engineers failed to imagine alternatives.
+
+It dominated because a shared clock is an extraordinarily powerful simplification.
+
+Any new proposal must respect that engineering history.
+
+== Established Neighbor 5: Latency-Insensitive Design
+
+Latency-insensitive design occupies an important middle position.
+
+Carloni, McMillan, Saldanha, and Sangiovanni-Vincentelli developed methods in which synchronous systems can remain functionally correct even when communication latency between components varies.
+
+The architecture remains synchronous.
+
+The clock does not disappear.
+
+But correctness becomes less tightly coupled to a particular wire delay.
+
+This is conceptually useful because it separates two questions:
+
+* Is the computation functionally correct?
+* How much physical time did communication require?
+
+That separation anticipates one of the central distinctions of this essay:
+
+[stem]
+++++
+\text{causal correctness}
+\neq
+\text{temporal performance}.
+++++
+
+The first concerns whether the right dependencies and transitions occurred.
+
+The second concerns how long the physical realization took.
+
+== Established Neighbor 6: Neuromorphic and Event-Driven Hardware
+
+Modern neuromorphic systems provide a current engineering example of computation that is sparse, event-driven, and often asynchronous.
+
+Intel's Loihi 2 uses asynchronous event-based spiking computation in its neuromorphic cores.
+
+The Speck chip, published in _Nature Communications_ in 2024, goes further as an integrated asynchronous sensing-computing system.
+
+Its event camera emits events when the visual scene changes.
+
+The processing pipeline reacts to those events.
+
+When there is no relevant input, large parts of the compute path need not continuously perform equivalent work.
+
+This makes the architecture easy to explain without product language:
+
+[quote]
+The machine does not need every block to pretend that useful computation is happening at the same rate. Different blocks can react when their own relevant conditions become true.
+
+Speck is not a general-purpose replacement for a conventional CPU.
+
+Loihi is not proof that every workload benefits from asynchronous operation.
+
+Neuromorphic computing trades generality, numerical conventions, tooling maturity, programmability, and workload fit against advantages on particular sparse and event-driven problems.
+
+But these systems demonstrate that event-driven physical computation is an active engineering direction, not a historical curiosity.
+
+== What, Then, Is Left to Propose?
+
+At this point the risk of rediscovery is obvious.
+
+Almost every naive version of the idea already has an established neighbor:
+
+* no global clock -> asynchronous circuits;
+* execute when inputs are ready -> dataflow;
+* causal ordering without physical time -> Lamport;
+* event causality -> Petri nets and event structures;
+* tolerate variable delays -> latency-insensitive design;
+* sparse event-triggered computation -> neuromorphic hardware.
+
+The article becomes interesting only if it states a narrower problem.
+
+That problem is the explicit separation of three computational coordinates.
+
+== Three Coordinates for Computation
+
+The broader research program distinguishes:
+
+* `\lambda` — generic ordering or evolution parameter; it need not carry units of duration;
+* `q` — candidate system-regime coordinate used in System Tempo work;
+* `\tau` — metric time.
+
+For computation, introduce analogous notation.
+
+Let:
+
+[stem]
+++++
+\lambda_C
+++++
+
+denote a computational ordering or progress coordinate.
+
+This is not a clock reading and not yet a universal measure of "how much computation" has occurred.
+
+It labels advancement through a declared causal structure: which dependencies have been resolved, which transitions have completed, which records have become available, and which future transitions are now admissible. Any quantitative use of `\Delta\lambda_C` therefore requires an explicit progress definition for the workload or model being studied.
+
+Let:
+
+[stem]
+++++
+q_C
+++++
+
+denote a candidate computational-regime coordinate.
+
+It labels the operational regime in which the physical computing system currently exists: voltage domain, thermal state, available accelerators, memory regime, active topology, fault mode, precision regime, power budget, or another condition that changes the mapping between logical work and physical realization. As with the parent System Tempo notation, the coordinate is not identical to the regime itself.
+
+Finally:
+
+[stem]
+++++
+\tau
+++++
+
+remains metric physical time.
+
+It is represented by clock readings and durations such as seconds, nanoseconds, deadlines, response times, and intervals derived from physical or logical clocks.
+
+The proposal is not:
+
+[stem]
+++++
+\lambda_C = q_C = \tau.
+++++
+
+It is that:
+
+[stem]
+++++
+\lambda_C,\ q_C,\ \tau
+++++
+
+should remain conceptually distinct unless an explicit mapping among them is defined.
+
+== Computational Progress Is Not Duration
+
+Consider two executions of the same dependency graph.
+
+The program is:
+
+[source,text]
+----
+a = input
+b = input
+
+x = add(a, b)
+y = multiply(x, 4)
+z = xor(x, b)
+r = add(y, z)
+----
+
+Its causal graph can be represented as:
+
+[source,text]
+----
+a ---\
+      ADD -> x ---\
+b ---/            \
+                   MUL -> y ---\
+x ----------------/             \
+                                 ADD -> r
+x ----------------\             /
+                   XOR -> z ----/
+b ----------------/
+----
+
+The exact drawing is not important.
+
+The dependency structure is.
+
+Now imagine two physical realizations.
+
+Execution A:
+
+[source,text]
+----
+ADD        1 ms
+MULTIPLY  20 ms
+XOR        4 ms
+----
+
+Execution B:
+
+[source,text]
+----
+ADD      500 ms
+MULTIPLY   1 ms
+XOR      100 ms
+----
+
+The metric histories differ radically.
+
+Yet the causal structure can remain the same.
+
+The same prerequisites become satisfied.
+
+The same dependency graph is realized.
+
+The same final value can be produced.
+
+Thus:
+
+[stem]
+++++
+\Delta \tau_A \neq \Delta \tau_B
+++++
+
+while the relevant computational progression may remain equivalent:
+
+[stem]
+++++
+\lambda_{C,A} \sim \lambda_{C,B}.
+++++
+
+The equivalence symbol is intentional.
+
+Two physical executions need not possess identical microscopic histories.
+
+They need only realize the same declared computational equivalence relation.
+
+This gives the central distinction:
+
+[quote]
+Metric duration measures how a computation was physically realized. It need not define what the computation is.
+
+== A Causality-First Machine
+
+A minimal causality-first execution model requires surprisingly few concepts.
+
+Each computational node has prerequisites, a transition function, a completion condition, and an emitted result or record.
+
+A node remains dormant until the results on which it causally depends are available.
+
+When those dependencies are satisfied, the transition becomes admissible.
+
+The physical implementation performs the transition.
+
+When completion is detected, a stable result becomes available to downstream nodes.
+
+The machine therefore progresses through a relation like:
+
+[source,text]
+----
+dependencies satisfied
+    -> transition admissible
+    -> physical transition
+    -> completion detected
+    -> persistent result available
+    -> dependent transitions become admissible
+----
+
+There is no conceptual requirement for the phrase "one cycle later."
+
+Metric time can still measure every stage.
+
+It simply no longer supplies the primary semantic ordering.
+
+== Relation to Irreversibility and Records
+
+This connects directly to _From Irreversibility to Metric Time_.
+
+That essay proposed the conceptual sequence:
+
+[source,text]
+----
+ordered change
+    -> irreversible transformation
+    -> persistent records
+    -> comparison
+    -> metric time
+----
+
+A causality-first computer makes a related engineering structure visible.
+
+A downstream transition should not depend on an imagined abstract past.
+
+It depends on a physically accessible result produced by a preceding transition.
+
+In hardware that result may be stored as charge, voltage state, magnetic state, memory cell state, packet, token, handshake state, or another physical record.
+
+This suggests a computational formulation:
+
+[quote]
+A completed computational event is useful to later events only insofar as its result becomes physically accessible as a stable enough record.
+
+This does not mean that all computation must be thermodynamically irreversible at every microstep.
+
+Reversible computing remains a separate and important field.
+
+The point is epistemic and architectural: later stages require accessible state correlated with earlier stages.
+
+The machine, like the internal observer, advances through present-accessible records.
+
+== Does This Mean Metric Time Is Unnecessary?
+
+No.
+
+This is one of the most important boundaries of the article.
+
+Physical computers exist in physical environments.
+
+Propagation delays matter.
+
+Metastability matters.
+
+Thermal relaxation matters.
+
+Memory retention matters.
+
+Deadlines matter.
+
+Real-time control matters.
+
+Users care whether an answer arrives in one millisecond or one hour.
+
+A computer that produces the correct result after a century is semantically interesting and practically useless for most applications.
+
+Therefore metric time remains indispensable.
+
+The proposed demotion is narrower:
+
+[quote]
+Metric time need not define computational order merely because it is required to evaluate computational performance.
+
+Or, more compactly:
+
+[quote]
+The clock can measure computation without being the fundamental source of computational causality.
+
+== Why Should Anyone Care?
+
+Without an engineering consequence, the distinction could remain philosophical bookkeeping.
+
+The practical motivation begins with a simple fact: computational blocks naturally operate at different physical rates.
+
+A memory access, a local Boolean operation, a network transfer, a sensor event, an accelerator invocation, and a multiplication may require different durations.
+
+A causality-first architecture can, in principle, allow each block to progress when its own completion conditions are satisfied rather than forcing the logical model to treat equal metric intervals as the primary organizer of every transition.
+
+That can matter for energy, latency, sparse workloads, variable-delay systems, and heterogeneous machines, but none of those benefits should be promised universally.
+
+Asynchronous logic carries overhead. Completion detection has a cost. Handshaking has a cost. Verification is harder. Toolchains are less mature. Some workloads map beautifully onto regular synchronous arrays and gain little from event-driven execution.
+
+The meaningful claim is therefore conditional:
+
+[quote]
+If useful work is irregular, sparse, data-dependent, or distributed across components with different natural completion rates, then a causal execution model may map more directly onto the work than a uniform global timing discipline.
+
+This is not a theorem of performance.
+
+It is an engineering hypothesis that can be measured.
+
+== Beyond Frequency as the Primary Intuition
+
+Clock frequency is one of the most familiar quantities in computing.
+
+But frequency alone does not equal useful progress.
+
+A 5 GHz processor does not perform five billion meaningful application-level state transitions per second.
+
+Different instructions require different resources. Pipelines overlap work. Caches miss. Speculation succeeds or fails. Accelerators use different timing domains.
+
+Modern processors already contain extensive mechanisms that make the relationship between clock count and useful work highly indirect.
+
+A causal-progress model therefore invites another metric.
+
+For example:
+
+[stem]
+++++
+\eta_C
+=
+\frac{\Delta \lambda_C}{E},
+++++
+
+where (E) is energy consumed and (Delta\lambda_C) is a declared measure of useful computational progression.
+
+This is not yet a universal benchmark.
+
+The hard problem is defining `\lambda_C` without hiding arbitrary choices in it.
+
+Possible measures include number of causally completed graph nodes, reduction in unresolved dependency count, depth advanced through a dependency graph, number of durable outputs produced, or application-defined progress toward a terminal state.
+
+Each choice has limitations.
+
+The point is not that one of them should replace FLOPS, instructions per cycle, latency, or energy-per-operation immediately.
+
+The point is that metric time and useful causal progress need not be represented by the same variable.
+
+== Heterogeneous Computing Makes the Distinction More Natural
+
+A modern computing system may contain general-purpose CPU cores, GPUs, NPUs, storage controllers, network accelerators, sensors, DSPs, memory devices, programmable logic, and specialized AI accelerators.
+
+These components already operate under different internal assumptions and often different clock domains.
+
+Clock-domain crossing, buffering, synchronization, queueing, and protocol design exist precisely because one universal local rhythm is increasingly unrealistic across a complete machine.
+
+A causality-first abstraction states the relationship more naturally:
+
+[quote]
+I do not need to know how many of your local cycles passed. I need to know when the result on which I depend became valid.
+
+Metric time remains relevant for a service-level requirement:
+
+[source,text]
+----
+result must arrive within 20 ms
+----
+
+But functional dependency can remain:
+
+[source,text]
+----
+B may execute after A and C complete
+----
+
+This distinction may become increasingly valuable as computing hardware becomes more heterogeneous.
+
+== A Possible Connection to AI
+
+The connection to AI should be made carefully.
+
+Today's dominant AI accelerators are extremely successful precisely because dense numerical operations can be organized into highly regular massively parallel computation.
+
+There is no reason to assume that causal hardware will replace matrix accelerators for those workloads.
+
+But not all intelligent computation is naturally dense and uniform.
+
+Reasoning systems, agents, robotic systems, event-driven perception, dynamic retrieval, tool use, and adaptive planning can produce dependency structures such as:
+
+[source,text]
+----
+observation
+    -> hypothesis A
+    -> hypothesis B
+    -> retrieve evidence
+         -> invalidate B
+         -> strengthen A
+    -> call tool
+         -> new observation
+    -> update plan
+----
+
+Only some branches need to progress.
+
+Some branches die.
+
+Others awaken after new evidence.
+
+The structure resembles a dynamic causal graph more than a uniform sequence of identical operations.
+
+This suggests a research question rather than a prediction:
+
+[quote]
+Could future AI systems benefit from hardware or runtime architectures in which computation is activated by informational dependency rather than organized primarily around uniform metric progression?
+
+Neuromorphic systems demonstrate one concrete version of event-driven activation.
+
+They do not answer the broader question.
+
+== The Proof-of-Concept Should Begin in Software
+
+The first experiment should not be a fabricated processor.
+
+That would make the hypothesis expensive before it becomes precise.
+
+A better first step is a causality-first virtual machine.
+
+The VM would deliberately omit a global instruction cycle from its semantics.
+
+A program would compile into a directed dependency graph.
+
+Each node would define its input dependencies, the transformation to apply, the rule by which completion becomes visible, and the output records it produces.
+
+The runtime would execute any node whose prerequisites have become satisfied.
+
+Metric time would be logged separately.
+
+This allows two layers to be observed independently:
+
+[source,text]
+----
+semantic trace:
+dependency resolution / causal completion
+
+physical trace:
+wall-clock duration / resource use / energy estimate
+----
+
+The experiment would then inject artificial delays.
+
+The same program could be run repeatedly while giving different operations radically different durations.
+
+If the model is correct, functional equivalence should survive those timing changes as long as causal and completion constraints remain satisfied.
+
+That would demonstrate something modest but important:
+
+[quote]
+logical progression can remain invariant while metric realization changes.
+
+This is already expected from established asynchronous and dataflow theory.
+
+The value of the PoC would therefore not be to prove something unknown.
+
+Its purpose would be to make the `\lambda_C / q_C / \tau` distinction executable and measurable.
+
+== Introducing the Computational-Regime Coordinate q_C
+
+The VM also creates a way to explore `q_C`.
+
+Suppose the same causal program is executed at several values of the computational-regime coordinate `q_C`, corresponding to physical or simulated regimes such as high voltage / high performance, low voltage / low energy, thermal throttling, degraded memory latency, accelerator available, accelerator unavailable, high precision, approximate computation, or partial hardware failure.
+
+These regimes can change the mapping:
+
+[stem]
+++++
+\lambda_C \mapsto \tau.
+++++
+
+A fixed amount of causal progress may require very different metric durations in different regimes.
+
+Likewise, the energy cost may change.
+
+This gives a computational analogue of a System Tempo question:
+
+[quote]
+Can equal increments of computational progress correspond to unequal metric intervals because the containing computational regime has changed?
+
+For ordinary computers the answer is obviously yes.
+
+Thermal throttling alone demonstrates it.
+
+But formalizing that fact is useful because it prevents the stronger philosophical hypothesis from hiding inside a trivial engineering observation.
+
+A computer gives us a controlled system in which `q_C`, `\lambda_C`, and `\tau` can all be instrumented.
+
+That makes it a useful conceptual laboratory.
+
+== From VM to Hardware
+
+If the software model is useful, the next step can be a small hardware prototype.
+
+A practical target would be a tiny asynchronous or handshake-driven processor rather than an attempt at a modern CPU.
+
+Possible scope includes a 4-bit or 8-bit datapath, a small register set, simple arithmetic and Boolean operations, request/acknowledge communication, completion detection, no global execution clock, and instrumentation for latency and energy.
+
+A still cleaner design may avoid pretending to be a conventional instruction-set processor and implement a small dataflow engine directly.
+
+Workcraft is relevant here because it supports Petri nets, Signal Transition Graphs, circuit models, verification, and synthesis of asynchronous control logic.
+
+The research sequence could therefore be:
+
+[source,text]
+----
+formal causal graph
+    -> executable VM
+    -> artificial variable-delay experiments
+    -> STG / Petri-net control model
+    -> synthesized asynchronous controller
+    -> FPGA or small physical prototype
+----
+
+The hardware experiment would then compare at least two implementations of the same functional graph:
+
+[source,text]
+----
+Machine S: synchronous
+
+Machine C: causality / completion driven
+----
+
+The comparison should measure actual behavior rather than ideology: correctness, latency, throughput, energy, idle behavior, sensitivity to variable delays, area or resource cost, control overhead, and verification complexity.
+
+No result should be assumed in advance.
+
+== What Would Count as an Interesting Result?
+
+A trivial result would be:
+
+[quote]
+An asynchronous machine can compute without a global clock.
+
+That is already known.
+
+A more interesting result would be:
+
+[quote]
+For a defined workload class, a causality-first representation provides a stable semantic progress measure that remains invariant across physical timing regimes and maps more predictably to energy or useful work than raw clock count.
+
+An even stronger engineering result would be:
+
+[quote]
+A hardware or runtime system using the causal model achieves measurable benefits on irregular or heterogeneous workloads without unacceptable verification, area, or control overhead.
+
+And the strongest conceptual result relevant to the broader research program would be:
+
+[quote]
+The explicit separation of causal progression, regime, and metric duration proves useful enough in engineered systems that it becomes a productive analogy for reasoning about internal metrology in more general systems.
+
+That final result would still be an analogy.
+
+It would not prove System Tempo as a physical theory.
+
+== Failure Conditions
+
+A serious research proposal should say how it can fail.
+
+The computational model becomes uninteresting if `\lambda_C` is merely a renamed instruction count, if `q_C` is merely a loose label for ordinary hardware state with no explanatory use, if all useful properties are already captured more cleanly by existing dataflow or asynchronous models, if the separation adds vocabulary without improving prediction or measurement, if the PoC demonstrates only known handshake behavior, or if practical overhead consistently dominates any benefit for the target workloads.
+
+The broader analogy also fails if it is used rhetorically:
+
+[quote]
+Computers can separate causal order from clocks, therefore the universe must have a non-metric regime coordinate.
+
+That inference would be invalid.
+
+An engineered counterexample to clock-centric design does not establish new cosmology.
+
+The computer is useful because it lets us sharpen concepts under controlled conditions, not because it can prove the ontology of the universe.
+
+== Established Result, Proposed Interpretation, Open Hypothesis
+
+The argument can now be separated cleanly.
+
+=== Established
+
+Asynchronous circuits can compute without a global clock.
+
+Dataflow machines can activate operations by operand availability.
+
+Distributed systems can represent causal order without relying on perfect physical clocks.
+
+Petri nets and event structures can represent partial-order computation.
+
+Latency-insensitive design can separate functional correctness from specific communication delay.
+
+Neuromorphic systems can use sparse event-driven computation for useful workloads.
+
+=== Proposed Interpretation
+
+These results can be organized under a common conceptual distinction:
+
+[quote]
+Computational progression is not identical to metric duration.
+
+Metric time characterizes the physical realization.
+
+Causal relations characterize logical admissibility and dependency.
+
+The computational regime characterizes the conditions mapping one into the other; `q_C` is only the coordinate used to label or parameterize that regime.
+
+=== Open Hypothesis
+
+Making those three coordinates explicit may produce useful new runtime models, metrics, or heterogeneous architectures.
+
+The hypothesis is engineering-relevant only if the distinction improves something measurable.
+
+== Relation to System Tempo
+
+The most disciplined bridge back to System Tempo is methodological.
+
+In a computer, we can observe all three layers.
+
+We can know the causal graph.
+
+We can manipulate hardware regime.
+
+We can measure metric duration.
+
+We can therefore ask:
+
+[stem]
+++++
+\Delta \lambda_C = \text{constant},
+\qquad
+\Delta \tau = ?
+++++
+
+at different values of `q_C`.
+
+The answer can vary.
+
+This does not establish that the universe possesses an analogous hidden coordinate.
+
+But it gives a concrete example of why the following inference is not logically automatic:
+
+[stem]
+++++
+\Delta \tau_1 = \Delta \tau_2
+\Rightarrow
+\Delta \lambda_1 = \Delta \lambda_2.
+++++
+
+Nor is the inverse automatic.
+
+A local metric and a system's meaningful progression can be tightly related without being conceptually identical.
+
+That is the bridge.
+
+== Closing Thesis
+
+The interesting computer is not one in which time disappears.
+
+It is one in which the role of time becomes more precise.
+
+Metric time remains necessary for physical engineering, deadlines, latency, energy analysis, communication, and user experience.
+
+But computational causality can be defined separately.
+
+The next event need not be meaningful because another equal metric interval elapsed.
+
+It can be meaningful because the conditions that enable it became true.
+
+That distinction is already present in asynchronous circuits, logical clocks, event structures, and dataflow systems.
+
+The research opportunity is not to rediscover them.
+
+It is to make the distinction explicit enough to connect three layers:
+
+[source,text]
+----
+computational progress lambda_C
+        |
+        v
+computational regime q_C
+        |
+        v
+metric realization tau
+----
+
+and then ask whether that separation yields a better model for irregular, event-driven, heterogeneous, or intelligent computation.
+
+The practical intuition is simple:
+
+[quote]
+Computational blocks naturally operate at different speeds.
+
+The deeper question is whether our computational semantics should continue to treat one metric rhythm as primary when causality already provides another organizing structure.
+
+A compact formulation is:
+
+[quote]
+The clock may be unnecessary for defining computational order while remaining indispensable for measuring the physical implementation of that computation.
+
+Or, more provocatively:
+
+[quote]
+Today we often make computation follow the clock. A causality-first machine lets computation determine its own admissible progression and lets the clock measure what physically happened.
+
+That is not yet a new computer architecture.
+
+It is a research question precise enough to build.
+
+== References
+
+* [[[lamport-1978]]] Leslie Lamport, https://www.microsoft.com/en-us/research/publication/time-clocks-ordering-events-distributed-system/[Time, Clocks, and the Ordering of Events in a Distributed System], _Communications of the ACM_ 21(7), 558-565 (1978).
+* [[[winskel-events]]] Glynn Winskel, https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-95.html[Event Structures: Lecture Notes for the Advanced Course on Petri Nets], University of Cambridge Computer Laboratory Technical Report UCAM-CL-TR-95 (1986).
+* [[[manchester-dataflow]]] J. R. Gurd, C. C. Kirkham, and I. Watson, https://www.sciencedirect.com/science/article/pii/0010465585901353[The Manchester Dataflow Machine], _Computer Physics Communications_ 37, 49-62 (1985).
+* [[[amulet1]]] J. V. Woods, P. Day, S. B. Furber, J. D. Garside, N. C. Paver, and S. Temple, https://research.manchester.ac.uk/en/publications/amulet-1-an-asynchronous-arm-microprocessor/[AMULET 1: An Asynchronous ARM Microprocessor], _IEEE Transactions on Computers_ 46(4), 385-398 (1997).
+* [[[amulet-family]]] J. D. Garside, S. B. Furber, S. Temple, and J. V. Woods, https://research.manchester.ac.uk/en/publications/the-amulet-chips-architectural-development-for-asynchronous-micro/[The AMULET Chips: Architectural Development for Asynchronous Microprocessors] (2009).
+* [[[latency-insensitive]]] Luca P. Carloni, Kenneth L. McMillan, Alexander Saldanha, and Alberto L. Sangiovanni-Vincentelli, https://sld.cs.columbia.edu/pubs/carloni_iccad99.pdf[A Methodology for Correct-by-Construction Latency Insensitive Design], ICCAD (1999).
+* [[[speck]]] Man Yao et al., https://www.nature.com/articles/s41467-024-47811-6[Spike-Based Dynamic Computing with Asynchronous Sensing-Computing Neuromorphic Chip], _Nature Communications_ 15, 4464 (2024).
+* [[[loihi2]]] Intel Labs, https://www.intel.com/content/www/us/en/research/neuromorphic-computing.html[Neuromorphic Computing Research and Loihi 2].
+* [[[workcraft]]] Workcraft, https://workcraft.org/[Formal modelling, verification, and synthesis tooling for Petri nets, Signal Transition Graphs, asynchronous circuits, and related models].
+
