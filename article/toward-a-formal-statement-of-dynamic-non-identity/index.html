@@ -239,11 +239,11 @@ window.MathJax = {
 </div>
 <div class="quoteblock">
 <blockquote>
-Two initially equal driving factors do not preserve absolute dynamic identity over time in an open system unless the conditions preserving that identity remain symmetrical.
+Two initially equal driving factors do not preserve absolute dynamic identity across evolution in an open system unless the conditions preserving that identity remain symmetrical.
 </blockquote>
 </div>
 <div class="paragraph">
-<p>This can be developed through the concepts of state, equivalence, time evolution, perturbation, and preservation.</p>
+<p>This can be developed through the concepts of state, equivalence, ordered evolution, perturbation, and preservation.</p>
 </div>
 </div>
 </div>
@@ -260,10 +260,16 @@ Two initially equal driving factors do not preserve absolute dynamic identity ov
 <p>A and B may represent forces, influences, interactions, constraints, gradients, instabilities, or other driving factors, depending on the chosen model.</p>
 </div>
 <div class="paragraph">
-<p>Let t denote time, or a parameter playing the role of temporal ordering.</p>
+<p>Let \lambda denote a generic ordering or evolution parameter, with \lambda \in \Lambda.</p>
 </div>
 <div class="paragraph">
-<p>Let x_A(t) and x_B(t) denote the relevant states or parameter-vectors of A and B at time t.</p>
+<p>The parameter \lambda need not be metric time. It may represent an ordered evolution parameter appropriate to the model.</p>
+</div>
+<div class="paragraph">
+<p>Let x_A(\lambda) and x_B(\lambda) denote the relevant states or parameter-vectors of A and B at ordering position \lambda.</p>
+</div>
+<div class="paragraph">
+<p>When an experiment explicitly uses a clock, this document reserves \tau for metric time. In the System Tempo branch of the research program, q denotes a candidate regime coordinate. No relation q=f(\tau) is assumed merely by notation.</p>
 </div>
 </div>
 </div>
@@ -271,14 +277,14 @@ Two initially equal driving factors do not preserve absolute dynamic identity ov
 <h2 id="_equality_at_a_moment"><a class="anchor" href="#_equality_at_a_moment"></a>Equality at a Moment</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A and B may be equal at time t under a selected equivalence relation E.</p>
+<p>A and B may be equal at ordering position \lambda under a selected equivalence relation E.</p>
 </div>
 <div class="paragraph">
 <p>This may be written informally as:</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\$E(x_A(t), x_B(t)) = true\$
+\$E(x_A(\lambda), x_B(\lambda)) = true\$
 </div>
 </div>
 <div class="paragraph">
@@ -315,17 +321,17 @@ Two initially equal driving factors do not preserve absolute dynamic identity ov
 </div>
 </div>
 <div class="sect1">
-<h2 id="_dynamic_identity_over_an_interval"><a class="anchor" href="#_dynamic_identity_over_an_interval"></a>Dynamic Identity Over an Interval</h2>
+<h2 id="_dynamic_identity_across_an_ordered_interval"><a class="anchor" href="#_dynamic_identity_across_an_ordered_interval"></a>Dynamic Identity Across an Ordered Interval</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dynamic identity over time is stronger.</p>
+<p>Dynamic identity across an ordered evolution is stronger.</p>
 </div>
 <div class="paragraph">
-<p>For an interval I = [t0, t1], strong dynamic identity would require:</p>
+<p>For an ordered interval \Lambda_I = [\lambda_0, \lambda_1], strong dynamic identity would require:</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\$for all t in I: E_strong(x_A(t), x_B(t)) = true\$
+\$for all \lambda in \Lambda_I: E_strong(x_A(\lambda), x_B(\lambda)) = true\$
 </div>
 </div>
 <div class="paragraph">
@@ -344,11 +350,11 @@ Two initially equal driving factors do not preserve absolute dynamic identity ov
 </div>
 <div class="quoteblock">
 <blockquote>
-Equivalence over time requires preservation of the conditions that make the equivalence valid.
+Equivalence across evolution requires preservation of the conditions that make the equivalence valid.
 </blockquote>
 </div>
 <div class="paragraph">
-<p>Let C_A(t) and C_B(t) represent the relevant conditions around A and B.</p>
+<p>Let C_A(\lambda) and C_B(\lambda) represent the relevant conditions around A and B.</p>
 </div>
 <div class="paragraph">
 <p>These conditions may include:</p>
@@ -390,14 +396,14 @@ Equivalence over time requires preservation of the conditions that make the equi
 <h2 id="_open_system_disturbance"><a class="anchor" href="#_open_system_disturbance"></a>Open-System Disturbance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Let P_A(t) and P_B(t) denote perturbations or external influences affecting A and B.</p>
+<p>Let P_A(\lambda) and P_B(\lambda) denote perturbations or external influences affecting A and B.</p>
 </div>
 <div class="paragraph">
 <p>In a perfectly symmetrical case:</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\$P_A(t) = P_B(t)\$
+\$P_A(\lambda) = P_B(\lambda)\$
 </div>
 </div>
 <div class="paragraph">
@@ -408,7 +414,7 @@ Equivalence over time requires preservation of the conditions that make the equi
 </div>
 <div class="stemblock">
 <div class="content">
-\$P_A(t) == P_B(t) for all t\$
+\$P_A(\lambda) == P_B(\lambda) for all \lambda\$
 </div>
 </div>
 <div class="paragraph">
@@ -416,7 +422,7 @@ Equivalence over time requires preservation of the conditions that make the equi
 </div>
 <div class="quoteblock">
 <blockquote>
-If there exists a time t in I such that the relevant perturbation, relation, or boundary condition affecting A differs from that affecting B, then strong dynamic identity requires an additional preservation mechanism.
+If there exists an ordering position \lambda in \Lambda_I such that the relevant perturbation, relation, or boundary condition affecting A differs from that affecting B, then strong dynamic identity requires an additional preservation mechanism.
 </blockquote>
 </div>
 <div class="paragraph">
@@ -451,7 +457,7 @@ In an open system, equality at a moment does not imply dynamic identity over an 
 </div>
 <div class="quoteblock">
 <blockquote>
-In an open system, preservation of dynamic identity over time requires preservation of the relevant symmetry conditions.
+In an open system, preservation of dynamic identity across evolution requires preservation of the relevant symmetry conditions.
 </blockquote>
 </div>
 <div class="paragraph">
@@ -489,7 +495,7 @@ In real open systems, absolute dynamic identity between two distinct driving fac
 </div>
 <div class="quoteblock">
 <blockquote>
-For two distinguishable dynamic factors A and B in an open system S, equality under a selected equivalence relation E at time t0 does not entail equality under a stronger dynamic equivalence relation E_strong over interval I. Preservation of E_strong requires preservation of the relevant symmetry conditions C that define the equivalence. In the absence of such preserved conditions, strong dynamic identity is not guaranteed and should be treated as a limiting idealization.
+For two distinguishable dynamic factors A and B in an open system S, equality under a selected equivalence relation E at ordering position \lambda_0 does not entail equality under a stronger dynamic equivalence relation E_strong over an ordered interval \Lambda_I. Preservation of E_strong requires preservation of the relevant symmetry conditions C that define the equivalence. In the absence of such preserved conditions, strong dynamic identity is not guaranteed and should be treated as a limiting idealization.
 </blockquote>
 </div>
 </div>
@@ -502,7 +508,7 @@ For two distinguishable dynamic factors A and B in an open system S, equality un
 </div>
 <div class="quoteblock">
 <blockquote>
-If two dynamic factors are exposed to non-identical relevant perturbations or non-identical relevant relations over time, and if the system lacks a mechanism that cancels or absorbs those differences, then strong dynamic identity between those factors will not be preserved.
+If two dynamic factors are exposed to non-identical relevant perturbations or non-identical relevant relations across evolution, and if the system lacks a mechanism that cancels or absorbs those differences, then strong dynamic identity between those factors will not be preserved.
 </blockquote>
 </div>
 <div class="paragraph">
@@ -589,7 +595,7 @@ Invariant preservation is compatible with dynamic non-identity.
 <p>A useful mathematical framing is equivalence class membership.</p>
 </div>
 <div class="paragraph">
-<p>A and B may belong to the same equivalence class under E at time t.</p>
+<p>A and B may belong to the same equivalence class under E at ordering position \lambda.</p>
 </div>
 <div class="paragraph">
 <p>But under a stronger relation E_strong, or at a later time, they may not.</p>
@@ -609,7 +615,7 @@ Invariant preservation is compatible with dynamic non-identity.
 <p>equivalence under a class of transformations;</p>
 </li>
 <li>
-<p>preservation of equivalence under time evolution;</p>
+<p>preservation of equivalence under ordered evolution;</p>
 </li>
 <li>
 <p>total dynamic identity.</p>
@@ -668,7 +674,7 @@ Invariant preservation is compatible with dynamic non-identity.
 </div>
 <div class="quoteblock">
 <blockquote>
-Given two distinguishable dynamic factors A and B in an open system S, if A and B are equal under E at t0 but are subject to non-equivalent relevant conditions C_A and C_B over interval I, then E_strong(A, B) over I cannot be assumed without an explicit preservation mechanism.
+Given two distinguishable dynamic factors A and B in an open system S, if A and B are equal under E at \lambda_0 but are subject to non-equivalent relevant conditions C_A and C_B over an ordered interval \Lambda_I, then E_strong(A, B) over \Lambda_I cannot be assumed without an explicit preservation mechanism.
 </blockquote>
 </div>
 <div class="paragraph">
@@ -687,7 +693,7 @@ Given two distinguishable dynamic factors A and B in an open system S, if A and 
 </div>
 <div class="quoteblock">
 <blockquote>
-Under what conditions can initially equal dynamic factors preserve strong identity over time, and when does openness make that preservation impossible, unstable, or only idealized?
+Under what conditions can initially equal dynamic factors preserve strong identity across evolution, and when does openness make that preservation impossible, unstable, or only idealized?
 </blockquote>
 </div>
 <div class="paragraph">
@@ -702,10 +708,10 @@ Under what conditions can initially equal dynamic factors preserve strong identi
 <p>The formal heart of dynamic non-identity is not the denial of equality.</p>
 </div>
 <div class="paragraph">
-<p>It is the distinction between equality at a moment and identity over time.</p>
+<p>It is the distinction between equality at a moment and identity across evolution.</p>
 </div>
 <div class="paragraph">
-<p>Equality is parameter-bound. Identity over time is condition-bound. In open systems, conditions are exposed to difference.</p>
+<p>Equality is parameter-bound. Identity across evolution is condition-bound. In open systems, conditions are exposed to difference.</p>
 </div>
 <div class="paragraph">
 <p>Therefore, the burden of proof belongs to any claim of absolute dynamic identity, not to the ordinary expectation of divergence, asymmetry, or contextual difference.</p>

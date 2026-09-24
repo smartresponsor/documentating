@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Computational Progress Is Not Metric Time: From Asynchronous Circuits to Causal Computation :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/computational-progress-is-not-metric-time/">
+    <meta name="description" content="A research essay separating causal computational progress, computational regime, and metric duration, connecting System Tempo with asynchronous circuits, dataflow, logical time, neuromorphic computing, and a proposed executable proof-of-concept.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/computational-progress-is-not-metric-time/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/computational-progress-is-not-metric-time/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Computational Progress Is Not Metric Time: From Asynchronous Circuits to Causal Computation">
+<meta name="twitter:title" content="Computational Progress Is Not Metric Time: From Asynchronous Circuits to Causal Computation">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  },
+  startup: {
+    ready: () => {
+      document.querySelectorAll('.stemblock .content').forEach((element) => {
+        let source = element.textContent.trim();
+        if (source.startsWith('\\$') && source.endsWith('\\$')) {
+          source = source.slice(2, -2).trim();
+        } else if (source.startsWith('$') && source.endsWith('$')) {
+          source = source.slice(1, -1).trim();
+        }
+        element.textContent = `\\[${source}\\]`;
+      });
+      MathJax.startup.defaultReady();
+    }
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">Computational Progress Is Not Metric Time: From Asynchronous Circuits to Causal Computation</a></li>
+    <li><span>Computational Progress Is Not Metric Time: From Asynchronous Circuits to Causal Computation</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Computational Progress Is Not Metric Time: From Asynchronous Circuits to Causal Computation</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/computational-progress-is-not-metric-time.adoc`</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_position_in_the_series"><a class="anchor" href="#_position_in_the_series"></a>Position in the Series</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This essay extends the research line developed in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../system-tempo-and-dynamic-non-identity/" class="xref page">System Tempo and Dynamic Non-Identity</a>;</p>
+</li>
+<li>
+<p><a href="../the-finite-observer-and-the-resolution-of-change/" class="xref page">The Finite Observer and the Resolution of Change</a>;</p>
+</li>
+<li>
+<p><a href="../from-irreversibility-to-metric-time/" class="xref page">From Irreversibility to Metric Time: How an Internal Observer Builds the Clock</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Those essays distinguish three ideas that are easy to collapse: ordered progression, system regime, and metric time.</p>
+</div>
+<div class="paragraph">
+<p>The present article asks what happens if that distinction is taken seriously inside a machine we ourselves design.</p>
+</div>
+<div class="paragraph">
+<p>The motivating question is simple:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+If, within the System Tempo hypothesis, metric time is treated as an internal metrology rather than the only possible description of progression, how would we design a computer whose logical execution is organized primarily by causal completion rather than by a shared clocking discipline?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That question immediately encounters a large existing field.</p>
+</div>
+<div class="paragraph">
+<p>Clockless processors are not new. Asynchronous circuits are not new. Dataflow machines are not new. Logical clocks are not new. Petri nets, event structures, latency-insensitive design, event-driven hardware, and neuromorphic processors already address major parts of this territory.</p>
+</div>
+<div class="paragraph">
+<p>The purpose of this essay is therefore not to claim invention of asynchronous computing.</p>
+</div>
+<div class="paragraph">
+<p>Its narrower proposal is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Computational order, computational regime, and metric duration should be treated as distinct variables. Metric time can remain indispensable for measuring a physical computer without being the primitive organizer of its computational semantics.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The distinction is conceptual first, architectural second, and potentially experimental third.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_familiar_computer_computation_under_a_clock"><a class="anchor" href="#_the_familiar_computer_computation_under_a_clock"></a>The Familiar Computer: Computation Under a Clock</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Most contemporary general-purpose processors are predominantly synchronous systems, although modern chips may contain multiple clock domains, asynchronous interfaces, and locally decoupled subsystems.</p>
+</div>
+<div class="paragraph">
+<p>Within each synchronous domain, a clock coordinates when state is sampled and transferred. Registers capture values at clock edges. Combinational logic is given a bounded interval in which to settle. Setup time, hold time, propagation delay, pipeline stages, timing closure, frequency, latency, and throughput are all expressed through metric duration.</p>
+</div>
+<div class="paragraph">
+<p>This architecture is extraordinarily successful.</p>
+</div>
+<div class="paragraph">
+<p>Nothing in this article argues that synchronous digital design was a mistake.</p>
+</div>
+<div class="paragraph">
+<p>The question is narrower.</p>
+</div>
+<div class="paragraph">
+<p>Suppose two computational blocks perform different operations under different physical conditions.</p>
+</div>
+<div class="paragraph">
+<p>One may stabilize quickly.</p>
+</div>
+<div class="paragraph">
+<p>Another may require more time because of path length, data dependence, voltage, temperature, process variation, memory latency, or the intrinsic complexity of the operation.</p>
+</div>
+<div class="paragraph">
+<p>A synchronous design still coordinates those blocks through a selected timing discipline.</p>
+</div>
+<div class="paragraph">
+<p>That discipline is useful precisely because it creates a common metric framework.</p>
+</div>
+<div class="paragraph">
+<p>But usefulness does not imply ontological identity between the framework and the computation itself.</p>
+</div>
+<div class="paragraph">
+<p>The first conceptual separation is therefore:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{computational dependency}
+\neq
+\text{metric duration}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>An instruction may depend on another instruction because it requires its result.</p>
+</div>
+<div class="paragraph">
+<p>That dependency is logical and causal.</p>
+</div>
+<div class="paragraph">
+<p>The number of nanoseconds required to realize the dependency is a property of a particular physical implementation.</p>
+</div>
+<div class="paragraph">
+<p>The two are related.</p>
+</div>
+<div class="paragraph">
+<p>They are not the same thing.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_intuitive_problem"><a class="anchor" href="#_the_intuitive_problem"></a>The Intuitive Problem</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For a non-specialist, the core intuition can be stated without circuit theory.</p>
+</div>
+<div class="paragraph">
+<p>Different computational blocks naturally work at different speeds.</p>
+</div>
+<div class="paragraph">
+<p>A multiplication, a cache lookup, a sensor event, a memory transfer, and a simple Boolean operation do not have a metaphysical reason to require equal physical durations.</p>
+</div>
+<div class="paragraph">
+<p>The engineering question is therefore:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Why should logically different transitions be coordinated primarily through a timing grid if their actual causal dependencies and completion conditions are not themselves defined by equal physical durations?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The synchronous answer is excellent engineering: because a shared timing discipline makes large systems tractable, predictable, verifiable, and manufacturable.</p>
+</div>
+<div class="paragraph">
+<p>The present article does not dispute that answer.</p>
+</div>
+<div class="paragraph">
+<p>It asks whether another abstraction can be made primary:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+A next transition becomes admissible when its causal prerequisites have completed, not merely because another globally defined metric interval has elapsed.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That shift sounds radical only until one looks at the history of computer science.</p>
+</div>
+<div class="paragraph">
+<p>Much of it has already been explored.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_established_neighbor_1_lamport_and_causal_order_without_physical_clocks"><a class="anchor" href="#_established_neighbor_1_lamport_and_causal_order_without_physical_clocks"></a>Established Neighbor 1: Lamport and Causal Order Without Physical Clocks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Leslie Lamport&#8217;s 1978 paper <em>Time, Clocks, and the Ordering of Events in a Distributed System</em> is foundational because it separates event order from physical time.</p>
+</div>
+<div class="paragraph">
+<p>Lamport begins from the problem that distributed processes cannot rely on a perfectly shared physical clock. He therefore defines the "happened-before" relation in terms of observable events and communication.</p>
+</div>
+<div class="paragraph">
+<p>The resulting structure is a partial order.</p>
+</div>
+<div class="paragraph">
+<p>If event (a) causally precedes event (b), then:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$a \rightarrow b.\$
+</div>
+</div>
+<div class="paragraph">
+<p>But two events may be concurrent without a physically meaningful total ordering between them.</p>
+</div>
+<div class="paragraph">
+<p>The important lesson for this essay is not simply that logical clocks exist.</p>
+</div>
+<div class="paragraph">
+<p>It is deeper:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+A computation can possess an internally meaningful order even when that order is not derived from a single physical timeline shared by all components.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Lamport did not propose System Tempo.</p>
+</div>
+<div class="paragraph">
+<p>He did not claim that metric time is non-fundamental in physics.</p>
+</div>
+<div class="paragraph">
+<p>His problem was distributed computation.</p>
+</div>
+<div class="paragraph">
+<p>But the conceptual separation is directly relevant:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">causal order
+    !=
+physical clock reading</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is one of the strongest reasons the present proposal must not be presented as a discovery that computers can operate without a global notion of physical time.</p>
+</div>
+<div class="paragraph">
+<p>Computer science has known that for decades.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_established_neighbor_2_event_structures_petri_nets_and_true_concurrency"><a class="anchor" href="#_established_neighbor_2_event_structures_petri_nets_and_true_concurrency"></a>Established Neighbor 2: Event Structures, Petri Nets, and True Concurrency</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A second mature line of work treats computation through events and causal relations.</p>
+</div>
+<div class="paragraph">
+<p>Petri nets represent states and transitions without requiring every transition to belong to one universal sequential timeline.</p>
+</div>
+<div class="paragraph">
+<p>Event structures, developed in the theory of concurrency, make the causal idea especially explicit.</p>
+</div>
+<div class="paragraph">
+<p>An event structure can represent which events have occurred, which events depend on previous events, which events may occur concurrently, and where nondeterministic choice exists.</p>
+</div>
+<div class="paragraph">
+<p>The computational structure is therefore not fundamentally:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">step 1
+step 2
+step 3
+step 4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>but can instead be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">        B
+      /   \
+A -&gt;       -&gt; D
+      \   /
+        C</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where (B) and &#169; depend on (A), may progress independently, and both are required before (D).</p>
+</div>
+<div class="paragraph">
+<p>The order is partial.</p>
+</div>
+<div class="paragraph">
+<p>Metric durations can be attached later.</p>
+</div>
+<div class="paragraph">
+<p>This distinction between causality and elapsed physical time is already formalized by well-established theory.</p>
+</div>
+<div class="paragraph">
+<p>The present article therefore borrows its language of causal admissibility from a mature intellectual neighborhood rather than inventing it from scratch.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_established_neighbor_3_dataflow_machines"><a class="anchor" href="#_established_neighbor_3_dataflow_machines"></a>Established Neighbor 3: Dataflow Machines</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Manchester Dataflow Machine gives a more architectural example.</p>
+</div>
+<div class="paragraph">
+<p>Its prototype hardware was operational in the early 1980s.</p>
+</div>
+<div class="paragraph">
+<p>Instead of treating program execution primarily as traversal of a conventional sequential instruction stream, the tagged-token dataflow model enabled instructions when their required operands became available.</p>
+</div>
+<div class="paragraph">
+<p>In simplified form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">data available
+    -&gt; operation enabled
+    -&gt; result produced
+    -&gt; dependent operation enabled</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is already remarkably close to the intuitive computer imagined in this essay.</p>
+</div>
+<div class="paragraph">
+<p>An operation does not need to run because "the next clock slot belongs to it."</p>
+</div>
+<div class="paragraph">
+<p>It runs because its dependencies are satisfied.</p>
+</div>
+<div class="paragraph">
+<p>Again, the present proposal cannot claim novelty merely from replacing sequential scheduling with dependency-driven execution.</p>
+</div>
+<div class="paragraph">
+<p>Dataflow computing has explored this territory extensively.</p>
+</div>
+<div class="paragraph">
+<p>The interesting remaining question is how to formulate the distinction between dependency progression and metric duration explicitly enough to connect it with the broader System Tempo framework.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_established_neighbor_4_asynchronous_circuits_and_amulet"><a class="anchor" href="#_established_neighbor_4_asynchronous_circuits_and_amulet"></a>Established Neighbor 4: Asynchronous Circuits and AMULET</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Asynchronous circuits remove the requirement for a global clock from the hardware itself.</p>
+</div>
+<div class="paragraph">
+<p>Instead of assuming that every stage advances according to a common clock edge, neighboring stages can communicate through protocols such as request/acknowledge handshakes.</p>
+</div>
+<div class="paragraph">
+<p>A simplified exchange is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">producer: data ready
+consumer: request observed
+consumer: data accepted
+consumer: acknowledge
+producer: release / continue</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The physical circuit progresses when local conditions are satisfied.</p>
+</div>
+<div class="paragraph">
+<p>The University of Manchester&#8217;s AMULET project is especially important because it demonstrated that this was not limited to toy controllers.</p>
+</div>
+<div class="paragraph">
+<p>AMULET1 implemented the ARM architecture asynchronously, using a micropipeline-based design, and demonstrated substantial internal asynchronous concurrency in prototype silicon.</p>
+</div>
+<div class="paragraph">
+<p>The later AMULET family showed that processors, caches, and systems-on-chip could be constructed without a conventional global processor clock and could perform competitively with synchronous designs in their intended domains.</p>
+</div>
+<div class="paragraph">
+<p>This matters for two reasons.</p>
+</div>
+<div class="paragraph">
+<p>First, a "clockless CPU" is already an engineering reality, not merely a philosophical possibility.</p>
+</div>
+<div class="paragraph">
+<p>Second, the AMULET work observed behavior directly relevant to this article: throughput could depend on data and actual completion behavior rather than being described only by one fixed global cycle time.</p>
+</div>
+<div class="paragraph">
+<p>That is close to the intuition that different parts of a computation can possess different natural completion rates.</p>
+</div>
+<div class="paragraph">
+<p>But asynchronous hardware also exposes the cost of the idea.</p>
+</div>
+<div class="paragraph">
+<p>Handshaking, completion detection, hazards, metastability management, verification, synthesis, testing, and tool support are difficult.</p>
+</div>
+<div class="paragraph">
+<p>Synchronous design did not dominate merely because engineers failed to imagine alternatives.</p>
+</div>
+<div class="paragraph">
+<p>It dominated because a shared clock is an extraordinarily powerful simplification.</p>
+</div>
+<div class="paragraph">
+<p>Any new proposal must respect that engineering history.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_established_neighbor_5_latency_insensitive_design"><a class="anchor" href="#_established_neighbor_5_latency_insensitive_design"></a>Established Neighbor 5: Latency-Insensitive Design</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Latency-insensitive design occupies an important middle position.</p>
+</div>
+<div class="paragraph">
+<p>Carloni, McMillan, Saldanha, and Sangiovanni-Vincentelli developed methods in which synchronous systems can remain functionally correct even when communication latency between components varies.</p>
+</div>
+<div class="paragraph">
+<p>The architecture remains synchronous.</p>
+</div>
+<div class="paragraph">
+<p>The clock does not disappear.</p>
+</div>
+<div class="paragraph">
+<p>But correctness becomes less tightly coupled to a particular wire delay.</p>
+</div>
+<div class="paragraph">
+<p>This is conceptually useful because it separates two questions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Is the computation functionally correct?</p>
+</li>
+<li>
+<p>How much physical time did communication require?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>That separation anticipates one of the central distinctions of this essay:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{causal correctness}
+\neq
+\text{temporal performance}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>The first concerns whether the right dependencies and transitions occurred.</p>
+</div>
+<div class="paragraph">
+<p>The second concerns how long the physical realization took.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_established_neighbor_6_neuromorphic_and_event_driven_hardware"><a class="anchor" href="#_established_neighbor_6_neuromorphic_and_event_driven_hardware"></a>Established Neighbor 6: Neuromorphic and Event-Driven Hardware</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Modern neuromorphic systems provide a current engineering example of computation that is sparse, event-driven, and often asynchronous.</p>
+</div>
+<div class="paragraph">
+<p>Intel&#8217;s Loihi 2 uses asynchronous event-based spiking computation in its neuromorphic cores.</p>
+</div>
+<div class="paragraph">
+<p>The Speck chip, published in <em>Nature Communications</em> in 2024, goes further as an integrated asynchronous sensing-computing system.</p>
+</div>
+<div class="paragraph">
+<p>Its event camera emits events when the visual scene changes.</p>
+</div>
+<div class="paragraph">
+<p>The processing pipeline reacts to those events.</p>
+</div>
+<div class="paragraph">
+<p>When there is no relevant input, large parts of the compute path need not continuously perform equivalent work.</p>
+</div>
+<div class="paragraph">
+<p>This makes the architecture easy to explain without product language:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+The machine does not need every block to pretend that useful computation is happening at the same rate. Different blocks can react when their own relevant conditions become true.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Speck is not a general-purpose replacement for a conventional CPU.</p>
+</div>
+<div class="paragraph">
+<p>Loihi is not proof that every workload benefits from asynchronous operation.</p>
+</div>
+<div class="paragraph">
+<p>Neuromorphic computing trades generality, numerical conventions, tooling maturity, programmability, and workload fit against advantages on particular sparse and event-driven problems.</p>
+</div>
+<div class="paragraph">
+<p>But these systems demonstrate that event-driven physical computation is an active engineering direction, not a historical curiosity.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_then_is_left_to_propose"><a class="anchor" href="#_what_then_is_left_to_propose"></a>What, Then, Is Left to Propose?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At this point the risk of rediscovery is obvious.</p>
+</div>
+<div class="paragraph">
+<p>Almost every naive version of the idea already has an established neighbor:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>no global clock &#8594; asynchronous circuits;</p>
+</li>
+<li>
+<p>execute when inputs are ready &#8594; dataflow;</p>
+</li>
+<li>
+<p>causal ordering without physical time &#8594; Lamport;</p>
+</li>
+<li>
+<p>event causality &#8594; Petri nets and event structures;</p>
+</li>
+<li>
+<p>tolerate variable delays &#8594; latency-insensitive design;</p>
+</li>
+<li>
+<p>sparse event-triggered computation &#8594; neuromorphic hardware.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The article becomes interesting only if it states a narrower problem.</p>
+</div>
+<div class="paragraph">
+<p>That problem is the explicit separation of three computational coordinates.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_three_coordinates_for_computation"><a class="anchor" href="#_three_coordinates_for_computation"></a>Three Coordinates for Computation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The broader research program distinguishes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>\lambda</code> — generic ordering or evolution parameter; it need not carry units of duration;</p>
+</li>
+<li>
+<p><code>q</code> — candidate system-regime coordinate used in System Tempo work;</p>
+</li>
+<li>
+<p><code>\tau</code> — metric time.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For computation, introduce analogous notation.</p>
+</div>
+<div class="paragraph">
+<p>Let:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\lambda_C\$
+</div>
+</div>
+<div class="paragraph">
+<p>denote a computational ordering or progress coordinate.</p>
+</div>
+<div class="paragraph">
+<p>This is not a clock reading and not yet a universal measure of "how much computation" has occurred.</p>
+</div>
+<div class="paragraph">
+<p>It labels advancement through a declared causal structure: which dependencies have been resolved, which transitions have completed, which records have become available, and which future transitions are now admissible. Any quantitative use of <code>\Delta\lambda_C</code> therefore requires an explicit progress definition for the workload or model being studied.</p>
+</div>
+<div class="paragraph">
+<p>Let:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$q_C\$
+</div>
+</div>
+<div class="paragraph">
+<p>denote a candidate computational-regime coordinate.</p>
+</div>
+<div class="paragraph">
+<p>It labels the operational regime in which the physical computing system currently exists: voltage domain, thermal state, available accelerators, memory regime, active topology, fault mode, precision regime, power budget, or another condition that changes the mapping between logical work and physical realization. As with the parent System Tempo notation, the coordinate is not identical to the regime itself.</p>
+</div>
+<div class="paragraph">
+<p>Finally:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\tau\$
+</div>
+</div>
+<div class="paragraph">
+<p>remains metric physical time.</p>
+</div>
+<div class="paragraph">
+<p>It is represented by clock readings and durations such as seconds, nanoseconds, deadlines, response times, and intervals derived from physical or logical clocks.</p>
+</div>
+<div class="paragraph">
+<p>The proposal is not:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\lambda_C = q_C = \tau.\$
+</div>
+</div>
+<div class="paragraph">
+<p>It is that:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\lambda_C,\ q_C,\ \tau\$
+</div>
+</div>
+<div class="paragraph">
+<p>should remain conceptually distinct unless an explicit mapping among them is defined.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_computational_progress_is_not_duration"><a class="anchor" href="#_computational_progress_is_not_duration"></a>Computational Progress Is Not Duration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consider two executions of the same dependency graph.</p>
+</div>
+<div class="paragraph">
+<p>The program is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">a = input
+b = input
+
+x = add(a, b)
+y = multiply(x, 4)
+z = xor(x, b)
+r = add(y, z)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Its causal graph can be represented as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">a ---\
+      ADD -&gt; x ---\
+b ---/            \
+                   MUL -&gt; y ---\
+x ----------------/             \
+                                 ADD -&gt; r
+x ----------------\             /
+                   XOR -&gt; z ----/
+b ----------------/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The exact drawing is not important.</p>
+</div>
+<div class="paragraph">
+<p>The dependency structure is.</p>
+</div>
+<div class="paragraph">
+<p>Now imagine two physical realizations.</p>
+</div>
+<div class="paragraph">
+<p>Execution A:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">ADD        1 ms
+MULTIPLY  20 ms
+XOR        4 ms</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execution B:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">ADD      500 ms
+MULTIPLY   1 ms
+XOR      100 ms</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The metric histories differ radically.</p>
+</div>
+<div class="paragraph">
+<p>Yet the causal structure can remain the same.</p>
+</div>
+<div class="paragraph">
+<p>The same prerequisites become satisfied.</p>
+</div>
+<div class="paragraph">
+<p>The same dependency graph is realized.</p>
+</div>
+<div class="paragraph">
+<p>The same final value can be produced.</p>
+</div>
+<div class="paragraph">
+<p>Thus:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Delta \tau_A \neq \Delta \tau_B\$
+</div>
+</div>
+<div class="paragraph">
+<p>while the relevant computational progression may remain equivalent:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\lambda_{C,A} \sim \lambda_{C,B}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>The equivalence symbol is intentional.</p>
+</div>
+<div class="paragraph">
+<p>Two physical executions need not possess identical microscopic histories.</p>
+</div>
+<div class="paragraph">
+<p>They need only realize the same declared computational equivalence relation.</p>
+</div>
+<div class="paragraph">
+<p>This gives the central distinction:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Metric duration measures how a computation was physically realized. It need not define what the computation is.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_causality_first_machine"><a class="anchor" href="#_a_causality_first_machine"></a>A Causality-First Machine</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A minimal causality-first execution model requires surprisingly few concepts.</p>
+</div>
+<div class="paragraph">
+<p>Each computational node has prerequisites, a transition function, a completion condition, and an emitted result or record.</p>
+</div>
+<div class="paragraph">
+<p>A node remains dormant until the results on which it causally depends are available.</p>
+</div>
+<div class="paragraph">
+<p>When those dependencies are satisfied, the transition becomes admissible.</p>
+</div>
+<div class="paragraph">
+<p>The physical implementation performs the transition.</p>
+</div>
+<div class="paragraph">
+<p>When completion is detected, a stable result becomes available to downstream nodes.</p>
+</div>
+<div class="paragraph">
+<p>The machine therefore progresses through a relation like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">dependencies satisfied
+    -&gt; transition admissible
+    -&gt; physical transition
+    -&gt; completion detected
+    -&gt; persistent result available
+    -&gt; dependent transitions become admissible</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There is no conceptual requirement for the phrase "one cycle later."</p>
+</div>
+<div class="paragraph">
+<p>Metric time can still measure every stage.</p>
+</div>
+<div class="paragraph">
+<p>It simply no longer supplies the primary semantic ordering.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_relation_to_irreversibility_and_records"><a class="anchor" href="#_relation_to_irreversibility_and_records"></a>Relation to Irreversibility and Records</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This connects directly to <em>From Irreversibility to Metric Time</em>.</p>
+</div>
+<div class="paragraph">
+<p>That essay proposed the conceptual sequence:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">ordered change
+    -&gt; irreversible transformation
+    -&gt; persistent records
+    -&gt; comparison
+    -&gt; metric time</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A causality-first computer makes a related engineering structure visible.</p>
+</div>
+<div class="paragraph">
+<p>A downstream transition should not depend on an imagined abstract past.</p>
+</div>
+<div class="paragraph">
+<p>It depends on a physically accessible result produced by a preceding transition.</p>
+</div>
+<div class="paragraph">
+<p>In hardware that result may be stored as charge, voltage state, magnetic state, memory cell state, packet, token, handshake state, or another physical record.</p>
+</div>
+<div class="paragraph">
+<p>This suggests a computational formulation:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+A completed computational event is useful to later events only insofar as its result becomes physically accessible as a stable enough record.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This does not mean that all computation must be thermodynamically irreversible at every microstep.</p>
+</div>
+<div class="paragraph">
+<p>Reversible computing remains a separate and important field.</p>
+</div>
+<div class="paragraph">
+<p>The point is epistemic and architectural: later stages require accessible state correlated with earlier stages.</p>
+</div>
+<div class="paragraph">
+<p>The machine, like the internal observer, advances through present-accessible records.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_does_this_mean_metric_time_is_unnecessary"><a class="anchor" href="#_does_this_mean_metric_time_is_unnecessary"></a>Does This Mean Metric Time Is Unnecessary?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>No.</p>
+</div>
+<div class="paragraph">
+<p>This is one of the most important boundaries of the article.</p>
+</div>
+<div class="paragraph">
+<p>Physical computers exist in physical environments.</p>
+</div>
+<div class="paragraph">
+<p>Propagation delays matter.</p>
+</div>
+<div class="paragraph">
+<p>Metastability matters.</p>
+</div>
+<div class="paragraph">
+<p>Thermal relaxation matters.</p>
+</div>
+<div class="paragraph">
+<p>Memory retention matters.</p>
+</div>
+<div class="paragraph">
+<p>Deadlines matter.</p>
+</div>
+<div class="paragraph">
+<p>Real-time control matters.</p>
+</div>
+<div class="paragraph">
+<p>Users care whether an answer arrives in one millisecond or one hour.</p>
+</div>
+<div class="paragraph">
+<p>A computer that produces the correct result after a century is semantically interesting and practically useless for most applications.</p>
+</div>
+<div class="paragraph">
+<p>Therefore metric time remains indispensable.</p>
+</div>
+<div class="paragraph">
+<p>The proposed demotion is narrower:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Metric time need not define computational order merely because it is required to evaluate computational performance.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Or, more compactly:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+The clock can measure computation without being the fundamental source of computational causality.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_should_anyone_care"><a class="anchor" href="#_why_should_anyone_care"></a>Why Should Anyone Care?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Without an engineering consequence, the distinction could remain philosophical bookkeeping.</p>
+</div>
+<div class="paragraph">
+<p>The practical motivation begins with a simple fact: computational blocks naturally operate at different physical rates.</p>
+</div>
+<div class="paragraph">
+<p>A memory access, a local Boolean operation, a network transfer, a sensor event, an accelerator invocation, and a multiplication may require different durations.</p>
+</div>
+<div class="paragraph">
+<p>A causality-first architecture can, in principle, allow each block to progress when its own completion conditions are satisfied rather than forcing the logical model to treat equal metric intervals as the primary organizer of every transition.</p>
+</div>
+<div class="paragraph">
+<p>That can matter for energy, latency, sparse workloads, variable-delay systems, and heterogeneous machines, but none of those benefits should be promised universally.</p>
+</div>
+<div class="paragraph">
+<p>Asynchronous logic carries overhead. Completion detection has a cost. Handshaking has a cost. Verification is harder. Toolchains are less mature. Some workloads map beautifully onto regular synchronous arrays and gain little from event-driven execution.</p>
+</div>
+<div class="paragraph">
+<p>The meaningful claim is therefore conditional:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+If useful work is irregular, sparse, data-dependent, or distributed across components with different natural completion rates, then a causal execution model may map more directly onto the work than a uniform global timing discipline.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is not a theorem of performance.</p>
+</div>
+<div class="paragraph">
+<p>It is an engineering hypothesis that can be measured.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_beyond_frequency_as_the_primary_intuition"><a class="anchor" href="#_beyond_frequency_as_the_primary_intuition"></a>Beyond Frequency as the Primary Intuition</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clock frequency is one of the most familiar quantities in computing.</p>
+</div>
+<div class="paragraph">
+<p>But frequency alone does not equal useful progress.</p>
+</div>
+<div class="paragraph">
+<p>A 5 GHz processor does not perform five billion meaningful application-level state transitions per second.</p>
+</div>
+<div class="paragraph">
+<p>Different instructions require different resources. Pipelines overlap work. Caches miss. Speculation succeeds or fails. Accelerators use different timing domains.</p>
+</div>
+<div class="paragraph">
+<p>Modern processors already contain extensive mechanisms that make the relationship between clock count and useful work highly indirect.</p>
+</div>
+<div class="paragraph">
+<p>A causal-progress model therefore invites another metric.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\eta_C
+=
+\frac{\Delta \lambda_C}{E},\$
+</div>
+</div>
+<div class="paragraph">
+<p>where (E) is energy consumed and (Delta\lambda_C) is a declared measure of useful computational progression.</p>
+</div>
+<div class="paragraph">
+<p>This is not yet a universal benchmark.</p>
+</div>
+<div class="paragraph">
+<p>The hard problem is defining <code>\lambda_C</code> without hiding arbitrary choices in it.</p>
+</div>
+<div class="paragraph">
+<p>Possible measures include number of causally completed graph nodes, reduction in unresolved dependency count, depth advanced through a dependency graph, number of durable outputs produced, or application-defined progress toward a terminal state.</p>
+</div>
+<div class="paragraph">
+<p>Each choice has limitations.</p>
+</div>
+<div class="paragraph">
+<p>The point is not that one of them should replace FLOPS, instructions per cycle, latency, or energy-per-operation immediately.</p>
+</div>
+<div class="paragraph">
+<p>The point is that metric time and useful causal progress need not be represented by the same variable.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_heterogeneous_computing_makes_the_distinction_more_natural"><a class="anchor" href="#_heterogeneous_computing_makes_the_distinction_more_natural"></a>Heterogeneous Computing Makes the Distinction More Natural</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A modern computing system may contain general-purpose CPU cores, GPUs, NPUs, storage controllers, network accelerators, sensors, DSPs, memory devices, programmable logic, and specialized AI accelerators.</p>
+</div>
+<div class="paragraph">
+<p>These components already operate under different internal assumptions and often different clock domains.</p>
+</div>
+<div class="paragraph">
+<p>Clock-domain crossing, buffering, synchronization, queueing, and protocol design exist precisely because one universal local rhythm is increasingly unrealistic across a complete machine.</p>
+</div>
+<div class="paragraph">
+<p>A causality-first abstraction states the relationship more naturally:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+I do not need to know how many of your local cycles passed. I need to know when the result on which I depend became valid.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Metric time remains relevant for a service-level requirement:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">result must arrive within 20 ms</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But functional dependency can remain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">B may execute after A and C complete</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This distinction may become increasingly valuable as computing hardware becomes more heterogeneous.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_possible_connection_to_ai"><a class="anchor" href="#_a_possible_connection_to_ai"></a>A Possible Connection to AI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The connection to AI should be made carefully.</p>
+</div>
+<div class="paragraph">
+<p>Today&#8217;s dominant AI accelerators are extremely successful precisely because dense numerical operations can be organized into highly regular massively parallel computation.</p>
+</div>
+<div class="paragraph">
+<p>There is no reason to assume that causal hardware will replace matrix accelerators for those workloads.</p>
+</div>
+<div class="paragraph">
+<p>But not all intelligent computation is naturally dense and uniform.</p>
+</div>
+<div class="paragraph">
+<p>Reasoning systems, agents, robotic systems, event-driven perception, dynamic retrieval, tool use, and adaptive planning can produce dependency structures such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">observation
+    -&gt; hypothesis A
+    -&gt; hypothesis B
+    -&gt; retrieve evidence
+         -&gt; invalidate B
+         -&gt; strengthen A
+    -&gt; call tool
+         -&gt; new observation
+    -&gt; update plan</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Only some branches need to progress.</p>
+</div>
+<div class="paragraph">
+<p>Some branches die.</p>
+</div>
+<div class="paragraph">
+<p>Others awaken after new evidence.</p>
+</div>
+<div class="paragraph">
+<p>The structure resembles a dynamic causal graph more than a uniform sequence of identical operations.</p>
+</div>
+<div class="paragraph">
+<p>This suggests a research question rather than a prediction:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Could future AI systems benefit from hardware or runtime architectures in which computation is activated by informational dependency rather than organized primarily around uniform metric progression?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Neuromorphic systems demonstrate one concrete version of event-driven activation.</p>
+</div>
+<div class="paragraph">
+<p>They do not answer the broader question.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_proof_of_concept_should_begin_in_software"><a class="anchor" href="#_the_proof_of_concept_should_begin_in_software"></a>The Proof-of-Concept Should Begin in Software</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first experiment should not be a fabricated processor.</p>
+</div>
+<div class="paragraph">
+<p>That would make the hypothesis expensive before it becomes precise.</p>
+</div>
+<div class="paragraph">
+<p>A better first step is a causality-first virtual machine.</p>
+</div>
+<div class="paragraph">
+<p>The VM would deliberately omit a global instruction cycle from its semantics.</p>
+</div>
+<div class="paragraph">
+<p>A program would compile into a directed dependency graph.</p>
+</div>
+<div class="paragraph">
+<p>Each node would define its input dependencies, the transformation to apply, the rule by which completion becomes visible, and the output records it produces.</p>
+</div>
+<div class="paragraph">
+<p>The runtime would execute any node whose prerequisites have become satisfied.</p>
+</div>
+<div class="paragraph">
+<p>Metric time would be logged separately.</p>
+</div>
+<div class="paragraph">
+<p>This allows two layers to be observed independently:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">semantic trace:
+dependency resolution / causal completion
+
+physical trace:
+wall-clock duration / resource use / energy estimate</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The experiment would then inject artificial delays.</p>
+</div>
+<div class="paragraph">
+<p>The same program could be run repeatedly while giving different operations radically different durations.</p>
+</div>
+<div class="paragraph">
+<p>If the model is correct, functional equivalence should survive those timing changes as long as causal and completion constraints remain satisfied.</p>
+</div>
+<div class="paragraph">
+<p>That would demonstrate something modest but important:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+logical progression can remain invariant while metric realization changes.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is already expected from established asynchronous and dataflow theory.</p>
+</div>
+<div class="paragraph">
+<p>The value of the PoC would therefore not be to prove something unknown.</p>
+</div>
+<div class="paragraph">
+<p>Its purpose would be to make the <code>\lambda_C / q_C / \tau</code> distinction executable and measurable.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introducing_the_computational_regime_coordinate_q_c"><a class="anchor" href="#_introducing_the_computational_regime_coordinate_q_c"></a>Introducing the Computational-Regime Coordinate q_C</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The VM also creates a way to explore <code>q_C</code>.</p>
+</div>
+<div class="paragraph">
+<p>Suppose the same causal program is executed at several values of the computational-regime coordinate <code>q_C</code>, corresponding to physical or simulated regimes such as high voltage / high performance, low voltage / low energy, thermal throttling, degraded memory latency, accelerator available, accelerator unavailable, high precision, approximate computation, or partial hardware failure.</p>
+</div>
+<div class="paragraph">
+<p>These regimes can change the mapping:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\lambda_C \mapsto \tau.\$
+</div>
+</div>
+<div class="paragraph">
+<p>A fixed amount of causal progress may require very different metric durations in different regimes.</p>
+</div>
+<div class="paragraph">
+<p>Likewise, the energy cost may change.</p>
+</div>
+<div class="paragraph">
+<p>This gives a computational analogue of a System Tempo question:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Can equal increments of computational progress correspond to unequal metric intervals because the containing computational regime has changed?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>For ordinary computers the answer is obviously yes.</p>
+</div>
+<div class="paragraph">
+<p>Thermal throttling alone demonstrates it.</p>
+</div>
+<div class="paragraph">
+<p>But formalizing that fact is useful because it prevents the stronger philosophical hypothesis from hiding inside a trivial engineering observation.</p>
+</div>
+<div class="paragraph">
+<p>A computer gives us a controlled system in which <code>q_C</code>, <code>\lambda_C</code>, and <code>\tau</code> can all be instrumented.</p>
+</div>
+<div class="paragraph">
+<p>That makes it a useful conceptual laboratory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_vm_to_hardware"><a class="anchor" href="#_from_vm_to_hardware"></a>From VM to Hardware</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If the software model is useful, the next step can be a small hardware prototype.</p>
+</div>
+<div class="paragraph">
+<p>A practical target would be a tiny asynchronous or handshake-driven processor rather than an attempt at a modern CPU.</p>
+</div>
+<div class="paragraph">
+<p>Possible scope includes a 4-bit or 8-bit datapath, a small register set, simple arithmetic and Boolean operations, request/acknowledge communication, completion detection, no global execution clock, and instrumentation for latency and energy.</p>
+</div>
+<div class="paragraph">
+<p>A still cleaner design may avoid pretending to be a conventional instruction-set processor and implement a small dataflow engine directly.</p>
+</div>
+<div class="paragraph">
+<p>Workcraft is relevant here because it supports Petri nets, Signal Transition Graphs, circuit models, verification, and synthesis of asynchronous control logic.</p>
+</div>
+<div class="paragraph">
+<p>The research sequence could therefore be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">formal causal graph
+    -&gt; executable VM
+    -&gt; artificial variable-delay experiments
+    -&gt; STG / Petri-net control model
+    -&gt; synthesized asynchronous controller
+    -&gt; FPGA or small physical prototype</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The hardware experiment would then compare at least two implementations of the same functional graph:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Machine S: synchronous
+
+Machine C: causality / completion driven</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The comparison should measure actual behavior rather than ideology: correctness, latency, throughput, energy, idle behavior, sensitivity to variable delays, area or resource cost, control overhead, and verification complexity.</p>
+</div>
+<div class="paragraph">
+<p>No result should be assumed in advance.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_would_count_as_an_interesting_result"><a class="anchor" href="#_what_would_count_as_an_interesting_result"></a>What Would Count as an Interesting Result?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A trivial result would be:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+An asynchronous machine can compute without a global clock.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That is already known.</p>
+</div>
+<div class="paragraph">
+<p>A more interesting result would be:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+For a defined workload class, a causality-first representation provides a stable semantic progress measure that remains invariant across physical timing regimes and maps more predictably to energy or useful work than raw clock count.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>An even stronger engineering result would be:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+A hardware or runtime system using the causal model achieves measurable benefits on irregular or heterogeneous workloads without unacceptable verification, area, or control overhead.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>And the strongest conceptual result relevant to the broader research program would be:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+The explicit separation of causal progression, regime, and metric duration proves useful enough in engineered systems that it becomes a productive analogy for reasoning about internal metrology in more general systems.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That final result would still be an analogy.</p>
+</div>
+<div class="paragraph">
+<p>It would not prove System Tempo as a physical theory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_failure_conditions"><a class="anchor" href="#_failure_conditions"></a>Failure Conditions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A serious research proposal should say how it can fail.</p>
+</div>
+<div class="paragraph">
+<p>The computational model becomes uninteresting if <code>\lambda_C</code> is merely a renamed instruction count, if <code>q_C</code> is merely a loose label for ordinary hardware state with no explanatory use, if all useful properties are already captured more cleanly by existing dataflow or asynchronous models, if the separation adds vocabulary without improving prediction or measurement, if the PoC demonstrates only known handshake behavior, or if practical overhead consistently dominates any benefit for the target workloads.</p>
+</div>
+<div class="paragraph">
+<p>The broader analogy also fails if it is used rhetorically:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Computers can separate causal order from clocks, therefore the universe must have a non-metric regime coordinate.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That inference would be invalid.</p>
+</div>
+<div class="paragraph">
+<p>An engineered counterexample to clock-centric design does not establish new cosmology.</p>
+</div>
+<div class="paragraph">
+<p>The computer is useful because it lets us sharpen concepts under controlled conditions, not because it can prove the ontology of the universe.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_established_result_proposed_interpretation_open_hypothesis"><a class="anchor" href="#_established_result_proposed_interpretation_open_hypothesis"></a>Established Result, Proposed Interpretation, Open Hypothesis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The argument can now be separated cleanly.</p>
+</div>
+<div class="sect2">
+<h3 id="_established"><a class="anchor" href="#_established"></a>Established</h3>
+<div class="paragraph">
+<p>Asynchronous circuits can compute without a global clock.</p>
+</div>
+<div class="paragraph">
+<p>Dataflow machines can activate operations by operand availability.</p>
+</div>
+<div class="paragraph">
+<p>Distributed systems can represent causal order without relying on perfect physical clocks.</p>
+</div>
+<div class="paragraph">
+<p>Petri nets and event structures can represent partial-order computation.</p>
+</div>
+<div class="paragraph">
+<p>Latency-insensitive design can separate functional correctness from specific communication delay.</p>
+</div>
+<div class="paragraph">
+<p>Neuromorphic systems can use sparse event-driven computation for useful workloads.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_proposed_interpretation"><a class="anchor" href="#_proposed_interpretation"></a>Proposed Interpretation</h3>
+<div class="paragraph">
+<p>These results can be organized under a common conceptual distinction:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Computational progression is not identical to metric duration.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Metric time characterizes the physical realization.</p>
+</div>
+<div class="paragraph">
+<p>Causal relations characterize logical admissibility and dependency.</p>
+</div>
+<div class="paragraph">
+<p>The computational regime characterizes the conditions mapping one into the other; <code>q_C</code> is only the coordinate used to label or parameterize that regime.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_open_hypothesis"><a class="anchor" href="#_open_hypothesis"></a>Open Hypothesis</h3>
+<div class="paragraph">
+<p>Making those three coordinates explicit may produce useful new runtime models, metrics, or heterogeneous architectures.</p>
+</div>
+<div class="paragraph">
+<p>The hypothesis is engineering-relevant only if the distinction improves something measurable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_relation_to_system_tempo"><a class="anchor" href="#_relation_to_system_tempo"></a>Relation to System Tempo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The most disciplined bridge back to System Tempo is methodological.</p>
+</div>
+<div class="paragraph">
+<p>In a computer, we can observe all three layers.</p>
+</div>
+<div class="paragraph">
+<p>We can know the causal graph.</p>
+</div>
+<div class="paragraph">
+<p>We can manipulate hardware regime.</p>
+</div>
+<div class="paragraph">
+<p>We can measure metric duration.</p>
+</div>
+<div class="paragraph">
+<p>We can therefore ask:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Delta \lambda_C = \text{constant},
+\qquad
+\Delta \tau = ?\$
+</div>
+</div>
+<div class="paragraph">
+<p>at different values of <code>q_C</code>.</p>
+</div>
+<div class="paragraph">
+<p>The answer can vary.</p>
+</div>
+<div class="paragraph">
+<p>This does not establish that the universe possesses an analogous hidden coordinate.</p>
+</div>
+<div class="paragraph">
+<p>But it gives a concrete example of why the following inference is not logically automatic:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Delta \tau_1 = \Delta \tau_2
+\Rightarrow
+\Delta \lambda_1 = \Delta \lambda_2.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Nor is the inverse automatic.</p>
+</div>
+<div class="paragraph">
+<p>A local metric and a system&#8217;s meaningful progression can be tightly related without being conceptually identical.</p>
+</div>
+<div class="paragraph">
+<p>That is the bridge.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_closing_thesis"><a class="anchor" href="#_closing_thesis"></a>Closing Thesis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The interesting computer is not one in which time disappears.</p>
+</div>
+<div class="paragraph">
+<p>It is one in which the role of time becomes more precise.</p>
+</div>
+<div class="paragraph">
+<p>Metric time remains necessary for physical engineering, deadlines, latency, energy analysis, communication, and user experience.</p>
+</div>
+<div class="paragraph">
+<p>But computational causality can be defined separately.</p>
+</div>
+<div class="paragraph">
+<p>The next event need not be meaningful because another equal metric interval elapsed.</p>
+</div>
+<div class="paragraph">
+<p>It can be meaningful because the conditions that enable it became true.</p>
+</div>
+<div class="paragraph">
+<p>That distinction is already present in asynchronous circuits, logical clocks, event structures, and dataflow systems.</p>
+</div>
+<div class="paragraph">
+<p>The research opportunity is not to rediscover them.</p>
+</div>
+<div class="paragraph">
+<p>It is to make the distinction explicit enough to connect three layers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">computational progress lambda_C
+        |
+        v
+computational regime q_C
+        |
+        v
+metric realization tau</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and then ask whether that separation yields a better model for irregular, event-driven, heterogeneous, or intelligent computation.</p>
+</div>
+<div class="paragraph">
+<p>The practical intuition is simple:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Computational blocks naturally operate at different speeds.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The deeper question is whether our computational semantics should continue to treat one metric rhythm as primary when causality already provides another organizing structure.</p>
+</div>
+<div class="paragraph">
+<p>A compact formulation is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+The clock may be unnecessary for defining computational order while remaining indispensable for measuring the physical implementation of that computation.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Or, more provocatively:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Today we often make computation follow the clock. A causality-first machine lets computation determine its own admissible progression and lets the clock measure what physically happened.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That is not yet a new computer architecture.</p>
+</div>
+<div class="paragraph">
+<p>It is a research question precise enough to build.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>[<a id="lamport-1978"></a>] Leslie Lamport, <a href="https://www.microsoft.com/en-us/research/publication/time-clocks-ordering-events-distributed-system/">Time, Clocks, and the Ordering of Events in a Distributed System</a>, <em>Communications of the ACM</em> 21(7), 558-565 (1978).</p>
+</li>
+<li>
+<p>[<a id="winskel-events"></a>] Glynn Winskel, <a href="https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-95.html">Event Structures: Lecture Notes for the Advanced Course on Petri Nets</a>, University of Cambridge Computer Laboratory Technical Report UCAM-CL-TR-95 (1986).</p>
+</li>
+<li>
+<p>[<a id="manchester-dataflow"></a>] J. R. Gurd, C. C. Kirkham, and I. Watson, <a href="https://www.sciencedirect.com/science/article/pii/0010465585901353">The Manchester Dataflow Machine</a>, <em>Computer Physics Communications</em> 37, 49-62 (1985).</p>
+</li>
+<li>
+<p>[<a id="amulet1"></a>] J. V. Woods, P. Day, S. B. Furber, J. D. Garside, N. C. Paver, and S. Temple, <a href="https://research.manchester.ac.uk/en/publications/amulet-1-an-asynchronous-arm-microprocessor/">AMULET 1: An Asynchronous ARM Microprocessor</a>, <em>IEEE Transactions on Computers</em> 46(4), 385-398 (1997).</p>
+</li>
+<li>
+<p>[<a id="amulet-family"></a>] J. D. Garside, S. B. Furber, S. Temple, and J. V. Woods, <a href="https://research.manchester.ac.uk/en/publications/the-amulet-chips-architectural-development-for-asynchronous-micro/">The AMULET Chips: Architectural Development for Asynchronous Microprocessors</a> (2009).</p>
+</li>
+<li>
+<p>[<a id="latency-insensitive"></a>] Luca P. Carloni, Kenneth L. McMillan, Alexander Saldanha, and Alberto L. Sangiovanni-Vincentelli, <a href="https://sld.cs.columbia.edu/pubs/carloni_iccad99.pdf">A Methodology for Correct-by-Construction Latency Insensitive Design</a>, ICCAD (1999).</p>
+</li>
+<li>
+<p>[<a id="speck"></a>] Man Yao et al., <a href="https://www.nature.com/articles/s41467-024-47811-6">Spike-Based Dynamic Computing with Asynchronous Sensing-Computing Neuromorphic Chip</a>, <em>Nature Communications</em> 15, 4464 (2024).</p>
+</li>
+<li>
+<p>[<a id="loihi2"></a>] Intel Labs, <a href="https://www.intel.com/content/www/us/en/research/neuromorphic-computing.html">Neuromorphic Computing Research and Loihi 2</a>.</p>
+</li>
+<li>
+<p>[<a id="workcraft"></a>] Workcraft, <a href="https://workcraft.org/">Formal modelling, verification, and synthesis tooling for Petri nets, Signal Transition Graphs, asynchronous circuits, and related models</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>

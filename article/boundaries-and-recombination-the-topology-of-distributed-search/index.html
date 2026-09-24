@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Boundaries and Recombination: The Topology of Distributed Search :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/boundaries-and-recombination-the-topology-of-distributed-search/">
+    <meta name="description" content="A scientific-philosophical essay on diversity, partial separation, permeability, recombination, and distributed search.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/boundaries-and-recombination-the-topology-of-distributed-search/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/boundaries-and-recombination-the-topology-of-distributed-search/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Boundaries and Recombination: The Topology of Distributed Search">
+<meta name="twitter:title" content="Boundaries and Recombination: The Topology of Distributed Search">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  },
+  startup: {
+    ready: () => {
+      document.querySelectorAll('.stemblock .content').forEach((element) => {
+        let source = element.textContent.trim();
+        if (source.startsWith('\\$') && source.endsWith('\\$')) {
+          source = source.slice(2, -2).trim();
+        } else if (source.startsWith('$') && source.endsWith('$')) {
+          source = source.slice(1, -1).trim();
+        }
+        element.textContent = `\\[${source}\\]`;
+      });
+      MathJax.startup.defaultReady();
+    }
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">Boundaries and Recombination: The Topology of Distributed Search</a></li>
+    <li><span>Boundaries and Recombination: The Topology of Distributed Search</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Boundaries and Recombination: The Topology of Distributed Search</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/boundaries-and-recombination-the-topology-of-distributed-search.adoc`</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_position_in_the_series"><a class="anchor" href="#_position_in_the_series"></a>Position in the Series</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This essay belongs after <a href="../evolution-as-reconstruction-under-incomplete-preservation/" class="xref page">Evolution as Reconstruction Under Incomplete Preservation: A Restorative Evolution Hypothesis</a> and before <a href="../the-organism-that-searches-for-its-origin/" class="xref page">The Organism That Searches for Its Origin: From Teleonomy to Recursive Reconstruction</a>.</p>
+</div>
+<div class="paragraph">
+<p>The previous essay already introduces distributed biological search, recombination, migration, population structure, and the possibility that relevant restorative information is not contained in one genome or one organism.</p>
+</div>
+<div class="paragraph">
+<p>The present essay asks a narrower question:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+What topology of separation and exchange preserves non-redundant exploration while still allowing useful structures to recombine?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is a systems question, not a migration-policy prescription.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_separation_and_mixing_are_not_opposites"><a class="anchor" href="#_separation_and_mixing_are_not_opposites"></a>Separation and Mixing Are Not Opposites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Complete isolation blocks exchange.</p>
+</div>
+<div class="paragraph">
+<p>Complete homogenization can erase the differences from which new combinations arise.</p>
+</div>
+<div class="paragraph">
+<p>The relevant variable is therefore not simply whether a boundary exists, but its permeability: what crosses it, at what rate, through which channel, and whether distinct trajectories remain independent long enough to generate non-redundant structure.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+A boundary can be treated not only as a wall, but as a parameter of information flow.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_minimal_model"><a class="anchor" href="#_minimal_model"></a>Minimal Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let partially distinct populations or clusters be:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$P_1,P_2,\ldots,P_n.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Let their possible exchange relations form a graph:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$G=(V,E).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Let (D_{within}) denote diversity maintained inside populations, (D_{between}) differentiation among them, (M) exchange intensity, (T) exchange topology, and (S) filtering or retention conditions.</p>
+</div>
+<div class="paragraph">
+<p>A schematic combinatorial capacity can then be written:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal{C}=F(D_{within},D_{between},M,T,S).\$
+</div>
+</div>
+<div class="paragraph">
+<p>No monotonic relation is assumed.</p>
+</div>
+<div class="paragraph">
+<p>Increasing (M) may initially enlarge the accessible combination space and later reduce independent diversity if coupling becomes sufficiently strong.</p>
+</div>
+<div class="paragraph">
+<p>The optimum, if one exists, is therefore allowed to be regime-dependent.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_island_model_analogy"><a class="anchor" href="#_the_island_model_analogy"></a>The Island-Model Analogy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Distributed evolutionary algorithms provide a useful formal neighbor.</p>
+</div>
+<div class="paragraph">
+<p>Island models divide a population into subpopulations that explore partly independently and exchange candidate solutions periodically.</p>
+</div>
+<div class="paragraph">
+<p>Isolation can preserve diverse exploration.</p>
+</div>
+<div class="paragraph">
+<p>Migration can transmit useful structures.</p>
+</div>
+<div class="paragraph">
+<p>But exchange is not automatically beneficial at every rate. Very frequent or very large migrations can reduce diversity and make a distributed system behave increasingly like one population, while extremely weak exchange can leave discoveries trapped in isolated islands.</p>
+</div>
+<div class="paragraph">
+<p>The analogy is therefore:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">too little exchange -&gt; fragmentation
+partial exchange    -&gt; independent exploration + recombination
+too much coupling   -&gt; loss of distinct trajectories / premature convergence</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This does not prove an equivalent law for biology or society. It supplies a formal analogy that prevents the simplistic rule "more connectivity is always better."</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_biological_population_structure"><a class="anchor" href="#_biological_population_structure"></a>Biological Population Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Population genetics supplies a second neighboring domain.</p>
+</div>
+<div class="paragraph">
+<p>Mutation, recombination, drift, selection, dispersal, migration, admixture, and demographic history jointly shape genetic variation.</p>
+</div>
+<div class="paragraph">
+<p>Gene flow generally tends to reduce differentiation, while barriers, distance, selection, and historical structure can preserve it.</p>
+</div>
+<div class="paragraph">
+<p>The relevant structural lesson is limited:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Variation can be distributed across partially connected populations, and evolutionary outcomes depend on both local dynamics and the topology and intensity of exchange.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is not a social prescription.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_boundaries_as_search_partitions"><a class="anchor" href="#_boundaries_as_search_partitions"></a>Boundaries as Search Partitions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A partition can slow propagation long enough for local trajectories to diverge.</p>
+</div>
+<div class="paragraph">
+<p>Later exchange can then recombine structures produced under different histories:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">partition
+    -&gt; partially independent exploration
+    -&gt; accumulated difference
+    -&gt; contact
+    -&gt; exchange
+    -&gt; recombination
+    -&gt; higher-order exploration</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This does not imply that historical human borders were created for this purpose.</p>
+</div>
+<div class="paragraph">
+<p>Observed effect is not evidence of purpose.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recombination_is_not_homogenization"><a class="anchor" href="#_recombination_is_not_homogenization"></a>Recombination Is Not Homogenization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Recombination requires distinguishable inputs.</p>
+</div>
+<div class="paragraph">
+<p>If two populations become identical with respect to every relevant structure, exchange between them generates little novelty.</p>
+</div>
+<div class="paragraph">
+<p>The stronger formulation is therefore:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+A combinatorial system may not need difference to disappear. It may need difference to become traversable.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This replaces the crude opposition between "closed boundaries" and "complete mixing" with a question about adaptive permeability.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_human_societies_boundary_of_the_analogy"><a class="anchor" href="#_human_societies_boundary_of_the_analogy"></a>Human Societies: Boundary of the Analogy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Human beings are not candidate solutions in an optimization algorithm.</p>
+</div>
+<div class="paragraph">
+<p>Political communities are not breeding islands.</p>
+</div>
+<div class="paragraph">
+<p>Religion, ethnicity, nationality, language, culture, and genetic variation are not interchangeable variables.</p>
+</div>
+<div class="paragraph">
+<p>Any concrete border or migration policy requires separate ethical, legal, economic, demographic, security, institutional, and human-rights analysis.</p>
+</div>
+<div class="paragraph">
+<p>The present hypothesis does not determine such a policy.</p>
+</div>
+<div class="paragraph">
+<p>Its defensible social question is narrower:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+How does network permeability affect the preservation, transmission, recombination, and loss of heterogeneous information?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That question applies not only to migration, but also to universities, cities, firms, scientific communities, languages, technological ecosystems, and research disciplines.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_multiple_channels_of_exchange"><a class="anchor" href="#_multiple_channels_of_exchange"></a>Multiple Channels of Exchange</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Human systems transmit much more than genes.</p>
+</div>
+<div class="paragraph">
+<p>They transmit language, techniques, institutions, stories, norms, scientific methods, tools, records, models, and mathematical abstractions.</p>
+</div>
+<div class="paragraph">
+<p>Therefore exchange should not be represented as one scalar:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$M=(M_g,M_p,M_c,M_i,\ldots),\$
+</div>
+</div>
+<div class="paragraph">
+<p>where the components can represent genetic, demographic, cultural, informational, and other channels.</p>
+</div>
+<div class="paragraph">
+<p>These channels must not be collapsed into one another.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conflict_and_war"><a class="anchor" href="#_conflict_and_war"></a>Conflict and War</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The search metaphor raises a harder question: can war be treated as part of combinatorial exploration?</p>
+</div>
+<div class="paragraph">
+<p>Only in a severely restricted descriptive sense.</p>
+</div>
+<div class="paragraph">
+<p>War can alter population structure, institutions, technologies, borders, and the survival of competing configurations.</p>
+</div>
+<div class="paragraph">
+<p>But those effects do not show that war occurs in order to improve search.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Selection effect is not purpose.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>War also destroys people, information, infrastructure, cultural continuity, trust, and unrealized alternatives.</p>
+</div>
+<div class="paragraph">
+<p>Therefore the emergence of a later configuration cannot by itself make war an efficient or necessary search operator.</p>
+</div>
+<div class="paragraph">
+<p>A meaningful comparison requires the counterfactual question:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Could equal or greater informational gain have been achieved through less destructive mechanisms?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Science, experimentation, institutional competition, negotiation, simulation, and computation can compare alternatives without physically realizing every destructive branch.</p>
+</div>
+<div class="paragraph">
+<p>This suggests a possible transition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">physical exploration
+    -&gt; representational exploration
+    -&gt; simulated exploration</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The development of intelligence may reduce the amount of irreversible physical exploration required to compare alternatives.</p>
+</div>
+<div class="paragraph">
+<p>That is a philosophical hypothesis, not a demonstrated law of history.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_relation_to_restorative_evolution"><a class="anchor" href="#_relation_to_restorative_evolution"></a>Relation to Restorative Evolution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Suppose, under the strong Restorative Evolution Hypothesis, that relevant information is distributed:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$I_R=\bigcup_{i=1}^{n}I_i.\$
+</div>
+</div>
+<div class="paragraph">
+<p>No one population contains all of (I_R).</p>
+</div>
+<div class="paragraph">
+<p>Reconstruction may then require exchange among populations.</p>
+</div>
+<div class="paragraph">
+<p>But complete homogenization can also destroy unique fragments before their significance becomes visible.</p>
+</div>
+<div class="paragraph">
+<p>The system would therefore face two simultaneous requirements:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">preserve distributed fragments
+        +
+permit later recombination</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This yields the new bridge:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Restoration under incomplete preservation may depend not only on what survives, but on the topology through which surviving fragments can later meet.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is speculative and becomes scientific only if the reference information, preservation channels, null models, and expected recombination signatures can be independently specified.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_relation_to_recursive_reconstruction"><a class="anchor" href="#_relation_to_recursive_reconstruction"></a>Relation to Recursive Reconstruction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next essay asks how an embedded organism becomes capable of modeling its own origin.</p>
+</div>
+<div class="paragraph">
+<p>The present article supplies an intermediate layer:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">distributed variation
+    -&gt; partial separation
+    -&gt; exchange
+    -&gt; recombination
+    -&gt; cultural memory
+    -&gt; internal modeling
+    -&gt; counterfactual search
+    -&gt; recursive reconstruction</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The conceptual sequence is therefore:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Restorative Evolution
+    -&gt; Boundaries and Recombination
+    -&gt; The Organism That Searches for Its Origin
+    -&gt; The Universe as a Contained System</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_this_article_does_not_claim"><a class="anchor" href="#_what_this_article_does_not_claim"></a>What This Article Does Not Claim</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This article does not claim that human history has a hidden optimization objective.</p>
+</div>
+<div class="paragraph">
+<p>It does not claim that wars exist in order to discover better configurations.</p>
+</div>
+<div class="paragraph">
+<p>It does not claim that states, religions, ethnic groups, or cultures should be demographically redistributed.</p>
+</div>
+<div class="paragraph">
+<p>It does not claim that more migration is always beneficial.</p>
+</div>
+<div class="paragraph">
+<p>It does not claim that less migration is always beneficial.</p>
+</div>
+<div class="paragraph">
+<p>It does not equate genetic diversity with cultural diversity.</p>
+</div>
+<div class="paragraph">
+<p>It does not equate human populations with artificial evolutionary islands.</p>
+</div>
+<div class="paragraph">
+<p>It does not prove the Restorative Evolution Hypothesis.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_research_questions"><a class="anchor" href="#_research_questions"></a>Research Questions</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Under which search problems does partial partitioning outperform both full isolation and complete mixing?</p>
+</li>
+<li>
+<p>Can combinatorial capacity be formalized using within-group diversity, between-group differentiation, exchange intensity, topology, and retention?</p>
+</li>
+<li>
+<p>When does connectivity preserve useful diversity, and when does it cause premature convergence?</p>
+</li>
+<li>
+<p>How should genetic, demographic, cultural, informational, and technological exchange channels be modeled separately?</p>
+</li>
+<li>
+<p>Can high permeability coexist with durable local differentiation?</p>
+</li>
+<li>
+<p>Can informational exchange substitute for physical population movement in some search domains?</p>
+</li>
+<li>
+<p>Can representational search reduce the amount of irreversible physical exploration required by a system?</p>
+</li>
+<li>
+<p>Under the Restorative Evolution Hypothesis, what observable signature would distinguish recombination of preserved fragments from ordinary convergence?</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_closing_thesis"><a class="anchor" href="#_closing_thesis"></a>Closing Thesis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A distributed search may require both difference and contact.</p>
+</div>
+<div class="paragraph">
+<p>Isolation can preserve independent exploration but trap discoveries.</p>
+</div>
+<div class="paragraph">
+<p>Unrestricted coupling can accelerate exchange but erase the differences from which later recombination draws novelty.</p>
+</div>
+<div class="paragraph">
+<p>The important variable is therefore not the existence or abolition of boundaries in the abstract.</p>
+</div>
+<div class="paragraph">
+<p>It is permeability: how easily non-redundant structure can cross between partially distinct trajectories without forcing those trajectories to collapse immediately into one.</p>
+</div>
+<div class="paragraph">
+<p>If the Restorative Evolution Hypothesis has merit, survival of fragments is not enough. The system must also possess a topology through which the fragments can eventually encounter one another.</p>
+</div>
+<div class="paragraph">
+<p>Once cognition appears, combinations no longer need to be tested only through reproduction, population movement, or material conflict. They can increasingly be tested in language, models, institutions, science, and computation.</p>
+</div>
+<div class="paragraph">
+<p>The search can move from material collision toward informational recombination.</p>
+</div>
+<div class="paragraph">
+<p>Whether that transition is merely a property of intelligence or part of a deeper restorative process remains open.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>[<a id="marcondes-islands"></a>] Caio E. Marcondes et al., <a href="https://link.springer.com/article/10.1007/s12293-026-00527-0">A Robust Experimental Evaluation of the Co-Evolutionary Islands Model</a>, <em>Memetic Computing</em> 18, 44 (2026).</p>
+</li>
+<li>
+<p>[<a id="diversity-migration"></a>] <a href="https://doi.org/10.1016/j.swevo.2023.101361">A Diversity-Driven Migration Strategy for Distributed Evolutionary Algorithms</a>, <em>Swarm and Evolutionary Computation</em> 82, 101361 (2023).</p>
+</li>
+<li>
+<p>[<a id="island-topology"></a>] <a href="https://link.springer.com/article/10.1007/s00500-013-0995-9">Matching Island Topologies to Problem Structure in Parallel Evolutionary Algorithms</a>, <em>Soft Computing</em> (2013).</p>
+</li>
+<li>
+<p>[<a id="holsinger-weir"></a>] Kent E. Holsinger and Bruce S. Weir, <a href="https://www.nature.com/articles/nrg2611">Genetics in Geographically Structured Populations: Defining, Estimating and Interpreting FST</a>, <em>Nature Reviews Genetics</em> 10, 639-650 (2009).</p>
+</li>
+<li>
+<p>[<a id="sousa-hey"></a>] Vitor Sousa and Jody Hey, <a href="https://www.nature.com/articles/nrg3446">Understanding the Origin of Species with Genome-Scale Data: Modelling Gene Flow</a>, <em>Nature Reviews Genetics</em> 14, 404-414 (2013).</p>
+</li>
+<li>
+<p>[<a id="nielsen-arg"></a>] Rasmus Nielsen, Andrew H. Vaughn, and Yun Deng, <a href="https://www.nature.com/articles/s41576-024-00772-4">Inference and Applications of Ancestral Recombination Graphs</a>, <em>Nature Reviews Genetics</em> 26, 47-58 (2025).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>
