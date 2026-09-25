@@ -29,6 +29,29 @@ The combined hypothesis is not that debt markets cause deceptive billing, nor th
 
 This article separates established evidence from speculative inference and proposes conditions under which the hypothesis can be tested or falsified.
 
+== Position in a New Research Direction
+
+This article opens a new research direction in this documentation.
+
+It is not part of the *Dynamic Non-Absoluteness* or *System Tempo* research programs, and it should not be read as an application of those frameworks.
+
+The subject here is institutional and economic: how service contracts, billing systems, debt recoverability, collection markets, consumer reporting, credit scoring, switching costs, and finite consumer dispute capacity interact.
+
+The provisional scope of this new direction is:
+
+[source,text]
+----
+service-market incentives
+    + contractual and billing opacity
+    + monetizable residual debt
+    + collection infrastructure
+    + consumer reporting
+    + credit scoring
+    + downstream access and pricing effects
+----
+
+The present article is the first hypothesis paper in that direction. Later work can separate the problem into narrower empirical studies rather than assuming in advance that the full causal chain is established.
+
 == The Ordinary Market-Discipline Model
 
 In the simplest consumer-service model, the firm earns by continuing to provide a service the customer is willing to purchase.
