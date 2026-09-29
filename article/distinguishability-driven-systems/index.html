@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Distinguishability-Driven Systems :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/distinguishability-driven-systems/">
+    <meta name="description" content="Why agents, distributed systems, observability stacks, and telemetry architectures should be designed around the distinctions required for action rather than around raw data volume alone.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/distinguishability-driven-systems/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/distinguishability-driven-systems/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Distinguishability-Driven Systems">
+<meta name="twitter:title" content="Distinguishability-Driven Systems">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  },
+  startup: {
+    ready: () => {
+      document.querySelectorAll('.stemblock .content').forEach((element) => {
+        let source = element.textContent.trim();
+        if (source.startsWith('\\$') && source.endsWith('\\$')) {
+          source = source.slice(2, -2).trim();
+        } else if (source.startsWith('$') && source.endsWith('$')) {
+          source = source.slice(1, -1).trim();
+        }
+        element.textContent = `\\[${source}\\]`;
+      });
+      MathJax.startup.defaultReady();
+    }
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">Distinguishability-Driven Systems</a></li>
+    <li><span>Distinguishability-Driven Systems</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Distinguishability-Driven Systems</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/distinguishability-driven-systems.adoc`</em></p>
+</div>
+<div class="quoteblock abstract">
+<blockquote>
+Most information systems are designed around data.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Which fields should an API expose?</p>
+</div>
+<div class="paragraph">
+<p>Which events should be published?</p>
+</div>
+<div class="paragraph">
+<p>Which metrics should be collected?</p>
+</div>
+<div class="paragraph">
+<p>Which tools should an AI agent receive?</p>
+</div>
+<div class="paragraph">
+<p>Which telemetry packets should a remote machine transmit?</p>
+</div>
+<div class="paragraph">
+<p>These questions may begin one step too late.</p>
+</div>
+<div class="paragraph">
+<p>For a decision-making system, the more primitive question is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Which physically or operationally different states must remain distinguishable after they pass through the available observation channel?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>If two states require different actions but become observationally identical to the decision-maker, no amount of downstream reasoning can reliably reconstruct the missing distinction.</p>
+</div>
+<div class="paragraph">
+<p>This article develops <strong>distinguishability</strong> as an architectural property. The idea applies to AI agents, MCP/tool architectures, distributed systems, observability, spacecraft telemetry, robotics, sensor fusion, computer architecture, and semantic communication.</p>
+</div>
+<div class="paragraph">
+<p>The central condition is simple:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_1 \sim_O S_2
+\quad\land\quad
+a(S_1)\neq a(S_2).\$
+</div>
+</div>
+<div class="paragraph">
+<p>When this holds, the failure is not primarily in the decision policy.</p>
+</div>
+<div class="paragraph">
+<p>It exists earlier, in the observation contract.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_system_does_not_receive_the_state"><a class="anchor" href="#_a_system_does_not_receive_the_state"></a>A System Does Not Receive "The State"</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Engineering language often says that a system "received the state of an object."</p>
+</div>
+<div class="paragraph">
+<p>That is rarely literally true.</p>
+</div>
+<div class="paragraph">
+<p>Let the underlying system state be \(S\).</p>
+</div>
+<div class="paragraph">
+<p>Let observer \(O\) access it through channel \(C\), with finite resolving capacity \(\rho_O\).</p>
+</div>
+<div class="paragraph">
+<p>Then what the observer actually receives is better represented as:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_O(S)=\mathcal O(S,C,\rho_O).\$
+</div>
+</div>
+<div class="paragraph">
+<p>The architecture is therefore not:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$O \gets S,\$
+</div>
+</div>
+<div class="paragraph">
+<p>but:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$O \gets \Pi_O(S).\$
+</div>
+</div>
+<div class="paragraph">
+<p>The observer does not receive the containing system.</p>
+</div>
+<div class="paragraph">
+<p>It receives a projection that preserves some distinctions and erases others.</p>
+</div>
+<div class="paragraph">
+<p>This is the engineering continuation of the observer-relative distinguishability argument developed in <a href="#what-does-schrodingers-cat-look-like-to-an-electron.adoc" class="xref unresolved">What Does Schrödinger&#8217;s Cat Look Like to an Electron?</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_observer_relative_equivalence"><a class="anchor" href="#_observer_relative_equivalence"></a>Observer-Relative Equivalence</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Suppose two real states differ:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_1\neq S_2.\$
+</div>
+</div>
+<div class="paragraph">
+<p>But after passing through the available observation surface:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_O(S_1)=\Pi_O(S_2).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Then, for that observer:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_1\sim_O S_2.\$
+</div>
+</div>
+<div class="paragraph">
+<p>This does not mean the states are physically or operationally identical.</p>
+</div>
+<div class="paragraph">
+<p>It means that the observer does not possess a distinction that separates them.</p>
+</div>
+<div class="paragraph">
+<p>The equivalence class induced by the observation layer is the actual input available to decision-making.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_core_engineering_criterion"><a class="anchor" href="#_the_core_engineering_criterion"></a>The Core Engineering Criterion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now assume the required actions differ:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$a(S_1)\neq a(S_2).\$
+</div>
+</div>
+<div class="paragraph">
+<p>But the observer sees the states as equivalent:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_1\sim_O S_2.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Then:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+S_1\sim_O S_2
+\;\land\;
+a(S_1)\neq a(S_2)
+\Rightarrow
+\text{observation contract insufficient}
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>This is the central design criterion of this article.</p>
+</div>
+<div class="paragraph">
+<p>If a decision system is required to behave differently in two states, its observation architecture must preserve their distinguishability.</p>
+</div>
+<div class="paragraph">
+<p>A downstream decision layer cannot reliably distinguish states that an upstream observation layer has already collapsed into one class.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reasoning_failure_versus_observation_failure"><a class="anchor" href="#_reasoning_failure_versus_observation_failure"></a>Reasoning Failure Versus Observation Failure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This distinction becomes especially important in AI systems.</p>
+</div>
+<div class="paragraph">
+<p>Suppose an agent must choose \(a_1\) in state \(S_1\) and \(a_2\) in state \(S_2\).</p>
+</div>
+<div class="paragraph">
+<p>There are two fundamentally different failure modes.</p>
+</div>
+<div class="sect2">
+<h3 id="_reasoning_failure"><a class="anchor" href="#_reasoning_failure"></a>Reasoning failure</h3>
+<div class="paragraph">
+<p>The observation layer preserves the distinction:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_A(S_1)\neq\Pi_A(S_2),\$
+</div>
+</div>
+<div class="paragraph">
+<p>but the agent reaches the wrong conclusion.</p>
+</div>
+<div class="paragraph">
+<p>This is genuinely a reasoning, policy, planning, or model failure.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_observation_failure"><a class="anchor" href="#_observation_failure"></a>Observation failure</h3>
+<div class="paragraph">
+<p>The observation layer collapses the states:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_A(S_1)=\Pi_A(S_2).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Then adding more reasoning tokens, a stronger language model, or additional internal deliberation may not help.</p>
+</div>
+<div class="paragraph">
+<p>The agent cannot infer a distinction from an interface that never exposed it.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mcp_as_an_architecture_of_distinguishability"><a class="anchor" href="#_mcp_as_an_architecture_of_distinguishability"></a>MCP as an Architecture of Distinguishability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tool-oriented AI systems are usually described in terms of capabilities.</p>
+</div>
+<div class="paragraph">
+<p>A server exposes tools.</p>
+</div>
+<div class="paragraph">
+<p>The agent invokes them.</p>
+</div>
+<div class="paragraph">
+<p>But there is another useful way to describe the same architecture.</p>
+</div>
+<div class="paragraph">
+<p>Each tool determines which external distinctions the agent can establish.</p>
+</div>
+<div class="paragraph">
+<p>Let:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal A_O
+=
+\{C_1,C_2,\ldots,C_n\}\$
+</div>
+</div>
+<div class="paragraph">
+<p>be the set of observation and action capabilities available to an agent.</p>
+</div>
+<div class="paragraph">
+<p>The quality of that tool surface should not be judged only by asking:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Does the required command exist?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A stronger question is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Can the available tool surface distinguish every task-relevant pair of states that requires a different action?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is <strong>distinguishability coverage</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_distinguishability_coverage"><a class="anchor" href="#_distinguishability_coverage"></a>Distinguishability Coverage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let \(\mathcal S_T\) be the set of task-relevant states.</p>
+</div>
+<div class="paragraph">
+<p>Let the required policy be:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\pi:\mathcal S_T\rightarrow A.\$
+</div>
+</div>
+<div class="paragraph">
+<p>For every pair of states requiring different actions:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\pi(S_i)\neq\pi(S_j),\$
+</div>
+</div>
+<div class="paragraph">
+<p>the observation layer should preserve a distinction:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_O(S_i)\neq\Pi_O(S_j).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Thus a necessary architectural condition is:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\pi(S_i)\neq\pi(S_j)
+\Rightarrow
+\Pi_O(S_i)\neq\Pi_O(S_j)
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>This can become a practical test criterion.</p>
+</div>
+<div class="paragraph">
+<p>Instead of merely asking whether a tool exists, we can ask whether the tool surface preserves every decision boundary required by the task.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_concrete_example_message_sent_versus_conversation_materialized"><a class="anchor" href="#_a_concrete_example_message_sent_versus_conversation_materialized"></a>A Concrete Example: Message Sent Versus Conversation Materialized</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consider an agent that submits a prompt to an external chat system.</p>
+</div>
+<div class="paragraph">
+<p>At least two distinct lifecycle states may exist:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_1=\text{message accepted for sending}\$
+</div>
+</div>
+<div class="paragraph">
+<p>and:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_2=\text{conversation has obtained a permanent chat identifier}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>These states need not occur simultaneously.</p>
+</div>
+<div class="paragraph">
+<p>If a tool uses the existence of a chat identifier as the only proof that the message was sent, it merges two different lifecycle facts into one surrogate signal.</p>
+</div>
+<div class="paragraph">
+<p>The architecture loses a distinction.</p>
+</div>
+<div class="paragraph">
+<p>A better observation model preserves:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{send accepted}
+\neq
+\text{conversation materialized}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>This is a small example, but it illustrates the general point: asynchronous systems require lifecycle distinctions to be represented explicitly rather than inferred from a later state.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_distributed_systems"><a class="anchor" href="#_distributed_systems"></a>Distributed Systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The same structure appears in distributed computing.</p>
+</div>
+<div class="paragraph">
+<p>A remote node never observes the complete global state directly.</p>
+</div>
+<div class="paragraph">
+<p>It sees:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>heartbeats;</p>
+</li>
+<li>
+<p>terms or epochs;</p>
+</li>
+<li>
+<p>commit indexes;</p>
+</li>
+<li>
+<p>replicated events;</p>
+</li>
+<li>
+<p>acknowledgements;</p>
+</li>
+<li>
+<p>causal metadata;</p>
+</li>
+<li>
+<p>timeouts;</p>
+</li>
+<li>
+<p>locally available replicas.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Its knowledge is therefore a projection:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_i(S_{\text{global}}).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Different nodes may not merely possess incomplete copies of one state.</p>
+</div>
+<div class="paragraph">
+<p>They may induce different distinguishability partitions over the global state.</p>
+</div>
+<div class="paragraph">
+<p>For example, a node may fail to distinguish:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_{\text{slow}}
+\sim_O
+S_{\text{partition}}\$
+</div>
+</div>
+<div class="paragraph">
+<p>given its current observation channel.</p>
+</div>
+<div class="paragraph">
+<p>This is not simply missing data.</p>
+</div>
+<div class="paragraph">
+<p>It is an operational equivalence under a restricted observer.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_observability_as_state_separation"><a class="anchor" href="#_observability_as_state_separation"></a>Observability as State Separation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Conventional observability asks:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Which logs, traces, and metrics should we collect?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A distinguishability-driven formulation asks:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Which operational regimes must remain separable to an operator or automated controller?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Suppose:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_N=\text{normal},\$
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_D=\text{degraded},\$
+</div>
+</div>
+<div class="paragraph">
+<p>and:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_F=\text{failure}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>If dashboards preserve:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi(S_N)\neq\Pi(S_D),\$
+</div>
+</div>
+<div class="paragraph">
+<p>but collapse:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi(S_D)=\Pi(S_F),\$
+</div>
+</div>
+<div class="paragraph">
+<p>then the operator cannot determine which recovery action is appropriate.</p>
+</div>
+<div class="paragraph">
+<p>The problem is not the raw number of metrics.</p>
+</div>
+<div class="paragraph">
+<p>The problem is the wrong partition of operational state space.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_spacecraft_telemetry"><a class="anchor" href="#_spacecraft_telemetry"></a>Spacecraft Telemetry</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The same principle becomes especially important in remote physical systems.</p>
+</div>
+<div class="paragraph">
+<p>Let a spacecraft have a complex physical state:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_{\text{SC}}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Ground control receives telemetry through a constrained communication path.</p>
+</div>
+<div class="paragraph">
+<p>The accessible representation is shaped by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>bandwidth;</p>
+</li>
+<li>
+<p>latency;</p>
+</li>
+<li>
+<p>sampling rate;</p>
+</li>
+<li>
+<p>onboard aggregation;</p>
+</li>
+<li>
+<p>compression;</p>
+</li>
+<li>
+<p>packet loss;</p>
+</li>
+<li>
+<p>sensor availability;</p>
+</li>
+<li>
+<p>transmission windows;</p>
+</li>
+<li>
+<p>energy budget.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ground therefore receives:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_E(S_{\text{SC}}),\$
+</div>
+</div>
+<div class="paragraph">
+<p>not the spacecraft itself.</p>
+</div>
+<div class="paragraph">
+<p>The usual design question is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Which data should we transmit?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A stronger question is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Which spacecraft states must remain distinguishable on Earth?
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_distinguishability_driven_telemetry"><a class="anchor" href="#_distinguishability_driven_telemetry"></a>Distinguishability-Driven Telemetry</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Suppose:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_{\text{nominal}}\$
+</div>
+</div>
+<div class="paragraph">
+<p>and:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_{\text{precursor}}\$
+</div>
+</div>
+<div class="paragraph">
+<p>are physically different states, where the second is an early precursor to a serious fault.</p>
+</div>
+<div class="paragraph">
+<p>If the telemetry encoder maps them identically:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$T(S_{\text{nominal}})
+=
+T(S_{\text{precursor}}),\$
+</div>
+</div>
+<div class="paragraph">
+<p>then no ground-side reasoning algorithm can reconstruct the erased distinction from that telemetry alone.</p>
+</div>
+<div class="paragraph">
+<p>This gives a direct engineering rule:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+a(S_i)\neq a(S_j)
+\Rightarrow
+T(S_i)\neq T(S_j)
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>for operationally relevant pairs of states.</p>
+</div>
+<div class="paragraph">
+<p>This does not imply transmitting a complete physical state.</p>
+</div>
+<div class="paragraph">
+<p>The goal is almost the opposite:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Transmit the minimum information necessary to preserve the distinctions required for correct action.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_semantic_compression"><a class="anchor" href="#_semantic_compression"></a>Semantic Compression</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This creates a natural bridge to semantic communication.</p>
+</div>
+<div class="paragraph">
+<p>Conventional compression attempts to preserve a signal or reconstruction fidelity.</p>
+</div>
+<div class="paragraph">
+<p>Distinguishability-driven compression can instead preserve <strong>decision-relevant boundaries</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Rather than requiring only:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\hat S\approx S,\$
+</div>
+</div>
+<div class="paragraph">
+<p>one may require that the compressed representation preserve the required policy:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\pi(\hat S)=\pi(S).\$
+</div>
+</div>
+<div class="paragraph">
+<p>More generally, whenever two states require different actions, the compressed channel should not merge them into one observational class.</p>
+</div>
+<div class="paragraph">
+<p>This reframes communication efficiency.</p>
+</div>
+<div class="paragraph">
+<p>The central quantity is no longer only the number of transmitted bits.</p>
+</div>
+<div class="paragraph">
+<p>It is the set of distinctions those bits preserve.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_one_bit_can_matter_more_than_a_thousand_parameters"><a class="anchor" href="#_one_bit_can_matter_more_than_a_thousand_parameters"></a>One Bit Can Matter More Than a Thousand Parameters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Imagine a remote system with one million measurable variables.</p>
+</div>
+<div class="paragraph">
+<p>Suppose the controller must distinguish only two operational regimes:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_A\$
+</div>
+</div>
+<div class="paragraph">
+<p>and:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_B.\$
+</div>
+</div>
+<div class="paragraph">
+<p>A single carefully designed bit may be more decision-useful than a large telemetry stream if it reliably preserves:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi(S_A)\neq\Pi(S_B).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Conversely, gigabytes of data may be operationally inadequate if they collapse the critical distinction.</p>
+</div>
+<div class="paragraph">
+<p>Thus:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\text{information volume}
+\neq
+\text{decision value}
+}\$
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_computer_architecture_as_controlled_indistinguishability"><a class="anchor" href="#_computer_architecture_as_controlled_indistinguishability"></a>Computer Architecture as Controlled Indistinguishability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The same reasoning applies inside a computer.</p>
+</div>
+<div class="paragraph">
+<p>Different architectural layers observe different projections of the same underlying machine.</p>
+</div>
+<div class="paragraph">
+<p>A program sees virtual addresses.</p>
+</div>
+<div class="paragraph">
+<p>An MMU sees page mappings.</p>
+</div>
+<div class="paragraph">
+<p>A cache sees cache-line identities and coherence states.</p>
+</div>
+<div class="paragraph">
+<p>A memory controller sees physical transactions.</p>
+</div>
+<div class="paragraph">
+<p>Performance counters expose aggregated events.</p>
+</div>
+<div class="paragraph">
+<p>Security monitors may expose still another projection.</p>
+</div>
+<div class="paragraph">
+<p>Thus one physical execution can be represented through:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_1(S),\Pi_2(S),\ldots,\Pi_n(S).\$
+</div>
+</div>
+<div class="paragraph">
+<p>For one layer, multiple microstates are intentionally equivalent.</p>
+</div>
+<div class="paragraph">
+<p>For another, they may be distinct.</p>
+</div>
+<div class="paragraph">
+<p>Abstraction can therefore be interpreted as a mechanism for constructing controlled equivalence classes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_abstraction_as_intentional_loss_of_distinguishability"><a class="anchor" href="#_abstraction_as_intentional_loss_of_distinguishability"></a>Abstraction as Intentional Loss of Distinguishability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A useful abstraction intentionally hides differences.</p>
+</div>
+<div class="paragraph">
+<p>Several lower-level states:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_1,S_2,\ldots,S_n\$
+</div>
+</div>
+<div class="paragraph">
+<p>may be represented by one interface state:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi(S_1)=\Pi(S_2)=\cdots=\Pi(S_n).\$
+</div>
+</div>
+<div class="paragraph">
+<p>That is often exactly what makes abstraction valuable.</p>
+</div>
+<div class="paragraph">
+<p>The problem begins when the abstraction hides a distinction required for correct behavior at a higher layer.</p>
+</div>
+<div class="paragraph">
+<p>This suggests a useful counterpart to the familiar idea of an abstraction leak.</p>
+</div>
+<div class="paragraph">
+<p>An abstraction leak exposes a lower-level difference that was supposed to remain hidden.</p>
+</div>
+<div class="paragraph">
+<p>The inverse failure is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<strong>abstraction erasure</strong>: a distinction required by the higher layer has been erased by the lower-level interface.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_observers_need_not_form_a_single_resolution_ladder"><a class="anchor" href="#_observers_need_not_form_a_single_resolution_ladder"></a>Observers Need Not Form a Single Resolution Ladder</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Observers should not always be arranged as:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$O_1&lt;O_2&lt;O_3.\$
+</div>
+</div>
+<div class="paragraph">
+<p>One observer may distinguish variables of type \(X\).</p>
+</div>
+<div class="paragraph">
+<p>Another may distinguish variables of type \(Y\).</p>
+</div>
+<div class="paragraph">
+<p>Their accessible spaces may therefore be incomparable:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal A_{O_1}
+\nsubseteq
+\mathcal A_{O_2},\$
+</div>
+</div>
+<div class="paragraph">
+<p>while also:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal A_{O_2}
+\nsubseteq
+\mathcal A_{O_1}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>This matters for heterogeneous systems.</p>
+</div>
+<div class="paragraph">
+<p>A new sensor or tool may not simply increase precision.</p>
+</div>
+<div class="paragraph">
+<p>It may add a new axis of distinguishability.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sensor_fusion_as_partition_refinement"><a class="anchor" href="#_sensor_fusion_as_partition_refinement"></a>Sensor Fusion as Partition Refinement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Suppose sensor \(A\) distinguishes one family of state differences while sensor \(B\) distinguishes another.</p>
+</div>
+<div class="paragraph">
+<p>The combined observer:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$O=A\oplus B\$
+</div>
+</div>
+<div class="paragraph">
+<p>may induce a finer projection:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_O(S)
+=
+(\Pi_A(S),\Pi_B(S)).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Sensor fusion can therefore be understood not only as improved accuracy, but as <strong>refinement of distinguishability classes</strong>.</p>
+</div>
+<div class="paragraph">
+<p>This perspective applies equally well to physical sensors, software probes, agent tools, and distributed evidence.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_distinguishability_tests"><a class="anchor" href="#_distinguishability_tests"></a>Distinguishability Tests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The framework suggests a new class of architecture tests.</p>
+</div>
+<div class="paragraph">
+<p>Instead of testing only:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Does endpoint X return field Y?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>test:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Given two task-relevant states that require different actions,
+does the observation surface produce distinguishable outputs?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Formally:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\forall S_i,S_j:
+\pi(S_i)\neq\pi(S_j)
+\Rightarrow
+\Pi(S_i)\neq\Pi(S_j).\$
+</div>
+</div>
+<div class="paragraph">
+<p>A test of this form is a <strong>distinguishability test</strong>.</p>
+</div>
+<div class="paragraph">
+<p>For agent systems, it asks whether the tool architecture actually exposes enough information for the expected policy to be possible.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_failure_by_insufficient_distinguishability"><a class="anchor" href="#_failure_by_insufficient_distinguishability"></a>Failure by Insufficient Distinguishability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This motivates a separate failure class.</p>
+</div>
+<div class="sect2">
+<h3 id="_indistinguishability_failure"><a class="anchor" href="#_indistinguishability_failure"></a>Indistinguishability failure</h3>
+<div class="paragraph">
+<p>The decision system does not misinterpret an available distinction.</p>
+</div>
+<div class="paragraph">
+<p>It never receives the distinction.</p>
+</div>
+<div class="paragraph">
+<p>The characteristic structure is:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_1\neq S_2,\$
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\$a(S_1)\neq a(S_2),\$
+</div>
+</div>
+<div class="paragraph">
+<p>but:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi(S_1)=\Pi(S_2).\$
+</div>
+</div>
+<div class="paragraph">
+<p>This is an architectural failure mode.</p>
+</div>
+<div class="paragraph">
+<p>It cannot be eliminated purely through better downstream reasoning.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_three_architectural_layers"><a class="anchor" href="#_three_architectural_layers"></a>Three Architectural Layers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The model can be summarized in three layers.</p>
+</div>
+<div class="sect2">
+<h3 id="_layer_1_reality"><a class="anchor" href="#_layer_1_reality"></a>Layer 1 — Reality</h3>
+<div class="stemblock">
+<div class="content">
+\$S\$
+</div>
+</div>
+<div class="paragraph">
+<p>The containing physical or software state.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_layer_2_distinguishability"><a class="anchor" href="#_layer_2_distinguishability"></a>Layer 2 — Distinguishability</h3>
+<div class="stemblock">
+<div class="content">
+\$\Pi_O(S)\$
+</div>
+</div>
+<div class="paragraph">
+<p>The distinctions available through the observer and its channels.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_layer_3_decision"><a class="anchor" href="#_layer_3_decision"></a>Layer 3 — Decision</h3>
+<div class="stemblock">
+<div class="content">
+\$a=\pi(\Pi_O(S)).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Most engineering attention is usually concentrated on Layer 3.</p>
+</div>
+<div class="paragraph">
+<p>But the quality ceiling of Layer 3 is constrained by Layer 2.</p>
+</div>
+<div class="paragraph">
+<p>As a design principle:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\text{decision quality is bounded by the distinguishability available to the decision system}
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>This is not presented here as a formal theorem.</p>
+</div>
+<div class="paragraph">
+<p>It is an architectural constraint.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_data_completeness_to_distinguishability_completeness"><a class="anchor" href="#_from_data_completeness_to_distinguishability_completeness"></a>From Data Completeness to Distinguishability Completeness</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Data-driven architecture asks:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Which data are available?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Distinguishability-driven architecture asks:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Which states become distinguishable because of those data?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The first counts information objects.</p>
+</div>
+<div class="paragraph">
+<p>The second examines decision boundaries.</p>
+</div>
+<div class="paragraph">
+<p>Instead of measuring only data completeness, one may measure:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{distinguishability completeness}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>That quantity is task-relative by construction.</p>
+</div>
+<div class="paragraph">
+<p>A system has enough information when all state distinctions required for different actions survive its observation architecture.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_practical_design_process"><a class="anchor" href="#_a_practical_design_process"></a>A Practical Design Process</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A distinguishability-driven design process can be expressed as follows.</p>
+</div>
+<div class="paragraph">
+<p>First, define the task-relevant state set:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal S_T.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Second, define the required policy:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\pi:\mathcal S_T\rightarrow A.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Third, enumerate or sample state pairs satisfying:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\pi(S_i)\neq\pi(S_j).\$
+</div>
+</div>
+<div class="paragraph">
+<p>These pairs form the required distinction set.</p>
+</div>
+<div class="paragraph">
+<p>Then test the observation surface:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi(S_i)\stackrel{?}{\neq}\Pi(S_j).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Whenever the answer is no, enrich the observation architecture with an additional:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>sensor;</p>
+</li>
+<li>
+<p>telemetry field;</p>
+</li>
+<li>
+<p>lifecycle marker;</p>
+</li>
+<li>
+<p>event;</p>
+</li>
+<li>
+<p>status;</p>
+</li>
+<li>
+<p>capability;</p>
+</li>
+<li>
+<p>provenance record;</p>
+</li>
+<li>
+<p>measurement;</p>
+</li>
+<li>
+<p>correlation;</p>
+</li>
+<li>
+<p>diagnostic.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The design target is not maximal visibility.</p>
+</div>
+<div class="paragraph">
+<p>It is preservation of the distinctions required by the policy.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_this_matters_more_as_systems_become_autonomous"><a class="anchor" href="#_why_this_matters_more_as_systems_become_autonomous"></a>Why This Matters More as Systems Become Autonomous</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Human operators often notice when information is missing and request another measurement.</p>
+</div>
+<div class="paragraph">
+<p>Autonomous systems frequently act inside a predefined observation surface.</p>
+</div>
+<div class="paragraph">
+<p>If that surface collapses critical operational regimes, autonomy can become confident action over an underdetermined state.</p>
+</div>
+<div class="paragraph">
+<p>Increasing autonomy should therefore involve not only increasing intelligence.</p>
+</div>
+<div class="paragraph">
+<p>It should involve increasing the guaranteed distinguishability of states that require different responses.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_engineering_thesis"><a class="anchor" href="#_engineering_thesis"></a>Engineering Thesis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The main principle can be stated compactly:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\text{A decision system should not be required to distinguish states that its observation architecture makes equivalent.}
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>The dual form is:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\text{If two states require different actions, the observation architecture must preserve their distinguishability.}
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>This principle applies naturally to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AI agents;</p>
+</li>
+<li>
+<p>MCP and tool interfaces;</p>
+</li>
+<li>
+<p>autonomous systems;</p>
+</li>
+<li>
+<p>distributed systems;</p>
+</li>
+<li>
+<p>observability;</p>
+</li>
+<li>
+<p>spacecraft telemetry;</p>
+</li>
+<li>
+<p>robotics;</p>
+</li>
+<li>
+<p>sensor fusion;</p>
+</li>
+<li>
+<p>computer architecture;</p>
+</li>
+<li>
+<p>security monitoring;</p>
+</li>
+<li>
+<p>semantic communication.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Systems are commonly designed around data, interfaces, and actions.</p>
+</div>
+<div class="paragraph">
+<p>But between physical state and action lies another architectural layer:</p>
+</div>
+<div class="paragraph">
+<p><strong>distinguishability</strong>.</p>
+</div>
+<div class="paragraph">
+<p>A decision-maker does not act on reality as such.</p>
+</div>
+<div class="paragraph">
+<p>It acts on the partition of reality made available by its observation architecture.</p>
+</div>
+<div class="paragraph">
+<p>Therefore two questions should be separated:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+How does the system decide?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>and:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Which distinctions exist for the system at the moment of decision?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Many failures currently classified separately as reasoning errors, observability gaps, telemetry deficiencies, orchestration failures, or interface problems may share one deeper structure:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\text{failure by insufficient distinguishability}
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>When that happens, the remedy does not begin with a smarter decision-maker.</p>
+</div>
+<div class="paragraph">
+<p>It begins with a better space of observable distinctions.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>
