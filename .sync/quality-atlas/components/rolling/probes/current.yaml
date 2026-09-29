@@ -1,10 +1,10 @@
 component: rolling
 title: Rolling
 snapshot:
-  date: '2026-09-24'
+  date: '2026-09-29'
   label: pre-rc-seed
   origin: quality-atlas probe seed
-  generated_at: '2026-09-24T23:46:40.789677+00:00'
+  generated_at: '2026-09-29T20:48:52.757184+00:00'
 repo_target:
   github_repository: ''
   local_path: ''
