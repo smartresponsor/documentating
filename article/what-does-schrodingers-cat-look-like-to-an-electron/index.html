@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>What Does Schrödinger&#8217;s Cat Look Like to an Electron? :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/what-does-schrodingers-cat-look-like-to-an-electron/">
+    <meta name="description" content="A scientific-philosophical essay on observer-relative distinguishability, finite observation, Schrödinger's cat, classical correlation, quantum measurement, and the boundary between physical state and accessible state.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/what-does-schrodingers-cat-look-like-to-an-electron/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/what-does-schrodingers-cat-look-like-to-an-electron/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="What Does Schrödinger&amp;#8217;s Cat Look Like to an Electron?">
+<meta name="twitter:title" content="What Does Schrödinger&amp;#8217;s Cat Look Like to an Electron?">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  },
+  startup: {
+    ready: () => {
+      document.querySelectorAll('.stemblock .content').forEach((element) => {
+        let source = element.textContent.trim();
+        if (source.startsWith('\\$') && source.endsWith('\\$')) {
+          source = source.slice(2, -2).trim();
+        } else if (source.startsWith('$') && source.endsWith('$')) {
+          source = source.slice(1, -1).trim();
+        }
+        element.textContent = `\\[${source}\\]`;
+      });
+      MathJax.startup.defaultReady();
+    }
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">What Does Schrödinger&amp;#8217;s Cat Look Like to an Electron?</a></li>
+    <li><span>What Does Schrödinger&amp;#8217;s Cat Look Like to an Electron?</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">What Does Schrödinger&#8217;s Cat Look Like to an Electron?</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/what-does-schrodingers-cat-look-like-to-an-electron.adoc`</em></p>
+</div>
+<div class="quoteblock abstract">
+<blockquote>
+Schrödinger&#8217;s cat is usually presented as a paradox about outcome: before the box is opened, is the cat alive, dead, or represented by a superposition of both alternatives?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This article asks an earlier question.</p>
+</div>
+<div class="paragraph">
+<p>Before asking which outcome an observer obtains, should we first ask <strong>which distinctions can physically exist as outcomes for that observer at all?</strong></p>
+</div>
+<div class="paragraph">
+<p>A human observer can distinguish a living cat from a dead cat because a human, together with instruments and environmental records, has access to a large hierarchy of macroscopic differences. Quantum theory, however, does not require an observer to be human, conscious, intelligent, or even macroscopic. A photon, electron, atom, detector, or another physical system can interact with a system and become correlated with some of its variables.</p>
+</div>
+<div class="paragraph">
+<p>What, then, does the cat experiment mean for an observer that cannot physically resolve a cat as a cat?</p>
+</div>
+<div class="paragraph">
+<p>The proposal developed here is that observer-relative description may involve not only different values of observables, but different <strong>spaces of physically distinguishable states</strong>. Two states that are distinct in the containing physical system may nevertheless be observationally equivalent for a particular observer through a particular interaction channel.</p>
+</div>
+<div class="paragraph">
+<p>This does not imply that observers create reality, nor does it offer a new solution to the quantum measurement problem. It proposes a narrower research question:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Before asking which state is real for an observer, ask which state distinction is physically available to that observer.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The distinction is related to relational quantum mechanics, decoherence, quantum Darwinism, coarse-graining, and the physics of finite observers, but is not identical to any of them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_schrödingers_question_may_begin_one_step_too_late"><a class="anchor" href="#_schrödingers_question_may_begin_one_step_too_late"></a>Schrödinger&#8217;s Question May Begin One Step Too Late</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The familiar thought experiment is built from a microscopic quantum event amplified into a macroscopic consequence.</p>
+</div>
+<div class="paragraph">
+<p>A radioactive decay may occur or not occur.</p>
+</div>
+<div class="paragraph">
+<p>A detector responds to the decay.</p>
+</div>
+<div class="paragraph">
+<p>A mechanism releases poison.</p>
+</div>
+<div class="paragraph">
+<p>A cat dies or remains alive.</p>
+</div>
+<div class="paragraph">
+<p>The resulting state is commonly represented schematically as:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$|\Psi\rangle
+=
+\alpha |\text{not decayed}\rangle|\text{alive}\rangle
++
+\beta |\text{decayed}\rangle|\text{dead}\rangle.\$
+</div>
+</div>
+<div class="paragraph">
+<p>The philosophical shock comes from extending quantum superposition from a microscopic event to the macroscopic cat.</p>
+</div>
+<div class="paragraph">
+<p>But the notation contains an assumption that is easy to overlook.</p>
+</div>
+<div class="paragraph">
+<p>It assumes that:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\{\text{alive},\text{dead}\}\$
+</div>
+</div>
+<div class="paragraph">
+<p>is already the relevant decomposition of the physical system.</p>
+</div>
+<div class="paragraph">
+<p>For a human observer, this is natural. "Alive" and "dead" are enormously different macroscopic conditions. They correspond to differences in metabolism, circulation, respiration, neural activity, temperature distributions, mechanical motion, chemical gradients, emitted radiation, and many other variables.</p>
+</div>
+<div class="paragraph">
+<p>But why should the same decomposition be physically meaningful to every possible observer?</p>
+</div>
+<div class="paragraph">
+<p>Suppose the observer is not a human.</p>
+</div>
+<div class="paragraph">
+<p>Suppose it is one photon.</p>
+</div>
+<div class="paragraph">
+<p>Or one electron.</p>
+</div>
+<div class="paragraph">
+<p>It interacts with the cat once.</p>
+</div>
+<div class="paragraph">
+<p>What does it observe?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_an_electron_does_not_need_to_know_what_a_cat_is"><a class="anchor" href="#_an_electron_does_not_need_to_know_what_a_cat_is"></a>An Electron Does Not Need to Know What a Cat Is</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The question should not be anthropomorphized.</p>
+</div>
+<div class="paragraph">
+<p>An electron does not need consciousness.</p>
+</div>
+<div class="paragraph">
+<p>It does not need a concept of "cat."</p>
+</div>
+<div class="paragraph">
+<p>It does not need memory in the psychological sense.</p>
+</div>
+<div class="paragraph">
+<p>It does not need to decide whether the animal is alive.</p>
+</div>
+<div class="paragraph">
+<p>It participates in a physical interaction.</p>
+</div>
+<div class="paragraph">
+<p>Suppose an incoming particle interacts with a small region of the cat and leaves in a different state:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$|O_0\rangle |S\rangle
+\longrightarrow
+|O_i\rangle |S_i\rangle.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Here \(S\) denotes the observed system and \(O\) the physical system playing the observational role.</p>
+</div>
+<div class="paragraph">
+<p>The outgoing state of \(O\) may depend on some local feature of \(S\): position, momentum transfer, charge distribution, scattering amplitude, polarization response, or another interaction-dependent variable.</p>
+</div>
+<div class="paragraph">
+<p>But there is no reason to assume that the interaction physically implements the question:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{Is the cat alive?}\$
+</div>
+</div>
+<div class="paragraph">
+<p>For a sufficiently limited interaction channel, two macroscopically different states could produce the same accessible result.</p>
+</div>
+<div class="paragraph">
+<p>Conceptually:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_{\text{alive}} \neq S_{\text{dead}},\$
+</div>
+</div>
+<div class="paragraph">
+<p>while nevertheless:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal O_{O,C}(S_{\text{alive}})
+=
+\mathcal O_{O,C}(S_{\text{dead}})\$
+</div>
+</div>
+<div class="paragraph">
+<p>for a particular observer \(O\) and interaction channel \(C\).</p>
+</div>
+<div class="paragraph">
+<p>A photon scattering from one hair may carry essentially no information about whether the organism as a whole is alive.</p>
+</div>
+<div class="paragraph">
+<p>The physical states differ.</p>
+</div>
+<div class="paragraph">
+<p>The particular interaction does not distinguish the difference.</p>
+</div>
+<div class="paragraph">
+<p>This is the distinction on which the rest of this article is built.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_observation_is_not_comprehension"><a class="anchor" href="#_observation_is_not_comprehension"></a>Observation Is Not Comprehension</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quantum mechanics already gives strong reasons not to identify observation with human awareness.</p>
+</div>
+<div class="paragraph">
+<p>Decoherence theory treats interaction with the environment as physically sufficient to suppress interference between selected components of a system&#8217;s state in the relevant reduced description. A conscious observer is not required for the environmental interaction itself. <a href="#zurek-decoherence">[zurek-decoherence]</a></p>
+</div>
+<div class="paragraph">
+<p>Relational quantum mechanics goes further by treating physical properties as relational: systems acquire values relative to other systems through interaction, without requiring a special class of conscious observers. <a href="#rovelli-rqm">[rovelli-rqm]</a><a href="#sep-rqm">[sep-rqm]</a></p>
+</div>
+<div class="paragraph">
+<p>So the question is not:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Can an electron understand a cat?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Clearly not in the semantic sense.</p>
+</div>
+<div class="paragraph">
+<p>The sharper question is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Which distinctions in the cat can the electron&#8217;s physical interaction encode?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That is a question about physics, not consciousness.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_finite_observer_does_not_receive_the_whole_system"><a class="anchor" href="#_a_finite_observer_does_not_receive_the_whole_system"></a>A Finite Observer Does Not Receive the Whole System</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let the full physical system have a state space \(\mathcal S\).</p>
+</div>
+<div class="paragraph">
+<p>An observer does not necessarily have access to every distinction within \(\mathcal S\).</p>
+</div>
+<div class="paragraph">
+<p>Let:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal O_{O,C}
+:
+\mathcal S
+\rightarrow
+\mathcal P_O\$
+</div>
+</div>
+<div class="paragraph">
+<p>represent the observational mapping produced by observer \(O\) through physical channel \(C\).</p>
+</div>
+<div class="paragraph">
+<p>The image \(\mathcal P_O\) is not assumed to be the complete state space of the observed system. It is the space of distinctions that survive the particular observational relation.</p>
+</div>
+<div class="paragraph">
+<p>We may then define an observer-relative equivalence relation:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_i \sim_{O,C} S_j\$
+</div>
+</div>
+<div class="paragraph">
+<p>whenever:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal O_{O,C}(S_i)
+=
+\mathcal O_{O,C}(S_j).\$
+</div>
+</div>
+<div class="paragraph">
+<p>More operationally, two states are equivalent for an observer when the allowed interactions available to that observer do not generate distinguishable outcome statistics between them within the specified resolution.</p>
+</div>
+<div class="paragraph">
+<p>The observer therefore has access not necessarily to \(\mathcal S\), but to something closer to a quotient:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal S / {\sim_{O,C}}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>This notation is deliberately schematic.</p>
+</div>
+<div class="paragraph">
+<p>The point is conceptual:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+A physical difference does not automatically imply a distinguishable difference for every physical observer.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_two_shoe_boxes_teach"><a class="anchor" href="#_what_two_shoe_boxes_teach"></a>What Two Shoe Boxes Teach</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before returning to quantum mechanics, consider a completely classical example.</p>
+</div>
+<div class="paragraph">
+<p>Take one pair of shoes.</p>
+</div>
+<div class="paragraph">
+<p>Put the left shoe into one closed box and the right shoe into another. Move the boxes apart.</p>
+</div>
+<div class="paragraph">
+<p>Open the first box and discover:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$B_1=\text{left shoe}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>You may immediately infer:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$B_2=\text{right shoe}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>No signal needs to travel between the boxes at the moment of observation. The correlation was established when the pair was separated.</p>
+</div>
+<div class="paragraph">
+<p>Now ask a different question.</p>
+</div>
+<div class="paragraph">
+<p>Which direction does the toe of the second shoe point?</p>
+</div>
+<div class="paragraph">
+<p>Let its orientation in a simplified two-dimensional description be \(\theta_2\).</p>
+</div>
+<div class="paragraph">
+<p>Knowledge that:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$B_2=\text{right shoe}\$
+</div>
+</div>
+<div class="paragraph">
+<p>does not determine:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\theta_2.\$
+</div>
+</div>
+<div class="paragraph">
+<p>In the simplified planar case:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\theta_2 \in [0,360^\circ).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Opening the first box removed uncertainty about one property of the second box while leaving another property unresolved.</p>
+</div>
+<div class="paragraph">
+<p>The possible description may be represented schematically as:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\{\text{left},\text{right}\}
+\times
+\{\theta\}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>After opening the first box, that space narrows to:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\{\text{right}\}
+\times
+\{\theta\}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>One coordinate became known.</p>
+</div>
+<div class="paragraph">
+<p>The others did not become known automatically.</p>
+</div>
+<div class="paragraph">
+<p>This gives a useful principle:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\text{knowledge of one correlated distinction}
+\neq
+\text{knowledge of the complete system}
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>Or in words:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Correlation answers the question for which the correlation exists. It does not automatically answer every other question that can be asked about the system.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is a completely classical example.</p>
+</div>
+<div class="paragraph">
+<p>That is precisely why it is useful.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_the_shoe_boxes_do_not_teach"><a class="anchor" href="#_what_the_shoe_boxes_do_not_teach"></a>What the Shoe Boxes Do Not Teach</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The shoes must not be turned into a false model of quantum entanglement.</p>
+</div>
+<div class="paragraph">
+<p>In the classical example, the properties of the shoes are assumed to be physically definite before either box is opened.</p>
+</div>
+<div class="paragraph">
+<p>The second box already contains:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a right shoe;</p>
+</li>
+<li>
+<p>a definite orientation;</p>
+</li>
+<li>
+<p>a definite position;</p>
+</li>
+<li>
+<p>a definite material composition;</p>
+</li>
+<li>
+<p>a definite shape;</p>
+</li>
+<li>
+<p>and many other properties.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The observer merely does not know all of them.</p>
+</div>
+<div class="paragraph">
+<p>The uncertainty is epistemic:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{unknown to the observer}
+\neq
+\text{physically undefined}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Bell&#8217;s theorem and Bell-test experiments show that quantum correlations cannot, in general, be reproduced by the simple classical picture in which each separated subsystem carries a complete set of predetermined local answers for all possible measurement choices and measurement merely reveals those answers. <a href="#bell1964">[bell1964]</a><a href="#aspect1982">[aspect1982]</a></p>
+</div>
+<div class="paragraph">
+<p>The shoe analogy therefore has a strict boundary.</p>
+</div>
+<div class="paragraph">
+<p>It does not explain entanglement.</p>
+</div>
+<div class="paragraph">
+<p>It establishes something more elementary:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Even when correlation is entirely classical and conceptually transparent, perfect knowledge of one correlated property does not imply complete access to the remote system.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This distinction will matter later.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_correlation_and_the_space_of_distinguishable_questions"><a class="anchor" href="#_correlation_and_the_space_of_distinguishable_questions"></a>Correlation and the Space of Distinguishable Questions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The shoe example allows the observer problem to be stated more precisely.</p>
+</div>
+<div class="paragraph">
+<p>One observational channel may answer:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$C_1
+\rightarrow
+\{\text{left},\text{right}\},\$
+</div>
+</div>
+<div class="paragraph">
+<p>while not answering:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$C_1
+\nrightarrow
+\theta.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Another channel may access orientation:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$C_2
+\rightarrow
+\theta,\$
+</div>
+</div>
+<div class="paragraph">
+<p>without revealing every other property.</p>
+</div>
+<div class="paragraph">
+<p>The system therefore does not necessarily reveal itself to an observer as one indivisible "state."</p>
+</div>
+<div class="paragraph">
+<p>It appears through multiple possible projections:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_{\text{handedness}},
+\quad
+\Pi_{\text{orientation}},
+\quad
+\Pi_{\text{position}},
+\quad
+\Pi_{\text{material}},
+\ldots\$
+</div>
+</div>
+<div class="paragraph">
+<p>Return now to the cat.</p>
+</div>
+<div class="paragraph">
+<p>For a photon:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$C_{\text{photon}}
+\rightarrow
+\text{local scattering}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>It does not follow that:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$C_{\text{photon}}
+\rightarrow
+\{\text{alive},\text{dead}\}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>The shoes and the cat now expose two parts of the same idea.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+The shoes demonstrate incompleteness of projection.
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+The cat demonstrates that the physically available decomposition itself may depend on the observer and the interaction channel.
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resolution_is_more_than_measurement_error"><a class="anchor" href="#_resolution_is_more_than_measurement_error"></a>Resolution Is More Than Measurement Error</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is tempting to interpret this simply as instrument precision.</p>
+</div>
+<div class="paragraph">
+<p>A thermometer has finite precision.</p>
+</div>
+<div class="paragraph">
+<p>A camera has finite spatial resolution.</p>
+</div>
+<div class="paragraph">
+<p>A detector has a noise floor.</p>
+</div>
+<div class="paragraph">
+<p>These are familiar facts.</p>
+</div>
+<div class="paragraph">
+<p>But the proposed distinction is broader.</p>
+</div>
+<div class="paragraph">
+<p>Resolution here means the capacity of a physical observer-channel system to separate one class of physical states from another.</p>
+</div>
+<div class="paragraph">
+<p>Let this capacity be represented abstractly by:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\rho_O.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Then the observable projection may be written as:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_O
+=
+\mathcal O(S,C,\rho_O).\$
+</div>
+</div>
+<div class="paragraph">
+<p>Two underlying states may satisfy:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_i\neq S_j\$
+</div>
+</div>
+<div class="paragraph">
+<p>while:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_O(S_i)=\Pi_O(S_j).\$
+</div>
+</div>
+<div class="paragraph">
+<p>This can happen because a difference is too small.</p>
+</div>
+<div class="paragraph">
+<p>But it can also happen because it is too rapid, too distributed, encoded in inaccessible correlations, outside the relevant interaction variable, or meaningful only at a higher level of organization.</p>
+</div>
+<div class="paragraph">
+<p>Thus observer resolution is not merely "accuracy."</p>
+</div>
+<div class="paragraph">
+<p>It helps determine which distinctions can become physically available through the relation at all.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_cat_is_already_a_high_level_observable"><a class="anchor" href="#_the_cat_is_already_a_high_level_observable"></a>The Cat Is Already a High-Level Observable</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>"Alive" and "dead" look elementary only because human cognition begins at the macroscopic scale.</p>
+</div>
+<div class="paragraph">
+<p>They are not elementary microscopic variables.</p>
+</div>
+<div class="paragraph">
+<p>A living organism is a highly structured dynamical system. Its living condition is represented through many correlated processes distributed across large numbers of degrees of freedom.</p>
+</div>
+<div class="paragraph">
+<p>No single elementary interaction necessarily accesses this entire structure.</p>
+</div>
+<div class="paragraph">
+<p>A photon may register a surface.</p>
+</div>
+<div class="paragraph">
+<p>A molecule may exchange momentum.</p>
+</div>
+<div class="paragraph">
+<p>An electron may scatter from a local charge distribution.</p>
+</div>
+<div class="paragraph">
+<p>A detector may respond to radiation.</p>
+</div>
+<div class="paragraph">
+<p>None of those individual interactions needs to encode the proposition:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{CAT = ALIVE}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>That proposition belongs to a higher-level observational partition of the system.</p>
+</div>
+<div class="paragraph">
+<p>For humans and our instruments, enormous numbers of lower-level distinctions can be integrated into a stable macrostate classification.</p>
+</div>
+<div class="paragraph">
+<p>Thus the familiar binary space:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\{\text{alive},\text{dead}\}\$
+</div>
+</div>
+<div class="paragraph">
+<p>may be an emergent macroscopic observable rather than the primitive vocabulary in which every physical interaction with the cat occurs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_environment_builds_a_very_different_observer"><a class="anchor" href="#_the_environment_builds_a_very_different_observer"></a>The Environment Builds a Very Different Observer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At this point an objection arises.</p>
+</div>
+<div class="paragraph">
+<p>A cat is not isolated from one photon.</p>
+</div>
+<div class="paragraph">
+<p>It interacts with an enormous environment.</p>
+</div>
+<div class="paragraph">
+<p>Photons scatter from it.</p>
+</div>
+<div class="paragraph">
+<p>Air molecules collide with it.</p>
+</div>
+<div class="paragraph">
+<p>Thermal radiation leaves it.</p>
+</div>
+<div class="paragraph">
+<p>Its surrounding environment becomes correlated with macroscopic properties.</p>
+</div>
+<div class="paragraph">
+<p>This is precisely where decoherence and quantum Darwinism become important.</p>
+</div>
+<div class="paragraph">
+<p>Quantum Darwinism studies how information about selected pointer states can become redundantly encoded in many fragments of the environment. Multiple observers may then access different environmental fragments and nevertheless recover the same macroscopic information. <a href="#zurek-darwinism">[zurek-darwinism]</a><a href="#riedel-zurek">[riedel-zurek]</a></p>
+</div>
+<div class="paragraph">
+<p>So one electron may have an extremely poor projection of the cat.</p>
+</div>
+<div class="paragraph">
+<p>The environment as a whole can contain vastly more.</p>
+</div>
+<div class="paragraph">
+<p>Conceptually:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$O_1
+\rightarrow
+\Pi_1,\$
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\$O_2
+\rightarrow
+\Pi_2,\$
+</div>
+</div>
+<div class="paragraph">
+<p>and so on, while a large redundant environmental record supports an effectively stable macroscopic projection:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\{\Pi_1,\Pi_2,\ldots,\Pi_n\}
+\longrightarrow
+\Pi_{\text{macro}}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>This helps explain why a human opening the box does not normally encounter a visual smear between "alive" and "dead."</p>
+</div>
+<div class="paragraph">
+<p>Information about relevant macroscopic variables has already been amplified and distributed through environmental correlations.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quantum_darwinism_does_not_eliminate_the_earlier_question"><a class="anchor" href="#_quantum_darwinism_does_not_eliminate_the_earlier_question"></a>Quantum Darwinism Does Not Eliminate the Earlier Question</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quantum Darwinism asks, roughly:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Which information about a quantum system becomes redundantly recorded and therefore effectively objective?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That is already a sophisticated account of classical accessibility.</p>
+</div>
+<div class="paragraph">
+<p>But there is a logically earlier question:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+What makes a particular physical distinction available to a particular observer-channel relation in the first place?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The two questions are related but not identical.</p>
+</div>
+<div class="paragraph">
+<p>One concerns <strong>redundancy</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The other concerns <strong>distinguishability</strong>.</p>
+</div>
+<div class="paragraph">
+<p>A state distinction may exist physically without being accessible to a given observer.</p>
+</div>
+<div class="paragraph">
+<p>Another distinction may be accessible but not redundantly recorded.</p>
+</div>
+<div class="paragraph">
+<p>Another may become so widely copied into the environment that it forms part of what many observers call objective classical reality.</p>
+</div>
+<div class="paragraph">
+<p>This suggests at least three layers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">physical difference
+        |
+        v
+observer-accessible difference
+        |
+        v
+redundantly accessible macroscopic difference</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Quantum Darwinism gives a powerful account of the third layer.</p>
+</div>
+<div class="paragraph">
+<p>The present article focuses primarily on the second.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_relation_to_relational_quantum_mechanics"><a class="anchor" href="#_relation_to_relational_quantum_mechanics"></a>Relation to Relational Quantum Mechanics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Relational quantum mechanics is an especially close conceptual neighbor.</p>
+</div>
+<div class="paragraph">
+<p>In RQM, physical variables have values relative to other physical systems; there is no requirement for a special classical or conscious observer. <a href="#rovelli-rqm">[rovelli-rqm]</a><a href="#sep-rqm">[sep-rqm]</a></p>
+</div>
+<div class="paragraph">
+<p>The present proposal accepts the importance of this move but asks for an additional distinction.</p>
+</div>
+<div class="paragraph">
+<p>It is one thing to say:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{value is relative to }O.\$
+</div>
+</div>
+<div class="paragraph">
+<p>It is another to ask:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{which values can even be distinguished by }O?\$
+</div>
+</div>
+<div class="paragraph">
+<p>The proposal is therefore not merely observer-relative value.</p>
+</div>
+<div class="paragraph">
+<p>It is <strong>observer-relative distinguishability</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The observer is characterized not only by the fact that another system is described relative to it, but by the physical partition of state space that its available interactions can resolve.</p>
+</div>
+<div class="paragraph">
+<p>In compact form:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{perspective}
+\neq
+\text{complete access}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>A physical system may define a relational perspective while remaining incapable of distinguishing most of the structure of the system with which it interacts.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_particle_and_a_human_may_not_share_the_same_observable_vocabulary"><a class="anchor" href="#_a_particle_and_a_human_may_not_share_the_same_observable_vocabulary"></a>A Particle and a Human May Not Share the Same Observable Vocabulary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This point can be stated without attributing language to particles.</p>
+</div>
+<div class="paragraph">
+<p>A human experimentalist may choose an observable corresponding to a highly engineered measurement apparatus.</p>
+</div>
+<div class="paragraph">
+<p>A simple quantum system has a much narrower set of available interactions.</p>
+</div>
+<div class="paragraph">
+<p>Therefore the effective partitions induced by their interactions may differ:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal S/{\sim_{O_1}}
+\neq
+\mathcal S/{\sim_{O_2}}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>This is stronger than saying that the observers have different precision.</p>
+</div>
+<div class="paragraph">
+<p>They may have access to different physically meaningful decompositions.</p>
+</div>
+<div class="paragraph">
+<p>For one observer, two system states are distinct.</p>
+</div>
+<div class="paragraph">
+<p>For another, they belong to the same equivalence class.</p>
+</div>
+<div class="paragraph">
+<p>For a third, a completely different distinction may be accessible.</p>
+</div>
+<div class="paragraph">
+<p>Thus the structure we call "the observable state" is partly determined by the interaction architecture through which reality becomes distinguishable.</p>
+</div>
+<div class="paragraph">
+<p>This does not mean reality itself is arbitrary.</p>
+</div>
+<div class="paragraph">
+<p>The underlying system constrains every possible projection.</p>
+</div>
+<div class="paragraph">
+<p>But not every observer receives the same partition of it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_does_the_observer_create_the_state"><a class="anchor" href="#_does_the_observer_create_the_state"></a>Does the Observer Create the State?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>No.</p>
+</div>
+<div class="paragraph">
+<p>That would be a stronger philosophical claim than anything required here.</p>
+</div>
+<div class="paragraph">
+<p>Suppose:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_i\neq S_j\$
+</div>
+</div>
+<div class="paragraph">
+<p>but:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_i\sim_O S_j.\$
+</div>
+</div>
+<div class="paragraph">
+<p>The conclusion is not:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_i=S_j.\$
+</div>
+</div>
+<div class="paragraph">
+<p>It is only that \(O\) cannot distinguish them through the specified physical relation.</p>
+</div>
+<div class="paragraph">
+<p>The distinction may be perfectly real and available to another observer:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_i \not\sim_{O'} S_j.\$
+</div>
+</div>
+<div class="paragraph">
+<p>Thus:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\text{non-distinguishability}
+\not\Rightarrow
+\text{non-existence}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>The observer does not create the underlying difference.</p>
+</div>
+<div class="paragraph">
+<p>The observer participates in the physical relation through which the difference becomes observable.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_thought_experiment_rewritten"><a class="anchor" href="#_the_thought_experiment_rewritten"></a>The Thought Experiment Rewritten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We can now reconstruct Schrödinger&#8217;s box with several observers.</p>
+</div>
+<div class="sect2">
+<h3 id="_observer_a_one_elementary_particle"><a class="anchor" href="#_observer_a_one_elementary_particle"></a>Observer A: One Elementary Particle</h3>
+<div class="paragraph">
+<p>It interacts locally with the cat.</p>
+</div>
+<div class="paragraph">
+<p>Its accessible projection may be:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_A =
+\text{local scattering outcome}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>The categories "alive" and "dead" may not exist in its observational partition.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_observer_b_a_microscopic_detector"><a class="anchor" href="#_observer_b_a_microscopic_detector"></a>Observer B: A Microscopic Detector</h3>
+<div class="paragraph">
+<p>It may resolve whether radioactive decay occurred:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi_B
+\in
+\{\text{decay},\text{no decay}\}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>But it need not resolve the global biological state.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_observer_c_the_environment"><a class="anchor" href="#_observer_c_the_environment"></a>Observer C: The Environment</h3>
+<div class="paragraph">
+<p>A vast network of interactions becomes correlated with selected macroscopic properties of the box, apparatus, and cat.</p>
+</div>
+<div class="paragraph">
+<p>Information may become highly redundant.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_observer_d_a_human"><a class="anchor" href="#_observer_d_a_human"></a>Observer D: A Human</h3>
+<div class="paragraph">
+<p>The human accesses only a small fraction of those environmental records but possesses a macroscopic classification architecture capable of mapping them into:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\{\text{alive},\text{dead}\}.\$
+</div>
+</div>
+<div class="paragraph">
+<p>These observers are not necessarily disagreeing about the same variable.</p>
+</div>
+<div class="paragraph">
+<p>They may not even possess the same physically accessible variable.</p>
+</div>
+<div class="paragraph">
+<p>That distinction matters.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_perhaps_what_state_is_the_cat_in_is_underspecified"><a class="anchor" href="#_perhaps_what_state_is_the_cat_in_is_underspecified"></a>Perhaps "What State Is the Cat In?" Is Underspecified</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The usual question is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+What is the state of the cat before the box is opened?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>But this may combine several different questions.</p>
+</div>
+<div class="paragraph">
+<p>What is the complete quantum state assigned within a chosen formalism?</p>
+</div>
+<div class="paragraph">
+<p>Which macroscopic pointer states are stabilized by decoherence?</p>
+</div>
+<div class="paragraph">
+<p>Which information has become redundantly encoded in the environment?</p>
+</div>
+<div class="paragraph">
+<p>Which distinctions can a particular physical observer access?</p>
+</div>
+<div class="paragraph">
+<p>Which macroscopic classification will a human later infer?</p>
+</div>
+<div class="paragraph">
+<p>These are not automatically equivalent.</p>
+</div>
+<div class="paragraph">
+<p>The sentence:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+The cat is both alive and dead.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>is therefore dangerously compressed.</p>
+</div>
+<div class="paragraph">
+<p>It mixes a quantum-state representation with two biological macrostates and then interprets the mathematical superposition as though the words "alive" and "dead" were primitive microscopic properties.</p>
+</div>
+<div class="paragraph">
+<p>Schrödinger introduced the cat precisely to expose the discomfort created when quantum formalism is extended into such macroscopic language. <a href="#schrodinger1935">[schrodinger1935]</a></p>
+</div>
+<div class="paragraph">
+<p>The present thought experiment pushes once more:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Before asking whether the cat is alive or dead for an observer, does that observer physically possess the distinction "alive versus dead" at all?
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_note_on_time_in_this_article"><a class="anchor" href="#_a_note_on_time_in_this_article"></a>A Note on Time in This Article</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This article deliberately uses ordinary metric time when discussing interaction duration, signal propagation, detector response, decoherence, temporal resolution, and laboratory event ordering.</p>
+</div>
+<div class="paragraph">
+<p>Let:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\tau\$
+</div>
+</div>
+<div class="paragraph">
+<p>denote that metric time: seconds, clock readings, laboratory intervals, and ordinary physical chronology.</p>
+</div>
+<div class="paragraph">
+<p>This choice is intentional.</p>
+</div>
+<div class="paragraph">
+<p>Earlier work in the System Tempo series distinguishes metric time \(\tau\) from more general ordering and regime descriptions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(\lambda\) denotes generic ordering or evolution when no clock is required;</p>
+</li>
+<li>
+<p>\(q\) denotes the candidate System Tempo regime coordinate;</p>
+</li>
+<li>
+<p>\(\tau\) denotes metric time.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>No relation:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$q=f(\tau)\$
+</div>
+</div>
+<div class="paragraph">
+<p>is assumed in advance.</p>
+</div>
+<div class="paragraph">
+<p>The present article does not require that stronger hypothesis.</p>
+</div>
+<div class="paragraph">
+<p>Its question is deliberately narrower:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Within an ordinary metric-time description of a physical interaction, what distinctions can a finite physical observer resolve?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Using metric time here is therefore neither a retreat from the earlier distinction nor an accidental forgetting of it.</p>
+</div>
+<div class="paragraph">
+<p>It is a restriction of scope.</p>
+</div>
+<div class="paragraph">
+<p>Metric time is treated as valid local metrology.</p>
+</div>
+<div class="paragraph">
+<p>The deeper question of whether metric chronology exhausts the full ordered or regime structure of the containing system is held aside.</p>
+</div>
+<div class="paragraph">
+<p>System Tempo raises a higher-order extension:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Could the space of physically distinguishable relations itself depend on the regime of the containing system?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>If so, observer distinguishability would depend not only on the observer and interaction channel:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal O(S,C,\rho_O;\tau),\$
+</div>
+</div>
+<div class="paragraph">
+<p>but potentially also on regime structure:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal O(S,C,\rho_O,q,\Gamma(q);\tau).\$
+</div>
+</div>
+<div class="paragraph">
+<p>That possibility is not developed here.</p>
+</div>
+<div class="paragraph">
+<p>It deserves a separate treatment.</p>
+</div>
+<div class="paragraph">
+<p>The present article holds the regime question open rather than using System Tempo as an unexplained solution to quantum measurement.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_this_is_not_yet_a_new_interpretation_of_quantum_mechanics"><a class="anchor" href="#_why_this_is_not_yet_a_new_interpretation_of_quantum_mechanics"></a>Why This Is Not Yet a New Interpretation of Quantum Mechanics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nothing in the argument requires changing the Schrödinger equation.</p>
+</div>
+<div class="paragraph">
+<p>Nothing here derives the Born rule.</p>
+</div>
+<div class="paragraph">
+<p>Nothing here selects between Copenhagen, Everett, relational quantum mechanics, Bohmian mechanics, objective-collapse theories, or other interpretations.</p>
+</div>
+<div class="paragraph">
+<p>Nothing here proves the existence of hidden variables.</p>
+</div>
+<div class="paragraph">
+<p>Nothing here claims that limited observer resolution explains Bell correlations.</p>
+</div>
+<div class="paragraph">
+<p>And nothing here claims that decoherence alone resolves every formulation of the measurement problem.</p>
+</div>
+<div class="paragraph">
+<p>The proposal is narrower.</p>
+</div>
+<div class="paragraph">
+<p>It introduces a question that should remain meaningful across multiple interpretations:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\text{What partition of physical state space is distinguishable to a specified physical observer through a specified interaction?}
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>That question can be asked independently of whether one treats the quantum state as ontic, epistemic, relational, branching, or otherwise.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_potentially_new_step"><a class="anchor" href="#_the_potentially_new_step"></a>The Potentially New Step</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The concepts individually are not new.</p>
+</div>
+<div class="paragraph">
+<p>Finite measurement resolution is not new.</p>
+</div>
+<div class="paragraph">
+<p>Coarse-graining is not new.</p>
+</div>
+<div class="paragraph">
+<p>Relational observation is not new.</p>
+</div>
+<div class="paragraph">
+<p>Decoherence is not new.</p>
+</div>
+<div class="paragraph">
+<p>Quantum Darwinism is not new.</p>
+</div>
+<div class="paragraph">
+<p>Classical correlation is not new, as the two-shoe example makes explicit.</p>
+</div>
+<div class="paragraph">
+<p>The potentially useful contribution is their organization around a particular distinction:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+An observer should perhaps be characterized not only by the values it obtains, but by the equivalence classes of physical states it is capable of distinguishing.
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Formally:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$S_i \sim_{O,C,\rho} S_j\$
+</div>
+</div>
+<div class="paragraph">
+<p>whenever the allowed physical interaction and resolving architecture of \(O\) cannot discriminate \(S_i\) from \(S_j\).</p>
+</div>
+<div class="paragraph">
+<p>The resulting quotient:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\mathcal S/{\sim_{O,C,\rho}}\$
+</div>
+</div>
+<div class="paragraph">
+<p>is the observer&#8217;s physically distinguishable state space.</p>
+</div>
+<div class="paragraph">
+<p>This immediately produces several research questions.</p>
+</div>
+<div class="paragraph">
+<p>When do two observers induce the same equivalence classes?</p>
+</div>
+<div class="paragraph">
+<p>When are their observable spaces partially compatible?</p>
+</div>
+<div class="paragraph">
+<p>How does environmental redundancy transform observer-specific distinctions into stable intersubjective macrostates?</p>
+</div>
+<div class="paragraph">
+<p>Can a hierarchy of increasingly capable observers converge toward a stable partition?</p>
+</div>
+<div class="paragraph">
+<p>Are there distinctions inaccessible to every observer that can physically exist inside the same containing system?</p>
+</div>
+<div class="paragraph">
+<p>Can one observer infer distinctions finer than its direct interaction resolution by combining multiple indirect records?</p>
+</div>
+<div class="paragraph">
+<p>What exactly changes when an instrument is added: the observer&#8217;s resolution, the interaction channel, or the effective observer itself?</p>
+</div>
+<div class="paragraph">
+<p>And the shoe-box example adds one more:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+If an observer establishes one perfect correlation between two systems, which other degrees of freedom remain physically unresolved for that observer?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This question matters in both classical and quantum physics even though the answers differ fundamentally.</p>
+</div>
+<div class="paragraph">
+<p>These questions lie close to measurement theory, information theory, coarse-graining, and quantum foundations.</p>
+</div>
+<div class="paragraph">
+<p>But observer-relative distinguishability may provide a common formal language across those domains.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_the_cat_to_the_observer"><a class="anchor" href="#_from_the_cat_to_the_observer"></a>From the Cat to the Observer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Schrödinger&#8217;s cat is powerful because it forces a microscopic theory to confront macroscopic language.</p>
+</div>
+<div class="paragraph">
+<p>But perhaps the experiment contains another lesson.</p>
+</div>
+<div class="paragraph">
+<p>The cat is not the only system whose ontology should be questioned.</p>
+</div>
+<div class="paragraph">
+<p>The observer should be questioned too.</p>
+</div>
+<div class="paragraph">
+<p>A human opening a box is an extraordinarily complex physical measurement architecture.</p>
+</div>
+<div class="paragraph">
+<p>The human inherits:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>sensory channels;</p>
+</li>
+<li>
+<p>biological integration windows;</p>
+</li>
+<li>
+<p>memory;</p>
+</li>
+<li>
+<p>macroscopic concepts;</p>
+</li>
+<li>
+<p>instruments;</p>
+</li>
+<li>
+<p>environmental records;</p>
+</li>
+<li>
+<p>language;</p>
+</li>
+<li>
+<p>learned classifications;</p>
+</li>
+<li>
+<p>and a world already heavily decohered into stable classical patterns.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is therefore dangerous to use the human observer as though it were a neutral point of observation.</p>
+</div>
+<div class="paragraph">
+<p>A single quantum particle exposes this hidden complexity.</p>
+</div>
+<div class="paragraph">
+<p>The particle does not "see less" because it is philosophically inferior.</p>
+</div>
+<div class="paragraph">
+<p>It participates in a different physical relation.</p>
+</div>
+<div class="paragraph">
+<p>Its interaction defines a different set of distinguishable alternatives.</p>
+</div>
+<div class="paragraph">
+<p>The shoe-box example adds a second discipline.</p>
+</div>
+<div class="paragraph">
+<p>Even when one distinction is known perfectly, it does not reveal the whole system.</p>
+</div>
+<div class="paragraph">
+<p>We may know that the second shoe is right while still not knowing which direction its toe points.</p>
+</div>
+<div class="paragraph">
+<p>The transition from observed correlation to a claim about complete state therefore always requires additional justification.</p>
+</div>
+<div class="paragraph">
+<p>This suggests that the boundary between "state" and "observation" may need to be described not only through relativity of values, but through relativity of distinguishability.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_closing_thesis"><a class="anchor" href="#_closing_thesis"></a>Closing Thesis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Schrödinger asked us to imagine a cat whose fate becomes entangled with a quantum event.</p>
+</div>
+<div class="paragraph">
+<p>The traditional paradox asks:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+Is the cat alive or dead before observation?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A more primitive question may be:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+For which physical observer does "alive versus dead" exist as a distinguishable alternative at all?
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A human observer can resolve that distinction.</p>
+</div>
+<div class="paragraph">
+<p>One electron generally cannot.</p>
+</div>
+<div class="paragraph">
+<p>The environment may encode enough correlated information for the distinction to become redundantly available to many macroscopic observers.</p>
+</div>
+<div class="paragraph">
+<p>But those facts should not be collapsed into one word: observation.</p>
+</div>
+<div class="paragraph">
+<p>The underlying system, the interaction channel, the observer&#8217;s resolving architecture, and the emergent macroscopic vocabulary are different layers of description.</p>
+</div>
+<div class="paragraph">
+<p>The shoe-box example adds another constraint:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\text{perfect correlation in one property does not imply complete knowledge of a system}
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>The broader principle is:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\text{physical difference does not imply universal distinguishability}
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>And its quantum-foundational form is:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\boxed{
+\text{before asking which outcome an observer sees, ask which distinctions can physically exist as outcomes for that observer}
+}\$
+</div>
+</div>
+<div class="paragraph">
+<p>Schrödinger&#8217;s cat may therefore teach us something beyond superposition.</p>
+</div>
+<div class="paragraph">
+<p>Perhaps the deeper ambiguity begins earlier, in our silent assumption that every physical observer must divide reality into the same states we do.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>[<a id="schrodinger1935"></a>] Erwin Schrödinger, <em>Die gegenwärtige Situation in der Quantenmechanik</em>, <em>Naturwissenschaften</em> 23, 807–812, 823–828, 844–849 (1935).</p>
+</li>
+<li>
+<p>[<a id="bell1964"></a>] John S. Bell, <a href="https://cds.cern.ch/record/111654/files/vol1p195-200_001.pdf">On the Einstein Podolsky Rosen Paradox</a>, <em>Physics Physique Fizika</em> 1, 195–200 (1964).</p>
+</li>
+<li>
+<p>[<a id="aspect1982"></a>] Alain Aspect, Jean Dalibard, and Gérard Roger, <a href="https://doi.org/10.1103/PhysRevLett.49.1804">Experimental Test of Bell&#8217;s Inequalities Using Time-Varying Analyzers</a>, <em>Physical Review Letters</em> 49, 1804–1807 (1982).</p>
+</li>
+<li>
+<p>[<a id="rovelli-rqm"></a>] Carlo Rovelli, <a href="https://arxiv.org/abs/quant-ph/9609002">Relational Quantum Mechanics</a>, <em>International Journal of Theoretical Physics</em> 35, 1637–1678 (1996).</p>
+</li>
+<li>
+<p>[<a id="sep-rqm"></a>] Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/qm-relational/">Relational Quantum Mechanics</a>.</p>
+</li>
+<li>
+<p>[<a id="zurek-decoherence"></a>] Wojciech H. Zurek, <a href="https://doi.org/10.1103/RevModPhys.75.715">Decoherence, einselection, and the quantum origins of the classical</a>, <em>Reviews of Modern Physics</em> 75, 715–775 (2003).</p>
+</li>
+<li>
+<p>[<a id="zurek-darwinism"></a>] Wojciech H. Zurek, <a href="https://doi.org/10.1103/PhysRevA.98.032105">Quantum theory of the classical: quantum jumps, Born&#8217;s rule and objective classical reality via quantum Darwinism</a>, <em>Physical Review A</em> 98, 032105 (2018).</p>
+</li>
+<li>
+<p>[<a id="riedel-zurek"></a>] C. Jess Riedel and Wojciech H. Zurek, <a href="https://doi.org/10.1103/PhysRevLett.105.020404">Quantum Darwinism in an Everyday Environment: Huge Redundancy in Scattered Photons</a>, <em>Physical Review Letters</em> 105, 020404 (2010).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>
