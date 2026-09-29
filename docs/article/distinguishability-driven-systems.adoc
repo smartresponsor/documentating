@@ -1,0 +1,938 @@
+= Distinguishability-Driven Systems
+:page-slug: distinguishability-driven-systems
+:page-published: 2026-09-29
+:page-author: Oleksandr Tishchenko
+:description: Why agents, distributed systems, observability stacks, and telemetry architectures should be designed around the distinctions required for action rather than around raw data volume alone.
+:page-tags: ai-agents, mcp, observability, distributed-systems, telemetry, spacecraft, sensor-fusion, software-architecture, system-design
+:lang: en
+
+[abstract]
+Most information systems are designed around data.
+
+Which fields should an API expose?
+
+Which events should be published?
+
+Which metrics should be collected?
+
+Which tools should an AI agent receive?
+
+Which telemetry packets should a remote machine transmit?
+
+These questions may begin one step too late.
+
+For a decision-making system, the more primitive question is:
+
+[quote]
+Which physically or operationally different states must remain distinguishable after they pass through the available observation channel?
+
+If two states require different actions but become observationally identical to the decision-maker, no amount of downstream reasoning can reliably reconstruct the missing distinction.
+
+This article develops *distinguishability* as an architectural property. The idea applies to AI agents, MCP/tool architectures, distributed systems, observability, spacecraft telemetry, robotics, sensor fusion, computer architecture, and semantic communication.
+
+The central condition is simple:
+
+[stem]
+++++
+S_1 \sim_O S_2
+\quad\land\quad
+a(S_1)\neq a(S_2).
+++++
+
+When this holds, the failure is not primarily in the decision policy.
+
+It exists earlier, in the observation contract.
+
+== A System Does Not Receive "The State"
+
+Engineering language often says that a system "received the state of an object."
+
+That is rarely literally true.
+
+Let the underlying system state be \(S\).
+
+Let observer \(O\) access it through channel \(C\), with finite resolving capacity \(\rho_O\).
+
+Then what the observer actually receives is better represented as:
+
+[stem]
+++++
+\Pi_O(S)=\mathcal O(S,C,\rho_O).
+++++
+
+The architecture is therefore not:
+
+[stem]
+++++
+O \gets S,
+++++
+
+but:
+
+[stem]
+++++
+O \gets \Pi_O(S).
+++++
+
+The observer does not receive the containing system.
+
+It receives a projection that preserves some distinctions and erases others.
+
+This is the engineering continuation of the observer-relative distinguishability argument developed in xref:what-does-schrodingers-cat-look-like-to-an-electron.adoc[What Does Schrödinger's Cat Look Like to an Electron?].
+
+== Observer-Relative Equivalence
+
+Suppose two real states differ:
+
+[stem]
+++++
+S_1\neq S_2.
+++++
+
+But after passing through the available observation surface:
+
+[stem]
+++++
+\Pi_O(S_1)=\Pi_O(S_2).
+++++
+
+Then, for that observer:
+
+[stem]
+++++
+S_1\sim_O S_2.
+++++
+
+This does not mean the states are physically or operationally identical.
+
+It means that the observer does not possess a distinction that separates them.
+
+The equivalence class induced by the observation layer is the actual input available to decision-making.
+
+== The Core Engineering Criterion
+
+Now assume the required actions differ:
+
+[stem]
+++++
+a(S_1)\neq a(S_2).
+++++
+
+But the observer sees the states as equivalent:
+
+[stem]
+++++
+S_1\sim_O S_2.
+++++
+
+Then:
+
+[stem]
+++++
+\boxed{
+S_1\sim_O S_2
+\;\land\;
+a(S_1)\neq a(S_2)
+\Rightarrow
+\text{observation contract insufficient}
+}
+++++
+
+This is the central design criterion of this article.
+
+If a decision system is required to behave differently in two states, its observation architecture must preserve their distinguishability.
+
+A downstream decision layer cannot reliably distinguish states that an upstream observation layer has already collapsed into one class.
+
+== Reasoning Failure Versus Observation Failure
+
+This distinction becomes especially important in AI systems.
+
+Suppose an agent must choose \(a_1\) in state \(S_1\) and \(a_2\) in state \(S_2\).
+
+There are two fundamentally different failure modes.
+
+=== Reasoning failure
+
+The observation layer preserves the distinction:
+
+[stem]
+++++
+\Pi_A(S_1)\neq\Pi_A(S_2),
+++++
+
+but the agent reaches the wrong conclusion.
+
+This is genuinely a reasoning, policy, planning, or model failure.
+
+=== Observation failure
+
+The observation layer collapses the states:
+
+[stem]
+++++
+\Pi_A(S_1)=\Pi_A(S_2).
+++++
+
+Then adding more reasoning tokens, a stronger language model, or additional internal deliberation may not help.
+
+The agent cannot infer a distinction from an interface that never exposed it.
+
+== MCP as an Architecture of Distinguishability
+
+Tool-oriented AI systems are usually described in terms of capabilities.
+
+A server exposes tools.
+
+The agent invokes them.
+
+But there is another useful way to describe the same architecture.
+
+Each tool determines which external distinctions the agent can establish.
+
+Let:
+
+[stem]
+++++
+\mathcal A_O
+=
+\{C_1,C_2,\ldots,C_n\}
+++++
+
+be the set of observation and action capabilities available to an agent.
+
+The quality of that tool surface should not be judged only by asking:
+
+[quote]
+Does the required command exist?
+
+A stronger question is:
+
+[quote]
+Can the available tool surface distinguish every task-relevant pair of states that requires a different action?
+
+This is *distinguishability coverage*.
+
+== Distinguishability Coverage
+
+Let \(\mathcal S_T\) be the set of task-relevant states.
+
+Let the required policy be:
+
+[stem]
+++++
+\pi:\mathcal S_T\rightarrow A.
+++++
+
+For every pair of states requiring different actions:
+
+[stem]
+++++
+\pi(S_i)\neq\pi(S_j),
+++++
+
+the observation layer should preserve a distinction:
+
+[stem]
+++++
+\Pi_O(S_i)\neq\Pi_O(S_j).
+++++
+
+Thus a necessary architectural condition is:
+
+[stem]
+++++
+\boxed{
+\pi(S_i)\neq\pi(S_j)
+\Rightarrow
+\Pi_O(S_i)\neq\Pi_O(S_j)
+}
+++++
+
+This can become a practical test criterion.
+
+Instead of merely asking whether a tool exists, we can ask whether the tool surface preserves every decision boundary required by the task.
+
+== A Concrete Example: Message Sent Versus Conversation Materialized
+
+Consider an agent that submits a prompt to an external chat system.
+
+At least two distinct lifecycle states may exist:
+
+[stem]
+++++
+S_1=\text{message accepted for sending}
+++++
+
+and:
+
+[stem]
+++++
+S_2=\text{conversation has obtained a permanent chat identifier}.
+++++
+
+These states need not occur simultaneously.
+
+If a tool uses the existence of a chat identifier as the only proof that the message was sent, it merges two different lifecycle facts into one surrogate signal.
+
+The architecture loses a distinction.
+
+A better observation model preserves:
+
+[stem]
+++++
+\text{send accepted}
+\neq
+\text{conversation materialized}.
+++++
+
+This is a small example, but it illustrates the general point: asynchronous systems require lifecycle distinctions to be represented explicitly rather than inferred from a later state.
+
+== Distributed Systems
+
+The same structure appears in distributed computing.
+
+A remote node never observes the complete global state directly.
+
+It sees:
+
+* heartbeats;
+* terms or epochs;
+* commit indexes;
+* replicated events;
+* acknowledgements;
+* causal metadata;
+* timeouts;
+* locally available replicas.
+
+Its knowledge is therefore a projection:
+
+[stem]
+++++
+\Pi_i(S_{\text{global}}).
+++++
+
+Different nodes may not merely possess incomplete copies of one state.
+
+They may induce different distinguishability partitions over the global state.
+
+For example, a node may fail to distinguish:
+
+[stem]
+++++
+S_{\text{slow}}
+\sim_O
+S_{\text{partition}}
+++++
+
+given its current observation channel.
+
+This is not simply missing data.
+
+It is an operational equivalence under a restricted observer.
+
+== Observability as State Separation
+
+Conventional observability asks:
+
+[quote]
+Which logs, traces, and metrics should we collect?
+
+A distinguishability-driven formulation asks:
+
+[quote]
+Which operational regimes must remain separable to an operator or automated controller?
+
+Suppose:
+
+[stem]
+++++
+S_N=\text{normal},
+++++
+
+[stem]
+++++
+S_D=\text{degraded},
+++++
+
+and:
+
+[stem]
+++++
+S_F=\text{failure}.
+++++
+
+If dashboards preserve:
+
+[stem]
+++++
+\Pi(S_N)\neq\Pi(S_D),
+++++
+
+but collapse:
+
+[stem]
+++++
+\Pi(S_D)=\Pi(S_F),
+++++
+
+then the operator cannot determine which recovery action is appropriate.
+
+The problem is not the raw number of metrics.
+
+The problem is the wrong partition of operational state space.
+
+== Spacecraft Telemetry
+
+The same principle becomes especially important in remote physical systems.
+
+Let a spacecraft have a complex physical state:
+
+[stem]
+++++
+S_{\text{SC}}.
+++++
+
+Ground control receives telemetry through a constrained communication path.
+
+The accessible representation is shaped by:
+
+* bandwidth;
+* latency;
+* sampling rate;
+* onboard aggregation;
+* compression;
+* packet loss;
+* sensor availability;
+* transmission windows;
+* energy budget.
+
+Ground therefore receives:
+
+[stem]
+++++
+\Pi_E(S_{\text{SC}}),
+++++
+
+not the spacecraft itself.
+
+The usual design question is:
+
+[quote]
+Which data should we transmit?
+
+A stronger question is:
+
+[quote]
+Which spacecraft states must remain distinguishable on Earth?
+
+== Distinguishability-Driven Telemetry
+
+Suppose:
+
+[stem]
+++++
+S_{\text{nominal}}
+++++
+
+and:
+
+[stem]
+++++
+S_{\text{precursor}}
+++++
+
+are physically different states, where the second is an early precursor to a serious fault.
+
+If the telemetry encoder maps them identically:
+
+[stem]
+++++
+T(S_{\text{nominal}})
+=
+T(S_{\text{precursor}}),
+++++
+
+then no ground-side reasoning algorithm can reconstruct the erased distinction from that telemetry alone.
+
+This gives a direct engineering rule:
+
+[stem]
+++++
+\boxed{
+a(S_i)\neq a(S_j)
+\Rightarrow
+T(S_i)\neq T(S_j)
+}
+++++
+
+for operationally relevant pairs of states.
+
+This does not imply transmitting a complete physical state.
+
+The goal is almost the opposite:
+
+[quote]
+Transmit the minimum information necessary to preserve the distinctions required for correct action.
+
+== Semantic Compression
+
+This creates a natural bridge to semantic communication.
+
+Conventional compression attempts to preserve a signal or reconstruction fidelity.
+
+Distinguishability-driven compression can instead preserve *decision-relevant boundaries*.
+
+Rather than requiring only:
+
+[stem]
+++++
+\hat S\approx S,
+++++
+
+one may require that the compressed representation preserve the required policy:
+
+[stem]
+++++
+\pi(\hat S)=\pi(S).
+++++
+
+More generally, whenever two states require different actions, the compressed channel should not merge them into one observational class.
+
+This reframes communication efficiency.
+
+The central quantity is no longer only the number of transmitted bits.
+
+It is the set of distinctions those bits preserve.
+
+== One Bit Can Matter More Than a Thousand Parameters
+
+Imagine a remote system with one million measurable variables.
+
+Suppose the controller must distinguish only two operational regimes:
+
+[stem]
+++++
+S_A
+++++
+
+and:
+
+[stem]
+++++
+S_B.
+++++
+
+A single carefully designed bit may be more decision-useful than a large telemetry stream if it reliably preserves:
+
+[stem]
+++++
+\Pi(S_A)\neq\Pi(S_B).
+++++
+
+Conversely, gigabytes of data may be operationally inadequate if they collapse the critical distinction.
+
+Thus:
+
+[stem]
+++++
+\boxed{
+\text{information volume}
+\neq
+\text{decision value}
+}
+++++
+
+== Computer Architecture as Controlled Indistinguishability
+
+The same reasoning applies inside a computer.
+
+Different architectural layers observe different projections of the same underlying machine.
+
+A program sees virtual addresses.
+
+An MMU sees page mappings.
+
+A cache sees cache-line identities and coherence states.
+
+A memory controller sees physical transactions.
+
+Performance counters expose aggregated events.
+
+Security monitors may expose still another projection.
+
+Thus one physical execution can be represented through:
+
+[stem]
+++++
+\Pi_1(S),\Pi_2(S),\ldots,\Pi_n(S).
+++++
+
+For one layer, multiple microstates are intentionally equivalent.
+
+For another, they may be distinct.
+
+Abstraction can therefore be interpreted as a mechanism for constructing controlled equivalence classes.
+
+== Abstraction as Intentional Loss of Distinguishability
+
+A useful abstraction intentionally hides differences.
+
+Several lower-level states:
+
+[stem]
+++++
+S_1,S_2,\ldots,S_n
+++++
+
+may be represented by one interface state:
+
+[stem]
+++++
+\Pi(S_1)=\Pi(S_2)=\cdots=\Pi(S_n).
+++++
+
+That is often exactly what makes abstraction valuable.
+
+The problem begins when the abstraction hides a distinction required for correct behavior at a higher layer.
+
+This suggests a useful counterpart to the familiar idea of an abstraction leak.
+
+An abstraction leak exposes a lower-level difference that was supposed to remain hidden.
+
+The inverse failure is:
+
+[quote]
+*abstraction erasure*: a distinction required by the higher layer has been erased by the lower-level interface.
+
+== Observers Need Not Form a Single Resolution Ladder
+
+Observers should not always be arranged as:
+
+[stem]
+++++
+O_1<O_2<O_3.
+++++
+
+One observer may distinguish variables of type \(X\).
+
+Another may distinguish variables of type \(Y\).
+
+Their accessible spaces may therefore be incomparable:
+
+[stem]
+++++
+\mathcal A_{O_1}
+\nsubseteq
+\mathcal A_{O_2},
+++++
+
+while also:
+
+[stem]
+++++
+\mathcal A_{O_2}
+\nsubseteq
+\mathcal A_{O_1}.
+++++
+
+This matters for heterogeneous systems.
+
+A new sensor or tool may not simply increase precision.
+
+It may add a new axis of distinguishability.
+
+== Sensor Fusion as Partition Refinement
+
+Suppose sensor \(A\) distinguishes one family of state differences while sensor \(B\) distinguishes another.
+
+The combined observer:
+
+[stem]
+++++
+O=A\oplus B
+++++
+
+may induce a finer projection:
+
+[stem]
+++++
+\Pi_O(S)
+=
+(\Pi_A(S),\Pi_B(S)).
+++++
+
+Sensor fusion can therefore be understood not only as improved accuracy, but as *refinement of distinguishability classes*.
+
+This perspective applies equally well to physical sensors, software probes, agent tools, and distributed evidence.
+
+== Distinguishability Tests
+
+The framework suggests a new class of architecture tests.
+
+Instead of testing only:
+
+[source,text]
+----
+Does endpoint X return field Y?
+----
+
+test:
+
+[source,text]
+----
+Given two task-relevant states that require different actions,
+does the observation surface produce distinguishable outputs?
+----
+
+Formally:
+
+[stem]
+++++
+\forall S_i,S_j:
+\pi(S_i)\neq\pi(S_j)
+\Rightarrow
+\Pi(S_i)\neq\Pi(S_j).
+++++
+
+A test of this form is a *distinguishability test*.
+
+For agent systems, it asks whether the tool architecture actually exposes enough information for the expected policy to be possible.
+
+== Failure by Insufficient Distinguishability
+
+This motivates a separate failure class.
+
+=== Indistinguishability failure
+
+The decision system does not misinterpret an available distinction.
+
+It never receives the distinction.
+
+The characteristic structure is:
+
+[stem]
+++++
+S_1\neq S_2,
+++++
+
+[stem]
+++++
+a(S_1)\neq a(S_2),
+++++
+
+but:
+
+[stem]
+++++
+\Pi(S_1)=\Pi(S_2).
+++++
+
+This is an architectural failure mode.
+
+It cannot be eliminated purely through better downstream reasoning.
+
+== Three Architectural Layers
+
+The model can be summarized in three layers.
+
+=== Layer 1 — Reality
+
+[stem]
+++++
+S
+++++
+
+The containing physical or software state.
+
+=== Layer 2 — Distinguishability
+
+[stem]
+++++
+\Pi_O(S)
+++++
+
+The distinctions available through the observer and its channels.
+
+=== Layer 3 — Decision
+
+[stem]
+++++
+a=\pi(\Pi_O(S)).
+++++
+
+Most engineering attention is usually concentrated on Layer 3.
+
+But the quality ceiling of Layer 3 is constrained by Layer 2.
+
+As a design principle:
+
+[stem]
+++++
+\boxed{
+\text{decision quality is bounded by the distinguishability available to the decision system}
+}
+++++
+
+This is not presented here as a formal theorem.
+
+It is an architectural constraint.
+
+== From Data Completeness to Distinguishability Completeness
+
+Data-driven architecture asks:
+
+[quote]
+Which data are available?
+
+Distinguishability-driven architecture asks:
+
+[quote]
+Which states become distinguishable because of those data?
+
+The first counts information objects.
+
+The second examines decision boundaries.
+
+Instead of measuring only data completeness, one may measure:
+
+[stem]
+++++
+\text{distinguishability completeness}.
+++++
+
+That quantity is task-relative by construction.
+
+A system has enough information when all state distinctions required for different actions survive its observation architecture.
+
+== A Practical Design Process
+
+A distinguishability-driven design process can be expressed as follows.
+
+First, define the task-relevant state set:
+
+[stem]
+++++
+\mathcal S_T.
+++++
+
+Second, define the required policy:
+
+[stem]
+++++
+\pi:\mathcal S_T\rightarrow A.
+++++
+
+Third, enumerate or sample state pairs satisfying:
+
+[stem]
+++++
+\pi(S_i)\neq\pi(S_j).
+++++
+
+These pairs form the required distinction set.
+
+Then test the observation surface:
+
+[stem]
+++++
+\Pi(S_i)\stackrel{?}{\neq}\Pi(S_j).
+++++
+
+Whenever the answer is no, enrich the observation architecture with an additional:
+
+* sensor;
+* telemetry field;
+* lifecycle marker;
+* event;
+* status;
+* capability;
+* provenance record;
+* measurement;
+* correlation;
+* diagnostic.
+
+The design target is not maximal visibility.
+
+It is preservation of the distinctions required by the policy.
+
+== Why This Matters More as Systems Become Autonomous
+
+Human operators often notice when information is missing and request another measurement.
+
+Autonomous systems frequently act inside a predefined observation surface.
+
+If that surface collapses critical operational regimes, autonomy can become confident action over an underdetermined state.
+
+Increasing autonomy should therefore involve not only increasing intelligence.
+
+It should involve increasing the guaranteed distinguishability of states that require different responses.
+
+== Engineering Thesis
+
+The main principle can be stated compactly:
+
+[stem]
+++++
+\boxed{
+\text{A decision system should not be required to distinguish states that its observation architecture makes equivalent.}
+}
+++++
+
+The dual form is:
+
+[stem]
+++++
+\boxed{
+\text{If two states require different actions, the observation architecture must preserve their distinguishability.}
+}
+++++
+
+This principle applies naturally to:
+
+* AI agents;
+* MCP and tool interfaces;
+* autonomous systems;
+* distributed systems;
+* observability;
+* spacecraft telemetry;
+* robotics;
+* sensor fusion;
+* computer architecture;
+* security monitoring;
+* semantic communication.
+
+== Conclusion
+
+Systems are commonly designed around data, interfaces, and actions.
+
+But between physical state and action lies another architectural layer:
+
+*distinguishability*.
+
+A decision-maker does not act on reality as such.
+
+It acts on the partition of reality made available by its observation architecture.
+
+Therefore two questions should be separated:
+
+[quote]
+How does the system decide?
+
+and:
+
+[quote]
+Which distinctions exist for the system at the moment of decision?
+
+Many failures currently classified separately as reasoning errors, observability gaps, telemetry deficiencies, orchestration failures, or interface problems may share one deeper structure:
+
+[stem]
+++++
+\boxed{
+\text{failure by insufficient distinguishability}
+}
+++++
+
+When that happens, the remedy does not begin with a smarter decision-maker.
+
+It begins with a better space of observable distinctions.
