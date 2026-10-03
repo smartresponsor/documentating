@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Building the Machine That Drives Software to Release Candidate :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/building-the-machine-that-drives-software-to-rc/">
+    <meta name="description" content="A rough field analysis of 6.7 billion ChatGPT tokens, Console MCP, bounded agent loops, multi-repository development, and the economics of driving software toward Release Candidate.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/building-the-machine-that-drives-software-to-rc/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/building-the-machine-that-drives-software-to-rc/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Building the Machine That Drives Software to Release Candidate">
+<meta name="twitter:title" content="Building the Machine That Drives Software to Release Candidate">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  },
+  startup: {
+    ready: () => {
+      document.querySelectorAll('.stemblock .content').forEach((element) => {
+        let source = element.textContent.trim();
+        if (source.startsWith('\\$') && source.endsWith('\\$')) {
+          source = source.slice(2, -2).trim();
+        } else if (source.startsWith('$') && source.endsWith('$')) {
+          source = source.slice(1, -1).trim();
+        }
+        element.textContent = `\\[${source}\\]`;
+      });
+      MathJax.startup.defaultReady();
+    }
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">Building the Machine That Drives Software to Release Candidate</a></li>
+    <li><span>Building the Machine That Drives Software to Release Candidate</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Building the Machine That Drives Software to Release Candidate</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/building-the-machine-that-drives-software-to-rc.adoc`</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_field_report_not_a_benchmark"><a class="anchor" href="#_a_field_report_not_a_benchmark"></a>A Field Report, Not a Benchmark</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A few days ago I looked at my ChatGPT usage telemetry and stopped at one number:</p>
+</div>
+<div class="paragraph">
+<p><strong>6.7 billion lifetime tokens.</strong></p>
+</div>
+<div class="paragraph">
+<p>The same telemetry showed a peak of <strong>239.6 million tokens</strong>, a longest task of almost <strong>84 hours</strong>, and a longest continuous streak of <strong>13 days</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Those numbers are interesting, but by themselves they prove almost nothing.</p>
+</div>
+<div class="paragraph">
+<p>The useful question is not how many tokens I consumed.</p>
+</div>
+<div class="paragraph">
+<p>The useful question is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>What kind of engineering system grew around that usage, how much human coordination did it remove, and what would a comparable metered agentic workload cost?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This article is deliberately a rough analysis.</p>
+</div>
+<div class="paragraph">
+<p>It is not a scientific benchmark, not a controlled experiment, and not an accounting statement. I do not have perfect historical attribution of cached input, uncached input, visible output, reasoning, model mix, or engineering versus non-engineering activity.</p>
+</div>
+<div class="paragraph">
+<p>I use ChatGPT for software development, research, writing, browser work, architecture, technical investigation, and occasional personal tasks. All of that exists in the telemetry.</p>
+</div>
+<div class="paragraph">
+<p>So there is noise.</p>
+</div>
+<div class="paragraph">
+<p>But the difference between the relevant economic scales is large enough that even a substantial error margin remains informative.</p>
+</div>
+<div class="paragraph">
+<p>More importantly, the telemetry captures a transition in the way I work as an engineer.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_scope_development_to_release_candidate_not_autonomous_production"><a class="anchor" href="#_the_scope_development_to_release_candidate_not_autonomous_production"></a>The Scope: Development to Release Candidate, Not Autonomous Production</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before discussing autonomy, one boundary needs to be explicit.</p>
+</div>
+<div class="paragraph">
+<p><strong>This is not a claim about autonomous commercial production deployment.</strong></p>
+</div>
+<div class="paragraph">
+<p>I am not arguing that an agent should be allowed to modify a production system, merge arbitrary changes, deploy them, and become the final authority for a commercial release.</p>
+</div>
+<div class="paragraph">
+<p>Production adds a different responsibility layer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>human code review,</p>
+</li>
+<li>
+<p>security review,</p>
+</li>
+<li>
+<p>release governance,</p>
+</li>
+<li>
+<p>compliance where applicable,</p>
+</li>
+<li>
+<p>change management,</p>
+</li>
+<li>
+<p>rollback responsibility,</p>
+</li>
+<li>
+<p>incident ownership,</p>
+</li>
+<li>
+<p>and ultimately a human decision about what is acceptable to ship.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Even if an agent drives a repository to a green state, a person should still be able to open the pull request, read the diff, inspect the code in an IDE, and accept responsibility for the release.</p>
+</div>
+<div class="paragraph">
+<p>The experiment described here is narrower.</p>
+</div>
+<div class="paragraph">
+<p>It focuses on the development path:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">idea or existing component
+→ implementation
+→ repository reconnaissance
+→ repair and refactoring
+→ architectural convergence
+→ tests and static analysis
+→ verification
+→ Release Candidate</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The question is therefore not:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Can AI replace production review?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The question is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>How inexpensive, parallel, and autonomous can pre-release engineering become before the human-owned production boundary?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This article is primarily about the <strong>cost structure of development</strong>, not about production applicability.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_breakpoint_was_april_may_2026"><a class="anchor" href="#_the_breakpoint_was_april_may_2026"></a>The Breakpoint Was April-May 2026</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The cumulative usage curve becomes much more interesting around April-May 2026.</p>
+</div>
+<div class="paragraph">
+<p>That is when I began developing Console MCP and moving from ordinary conversational assistance toward direct agent access to local repositories.</p>
+</div>
+<div class="paragraph">
+<p>Before that transition, I sometimes worked in the familiar way: upload a ZIP archive, provide a large block of project material, ask ChatGPT to analyze it, then manually move the useful result back into the development environment.</p>
+</div>
+<div class="paragraph">
+<p>After the Console MCP workflow became central, that pattern largely disappeared from my engineering work.</p>
+</div>
+<div class="paragraph">
+<p>The repositories stayed local.</p>
+</div>
+<div class="paragraph">
+<p>The model received bounded capabilities through MCP and could request the state it needed directly from the real development environment.</p>
+</div>
+<div class="paragraph">
+<p>The workflow increasingly became:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">inspect repository
+→ understand state
+→ search relevant code
+→ modify allowed files
+→ run checks
+→ inspect failures
+→ repair
+→ inspect Git state
+→ create meaningful commits
+→ interact with GitHub where permitted
+→ verify outcome
+→ continue or stop</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This matters when interpreting the token curve.</p>
+</div>
+<div class="paragraph">
+<p>The growth after April-May did not come from me writing progressively larger prompts.</p>
+</div>
+<div class="paragraph">
+<p>In fact, the human-authored prompts often became dramatically smaller.</p>
+</div>
+<div class="paragraph">
+<p>A surprising amount of my interaction eventually looked like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Go.
+Go ahead.
+Next.
+Continue.
+Fix it.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These messages contain almost no new engineering information.</p>
+</div>
+<div class="paragraph">
+<p>They are mostly continuation signals.</p>
+</div>
+<div class="paragraph">
+<p>The important change is that <strong>the workflow moved out of the prompt and into the infrastructure</strong>.</p>
+</div>
+<div class="paragraph">
+<p>That does not mean total model input became tiny. Tool results, repository state, file content, test output, and other machine-generated context are still input to the model.</p>
+</div>
+<div class="paragraph">
+<p>The change is specifically in <strong>human-authored coordination</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>human input became smaller while machine-executed engineering work became larger.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i_was_building_two_systems_at_the_same_time"><a class="anchor" href="#_i_was_building_two_systems_at_the_same_time"></a>I Was Building Two Systems at the Same Time</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>From that point forward, I was no longer developing only the product ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>I was developing two systems in parallel:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the software products themselves,</p>
+</li>
+<li>
+<p>the machinery that develops those products.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Console MCP started as a controlled way to connect an interactive AI session to local engineering capabilities.</p>
+</div>
+<div class="paragraph">
+<p>Then practical use kept exposing missing pieces.</p>
+</div>
+<div class="paragraph">
+<p>If an agent repeatedly misunderstood a repository boundary, the tooling needed a stronger boundary.</p>
+</div>
+<div class="paragraph">
+<p>If it repeatedly selected a technically valid but locally non-canonical architecture, that rule needed to become explicit.</p>
+</div>
+<div class="paragraph">
+<p>If a task could not prove that it was complete, the verification layer needed better evidence.</p>
+</div>
+<div class="paragraph">
+<p>This is how Canon, Gating, Inspecting, repository reconnaissance, repair loops, bounded execution, Git operations, GitHub capabilities, and completion logic gradually became part of the same engineering environment.</p>
+</div>
+<div class="paragraph">
+<p>The feedback loop looks roughly like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">product work
+→ discover a weakness in agent execution
+→ improve Console MCP / Canon / Gating / Inspecting
+→ run a more autonomous next cycle
+→ attempt more difficult product work
+→ discover the next weakness
+→ improve the tooling again</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This makes the system recursive.</p>
+</div>
+<div class="paragraph">
+<p>Some AI compute produces product code.</p>
+</div>
+<div class="paragraph">
+<p>Some AI compute improves the developer platform that will make the next unit of AI compute more useful.</p>
+</div>
+<div class="paragraph">
+<p>For that reason, one million tokens in April and one million tokens in October are not necessarily equivalent units of engineering production.</p>
+</div>
+<div class="paragraph">
+<p>The machine between the model and the repository has changed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_one_repository_to_a_portfolio_of_concurrent_loops"><a class="anchor" href="#_from_one_repository_to_a_portfolio_of_concurrent_loops"></a>From One Repository to a Portfolio of Concurrent Loops</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Another important change is parallelism.</p>
+</div>
+<div class="paragraph">
+<p>The work is no longer naturally described as one developer working sequentially on one repository.</p>
+</div>
+<div class="paragraph">
+<p>In an active wave, I commonly have roughly <strong>six to eight repositories in flight at the same time</strong>, sometimes more.</p>
+</div>
+<div class="paragraph">
+<p>One may be in reconnaissance.</p>
+</div>
+<div class="paragraph">
+<p>Another may be repairing architectural violations.</p>
+</div>
+<div class="paragraph">
+<p>Another may be running verification.</p>
+</div>
+<div class="paragraph">
+<p>Another may be reconciling Git state.</p>
+</div>
+<div class="paragraph">
+<p>Another may already be in a later remediation cycle.</p>
+</div>
+<div class="paragraph">
+<p>The exact concurrency changes with repository weight, tests, browser activity, and available local resources, so I do not treat six to eight as a capacity benchmark.</p>
+</div>
+<div class="paragraph">
+<p>It is simply a realistic description of the current working pattern.</p>
+</div>
+<div class="paragraph">
+<p>This changes what productivity means.</p>
+</div>
+<div class="paragraph">
+<p>Lines of generated code are not particularly interesting.</p>
+</div>
+<div class="paragraph">
+<p>Even commits alone are weak as a primary metric.</p>
+</div>
+<div class="paragraph">
+<p>More useful measures are becoming:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Concurrent Repository Throughput</strong> — how many independent repository workflows can make useful progress at the same time.</p>
+</li>
+<li>
+<p><strong>Autonomous Closure Rate</strong> — what percentage of eligible workflows reach a terminal state without a human having to complete the mechanical sequence.</p>
+</li>
+<li>
+<p><strong>Verified Outcomes per Unit of Human Attention</strong> — how much checked engineering work is produced for each unit of human coordination.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>My current operational impression from nightly runs is that roughly <strong>half</strong> of chats may already reach <code>ready_to_delete=true</code>.</p>
+</div>
+<div class="paragraph">
+<p>I intentionally call that an observation rather than a measured benchmark until the historical logs are aggregated and analyzed.</p>
+</div>
+<div class="paragraph">
+<p>But the semantic meaning is important: the loop has reached a state where the conversation no longer contains useful unfinished repository work.</p>
+</div>
+<div class="paragraph">
+<p>If the approximately 50% figure survives measurement, it will be a much more meaningful result than a raw token count.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_human_stopped_being_the_transport_layer"><a class="anchor" href="#_the_human_stopped_being_the_transport_layer"></a>The Human Stopped Being the Transport Layer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In ordinary AI-assisted development, the engineer often becomes a transport protocol between the model and the development environment.</p>
+</div>
+<div class="paragraph">
+<p>The engineer copies an error into the chat.</p>
+</div>
+<div class="paragraph">
+<p>Runs a command.</p>
+</div>
+<div class="paragraph">
+<p>Returns the output.</p>
+</div>
+<div class="paragraph">
+<p>Copies a patch back into the repository.</p>
+</div>
+<div class="paragraph">
+<p>Checks Git.</p>
+</div>
+<div class="paragraph">
+<p>Pushes.</p>
+</div>
+<div class="paragraph">
+<p>Checks GitHub.</p>
+</div>
+<div class="paragraph">
+<p>Returns to the model.</p>
+</div>
+<div class="paragraph">
+<p>This can be productive, but the human is still physically connecting every stage of the feedback loop.</p>
+</div>
+<div class="paragraph">
+<p>MCP changes that geometry.</p>
+</div>
+<div class="paragraph">
+<p>State can move machine-to-machine.</p>
+</div>
+<div class="paragraph">
+<p>The model requests a bounded capability.</p>
+</div>
+<div class="paragraph">
+<p>The tool returns evidence.</p>
+</div>
+<div class="paragraph">
+<p>The next decision is based on that evidence.</p>
+</div>
+<div class="paragraph">
+<p>If a gate fails, the loop can continue.</p>
+</div>
+<div class="paragraph">
+<p>If the repository is dirty, the agent can inspect why.</p>
+</div>
+<div class="paragraph">
+<p>If a canonical rule is violated, the agent can attempt a repair.</p>
+</div>
+<div class="paragraph">
+<p>If the required checks pass, the workflow can advance.</p>
+</div>
+<div class="paragraph">
+<p>The human no longer needs to be the transport layer between reasoning and execution.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_next_obvious_question_why_do_i_still_have_to_type_go"><a class="anchor" href="#_the_next_obvious_question_why_do_i_still_have_to_type_go"></a>The Next Obvious Question: Why Do I Still Have to Type "Go"?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once the human contribution to many transitions becomes <code>Go</code>, <code>Next</code>, or <code>Continue</code>, a new architectural question appears.</p>
+</div>
+<div class="paragraph">
+<p>Why should a person have to provide a continuation signal that contains no new engineering judgment?</p>
+</div>
+<div class="paragraph">
+<p>This is where the reasoning engine enters the system.</p>
+</div>
+<div class="paragraph">
+<p>Console MCP already works with bounded iteration budgets. A task can be permitted to continue for a defined number of cycles and under explicit stop conditions rather than requesting a new human permission after every mechanical transition.</p>
+</div>
+<div class="paragraph">
+<p>We have also integrated <strong>JEV</strong> into the reasoning/control path. Its intended role is not to replace the main engineering model, but to help answer a narrower control-plane question:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Given the current evidence and the remaining budget, should the loop continue, stop, or escalate?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The simplified control path becomes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">repository state
+→ primary agent reasoning
+→ Console MCP action
+→ verification evidence
+→ continuation decision
+→ continue within budget / stop / escalate</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is important because <code>Go ahead</code> is usually not engineering reasoning.</p>
+</div>
+<div class="paragraph">
+<p>It is a permission signal.</p>
+</div>
+<div class="paragraph">
+<p>If the control layer can evaluate the evidence, preserve the execution envelope, and remain inside a predefined budget, that signal can increasingly be generated by the system itself.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_autonomy_without_removing_the_human_from_the_conversation"><a class="anchor" href="#_autonomy_without_removing_the_human_from_the_conversation"></a>Autonomy Without Removing the Human from the Conversation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I do not want autonomy to mean disappearance.</p>
+</div>
+<div class="paragraph">
+<p>I do not want to send a task into a black-box background process and return hours later to a final patch with no useful working history.</p>
+</div>
+<div class="paragraph">
+<p>The model conversation remains valuable as an observation and intervention surface.</p>
+</div>
+<div class="paragraph">
+<p>I want to be able to enter the same chat whenever I choose.</p>
+</div>
+<div class="paragraph">
+<p>I can inspect what is happening.</p>
+</div>
+<div class="paragraph">
+<p>Add an architectural constraint.</p>
+</div>
+<div class="paragraph">
+<p>Stop a direction I do not like.</p>
+</div>
+<div class="paragraph">
+<p>Ask a question.</p>
+</div>
+<div class="paragraph">
+<p>Change the objective.</p>
+</div>
+<div class="paragraph">
+<p>Then leave the loop again and allow bounded autonomous continuation.</p>
+</div>
+<div class="paragraph">
+<p>The design target is therefore not:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">human OR autonomous agent</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">autonomous by default
++ human participation on demand</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The important part is continuity.</p>
+</div>
+<div class="paragraph">
+<p>Human participation does not require exporting state, switching to another dashboard, reconstructing context, or restarting the task in a different system.</p>
+</div>
+<div class="paragraph">
+<p>The same conversation remains the shared control surface.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reasoning_is_expensive_but_it_also_creates_observability"><a class="anchor" href="#_reasoning_is_expensive_but_it_also_creates_observability"></a>Reasoning Is Expensive, but It Also Creates Observability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With billions of tokens visible in telemetry, the obvious optimization question is how to reduce reasoning and output.</p>
+</div>
+<div class="paragraph">
+<p>I absolutely want to reduce redundant tokens.</p>
+</div>
+<div class="paragraph">
+<p>But I do not want to optimize away observability before the system has learned what needs to be formalized.</p>
+</div>
+<div class="paragraph">
+<p>This requires an important distinction.</p>
+</div>
+<div class="paragraph">
+<p>I am not claiming access to the model&#8217;s private hidden chain of thought.</p>
+</div>
+<div class="paragraph">
+<p>What I do have is an observable engineering trajectory:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>communicated plans,</p>
+</li>
+<li>
+<p>repository observations,</p>
+</li>
+<li>
+<p>tool calls,</p>
+</li>
+<li>
+<p>intermediate findings,</p>
+</li>
+<li>
+<p>validation results,</p>
+</li>
+<li>
+<p>failures,</p>
+</li>
+<li>
+<p>repair attempts,</p>
+</li>
+<li>
+<p>and completion decisions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>That operational trace makes it possible to notice a class of errors that ordinary industry checks may not detect.</p>
+</div>
+<div class="paragraph">
+<p>An implementation can compile.</p>
+</div>
+<div class="paragraph">
+<p>Tests can pass.</p>
+</div>
+<div class="paragraph">
+<p>Static analysis can be green.</p>
+</div>
+<div class="paragraph">
+<p>The solution can even be reasonable by common industry practice.</p>
+</div>
+<div class="paragraph">
+<p>And it can still violate the architecture of this particular ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>It may use the wrong physical topology.</p>
+</div>
+<div class="paragraph">
+<p>The wrong naming convention.</p>
+</div>
+<div class="paragraph">
+<p>The wrong interface direction.</p>
+</div>
+<div class="paragraph">
+<p>The wrong API convention.</p>
+</div>
+<div class="paragraph">
+<p>The wrong ownership boundary.</p>
+</div>
+<div class="paragraph">
+<p>These are local canonical violations.</p>
+</div>
+<div class="paragraph">
+<p>The useful cycle is therefore:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">observe repeated agent mistake
+→ identify the missing rule
+→ formalize it
+→ encode it in Canon / Gating / Inspecting
+→ make future violations machine-detectable
+→ reduce future reasoning and human review</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In that sense, one of the best token optimizations is not a shorter prompt.</p>
+</div>
+<div class="paragraph">
+<p>It is <strong>moving knowledge out of conversation and into executable infrastructure</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_model_routing_is_the_next_economic_layer_not_yet_part_of_the_current_result"><a class="anchor" href="#_model_routing_is_the_next_economic_layer_not_yet_part_of_the_current_result"></a>Model Routing Is the Next Economic Layer, Not Yet Part of the Current Result</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next obvious optimization is not only to reduce the number of tokens, but to choose the appropriate cost for each token.</p>
+</div>
+<div class="paragraph">
+<p>Not every step requires frontier-level reasoning.</p>
+</div>
+<div class="paragraph">
+<p>Some tasks are closer to control-plane classification:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>classify repository state,</p>
+</li>
+<li>
+<p>choose a workflow transition,</p>
+</li>
+<li>
+<p>evaluate a formal result,</p>
+</li>
+<li>
+<p>decide whether another bounded iteration is justified,</p>
+</li>
+<li>
+<p>route a deterministic or low-risk operation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We are developing access through <strong>Cloudflare AI Gateway</strong> so that cheaper models can eventually be used for suitable parts of this control path.</p>
+</div>
+<div class="paragraph">
+<p>But this distinction is important:</p>
+</div>
+<div class="paragraph">
+<p><strong>that future routing is not part of the economic result described in this article.</strong></p>
+</div>
+<div class="paragraph">
+<p>I currently have essentially no meaningful paid API token usage supporting this workflow, and I do not maintain a separate paid stream of cheap-model tokens or subscriptions that should be counted as hidden operating cost.</p>
+</div>
+<div class="paragraph">
+<p>The cheaper-model layer is still being developed and expanded.</p>
+</div>
+<div class="paragraph">
+<p>JEV is closer to practical continuation-control use, while broader model routing remains a next-stage experiment.</p>
+</div>
+<div class="paragraph">
+<p>If that work succeeds, the system should eventually optimize two dimensions at once:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>use fewer unnecessary tokens,</p>
+</li>
+<li>
+<p>use expensive reasoning only where expensive reasoning actually creates value.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_economics_a_replacement_cost_thought_experiment"><a class="anchor" href="#_the_economics_a_replacement_cost_thought_experiment"></a>The Economics: A Replacement-Cost Thought Experiment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now the 6.7 billion-token figure becomes economically interesting.</p>
+</div>
+<div class="paragraph">
+<p>First, another important clarification:</p>
+</div>
+<div class="paragraph">
+<p><strong>I did not run this workload through a paid OpenAI API account.</strong></p>
+</div>
+<div class="paragraph">
+<p>My meaningful paid API usage is effectively negligible relative to the workflow described here.</p>
+</div>
+<div class="paragraph">
+<p>The work was performed primarily through the ordinary ChatGPT Plus product.</p>
+</div>
+<div class="paragraph">
+<p>OpenAI&#8217;s published list price for ChatGPT Plus is currently USD 20 per month. My practical out-of-pocket subscription cost is roughly in the USD 20-25/month range depending on billing and taxes.</p>
+</div>
+<div class="paragraph">
+<p>API pricing is therefore used below only as a <strong>counterfactual replacement-cost benchmark</strong>.</p>
+</div>
+<div class="paragraph">
+<p>It is not an API bill that I avoided paying, and it is not a claim about OpenAI&#8217;s internal cost of serving ChatGPT.</p>
+</div>
+<div class="paragraph">
+<p>The question is simply:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>If a comparable amount of agentic model work had been purchased through token-metered APIs, what order of magnitude might it occupy?</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_deliberately_rough_scenario"><a class="anchor" href="#_a_deliberately_rough_scenario"></a>A Deliberately Rough Scenario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is no exact answer because the 6.7 billion-token telemetry does not provide a clean historical split between:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>cached input,</p>
+</li>
+<li>
+<p>uncached input,</p>
+</li>
+<li>
+<p>visible output,</p>
+</li>
+<li>
+<p>reasoning tokens,</p>
+</li>
+<li>
+<p>different models,</p>
+</li>
+<li>
+<p>and engineering versus non-engineering work.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Also, the 6.7 billion figure is lifetime usage. It should not be mechanically treated as if every token belonged to the April-October engineering period.</p>
+</div>
+<div class="paragraph">
+<p>So the only honest calculation is scenario-based.</p>
+</div>
+<div class="paragraph">
+<p>As of October 3, 2026, OpenAI publishes GPT-5.6 Sol API pricing of approximately:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>USD 4.00 per million input tokens,</p>
+</li>
+<li>
+<p>USD 0.40 per million cached input tokens,</p>
+</li>
+<li>
+<p>USD 20.00 per million output tokens.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Official pricing reference: <a href="https://developers.openai.com/api/docs/models/gpt-5.6-sol">OpenAI GPT-5.6 Sol model pricing</a>.</p>
+</div>
+<div class="paragraph">
+<p>Take one purely illustrative agentic mix:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>60% cached input,</p>
+</li>
+<li>
+<p>30% uncached input,</p>
+</li>
+<li>
+<p>10% output/reasoning.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Applied mechanically to 6.7 billion tokens, that scenario produces approximately:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">4.02B cached input  × $0.40 / 1M  ≈  $1,608
+2.01B input         × $4.00 / 1M  ≈  $8,040
+0.67B output        × $20.00 / 1M ≈ $13,400
+                                      -------
+                                      ≈ $23,048</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That is <strong>not</strong> a claim that my workload "cost USD 23,048."</p>
+</div>
+<div class="paragraph">
+<p>It is one replacement-cost scenario under one current model and one assumed token distribution.</p>
+</div>
+<div class="paragraph">
+<p>The same volume under a much cheaper model would be dramatically lower. A more output-heavy or less cache-efficient frontier workflow could be higher. Tool calls and other metered services can also change the result.</p>
+</div>
+<div class="paragraph">
+<p>This is why I do not think a precise multiplier is defensible.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_result_is_interesting_because_it_survives_large_error_bars"><a class="anchor" href="#_the_result_is_interesting_because_it_survives_large_error_bars"></a>The Result Is Interesting Because It Survives Large Error Bars</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The useful observation is not whether the correct hypothetical number is USD 8,000, USD 15,000, or USD 23,000.</p>
+</div>
+<div class="paragraph">
+<p>Discount the number aggressively.</p>
+</div>
+<div class="paragraph">
+<p>Remove non-engineering usage.</p>
+</div>
+<div class="paragraph">
+<p>Assume a much cheaper routing strategy.</p>
+</div>
+<div class="paragraph">
+<p>Assume much better caching.</p>
+</div>
+<div class="paragraph">
+<p>Assume a production-quality agent would be significantly more efficient than my exploratory workflow.</p>
+</div>
+<div class="paragraph">
+<p>The economic categories can still remain very far apart:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">direct user-facing cost:
+    tens of dollars per month
+
+hypothetical token-metered equivalent:
+    potentially thousands to tens of thousands of dollars
+    at this scale, depending on model and token mix</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That does not make subscription pricing and API pricing directly comparable products. They are not.</p>
+</div>
+<div class="paragraph">
+<p>It does not prove that one pricing model is universally better.</p>
+</div>
+<div class="paragraph">
+<p>It does not reveal provider economics.</p>
+</div>
+<div class="paragraph">
+<p>It simply shows why the economics of personal agentic computing are worth studying.</p>
+</div>
+<div class="paragraph">
+<p>The gap is large enough that a substantial uncertainty coefficient does not automatically erase the observation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_token_cost_may_not_be_the_most_expensive_resource_anyway"><a class="anchor" href="#_token_cost_may_not_be_the_most_expensive_resource_anyway"></a>Token Cost May Not Be the Most Expensive Resource Anyway</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The larger effect may be human orchestration time.</p>
+</div>
+<div class="paragraph">
+<p>Traditional AI-assisted development constantly interrupts the engineer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>read the answer,</p>
+</li>
+<li>
+<p>copy the command,</p>
+</li>
+<li>
+<p>run it,</p>
+</li>
+<li>
+<p>return the result,</p>
+</li>
+<li>
+<p>inspect the error,</p>
+</li>
+<li>
+<p>approve the next step,</p>
+</li>
+<li>
+<p>inspect Git,</p>
+</li>
+<li>
+<p>review another answer,</p>
+</li>
+<li>
+<p>repeat.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each interruption is small.</p>
+</div>
+<div class="paragraph">
+<p>Collectively, they destroy parallelism.</p>
+</div>
+<div class="paragraph">
+<p>A human can understand many systems but cannot continuously babysit many independent feedback loops with equal attention.</p>
+</div>
+<div class="paragraph">
+<p>If six, eight, or more repository workflows can make progress concurrently, and some of them reach terminal state while I am absent, the value is not merely that several tasks were completed.</p>
+</div>
+<div class="paragraph">
+<p>The deeper value is that the feedback loops existed <strong>in parallel without consuming equivalent human coordination time</strong>.</p>
+</div>
+<div class="paragraph">
+<p>This is why I increasingly care less about:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">tokens per commit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and more about:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">verified autonomous outcomes
+per unit of human attention</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_telemetry_includes_the_developer_not_only_the_code"><a class="anchor" href="#_the_telemetry_includes_the_developer_not_only_the_code"></a>The Telemetry Includes the Developer, Not Only the Code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is another reason I do not want to over-clean the dataset.</p>
+</div>
+<div class="paragraph">
+<p>My ChatGPT activity includes more than code generation.</p>
+</div>
+<div class="paragraph">
+<p>It includes research, writing, browser work, architecture, technical questions, planning, and personal breakpoints in a real working day.</p>
+</div>
+<div class="paragraph">
+<p>For a laboratory benchmark, that is contamination.</p>
+</div>
+<div class="paragraph">
+<p>For a description of how an engineer actually works, it may be part of the phenomenon.</p>
+</div>
+<div class="paragraph">
+<p>Real engineering is not eight uninterrupted hours of producing commits.</p>
+</div>
+<div class="paragraph">
+<p>It is debugging, investigation, communication, design, reading, reconsideration, experimentation, and context switching.</p>
+</div>
+<div class="paragraph">
+<p>When an AI environment becomes a general cognitive workspace, some of that inevitably appears in its telemetry.</p>
+</div>
+<div class="paragraph">
+<p>Future analysis should separate those categories where possible.</p>
+</div>
+<div class="paragraph">
+<p>But I do not want to pretend the human day is cleaner than it really is.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_i_want_to_measure_next"><a class="anchor" href="#_what_i_want_to_measure_next"></a>What I Want to Measure Next</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The 6.7 billion-token figure started this analysis, but it should not become the final KPI.</p>
+</div>
+<div class="paragraph">
+<p>The more useful next step is to correlate several independent time series from April-May onward:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>AI activity</strong> — token usage and long-running agent execution over time.</p>
+</li>
+<li>
+<p><strong>Product engineering</strong> — commits, pull requests, active product repositories, meaningful change, and verified repository outcomes.</p>
+</li>
+<li>
+<p><strong>Automation maturity</strong> — changes to Console MCP, Canon, Gating, Inspecting, the reasoning engine, and the execution loop itself.</p>
+</li>
+<li>
+<p><strong>Autonomous outcomes</strong> — especially <code>ready_to_delete=true</code>, terminal-state rates, and the number of repository workflows completed without manual continuation.</p>
+</li>
+<li>
+<p><strong>Concurrency</strong> — how many repositories are actively progressing in the same working window.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The central question is no longer:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Did more tokens produce more commits?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>It is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>As the automation platform matured, did the same unit of human attention and AI compute produce more verified engineering outcomes?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That is a much more interesting measure of agentic development maturity.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_goal_is_not_more_tokens"><a class="anchor" href="#_the_goal_is_not_more_tokens"></a>The Goal Is Not More Tokens</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Six point seven billion tokens are not an accomplishment by themselves.</p>
+</div>
+<div class="paragraph">
+<p>If the system matures correctly, the same verified engineering outcome should eventually require fewer tokens, fewer human continuation signals, and less expensive reasoning.</p>
+</div>
+<div class="paragraph">
+<p>The evolution so far has been roughly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">AI assistant
+→ AI with tools
+→ bounded local MCP execution
+→ executable project canon
+→ evidence-driven repair loops
+→ concurrent repository workflows
+→ budget-aware continuation
+→ reasoning control
+→ future model routing</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At the same time, the human role moves upward:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">copying state and approving micro-steps
+→ defining boundaries and architecture
+→ reviewing exceptions
+→ changing the rules of the system
+→ owning release decisions</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That is the transition I am trying to measure.</p>
+</div>
+<div class="paragraph">
+<p>Not whether AI can type code faster than I can.</p>
+</div>
+<div class="paragraph">
+<p>Not whether a model can eliminate production review.</p>
+</div>
+<div class="paragraph">
+<p>Not whether a large token number looks impressive.</p>
+</div>
+<div class="paragraph">
+<p>The more interesting question is whether one engineer can build an execution environment in which increasingly complex pre-release engineering proceeds in parallel, under explicit budgets and rules, while the human remains able to enter the same loop whenever judgment is actually needed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Over several months, I started with an AI assistant.</p>
+</div>
+<div class="paragraph">
+<p>Then I gave it controlled access to the development environment.</p>
+</div>
+<div class="paragraph">
+<p>Then I began encoding architectural rules into the tools around it.</p>
+</div>
+<div class="paragraph">
+<p>The tools became loops.</p>
+</div>
+<div class="paragraph">
+<p>The loops began repairing repositories.</p>
+</div>
+<div class="paragraph">
+<p>They began verifying their own results.</p>
+</div>
+<div class="paragraph">
+<p>Several repository workflows began operating in parallel.</p>
+</div>
+<div class="paragraph">
+<p>Some began reaching terminal states without requiring another manual <code>Go</code>.</p>
+</div>
+<div class="paragraph">
+<p>Now a reasoning/control layer is beginning to answer whether the next iteration is justified within a defined budget, while cheaper model routing remains a future optimization rather than a hidden current cost.</p>
+</div>
+<div class="paragraph">
+<p>The human has not disappeared.</p>
+</div>
+<div class="paragraph">
+<p>The production review boundary has not disappeared.</p>
+</div>
+<div class="paragraph">
+<p>Responsibility has not disappeared.</p>
+</div>
+<div class="paragraph">
+<p>What is disappearing, gradually, is the requirement for a human to serve as the mechanical coordinator of every engineering transition before Release Candidate.</p>
+</div>
+<div class="paragraph">
+<p>That is why I no longer think of the 6.7 billion tokens as the result.</p>
+</div>
+<div class="paragraph">
+<p>They are telemetry from a transition:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>from programming with AI to engineering a system in which AI can drive software toward Release Candidate, prove what it did, decide when a bounded loop should continue, and still let me step into the same conversation whenever I choose.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The next task is to measure that transition properly.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_related_reading"><a class="anchor" href="#_related_reading"></a>Related Reading</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../ai-development-without-the-black-box-console-mcp/" class="xref page">AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_authorship_and_status"><a class="anchor" href="#_authorship_and_status"></a>Authorship and Status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This article is based on the author&#8217;s practical development workflow, local repository automation, Console MCP, and observed ChatGPT usage telemetry.</p>
+</div>
+<div class="paragraph">
+<p>ChatGPT Plus was used as an engineering, research, and editorial instrument in the process described here and in preparing this text.</p>
+</div>
+<div class="paragraph">
+<p>The economic calculations are illustrative replacement-cost scenarios, not invoices, audited cost models, provider cost estimates, or promises of equivalent API behavior.</p>
+</div>
+<div class="paragraph">
+<p>Console MCP, its reasoning engine, JEV integration, and model-routing work remain under active development. The workflow described here should not be interpreted as a production-readiness claim or as a recommendation to remove human code review from commercial releases.</p>
+</div>
+<div class="paragraph">
+<p>Copyright © 2026 Oleksandr Tishchenko, Marketing America Corp.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>
