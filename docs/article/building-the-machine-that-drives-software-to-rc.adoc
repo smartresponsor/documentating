@@ -1,0 +1,748 @@
+= Building the Machine That Drives Software to Release Candidate
+:page-slug: building-the-machine-that-drives-software-to-rc
+:page-published: 2026-10-03
+:page-author: Oleksandr Tishchenko
+:description: A rough field analysis of 6.7 billion ChatGPT tokens, Console MCP, bounded agent loops, multi-repository development, and the economics of driving software toward Release Candidate.
+:page-tags: ai, mcp, console-mcp, agentic-development, software-engineering, economics, reasoning, release-candidate
+
+== A Field Report, Not a Benchmark
+
+A few days ago I looked at my ChatGPT usage telemetry and stopped at one number:
+
+*6.7 billion lifetime tokens.*
+
+The same telemetry showed a peak of *239.6 million tokens*, a longest task of almost *84 hours*, and a longest continuous streak of *13 days*.
+
+Those numbers are interesting, but by themselves they prove almost nothing.
+
+The useful question is not how many tokens I consumed.
+
+The useful question is:
+
+[quote]
+____
+What kind of engineering system grew around that usage, how much human coordination did it remove, and what would a comparable metered agentic workload cost?
+____
+
+This article is deliberately a rough analysis.
+
+It is not a scientific benchmark, not a controlled experiment, and not an accounting statement. I do not have perfect historical attribution of cached input, uncached input, visible output, reasoning, model mix, or engineering versus non-engineering activity.
+
+I use ChatGPT for software development, research, writing, browser work, architecture, technical investigation, and occasional personal tasks. All of that exists in the telemetry.
+
+So there is noise.
+
+But the difference between the relevant economic scales is large enough that even a substantial error margin remains informative.
+
+More importantly, the telemetry captures a transition in the way I work as an engineer.
+
+== The Scope: Development to Release Candidate, Not Autonomous Production
+
+Before discussing autonomy, one boundary needs to be explicit.
+
+*This is not a claim about autonomous commercial production deployment.*
+
+I am not arguing that an agent should be allowed to modify a production system, merge arbitrary changes, deploy them, and become the final authority for a commercial release.
+
+Production adds a different responsibility layer:
+
+* human code review,
+* security review,
+* release governance,
+* compliance where applicable,
+* change management,
+* rollback responsibility,
+* incident ownership,
+* and ultimately a human decision about what is acceptable to ship.
+
+Even if an agent drives a repository to a green state, a person should still be able to open the pull request, read the diff, inspect the code in an IDE, and accept responsibility for the release.
+
+The experiment described here is narrower.
+
+It focuses on the development path:
+
+[source,text]
+----
+idea or existing component
+→ implementation
+→ repository reconnaissance
+→ repair and refactoring
+→ architectural convergence
+→ tests and static analysis
+→ verification
+→ Release Candidate
+----
+
+The question is therefore not:
+
+[quote]
+____
+Can AI replace production review?
+____
+
+The question is:
+
+[quote]
+____
+How inexpensive, parallel, and autonomous can pre-release engineering become before the human-owned production boundary?
+____
+
+This article is primarily about the *cost structure of development*, not about production applicability.
+
+== The Breakpoint Was April-May 2026
+
+The cumulative usage curve becomes much more interesting around April-May 2026.
+
+That is when I began developing Console MCP and moving from ordinary conversational assistance toward direct agent access to local repositories.
+
+Before that transition, I sometimes worked in the familiar way: upload a ZIP archive, provide a large block of project material, ask ChatGPT to analyze it, then manually move the useful result back into the development environment.
+
+After the Console MCP workflow became central, that pattern largely disappeared from my engineering work.
+
+The repositories stayed local.
+
+The model received bounded capabilities through MCP and could request the state it needed directly from the real development environment.
+
+The workflow increasingly became:
+
+[source,text]
+----
+inspect repository
+→ understand state
+→ search relevant code
+→ modify allowed files
+→ run checks
+→ inspect failures
+→ repair
+→ inspect Git state
+→ create meaningful commits
+→ interact with GitHub where permitted
+→ verify outcome
+→ continue or stop
+----
+
+This matters when interpreting the token curve.
+
+The growth after April-May did not come from me writing progressively larger prompts.
+
+In fact, the human-authored prompts often became dramatically smaller.
+
+A surprising amount of my interaction eventually looked like this:
+
+[source,text]
+----
+Go.
+Go ahead.
+Next.
+Continue.
+Fix it.
+----
+
+These messages contain almost no new engineering information.
+
+They are mostly continuation signals.
+
+The important change is that *the workflow moved out of the prompt and into the infrastructure*.
+
+That does not mean total model input became tiny. Tool results, repository state, file content, test output, and other machine-generated context are still input to the model.
+
+The change is specifically in *human-authored coordination*:
+
+*human input became smaller while machine-executed engineering work became larger.*
+
+== I Was Building Two Systems at the Same Time
+
+From that point forward, I was no longer developing only the product ecosystem.
+
+I was developing two systems in parallel:
+
+. the software products themselves,
+. the machinery that develops those products.
+
+Console MCP started as a controlled way to connect an interactive AI session to local engineering capabilities.
+
+Then practical use kept exposing missing pieces.
+
+If an agent repeatedly misunderstood a repository boundary, the tooling needed a stronger boundary.
+
+If it repeatedly selected a technically valid but locally non-canonical architecture, that rule needed to become explicit.
+
+If a task could not prove that it was complete, the verification layer needed better evidence.
+
+This is how Canon, Gating, Inspecting, repository reconnaissance, repair loops, bounded execution, Git operations, GitHub capabilities, and completion logic gradually became part of the same engineering environment.
+
+The feedback loop looks roughly like this:
+
+[source,text]
+----
+product work
+→ discover a weakness in agent execution
+→ improve Console MCP / Canon / Gating / Inspecting
+→ run a more autonomous next cycle
+→ attempt more difficult product work
+→ discover the next weakness
+→ improve the tooling again
+----
+
+This makes the system recursive.
+
+Some AI compute produces product code.
+
+Some AI compute improves the developer platform that will make the next unit of AI compute more useful.
+
+For that reason, one million tokens in April and one million tokens in October are not necessarily equivalent units of engineering production.
+
+The machine between the model and the repository has changed.
+
+== From One Repository to a Portfolio of Concurrent Loops
+
+Another important change is parallelism.
+
+The work is no longer naturally described as one developer working sequentially on one repository.
+
+In an active wave, I commonly have roughly *six to eight repositories in flight at the same time*, sometimes more.
+
+One may be in reconnaissance.
+
+Another may be repairing architectural violations.
+
+Another may be running verification.
+
+Another may be reconciling Git state.
+
+Another may already be in a later remediation cycle.
+
+The exact concurrency changes with repository weight, tests, browser activity, and available local resources, so I do not treat six to eight as a capacity benchmark.
+
+It is simply a realistic description of the current working pattern.
+
+This changes what productivity means.
+
+Lines of generated code are not particularly interesting.
+
+Even commits alone are weak as a primary metric.
+
+More useful measures are becoming:
+
+* *Concurrent Repository Throughput* — how many independent repository workflows can make useful progress at the same time.
+* *Autonomous Closure Rate* — what percentage of eligible workflows reach a terminal state without a human having to complete the mechanical sequence.
+* *Verified Outcomes per Unit of Human Attention* — how much checked engineering work is produced for each unit of human coordination.
+
+My current operational impression from nightly runs is that roughly *half* of chats may already reach `ready_to_delete=true`.
+
+I intentionally call that an observation rather than a measured benchmark until the historical logs are aggregated and analyzed.
+
+But the semantic meaning is important: the loop has reached a state where the conversation no longer contains useful unfinished repository work.
+
+If the approximately 50% figure survives measurement, it will be a much more meaningful result than a raw token count.
+
+== The Human Stopped Being the Transport Layer
+
+In ordinary AI-assisted development, the engineer often becomes a transport protocol between the model and the development environment.
+
+The engineer copies an error into the chat.
+
+Runs a command.
+
+Returns the output.
+
+Copies a patch back into the repository.
+
+Checks Git.
+
+Pushes.
+
+Checks GitHub.
+
+Returns to the model.
+
+This can be productive, but the human is still physically connecting every stage of the feedback loop.
+
+MCP changes that geometry.
+
+State can move machine-to-machine.
+
+The model requests a bounded capability.
+
+The tool returns evidence.
+
+The next decision is based on that evidence.
+
+If a gate fails, the loop can continue.
+
+If the repository is dirty, the agent can inspect why.
+
+If a canonical rule is violated, the agent can attempt a repair.
+
+If the required checks pass, the workflow can advance.
+
+The human no longer needs to be the transport layer between reasoning and execution.
+
+== The Next Obvious Question: Why Do I Still Have to Type "Go"?
+
+Once the human contribution to many transitions becomes `Go`, `Next`, or `Continue`, a new architectural question appears.
+
+Why should a person have to provide a continuation signal that contains no new engineering judgment?
+
+This is where the reasoning engine enters the system.
+
+Console MCP already works with bounded iteration budgets. A task can be permitted to continue for a defined number of cycles and under explicit stop conditions rather than requesting a new human permission after every mechanical transition.
+
+We have also integrated *JEV* into the reasoning/control path. Its intended role is not to replace the main engineering model, but to help answer a narrower control-plane question:
+
+[quote]
+____
+Given the current evidence and the remaining budget, should the loop continue, stop, or escalate?
+____
+
+The simplified control path becomes:
+
+[source,text]
+----
+repository state
+→ primary agent reasoning
+→ Console MCP action
+→ verification evidence
+→ continuation decision
+→ continue within budget / stop / escalate
+----
+
+This is important because `Go ahead` is usually not engineering reasoning.
+
+It is a permission signal.
+
+If the control layer can evaluate the evidence, preserve the execution envelope, and remain inside a predefined budget, that signal can increasingly be generated by the system itself.
+
+== Autonomy Without Removing the Human from the Conversation
+
+I do not want autonomy to mean disappearance.
+
+I do not want to send a task into a black-box background process and return hours later to a final patch with no useful working history.
+
+The model conversation remains valuable as an observation and intervention surface.
+
+I want to be able to enter the same chat whenever I choose.
+
+I can inspect what is happening.
+
+Add an architectural constraint.
+
+Stop a direction I do not like.
+
+Ask a question.
+
+Change the objective.
+
+Then leave the loop again and allow bounded autonomous continuation.
+
+The design target is therefore not:
+
+[source,text]
+----
+human OR autonomous agent
+----
+
+It is:
+
+[source,text]
+----
+autonomous by default
++ human participation on demand
+----
+
+The important part is continuity.
+
+Human participation does not require exporting state, switching to another dashboard, reconstructing context, or restarting the task in a different system.
+
+The same conversation remains the shared control surface.
+
+== Reasoning Is Expensive, but It Also Creates Observability
+
+With billions of tokens visible in telemetry, the obvious optimization question is how to reduce reasoning and output.
+
+I absolutely want to reduce redundant tokens.
+
+But I do not want to optimize away observability before the system has learned what needs to be formalized.
+
+This requires an important distinction.
+
+I am not claiming access to the model's private hidden chain of thought.
+
+What I do have is an observable engineering trajectory:
+
+* communicated plans,
+* repository observations,
+* tool calls,
+* intermediate findings,
+* validation results,
+* failures,
+* repair attempts,
+* and completion decisions.
+
+That operational trace makes it possible to notice a class of errors that ordinary industry checks may not detect.
+
+An implementation can compile.
+
+Tests can pass.
+
+Static analysis can be green.
+
+The solution can even be reasonable by common industry practice.
+
+And it can still violate the architecture of this particular ecosystem.
+
+It may use the wrong physical topology.
+
+The wrong naming convention.
+
+The wrong interface direction.
+
+The wrong API convention.
+
+The wrong ownership boundary.
+
+These are local canonical violations.
+
+The useful cycle is therefore:
+
+[source,text]
+----
+observe repeated agent mistake
+→ identify the missing rule
+→ formalize it
+→ encode it in Canon / Gating / Inspecting
+→ make future violations machine-detectable
+→ reduce future reasoning and human review
+----
+
+In that sense, one of the best token optimizations is not a shorter prompt.
+
+It is *moving knowledge out of conversation and into executable infrastructure*.
+
+== Model Routing Is the Next Economic Layer, Not Yet Part of the Current Result
+
+The next obvious optimization is not only to reduce the number of tokens, but to choose the appropriate cost for each token.
+
+Not every step requires frontier-level reasoning.
+
+Some tasks are closer to control-plane classification:
+
+* classify repository state,
+* choose a workflow transition,
+* evaluate a formal result,
+* decide whether another bounded iteration is justified,
+* route a deterministic or low-risk operation.
+
+We are developing access through *Cloudflare AI Gateway* so that cheaper models can eventually be used for suitable parts of this control path.
+
+But this distinction is important:
+
+*that future routing is not part of the economic result described in this article.*
+
+I currently have essentially no meaningful paid API token usage supporting this workflow, and I do not maintain a separate paid stream of cheap-model tokens or subscriptions that should be counted as hidden operating cost.
+
+The cheaper-model layer is still being developed and expanded.
+
+JEV is closer to practical continuation-control use, while broader model routing remains a next-stage experiment.
+
+If that work succeeds, the system should eventually optimize two dimensions at once:
+
+. use fewer unnecessary tokens,
+. use expensive reasoning only where expensive reasoning actually creates value.
+
+== The Economics: A Replacement-Cost Thought Experiment
+
+Now the 6.7 billion-token figure becomes economically interesting.
+
+First, another important clarification:
+
+*I did not run this workload through a paid OpenAI API account.*
+
+My meaningful paid API usage is effectively negligible relative to the workflow described here.
+
+The work was performed primarily through the ordinary ChatGPT Plus product.
+
+OpenAI's published list price for ChatGPT Plus is currently USD 20 per month. My practical out-of-pocket subscription cost is roughly in the USD 20-25/month range depending on billing and taxes.
+
+API pricing is therefore used below only as a *counterfactual replacement-cost benchmark*.
+
+It is not an API bill that I avoided paying, and it is not a claim about OpenAI's internal cost of serving ChatGPT.
+
+The question is simply:
+
+[quote]
+____
+If a comparable amount of agentic model work had been purchased through token-metered APIs, what order of magnitude might it occupy?
+____
+
+== A Deliberately Rough Scenario
+
+There is no exact answer because the 6.7 billion-token telemetry does not provide a clean historical split between:
+
+* cached input,
+* uncached input,
+* visible output,
+* reasoning tokens,
+* different models,
+* and engineering versus non-engineering work.
+
+Also, the 6.7 billion figure is lifetime usage. It should not be mechanically treated as if every token belonged to the April-October engineering period.
+
+So the only honest calculation is scenario-based.
+
+As of October 3, 2026, OpenAI publishes GPT-5.6 Sol API pricing of approximately:
+
+* USD 4.00 per million input tokens,
+* USD 0.40 per million cached input tokens,
+* USD 20.00 per million output tokens.
+
+Official pricing reference: https://developers.openai.com/api/docs/models/gpt-5.6-sol[OpenAI GPT-5.6 Sol model pricing].
+
+Take one purely illustrative agentic mix:
+
+* 60% cached input,
+* 30% uncached input,
+* 10% output/reasoning.
+
+Applied mechanically to 6.7 billion tokens, that scenario produces approximately:
+
+[source,text]
+----
+4.02B cached input  × $0.40 / 1M  ≈  $1,608
+2.01B input         × $4.00 / 1M  ≈  $8,040
+0.67B output        × $20.00 / 1M ≈ $13,400
+                                      -------
+                                      ≈ $23,048
+----
+
+That is *not* a claim that my workload "cost USD 23,048."
+
+It is one replacement-cost scenario under one current model and one assumed token distribution.
+
+The same volume under a much cheaper model would be dramatically lower. A more output-heavy or less cache-efficient frontier workflow could be higher. Tool calls and other metered services can also change the result.
+
+This is why I do not think a precise multiplier is defensible.
+
+== The Result Is Interesting Because It Survives Large Error Bars
+
+The useful observation is not whether the correct hypothetical number is USD 8,000, USD 15,000, or USD 23,000.
+
+Discount the number aggressively.
+
+Remove non-engineering usage.
+
+Assume a much cheaper routing strategy.
+
+Assume much better caching.
+
+Assume a production-quality agent would be significantly more efficient than my exploratory workflow.
+
+The economic categories can still remain very far apart:
+
+[source,text]
+----
+direct user-facing cost:
+    tens of dollars per month
+
+hypothetical token-metered equivalent:
+    potentially thousands to tens of thousands of dollars
+    at this scale, depending on model and token mix
+----
+
+That does not make subscription pricing and API pricing directly comparable products. They are not.
+
+It does not prove that one pricing model is universally better.
+
+It does not reveal provider economics.
+
+It simply shows why the economics of personal agentic computing are worth studying.
+
+The gap is large enough that a substantial uncertainty coefficient does not automatically erase the observation.
+
+== Token Cost May Not Be the Most Expensive Resource Anyway
+
+The larger effect may be human orchestration time.
+
+Traditional AI-assisted development constantly interrupts the engineer:
+
+* read the answer,
+* copy the command,
+* run it,
+* return the result,
+* inspect the error,
+* approve the next step,
+* inspect Git,
+* review another answer,
+* repeat.
+
+Each interruption is small.
+
+Collectively, they destroy parallelism.
+
+A human can understand many systems but cannot continuously babysit many independent feedback loops with equal attention.
+
+If six, eight, or more repository workflows can make progress concurrently, and some of them reach terminal state while I am absent, the value is not merely that several tasks were completed.
+
+The deeper value is that the feedback loops existed *in parallel without consuming equivalent human coordination time*.
+
+This is why I increasingly care less about:
+
+[source,text]
+----
+tokens per commit
+----
+
+and more about:
+
+[source,text]
+----
+verified autonomous outcomes
+per unit of human attention
+----
+
+== The Telemetry Includes the Developer, Not Only the Code
+
+There is another reason I do not want to over-clean the dataset.
+
+My ChatGPT activity includes more than code generation.
+
+It includes research, writing, browser work, architecture, technical questions, planning, and personal breakpoints in a real working day.
+
+For a laboratory benchmark, that is contamination.
+
+For a description of how an engineer actually works, it may be part of the phenomenon.
+
+Real engineering is not eight uninterrupted hours of producing commits.
+
+It is debugging, investigation, communication, design, reading, reconsideration, experimentation, and context switching.
+
+When an AI environment becomes a general cognitive workspace, some of that inevitably appears in its telemetry.
+
+Future analysis should separate those categories where possible.
+
+But I do not want to pretend the human day is cleaner than it really is.
+
+== What I Want to Measure Next
+
+The 6.7 billion-token figure started this analysis, but it should not become the final KPI.
+
+The more useful next step is to correlate several independent time series from April-May onward:
+
+* *AI activity* — token usage and long-running agent execution over time.
+* *Product engineering* — commits, pull requests, active product repositories, meaningful change, and verified repository outcomes.
+* *Automation maturity* — changes to Console MCP, Canon, Gating, Inspecting, the reasoning engine, and the execution loop itself.
+* *Autonomous outcomes* — especially `ready_to_delete=true`, terminal-state rates, and the number of repository workflows completed without manual continuation.
+* *Concurrency* — how many repositories are actively progressing in the same working window.
+
+The central question is no longer:
+
+[quote]
+____
+Did more tokens produce more commits?
+____
+
+It is:
+
+[quote]
+____
+As the automation platform matured, did the same unit of human attention and AI compute produce more verified engineering outcomes?
+____
+
+That is a much more interesting measure of agentic development maturity.
+
+== The Goal Is Not More Tokens
+
+Six point seven billion tokens are not an accomplishment by themselves.
+
+If the system matures correctly, the same verified engineering outcome should eventually require fewer tokens, fewer human continuation signals, and less expensive reasoning.
+
+The evolution so far has been roughly:
+
+[source,text]
+----
+AI assistant
+→ AI with tools
+→ bounded local MCP execution
+→ executable project canon
+→ evidence-driven repair loops
+→ concurrent repository workflows
+→ budget-aware continuation
+→ reasoning control
+→ future model routing
+----
+
+At the same time, the human role moves upward:
+
+[source,text]
+----
+copying state and approving micro-steps
+→ defining boundaries and architecture
+→ reviewing exceptions
+→ changing the rules of the system
+→ owning release decisions
+----
+
+That is the transition I am trying to measure.
+
+Not whether AI can type code faster than I can.
+
+Not whether a model can eliminate production review.
+
+Not whether a large token number looks impressive.
+
+The more interesting question is whether one engineer can build an execution environment in which increasingly complex pre-release engineering proceeds in parallel, under explicit budgets and rules, while the human remains able to enter the same loop whenever judgment is actually needed.
+
+== Conclusion
+
+Over several months, I started with an AI assistant.
+
+Then I gave it controlled access to the development environment.
+
+Then I began encoding architectural rules into the tools around it.
+
+The tools became loops.
+
+The loops began repairing repositories.
+
+They began verifying their own results.
+
+Several repository workflows began operating in parallel.
+
+Some began reaching terminal states without requiring another manual `Go`.
+
+Now a reasoning/control layer is beginning to answer whether the next iteration is justified within a defined budget, while cheaper model routing remains a future optimization rather than a hidden current cost.
+
+The human has not disappeared.
+
+The production review boundary has not disappeared.
+
+Responsibility has not disappeared.
+
+What is disappearing, gradually, is the requirement for a human to serve as the mechanical coordinator of every engineering transition before Release Candidate.
+
+That is why I no longer think of the 6.7 billion tokens as the result.
+
+They are telemetry from a transition:
+
+[quote]
+____
+from programming with AI to engineering a system in which AI can drive software toward Release Candidate, prove what it did, decide when a bounded loop should continue, and still let me step into the same conversation whenever I choose.
+____
+
+The next task is to measure that transition properly.
+
+== Related Reading
+
+* xref:article/ai-development-without-the-black-box-console-mcp.adoc[AI Development Without the Black Box: Why We Built a Control Plane Around ChatGPT and MCP]
+
+== Authorship and Status
+
+This article is based on the author's practical development workflow, local repository automation, Console MCP, and observed ChatGPT usage telemetry.
+
+ChatGPT Plus was used as an engineering, research, and editorial instrument in the process described here and in preparing this text.
+
+The economic calculations are illustrative replacement-cost scenarios, not invoices, audited cost models, provider cost estimates, or promises of equivalent API behavior.
+
+Console MCP, its reasoning engine, JEV integration, and model-routing work remain under active development. The workflow described here should not be interpreted as a production-readiness claim or as a recommendation to remove human code review from commercial releases.
+
+Copyright © 2026 Oleksandr Tishchenko, Marketing America Corp.
