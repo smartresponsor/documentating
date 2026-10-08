@@ -1,0 +1,523 @@
+= I Wouldn't Build AWS in 2027: How I Would Enter the Compute Business from One Server
+:page-slug: i-wouldnt-build-aws-in-2027
+:page-published: 2026-10-07
+:page-author: Oleksandr Tishchenko
+:description: A founder's thesis on entering the compute market in 2027 by starting with one narrow product and moving upward from hardware to inference and business outcomes.
+:page-tags: compute, cloud, ai infrastructure, inference, gpu, neocloud, strategy, founders
+
+== Thesis
+
+If I were starting a compute business in 2027, I would not try to build a smaller AWS.
+
+I would start with the smallest useful abstraction I could actually sell, learn what customers pay for, and then move upward through the stack only when demand justified the next layer.
+
+The core idea is simple:
+
+*the physical computer is inventory; the product is the abstraction sold above it.*
+
+That changes how I would think about infrastructure, software, pricing, and marketing from day one.
+
+== The old product was the machine
+
+For a long time, compute businesses were easy to categorize.
+
+A hosting company sold hosting.
+A colocation provider sold rack space, power, and connectivity.
+A cloud provider sold virtual machines.
+A company with specialized requirements bought or leased its own servers.
+
+Those categories still exist, but modern data centers increasingly contain many different economic models behind similar racks: enterprise systems, cloud capacity, storage, CDN nodes, bare metal, HPC, GPU clusters, training infrastructure, and inference.
+
+The more important change is that one physical server can now support several different commercial products.
+
+A four-GPU server can be sold as:
+
+* bare metal by the month;
+* GPU capacity by the hour;
+* a predefined AI instance;
+* a dedicated inference node;
+* an inference API priced by tokens or requests;
+* a private AI environment for one company.
+
+The hardware can stay exactly the same while the customer, margin structure, software layer, and marketing proposition all change.
+
+== Compute is becoming a ladder of markets
+
+I increasingly think about compute as a ladder.
+
+At the bottom is space and power.
+
+Above that is the physical server.
+
+Then virtual compute.
+
+Then accelerated compute.
+
+Then managed infrastructure.
+
+Then inference.
+
+And eventually the business outcome itself.
+
+Every step upward hides more infrastructure from the customer.
+
+A colocation customer may care about rack dimensions, kilowatts, cross-connects, power feeds, and carrier access.
+
+A bare-metal customer cares about CPU, memory, storage, and networking.
+
+A GPU-cloud customer cares about accelerator type, VRAM, throughput, and GPU-hours.
+
+An inference customer may care primarily about model availability, tokens per second, latency, reliability, and price.
+
+A business customer may care about none of those details.
+
+The business customer may simply ask:
+
+> Give us a private AI system connected to our company data.
+
+At that point, the exact GPU model becomes an implementation detail.
+
+That is not only a technical transition. It is a marketing transition.
+
+== Why I would not start with a generic cloud
+
+A new provider that launches with this message:
+
+----
+Cloud Compute
+Virtual Machines
+Storage
+Networking
+Kubernetes
+----
+
+immediately faces a difficult question:
+
+> Why should I use you instead of AWS, Azure, or Google Cloud?
+
+For a small new provider, trying to compete horizontally against hyperscalers is a weak starting position.
+
+They already have global regions, mature APIs, huge capacity, established billing systems, identity platforms, managed databases, observability stacks, and hundreds of services.
+
+But there is another strategy.
+
+Do not compete horizontally.
+
+Compete vertically.
+
+Instead of saying:
+
+> We provide cloud infrastructure.
+
+say:
+
+> We provide dedicated AI inference infrastructure.
+
+Or:
+
+> We provide private AI infrastructure for engineering companies.
+
+Or:
+
+> We provide predictable GPU compute without hyperscaler pricing complexity.
+
+Or:
+
+> We operate regional AI infrastructure close to your applications and data.
+
+Now the customer does not need to ask whether you are better than AWS at everything.
+
+The customer only needs to ask:
+
+> Are you better for this workload?
+
+That is a much more realistic competitive surface for a small provider.
+
+== The market already validates specialization
+
+This is one reason the rise of neoclouds matters.
+
+The important lesson is not simply that demand for GPUs became enormous. The deeper lesson is that specialized compute can compete with generalized cloud.
+
+Neocloud providers concentrated on workloads where specialization matters: accelerators, high-speed networking, large clusters, AI training, inference, scheduling, and AI-native operations.
+
+Synergy Research Group reported that neocloud revenue exceeded $25 billion in 2025 and forecast that the market could approach $400 billion by 2031.
+
+Gartner's August 2026 forecast projected AI-optimized IaaS spending at about $66 billion in 2027, up 56.5% year over year. It also projected inference to represent 59% of AI-optimized IaaS spending in 2027.
+
+These numbers do not mean every new provider should become a neocloud.
+
+They mean the market has already demonstrated that a specialized infrastructure proposition can become large enough to stand on its own.
+
+== But GPU access alone will not remain a moat
+
+Owning GPUs is not a durable differentiator by itself.
+
+Hardware ages.
+New accelerator generations appear.
+Supply changes.
+Prices compress.
+Customers become better at comparing providers.
+
+Eventually, saying:
+
+> We have H100s.
+
+becomes similar to saying:
+
+> We have Xeon servers.
+
+The durable value moves upward into:
+
+* scheduling;
+* networking;
+* deployment;
+* model serving;
+* inference optimization;
+* observability;
+* security;
+* data locality;
+* developer experience;
+* private environments;
+* enterprise integration.
+
+That is why I would design the business to move upward from the beginning, even if the first product is extremely simple.
+
+== Level 1: sell the machine
+
+I would start as low as necessary.
+
+If I had only one useful server, I would not wait until I had a full cloud platform.
+
+I would sell the server.
+
+The first product could simply be:
+
+----
+Dedicated GPU Server
+4 GPUs
+1 TB RAM
+Local NVMe
+Monthly price
+----
+
+This is close to commodity infrastructure, but it has several advantages for an early-stage operator:
+
+* minimal software complexity;
+* simple utilization accounting;
+* simple pricing;
+* easy capacity planning;
+* immediate feedback from real customers.
+
+At this stage, the goal is not to build an infrastructure empire.
+
+The goal is to discover whether somebody will pay.
+
+== Level 2: turn hardware into a compute SKU
+
+Once demand exists, I would start hiding the physical server.
+
+Instead of selling the entire machine, I could sell normalized products such as:
+
+----
+Developer GPU
+1 GPU
+32 GB RAM
+250 GB NVMe
+Hourly price
+----
+
+or:
+
+----
+Inference GPU
+1 accelerator
+High-memory profile
+Fast local storage
+Reserved capacity
+----
+
+Now the customer buys a SKU rather than a serial-numbered server.
+
+This is where a scheduler, provisioning API, basic metering, and resource catalog begin to matter.
+
+But I still would not build a giant commercial platform.
+
+The compute control plane and usage ledger matter first.
+Complex CRM and billing can remain external or minimal until the business needs them.
+
+== Level 3: stop selling GPUs and sell inference
+
+The next step is more interesting.
+
+Instead of giving the customer a GPU and asking them to install everything themselves, I would operate the inference runtime.
+
+The product changes from:
+
+> Rent a GPU.
+
+to:
+
+> Deploy a model.
+
+The provider handles CUDA, drivers, containers, model runtimes, health checks, monitoring, and updates.
+
+The customer sees something like:
+
+----
+Qwen endpoint
+Llama endpoint
+Embedding endpoint
+Vision endpoint
+----
+
+The same physical GPU can now generate revenue at a higher abstraction layer.
+
+At this point, usage can be measured in requests, tokens, reserved throughput, or dedicated capacity rather than only GPU-hours.
+
+== Level 4: dedicated inference
+
+The next product is not a shared endpoint but a dedicated environment.
+
+For example:
+
+> Dedicated Qwen deployment for your company.
+
+Now the offer can include:
+
+* reserved accelerator capacity;
+* private networking;
+* dedicated storage;
+* predictable latency;
+* access control;
+* defined data flows;
+* an SLA.
+
+This changes the buyer again.
+
+A developer may buy hourly GPU access.
+
+A business may buy predictable private capacity.
+
+== Level 5: private AI
+
+Eventually I would stop selling inference as the main story.
+
+The product can become:
+
+> Private AI infrastructure for your company.
+
+The customer no longer needs to know how many containers are running or which inference engine is deployed.
+
+The package can include:
+
+* a private model;
+* company data connectivity;
+* retrieval;
+* API access;
+* authentication;
+* monitoring;
+* automation;
+* dedicated compute where necessary.
+
+At this level, the business is selling controlled AI capability rather than raw infrastructure.
+
+== Level 6: sell the business outcome
+
+The final step is to hide almost all of the infrastructure.
+
+Instead of:
+
+> Private AI infrastructure.
+
+the product becomes:
+
+> AI assistant for engineering companies.
+
+Or:
+
+> AI document intelligence for legal teams.
+
+Or:
+
+> AI knowledge system for industrial operations.
+
+The compute remains underneath everything, but it is no longer the marketing object.
+
+It becomes production capacity.
+
+That is the direction in which I would want the architecture to evolve.
+
+== One server can become several businesses
+
+This is what makes the ladder attractive to me.
+
+A single server can start life as:
+
+> Bare-metal GPU.
+
+Later the same type of capacity can become:
+
+> GPU cloud.
+
+Then:
+
+> Managed inference.
+
+Then:
+
+> Dedicated inference.
+
+Then:
+
+> Private AI.
+
+The physical asset continues producing value while the abstraction above it improves.
+
+This makes the entry path less risky.
+
+I do not need to predict the final business model before buying the first machine.
+
+I can build the next layer only after the previous layer demonstrates demand.
+
+== Why inference is especially interesting
+
+Training created the first massive wave of AI infrastructure demand, but inference has a different economic character.
+
+Training is often episodic.
+
+Inference is continuous.
+
+Every AI search, agent action, copilot interaction, generated document, voice request, recommendation, vision request, and automated workflow creates inference demand.
+
+Gartner now expects inference-focused spending to surpass training-focused spending in AI-optimized IaaS and continue increasing its share through 2027.
+
+JLL's 2026 data-center outlook makes a related point: inference demand is expected to become geographically distributed because latency and user proximity matter more for serving applications than for many training workloads.
+
+For a small provider, that matters.
+
+Participating in AI infrastructure does not necessarily require building a frontier-model training cluster.
+
+A useful entry point can be much smaller.
+
+== Regional compute may matter again
+
+Cloud computing made infrastructure feel geographically abstract.
+
+AI may partially reverse that.
+
+Latency matters.
+Data locality matters.
+Privacy matters.
+Support matters.
+Network proximity matters.
+Regulation can matter.
+
+That creates room for propositions such as:
+
+> Texas AI Compute.
+
+or:
+
+> Private AI infrastructure for Gulf Coast businesses.
+
+This is not an attempt to reproduce an AWS region.
+
+It is specialization plus geography.
+
+A regional provider does not need to beat AWS globally.
+
+It needs to solve a narrow problem better for a particular group of customers.
+
+== Hardware should be inventory, not the product
+
+This is the principle I would carry into the architecture.
+
+Inside the infrastructure I may eventually have:
+
+* different GPU generations;
+* different CPUs;
+* different NIC speeds;
+* different storage profiles;
+* several data centers;
+* several schedulers.
+
+Customers should not need to understand that inventory.
+
+They should see normalized products:
+
+----
+Developer Compute
+Inference Compute
+Dedicated AI
+Private AI
+----
+
+The underlying hardware can evolve without forcing the commercial model to be rebuilt every time a server is replaced.
+
+== What compute would I start selling in 2027?
+
+I would not start with generic VPS hosting.
+
+I would not try to build another AWS.
+
+I would not treat raw GPU rental as the final destination either.
+
+I would move roughly like this:
+
+----
+Physical compute
+    ↓
+GPU access
+    ↓
+GPU as a Service
+    ↓
+Managed inference
+    ↓
+Dedicated inference
+    ↓
+Private AI
+    ↓
+Business solution
+----
+
+The starting point would depend on what I actually had.
+
+One server? Sell the server.
+
+Several GPUs? Expose GPU capacity.
+
+Stable model serving? Sell an endpoint.
+
+A company asking for privacy and predictable capacity? Build a dedicated environment.
+
+The next layer should appear because the previous layer has customers, not because an architecture diagram says it should exist.
+
+== Conclusion
+
+The last fifteen years of cloud computing were largely about turning physical servers into infrastructure services.
+
+The next phase may increasingly be about turning infrastructure services into intelligence services.
+
+That changes the question for a new compute business.
+
+The question is not:
+
+> How do I build another cloud?
+
+It is:
+
+> At what layer of the compute stack can I create enough specialization that the customer no longer wants to consume generic cloud directly?
+
+That is the compute business I would start building in 2027.
+
+And I would start from the minimum viable layer, then move upward only as real demand justified it.
+
+== Sources
+
+* Gartner, _Worldwide AI-Optimized IaaS Spending to Grow 96% in 2026_:
+  https://www.gartner.com/en/newsroom/press-releases/2026-08-10-gartner-forecasts-worldwide-artificial-intelligence-optimized-iaas-spending-to-grow-96-percent-in-2026[]
+* Synergy Research Group, _Neocloud Market Forecast to Approach $400B by 2031_:
+  https://www.srgresearch.com/articles/neocloud-market-forecast-to-approach-400b-by-2031-driven-by-surging-ai-infrastructure-demand[]
+* JLL, _2026 Global Data Center Market Outlook_:
+  https://www.jll.com/en-us/insights/market-outlook/data-center-outlook[]
