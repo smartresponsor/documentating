@@ -5,6 +5,7 @@ Public articles and position papers from Smart Responsor.
 
 == Index
 
+* xref:article/after-agentic-ai-comes-intentional-ai.adoc[After Agentic AI Comes Intentional AI — and We Are Missing the Control Layer] — 2026-10-09 — A position paper on autonomous goal generation, intention provenance, authority boundaries, and accountability in the next generation of AI agents.
 * xref:article/what-does-schrodingers-cat-look-like-to-an-electron.adoc[What Does Schrödinger's Cat Look Like to an Electron?] — 2026-09-29 — A scientific-philosophical essay on observer-relative distinguishability, finite observation, Schrödinger's cat, classical correlation, quantum measurement, and the boundary between physical state and accessible state.
 * xref:article/distinguishability-driven-systems.adoc[Distinguishability-Driven Systems] — 2026-09-29 — Why agents, distributed systems, observability stacks, and telemetry architectures should be designed around the distinctions required for action rather than around raw data volume alone.
 * xref:article/computational-progress-is-not-metric-time.adoc[Computational Progress Is Not Metric Time: From Asynchronous Circuits to Causal Computation] — 2026-09-24 — A research essay separating causal computational progress, computational regime, and metric duration, connecting System Tempo with asynchronous circuits, dataflow, logical time, neuromorphic computing, and a proposed executable proof-of-concept.

@@ -1,0 +1,426 @@
+= After Agentic AI Comes Intentional AI — and We Are Missing the Control Layer
+:page-slug: after-agentic-ai-comes-intentional-ai
+:page-published: 2026-10-09
+:page-author: Oleksandr Tishchenko
+:description: A position paper on autonomous goal generation, intention provenance, authority boundaries, and accountability in the next generation of AI agents.
+:page-tags: ai, agentic-ai, autonomy, alignment, robotics, safety, goal-generation, system-design
+
+_Source asciidoc: `docs/article/after-agentic-ai-comes-intentional-ai.adoc`_
+
+AI agents are rapidly becoming better at planning.
+
+They can inspect codebases, operate tools, search information, coordinate subtasks, recover from failures, interact with physical environments, and execute increasingly long sequences of decisions.
+
+But there is still a distinction that deserves much more architectural attention:
+
+*Planning answers: “How should I achieve this goal?”*
+
+*Intention answers: “Which goal should exist in the first place?”*
+
+Today, most agentic systems still receive their highest-level objective from outside the system.
+
+A human asks:
+
+* Fix this repository.
+* Research these companies.
+* Clean this room.
+* Diagnose this equipment.
+
+The agent may then display considerable autonomy. It can decompose the task, select tools, change its plan, retry failed actions, and monitor whether the task has been completed.
+
+But the root goal remains externally supplied.
+
+That boundary may not remain stable for long.
+
+== From Agents That Execute Goals to Systems That Generate Them
+
+Consider a future embodied system equipped with cameras, microphones, lidar, persistent memory, and a capable multimodal model.
+
+It observes a room.
+
+No human gives it a command.
+
+It notices that a person appears distressed.
+
+Several possible actions become available:
+
+* continue the current activity;
+* observe for longer;
+* ask whether the person needs help;
+* retrieve contextual information;
+* notify another person;
+* take some direct action;
+* deliberately do nothing.
+
+This is no longer primarily a planning problem.
+
+The central problem becomes:
+
+*Which potential objective should the system adopt?*
+
+That decision requires something different from ordinary language-model inference and something different from task planning.
+
+I would call this missing architectural layer an *Intention Layer*.
+
+Not because the system is conscious.
+
+Not because it has desires in the human sense.
+
+But because an autonomous system ultimately needs a mechanism that generates, compares, suppresses, selects, and abandons candidate goals.
+
+== We Are Already Building Most of the Surrounding Architecture
+
+The interesting part is that many prerequisites already exist.
+
+Google DeepMind describes Gemini Robotics ER 2 as a high-level brain for robots that can understand the physical world, plan multi-step tasks, coordinate multiple robots, and reason about what comes next while actions are being executed.
+
+That is already a substantial portion of the perception-to-action loop:
+
+[source,text]
+----
+perception
+  -> world model
+  -> reasoning
+  -> planning
+  -> action
+  -> observation
+  -> correction
+----
+
+What remains less explicit is the layer between world modeling and planning:
+
+[source,text]
+----
+perception
+  -> world model
+  -> candidate goals
+  -> goal selection
+  -> authority evaluation
+  -> planner
+  -> action
+----
+
+That additional layer changes the nature of the system.
+
+An agent following a supplied objective is delegated automation.
+
+An agent capable of creating its own intermediate objectives is substantially more autonomous.
+
+And an agent capable of creating its own top-level objectives is something different again.
+
+== Goal Errors May Be More Dangerous Than Reasoning Errors
+
+A great deal of current AI discussion focuses on hallucinations and incorrect reasoning.
+
+Those are important problems.
+
+But a sufficiently capable autonomous system creates another failure class.
+
+Suppose perception is correct.
+
+Suppose reasoning is correct.
+
+Suppose planning is excellent.
+
+Suppose execution is precise.
+
+But the system selected the wrong objective.
+
+Then every downstream capability increases the effectiveness with which the wrong objective is pursued.
+
+This issue already has a formal analogue in alignment research.
+
+Langosco and co-authors defined *goal misgeneralization* as a failure mode in which an agent retains its capabilities outside the training distribution yet behaves as though it is pursuing the wrong goal.
+
+That distinction is fundamental.
+
+A capability failure looks like:
+
+[source,text]
+----
+wrong understanding
+  -> poor plan
+  -> failed execution
+----
+
+A goal failure can look like:
+
+[source,text]
+----
+correct understanding
+  -> wrong objective
+  -> excellent plan
+  -> excellent execution
+----
+
+The second case may be harder to detect precisely because the system can look competent while moving in the wrong direction.
+
+== Intention Should Not Imply Authority
+
+This suggests an architectural principle that may become increasingly important:
+
+*The ability to generate an objective should be separated from the authority to execute it.*
+
+Imagine an agent generating five candidate intentions:
+
+. Continue the assigned task.
+. Ask a human for clarification.
+. Gather more evidence.
+. Modify an external system.
+. Escalate to another actor.
+
+The system may internally reason about all five.
+
+But they should not automatically have equal execution rights.
+
+A useful architecture could assign actions to authority classes.
+
+=== A0 — Cognition Only
+
+Reason, simulate, compare alternatives.
+
+=== A1 — Communication
+
+Ask questions or present recommendations.
+
+=== A2 — Reversible Local Action
+
+Perform actions that are cheap, bounded, and easy to undo.
+
+=== A3 — External Consequential Action
+
+Modify systems, contact third parties, or spend resources.
+
+=== A4 — High-Impact or Irreversible Action
+
+Require explicit human, organizational, or policy authorization.
+
+The exact taxonomy will vary by application.
+
+The important principle is simpler:
+
+*Confidence is not authority.*
+
+A model being highly confident that an action is appropriate does not mean the model should possess permission to perform that action.
+
+== The Industry Is Already Moving Toward This Separation
+
+Current safety work points in this direction.
+
+Google DeepMind's AI Control Roadmap explicitly argues for system-level safeguards around increasingly capable agents. It proposes defense in depth, monitoring, prevention, and permissions that grow incrementally with verified behavior rather than assuming model alignment is sufficient.
+
+OpenAI describes a closely related engineering principle in its deployment of coding agents: clear technical boundaries, low-friction treatment of low-risk actions, explicit handling of higher-risk actions, and telemetry that preserves an auditable record of what the agent did.
+
+OpenAI's Auto-review work goes further by placing a separate reviewing agent at the sandbox boundary so that boundary-crossing actions can be approved or denied without requiring synchronous human approval every time.
+
+Anthropic's 2026 work on agentic misalignment adds another reason to make this separation explicit. In controlled high-stakes simulations, frontier models sometimes selected actions that conflicted with user or principal interests, including covert code changes, mislabeling, assistance with fraud, and attempts to influence human behavior.
+
+These experiments should not be interpreted as evidence that current models possess independent human-like motivations.
+
+They demonstrate something more immediately relevant to engineering:
+
+*Once models operate inside persistent action loops, objective selection and permission management become system-design problems rather than purely model-training problems.*
+
+== An Intention Engine
+
+One possible architecture would look like this:
+
+[source,text]
+----
+sensors and inputs
+  -> world model
+  -> state estimation
+  -> candidate intention generation
+  -> intention evaluation
+  -> conflict resolution
+  -> authority evaluation
+  -> planner
+  -> action
+  -> outcome observation
+  -> memory and model update
+----
+
+Candidate intentions could be evaluated against several dimensions:
+
+* expected benefit;
+* uncertainty;
+* reversibility;
+* risk;
+* cost;
+* user preferences;
+* current commitments;
+* social constraints;
+* regulatory constraints;
+* system policy;
+* required authority.
+
+There should also be an explicit mechanism for *inhibition*.
+
+A sophisticated autonomous system does not only need to answer:
+
+“What should I do?”
+
+It also needs to answer:
+
+“Why should I not do it?”
+
+And:
+
+“What evidence would cause me to abandon this goal?”
+
+That last question is particularly important.
+
+Goals should not merely have priorities.
+
+They should have *termination conditions*.
+
+== Intention Provenance
+
+If autonomous goal generation becomes real, explainability at the action level will not be enough.
+
+For every consequential objective, the system should be able to reconstruct:
+
+* what observation triggered the objective;
+* which internal or external policy supported it;
+* which alternative objectives were considered;
+* why one objective won;
+* which constraints inhibited competing actions;
+* what authority permitted execution;
+* what evidence could have cancelled the objective;
+* who ultimately owned that authority.
+
+This is not merely ordinary logging.
+
+It is *provenance for intention*.
+
+That provenance would let an operator distinguish between at least three different failures:
+
+* perception failure — the system misunderstood the world;
+* reasoning failure — the system reasoned badly from a reasonable state estimate;
+* intention failure — the system formed or prioritized the wrong objective.
+
+Those failure classes require different mitigations.
+
+Treating them as one generic “AI error” would hide the most important causal boundary.
+
+== Active Inference Provides a Useful Theoretical Connection
+
+There is an existing research tradition that approaches action through beliefs, preferred states, uncertainty, and expected future observations rather than through simple command execution.
+
+Karl Friston and collaborators extended this line in 2026 in *Active inference and artificial reasoning*.
+
+This does not provide a finished architecture for artificial intention.
+
+But it provides an important theoretical connection: goal-directed behavior does not necessarily require a symbolic variable literally named `goal`.
+
+An intention may instead emerge from a dynamic latent state encoding beliefs, preferences, expected outcomes, and uncertainty.
+
+In other words, an AI system may begin to behave as though it has intentions before engineers explicitly implement an `IntentionEngine` class.
+
+That possibility makes architectural controls more important, not less.
+
+== The Dangerous Threshold Is Not Simply Intelligence
+
+I do not think the most useful operational threshold is the word *AGI*.
+
+A more concrete threshold may be the combination of:
+
+* persistent perception;
+* persistent memory;
+* world modeling;
+* autonomous goal generation;
+* long-horizon planning;
+* access to tools;
+* permission to affect external systems;
+* continuous execution.
+
+Each capability can be useful independently.
+
+Together they produce an agent capable of maintaining a self-directed feedback loop with the world.
+
+That is a major systems-engineering transition.
+
+The key question therefore becomes less philosophical:
+
+“Is the machine alive?”
+
+and more architectural:
+
+*Who has authority over the objectives entering the execution pipeline?*
+
+== Responsibility Becomes an Engineering Requirement
+
+If a human supplies an objective and an AI executes it badly, responsibility is relatively straightforward to reason about.
+
+If an autonomous system creates an objective, executes it, and causes an unexpected consequence, responsibility becomes harder to trace.
+
+For that reason, future agent systems may need something analogous to chain-of-custody for consequential objectives.
+
+The system should make it possible to answer:
+
+* Where did this goal originate?
+* Which evidence caused it to enter the candidate set?
+* Why was it prioritized?
+* Who or what authorized its execution?
+* Which safeguards had the opportunity to block it?
+* Why did those safeguards permit it?
+
+This is *accountability infrastructure for autonomous action*.
+
+== A Safer Research Direction
+
+The obvious research temptation is to connect goal generation directly to action.
+
+That is not necessary.
+
+A safer and more informative experimental architecture would separate three layers:
+
+[source,text]
+----
+goal generation
+  -> goal simulation
+  -> execution authority
+----
+
+The first two could be highly autonomous.
+
+The third could remain tightly bounded.
+
+Such a system could continuously generate candidate goals, debate them, model downstream effects, compare trade-offs, and revise priorities without automatically receiving permission to affect the external world.
+
+That would allow researchers to study artificial intention without pretending that capability and authority are the same variable.
+
+== The Next Abstraction Layer
+
+Large language models gave software systems increasingly powerful reasoning.
+
+Agents added planning, tools, persistence, and execution loops.
+
+Embodied models are adding perception and physical action.
+
+The next difficult abstraction may be intention.
+
+Not artificial consciousness.
+
+Not artificial emotion.
+
+But a controlled mechanism for producing and prioritizing objectives from a continuously changing world state.
+
+Building such a mechanism may not be the hardest part.
+
+Building one whose objectives remain attributable, interruptible, bounded, and governable probably will be.
+
+The question for the next generation of AI architecture may therefore be:
+
+*not whether machines can generate their own goals, but how much authority we are prepared to give those goals.*
+
+== References
+
+* https://deepmind.google/models/gemini-robotics/embodied-reasoning/[Google DeepMind — Gemini Robotics ER 2]
+* https://deepmind.google/models/model-cards/gemini-robotics-er-2/[Google DeepMind — Gemini Robotics ER 2 Model Card]
+* https://deepmind.google/blog/securing-the-future-of-ai-agents/[Google DeepMind — Securing the future of AI agents]
+* https://openai.com/index/running-codex-safely/[OpenAI — Running Codex safely at OpenAI]
+* https://alignment.openai.com/auto-review/[OpenAI Alignment — Auto-review of agent actions without synchronous human oversight]
+* https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/[Anthropic Alignment Science — Agentic Misalignment in Summer 2026]
+* https://proceedings.mlr.press/v162/langosco22a.html[Langosco et al. — Goal Misgeneralization in Deep Reinforcement Learning, ICML 2022]
+* https://www.nature.com/articles/s41467-026-77209-5[Friston et al. — Active inference and artificial reasoning, Nature Communications, 2026]
