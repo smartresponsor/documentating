@@ -1,0 +1,118 @@
+= The AI Productivity Paradox: Why Human Judgment, Recovery, and Accountability Are Becoming More Valuable
+:author: Oleksandr Tishchenko
+:revdate: 2026-10-28
+:description: An engineering and economic perspective on AI-assisted work, cognitive load, recovery, and the compensation of accountable technical leaders.
+:keywords: AI, engineering leadership, productivity, compensation, cognitive load, burnout, human judgment
+:toc:
+:sectnums:
+
+== Executive thesis
+
+Artificial intelligence reduces the marginal cost of producing code, documents, analyses, and operational recommendations. It does not eliminate the cost of verifying those outputs, accepting responsibility for them, or recovering from sustained decision-making.
+
+This creates a productivity paradox: the technology can make individual tasks easier while increasing the number of decisions expected from each professional. Under financial pressure, the time saved may be reinvested in more work rather than rest.
+
+The economic value of an experienced engineer therefore cannot be measured solely in lines of code, tickets closed, or hours worked. Increasingly, it lies in *judgment, system design, verification, risk ownership, and the ability to deliver reliable outcomes through AI-enabled systems*.
+
+== From cognitive production to cognitive supervision
+
+Traditional software work combined problem formulation, implementation, testing, and operational responsibility. AI can accelerate implementation and preliminary investigation, but the engineer still has to determine:
+
+* whether the problem was framed correctly;
+* whether generated evidence and code are trustworthy;
+* whether an apparently successful result violates a security, reliability, or business constraint;
+* whether to deploy, stop, roll back, or escalate;
+* who is accountable when automation fails.
+
+AI can reduce generation effort without proportionally reducing *decision effort*. Managing several agents can also increase parallelism, interruptions, and verification demands. These are plausible mechanisms, not universal effects: outcomes depend on tooling, workflow design, and organizational incentives.
+
+== Productivity is not the same as free time
+
+There are at least three distinct destinations for an hour saved by AI:
+
+. *Recovery*: shorter workdays, better sleep, more uninterrupted leisure.
+. *Reinvestment*: additional tasks, experiments, and customer value.
+. *Competitive absorption*: higher expectations without commensurate improvements in compensation or security.
+
+Organizations may combine all three. A productivity gain does not automatically imply a welfare gain for the person doing the work.
+
+This matters particularly in periods of inflation, housing insecurity, unstable employment, and global disruption. Advice to “disconnect on Saturday” assumes the worker can afford to stop worrying about income and obligations. For many people, the laptop closes while the economic problem remains open.
+
+== What recovery research actually establishes
+
+Research on *psychological detachment from work* distinguishes merely stopping work activity from mentally disengaging from work demands. Recovery is associated with employee well-being; its effects vary by individual and context.
+
+Long-hours research also challenges the assumption that output scales linearly with time. But these findings should not be stretched into a claim that Saturday is scientifically the optimal device-free day, or that every AI-assisted worker is more exhausted.
+
+The practical implication for engineering is narrower and stronger: *sustained attention and sound judgment are finite operational resources*. Teams should protect them as seriously as they protect compute capacity and uptime.
+
+== The compensation question: what exactly is being purchased?
+
+If AI makes basic production cheaper, why should an experienced AI engineer or technical leader command substantial compensation?
+
+Because the employer is not purchasing typing speed. The employer is purchasing a bundle of scarce capabilities:
+
+* *Problem selection*: distinguishing the important business problem from the merely automatable one.
+* *Architecture*: choosing boundaries, interfaces, constraints, and failure modes that remain maintainable.
+* *Verification*: detecting plausible but incorrect AI output before it causes damage.
+* *Operational accountability*: owning incident response, security, deployment safety, and rollback decisions.
+* *Economic leverage*: converting automation into measurable savings, revenue, reliability, or faster delivery.
+* *Organizational judgment*: deciding what not to automate and where human approval is essential.
+
+Compensation should reflect the scope, impact, scarcity, and risk of these responsibilities—not a simplistic claim that using AI always warrants a salary premium.
+
+A useful evaluation framework is:
+
+[quote]
+----
+Engineering value = measurable business impact + avoided risk + durable capability created.
+----
+
+This is a decision framework, not a literal accounting equation. Its terms must be measured and weighed rather than mechanically added.
+
+== The responsibility asymmetry
+
+A model can generate ten deployment strategies in seconds. A human leader must still choose one, establish controls, and answer for the result.
+
+The faster generation becomes, the more consequential the *selection and validation layer* may become. This is why seniority should increasingly be evaluated through demonstrated judgment under uncertainty, not through the volume of artifacts produced.
+
+A strong compensation discussion should therefore include evidence: incidents prevented, costs reduced, systems stabilized, deployments accelerated safely, and organizational capabilities built. An impressive toolchain alone is not proof of business value.
+
+== Recovery as part of reliability engineering
+
+A sustainable AI-enabled engineering organization should:
+
+* automate routine monitoring and evidence collection;
+* distinguish actionable critical alerts from noise;
+* require explicit human approval at meaningful risk boundaries;
+* enforce rollback and auditability;
+* measure outcomes rather than prompt or commit volume;
+* create protected recovery time and backup ownership for incidents.
+
+These measures reduce dependence on constant human vigilance. They cannot, by themselves, resolve the broader economic pressure that makes genuine rest unaffordable.
+
+== A more meaningful definition of progress
+
+The most important question is not how many more tasks a professional can complete with AI. It is how much *reliable value* that professional can produce without sacrificing judgment, health, or economic security.
+
+If AI raises output but leaves workers with longer days and less room to recover, we have optimized production without fully improving the human system around it.
+
+For engineering leadership, this leads to a straightforward principle:
+
+[quote]
+----
+Pay for accountable judgment and durable outcomes. Design automation to reduce unnecessary work, not merely to increase the number of things one person must supervise.
+----
+
+== Sources and further reading
+
+* Sonnentag, S., and Fritz, C. (2015). Recovery from job stress: The stressor-detachment model as an integrative framework. _Journal of Organizational Behavior_. https://doi.org/10.1002/job.1924
+* Pencavel, J. (2015). The Productivity of Working Hours. _The Economic Journal_. https://doi.org/10.1111/ecoj.12166
+* World Health Organization and International Labour Organization (2021). Long working hours and health risks. https://www.who.int/news/item/17-05-2021-long-working-hours-increasing-deaths-from-heart-disease-and-stroke-who-ilo
+* Microsoft Research (2025). Research on generative AI in knowledge work. https://www.microsoft.com/en-us/research/
+
+NOTE: The article separates established findings on working hours and recovery from hypotheses about AI supervision, labor-market incentives, and compensation. The latter require context-specific measurement.
+
+== Disclosure
+
+The thesis, engineering perspective, and editorial direction are the author's intellectual work. AI tools assisted with research organization, drafting, and editing. Responsibility for the published argument remains with the author.
