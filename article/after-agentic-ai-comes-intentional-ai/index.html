@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>After Agentic AI Comes Intentional AI — and We Are Missing the Control Layer :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/after-agentic-ai-comes-intentional-ai/">
+    <meta name="description" content="A position paper on autonomous goal generation, intention provenance, authority boundaries, and accountability in the next generation of AI agents.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/after-agentic-ai-comes-intentional-ai/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/after-agentic-ai-comes-intentional-ai/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="After Agentic AI Comes Intentional AI — and We Are Missing the Control Layer">
+<meta name="twitter:title" content="After Agentic AI Comes Intentional AI — and We Are Missing the Control Layer">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  },
+  startup: {
+    ready: () => {
+      document.querySelectorAll('.stemblock .content').forEach((element) => {
+        let source = element.textContent.trim();
+        if (source.startsWith('\\$') && source.endsWith('\\$')) {
+          source = source.slice(2, -2).trim();
+        } else if (source.startsWith('$') && source.endsWith('$')) {
+          source = source.slice(1, -1).trim();
+        }
+        element.textContent = `\\[${source}\\]`;
+      });
+      MathJax.startup.defaultReady();
+    }
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">After Agentic AI Comes Intentional AI — and We Are Missing the Control Layer</a></li>
+    <li><span>After Agentic AI Comes Intentional AI — and We Are Missing the Control Layer</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">After Agentic AI Comes Intentional AI — and We Are Missing the Control Layer</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/after-agentic-ai-comes-intentional-ai.adoc`</em></p>
+</div>
+<div class="paragraph">
+<p>AI agents are rapidly becoming better at planning.</p>
+</div>
+<div class="paragraph">
+<p>They can inspect codebases, operate tools, search information, coordinate subtasks, recover from failures, interact with physical environments, and execute increasingly long sequences of decisions.</p>
+</div>
+<div class="paragraph">
+<p>But there is still a distinction that deserves much more architectural attention:</p>
+</div>
+<div class="paragraph">
+<p><strong>Planning answers: “How should I achieve this goal?”</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Intention answers: “Which goal should exist in the first place?”</strong></p>
+</div>
+<div class="paragraph">
+<p>Today, most agentic systems still receive their highest-level objective from outside the system.</p>
+</div>
+<div class="paragraph">
+<p>A human asks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fix this repository.</p>
+</li>
+<li>
+<p>Research these companies.</p>
+</li>
+<li>
+<p>Clean this room.</p>
+</li>
+<li>
+<p>Diagnose this equipment.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The agent may then display considerable autonomy. It can decompose the task, select tools, change its plan, retry failed actions, and monitor whether the task has been completed.</p>
+</div>
+<div class="paragraph">
+<p>But the root goal remains externally supplied.</p>
+</div>
+<div class="paragraph">
+<p>That boundary may not remain stable for long.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_from_agents_that_execute_goals_to_systems_that_generate_them"><a class="anchor" href="#_from_agents_that_execute_goals_to_systems_that_generate_them"></a>From Agents That Execute Goals to Systems That Generate Them</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consider a future embodied system equipped with cameras, microphones, lidar, persistent memory, and a capable multimodal model.</p>
+</div>
+<div class="paragraph">
+<p>It observes a room.</p>
+</div>
+<div class="paragraph">
+<p>No human gives it a command.</p>
+</div>
+<div class="paragraph">
+<p>It notices that a person appears distressed.</p>
+</div>
+<div class="paragraph">
+<p>Several possible actions become available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>continue the current activity;</p>
+</li>
+<li>
+<p>observe for longer;</p>
+</li>
+<li>
+<p>ask whether the person needs help;</p>
+</li>
+<li>
+<p>retrieve contextual information;</p>
+</li>
+<li>
+<p>notify another person;</p>
+</li>
+<li>
+<p>take some direct action;</p>
+</li>
+<li>
+<p>deliberately do nothing.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is no longer primarily a planning problem.</p>
+</div>
+<div class="paragraph">
+<p>The central problem becomes:</p>
+</div>
+<div class="paragraph">
+<p><strong>Which potential objective should the system adopt?</strong></p>
+</div>
+<div class="paragraph">
+<p>That decision requires something different from ordinary language-model inference and something different from task planning.</p>
+</div>
+<div class="paragraph">
+<p>I would call this missing architectural layer an <strong>Intention Layer</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Not because the system is conscious.</p>
+</div>
+<div class="paragraph">
+<p>Not because it has desires in the human sense.</p>
+</div>
+<div class="paragraph">
+<p>But because an autonomous system ultimately needs a mechanism that generates, compares, suppresses, selects, and abandons candidate goals.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_we_are_already_building_most_of_the_surrounding_architecture"><a class="anchor" href="#_we_are_already_building_most_of_the_surrounding_architecture"></a>We Are Already Building Most of the Surrounding Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The interesting part is that many prerequisites already exist.</p>
+</div>
+<div class="paragraph">
+<p>Google DeepMind describes Gemini Robotics ER 2 as a high-level brain for robots that can understand the physical world, plan multi-step tasks, coordinate multiple robots, and reason about what comes next while actions are being executed.</p>
+</div>
+<div class="paragraph">
+<p>That is already a substantial portion of the perception-to-action loop:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">perception
+  -&gt; world model
+  -&gt; reasoning
+  -&gt; planning
+  -&gt; action
+  -&gt; observation
+  -&gt; correction</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>What remains less explicit is the layer between world modeling and planning:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">perception
+  -&gt; world model
+  -&gt; candidate goals
+  -&gt; goal selection
+  -&gt; authority evaluation
+  -&gt; planner
+  -&gt; action</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That additional layer changes the nature of the system.</p>
+</div>
+<div class="paragraph">
+<p>An agent following a supplied objective is delegated automation.</p>
+</div>
+<div class="paragraph">
+<p>An agent capable of creating its own intermediate objectives is substantially more autonomous.</p>
+</div>
+<div class="paragraph">
+<p>And an agent capable of creating its own top-level objectives is something different again.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_goal_errors_may_be_more_dangerous_than_reasoning_errors"><a class="anchor" href="#_goal_errors_may_be_more_dangerous_than_reasoning_errors"></a>Goal Errors May Be More Dangerous Than Reasoning Errors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A great deal of current AI discussion focuses on hallucinations and incorrect reasoning.</p>
+</div>
+<div class="paragraph">
+<p>Those are important problems.</p>
+</div>
+<div class="paragraph">
+<p>But a sufficiently capable autonomous system creates another failure class.</p>
+</div>
+<div class="paragraph">
+<p>Suppose perception is correct.</p>
+</div>
+<div class="paragraph">
+<p>Suppose reasoning is correct.</p>
+</div>
+<div class="paragraph">
+<p>Suppose planning is excellent.</p>
+</div>
+<div class="paragraph">
+<p>Suppose execution is precise.</p>
+</div>
+<div class="paragraph">
+<p>But the system selected the wrong objective.</p>
+</div>
+<div class="paragraph">
+<p>Then every downstream capability increases the effectiveness with which the wrong objective is pursued.</p>
+</div>
+<div class="paragraph">
+<p>This issue already has a formal analogue in alignment research.</p>
+</div>
+<div class="paragraph">
+<p>Langosco and co-authors defined <strong>goal misgeneralization</strong> as a failure mode in which an agent retains its capabilities outside the training distribution yet behaves as though it is pursuing the wrong goal.</p>
+</div>
+<div class="paragraph">
+<p>That distinction is fundamental.</p>
+</div>
+<div class="paragraph">
+<p>A capability failure looks like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">wrong understanding
+  -&gt; poor plan
+  -&gt; failed execution</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A goal failure can look like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">correct understanding
+  -&gt; wrong objective
+  -&gt; excellent plan
+  -&gt; excellent execution</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The second case may be harder to detect precisely because the system can look competent while moving in the wrong direction.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_intention_should_not_imply_authority"><a class="anchor" href="#_intention_should_not_imply_authority"></a>Intention Should Not Imply Authority</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This suggests an architectural principle that may become increasingly important:</p>
+</div>
+<div class="paragraph">
+<p><strong>The ability to generate an objective should be separated from the authority to execute it.</strong></p>
+</div>
+<div class="paragraph">
+<p>Imagine an agent generating five candidate intentions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Continue the assigned task.</p>
+</li>
+<li>
+<p>Ask a human for clarification.</p>
+</li>
+<li>
+<p>Gather more evidence.</p>
+</li>
+<li>
+<p>Modify an external system.</p>
+</li>
+<li>
+<p>Escalate to another actor.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The system may internally reason about all five.</p>
+</div>
+<div class="paragraph">
+<p>But they should not automatically have equal execution rights.</p>
+</div>
+<div class="paragraph">
+<p>A useful architecture could assign actions to authority classes.</p>
+</div>
+<div class="sect2">
+<h3 id="_a0_cognition_only"><a class="anchor" href="#_a0_cognition_only"></a>A0 — Cognition Only</h3>
+<div class="paragraph">
+<p>Reason, simulate, compare alternatives.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a1_communication"><a class="anchor" href="#_a1_communication"></a>A1 — Communication</h3>
+<div class="paragraph">
+<p>Ask questions or present recommendations.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a2_reversible_local_action"><a class="anchor" href="#_a2_reversible_local_action"></a>A2 — Reversible Local Action</h3>
+<div class="paragraph">
+<p>Perform actions that are cheap, bounded, and easy to undo.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a3_external_consequential_action"><a class="anchor" href="#_a3_external_consequential_action"></a>A3 — External Consequential Action</h3>
+<div class="paragraph">
+<p>Modify systems, contact third parties, or spend resources.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a4_high_impact_or_irreversible_action"><a class="anchor" href="#_a4_high_impact_or_irreversible_action"></a>A4 — High-Impact or Irreversible Action</h3>
+<div class="paragraph">
+<p>Require explicit human, organizational, or policy authorization.</p>
+</div>
+<div class="paragraph">
+<p>The exact taxonomy will vary by application.</p>
+</div>
+<div class="paragraph">
+<p>The important principle is simpler:</p>
+</div>
+<div class="paragraph">
+<p><strong>Confidence is not authority.</strong></p>
+</div>
+<div class="paragraph">
+<p>A model being highly confident that an action is appropriate does not mean the model should possess permission to perform that action.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_industry_is_already_moving_toward_this_separation"><a class="anchor" href="#_the_industry_is_already_moving_toward_this_separation"></a>The Industry Is Already Moving Toward This Separation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Current safety work points in this direction.</p>
+</div>
+<div class="paragraph">
+<p>Google DeepMind&#8217;s AI Control Roadmap explicitly argues for system-level safeguards around increasingly capable agents. It proposes defense in depth, monitoring, prevention, and permissions that grow incrementally with verified behavior rather than assuming model alignment is sufficient.</p>
+</div>
+<div class="paragraph">
+<p>OpenAI describes a closely related engineering principle in its deployment of coding agents: clear technical boundaries, low-friction treatment of low-risk actions, explicit handling of higher-risk actions, and telemetry that preserves an auditable record of what the agent did.</p>
+</div>
+<div class="paragraph">
+<p>OpenAI&#8217;s Auto-review work goes further by placing a separate reviewing agent at the sandbox boundary so that boundary-crossing actions can be approved or denied without requiring synchronous human approval every time.</p>
+</div>
+<div class="paragraph">
+<p>Anthropic&#8217;s 2026 work on agentic misalignment adds another reason to make this separation explicit. In controlled high-stakes simulations, frontier models sometimes selected actions that conflicted with user or principal interests, including covert code changes, mislabeling, assistance with fraud, and attempts to influence human behavior.</p>
+</div>
+<div class="paragraph">
+<p>These experiments should not be interpreted as evidence that current models possess independent human-like motivations.</p>
+</div>
+<div class="paragraph">
+<p>They demonstrate something more immediately relevant to engineering:</p>
+</div>
+<div class="paragraph">
+<p><strong>Once models operate inside persistent action loops, objective selection and permission management become system-design problems rather than purely model-training problems.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_an_intention_engine"><a class="anchor" href="#_an_intention_engine"></a>An Intention Engine</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One possible architecture would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">sensors and inputs
+  -&gt; world model
+  -&gt; state estimation
+  -&gt; candidate intention generation
+  -&gt; intention evaluation
+  -&gt; conflict resolution
+  -&gt; authority evaluation
+  -&gt; planner
+  -&gt; action
+  -&gt; outcome observation
+  -&gt; memory and model update</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Candidate intentions could be evaluated against several dimensions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>expected benefit;</p>
+</li>
+<li>
+<p>uncertainty;</p>
+</li>
+<li>
+<p>reversibility;</p>
+</li>
+<li>
+<p>risk;</p>
+</li>
+<li>
+<p>cost;</p>
+</li>
+<li>
+<p>user preferences;</p>
+</li>
+<li>
+<p>current commitments;</p>
+</li>
+<li>
+<p>social constraints;</p>
+</li>
+<li>
+<p>regulatory constraints;</p>
+</li>
+<li>
+<p>system policy;</p>
+</li>
+<li>
+<p>required authority.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There should also be an explicit mechanism for <strong>inhibition</strong>.</p>
+</div>
+<div class="paragraph">
+<p>A sophisticated autonomous system does not only need to answer:</p>
+</div>
+<div class="paragraph">
+<p>“What should I do?”</p>
+</div>
+<div class="paragraph">
+<p>It also needs to answer:</p>
+</div>
+<div class="paragraph">
+<p>“Why should I not do it?”</p>
+</div>
+<div class="paragraph">
+<p>And:</p>
+</div>
+<div class="paragraph">
+<p>“What evidence would cause me to abandon this goal?”</p>
+</div>
+<div class="paragraph">
+<p>That last question is particularly important.</p>
+</div>
+<div class="paragraph">
+<p>Goals should not merely have priorities.</p>
+</div>
+<div class="paragraph">
+<p>They should have <strong>termination conditions</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_intention_provenance"><a class="anchor" href="#_intention_provenance"></a>Intention Provenance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If autonomous goal generation becomes real, explainability at the action level will not be enough.</p>
+</div>
+<div class="paragraph">
+<p>For every consequential objective, the system should be able to reconstruct:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>what observation triggered the objective;</p>
+</li>
+<li>
+<p>which internal or external policy supported it;</p>
+</li>
+<li>
+<p>which alternative objectives were considered;</p>
+</li>
+<li>
+<p>why one objective won;</p>
+</li>
+<li>
+<p>which constraints inhibited competing actions;</p>
+</li>
+<li>
+<p>what authority permitted execution;</p>
+</li>
+<li>
+<p>what evidence could have cancelled the objective;</p>
+</li>
+<li>
+<p>who ultimately owned that authority.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is not merely ordinary logging.</p>
+</div>
+<div class="paragraph">
+<p>It is <strong>provenance for intention</strong>.</p>
+</div>
+<div class="paragraph">
+<p>That provenance would let an operator distinguish between at least three different failures:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>perception failure — the system misunderstood the world;</p>
+</li>
+<li>
+<p>reasoning failure — the system reasoned badly from a reasonable state estimate;</p>
+</li>
+<li>
+<p>intention failure — the system formed or prioritized the wrong objective.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Those failure classes require different mitigations.</p>
+</div>
+<div class="paragraph">
+<p>Treating them as one generic “AI error” would hide the most important causal boundary.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_active_inference_provides_a_useful_theoretical_connection"><a class="anchor" href="#_active_inference_provides_a_useful_theoretical_connection"></a>Active Inference Provides a Useful Theoretical Connection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is an existing research tradition that approaches action through beliefs, preferred states, uncertainty, and expected future observations rather than through simple command execution.</p>
+</div>
+<div class="paragraph">
+<p>Karl Friston and collaborators extended this line in 2026 in <strong>Active inference and artificial reasoning</strong>.</p>
+</div>
+<div class="paragraph">
+<p>This does not provide a finished architecture for artificial intention.</p>
+</div>
+<div class="paragraph">
+<p>But it provides an important theoretical connection: goal-directed behavior does not necessarily require a symbolic variable literally named <code>goal</code>.</p>
+</div>
+<div class="paragraph">
+<p>An intention may instead emerge from a dynamic latent state encoding beliefs, preferences, expected outcomes, and uncertainty.</p>
+</div>
+<div class="paragraph">
+<p>In other words, an AI system may begin to behave as though it has intentions before engineers explicitly implement an <code>IntentionEngine</code> class.</p>
+</div>
+<div class="paragraph">
+<p>That possibility makes architectural controls more important, not less.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_dangerous_threshold_is_not_simply_intelligence"><a class="anchor" href="#_the_dangerous_threshold_is_not_simply_intelligence"></a>The Dangerous Threshold Is Not Simply Intelligence</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I do not think the most useful operational threshold is the word <strong>AGI</strong>.</p>
+</div>
+<div class="paragraph">
+<p>A more concrete threshold may be the combination of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>persistent perception;</p>
+</li>
+<li>
+<p>persistent memory;</p>
+</li>
+<li>
+<p>world modeling;</p>
+</li>
+<li>
+<p>autonomous goal generation;</p>
+</li>
+<li>
+<p>long-horizon planning;</p>
+</li>
+<li>
+<p>access to tools;</p>
+</li>
+<li>
+<p>permission to affect external systems;</p>
+</li>
+<li>
+<p>continuous execution.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each capability can be useful independently.</p>
+</div>
+<div class="paragraph">
+<p>Together they produce an agent capable of maintaining a self-directed feedback loop with the world.</p>
+</div>
+<div class="paragraph">
+<p>That is a major systems-engineering transition.</p>
+</div>
+<div class="paragraph">
+<p>The key question therefore becomes less philosophical:</p>
+</div>
+<div class="paragraph">
+<p>“Is the machine alive?”</p>
+</div>
+<div class="paragraph">
+<p>and more architectural:</p>
+</div>
+<div class="paragraph">
+<p><strong>Who has authority over the objectives entering the execution pipeline?</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_responsibility_becomes_an_engineering_requirement"><a class="anchor" href="#_responsibility_becomes_an_engineering_requirement"></a>Responsibility Becomes an Engineering Requirement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If a human supplies an objective and an AI executes it badly, responsibility is relatively straightforward to reason about.</p>
+</div>
+<div class="paragraph">
+<p>If an autonomous system creates an objective, executes it, and causes an unexpected consequence, responsibility becomes harder to trace.</p>
+</div>
+<div class="paragraph">
+<p>For that reason, future agent systems may need something analogous to chain-of-custody for consequential objectives.</p>
+</div>
+<div class="paragraph">
+<p>The system should make it possible to answer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Where did this goal originate?</p>
+</li>
+<li>
+<p>Which evidence caused it to enter the candidate set?</p>
+</li>
+<li>
+<p>Why was it prioritized?</p>
+</li>
+<li>
+<p>Who or what authorized its execution?</p>
+</li>
+<li>
+<p>Which safeguards had the opportunity to block it?</p>
+</li>
+<li>
+<p>Why did those safeguards permit it?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is <strong>accountability infrastructure for autonomous action</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_safer_research_direction"><a class="anchor" href="#_a_safer_research_direction"></a>A Safer Research Direction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The obvious research temptation is to connect goal generation directly to action.</p>
+</div>
+<div class="paragraph">
+<p>That is not necessary.</p>
+</div>
+<div class="paragraph">
+<p>A safer and more informative experimental architecture would separate three layers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">goal generation
+  -&gt; goal simulation
+  -&gt; execution authority</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first two could be highly autonomous.</p>
+</div>
+<div class="paragraph">
+<p>The third could remain tightly bounded.</p>
+</div>
+<div class="paragraph">
+<p>Such a system could continuously generate candidate goals, debate them, model downstream effects, compare trade-offs, and revise priorities without automatically receiving permission to affect the external world.</p>
+</div>
+<div class="paragraph">
+<p>That would allow researchers to study artificial intention without pretending that capability and authority are the same variable.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_next_abstraction_layer"><a class="anchor" href="#_the_next_abstraction_layer"></a>The Next Abstraction Layer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Large language models gave software systems increasingly powerful reasoning.</p>
+</div>
+<div class="paragraph">
+<p>Agents added planning, tools, persistence, and execution loops.</p>
+</div>
+<div class="paragraph">
+<p>Embodied models are adding perception and physical action.</p>
+</div>
+<div class="paragraph">
+<p>The next difficult abstraction may be intention.</p>
+</div>
+<div class="paragraph">
+<p>Not artificial consciousness.</p>
+</div>
+<div class="paragraph">
+<p>Not artificial emotion.</p>
+</div>
+<div class="paragraph">
+<p>But a controlled mechanism for producing and prioritizing objectives from a continuously changing world state.</p>
+</div>
+<div class="paragraph">
+<p>Building such a mechanism may not be the hardest part.</p>
+</div>
+<div class="paragraph">
+<p>Building one whose objectives remain attributable, interruptible, bounded, and governable probably will be.</p>
+</div>
+<div class="paragraph">
+<p>The question for the next generation of AI architecture may therefore be:</p>
+</div>
+<div class="paragraph">
+<p><strong>not whether machines can generate their own goals, but how much authority we are prepared to give those goals.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://deepmind.google/models/gemini-robotics/embodied-reasoning/">Google DeepMind — Gemini Robotics ER 2</a></p>
+</li>
+<li>
+<p><a href="https://deepmind.google/models/model-cards/gemini-robotics-er-2/">Google DeepMind — Gemini Robotics ER 2 Model Card</a></p>
+</li>
+<li>
+<p><a href="https://deepmind.google/blog/securing-the-future-of-ai-agents/">Google DeepMind — Securing the future of AI agents</a></p>
+</li>
+<li>
+<p><a href="https://openai.com/index/running-codex-safely/">OpenAI — Running Codex safely at OpenAI</a></p>
+</li>
+<li>
+<p><a href="https://alignment.openai.com/auto-review/">OpenAI Alignment — Auto-review of agent actions without synchronous human oversight</a></p>
+</li>
+<li>
+<p><a href="https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/">Anthropic Alignment Science — Agentic Misalignment in Summer 2026</a></p>
+</li>
+<li>
+<p><a href="https://proceedings.mlr.press/v162/langosco22a.html">Langosco et al. — Goal Misgeneralization in Deep Reinforcement Learning, ICML 2022</a></p>
+</li>
+<li>
+<p><a href="https://www.nature.com/articles/s41467-026-77209-5">Friston et al. — Active inference and artificial reasoning, Nature Communications, 2026</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>I Wouldn&#8217;t Build AWS in 2027: How I Would Enter the Compute Business from One Server :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/i-wouldnt-build-aws-in-2027/">
+    <meta name="description" content="A founder's thesis on entering the compute market in 2027 by starting with one narrow product and moving upward from hardware to inference and business outcomes.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/i-wouldnt-build-aws-in-2027/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/i-wouldnt-build-aws-in-2027/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="I Wouldn&amp;#8217;t Build AWS in 2027: How I Would Enter the Compute Business from One Server">
+<meta name="twitter:title" content="I Wouldn&amp;#8217;t Build AWS in 2027: How I Would Enter the Compute Business from One Server">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  },
+  startup: {
+    ready: () => {
+      document.querySelectorAll('.stemblock .content').forEach((element) => {
+        let source = element.textContent.trim();
+        if (source.startsWith('\\$') && source.endsWith('\\$')) {
+          source = source.slice(2, -2).trim();
+        } else if (source.startsWith('$') && source.endsWith('$')) {
+          source = source.slice(1, -1).trim();
+        }
+        element.textContent = `\\[${source}\\]`;
+      });
+      MathJax.startup.defaultReady();
+    }
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">I Wouldn&amp;#8217;t Build AWS in 2027: How I Would Enter the Compute Business from One Server</a></li>
+    <li><span>I Wouldn&amp;#8217;t Build AWS in 2027: How I Would Enter the Compute Business from One Server</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">I Wouldn&#8217;t Build AWS in 2027: How I Would Enter the Compute Business from One Server</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/i-wouldnt-build-aws-in-2027.adoc`</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_thesis"><a class="anchor" href="#_thesis"></a>Thesis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If I were starting a compute business in 2027, I would not try to build a smaller AWS.</p>
+</div>
+<div class="paragraph">
+<p>I would start with the smallest useful abstraction I could actually sell, learn what customers pay for, and then move upward through the stack only when demand justified the next layer.</p>
+</div>
+<div class="paragraph">
+<p>The core idea is simple:</p>
+</div>
+<div class="paragraph">
+<p><strong>the physical computer is inventory; the product is the abstraction sold above it.</strong></p>
+</div>
+<div class="paragraph">
+<p>That changes how I would think about infrastructure, software, pricing, and marketing from day one.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_old_product_was_the_machine"><a class="anchor" href="#_the_old_product_was_the_machine"></a>The old product was the machine</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For a long time, compute businesses were easy to categorize.</p>
+</div>
+<div class="paragraph">
+<p>A hosting company sold hosting.
+A colocation provider sold rack space, power, and connectivity.
+A cloud provider sold virtual machines.
+A company with specialized requirements bought or leased its own servers.</p>
+</div>
+<div class="paragraph">
+<p>Those categories still exist, but modern data centers increasingly contain many different economic models behind similar racks: enterprise systems, cloud capacity, storage, CDN nodes, bare metal, HPC, GPU clusters, training infrastructure, and inference.</p>
+</div>
+<div class="paragraph">
+<p>The more important change is that one physical server can now support several different commercial products.</p>
+</div>
+<div class="paragraph">
+<p>A four-GPU server can be sold as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>bare metal by the month;</p>
+</li>
+<li>
+<p>GPU capacity by the hour;</p>
+</li>
+<li>
+<p>a predefined AI instance;</p>
+</li>
+<li>
+<p>a dedicated inference node;</p>
+</li>
+<li>
+<p>an inference API priced by tokens or requests;</p>
+</li>
+<li>
+<p>a private AI environment for one company.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The hardware can stay exactly the same while the customer, margin structure, software layer, and marketing proposition all change.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compute_is_becoming_a_ladder_of_markets"><a class="anchor" href="#_compute_is_becoming_a_ladder_of_markets"></a>Compute is becoming a ladder of markets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I increasingly think about compute as a ladder.</p>
+</div>
+<div class="paragraph">
+<p>At the bottom is space and power.</p>
+</div>
+<div class="paragraph">
+<p>Above that is the physical server.</p>
+</div>
+<div class="paragraph">
+<p>Then virtual compute.</p>
+</div>
+<div class="paragraph">
+<p>Then accelerated compute.</p>
+</div>
+<div class="paragraph">
+<p>Then managed infrastructure.</p>
+</div>
+<div class="paragraph">
+<p>Then inference.</p>
+</div>
+<div class="paragraph">
+<p>And eventually the business outcome itself.</p>
+</div>
+<div class="paragraph">
+<p>Every step upward hides more infrastructure from the customer.</p>
+</div>
+<div class="paragraph">
+<p>A colocation customer may care about rack dimensions, kilowatts, cross-connects, power feeds, and carrier access.</p>
+</div>
+<div class="paragraph">
+<p>A bare-metal customer cares about CPU, memory, storage, and networking.</p>
+</div>
+<div class="paragraph">
+<p>A GPU-cloud customer cares about accelerator type, VRAM, throughput, and GPU-hours.</p>
+</div>
+<div class="paragraph">
+<p>An inference customer may care primarily about model availability, tokens per second, latency, reliability, and price.</p>
+</div>
+<div class="paragraph">
+<p>A business customer may care about none of those details.</p>
+</div>
+<div class="paragraph">
+<p>The business customer may simply ask:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Give us a private AI system connected to our company data.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>At that point, the exact GPU model becomes an implementation detail.</p>
+</div>
+<div class="paragraph">
+<p>That is not only a technical transition. It is a marketing transition.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_i_would_not_start_with_a_generic_cloud"><a class="anchor" href="#_why_i_would_not_start_with_a_generic_cloud"></a>Why I would not start with a generic cloud</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A new provider that launches with this message:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Cloud Compute
+Virtual Machines
+Storage
+Networking
+Kubernetes</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>immediately faces a difficult question:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Why should I use you instead of AWS, Azure, or Google Cloud?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>For a small new provider, trying to compete horizontally against hyperscalers is a weak starting position.</p>
+</div>
+<div class="paragraph">
+<p>They already have global regions, mature APIs, huge capacity, established billing systems, identity platforms, managed databases, observability stacks, and hundreds of services.</p>
+</div>
+<div class="paragraph">
+<p>But there is another strategy.</p>
+</div>
+<div class="paragraph">
+<p>Do not compete horizontally.</p>
+</div>
+<div class="paragraph">
+<p>Compete vertically.</p>
+</div>
+<div class="paragraph">
+<p>Instead of saying:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>We provide cloud infrastructure.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>say:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>We provide dedicated AI inference infrastructure.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Or:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>We provide private AI infrastructure for engineering companies.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Or:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>We provide predictable GPU compute without hyperscaler pricing complexity.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Or:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>We operate regional AI infrastructure close to your applications and data.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Now the customer does not need to ask whether you are better than AWS at everything.</p>
+</div>
+<div class="paragraph">
+<p>The customer only needs to ask:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Are you better for this workload?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That is a much more realistic competitive surface for a small provider.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_market_already_validates_specialization"><a class="anchor" href="#_the_market_already_validates_specialization"></a>The market already validates specialization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is one reason the rise of neoclouds matters.</p>
+</div>
+<div class="paragraph">
+<p>The important lesson is not simply that demand for GPUs became enormous. The deeper lesson is that specialized compute can compete with generalized cloud.</p>
+</div>
+<div class="paragraph">
+<p>Neocloud providers concentrated on workloads where specialization matters: accelerators, high-speed networking, large clusters, AI training, inference, scheduling, and AI-native operations.</p>
+</div>
+<div class="paragraph">
+<p>Synergy Research Group reported that neocloud revenue exceeded $25 billion in 2025 and forecast that the market could approach $400 billion by 2031.</p>
+</div>
+<div class="paragraph">
+<p>Gartner&#8217;s August 2026 forecast projected AI-optimized IaaS spending at about $66 billion in 2027, up 56.5% year over year. It also projected inference to represent 59% of AI-optimized IaaS spending in 2027.</p>
+</div>
+<div class="paragraph">
+<p>These numbers do not mean every new provider should become a neocloud.</p>
+</div>
+<div class="paragraph">
+<p>They mean the market has already demonstrated that a specialized infrastructure proposition can become large enough to stand on its own.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_but_gpu_access_alone_will_not_remain_a_moat"><a class="anchor" href="#_but_gpu_access_alone_will_not_remain_a_moat"></a>But GPU access alone will not remain a moat</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Owning GPUs is not a durable differentiator by itself.</p>
+</div>
+<div class="paragraph">
+<p>Hardware ages.
+New accelerator generations appear.
+Supply changes.
+Prices compress.
+Customers become better at comparing providers.</p>
+</div>
+<div class="paragraph">
+<p>Eventually, saying:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>We have H100s.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>becomes similar to saying:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>We have Xeon servers.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The durable value moves upward into:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>scheduling;</p>
+</li>
+<li>
+<p>networking;</p>
+</li>
+<li>
+<p>deployment;</p>
+</li>
+<li>
+<p>model serving;</p>
+</li>
+<li>
+<p>inference optimization;</p>
+</li>
+<li>
+<p>observability;</p>
+</li>
+<li>
+<p>security;</p>
+</li>
+<li>
+<p>data locality;</p>
+</li>
+<li>
+<p>developer experience;</p>
+</li>
+<li>
+<p>private environments;</p>
+</li>
+<li>
+<p>enterprise integration.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>That is why I would design the business to move upward from the beginning, even if the first product is extremely simple.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_level_1_sell_the_machine"><a class="anchor" href="#_level_1_sell_the_machine"></a>Level 1: sell the machine</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I would start as low as necessary.</p>
+</div>
+<div class="paragraph">
+<p>If I had only one useful server, I would not wait until I had a full cloud platform.</p>
+</div>
+<div class="paragraph">
+<p>I would sell the server.</p>
+</div>
+<div class="paragraph">
+<p>The first product could simply be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Dedicated GPU Server
+4 GPUs
+1 TB RAM
+Local NVMe
+Monthly price</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is close to commodity infrastructure, but it has several advantages for an early-stage operator:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>minimal software complexity;</p>
+</li>
+<li>
+<p>simple utilization accounting;</p>
+</li>
+<li>
+<p>simple pricing;</p>
+</li>
+<li>
+<p>easy capacity planning;</p>
+</li>
+<li>
+<p>immediate feedback from real customers.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>At this stage, the goal is not to build an infrastructure empire.</p>
+</div>
+<div class="paragraph">
+<p>The goal is to discover whether somebody will pay.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_level_2_turn_hardware_into_a_compute_sku"><a class="anchor" href="#_level_2_turn_hardware_into_a_compute_sku"></a>Level 2: turn hardware into a compute SKU</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once demand exists, I would start hiding the physical server.</p>
+</div>
+<div class="paragraph">
+<p>Instead of selling the entire machine, I could sell normalized products such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Developer GPU
+1 GPU
+32 GB RAM
+250 GB NVMe
+Hourly price</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Inference GPU
+1 accelerator
+High-memory profile
+Fast local storage
+Reserved capacity</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now the customer buys a SKU rather than a serial-numbered server.</p>
+</div>
+<div class="paragraph">
+<p>This is where a scheduler, provisioning API, basic metering, and resource catalog begin to matter.</p>
+</div>
+<div class="paragraph">
+<p>But I still would not build a giant commercial platform.</p>
+</div>
+<div class="paragraph">
+<p>The compute control plane and usage ledger matter first.
+Complex CRM and billing can remain external or minimal until the business needs them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_level_3_stop_selling_gpus_and_sell_inference"><a class="anchor" href="#_level_3_stop_selling_gpus_and_sell_inference"></a>Level 3: stop selling GPUs and sell inference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next step is more interesting.</p>
+</div>
+<div class="paragraph">
+<p>Instead of giving the customer a GPU and asking them to install everything themselves, I would operate the inference runtime.</p>
+</div>
+<div class="paragraph">
+<p>The product changes from:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Rent a GPU.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>to:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Deploy a model.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The provider handles CUDA, drivers, containers, model runtimes, health checks, monitoring, and updates.</p>
+</div>
+<div class="paragraph">
+<p>The customer sees something like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Qwen endpoint
+Llama endpoint
+Embedding endpoint
+Vision endpoint</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same physical GPU can now generate revenue at a higher abstraction layer.</p>
+</div>
+<div class="paragraph">
+<p>At this point, usage can be measured in requests, tokens, reserved throughput, or dedicated capacity rather than only GPU-hours.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_level_4_dedicated_inference"><a class="anchor" href="#_level_4_dedicated_inference"></a>Level 4: dedicated inference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next product is not a shared endpoint but a dedicated environment.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Dedicated Qwen deployment for your company.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Now the offer can include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>reserved accelerator capacity;</p>
+</li>
+<li>
+<p>private networking;</p>
+</li>
+<li>
+<p>dedicated storage;</p>
+</li>
+<li>
+<p>predictable latency;</p>
+</li>
+<li>
+<p>access control;</p>
+</li>
+<li>
+<p>defined data flows;</p>
+</li>
+<li>
+<p>an SLA.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This changes the buyer again.</p>
+</div>
+<div class="paragraph">
+<p>A developer may buy hourly GPU access.</p>
+</div>
+<div class="paragraph">
+<p>A business may buy predictable private capacity.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_level_5_private_ai"><a class="anchor" href="#_level_5_private_ai"></a>Level 5: private AI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eventually I would stop selling inference as the main story.</p>
+</div>
+<div class="paragraph">
+<p>The product can become:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Private AI infrastructure for your company.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The customer no longer needs to know how many containers are running or which inference engine is deployed.</p>
+</div>
+<div class="paragraph">
+<p>The package can include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a private model;</p>
+</li>
+<li>
+<p>company data connectivity;</p>
+</li>
+<li>
+<p>retrieval;</p>
+</li>
+<li>
+<p>API access;</p>
+</li>
+<li>
+<p>authentication;</p>
+</li>
+<li>
+<p>monitoring;</p>
+</li>
+<li>
+<p>automation;</p>
+</li>
+<li>
+<p>dedicated compute where necessary.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>At this level, the business is selling controlled AI capability rather than raw infrastructure.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_level_6_sell_the_business_outcome"><a class="anchor" href="#_level_6_sell_the_business_outcome"></a>Level 6: sell the business outcome</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The final step is to hide almost all of the infrastructure.</p>
+</div>
+<div class="paragraph">
+<p>Instead of:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Private AI infrastructure.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>the product becomes:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>AI assistant for engineering companies.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Or:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>AI document intelligence for legal teams.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Or:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>AI knowledge system for industrial operations.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The compute remains underneath everything, but it is no longer the marketing object.</p>
+</div>
+<div class="paragraph">
+<p>It becomes production capacity.</p>
+</div>
+<div class="paragraph">
+<p>That is the direction in which I would want the architecture to evolve.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_one_server_can_become_several_businesses"><a class="anchor" href="#_one_server_can_become_several_businesses"></a>One server can become several businesses</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is what makes the ladder attractive to me.</p>
+</div>
+<div class="paragraph">
+<p>A single server can start life as:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Bare-metal GPU.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Later the same type of capacity can become:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>GPU cloud.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Then:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Managed inference.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Then:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Dedicated inference.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Then:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Private AI.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The physical asset continues producing value while the abstraction above it improves.</p>
+</div>
+<div class="paragraph">
+<p>This makes the entry path less risky.</p>
+</div>
+<div class="paragraph">
+<p>I do not need to predict the final business model before buying the first machine.</p>
+</div>
+<div class="paragraph">
+<p>I can build the next layer only after the previous layer demonstrates demand.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_inference_is_especially_interesting"><a class="anchor" href="#_why_inference_is_especially_interesting"></a>Why inference is especially interesting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Training created the first massive wave of AI infrastructure demand, but inference has a different economic character.</p>
+</div>
+<div class="paragraph">
+<p>Training is often episodic.</p>
+</div>
+<div class="paragraph">
+<p>Inference is continuous.</p>
+</div>
+<div class="paragraph">
+<p>Every AI search, agent action, copilot interaction, generated document, voice request, recommendation, vision request, and automated workflow creates inference demand.</p>
+</div>
+<div class="paragraph">
+<p>Gartner now expects inference-focused spending to surpass training-focused spending in AI-optimized IaaS and continue increasing its share through 2027.</p>
+</div>
+<div class="paragraph">
+<p>JLL&#8217;s 2026 data-center outlook makes a related point: inference demand is expected to become geographically distributed because latency and user proximity matter more for serving applications than for many training workloads.</p>
+</div>
+<div class="paragraph">
+<p>For a small provider, that matters.</p>
+</div>
+<div class="paragraph">
+<p>Participating in AI infrastructure does not necessarily require building a frontier-model training cluster.</p>
+</div>
+<div class="paragraph">
+<p>A useful entry point can be much smaller.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_regional_compute_may_matter_again"><a class="anchor" href="#_regional_compute_may_matter_again"></a>Regional compute may matter again</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud computing made infrastructure feel geographically abstract.</p>
+</div>
+<div class="paragraph">
+<p>AI may partially reverse that.</p>
+</div>
+<div class="paragraph">
+<p>Latency matters.
+Data locality matters.
+Privacy matters.
+Support matters.
+Network proximity matters.
+Regulation can matter.</p>
+</div>
+<div class="paragraph">
+<p>That creates room for propositions such as:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Texas AI Compute.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>or:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Private AI infrastructure for Gulf Coast businesses.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>This is not an attempt to reproduce an AWS region.</p>
+</div>
+<div class="paragraph">
+<p>It is specialization plus geography.</p>
+</div>
+<div class="paragraph">
+<p>A regional provider does not need to beat AWS globally.</p>
+</div>
+<div class="paragraph">
+<p>It needs to solve a narrow problem better for a particular group of customers.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hardware_should_be_inventory_not_the_product"><a class="anchor" href="#_hardware_should_be_inventory_not_the_product"></a>Hardware should be inventory, not the product</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the principle I would carry into the architecture.</p>
+</div>
+<div class="paragraph">
+<p>Inside the infrastructure I may eventually have:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>different GPU generations;</p>
+</li>
+<li>
+<p>different CPUs;</p>
+</li>
+<li>
+<p>different NIC speeds;</p>
+</li>
+<li>
+<p>different storage profiles;</p>
+</li>
+<li>
+<p>several data centers;</p>
+</li>
+<li>
+<p>several schedulers.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Customers should not need to understand that inventory.</p>
+</div>
+<div class="paragraph">
+<p>They should see normalized products:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Developer Compute
+Inference Compute
+Dedicated AI
+Private AI</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The underlying hardware can evolve without forcing the commercial model to be rebuilt every time a server is replaced.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_compute_would_i_start_selling_in_2027"><a class="anchor" href="#_what_compute_would_i_start_selling_in_2027"></a>What compute would I start selling in 2027?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I would not start with generic VPS hosting.</p>
+</div>
+<div class="paragraph">
+<p>I would not try to build another AWS.</p>
+</div>
+<div class="paragraph">
+<p>I would not treat raw GPU rental as the final destination either.</p>
+</div>
+<div class="paragraph">
+<p>I would move roughly like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Physical compute
+    ↓
+GPU access
+    ↓
+GPU as a Service
+    ↓
+Managed inference
+    ↓
+Dedicated inference
+    ↓
+Private AI
+    ↓
+Business solution</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The starting point would depend on what I actually had.</p>
+</div>
+<div class="paragraph">
+<p>One server? Sell the server.</p>
+</div>
+<div class="paragraph">
+<p>Several GPUs? Expose GPU capacity.</p>
+</div>
+<div class="paragraph">
+<p>Stable model serving? Sell an endpoint.</p>
+</div>
+<div class="paragraph">
+<p>A company asking for privacy and predictable capacity? Build a dedicated environment.</p>
+</div>
+<div class="paragraph">
+<p>The next layer should appear because the previous layer has customers, not because an architecture diagram says it should exist.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The last fifteen years of cloud computing were largely about turning physical servers into infrastructure services.</p>
+</div>
+<div class="paragraph">
+<p>The next phase may increasingly be about turning infrastructure services into intelligence services.</p>
+</div>
+<div class="paragraph">
+<p>That changes the question for a new compute business.</p>
+</div>
+<div class="paragraph">
+<p>The question is not:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>How do I build another cloud?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>It is:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>At what layer of the compute stack can I create enough specialization that the customer no longer wants to consume generic cloud directly?</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>That is the compute business I would start building in 2027.</p>
+</div>
+<div class="paragraph">
+<p>And I would start from the minimum viable layer, then move upward only as real demand justified it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sources"><a class="anchor" href="#_sources"></a>Sources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Gartner, <em>Worldwide AI-Optimized IaaS Spending to Grow 96% in 2026</em>:
+<a href="https://www.gartner.com/en/newsroom/press-releases/2026-08-10-gartner-forecasts-worldwide-artificial-intelligence-optimized-iaas-spending-to-grow-96-percent-in-2026" class="bare">https://www.gartner.com/en/newsroom/press-releases/2026-08-10-gartner-forecasts-worldwide-artificial-intelligence-optimized-iaas-spending-to-grow-96-percent-in-2026</a></p>
+</li>
+<li>
+<p>Synergy Research Group, <em>Neocloud Market Forecast to Approach $400B by 2031</em>:
+<a href="https://www.srgresearch.com/articles/neocloud-market-forecast-to-approach-400b-by-2031-driven-by-surging-ai-infrastructure-demand" class="bare">https://www.srgresearch.com/articles/neocloud-market-forecast-to-approach-400b-by-2031-driven-by-surging-ai-infrastructure-demand</a></p>
+</li>
+<li>
+<p>JLL, <em>2026 Global Data Center Market Outlook</em>:
+<a href="https://www.jll.com/en-us/insights/market-outlook/data-center-outlook" class="bare">https://www.jll.com/en-us/insights/market-outlook/data-center-outlook</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>
