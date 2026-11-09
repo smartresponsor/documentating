@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>The Missing Proof of Compute: The Verification Gap Behind the AI Infrastructure Boom :: Smart Responsor</title>
+    <link rel="canonical" href="https://docs.smartresponsor.com/article/the-missing-proof-of-compute/">
+    <meta name="description" content="An engineering and economic framework for distinguishing GPU ownership, location, utilization, independent demand, and sustainable returns.">
+    <meta name="generator" content="Antora 3.1.12">
+<link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/owner-overrides.css">
+<meta name="description" content="Public documentation portal for Smart Responsor.">
+<meta property="og:description" content="Public documentation portal for Smart Responsor.">
+<meta name="twitter:description" content="Public documentation portal for Smart Responsor.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://docs.smartresponsor.com/article/the-missing-proof-of-compute/">
+<meta property="og:url" content="https://docs.smartresponsor.com/article/the-missing-proof-of-compute/">
+<meta property="og:site_name" content="Smart Responsor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Missing Proof of Compute: The Verification Gap Behind the AI Infrastructure Boom">
+<meta name="twitter:title" content="The Missing Proof of Compute: The Verification Gap Behind the AI Infrastructure Boom">
+<meta property="og:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://docs.smartresponsor.com/_/img/docs-social-card.svg">
+<meta name="theme-color" content="#1d4ed8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Responsor Documentation",
+  "url": "https://docs.smartresponsor.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Marketing America Corp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Oleksandr Tishchenko"
+  }
+}
+</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {
+    fontCache: 'global'
+  },
+  startup: {
+    ready: () => {
+      document.querySelectorAll('.stemblock .content').forEach((element) => {
+        let source = element.textContent.trim();
+        if (source.startsWith('\\$') && source.endsWith('\\$')) {
+          source = source.slice(2, -2).trim();
+        } else if (source.startsWith('$') && source.endsWith('$')) {
+          source = source.slice(1, -1).trim();
+        }
+        element.textContent = `\\[${source}\\]`;
+      });
+      MathJax.startup.defaultReady();
+    }
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body class="article">
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_" defer></script>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand owner-navbar-brand">
+      <a class="navbar-item owner-brand" href="https://docs.smartresponsor.com" aria-label="Marketing America Corp documentation home">
+        <img class="owner-brand__logo" src="../../_/img/marketing-america-corp-mark.svg" alt="Marketing America Corp">
+        <span class="owner-brand__wordmark" aria-hidden="true">
+          <strong>Marketing America Corp</strong>
+          <small>Documentation</small>
+        </span>
+      </a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu owner-top-nav">
+      <div class="navbar-end owner-top-nav__links">
+        <a class="navbar-item" href="../../article/">Articles</a>
+        <a class="navbar-item" href="../../component/">Components</a>
+        <a class="navbar-item" href="../../quality-atlas/">Quality Atlas</a>
+        <a class="navbar-item" href="../../about/">About</a>
+        <a class="navbar-item" href="../../owner/">Owner</a>
+        <a class="navbar-item" href="../../support/">Support</a>
+        <a class="navbar-item" href="../../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../">Smart Responsor</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Home</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Articles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../manifest/">Manifests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../principle/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../component/">Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../quality-atlas/">Quality Atlas</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/schedule/">Schedule</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/internal/">Internal</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/portfolio/">Portfolio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/overview/">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/quality-baseline/">Quality Baseline</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/principles/">Principles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/architectural-dimensions/">Architectural Dimensions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/readiness-model/">Readiness Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/evaluation/">Evaluation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/glossary/">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../quality-atlas/explorer/">Explorer</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Smart Responsor</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../">Smart Responsor</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation" aria-label="Page tools">
+<button class="nav-toggle" aria-label="Toggle navigation menu"></button>
+  <a href="../../" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../"></a></li>
+    <li><a href="./">The Missing Proof of Compute: The Verification Gap Behind the AI Infrastructure Boom</a></li>
+    <li><span>The Missing Proof of Compute: The Verification Gap Behind the AI Infrastructure Boom</span></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">The Missing Proof of Compute: The Verification Gap Behind the AI Infrastructure Boom</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Source asciidoc: `docs/article/2026-11-08-the-missing-proof-of-compute.adoc`</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_abstract"><a class="anchor" href="#_abstract"></a>Abstract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The AI infrastructure boom is increasingly financed through interlocking relationships among chip suppliers, cloud operators, model developers, investors, and lenders. Investigative reporting and financial research have mapped important parts of this system. A separate question remains insufficiently connected to those accounts: what exactly does each participant prove when it reports that compute capacity has been sold, deployed, utilized, or monetized? This article proposes a five-layer evidence model and an auditable research agenda. It does not allege accounting misconduct by NVIDIA or any other company.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_event_is_not_the_thesis"><a class="anchor" href="#_the_event_is_not_the_thesis"></a>The event is not the thesis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On November 8, 2026, NVIDIA&#8217;s board announced an independent investigation following reporting that CEO Jensen Huang had been the target of a foreign intelligence effort. The board said it had no reason to believe that national security or NVIDIA secrets had been compromised and expressed confidence in Huang. Reuters and the Associated Press reported on the investigation and the scrutiny surrounding Singapore-based Megaspeed. These are serious issues of corporate governance, counterintelligence, and export controls. They do not, on their own, demonstrate revenue manipulation, financial circularity, or weak end-user demand. <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>The useful connection is not an accusation. It is a question about verification boundaries. Export regulators want to know where a restricted accelerator is and who controls it. Creditors want to know whether collateral and future cash flows justify financing. Investors want to know whether a growing capital-expenditure cycle is supported by durable demand. These questions overlap, but no single answer resolves all three.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_prior_research_has_already_established"><a class="anchor" href="#_what_prior_research_has_already_established"></a>What prior research has already established</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This article builds on, rather than replaces, existing reporting and research:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Reuters and Associated Press</strong> establish the reported facts and uncertainty surrounding the NVIDIA investigation. Their reporting is a source for the event, not proof of the financial thesis.</p>
+</li>
+<li>
+<p><strong>Bloomberg</strong> has examined the scale and potential circularity of NVIDIA-linked infrastructure financing arrangements. That work identifies the financing concern; it does not establish that any particular GPU-hour has or has not produced independent revenue. <a href="https://www.bloomberg.com/news/articles/2026-07-27/nvidia-s-750-billion-deals-revive-fear-of-ai-circular-financing">Related Bloomberg coverage</a>.</p>
+</li>
+<li>
+<p><strong>Financial Times</strong> has examined AI valuations, investment concentration, and the financing of the buildout. Its coverage provides the macroeconomic context. <a href="https://www.ft.com/content/e185d576-c4a6-4fb0-aa03-deda69c900c8">Related FT analysis</a>.</p>
+</li>
+<li>
+<p><strong>David McNay and Robin Marshall of LSEG / FTSE Russell</strong> have mapped financing relationships as a network rather than a simple circle. They explicitly distinguish today&#8217;s structure from the synthetic leverage of the 2008 financial crisis and suggest the late-1990s telecom buildout as a more useful analogy. Their analysis also asks where independent end-demand originates and who ultimately bears residual-value risk. <a href="https://www.lseg.com/en/insights/ftse-russell/mapping-circular-financing-in-ai-does-it-add-Instability">Mapping circular financing in AI</a>, October 21, 2026.</p>
+</li>
+<li>
+<p><strong>Jacob Feldgoise, Kyle Miller, and Hanna Dohmen at Georgetown CSET</strong> have studied methods for tracking AI chips, including the strengths and limitations of location verification. Establishing location is valuable for export enforcement, but does not establish the commercial identity of every workload&#8217;s ultimate beneficiary. <a href="https://cset.georgetown.edu/research-area/compete/">CSET research collection, including Tracking AI Chips</a>, September 2026.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These contributions must not be collapsed into a single allegation. Their methods, evidence and questions differ. Our proposed contribution is an explicit cross-domain evidence model: a way to show which claim each record supports, and which additional claim it cannot support.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_five_layers_of_proof"><a class="anchor" href="#_five_layers_of_proof"></a>Five layers of proof</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Layer</th>
+<th class="tableblock halign-left valign-top">Claim</th>
+<th class="tableblock halign-left valign-top">Potential evidence</th>
+<th class="tableblock halign-left valign-top">What it does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1. Asset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An accelerator exists and is identifiable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serial and procurement records, inventory reconciliation, hardware attestation where available</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current location, utilization, or revenue</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2. Location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The asset is operating in an asserted jurisdiction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inspections, facility inventory, appropriately designed location verification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identity of the ultimate workload beneficiary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3. Operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The asset performs measurable compute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduler logs, metering, device telemetry, attested job records</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Independent customer demand or profitability</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4. Demand</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A genuinely independent party pays for useful compute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer contracts, invoices, cash collection, related-party disclosure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positive lifetime return on invested capital</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5. Economics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The deployment earns an adequate risk-adjusted return</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cash-flow reconciliation, financing costs, power and maintenance costs, depreciation and resale assumptions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Future returns with certainty</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Each transition is a separate trust boundary. A datacenter may contain authentic GPUs but have little utilization. High utilization can be driven by subsidized internal workloads. Invoiced revenue may not be collected. Collected revenue can still fail to cover energy, networking, facility, financing, replacement and obsolescence costs. None of these possibilities proves that a specific operator is doing anything improper.</p>
+</div>
+<div class="paragraph">
+<p>A particularly important distinction is between <strong>compute performed</strong> and <strong>economic value created</strong>. GPU telemetry can demonstrate cycles consumed; it cannot independently establish that the buyer&#8217;s business case is sound. Conversely, low utilization during an early deployment phase need not imply failure if the capacity is contracted and the ramp-up assumptions are credible.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_an_evidence_graph_not_a_magic_certificate"><a class="anchor" href="#_an_evidence_graph_not_a_magic_certificate"></a>An evidence graph, not a magic certificate</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A useful verification system would represent assertions as a directed graph. Nodes might include a physical accelerator, facility, operator, workload, contract, payer, financing vehicle and creditor. Edges would carry evidence provenance, observation time, applicable jurisdiction, verifier identity, confidence and known limitations.</p>
+</div>
+<div class="paragraph">
+<p>This is not a proposal for a universal surveillance database or an assertion that all commercial workload details should become public. Confidentiality-preserving attestations, aggregate reporting, controlled auditor access and independent sampling may be appropriate. Any design must distinguish a cryptographically verifiable statement from a self-reported business assertion. Cryptography can protect integrity of a record; it cannot make a false source statement true.</p>
+</div>
+<div class="paragraph">
+<p>Nor should the phrase <strong>proof of compute</strong> be confused with existing proof-of-work protocols or treated as a new cryptographic primitive. It is used here as a shorthand for an evidence architecture spanning technical and economic claims.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_a_falsifiable_economic_test"><a class="anchor" href="#_a_falsifiable_economic_test"></a>A falsifiable economic test</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consider a hypothetical accelerator fleet. Let <code>H</code> be installed GPU-hours available in a period, <code>u</code> billable utilization, <code>p</code> realized price per billed GPU-hour, <code>c</code> variable cost per utilized GPU-hour, and <code>F</code> fixed period costs including the relevant cost of capital. A deliberately simplified contribution model is:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\$\Pi = H u (p-c) - F\$
+</div>
+</div>
+<div class="paragraph">
+<p>This is not a valuation model. It excludes taxes, working capital, contractual minimums, depreciation detail, service-level penalties and many other factors. Its purpose is to make a testable distinction: shipment growth and installed capacity do not uniquely determine cash-generating returns.</p>
+</div>
+<div class="paragraph">
+<p>A responsible stress test should vary utilization, realized price, electricity cost, financing rates, hardware replacement cycles and residual value separately. Illustrative 20%, 40% and 60% declines in realized GPU-hour pricing are scenarios, not forecasts. Researchers should disclose assumptions and compare results with observable market prices and actual contract terms when available.</p>
+</div>
+<div class="paragraph">
+<p>The hypothesis can be challenged empirically. If independently verified utilization, third-party cash collection and lifecycle returns remain robust across financed fleets, the concern about an evidence gap becomes less economically consequential. If publicly reported capacity growth systematically diverges from those measures, the gap matters. Either result would be informative.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_can_be_measured_now_and_what_cannot"><a class="anchor" href="#_what_can_be_measured_now_and_what_cannot"></a>What can be measured now, and what cannot</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Public filings can reveal investment commitments, related-party disclosures, capital expenditure, recognized revenue, debt maturities and some contractual guarantees. Facility announcements and supplier disclosures can provide partial capacity signals. None of these alone identifies every physical chip, verifies every workload or traces every dollar to an independent end customer.</p>
+</div>
+<div class="paragraph">
+<p>A credible public research project should therefore publish an evidence matrix with three statuses: <strong>verified</strong>, <strong>reported but not independently verified</strong>, and <strong>not observable from public sources</strong>. Missing evidence is not evidence of misconduct. Inaccessible private contracts must remain explicitly unknown, not silently inferred.</p>
+</div>
+<div class="paragraph">
+<p>A practical first dataset would cover a bounded sample of disclosed AI infrastructure deals, recording counterparties, financing direction, guarantees, asset ownership, offtake contracts, stated capacity, operational milestones, and available indicators of independent customer receipts. Each record should link to its original filing or announcement, retain its observation date, and preserve conflicts between sources.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_this_matters_beyond_nvidia"><a class="anchor" href="#_why_this_matters_beyond_nvidia"></a>Why this matters beyond NVIDIA</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The export-control problem asks whether an accelerator is where it is supposed to be. The operational problem asks whether it is doing work. The financing problem asks whether the work creates enough independent cash flow to support the asset and the obligations built around it. The governance problem asks who can substantiate each claim, under what access rights, and with what accountability.</p>
+</div>
+<div class="paragraph">
+<p>These questions matter to cloud operators, lenders, infrastructure investors, regulators and enterprise buyers. They also matter to engineers: a technically correct telemetry system can still answer the wrong business question. The opportunity is to build a common language for evidence, not to pretend that one dashboard can settle every economic and legal dispute.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion_from_installed_capacity_to_substantiated_value"><a class="anchor" href="#_conclusion_from_installed_capacity_to_substantiated_value"></a>Conclusion: from installed capacity to substantiated value</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The next phase of AI infrastructure scrutiny should not be reduced to whether the market is a bubble or whether one executive survives an investigation. A more productive question is whether the industry&#8217;s claims can be traced across five distinct boundaries: asset, location, operation, demand and economics.</p>
+</div>
+<div class="paragraph">
+<p>LSEG has mapped the financial web. CSET has examined location verification. Major newsrooms have documented the immediate governance and export-control story. The additional proposal here is to connect these lines of inquiry without conflating them: identify what each proof actually proves, expose the missing transitions, and test the economic significance of those gaps with reproducible assumptions.</p>
+</div>
+<div class="paragraph">
+<p><strong>The real unit of confidence is not a GPU sold, a GPU installed, or even a GPU-hour consumed. It is a claim whose evidence, scope and limitations can be independently examined.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_editorial_and_methodological_note"><a class="anchor" href="#_editorial_and_methodological_note"></a>Editorial and methodological note</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is an original analytical framework informed by the cited reporting and research, not a claim of first invention of GPU attestation, financial network analysis, metering, or infrastructure stress testing. It makes no allegation that NVIDIA or any named company falsified revenue or violated export rules. Claims concerning ongoing investigations are time-bound to November 8, 2026 and should be updated before later publication. Links identify source material and should be rechecked during final editorial review.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. NVIDIA, <a href="https://investor.nvidia.com/news/press-release-details/2026/Statement-from-NVIDIA-Board-of-Directors/default.aspx">Statement from NVIDIA Board of Directors</a>, November 8, 2026; Reuters, <a href="https://www.reuters.com/world/china/nvidia-launches-probe-after-report-ceo-huang-was-target-foreign-intelligence-2026-11-08/">report</a>, November 8, 2026; Associated Press, <a href="https://apnews.com/article/68839e7ca6ba2b121529f7e475e501d6">report</a>, November 8, 2026.
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <nav class="owner-footer-nav" aria-label="Footer">
+    <a href="../../article/">Articles</a>
+    <a href="../../component/">Components</a>
+    <a href="../../quality-atlas/">Quality Atlas</a>
+    <a href="../../manifest/">Manifest</a>
+    <a href="../../about/">About</a>
+    <a href="../../owner/">Owner</a>
+    <a href="../../support/">Support</a>
+    <a href="../../contact/">Contact</a>
+  </nav>
+  <div class="owner-footer-badges" aria-label="Platform and quality stack">
+    <img class="owner-footer-badge" src="../../_/img/github-badge.svg" alt="GitHub">
+    <img class="owner-footer-badge" src="../../_/img/symfony-badge.svg" alt="Symfony">
+    <img class="owner-footer-badge" src="../../_/img/php-badge.svg" alt="PHP">
+    <img class="owner-footer-badge" src="../../_/img/qodana-badge.svg" alt="Qodana">
+  </div>
+  <div class="owner-footer-brand" aria-label="Brand ownership">
+    <span>Marketing America Corp</span>
+    <span>High Hopes</span>
+  </div>
+</footer>
+  </body>
+</html>
